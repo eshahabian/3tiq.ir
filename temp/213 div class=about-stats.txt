@@ -1,0 +1,15 @@
+213 :<div class="about-stats">
+                    <div class="stat-box">
+                        <span class="stat-number">۱۰+</span>
+                        <span class="stat-label">سال تجربه</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">۵۰۰+</span>
+                        <span class="stat-label">تور موفق</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">۹۸٪</span>
+                        <span class="stat-label">رضایت مشتریان</span>
+                    </div>
+
+216 </div>

@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دماوند | سه تیغ</title>
+    <meta name="description" content="اطلاعات کامل قله دماوند — مسیرهای صعود، پناهگاه‌ها، قله‌های اطراف و نکات مهم">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ============================
+           CSS Variables (هماهنگ با style.css)
+        ============================ */
+        :root {
+            --primary-color: #D4A574;
+            --secondary-color: #5C6B4A;
+            --dark-bg: #2C2416;
+            --light-bg: #F5F1E8;
+            --white: #FDFBF7;
+            --text-dark: #3A3226;
+            --text-light: #6B5D4F;
+            --transition: all 0.3s ease;
+            --header-height: 100px;
+        }
+
+        /* ============================
+           Base — اگر style.css لود نشه
+        ============================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+        body {
+            font-family: 'Vazirmatn', 'IRANSans', Tahoma, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* ============================
+           HERO — تصویر کامل قله
+        ============================ */
+        .mtn-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            background: var(--dark-bg);
+            margin-top: var(--header-height, 100px);
+        }
+
+        /* ---- اسلایدر تصاویر ---- */
+        .hero-slides { position: absolute; inset: 0; }
+        .hero-slide {
+            position: absolute; inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .hero-slide.active { opacity: 1; }
+
+        /* placeholder اگر عکس نباشه */
+        .hero-slide-placeholder {
+            position: absolute; inset: 0;
+            background: linear-gradient(160deg, #2C2416 0%, #4a3b25 40%, #5C6B4A 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 9rem; opacity: 0.3;
+        }
+
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(44,36,22,0.15) 0%,
+                rgba(44,36,22,0.5) 55%,
+                rgba(44,36,22,0.92) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            z-index: 3;
+            padding: 3rem 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-breadcrumb {
+            font-size: 0.8rem;
+            color: rgba(212,165,116,0.8);
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
+        }
+        .hero-breadcrumb a { color: rgba(212,165,116,0.7); }
+        .hero-breadcrumb span { margin: 0 0.4rem; opacity: 0.5; }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.05;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: rgba(253,251,247,0.75);
+            margin-bottom: 2rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.45rem 1rem;
+            border-radius: 100px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+        }
+        .badge-gold {
+            background: rgba(212,165,116,0.2);
+            border: 1px solid rgba(212,165,116,0.5);
+            color: var(--primary-color);
+        }
+        .badge-green {
+            background: rgba(92,107,74,0.25);
+            border: 1px solid rgba(92,107,74,0.5);
+            color: #a8c484;
+        }
+        .badge-red {
+            background: rgba(180,60,60,0.2);
+            border: 1px solid rgba(180,60,60,0.4);
+            color: #f4a4a4;
+        }
+        .badge-blue {
+            background: rgba(60,100,180,0.2);
+            border: 1px solid rgba(60,100,180,0.4);
+            color: #a4c4f4;
+        }
+
+        /* ---- تصاویر thumbnail ---- */
+        .hero-thumbs {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .hero-thumb {
+            width: 56px; height: 42px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            opacity: 0.55;
+            transition: all 0.25s;
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .hero-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-thumb.active, .hero-thumb:hover {
+            opacity: 1;
+            border-color: var(--primary-color);
+        }
+
+        /* دکمه آپلود عکس */
+        
+        
+        
+
+        /* ============================
+           QUICK STATS BAR
+        ============================ */
+        .stats-bar {
+            background: var(--dark-bg);
+            border-bottom: 1px solid rgba(212,165,116,0.15);
+        }
+        .stats-bar-inner {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .stats-bar-inner::-webkit-scrollbar { display: none; }
+        .stat-item {
+            flex: 1;
+            min-width: 130px;
+            padding: 1.1rem 1.25rem;
+            text-align: center;
+            border-left: 1px solid rgba(255,255,255,0.06);
+        }
+        .stat-item:last-child { border-left: none; }
+        .stat-label {
+            font-size: 0.7rem;
+            color: rgba(253,251,247,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .stat-value {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .stat-unit {
+            font-size: 0.7rem;
+            color: rgba(253,251,247,0.4);
+            margin-right: 2px;
+        }
+
+        /* ============================
+           LAYOUT اصلی
+        ============================ */
+        .page-body {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2.5rem;
+            padding: 3rem 0 5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .page-body { grid-template-columns: 1fr; gap: 0; }
+        }
+
+        /* ============================
+           CONTENT SECTIONS
+        ============================ */
+        .section-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem 2.25rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 2px 16px rgba(44,36,22,0.07);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .section-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--dark-bg), var(--secondary-color));
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* ============================
+           مسیرهای صعود
+        ============================ */
+        .routes-list { display: flex; flex-direction: column; gap: 1rem; }
+
+        .route-item {
+            border: 1.5px solid rgba(44,36,22,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .route-item:hover {
+            border-color: rgba(212,165,116,0.4);
+            box-shadow: 0 4px 20px rgba(44,36,22,0.08);
+        }
+
+        .route-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            background: var(--light-bg);
+            gap: 0.75rem;
+        }
+
+        .route-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        .route-badges {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .diff-pill {
+            padding: 0.25rem 0.7rem;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .diff-آسان   { background: #d1fae5; color: #065f46; }
+        .diff-متوسط  { background: #fef3c7; color: #92400e; }
+        .diff-سخت    { background: #fee2e2; color: #991b1b; }
+        .diff-خیلی‌سخت { background: #ede9fe; color: #5b21b6; }
+
+        .route-chevron {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            transition: transform 0.25s;
+        }
+        .route-item.open .route-chevron { transform: rotate(180deg); }
+
+        .route-body {
+            display: none;
+            padding: 1.25rem;
+            border-top: 1px solid rgba(44,36,22,0.06);
+        }
+        .route-item.open .route-body { display: block; }
+
+        .route-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+        .route-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+        .route-meta-item strong { color: var(--text-dark); }
+
+        .route-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            padding: 0.75rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border-right: 3px solid var(--primary-color);
+        }
+
+        /* ============================
+           نکات مهم
+        ============================ */
+        .tips-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+        .tip-item {
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            padding: 0.9rem 1rem;
+            border-radius: 10px;
+            background: var(--light-bg);
+            transition: var(--transition);
+        }
+        .tip-item:hover { background: #ede9df; }
+
+        .tip-icon {
+            width: 34px; height: 34px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .tip-icon.warning { background: #fef3c7; }
+        .tip-icon.danger  { background: #fee2e2; }
+        .tip-icon.info    { background: #dbeafe; }
+        .tip-icon.success { background: #d1fae5; }
+
+        .tip-content { flex: 1; }
+        .tip-title {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+        .tip-text {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.65;
+        }
+
+        /* ============================
+           قله‌های اطراف
+        ============================ */
+        .peaks-nearby {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+        }
+
+        .nearby-card {
+            padding: 1rem;
+            border: 1.5px solid rgba(44,36,22,0.08);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .nearby-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 4px; height: 100%;
+            background: var(--primary-color);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .nearby-card:hover {
+            border-color: rgba(212,165,116,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44,36,22,0.1);
+        }
+        .nearby-card:hover::before { opacity: 1; }
+
+        .nearby-emoji { font-size: 1.5rem; margin-bottom: 0.35rem; }
+        .nearby-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+        .nearby-elev {
+            font-size: 0.78rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .nearby-dist {
+            font-size: 0.73rem;
+            color: var(--text-light);
+            margin-top: 0.15rem;
+        }
+
+        /* ============================
+           SIDEBAR
+        ============================ */
+        .sidebar { position: sticky; top: 120px; }
+
+        .sidebar-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 16px rgba(44,36,22,0.07);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* پناهگاه‌ها */
+        .shelter-list { display: flex; flex-direction: column; gap: 0.65rem; }
+        .shelter-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            padding: 0.75rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        .shelter-item:hover { background: #ede9df; }
+        .shelter-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+        .shelter-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 0.15rem;
+        }
+        .shelter-meta {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* فصل بهتر */
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 0.4rem;
+        }
+        .season-item {
+            text-align: center;
+            padding: 0.6rem 0.3rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--light-bg);
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        .season-item.active {
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+        .season-emoji { font-size: 1.1rem; display: block; margin-bottom: 0.2rem; }
+
+        /* دانلود / اشتراک */
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            margin-bottom: 0.6rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--dark-bg), #3d301a);
+            color: var(--primary-color);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #3d301a, var(--secondary-color));
+        }
+        .btn-secondary {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            border: 1.5px solid rgba(44,36,22,0.12);
+        }
+        .btn-secondary:hover {
+            background: #ede9df;
+            border-color: var(--primary-color);
+        }
+
+        /* ============================
+           گالری عکس‌ها
+        ============================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.6rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--light-bg);
+            position: relative;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.06); }
+
+        .gallery-placeholder {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 0.4rem;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            width: 100%; height: 100%;
+            transition: var(--transition);
+            border: 2px dashed rgba(44,36,22,0.15);
+            border-radius: 10px;
+        }
+        .gallery-placeholder:hover {
+            background: #ede9df;
+            border-color: var(--primary-color);
+        }
+        .gallery-placeholder-icon { font-size: 1.8rem; }
+
+        /* ============================
+           LIGHTBOX
+        ============================ */
+        .lightbox {
+            position: fixed; inset: 0;
+            background: rgba(20,16,8,0.94);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem; left: 1.5rem;
+            width: 42px; height: 42px;
+            background: rgba(255,255,255,0.1);
+            border: none; border-radius: 50%;
+            color: white; font-size: 1.25rem;
+            cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+        /* ============================
+           DARK MODE
+        ============================ */
+        body.dark-mode {
+            background: #1a1510;
+            color: #e0d8cc;
+        }
+        body.dark-mode .section-card,
+        body.dark-mode .sidebar-card {
+            background: #2a2416;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+        }
+        body.dark-mode .section-title,
+        body.dark-mode .route-name,
+        body.dark-mode .tip-title,
+        body.dark-mode .nearby-name,
+        body.dark-mode .shelter-name,
+        body.dark-mode .sidebar-title {
+            color: #e0d8cc;
+        }
+        body.dark-mode .route-header,
+        body.dark-mode .tip-item,
+        body.dark-mode .shelter-item,
+        body.dark-mode .season-item,
+        body.dark-mode .section-header {
+            background: #1e1912;
+            border-color: rgba(255,255,255,0.05);
+        }
+        body.dark-mode .route-desc { background: #1e1912; }
+        body.dark-mode .nearby-card { border-color: rgba(255,255,255,0.07); }
+        body.dark-mode .nearby-card:hover { background: #2a2416; }
+        body.dark-mode .btn-secondary { background: #2a2416; color: #e0d8cc; }
+        body.dark-mode .stats-bar { background: #1a1510; }
+
+        /* ============================
+           ANIMATIONS
+        ============================ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .hero-content > * {
+            animation: fadeUp 0.8s ease both;
+        }
+        .hero-content .hero-breadcrumb { animation-delay: 0.1s; }
+        .hero-content .hero-title      { animation-delay: 0.2s; }
+        .hero-content .hero-sub        { animation-delay: 0.3s; }
+        .hero-content .hero-badges     { animation-delay: 0.4s; }
+        .hero-content .hero-bottom     { animation-delay: 0.5s; }
+
+        /* ============================
+           RESPONSIVE
+        ============================ */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.2rem; }
+            .hero-content { padding: 2rem 1.25rem; }
+            .stats-bar-inner { padding: 0 0.5rem; }
+            .stat-item { min-width: 100px; padding: 0.9rem 0.75rem; }
+            .route-meta-grid { grid-template-columns: 1fr; }
+            .peaks-nearby { grid-template-columns: 1fr 1fr; }
+            .section-card { padding: 1.5rem 1.25rem; }
+        }
+
+        @media (max-width: 480px) {
+            .peaks-nearby { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .season-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+
+        /* ============================
+           Header ساده (اگه style.css نباشه)
+        ============================ */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--header-height);
+            background: rgba(44,36,22,0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212,165,116,0.12);
+            display: flex;
+            align-items: center;
+        }
+        .header .container { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+        .header-logo { color: var(--primary-color); font-size: 1.3rem; font-weight: 800; }
+        .header-back {
+            display: flex; align-items: center; gap: 0.4rem;
+            color: rgba(253,251,247,0.6);
+            font-size: 0.82rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+        .header-back:hover { color: var(--primary-color); border-color: rgba(212,165,116,0.4); }
+        
+        
+
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="header-logo">سه تیغ ⛰</a>
+        <div style="display:flex; gap:0.6rem; align-items:center;">
+            <a href="javascript:history.back()" class="header-back">← بازگشت</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="mtn-hero" id="mtnHero">
+    <div class="hero-slides" id="heroSlides">
+        <div class="hero-slide-placeholder">⛰</div>
+        <!-- اسلایدها از طریق JS اضافه میشن -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-breadcrumb">
+            <a href="index.html">صفحه اصلی</a>
+            <span>›</span>
+            <a href="alborz-markazi.html">البرز مرکزی</a>
+            <span>›</span>
+            <span id="breadcrumbName">دماوند</span>
+        </div>
+
+        <h1 class="hero-title editable" id="mainTitle">دماوند</h1>
+        <p class="hero-sub editable" id="mainSub">بلندترین قله ایران و خاورمیانه — استان مازندران / تهران</p>
+
+        <div class="hero-badges">
+            <span class="badge badge-gold">⛰ <span id="elevBadge">۵۶۱۰ متر</span></span>
+            <span class="badge badge-red" id="diffBadge">🎯 سخت</span>
+            <span class="badge badge-blue">🗓 <span id="seasonBadge">تیر تا شهریور</span></span>
+            <span class="badge badge-green">⏱ <span id="durationBadge">۲ تا ۳ روز</span></span>
+        </div>
+
+        <div class="hero-bottom" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+            <div class="hero-thumbs" id="heroThumbs">
+                <!-- thumbs from JS -->
+            </div>
+                </div>
+    </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+    <div class="container">
+        <div class="stats-bar-inner">
+            <div class="stat-item">
+                <span class="stat-label">ارتفاع</span>
+                <span class="stat-value editable" id="statElev">۵۶۱۰</span>
+                <span class="stat-unit">متر</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">استان</span>
+                <span class="stat-value" style="font-size:1rem;" id="statProv">مازندران</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">سختی</span>
+                <span class="stat-value" style="font-size:1rem; color:#f4a4a4;">سخت</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">مدت صعود</span>
+                <span class="stat-value" style="font-size:1rem;">۲–۳ روز</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">بهترین فصل</span>
+                <span class="stat-value" style="font-size:1rem; color:#a8c484;">تابستان</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">نوع کوه</span>
+                <span class="stat-value" style="font-size:1rem;">آتشفشانی</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div class="container">
+    <div class="page-body">
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main>
+
+            <!-- درباره قله -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">📖</div>
+                    <h2 class="section-title">درباره این قله</h2>
+                </div>
+                <p id="aboutText" style="font-size:0.95rem; line-height:1.9; color:var(--text-light);">
+                    دماوند با ارتفاع ۵۶۱۰ متر بلندترین قله ایران، خاورمیانه و کل آسیای غربی است. این آتشفشان خاموش در رشته‌کوه البرز مرکزی واقع شده و با شیب ملایم اما طولانی، هر ساله هزاران کوهنورد از سراسر جهان را به خود جذب می‌کند. قله دماوند از نظر فرهنگی نیز اهمیت ویژه‌ای در اساطیر ایران باستان دارد.
+                </p>
+            </div>
+
+            <!-- مسیرهای صعود -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">🧭</div>
+                    <h2 class="section-title">مسیرهای صعود</h2> </div>
+                <div class="routes-list" id="routesList">
+
+                    <div class="route-item">
+                        <div class="route-header" onclick="toggleRoute(this)">
+                            <span class="route-name">مسیر جنوبی (پلور)</span>
+                            <div class="route-badges">
+                                <span class="diff-pill diff-متوسط">متوسط</span>
+                                <span style="font-size:0.75rem; color:var(--text-light);">محبوب‌ترین</span>
+                            </div>
+                            <span class="route-chevron">▾</span>
+                        </div>
+                        <div class="route-body">
+                            <div class="route-meta-grid">
+                                <div class="route-meta-item">📏 <span>طول مسیر:</span> <strong>۱۴ کیلومتر</strong></div>
+                                <div class="route-meta-item">📈 <span>اختلاف ارتفاع:</span> <strong>۲۸۰۰ متر</strong></div>
+                                <div class="route-meta-item">⏱ <span>زمان صعود:</span> <strong>۸–۱۰ ساعت</strong></div>
+                                <div class="route-meta-item">🏕️ <span>کمپ میانی:</span> <strong>پناهگاه برگاه</strong></div>
+                            </div>
+                            <p class="route-desc">از پلور شروع می‌شود و از طریق دره گوسفندسرا به پناهگاه برگاه (۴۲۰۰ متر) می‌رسد. روز دوم صعود نهایی از دشت سبز تا قله انجام می‌شود. این مسیر کم‌برف‌ترین و پربازدیدترین مسیر دماوند است.</p>
+                        </div>
+                    </div>
+
+                    <div class="route-item">
+                        <div class="route-header" onclick="toggleRoute(this)">
+                            <span class="route-name">مسیر شمالی (نور)</span>
+                            <div class="route-badges">
+                                <span class="diff-pill diff-سخت">سخت</span>
+                            </div>
+                            <span class="route-chevron">▾</span>
+                        </div>
+                        <div class="route-body">
+                            <div class="route-meta-grid">
+                                <div class="route-meta-item">📏 <span>طول مسیر:</span> <strong>۱۸ کیلومتر</strong></div>
+                                <div class="route-meta-item">📈 <span>اختلاف ارتفاع:</span> <strong>۳۲۰۰ متر</strong></div>
+                                <div class="route-meta-item">⏱ <span>زمان صعود:</span> <strong>۱۰–۱۲ ساعت</strong></div>
+                                <div class="route-meta-item">🏕️ <span>کمپ میانی:</span> <strong>پناهگاه تخت فریدون</strong></div>
+                            </div>
+                            <p class="route-desc">مسیر شمالی از روستای رینه در نور شروع می‌شود. این مسیر طولانی‌تر و برفی‌تر از مسیر جنوبی است و به تجهیزات برف و یخ نیاز دارد. مناظر دره لار از ویژگی‌های این مسیر است.</p>
+                        </div>
+                    </div>
+
+                    <div class="route-item">
+                        <div class="route-header" onclick="toggleRoute(this)">
+                            <span class="route-name">مسیر غربی (آب‌اسک)</span>
+                            <div class="route-badges">
+                                <span class="diff-pill diff-سخت">سخت</span>
+                                <span style="font-size:0.75rem; color:var(--text-light);">تکنیکال</span>
+                            </div>
+                            <span class="route-chevron">▾</span>
+                        </div>
+                        <div class="route-body">
+                            <div class="route-meta-grid">
+                                <div class="route-meta-item">📏 <span>طول مسیر:</span> <strong>۱۶ کیلومتر</strong></div>
+                                <div class="route-meta-item">📈 <span>اختلاف ارتفاع:</span> <strong>۳۰۰۰ متر</strong></div>
+                                <div class="route-meta-item">⏱ <span>زمان صعود:</span> <strong>۱۰ ساعت</strong></div>
+                                <div class="route-meta-item">❄️ <span>نیاز به:</span> <strong>کرامپون، تبر</strong></div>
+                            </div>
+                            <p class="route-desc">مسیر کمتر شناخته‌شده از سمت آب‌اسک که از یخچال غربی عبور می‌کند. این مسیر بیشتر برای کوهنوردان باتجربه توصیه می‌شود و تجهیزات کوهنوردی در یخ و برف الزامی است.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- نکات مهم -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">⚠️</div>
+                    <h2 class="section-title">نکات مهم برای صعود</h2> </div>
+                <div class="tips-list" id="tipsList">
+
+                    <div class="tip-item">
+                        <div class="tip-icon warning">🏔️</div>
+                        <div class="tip-content">
+                            <div class="tip-title">ارتفاع‌زدگی</div>
+                            <div class="tip-text">به دلیل ارتفاع بسیار زیاد (۵۶۱۰ متر)، ارتفاع‌زدگی جدی‌ترین خطر است. حداقل یک شب در پناهگاه برگاه (۴۲۰۰م) اقامت کنید و در صورت بروز سردرد یا تهوع، فوراً پایین بروید.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-icon danger">❄️</div>
+                        <div class="tip-content">
+                            <div class="tip-title">تجهیزات لازم</div>
+                            <div class="tip-text">کرامپون، تبر یخ، عینک دودی با فیلتر UV، لباس گرم لایه‌ای، کاپوشن باد ضرورت دارند. دمای قله حتی در تابستان به منفی ۲۰ درجه می‌رسد.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-icon info">☀️</div>
+                        <div class="tip-content">
+                            <div class="tip-title">شروع زود هنگام</div>
+                            <div class="tip-text">صعود نهایی باید قبل از ظهر کامل شود. بعد از ظهر احتمال طوفان و مه بسیار زیاد است. معمولاً ساعت ۳ یا ۴ صبح حرکت کنید.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-icon success">💧</div>
+                        <div class="tip-content">
+                            <div class="tip-title">آب و تغذیه</div>
+                            <div class="tip-text">آب کافی (حداقل ۳ لیتر) همراه داشته باشید. در مسیر جنوبی، چشمه‌های آب تا پناهگاه برگاه در دسترس است. غذاهای پرکالری و آسان مصرف انتخاب کنید.</div>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-icon warning">📋</div>
+                        <div class="tip-content">
+                            <div class="tip-title">مجوز و ثبت نام</div>
+                            <div class="tip-text">برای صعود به دماوند نیاز به مجوز فدراسیون کوهنوردی دارید. در پایگاه گوسفندسرا ثبت‌نام کنید و اطلاعات گروه را ثبت کنید.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- گالری عکس -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">📸</div>
+                    <h2 class="section-title">گالری تصاویر</h2>
+                </div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- placeholder اولیه -->
+                    <label class="gallery-item" style="border:none;">
+                        <div class="gallery-placeholder" style="cursor:pointer;" onclick="document.getElementById('galleryUpload').click()">
+                            <span class="gallery-placeholder-icon">📷</span>
+                            <span>افزودن عکس</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- قله‌های اطراف -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-icon">🗺️</div>
+                    <h2 class="section-title">قله‌های اطراف</h2>
+                </div>
+                <div class="peaks-nearby" id="peaksNearby">
+
+                    <div class="nearby-card">
+                        <div class="nearby-emoji">⛰️</div>
+                        <div class="nearby-name">علم‌کوه</div>
+                        <div class="nearby-elev">۴۸۵۰ متر</div>
+                        <div class="nearby-dist">📍 ~۵۰ کیلومتر غرب</div>
+                    </div>
+
+                    <div class="nearby-card">
+                        <div class="nearby-emoji">🏔️</div>
+                        <div class="nearby-name">دماوند شمالی</div>
+                        <div class="nearby-elev">۴۸۰۰ متر</div>
+                        <div class="nearby-dist">📍 ~۵ کیلومتر شمال</div>
+                    </div>
+
+                    <div class="nearby-card">
+                        <div class="nearby-emoji">⛰️</div>
+                        <div class="nearby-name">کلون بستک</div>
+                        <div class="nearby-elev">۴۶۵۰ متر</div>
+                        <div class="nearby-dist">📍 ~۶۰ کیلومتر غرب</div>
+                    </div>
+
+                    <div class="nearby-card">
+                        <div class="nearby-emoji">🏔️</div>
+                        <div class="nearby-name">آزادکوه</div>
+                        <div class="nearby-elev">۳۸۰۰ متر</div>
+                        <div class="nearby-dist">📍 ~۳۵ کیلومتر غرب</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+
+            <!-- پناهگاه‌ها -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">🏕️ پناهگاه‌ها</div>
+                <div class="shelter-list" id="shelterList">
+
+                    <div class="shelter-item">
+                        <div class="shelter-dot"></div>
+                        <div>
+                            <div class="shelter-name">پناهگاه برگاه</div>
+                            <div class="shelter-meta">ارتفاع: ۴۲۰۰ متر · ظرفیت: ۸۰ نفر</div>
+                            <div class="shelter-meta" style="margin-top:3px; color:var(--primary-color);">✅ دارای آب، گرمایش</div>
+                        </div>
+                    </div>
+
+                    <div class="shelter-item">
+                        <div class="shelter-dot" style="background:#a8c484;"></div>
+                        <div>
+                            <div class="shelter-name">پناهگاه گوسفندسرا</div>
+                            <div class="shelter-meta">ارتفاع: ۳۱۰۰ متر · پایگاه اصلی</div>
+                            <div class="shelter-meta" style="margin-top:3px; color:var(--primary-color);">✅ امکانات کامل</div>
+                        </div>
+                    </div>
+
+                    <div class="shelter-item">
+                        <div class="shelter-dot" style="background:#888;"></div>
+                        <div>
+                            <div class="shelter-name">کلبه سیمرغ</div>
+                            <div class="shelter-meta">ارتفاع: ۴۵۰۰ متر · اورژانسی</div>
+                            <div class="shelter-meta" style="margin-top:3px; color:#f4a4a4;">⚠️ فقط اضطراری</div>
+                        </div>
+                    </div> </div>
+            </div>
+
+            <!-- بهترین فصل -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">📅 بهترین فصل صعود</div>
+                <div class="season-grid">
+                    <div class="season-item">
+                        <span class="season-emoji">🌸</span>بهار
+                    </div>
+                    <div class="season-item active">
+                        <span class="season-emoji">☀️</span>تابستان
+                    </div>
+                    <div class="season-item">
+                        <span class="season-emoji">🍂</span>پاییز
+                    </div>
+                    <div class="season-item">
+                        <span class="season-emoji">❄️</span>زمستان
+                    </div>
+                </div>
+                <p style="font-size:0.78rem; color:var(--text-light); margin-top:0.85rem; text-align:center;">بهترین زمان: تیر تا اوایل شهریور</p>
+            </div>
+
+            <!-- اقدامات -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">⚡ اقدامات</div>
+                <button class="action-btn btn-primary" onclick="window.print()">
+                    🖨️ چاپ / ذخیره PDF
+                </button>
+                <button class="action-btn btn-secondary" onclick="sharePage()">
+                    🔗 اشتراک‌گذاری
+                </button>
+            </div>
+
+            <!-- اطلاعات تکمیلی -->
+            <div class="sidebar-card">
+                <div class="sidebar-title">ℹ️ اطلاعات تکمیلی</div>
+                <div style="display:flex; flex-direction:column; gap:0.6rem; font-size:0.82rem;">
+                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid var(--light-bg);">
+                        <span style="color:var(--text-light);">مختصات</span>
+                        <span style="font-weight:600;">35.95°N 52.10°E</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid var(--light-bg);">
+                        <span style="color:var(--text-light);">رشته‌کوه</span>
+                        <span style="font-weight:600;">البرز مرکزی</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0; border-bottom:1px solid var(--light-bg);">
+                        <span style="color:var(--text-light);">نوع سنگ</span>
+                        <span style="font-weight:600;">آتشفشانی</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:0.5rem 0;">
+                        <span style="color:var(--text-light);">رتبه در ایران</span>
+                        <span style="font-weight:600; color:var(--primary-color);">#۱</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ============================
+//  THEME (از localStorage)
+// ============================
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+}
+
+// ============================
+//  HERO IMAGE SLIDER
+// ============================
+let heroImages = []; // آرایه‌ای از base64 یا URL
+let heroIdx = 0;
+let heroTimer = null;
+
+function buildHeroSlides() {
+    const container = document.getElementById('heroSlides');
+    const thumbs = document.getElementById('heroThumbs');
+
+    if (heroImages.length === 0) {
+        container.innerHTML = '<div class="hero-slide-placeholder">⛰</div>';
+        thumbs.innerHTML = '';
+        return;
+    }
+
+    container.innerHTML = heroImages.map((src, i) => `
+        <div class="hero-slide${i === heroIdx ? ' active' : ''}"
+             style="background-image:url('${src}')"></div>
+    `).join('');
+
+    thumbs.innerHTML = heroImages.map((src, i) => `
+        <div class="hero-thumb${i === heroIdx ? ' active' : ''}" onclick="goHero(${i})">
+            <img src="${src}" alt="تصویر ${i+1}">
+        </div>
+    `).join('');
+}
+
+function goHero(n) {
+    heroIdx = (n + heroImages.length) % heroImages.length;
+    buildHeroSlides();
+    clearInterval(heroTimer);
+    heroTimer = setInterval(() => goHero(heroIdx + 1), 5000);
+}
+
+function startHeroAuto() {
+    if (heroImages.length > 1) {
+        heroTimer = setInterval(() => goHero(heroIdx + 1), 5000);
+    }
+}
+
+// آپلود عکس Hero
+document.getElementById('imgUpload').addEventListener('change', function() {
+    const files = Array.from(this.files);
+    let loaded = 0;
+    files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = e => {
+            heroImages.push(e.target.result);
+            loaded++;
+            if (loaded === files.length) {
+                buildHeroSlides();
+                startHeroAuto();
+            }
+        };
+        reader.readAsDataURL(file);
+    });
+});
+
+// ============================
+//  GALLERY
+// ============================
+let galleryImgs = [];
+
+document.getElementById('galleryUpload').addEventListener('change', function() {
+    const files = Array.from(this.files);
+    files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = e => {
+            galleryImgs.push(e.target.result);
+            renderGallery();
+        };
+        reader.readAsDataURL(file);
+    });
+});
+
+function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    const items = galleryImgs.map((src, i) => `
+        <div class="gallery-item" onclick="openLightbox('${src}')">
+            <img src="${src}" alt="تصویر ${i+1}" loading="lazy">
+        </div>
+    `).join('');
+
+    grid.innerHTML = items + `
+        <label class="gallery-item" style="border:none;">
+            <div class="gallery-placeholder" onclick="document.getElementById('galleryUpload').click()">
+                <span class="gallery-placeholder-icon">📷</span>
+                <span>افزودن عکس</span>
+            </div>
+        </label>
+    `;
+}
+
+// ============================
+//  LIGHTBOX
+// ============================
+function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+}
+
+// ============================
+//  ACCORDION مسیرها
+// ============================
+function toggleRoute(header) {
+    const item = header.parentElement;
+    item.classList.toggle('open');
+}
+
+</script>
+
+</body>
+</html>

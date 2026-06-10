@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO Primary ===== -->
+    <title>سه تیغ | راهنمای جامع کوهنوردی ایران</title>
+    <meta name="description" content="راهنمای جامع کوهنوردی ایران — معرفی ۱۱۵+ قله، مسیرهای صعود، پناهگاه‌ها و اطلاعات کامل برای کوهنوردان ایران">
+    <meta name="keywords" content="کوهنوردی ایران, قله دماوند, علم‌کوه, سبلان, مسیر کوهنوردی, پناهگاه کوهنوردی, سه تیغ">
+    <meta name="author" content="سه تیغ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://se3tigh.ir/">
+
+    <!-- ===== Open Graph (واتساپ، تلگرام، لینکدین) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://se3tigh.ir/">
+    <meta property="og:title" content="سه تیغ | راهنمای جامع کوهنوردی ایران">
+    <meta property="og:description" content="راهنمای جامع کوهنوردی ایران — معرفی ۱۱۵+ قله، مسیرهای صعود، پناهگاه‌ها و اطلاعات کامل برای کوهنوردان ایران">
+    <meta property="og:image" content="https://se3tigh.ir/images/peaks/damavand.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="سه تیغ">
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="سه تیغ | راهنمای جامع کوهنوردی ایران">
+    <meta name="twitter:description" content="راهنمای جامع کوهنوردی ایران — معرفی ۱۱۵+ قله، مسیرهای صعود و پناهگاه‌ها">
+    <meta name="twitter:image" content="https://se3tigh.ir/images/peaks/damavand.jpg">
+
+    <!-- ===== Favicon ===== -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- ===== فونت Vazirmatn — CDN ایرانی (جایگزین Google Fonts که در ایران بلاکه) ===== -->
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
+    <!-- fallback: اگر CDN ایرانی هم لود نشد، از فونت سیستم استفاده می‌شه (تنظیم شده در CSS) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css"/>
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+
+                <div class="logo">
+                    <img src="logo.png" alt="سه تیغ" class="logo-img" style="height: 70px; width: auto;">
+                </div>
+
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#home" class="active">صفحه اصلی</a></li>
+
+                        <li class="has-dropdown">
+                            <a href="#peaks">رشته‌کوه‌های ایران</a>
+                            <ul class="dropdown">
+
+                                <li class="has-dropdown-sub">
+                                    <a href="#">البرز ◂</a>
+                                    <ul class="dropdown-sub">
+                                        <li><a href="alborz-gharbi.html">البرز غربی</a></li>
+                                        <li><a href="alborz-markazi.html">البرز مرکزی</a></li>
+                                        <li><a href="alborz-shargi.html">البرز شرقی</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-dropdown-sub">
+                                    <a href="#">زاگرس ◂</a>
+                                    <ul class="dropdown-sub">
+                                        <li><a href="#">زاگرس شمالی</a></li>
+                                        <li><a href="#">زاگرس مرکزی</a></li>
+                                        <li><a href="#">زاگرس جنوبی</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">کوه‌های مرکزی ایران</a></li>
+                                <li><a href="#">کوه‌های آتشفشانی و منفرد</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li><a href="#map">پناهگاه‌ها</a></li>
+                        <li><a href="#blog">وبلاگ</a></li>
+                        <li><a href="#contact">تماس با ما</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-overlay" id="navOverlay"></div>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="منو">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Hero Map ===== -->
+    <section class="hero-map" id="home">
+        <div id="map"></div>
+        <div class="hero-map-overlay"></div>
+        <div class="hero-map-content">
+            <h1 class="hero-title">سه تیغ</h1>
+            <p class="hero-subtitle">راهنمای جامع کوهنوردی ایران</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="115" data-suffix="+">0</span>
+                    <span class="stat-label">قله ثبت شده</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50" data-suffix="+">0</span>
+                    <span class="stat-label">پناهگاه</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10" data-suffix="+">0</span>
+                    <span class="stat-label">سال تجربه</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#services" class="hero-btn hero-btn-primary">کشف بیشتر</a>
+                <a href="#routes" class="hero-btn hero-btn-secondary">مسیرها</a>
+            </div>
+        </div>
+        <a href="#services" class="hero-scroll-down" aria-label="پایین">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </a>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدمات ما</h2>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">راهنمای مسیر</h3>
+                    <p class="service-description">اطلاعات کامل و دقیق از مسیرهای کوهنوردی با نقشه و توضیحات جامع</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">برنامه‌ریزی تور</h3>
+                    <p class="service-description">برنامه‌ریزی حرفه‌ای برای تورهای کوهنوردی با تجربه‌ای به یاد ماندنی</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">راهنمای حرفه‌ای</h3>
+                    <p class="service-description">همراهی راهنمایان مجرب و حرفه‌ای در تمام مسیرهای کوهنوردی</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">نقشه تعاملی</h3>
+                    <p class="service-description">دسترسی به نقشه‌های تعاملی و آفلاین برای تمام مسیرها</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Peaks ===== -->
+    <section class="peaks-section" id="peaks">
+        <div class="container">
+            <h2 class="section-title">۱۲ قله محبوب ایران</h2>
+            <p class="section-subtitle">معروف‌ترین و محبوب‌ترین قله‌های کوهنوردی ایران</p>
+            <div class="peaks-grid" id="peaksGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== Routes ===== -->
+    <section class="routes-section" id="routes">
+        <div class="container">
+            <h2 class="section-title">مسیرهای کوهنوردی</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">همه</button>
+                <button class="filter-btn" data-filter="شمالی">شمالی</button>
+                <button class="filter-btn" data-filter="مرکزی">مرکزی</button>
+                <button class="filter-btn" data-filter="غربی">غربی</button>
+            </div>
+            <div class="routes-grid" id="routesGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">درباره ما</h2>
+                    <p>ما یک تیم حرفه‌ای از کوهنوردان با بیش از ۱۰ سال تجربه هستیم که هدفمان معرفی زیبایی‌های کوهستان‌های ایران و ایجاد تجربه‌ای امن و به یاد ماندنی برای علاقه‌مندان به کوهنوردی است.</p>
+                    <p>با ما می‌توانید به بهترین مسیرهای کوهنوردی دسترسی داشته باشید و از راهنمایی‌های حرفه‌ای بهره‌مند شوید.</p>
+                </div>
+
+                <!-- ===== Gallery Slider ===== -->
+                <div class="about-gallery">
+                    <div class="gallery-slider-container">
+                        <div class="gallery-track" id="galleryTrack"></div>
+                        <button class="gallery-btn gallery-prev" id="galleryPrev" aria-label="قبلی">&#8250;</button>
+                        <button class="gallery-btn gallery-next" id="galleryNext" aria-label="بعدی">&#8249;</button>
+                        <div class="gallery-counter" id="galleryCounter"></div>
+                    </div>
+                    <div class="gallery-dots" id="galleryDots"></div>
+                    <div class="gallery-thumbs" id="galleryThumbs"></div>
+                </div>
+
+                </div>
+            </div>
+
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+
+                <div class="footer-section">
+                    <h3>سه تیغ</h3>
+                    <p>بهترین راهنمای کوهنوردی ایران</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>لینک‌های مفید</h4>
+                    <ul>
+                        <li><a href="#home">صفحه اصلی</a></li>
+                        <li><a href="#peaks">قله‌ها</a></li>
+                        <li><a href="#routes">مسیرها</a></li>
+                        <li><a href="#contact">تماس با ما</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>تماس با ما</h4>
+                    <p>تهران، خیابان ولیعصر</p>
+                    <p>تلفن: ۰۹۳۰۲۳۲۳۹۶۹ ،  ۰۹۳۰۲۳۲۳۹۸۶ </p>
+                    <p>ایمیل: eshahabian[a]mail.ir</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ما را دنبال کنید</h4>
+                    <div class="social-links">
+
+                        <a href="https://instagram.com/se3tigh" target="_blank" rel="noopener" aria-label="اینستاگرام" class="social-link social-instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                            </svg>
+                            <span>اینستاگرام</span>
+                        </a>
+
+                        <a href="https://t.me/se3tigh" target="_blank" rel="noopener" aria-label="تلگرام" class="social-link social-telegram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/>
+                            </svg>
+                            <span>تلگرام</span>
+                        </a>
+
+                        <a href="https://wa.me/989302323969" target="_blank" rel="noopener" aria-label="واتساپ" class="social-link social-whatsapp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.843L.057 23.143a.5.5 0 0 0 .6.6l5.3-1.467A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.093 16.407c-.258.724-1.275 1.326-2.088 1.5-.557.118-1.284.212-3.73-.8-3.13-1.29-5.147-4.47-5.303-4.676-.15-.205-1.26-1.678-1.26-3.2 0-1.524.798-2.272 1.08-2.582a1.14 1.14 0 0 1 .826-.387c.205 0 .41.004.59.012.19.009.443-.072.694.53.258.618.876 2.137.953 2.292.078.155.13.336.026.54-.1.21-.15.34-.3.524-.15.184-.315.41-.45.55-.15.155-.305.322-.13.632.174.31.773 1.275 1.66 2.065 1.14 1.017 2.1 1.33 2.41 1.483.31.155.49.13.67-.078.18-.205.772-.9 1.078-1.21.3-.31.576-.258.97-.1.393.155 2.507 1.18 2.937 1.395.43.215.718.322.822.5.103.178.103.89-.155 1.61z"/>
+                            </svg>
+                            <span>واتساپ</span>
+                        </a>
+
+                        <a href="https://aparat.com/se3tigh" target="_blank" rel="noopener" aria-label="آپارات" class="social-link social-aparat">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 6a6 6 0 1 1 0 12A6 6 0 0 1 12 6zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 1.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+                            </svg>
+                            <span>آپارات</span>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ۱۴۰۳ سه تیغ. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Back to Top ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="برگشت به بالا">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

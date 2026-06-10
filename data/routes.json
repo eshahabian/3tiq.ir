@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "دماوند",
+        "region": "north",
+        "lat": 35.9553,
+        "lng": 52.1094,
+        "elevation": 5610,
+        "difficulty": "hard",
+        "duration": "2-3 روز",
+        "description": "بلندترین قله ایران و خاورمیانه"
+    },
+    {
+        "id": 2,
+        "name": "علم کوه",
+        "region": "north",
+        "lat": 36.4667,
+        "lng": 51.3833,
+        "elevation": 4850,
+        "difficulty": "hard",
+        "duration": "2 روز",
+        "description": "دومین قله بلند ایران در رشته کوه البرز"
+    },
+    {
+        "id": 3,
+        "name": "سبلان",
+        "region": "north",
+        "lat": 38.2500,
+        "lng": 47.8333,
+        "elevation": 4811,
+        "difficulty": "medium",
+        "duration": "1-2 روز",
+        "description": "قله آتشفشانی در استان اردبیل"
+    },
+    {
+        "id": 4,
+        "name": "زرد کوه بختیاری",
+        "region": "west",
+        "lat": 32.4167,
+        "lng": 50.0667,
+        "elevation": 4221,
+        "difficulty": "medium",
+        "duration": "1-2 روز",
+        "description": "بلندترین قله زاگرس"
+    },
+    {
+        "id": 5,
+        "name": "توچال",
+        "region": "north",
+        "lat": 35.8833,
+        "lng": 51.3833,
+        "elevation": 3933,
+        "difficulty": "easy",
+        "duration": "1 روز",
+        "description": "نزدیک‌ترین قله به تهران با تله‌کابین"
+    },
+    {
+        "id": 6,
+        "name": "شاهوار",
+        "region": "south",
+        "lat": 29.4833,
+        "lng": 51.9167,
+        "elevation": 4050,
+        "difficulty": "medium",
+        "duration": "1-2 روز",
+        "description": "بلندترین قله استان فارس"
+    },
+    {
+        "id": 7,
+        "name": "هزار",
+        "region": "east",
+        "lat": 35.7167,
+        "lng": 59.0833,
+        "elevation": 3040,
+        "difficulty": "easy",
+        "duration": "1 روز",
+        "description": "قله زیبا در نزدیکی مشهد"
+    },
+    {
+        "id": 8,
+        "name": "کرکس",
+        "region": "central",
+        "lat": 33.9167,
+        "lng": 50.9167,
+        "elevation": 3899,
+        "difficulty": "medium",
+        "duration": "1 روز",
+        "description": "قله محبوب در استان اصفهان"
+    }
+]
