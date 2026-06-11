@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زاگرس جنوبی | سه تیغ</title>
-    <meta name="description" content="معرفی قله‌های زاگرس جنوبی — قله‌های فارس، کهگیلویه و کرمان">
+    <title>زاگرس شمالی | سه تیغ</title>
+    <meta name="description" content="معرفی قله‌های زاگرس شمالی — قله‌های همدان، کرمانشاه و ایلام">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -72,9 +72,9 @@
                                 <li class="has-dropdown-sub">
                                     <a href="#">زاگرس ◂</a>
                                     <ul class="dropdown-sub">
-                                        <li><a href="zagros-shomal.html">زاگرس شمالی</a></li>
+                                        <li><a href="zagros-shomal.html" class="active">زاگرس شمالی</a></li>
                                         <li><a href="zagros-markazi.html">زاگرس مرکزی</a></li>
-                                        <li><a href="zagros-jonoob.html" class="active">زاگرس جنوبی</a></li>
+                                        <li><a href="zagros-jonoob.html">زاگرس جنوبی</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">کوه‌های مرکزی ایران</a></li>
@@ -105,15 +105,15 @@
         <div id="map"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
-            <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">زاگرس جنوبی</h1>
-            <p class="hero-subtitle" style="animation: fadeInUp 0.9s ease 0.15s both;">قله‌های فارس، کهگیلویه و کرمان</p>
+            <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">زاگرس شمالی</h1>
+            <p class="hero-subtitle" style="animation: fadeInUp 0.9s ease 0.15s both;">قله‌های همدان، کرمانشاه و ایلام</p>
             <div class="hero-stats" style="animation: fadeInUp 0.9s ease 0.3s both;">
                 <div class="stat-item">
-                    <span class="stat-number" style="font-size:2.8rem;font-weight:700;color:var(--primary-color);">۵</span>
+                    <span class="stat-number" style="font-size:2.8rem;font-weight:700;color:var(--primary-color);">۶</span>
                     <span class="stat-label">قله معرفی‌شده</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" style="font-size:2.8rem;font-weight:700;color:var(--primary-color);">۴۳۲۰</span>
+                    <span class="stat-number" style="font-size:2.8rem;font-weight:700;color:var(--primary-color);">۳۵۸۰</span>
                     <span class="stat-label">بلندترین قله (متر)</span>
                 </div>
                 <div class="stat-item">
@@ -136,8 +136,8 @@
     <!-- ===== قله‌ها ===== -->
     <section class="peaks-section" id="peaks">
         <div class="container">
-            <h2 class="section-title" style="text-align:center;font-size:2rem;margin-bottom:0.5rem;">قله‌های زاگرس جنوبی</h2>
-            <p class="section-subtitle" style="text-align:center;color:var(--text-light);margin-bottom:0;">قله‌های فارس، کهگیلویه و کرمان</p>
+            <h2 class="section-title" style="text-align:center;font-size:2rem;margin-bottom:0.5rem;">قله‌های زاگرس شمالی</h2>
+            <p class="section-subtitle" style="text-align:center;color:var(--text-light);margin-bottom:0;">قله‌های همدان، کرمانشاه و ایلام</p>
             <div class="peaks-grid" id="peaksGrid"></div>
         </div>
     </section>
@@ -256,104 +256,118 @@
     // ===== داده قله‌ها =====
     const peaks = [
         {
-                "slug": "dena-south",
-                "name": "قله جنوبی دنا",
-                "emoji": "🗻",
-                "link": "peaks/dena-south.html",
-                "elevation": 4320,
-                "province": "فارس / کهگیلویه",
-                "difficulty": "سخت",
-                "bestSeason": "اردیبهشت - خرداد",
-                "duration": "۲ روز",
-                "description": "بخش جنوبی رشته‌کوه دنا با طبیعت بکر و مسیرهای کمتر شناخته‌شده. مناسب برای کوهنوردان جویای ماجرا.",
-                "lat": 30.95,
-                "lng": 51.43
-        },
-        {
-                "slug": "barm-firouz",
-                "name": "برم فیروز",
-                "emoji": "❄️",
-                "link": "peaks/barm-firouz.html",
-                "elevation": 3500,
-                "province": "فارس",
+                "slug": "alvand",
+                "name": "الوند",
+                "emoji": "🏔️",
+                "elevation": 3580,
+                "province": "همدان",
                 "difficulty": "متوسط",
-                "bestSeason": "اردیبهشت - خرداد",
-                "duration": "۱ تا ۲ روز",
-                "description": "دشت زیبای برم فیروز با دریاچه‌های فصلی و گله‌های مهاجر. یکی از زیباترین مناطق کوهستانی فارس.",
-                "lat": 31.5,
-                "lng": 52.1
-        },
-        {
-                "slug": "qalat",
-                "name": "قلات",
-                "emoji": "🌄",
-                "link": "peaks/qalat.html",
-                "elevation": 2850,
-                "province": "فارس",
-                "difficulty": "آسان",
-                "bestSeason": "فروردین - خرداد",
+                "bestSeason": "خرداد - مرداد",
                 "duration": "۱ روز",
-                "description": "منطقه ییلاقی قلات شیراز با آب‌وهوای خنک و گل‌های وحشی. محبوب‌ترین مقصد طبیعت‌گردی استان فارس.",
-                "lat": 29.85,
-                "lng": 52.65
+                "description": "نماد شهر همدان و یکی از قله‌های محبوب غرب ایران. دسترسی آسان از همدان و مسیرهای متنوع آن را به مقصدی محبوب برای کوهنوردان مبتدی و حرفه‌ای تبدیل کرده.",
+                "lat": 34.73,
+                "lng": 48.52,
+                "link": "peaks/alvand.html"
         },
         {
-                "slug": "beheshtabad",
-                "name": "بهشت‌آباد",
-                "emoji": "🌿",
-                "link": "peaks/beheshtabad.html",
-                "elevation": 3200,
-                "province": "کهگیلویه و بویراحمد",
-                "difficulty": "آسان",
-                "bestSeason": "فروردین - خرداد",
-                "duration": "۱ روز",
-                "description": "منطقه کوهستانی بهشت‌آباد با آبشارهای زیبا و طبیعت بکر کهگیلویه. بهشتی کوچک در دل زاگرس جنوبی.",
-                "lat": 31.2,
-                "lng": 50.65
-        },
-        {
-                "slug": "giroft-heights",
-                "name": "ارتفاعات جیرفت",
+                "slug": "shaho",
+                "name": "شاهو",
                 "emoji": "⛰️",
-                "link": "peaks/giroft-heights.html",
-                "elevation": 3100,
-                "province": "کرمان",
+                "elevation": 3380,
+                "province": "کرمانشاه",
                 "difficulty": "متوسط",
-                "bestSeason": "اردیبهشت - خرداد",
+                "bestSeason": "اردیبهشت - مرداد",
                 "duration": "۱ روز",
-                "description": "ارتفاعات کوهستانی جنوب کرمان در حاشیه زاگرس. چشم‌اندازهای منحصربه‌فرد از تلاقی کوه و کویر.",
-                "lat": 28.7,
-                "lng": 57.8
+                "description": "قله زیبا در استان کرمانشاه با مراتع سرسبز و چشم‌اندازهای دلپذیر. مناسب برای کوهنوردی روزانه و تجربه طبیعت کوهستانی غرب ایران.",
+                "lat": 34.48,
+                "lng": 46.55,
+                "link": "peaks/shaho.html"
+        },
+        {
+                "slug": "paraw",
+                "name": "پراو",
+                "emoji": "🗻",
+                "elevation": 3366,
+                "province": "کرمانشاه",
+                "difficulty": "متوسط",
+                "bestSeason": "اردیبهشت - مرداد",
+                "duration": "۱ روز",
+                "description": "قله مشهور کرمانشاه با صخره‌های آهکی و گیاهان کوهستانی نادر. یکی از بهترین مقاصد کوهنوردی غرب ایران با مسیرهای جذاب.",
+                "lat": 34.36,
+                "lng": 47.0,
+                "link": "peaks/paraw.html"
+        },
+        {
+                "slug": "safinkooh",
+                "name": "سفین‌کوه",
+                "emoji": "🌄",
+                "elevation": 3130,
+                "province": "کرمانشاه / لرستان",
+                "difficulty": "آسان",
+                "bestSeason": "فروردین - مرداد",
+                "duration": "۱ روز",
+                "description": "قله آرام در مرز کرمانشاه و لرستان. مسیرهای ساده و طبیعت بکر آن را برای مبتدیان و خانواده‌ها مناسب می‌کند.",
+                "lat": 34.2,
+                "lng": 47.5,
+                "link": "peaks/safinkooh.html"
+        },
+        {
+                "slug": "dalab",
+                "name": "دالاب",
+                "emoji": "🏕️",
+                "elevation": 2900,
+                "province": "ایلام",
+                "difficulty": "آسان",
+                "bestSeason": "فروردین - خرداد",
+                "duration": "۱ روز",
+                "description": "قله بهاری استان ایلام با گل‌های وحشی رنگارنگ. در اردیبهشت این کوه به باغی از لاله و نرگس تبدیل می‌شود.",
+                "lat": 33.48,
+                "lng": 46.62,
+                "link": "peaks/dalab.html"
+        },
+        {
+                "slug": "kebirkuh",
+                "name": "کبیرکوه",
+                "emoji": "⛰️",
+                "elevation": 3050,
+                "province": "ایلام / لرستان",
+                "difficulty": "متوسط",
+                "bestSeason": "اردیبهشت - تیر",
+                "duration": "۱ روز",
+                "description": "رشته‌کوه بلند ایلام و لرستان با دشت‌های سرسبز و جنگل‌های بلوط. منطقه‌ای بکر برای دوستداران طبیعت.",
+                "lat": 33.6,
+                "lng": 47.1,
+                "link": "peaks/kebirkuh.html"
         }
 ];
     const shelters = [
         {
-                "name": "کمپ دنا جنوبی",
+                "name": "پناهگاه الوند",
+                "type": "پناهگاه",
+                "province": "همدان",
+                "lat": 34.74,
+                "lng": 48.53
+        },
+        {
+                "name": "کمپ شاهو",
                 "type": "کمپ",
-                "province": "فارس",
-                "lat": 30.96,
-                "lng": 51.44
+                "province": "کرمانشاه",
+                "lat": 34.49,
+                "lng": 46.56
         },
         {
-                "name": "اقامتگاه برم فیروز",
+                "name": "پناهگاه پراو",
                 "type": "پناهگاه",
-                "province": "فارس",
-                "lat": 31.51,
-                "lng": 52.11
+                "province": "کرمانشاه",
+                "lat": 34.37,
+                "lng": 47.01
         },
         {
-                "name": "اقامتگاه قلات",
-                "type": "پناهگاه",
-                "province": "فارس",
-                "lat": 29.86,
-                "lng": 52.66
-        },
-        {
-                "name": "اقامتگاه بهشت‌آباد",
-                "type": "پناهگاه",
-                "province": "کهگیلویه",
-                "lat": 31.21,
-                "lng": 50.66
+                "name": "کمپ کبیرکوه",
+                "type": "کمپ",
+                "province": "ایلام",
+                "lat": 33.61,
+                "lng": 47.11
         }
 ];
 
@@ -396,8 +410,8 @@
         maptype: 'dreamy',
         poi: true,
         traffic: false,
-        center: [30.5, 51.8],
-        zoom: 7
+        center: [34.0, 47.2],
+        zoom: 8
     });
 
     const mountainIcon = L.divIcon({
@@ -412,13 +426,13 @@
 
     // پنل قله
     const mountainPanel = document.createElement('div');
-    mountainPanel.style.cssText = 'position:absolute;top:115px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    mountainPanel.style.cssText = 'position:absolute;top:10px;right:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(160px,30vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     mountainPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#2d6a4f;font-size:0.81rem;">⛰️ جستجوی قله</h4><input id="peak-search" type="text" placeholder="نام قله..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="peak-diff" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه سطوح</option><option value="آسان">آسان</option><option value="متوسط">متوسط</option><option value="سخت">سخت</option></select><div id="peak-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(mountainPanel);
 
     // پنل پناهگاه
     const shelterPanel = document.createElement('div');
-    shelterPanel.style.cssText = 'position:absolute;top:267px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    shelterPanel.style.cssText = 'position:absolute;top:10px;left:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(140px,28vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     shelterPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#d97706;font-size:0.81rem;">🏕️ جستجوی پناهگاه</h4><input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="shelter-type" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه انواع</option><option value="پناهگاه">پناهگاه</option><option value="کمپ">کمپ</option></select><div id="shelter-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(shelterPanel);
 

@@ -259,6 +259,7 @@
                 "slug": "alvand",
                 "name": "الوند",
                 "emoji": "🏔️",
+                "link": "peaks/alvand.html",
                 "elevation": 3580,
                 "province": "همدان",
                 "difficulty": "متوسط",
@@ -266,13 +267,13 @@
                 "duration": "۱ روز",
                 "description": "نماد شهر همدان و یکی از قله‌های محبوب غرب ایران. دسترسی آسان از همدان و مسیرهای متنوع آن را به مقصدی محبوب برای کوهنوردان مبتدی و حرفه‌ای تبدیل کرده.",
                 "lat": 34.73,
-                "lng": 48.52,
-                "link": "peaks/alvand.html"
+                "lng": 48.52
         },
         {
                 "slug": "shaho",
                 "name": "شاهو",
                 "emoji": "⛰️",
+                "link": "peaks/shaho.html",
                 "elevation": 3380,
                 "province": "کرمانشاه",
                 "difficulty": "متوسط",
@@ -280,13 +281,13 @@
                 "duration": "۱ روز",
                 "description": "قله زیبا در استان کرمانشاه با مراتع سرسبز و چشم‌اندازهای دلپذیر. مناسب برای کوهنوردی روزانه و تجربه طبیعت کوهستانی غرب ایران.",
                 "lat": 34.48,
-                "lng": 46.55,
-                "link": "peaks/shaho.html"
+                "lng": 46.55
         },
         {
                 "slug": "paraw",
                 "name": "پراو",
                 "emoji": "🗻",
+                "link": "peaks/paraw.html",
                 "elevation": 3366,
                 "province": "کرمانشاه",
                 "difficulty": "متوسط",
@@ -294,13 +295,13 @@
                 "duration": "۱ روز",
                 "description": "قله مشهور کرمانشاه با صخره‌های آهکی و گیاهان کوهستانی نادر. یکی از بهترین مقاصد کوهنوردی غرب ایران با مسیرهای جذاب.",
                 "lat": 34.36,
-                "lng": 47.0,
-                "link": "peaks/paraw.html"
+                "lng": 47.0
         },
         {
                 "slug": "safinkooh",
                 "name": "سفین‌کوه",
                 "emoji": "🌄",
+                "link": "peaks/safinkooh.html",
                 "elevation": 3130,
                 "province": "کرمانشاه / لرستان",
                 "difficulty": "آسان",
@@ -308,13 +309,13 @@
                 "duration": "۱ روز",
                 "description": "قله آرام در مرز کرمانشاه و لرستان. مسیرهای ساده و طبیعت بکر آن را برای مبتدیان و خانواده‌ها مناسب می‌کند.",
                 "lat": 34.2,
-                "lng": 47.5,
-                "link": "peaks/safinkooh.html"
+                "lng": 47.5
         },
         {
                 "slug": "dalab",
                 "name": "دالاب",
                 "emoji": "🏕️",
+                "link": "peaks/dalab.html",
                 "elevation": 2900,
                 "province": "ایلام",
                 "difficulty": "آسان",
@@ -322,13 +323,13 @@
                 "duration": "۱ روز",
                 "description": "قله بهاری استان ایلام با گل‌های وحشی رنگارنگ. در اردیبهشت این کوه به باغی از لاله و نرگس تبدیل می‌شود.",
                 "lat": 33.48,
-                "lng": 46.62,
-                "link": "peaks/dalab.html"
+                "lng": 46.62
         },
         {
                 "slug": "kebirkuh",
                 "name": "کبیرکوه",
                 "emoji": "⛰️",
+                "link": "peaks/kebirkuh.html",
                 "elevation": 3050,
                 "province": "ایلام / لرستان",
                 "difficulty": "متوسط",
@@ -336,8 +337,7 @@
                 "duration": "۱ روز",
                 "description": "رشته‌کوه بلند ایلام و لرستان با دشت‌های سرسبز و جنگل‌های بلوط. منطقه‌ای بکر برای دوستداران طبیعت.",
                 "lat": 33.6,
-                "lng": 47.1,
-                "link": "peaks/kebirkuh.html"
+                "lng": 47.1
         }
 ];
     const shelters = [
@@ -426,13 +426,13 @@
 
     // پنل قله
     const mountainPanel = document.createElement('div');
-    mountainPanel.style.cssText = 'position:absolute;top:10px;right:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(160px,30vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    mountainPanel.style.cssText = 'position:absolute;top:115px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     mountainPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#2d6a4f;font-size:0.81rem;">⛰️ جستجوی قله</h4><input id="peak-search" type="text" placeholder="نام قله..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="peak-diff" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه سطوح</option><option value="آسان">آسان</option><option value="متوسط">متوسط</option><option value="سخت">سخت</option></select><div id="peak-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(mountainPanel);
 
     // پنل پناهگاه
     const shelterPanel = document.createElement('div');
-    shelterPanel.style.cssText = 'position:absolute;top:10px;left:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(140px,28vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    shelterPanel.style.cssText = 'position:absolute;top:267px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     shelterPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#d97706;font-size:0.81rem;">🏕️ جستجوی پناهگاه</h4><input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="shelter-type" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه انواع</option><option value="پناهگاه">پناهگاه</option><option value="کمپ">کمپ</option></select><div id="shelter-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(shelterPanel);
 

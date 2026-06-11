@@ -259,6 +259,7 @@
                 "slug": "zardkooh",
                 "name": "زردکوه بختیاری",
                 "emoji": "❄️",
+                "link": "peaks/zardkooh.html",
                 "elevation": 4548,
                 "province": "چهارمحال و بختیاری",
                 "difficulty": "سخت",
@@ -266,13 +267,13 @@
                 "duration": "۲ روز",
                 "description": "بلندترین قله زاگرس. برف‌های دائمی، دره‌های عمیق و طبیعت وحشی از ویژگی‌های این کوه شگفت‌انگیز است.",
                 "lat": 32.37,
-                "lng": 50.06,
-                "link": "peaks/zardkooh.html"
+                "lng": 50.06
         },
         {
                 "slug": "dena",
                 "name": "دنا",
                 "emoji": "🌸",
+                "link": "peaks/dena.html",
                 "elevation": 4409,
                 "province": "کهگیلویه و بویراحمد",
                 "difficulty": "متوسط",
@@ -280,13 +281,13 @@
                 "duration": "۲ روز",
                 "description": "بانوی کوه‌های ایران با بیش از ۴۰ قله بالای ۴۰۰۰ متر. دره‌های پوشیده از گل و تنوع زیستی استثنایی.",
                 "lat": 31.58,
-                "lng": 51.08,
-                "link": "peaks/dena.html"
+                "lng": 51.08
         },
         {
                 "slug": "eshterankoh",
                 "name": "اشترانکوه",
                 "emoji": "🌿",
+                "link": "peaks/eshterankoh.html",
                 "elevation": 4150,
                 "province": "لرستان",
                 "difficulty": "متوسط",
@@ -294,13 +295,13 @@
                 "duration": "۲ روز",
                 "description": "کوه شتر پشت با آبشارهای زیبا و مراتع سرسبز لرستان. پوشش گیاهی بکر و حیات وحش غنی.",
                 "lat": 33.45,
-                "lng": 49.55,
-                "link": "peaks/eshterankoh.html"
+                "lng": 49.55
         },
         {
                 "slug": "gelak",
                 "name": "گلاک",
                 "emoji": "🌺",
+                "link": "peaks/gelak.html",
                 "elevation": 3900,
                 "province": "چهارمحال و بختیاری",
                 "difficulty": "متوسط",
@@ -308,13 +309,13 @@
                 "duration": "۱ تا ۲ روز",
                 "description": "قله بکر در قلب بختیاری با مناظر رویایی به دشت‌های سرسبز. کمتر شناخته‌شده و دور از ازدحام.",
                 "lat": 32.6,
-                "lng": 50.3,
-                "link": "peaks/gelak.html"
+                "lng": 50.3
         },
         {
                 "slug": "chelcheragh",
                 "name": "چلچراغ",
                 "emoji": "💫",
+                "link": "peaks/chelcheragh.html",
                 "elevation": 3760,
                 "province": "کهگیلویه و بویراحمد",
                 "difficulty": "متوسط",
@@ -322,13 +323,13 @@
                 "duration": "۱ تا ۲ روز",
                 "description": "قله زیبای کهگیلویه با دشت‌های گل‌کاری‌شده بهاری. نام چلچراغ از درخشندگی برف‌هایش در آفتاب گرفته شده.",
                 "lat": 30.8,
-                "lng": 51.45,
-                "link": "peaks/chelcheragh.html"
+                "lng": 51.45
         },
         {
                 "slug": "sakhvid",
                 "name": "سخوید",
                 "emoji": "🏔️",
+                "link": "peaks/sakhvid.html",
                 "elevation": 3520,
                 "province": "فارس / کهگیلویه",
                 "difficulty": "متوسط",
@@ -336,8 +337,7 @@
                 "duration": "۱ تا ۲ روز",
                 "description": "قله مرزی فارس و کهگیلویه با چشم‌اندازهای بی‌نظیر. مسیرهای جنگلی از میان بلوط‌های کهنسال.",
                 "lat": 30.6,
-                "lng": 51.8,
-                "link": "peaks/sakhvid.html"
+                "lng": 51.8
         }
 ];
     const shelters = [
@@ -426,13 +426,13 @@
 
     // پنل قله
     const mountainPanel = document.createElement('div');
-    mountainPanel.style.cssText = 'position:absolute;top:10px;right:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(160px,30vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    mountainPanel.style.cssText = 'position:absolute;top:115px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     mountainPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#2d6a4f;font-size:0.81rem;">⛰️ جستجوی قله</h4><input id="peak-search" type="text" placeholder="نام قله..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="peak-diff" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه سطوح</option><option value="آسان">آسان</option><option value="متوسط">متوسط</option><option value="سخت">سخت</option></select><div id="peak-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(mountainPanel);
 
     // پنل پناهگاه
     const shelterPanel = document.createElement('div');
-    shelterPanel.style.cssText = 'position:absolute;top:10px;left:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(140px,28vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    shelterPanel.style.cssText = 'position:absolute;top:267px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     shelterPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#d97706;font-size:0.81rem;">🏕️ جستجوی پناهگاه</h4><input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="shelter-type" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه انواع</option><option value="پناهگاه">پناهگاه</option><option value="کمپ">کمپ</option></select><div id="shelter-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(shelterPanel);
 

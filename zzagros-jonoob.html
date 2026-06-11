@@ -259,7 +259,6 @@
                 "slug": "dena-south",
                 "name": "قله جنوبی دنا",
                 "emoji": "🗻",
-                "link": "peaks/dena-south.html",
                 "elevation": 4320,
                 "province": "فارس / کهگیلویه",
                 "difficulty": "سخت",
@@ -267,13 +266,13 @@
                 "duration": "۲ روز",
                 "description": "بخش جنوبی رشته‌کوه دنا با طبیعت بکر و مسیرهای کمتر شناخته‌شده. مناسب برای کوهنوردان جویای ماجرا.",
                 "lat": 30.95,
-                "lng": 51.43
+                "lng": 51.43,
+                "link": "peaks/dena-south.html"
         },
         {
                 "slug": "barm-firouz",
                 "name": "برم فیروز",
                 "emoji": "❄️",
-                "link": "peaks/barm-firouz.html",
                 "elevation": 3500,
                 "province": "فارس",
                 "difficulty": "متوسط",
@@ -281,13 +280,13 @@
                 "duration": "۱ تا ۲ روز",
                 "description": "دشت زیبای برم فیروز با دریاچه‌های فصلی و گله‌های مهاجر. یکی از زیباترین مناطق کوهستانی فارس.",
                 "lat": 31.5,
-                "lng": 52.1
+                "lng": 52.1,
+                "link": "peaks/barm-firouz.html"
         },
         {
                 "slug": "qalat",
                 "name": "قلات",
                 "emoji": "🌄",
-                "link": "peaks/qalat.html",
                 "elevation": 2850,
                 "province": "فارس",
                 "difficulty": "آسان",
@@ -295,13 +294,13 @@
                 "duration": "۱ روز",
                 "description": "منطقه ییلاقی قلات شیراز با آب‌وهوای خنک و گل‌های وحشی. محبوب‌ترین مقصد طبیعت‌گردی استان فارس.",
                 "lat": 29.85,
-                "lng": 52.65
+                "lng": 52.65,
+                "link": "peaks/qalat.html"
         },
         {
                 "slug": "beheshtabad",
                 "name": "بهشت‌آباد",
                 "emoji": "🌿",
-                "link": "peaks/beheshtabad.html",
                 "elevation": 3200,
                 "province": "کهگیلویه و بویراحمد",
                 "difficulty": "آسان",
@@ -309,13 +308,13 @@
                 "duration": "۱ روز",
                 "description": "منطقه کوهستانی بهشت‌آباد با آبشارهای زیبا و طبیعت بکر کهگیلویه. بهشتی کوچک در دل زاگرس جنوبی.",
                 "lat": 31.2,
-                "lng": 50.65
+                "lng": 50.65,
+                "link": "peaks/beheshtabad.html"
         },
         {
                 "slug": "giroft-heights",
                 "name": "ارتفاعات جیرفت",
                 "emoji": "⛰️",
-                "link": "peaks/giroft-heights.html",
                 "elevation": 3100,
                 "province": "کرمان",
                 "difficulty": "متوسط",
@@ -323,7 +322,8 @@
                 "duration": "۱ روز",
                 "description": "ارتفاعات کوهستانی جنوب کرمان در حاشیه زاگرس. چشم‌اندازهای منحصربه‌فرد از تلاقی کوه و کویر.",
                 "lat": 28.7,
-                "lng": 57.8
+                "lng": 57.8,
+                "link": "peaks/giroft-heights.html"
         }
 ];
     const shelters = [
@@ -412,13 +412,13 @@
 
     // پنل قله
     const mountainPanel = document.createElement('div');
-    mountainPanel.style.cssText = 'position:absolute;top:115px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    mountainPanel.style.cssText = 'position:absolute;top:10px;right:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(160px,30vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     mountainPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#2d6a4f;font-size:0.81rem;">⛰️ جستجوی قله</h4><input id="peak-search" type="text" placeholder="نام قله..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="peak-diff" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه سطوح</option><option value="آسان">آسان</option><option value="متوسط">متوسط</option><option value="سخت">سخت</option></select><div id="peak-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(mountainPanel);
 
     // پنل پناهگاه
     const shelterPanel = document.createElement('div');
-    shelterPanel.style.cssText = 'position:absolute;top:267px;right:10px;z-index:900;background:rgba(255,255,255,0.97);border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.25);width:210px;max-width:calc(50% - 16px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
+    shelterPanel.style.cssText = 'position:absolute;top:10px;left:10px;z-index:900;background:white;border-radius:12px;padding:12px;box-shadow:0 4px 20px rgba(0,0,0,0.2);width:clamp(140px,28vw,210px);font-family:Vazirmatn,Tahoma,sans-serif;direction:rtl;';
     shelterPanel.innerHTML = `<h4 style="margin:0 0 8px;color:#d97706;font-size:0.81rem;">🏕️ جستجوی پناهگاه</h4><input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;box-sizing:border-box;font-family:inherit;direction:rtl;outline:none;"><select id="shelter-type" style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #ddd;border-radius:8px;font-size:0.81rem;font-family:inherit;direction:rtl;outline:none;"><option value="all">همه انواع</option><option value="پناهگاه">پناهگاه</option><option value="کمپ">کمپ</option></select><div id="shelter-count" style="margin-top:8px;font-size:0.69rem;color:#888;text-align:center;"></div>`;
     document.getElementById('map').appendChild(shelterPanel);
 
