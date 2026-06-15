@@ -276,33 +276,6 @@
             .ph-count { margin-right: 0; width: 100%; text-align: center; order: 5; }
             .ph-select, .ph-search-wrap { flex: 1 1 100%; }
         }
-
-        /* ===== Reveal grid (Damavand) ===== */
-        .ph-reveal {
-            padding: 0;
-            width: 100%;
-        }
-        .ph-reveal-grid {
-            display: grid;
-            grid-template-columns: repeat(30, 1fr);
-            width: 100%;
-            aspect-ratio: 30 / 16;
-            border: none;
-            border-radius: 0;
-            overflow: hidden;
-        }
-        .ph-reveal-cell {
-            border: 0.5px solid #5C8FD4;
-            box-sizing: border-box;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 0.25s ease;
-            cursor: pointer;
-        }
-        .ph-reveal-cell:hover,
-        .ph-reveal-cell.revealed {
-            opacity: 1;
-        }
     </style>
 </head>
 <body class="ph-page">
@@ -358,11 +331,6 @@
             </div>
         </div>
     </header>
-
-    <!-- ===== Reveal grid (Damavand) ===== -->
-    <section class="ph-reveal">
-        <div class="ph-reveal-grid" id="revealGrid"></div>
-    </section>
 
     <!-- ===== Hero ===== -->
     <section class="ph-hero">
@@ -473,24 +441,6 @@
     </button>
 
     <script>
-    // ===== الگوی شطرنجی نمایش‌دهنده دماوند =====
-    (function() {
-        const grid = document.getElementById('revealGrid');
-        const cols = 30, rows = 16;
-        const imgUrl = 'images/peaks/damavand.jpg';
-        for (let r = 0; r < rows; r++) {
-            for (let c = 0; c < cols; c++) {
-                const cell = document.createElement('div');
-                cell.className = 'ph-reveal-cell';
-                cell.style.backgroundImage = `url('${imgUrl}')`;
-                cell.style.backgroundSize = `${cols * 100}% ${rows * 100}%`;
-                cell.style.backgroundPosition = `${(c * 100) / (cols - 1)}% ${(r * 100) / (rows - 1)}%`;
-                cell.addEventListener('mouseenter', () => cell.classList.add('revealed'));
-                grid.appendChild(cell);
-            }
-        }
-    })();
-
     // ===== هدر / تم / منو (مشترک با کل سایت) =====
     const themeToggle = document.getElementById('themeToggle');
     if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
