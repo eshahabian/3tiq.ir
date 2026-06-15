@@ -24,23 +24,14 @@
         .ph-page * { box-sizing: border-box; }
 
         /* ---------- HERO ---------- */
-        .ph-hero {
-            position: relative;
-            background: var(--dark-bg);
-            color: var(--white);
-            overflow: hidden;
-            padding: 6.5rem 1.25rem 4rem;
-            text-align: center;
-        }
-        .ph-hero .contours {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%;
-            opacity: 0.5;
-            pointer-events: none;
-        }
         .ph-hero-inner {
-            position: relative; z-index: 2;
+            position: relative; z-index: 3;
             max-width: 50rem; margin: 0 auto;
+            padding: 1.25rem;
+            text-align: center;
+            color: var(--white);
+            opacity: 0.78;
+            pointer-events: none;
         }
         .ph-eyebrow {
             display: inline-flex; align-items: center; gap: 0.5rem;
@@ -53,13 +44,13 @@
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
-        .ph-hero h1 {
+        .ph-hero-inner h1 {
             font-size: clamp(2.2rem, 5vw, 3.4rem);
             font-weight: 800;
             margin: 0 0 0.75rem;
             line-height: 1.25;
         }
-        .ph-hero p {
+        .ph-hero-inner p {
             font-size: clamp(0.95rem, 2vw, 1.15rem);
             color: rgba(253,251,247,0.72);
             max-width: 38rem; margin: 0 auto 2.25rem;
@@ -279,29 +270,41 @@
 
         /* ===== Reveal grid (Damavand) ===== */
         .ph-reveal {
-            padding: 0;
-            width: 100%;
-        }
-        .ph-reveal-grid {
-            display: grid;
-            grid-template-columns: repeat(30, 1fr);
+            position: relative;
             width: 100%;
             aspect-ratio: 30 / 16;
-            border: none;
-            border-radius: 0;
+            background-image: url('images/peaks/damavand.jpg');
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ph-reveal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(44,36,22,0.55);
+            z-index: 1;
+        }
+        .ph-reveal-grid {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(30, 1fr);
         }
         .ph-reveal-cell {
-            border: 0.5px solid #5C8FD4;
+            border: 0.5px solid rgba(94,154,224,0.35);
             box-sizing: border-box;
-            background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 0.25s ease;
+            background-color: transparent;
+            transition: background-color 1.4s ease;
             cursor: pointer;
         }
-        .ph-reveal-cell:hover,
-        .ph-reveal-cell.revealed {
-            opacity: 1;
+        .ph-reveal-cell.active {
+            background-color: rgba(94,154,224,0.55);
+            transition: background-color 0.05s ease;
         }
     </style>
 </head>
@@ -362,18 +365,6 @@
     <!-- ===== Reveal grid (Damavand) ===== -->
     <section class="ph-reveal">
         <div class="ph-reveal-grid" id="revealGrid"></div>
-    </section>
-
-    <!-- ===== Hero ===== -->
-    <section class="ph-hero">
-        <svg class="contours" viewBox="0 0 1200 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-50,360 C150,330 300,380 480,350 C660,320 800,370 1000,340 C1120,320 1200,345 1260,335 L1260,420 L-50,420 Z" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.18"/>
-            <path d="M-50,300 C180,270 340,320 520,290 C700,260 860,300 1040,275 C1140,260 1200,280 1260,272 L1260,420 L-50,420 Z" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.14"/>
-            <path d="M-50,240 C200,210 380,255 560,228 C740,200 900,235 1080,212 C1160,200 1220,218 1260,212" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.12"/>
-            <path d="M-50,185 C220,160 400,195 600,172 C800,148 940,178 1120,158 C1180,150 1230,162 1260,158" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.10"/>
-            <path d="M-50,130 C240,108 440,138 640,118 C840,96 980,122 1160,105 C1200,100 1240,108 1260,106" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.08"/>
-            <path d="M-50,75 C260,55 480,82 680,65 C880,46 1020,68 1200,53 L1260,50" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.06"/>
-        </svg>
         <div class="ph-hero-inner">
             <span class="ph-eyebrow">🏔️ دفترچهٔ ثبت کوهستان</span>
             <h1>پناهگاه‌ها، جان‌پناه‌ها و کلبه‌های کوهستانی</h1>
@@ -473,19 +464,16 @@
     </button>
 
     <script>
-    // ===== الگوی شطرنجی نمایش‌دهنده دماوند =====
+    // ===== الگوی شطرنجی با دنباله آبی روی عکس دماوند =====
     (function() {
         const grid = document.getElementById('revealGrid');
         const cols = 30, rows = 16;
-        const imgUrl = 'images/peaks/damavand.jpg';
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
                 const cell = document.createElement('div');
                 cell.className = 'ph-reveal-cell';
-                cell.style.backgroundImage = `url('${imgUrl}')`;
-                cell.style.backgroundSize = `${cols * 100}% ${rows * 100}%`;
-                cell.style.backgroundPosition = `${(c * 100) / (cols - 1)}% ${(r * 100) / (rows - 1)}%`;
-                cell.addEventListener('mouseenter', () => cell.classList.add('revealed'));
+                cell.addEventListener('mouseenter', () => cell.classList.add('active'));
+                cell.addEventListener('mouseleave', () => cell.classList.remove('active'));
                 grid.appendChild(cell);
             }
         }
