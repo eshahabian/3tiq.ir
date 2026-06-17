@@ -1087,25 +1087,7 @@ body.dark-mode {
 }
 
 body.dark-mode .header {
-    background: rgba(38, 38, 38, 0.52);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-}
-
-/* هنگام اسکرول در حالت روشن - کمی پس‌زمینه شفاف اضافه می‌شه */
-.header.scrolled {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* هنگام اسکرول در حالت تاریک */
-body.dark-mode .header.scrolled {
-    background: rgba(30, 30, 30, 0.72);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    background: rgba(15, 12, 8, 0.98);
 }
 
 body.dark-mode .services,

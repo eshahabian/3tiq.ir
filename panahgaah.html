@@ -8,8 +8,6 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css">
-    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
     <style>
         /* ===================================================
            پناهگاه‌های کوهستان — طراحی «دفترچهٔ ثبت کوهستان»
@@ -308,44 +306,6 @@
             background-color: rgba(94,154,224,0.55);
             transition: background-color 0.05s ease;
         }
-
-        /* ---------- مودال نقشه ---------- */
-        .ph-map-modal {
-            position: fixed; inset: 0; z-index: 1000;
-            display: none; align-items: center; justify-content: center;
-            padding: 1.25rem;
-        }
-        .ph-map-modal.open { display: flex; }
-        .ph-map-modal-overlay {
-            position: absolute; inset: 0;
-            background: rgba(20,16,10,0.62);
-            backdrop-filter: blur(2px);
-        }
-        .ph-map-modal-box {
-            position: relative; z-index: 1;
-            width: min(92vw, 38rem);
-            background: var(--white);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.32);
-            animation: ph-fade 0.25s ease both;
-        }
-        .ph-map-modal-head {
-            display: flex; align-items: center; justify-content: space-between;
-            gap: 0.75rem;
-            padding: 0.9rem 1.1rem;
-            border-bottom: 1px solid rgba(58,50,38,0.08);
-            font-weight: 700; font-size: 0.95rem; color: var(--text-dark);
-        }
-        .ph-map-modal-close {
-            flex-shrink: 0;
-            background: none; border: none; font-size: 1.6rem; line-height: 1;
-            cursor: pointer; color: var(--text-light); padding: 0 0.3rem;
-        }
-        .ph-map-modal-close:hover { color: var(--text-dark); }
-        .ph-map-modal-map { width: 100%; height: 22rem; }
-        body.dark-mode .ph-map-modal-box { background: #232323; }
-        body.dark-mode .ph-map-modal-head { border-color: rgba(255,255,255,0.08); color: #f0f0f0; }
     </style>
 </head>
 <body class="ph-page">
@@ -461,18 +421,6 @@
         <div class="ph-grid" id="phGrid"></div>
     </main>
 
-    <!-- ===== مودال نقشه ===== -->
-    <div class="ph-map-modal" id="phMapModal">
-        <div class="ph-map-modal-overlay" id="phMapModalOverlay"></div>
-        <div class="ph-map-modal-box">
-            <div class="ph-map-modal-head">
-                <span id="phMapModalTitle"></span>
-                <button type="button" class="ph-map-modal-close" id="phMapModalClose" aria-label="بستن">&times;</button>
-            </div>
-            <div id="phModalMap" class="ph-map-modal-map"></div>
-        </div>
-    </div>
-
     <!-- ===== Footer ===== -->
     <footer class="footer" id="contact">
         <div class="container">
@@ -559,50 +507,6 @@
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // ===== مودال نقشه پناهگاه =====
-    let modalMap = null;
-    let modalMarker = null;
-    const phMapModal = document.getElementById('phMapModal');
-
-    function openShelterMap(lat, lng, name) {
-        document.getElementById('phMapModalTitle').textContent = name;
-        phMapModal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-
-        if (!modalMap) {
-            modalMap = new L.Map('phModalMap', {
-                key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
-                maptype: 'dreamy',
-                poi: false,
-                traffic: false,
-                center: [lat, lng],
-                zoom: 13
-            });
-        } else {
-            modalMap.setView([lat, lng], 13);
-            modalMap.invalidateSize();
-        }
-
-        if (modalMarker) modalMap.removeLayer(modalMarker);
-        modalMarker = L.marker([lat, lng]).addTo(modalMap).bindPopup(name).openPopup();
-    }
-
-    function closeShelterMap() {
-        phMapModal.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    document.getElementById('phMapModalClose').addEventListener('click', closeShelterMap);
-    document.getElementById('phMapModalOverlay').addEventListener('click', closeShelterMap);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeShelterMap(); });
-
-    // دکمه‌های «مشاهده روی نقشه» داخل کارت‌ها به‌صورت داینامیک ساخته می‌شن
-    document.getElementById('phGrid').addEventListener('click', e => {
-        const btn = e.target.closest('.ph-map-link');
-        if (!btn) return;
-        openShelterMap(parseFloat(btn.dataset.lat), parseFloat(btn.dataset.lng), btn.dataset.name);
-    });
 
     // ===== داده‌ها =====
     const typeIcon = { 'پناهگاه': '🏠', 'جانپناه': '⚡', 'کلبه': '🏕' };
@@ -708,6 +612,7 @@
                 ? `<b>${s._nearestPeak.name}</b> · ${s._nearestDist.toLocaleString('fa-IR', {maximumFractionDigits:1})} کیلومتر`
                 : '—';
             const lat = s.lat.toFixed(4), lng = s.lng.toFixed(4);
+            const osmUrl = `https://www.openstreetmap.org/?mlat=${s.lat}&mlon=${s.lng}#map=13/${s.lat}/${s.lng}`;
             return `
             <article class="ph-card" data-type="${s.type}">
                 <div class="ph-card-strip"></div>
@@ -727,9 +632,9 @@
                     <div class="ph-row"><span class="ph-ic">🧭</span><span class="ph-coords">${lat}, ${lng}</span></div>
                 </div>
                 <div class="ph-card-foot">
-                    <button type="button" class="ph-map-link" data-lat="${s.lat}" data-lng="${s.lng}" data-name="${s.name}">
+                    <a class="ph-map-link" href="${osmUrl}" target="_blank" rel="noopener">
                         مشاهده روی نقشه ↗
-                    </button>
+                    </a>
                 </div>
             </article>`;
         }).join('');
