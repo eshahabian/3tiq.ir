@@ -127,7 +127,8 @@ const famousPeaks = [
         bestSeason: 'مرداد - شهریور',
         duration: '۲ روز',
         description: 'دومین قله بلند ایران با دیواره شمالی باشکوه و چالش‌برانگیز. مقصد اصلی کوهنوردان حرفه‌ای در رشته کوه البرز مرکزی.',
-        image: 'images/peaks/alamkooh.jpg'
+        image: 'images/peaks/alamkooh.jpg',
+	link: 'alamkooh.html'
     },
     {
         name: 'سبلان',
@@ -137,7 +138,8 @@ const famousPeaks = [
         bestSeason: 'تیر - مرداد',
         duration: '۱ تا ۲ روز',
         description: 'سومین قله بلند ایران با دریاچه یخ زیبا در قله. آتشفشانی خاموش با چشمه‌های آب گرم در دامنه و مناظر بکر چهارفصل.',
-        image: 'images/peaks/sabalan.jpg'
+        image: 'images/peaks/sabalan.jpg',
+	link: 'sabalan.html'
     },
     {
         name: 'زردکوه بختیاری',
@@ -147,7 +149,8 @@ const famousPeaks = [
         bestSeason: 'خرداد - مرداد',
         duration: '۲ روز',
         description: 'بلندترین قله رشته کوه زاگرس در قلب سرزمین بختیاری. پوشش برفی طولانی، دره‌های عمیق و طبیعت وحشی از ویژگی‌های این قله است.',
-        image: 'images/peaks/zardkooh.jpg'
+        image: 'images/peaks/zardkooh.jpg',
+	link: 'zardkooh.html'
     },
     {
         name: 'هزار',
@@ -157,7 +160,8 @@ const famousPeaks = [
         bestSeason: 'خرداد - شهریور',
         duration: '۲ روز',
         description: 'بلندترین قله جنوب ایران با چشم‌اندازهای خیره‌کننده به کویر. مسیر صعود طولانی اما دارای مناظر بی‌نظیر از دشت‌های کرمان.',
-        image: 'images/peaks/hezar.jpg'
+        image: 'images/peaks/hezar.jpg',
+	link: 'hezar.html'
     },
     {
         name: 'دنا',
@@ -167,7 +171,8 @@ const famousPeaks = [
         bestSeason: 'اردیبهشت - تیر',
         duration: '۲ روز',
         description: 'بانوی کوه‌های ایران با قله‌های متعدد و دره‌های پوشیده از گل. رشته‌کوه دنا با تنوع زیستی استثنایی خود یکی از زیباترین مناطق کوهستانی ایران است.',
-        image: 'images/peaks/dena.jpg'
+        image: 'images/peaks/dena.jpg',
+	link: 'dena.html'
     },
     {
         name: 'اشترانکوه',
@@ -177,7 +182,8 @@ const famousPeaks = [
         bestSeason: 'خرداد - مرداد',
         duration: '۲ روز',
         description: 'کوه شتر پشت لرستان با دشت‌های سبز و آبشارهای زیبا. یکی از مرتفع‌ترین قله‌های زاگرس با چشمه‌های آب زلال و پوشش گیاهی بکر.',
-        image: 'images/peaks/eshterankoh.jpg'
+        image: 'images/peaks/eshterankoh.jpg',
+	link: 'eshterankoh.html'
     },
     {
         name: 'شیرکوه یزد',
@@ -187,7 +193,8 @@ const famousPeaks = [
         bestSeason: 'فروردین - خرداد',
         duration: '۱ روز',
         description: 'بلندترین قله استان یزد در میان کویر. کوهی منحصربه‌فرد که از دل کویر سر برافراشته و برف‌های قله‌اش با شن‌های کویر تضاد زیبایی می‌سازند.',
-        image: 'images/peaks/shirkoh.jpg'
+        image: 'images/peaks/shirkoh.jpg',
+	link: 'shirkoh.html'
     },
     {
         name: 'توچال',
@@ -197,7 +204,8 @@ const famousPeaks = [
         bestSeason: 'همه فصل',
         duration: '۱ روز',
         description: 'نزدیک‌ترین قله بزرگ به پایتخت با دسترسی آسان از طریق تله‌کابین. محبوب‌ترین مقصد کوهنوردی تهرانی‌ها با چشم‌انداز زیبا به شهر.',
-        image: 'images/peaks/tochal.jpg'
+        image: 'images/peaks/tochal.jpg',
+	link: 'tochal.html'
     },
     {
         name: 'سهند',
@@ -207,7 +215,8 @@ const famousPeaks = [
         bestSeason: 'تیر - شهریور',
         duration: '۱ روز',
         description: 'آتشفشان خاموش آذربایجان با دره‌های رنگارنگ و چشمه‌های متعدد. بهشت گل‌های وحشی در بهار و پیست اسکی محبوب در زمستان.',
-        image: 'images/peaks/sahand2.webp'
+        image: 'images/peaks/sahand2.webp',
+	link: 'sahand.html'
     },
     {
         name: 'تفتان',
@@ -217,7 +226,8 @@ const famousPeaks = [
         bestSeason: 'اسفند - اردیبهشت',
         duration: '۲ روز',
         description: 'تنها آتشفشان نیمه‌فعال ایران در جنوب شرقی کشور. دود و بخار گوگرد از دهانه قله، این کوه را به یکی از عجیب‌ترین و جذاب‌ترین مقاصد کوهنوردی تبدیل کرده.',
-        image: 'images/peaks/taftan.webp'
+        image: 'images/peaks/taftan.webp',
+	link: 'taftan.html'
     },
     {
         name: 'کرکس',
@@ -227,7 +237,8 @@ const famousPeaks = [
         bestSeason: 'فروردین - خرداد',
         duration: '۱ روز',
         description: 'قله محبوب اصفهانی‌ها با دسترسی آسان و مناظر بی‌نظیر به کویر مرکزی ایران. در روزهای صاف می‌توان تا کویر نمک را از قله دید.',
-        image: 'images/peaks/karkas.webp'
+        image: 'images/peaks/karkas.webp',
+	link: 'karkas.html'
     }
 ];
 
