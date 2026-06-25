@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وبلاگ کوهنوردی | سه تیغ</title>
+    <meta name="description" content="مقالات، راهنماها و تجربیات کوهنوردی ایران — بهترین فصل صعود، تجهیزات، مسیرها و نکات ایمنی">
+    <meta name="keywords" content="وبلاگ کوهنوردی, راهنمای کوهنوردی ایران, تجهیزات کوهنوردی, سه تیغ">
+    <link rel="canonical" href="https://3tiq.ir/blog.html">
+    <meta property="og:title" content="وبلاگ کوهنوردی | سه تیغ">
+    <meta property="og:description" content="مقالات و راهنماهای کوهنوردی ایران">
+    <meta property="og:url" content="https://3tiq.ir/blog.html">
+    <meta property="og:image" content="https://3tiq.ir/images/peaks/damavand.jpg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    /* ===== Blog Page Styles ===== */
+    .blog-hero {
+        background: var(--dark-bg);
+        padding: 9rem 0 4rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .blog-hero::before {
+        content: '';
+        position: absolute; inset: 0;
+        background: url('images/peaks/damavand.jpg') center/cover no-repeat;
+        opacity: 0.18;
+    }
+    .blog-hero .container { position: relative; z-index: 1; }
+    .blog-hero-badge {
+        display: inline-block;
+        background: rgba(212,165,116,.15);
+        border: 1px solid rgba(212,165,116,.35);
+        color: var(--primary-color);
+        padding: .35rem 1rem;
+        border-radius: 100px;
+        font-size: .8rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        letter-spacing: .05em;
+    }
+    .blog-hero h1 {
+        color: #fff;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 900;
+        margin-bottom: .75rem;
+    }
+    .blog-hero p {
+        color: rgba(255,255,255,.65);
+        font-size: 1.05rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* ===== Category Filter ===== */
+    .blog-filters {
+        background: var(--white);
+        border-bottom: 1px solid rgba(58,50,38,.08);
+        padding: 1.25rem 0;
+        position: sticky;
+        top: 80px;
+        z-index: 100;
+    }
+    .blog-filter-list {
+        display: flex;
+        gap: .5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .blog-filter-btn {
+        padding: .45rem 1.1rem;
+        border-radius: 100px;
+        border: 1.5px solid rgba(58,50,38,.15);
+        background: transparent;
+        color: var(--text-light);
+        font-family: inherit;
+        font-size: .82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+    }
+    .blog-filter-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
+    .blog-filter-btn.active { background: var(--dark-bg); color: #fff; border-color: transparent; }
+
+    /* ===== Blog Grid ===== */
+    .blog-section { padding: 4rem 0 6rem; background: var(--light-bg); }
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 2rem;
+    }
+
+    /* ===== Card ===== */
+    .blog-card {
+        background: var(--white);
+        border-radius: 1.1rem;
+        overflow: hidden;
+        box-shadow: 0 3px 18px rgba(44,36,22,.07);
+        border: 1px solid rgba(58,50,38,.06);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+    }
+    .blog-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(44,36,22,.13); }
+    .blog-card-img {
+        width: 100%; aspect-ratio: 16/9;
+        overflow: hidden; position: relative;
+        background: linear-gradient(135deg, #c8c4be, #a8a49e);
+        flex-shrink: 0;
+    }
+    .blog-card-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease; }
+    .blog-card:hover .blog-card-img img { transform: scale(1.07); }
+    .blog-card-cat {
+        position: absolute; top: .75rem; right: .75rem;
+        padding: .25rem .75rem; border-radius: 100px;
+        font-size: .68rem; font-weight: 800;
+        backdrop-filter: blur(8px);
+    }
+    .cat-safety    { background: rgba(181,86,47,.85); color:#fff; }
+    .cat-gear      { background: rgba(92,107,74,.85); color:#fff; }
+    .cat-route     { background: rgba(58,104,140,.85); color:#fff; }
+    .cat-nature    { background: rgba(140,100,58,.85); color:#fff; }
+    .cat-tips      { background: rgba(110,80,150,.85); color:#fff; }
+
+    .blog-card-body { padding: 1.25rem 1.25rem .75rem; flex:1; display:flex; flex-direction:column; }
+    .blog-card-meta {
+        display: flex; align-items: center; gap: .75rem;
+        font-size: .72rem; color: var(--text-light);
+        margin-bottom: .65rem;
+    }
+    .blog-card-meta span { display:flex; align-items:center; gap:.25rem; }
+    .blog-card-title {
+        font-size: 1.05rem; font-weight: 800;
+        color: var(--text-dark); line-height: 1.5;
+        margin-bottom: .6rem;
+    }
+    .blog-card-excerpt {
+        font-size: .82rem; color: var(--text-light);
+        line-height: 1.8; flex:1;
+        display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .blog-card-footer {
+        padding: .85rem 1.25rem 1.1rem;
+        display: flex; align-items: center; justify-content: space-between;
+        border-top: 1px solid rgba(58,50,38,.07);
+        margin-top: .85rem;
+    }
+    .blog-card-author { display:flex; align-items:center; gap:.5rem; }
+    .blog-card-author-avatar {
+        width: 28px; height: 28px; border-radius: 50%;
+        background: var(--primary-color); color: var(--dark-bg);
+        display: flex; align-items:center; justify-content:center;
+        font-size: .7rem; font-weight: 800; flex-shrink:0;
+    }
+    .blog-card-author-name { font-size: .75rem; font-weight: 700; color: var(--text-dark); }
+    .blog-read-more {
+        font-size: .78rem; font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+        display: flex; align-items: center; gap: .25rem;
+        transition: var(--transition);
+    }
+    .blog-read-more:hover { gap: .5rem; }
+
+    /* ===== Featured (first card large) ===== */
+    .blog-card.featured {
+        grid-column: 1 / -1;
+        flex-direction: row;
+    }
+    .blog-card.featured .blog-card-img {
+        width: 45%; aspect-ratio: unset; flex-shrink:0;
+    }
+    .blog-card.featured .blog-card-title { font-size: 1.35rem; }
+    .blog-card.featured .blog-card-excerpt { -webkit-line-clamp: 4; }
+
+    /* ===== Newsletter ===== */
+    .blog-newsletter {
+        background: var(--dark-bg);
+        padding: 4rem 0;
+        text-align: center;
+    }
+    .blog-newsletter h2 { color:#fff; font-size:1.6rem; margin-bottom:.6rem; }
+    .blog-newsletter p { color:rgba(255,255,255,.55); margin-bottom:1.75rem; }
+    .newsletter-form { display:flex; gap:.6rem; justify-content:center; max-width:460px; margin:0 auto; }
+    .newsletter-form input {
+        flex:1; padding:.75rem 1.1rem; border-radius:100px;
+        border: 1.5px solid rgba(255,255,255,.15);
+        background: rgba(255,255,255,.07); color:#fff;
+        font-family:inherit; font-size:.9rem; outline:none;
+        transition: var(--transition);
+    }
+    .newsletter-form input::placeholder { color:rgba(255,255,255,.3); }
+    .newsletter-form input:focus { border-color: var(--primary-color); }
+    .newsletter-form button {
+        padding:.75rem 1.5rem; border-radius:100px;
+        background: var(--primary-color); color: var(--dark-bg);
+        font-family:inherit; font-weight:800; font-size:.88rem;
+        border:none; cursor:pointer; transition:var(--transition); white-space:nowrap;
+    }
+    .newsletter-form button:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(212,165,116,.4); }
+
+    /* ===== Dark Mode ===== */
+    body.dark-mode .blog-filters   { background:#1a1a1a; border-color:rgba(255,255,255,.06); }
+    body.dark-mode .blog-filter-btn { border-color:rgba(255,255,255,.1); color:#aaa; }
+    body.dark-mode .blog-filter-btn.active { background:var(--primary-color); color:#111; }
+    body.dark-mode .blog-section   { background:#111; }
+    body.dark-mode .blog-card      { background:#1e1e1e; border-color:rgba(255,255,255,.06); }
+    body.dark-mode .blog-card-title{ color:#f0f0f0; }
+    body.dark-mode .blog-card-footer{ border-color:rgba(255,255,255,.06); }
+    body.dark-mode .blog-card-author-name { color:#e0e0e0; }
+
+    /* ===== Responsive ===== */
+    @media(max-width:768px){
+        .blog-card.featured { flex-direction:column; }
+        .blog-card.featured .blog-card-img { width:100%; aspect-ratio:16/9; }
+        .blog-grid { grid-template-columns:1fr; }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;">
+                    </a>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#peaks">رشته‌کوه‌های ایران</a>
+                            <ul class="dropdown">
+                                <li class="has-dropdown-sub">
+                                    <a href="#">البرز ◂</a>
+                                    <ul class="dropdown-sub">
+                                        <li><a href="alborz-gharbi.html">البرز غربی</a></li>
+                                        <li><a href="alborz-markazi.html">البرز مرکزی</a></li>
+                                        <li><a href="alborz-shargi.html">البرز شرقی</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="Panahgah.html">پناهگاه‌ها</a></li>
+                        <li><a href="blog.html" class="active">وبلاگ</a></li>
+                        <li><a href="index.html#contact">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-overlay" id="navOverlay"></div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="منو">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section class="blog-hero">
+        <div class="container">
+            <span class="blog-hero-badge">📝 دانش کوهنوردی</span>
+            <h1>وبلاگ سه تیغ</h1>
+            <p>راهنماها، نکات ایمنی، معرفی تجهیزات و تجربیات کوهنوردی در ایران</p>
+        </div>
+    </section>
+
+    <!-- ===== Filter ===== -->
+    <div class="blog-filters">
+        <div class="container">
+            <div class="blog-filter-list">
+                <button class="blog-filter-btn active" data-cat="all">همه</button>
+                <button class="blog-filter-btn" data-cat="safety">⚠️ ایمنی</button>
+                <button class="blog-filter-btn" data-cat="gear">🎒 تجهیزات</button>
+                <button class="blog-filter-btn" data-cat="route">🗺 مسیرها</button>
+                <button class="blog-filter-btn" data-cat="nature">🌿 طبیعت</button>
+                <button class="blog-filter-btn" data-cat="tips">💡 نکات</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Blog Grid ===== -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+
+                <!-- مقاله ویژه (بزرگ) -->
+                <a href="blog-damavand-guide.html" class="blog-card featured" data-cat="route">
+                    <div class="blog-card-img">
+                        <img src="images/peaks/damavand.jpg" alt="راهنمای کامل صعود دماوند" loading="lazy">
+                        <span class="blog-card-cat cat-route">🗺 مسیرها</span>
+                    </div>
+                    <div style="display:flex;flex-direction:column;flex:1;">
+                        <div class="blog-card-body">
+                            <div class="blog-card-meta">
+                                <span>📅 خرداد ۱۴۰۴</span>
+                                <span>⏱ ۱۲ دقیقه</span>
+                                <span>👁 ۴٬۲۰۰ بازدید</span>
+                            </div>
+                            <div class="blog-card-title">راهنمای کامل صعود دماوند — از صفر تا قله ۵۶۱۰ متری</div>
+                            <div class="blog-card-excerpt">دماوند بلندترین قله ایران و خاورمیانه، هر سال هزاران کوهنورد را به خود جذب می‌کند. در این مقاله جامع، همه چیز از مسیرهای صعود، پناهگاه‌ها، تجهیزات مورد نیاز، بهترین فصل صعود و نکات ایمنی را بررسی می‌کنیم تا آماده‌ترین صعود زندگیت را داشته باشی.</div>
+                        </div>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-author-avatar">سه</div>
+                                <span class="blog-card-author-name">تیم سه تیغ</span>
+                            </div>
+                            <span class="blog-read-more">ادامه مطلب ←</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- کارت ۲ -->
+                <a href="blog-winter-gear.html" class="blog-card" data-cat="gear">
+                    <div class="blog-card-img">
+                        <img src="images/peaks/alamkooh.jpg" alt="تجهیزات کوهنوردی زمستانه" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#7b8fa0,#556070)'">
+                        <span class="blog-card-cat cat-gear">🎒 تجهیزات</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span>📅 اردیبهشت ۱۴۰۴</span>
+                            <span>⏱ ۸ دقیقه</span>
+                        </div>
+                        <div class="blog-card-title">چک‌لیست کامل تجهیزات کوهنوردی زمستانه</div>
+                        <div class="blog-card-excerpt">کوهنوردی زمستانه نیاز به تجهیزات خاص دارد. از کفش‌های کرامپون‌خور تا لباس‌های چند لایه و ابزارهای ایمنی — همه چیز در یک چک‌لیست کامل.</div>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-card-author">
+                            <div class="blog-card-author-avatar">سه</div>
+                            <span class="blog-card-author-name">تیم سه تیغ</span>
+                        </div>
+                        <span class="blog-read-more">ادامه ←</span>
+                    </div>
+                </a>
+
+                <!-- کارت ۳ -->
+                <a href="blog-altitude-sickness.html" class="blog-card" data-cat="safety">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,#7a5c4a,#4a3530);">
+                        <span class="blog-card-cat cat-safety">⚠️ ایمنی</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span>📅 فروردین ۱۴۰۴</span>
+                            <span>⏱ ۶ دقیقه</span>
+                        </div>
+                        <div class="blog-card-title">ارتفاع‌زدگی چیست و چطور از آن جلوگیری کنیم؟</div>
+                        <div class="blog-card-excerpt">ارتفاع‌زدگی یکی از خطرناک‌ترین مشکلات کوهنوردی در ارتفاعات بالاست. علائم، پیشگیری و درمان اضطراری آن را بشناس.</div>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-card-author">
+                            <div class="blog-card-author-avatar">سه</div>
+                            <span class="blog-card-author-name">تیم سه تیغ</span>
+                        </div>
+                        <span class="blog-read-more">ادامه ←</span>
+                    </div>
+                </a>
+
+                <!-- کارت ۴ -->
+                <a href="blog-sabalan.html" class="blog-card" data-cat="route">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,#4a6070,#2a4050);">
+                        <span class="blog-card-cat cat-route">🗺 مسیرها</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span>📅 اسفند ۱۴۰۳</span>
+                            <span>⏱ ۹ دقیقه</span>
+                        </div>
+                        <div class="blog-card-title">سبلان — آتشفشان خاموش با دریاچه‌ای در دهانه</div>
+                        <div class="blog-card-excerpt">کوه سبلان با ارتفاع ۴۸۱۱ متر سومین قله بلند ایران است. دریاچه یخ‌زده در دهانه آتشفشانی آن از دیدنی‌ترین مناظر طبیعی ایران است.</div>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-card-author">
+                            <div class="blog-card-author-avatar">سه</div>
+                            <span class="blog-card-author-name">تیم سه تیغ</span>
+                        </div>
+                        <span class="blog-read-more">ادامه ←</span>
+                    </div>
+                </a>
+
+                <!-- کارت ۵ -->
+                <a href="blog-flora.html" class="blog-card" data-cat="nature">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,#4a6a40,#2a4a20);">
+                        <span class="blog-card-cat cat-nature">🌿 طبیعت</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span>📅 بهمن ۱۴۰۳</span>
+                            <span>⏱ ۵ دقیقه</span>
+                        </div>
+                        <div class="blog-card-title">گیاهان دارویی کوهستان‌های ایران که باید بشناسی</div>
+                        <div class="blog-card-excerpt">ارتفاعات ایران خانه صدها گونه گیاهی کمیاب است. آشنایی با آن‌ها هم علمی است و هم می‌تواند در موارد اضطراری کمک کند.</div>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-card-author">
+                            <div class="blog-card-author-avatar">سه</div>
+                            <span class="blog-card-author-name">تیم سه تیغ</span>
+                        </div>
+                        <span class="blog-read-more">ادامه ←</span>
+                    </div>
+                </a>
+
+                <!-- کارت ۶ -->
+                <a href="blog-navigation.html" class="blog-card" data-cat="tips">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,#5a4a7a,#3a2a5a);">
+                        <span class="blog-card-cat cat-tips">💡 نکات</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span>📅 دی ۱۴۰۳</span>
+                            <span>⏱ ۷ دقیقه</span>
+                        </div>
+                        <div class="blog-card-title">مسیریابی در کوه بدون گوشی و اینترنت</div>
+                        <div class="blog-card-excerpt">نقشه‌خوانی، قطب‌نما، و نشانه‌های طبیعی — مهارت‌هایی که هر کوهنوردی باید بلد باشد و به هیچ تکنولوژی‌ای وابسته نباشد.</div>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-card-author">
+                            <div class="blog-card-author-avatar">سه</div>
+                            <span class="blog-card-author-name">تیم سه تیغ</span>
+                        </div>
+                        <span class="blog-read-more">ادامه ←</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Newsletter ===== -->
+    <section class="blog-newsletter">
+        <div class="container">
+            <h2>مقالات جدید را از دست نده</h2>
+            <p>هر هفته یک مقاله مفید کوهنوردی در صندوق پستت</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="ایمیل شما...">
+                <button type="submit">عضویت</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== Back to Top ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="بازگشت به بالا">↑</button>
+
+    <script src="js/app.js"></script>
+    <script>
+    // Filter
+    document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.cat;
+            document.querySelectorAll('.blog-card').forEach(card => {
+                if (cat === 'all' || card.dataset.cat === cat) {
+                    card.style.display = '';
+                    card.style.animation = 'sh-fade .35s ease both';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            // featured card full-width fix
+            const featured = document.querySelector('.blog-card.featured');
+            if (featured && featured.style.display !== 'none') {
+                featured.style.gridColumn = '1 / -1';
+            }
+        });
+    });
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => btt.classList.toggle('visible', scrollY > 400));
+    btt.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+    </script>
+</body>
+</html>
