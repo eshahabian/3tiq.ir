@@ -1,0 +1,338 @@
+<!-- ================================================================
+  این بخش را جایگزین کل <section class="routes-section" id="routes">
+  یعنی از <section class="routes-section" id="routes"> تا </section>
+  می‌کنید
+================================================================ -->
+
+<!-- ===== بخش پناهگاه‌ها و جان‌پناه‌های ایران ===== -->
+<section class="shelters-showcase" id="routes">
+  <div class="container">
+    <h2 class="section-title">پناهگاه‌ها و جان‌پناه‌های ایران</h2>
+    <p class="section-subtitle">امکانات اقامت و پناه اضطراری در مسیرهای کوهنوردی ایران</p>
+
+    <!-- تب‌های منطقه‌ای -->
+    <div class="shelter-tabs" id="shelterTabs">
+      <button class="shelter-tab active" data-region="all">همه</button>
+      <button class="shelter-tab" data-region="البرز مرکزی">البرز مرکزی</button>
+      <button class="shelter-tab" data-region="البرز غربی">البرز غربی</button>
+      <button class="shelter-tab" data-region="زاگرس شمالی">زاگرس شمالی</button>
+      <button class="shelter-tab" data-region="زاگرس مرکزی">زاگرس مرکزی</button>
+      <button class="shelter-tab" data-region="زاگرس جنوبی">زاگرس جنوبی</button>
+      <button class="shelter-tab" data-region="کوه‌های مرکزی">کوه‌های مرکزی</button>
+      <button class="shelter-tab" data-region="شمال شرق">شمال شرق</button>
+    </div>
+
+    <!-- گرید کارت‌ها -->
+    <div class="shelter-cards-grid" id="shelterCardsGrid">
+      <!-- کارت‌ها توسط JS پر می‌شوند -->
+      <div class="shelter-loading">در حال بارگذاری...</div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="Panahgah.html" class="btn btn-primary">مشاهده همه پناهگاه‌ها</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CSS — این را به انتهای <style> موجود یا داخل style.css اضافه کنید ===== -->
+<style id="shelter-showcase-styles">
+
+/* -------- تیتر بخش -------- */
+.shelters-showcase {
+  background: var(--light-bg);
+  padding: 5rem 0;
+}
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* -------- تب‌های منطقه‌ای -------- */
+.shelter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.shelter-tab {
+  padding: 0.55rem 1.2rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(58,50,38,0.18);
+  background: var(--white);
+  color: var(--text-light);
+  font-family: inherit;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.shelter-tab:hover { border-color: var(--primary-color); color: var(--primary-color); }
+.shelter-tab.active {
+  background: var(--dark-bg);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* -------- گرید -------- */
+.shelter-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1.75rem;
+}
+.shelter-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+}
+
+/* -------- کارت -------- */
+.sh-card {
+  background: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 3px 18px rgba(44,36,22,0.07);
+  border: 1px solid rgba(58,50,38,0.06);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  animation: sh-fade 0.45s ease both;
+}
+@keyframes sh-fade { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.sh-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(44,36,22,0.13); }
+
+/* تصویر */
+.sh-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #d0ccc6;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.sh-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+.sh-card:hover .sh-card-img img { transform: scale(1.06); }
+
+/* placeholder خاکستری */
+.sh-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #c8c4be 0%, #b0ada7 100%);
+  gap: 0.4rem;
+}
+.sh-img-placeholder svg { opacity: 0.45; }
+.sh-img-placeholder span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+
+/* بج نوع */
+.sh-type-badge {
+  position: absolute; top: 0.7rem; right: 0.7rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.7rem; font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+.sh-type-badge.پناهگاه  { background: rgba(92,107,74,0.88);  color: #fff; }
+.sh-type-badge.جانپناه  { background: rgba(181,86,47,0.88);  color: #fff; }
+.sh-type-badge.کلبه     { background: rgba(140,106,63,0.88); color: #fff; }
+
+/* ارتفاع */
+.sh-altitude {
+  position: absolute; bottom: 0.7rem; left: 0.7rem;
+  background: rgba(20,16,10,0.55);
+  backdrop-filter: blur(6px);
+  color: var(--primary-color);
+  font-size: 0.72rem; font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+/* محتوا */
+.sh-card-body {
+  padding: 1.1rem 1.1rem 0.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.sh-card-region {
+  font-size: 0.7rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.sh-card-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 0.55rem;
+  line-height: 1.4;
+}
+.sh-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* خط جدا‌کننده */
+.sh-divider {
+  height: 1px;
+  margin: 0.85rem 1.1rem;
+  background-image: repeating-linear-gradient(to left, rgba(58,50,38,0.15) 0 5px, transparent 5px 10px);
+}
+
+/* ستون آمار */
+.sh-stats {
+  display: flex;
+  gap: 0;
+  padding: 0 1.1rem 1.1rem;
+}
+.sh-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.2rem;
+  border-radius: 0.6rem;
+  transition: background 0.2s;
+}
+.sh-stat:hover { background: rgba(58,50,38,0.04); }
+.sh-stat-icon { font-size: 1.1rem; }
+.sh-stat-value {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+.sh-stat-label {
+  font-size: 0.62rem;
+  color: var(--text-light);
+}
+.sh-stat.yes .sh-stat-value { color: #3a7d44; }
+.sh-stat.no  .sh-stat-value { color: #9a3a2a; }
+
+/* دارک‌مود */
+body.dark-mode .shelters-showcase  { background: #161616; }
+body.dark-mode .shelter-tab        { background: #252525; border-color: rgba(255,255,255,0.1); color: #bbb; }
+body.dark-mode .shelter-tab.active { background: var(--primary-color); color: #111; }
+body.dark-mode .sh-card            { background: #232323; border-color: rgba(255,255,255,0.06); }
+body.dark-mode .sh-card-name       { color: #f0f0f0; }
+body.dark-mode .sh-stat-value      { color: #e0e0e0; }
+body.dark-mode .sh-divider         { background-image: repeating-linear-gradient(to left, rgba(255,255,255,0.1) 0 5px, transparent 5px 10px); }
+body.dark-mode .sh-stat.yes .sh-stat-value { color: #6dbf7e; }
+body.dark-mode .sh-stat.no  .sh-stat-value { color: #e07a6a; }
+
+/* ریسپانسیو */
+@media (max-width: 600px) {
+  .shelter-tabs { gap: 0.35rem; }
+  .shelter-tab  { font-size: 0.76rem; padding: 0.45rem 0.9rem; }
+  .shelter-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- ===== JS — این را داخل <script> موجود index.html اضافه کنید ===== -->
+<script id="shelter-showcase-js">
+// ===== Shelter Showcase =====
+(function() {
+  const SHOW_PER_TAB = 6; // تعداد کارت نمایش داده‌شده در هر تب
+
+  function renderShelterCards(data, region) {
+    const grid = document.getElementById('shelterCardsGrid');
+    if (!grid) return;
+
+    let filtered = region === 'all' ? data : data.filter(s => s.region === region);
+    // Max 6 cards per view
+    filtered = filtered.slice(0, SHOW_PER_TAB);
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="shelter-loading">موردی یافت نشد.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map((s, i) => {
+      const hasImg = s.image && !s.image.includes('placeholder');
+      const imgHTML = hasImg
+        ? `<img src="${s.image}" alt="${s.name}" loading="lazy">`
+        : `<div class="sh-img-placeholder">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4">
+              <path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/>
+            </svg>
+            <span>${s.region}</span>
+           </div>`;
+
+      const cap = s.capacity ? `${s.capacity} نفر` : '—';
+      const elec = s.electricity ? { val: 'دارد', cls: 'yes', icon: '⚡' } : { val: 'ندارد', cls: 'no', icon: '🔌' };
+      const water = s.water ? { val: 'دارد', cls: 'yes', icon: '💧' } : { val: 'ندارد', cls: 'no', icon: '🚫' };
+      const alt = s.altitude ? `${s.altitude.toLocaleString('fa-IR')} م` : '';
+
+      return `
+      <div class="sh-card" style="animation-delay:${i * 0.06}s">
+        <div class="sh-card-img">
+          ${imgHTML}
+          <span class="sh-type-badge ${s.type}">${s.type}</span>
+          ${alt ? `<span class="sh-altitude">⛰ ${alt}</span>` : ''}
+        </div>
+        <div class="sh-card-body">
+          <div class="sh-card-region">${s.region} · ${s.province}</div>
+          <div class="sh-card-name">${s.name}</div>
+          <div class="sh-card-desc">${s.description}</div>
+        </div>
+        <div class="sh-divider"></div>
+        <div class="sh-stats">
+          <div class="sh-stat">
+            <span class="sh-stat-icon">👥</span>
+            <span class="sh-stat-value">${cap}</span>
+            <span class="sh-stat-label">ظرفیت</span>
+          </div>
+          <div class="sh-stat ${elec.cls}">
+            <span class="sh-stat-icon">${elec.icon}</span>
+            <span class="sh-stat-value">${elec.val}</span>
+            <span class="sh-stat-label">برق</span>
+          </div>
+          <div class="sh-stat ${water.cls}">
+            <span class="sh-stat-icon">${water.icon}</span>
+            <span class="sh-stat-value">${water.val}</span>
+            <span class="sh-stat-label">آب</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // بارگذاری داده‌ها
+  fetch('js/shelters-detail.json')
+    .then(r => r.json())
+    .then(data => {
+      renderShelterCards(data, 'all');
+
+      document.querySelectorAll('.shelter-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.shelter-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          renderShelterCards(data, tab.dataset.region);
+        });
+      });
+    })
+    .catch(() => {
+      const grid = document.getElementById('shelterCardsGrid');
+      if (grid) grid.innerHTML = '<div class="shelter-loading">خطا در بارگذاری اطلاعات پناهگاه‌ها.</div>';
+    });
+})();
+</script>

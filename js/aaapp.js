@@ -276,65 +276,94 @@ function renderPeaks() {
 renderPeaks();
 
 
+// =============================================
+//  Shelters - داده‌های پناهگاه و جانپناه
+// =============================================
 const routes = [
     {
-        name: 'دماوند',
-        region: 'شمالی',
-        difficulty: 'سخت',
-        distance: '۱۶ کیلومتر',
-        duration: '۲ روز',
+        name: 'پناهگاه برگ جهان',
+        province: 'مازندران',
         image: 'images/peaks/damavand.jpg',
-        description: 'بلندترین قله ایران با ارتفاع ۵۶۱۰ متر در رشته کوه البرز'
+        description: 'یکی از قدیمی‌ترین و معروف‌ترین پناهگاه‌های ایران در دامنه جنوبی دماوند، در ارتفاع ۳۲۵۰ متری.',
+        history: 'ساخته شده در دهه ۱۳۴۰ توسط فدراسیون کوهنوردی ایران. برگ جهان دهه‌هاست که پایگاه اصلی صعود به دماوند است.',
+        capacity: 80,
+        water: true,
+        electricity: true
     },
     {
-        name: 'علم‌کوه',
-        region: 'شمالی',
-        difficulty: 'سخت',
-        distance: '۱۲ کیلومتر',
-        duration: '۲ روز',
+        name: 'پناهگاه تخت فریدون',
+        province: 'مازندران',
         image: 'images/peaks/alamkooh.jpg',
-        description: 'دومین قله بلند ایران با دیواره‌های صخره‌ای چشم‌نواز'
+        description: 'پناهگاه مرتفع دماوند در ارتفاع ۴۲۵۰ متر، آخرین نقطه استراحت پیش از صعود نهایی به قله.',
+        history: 'این پناهگاه در دهه ۱۳۵۰ احداث شد و از آن زمان پایگاه اصلی صعودهای تابستانی و زمستانی به دماوند بوده است.',
+        capacity: 40,
+        water: false,
+        electricity: false
     },
     {
-        name: 'سبلان',
-        region: 'شمالی',
-        difficulty: 'متوسط',
-        distance: '۱۴ کیلومتر',
-        duration: '۱ روز',
+        name: 'پناهگاه شیرپلا',
+        province: 'مازندران',
         image: 'images/peaks/sabalan.jpg',
-        description: 'قله آتشفشانی با دریاچه زیبا در قله و چشم‌انداز بی‌نظیر'
+        description: 'پناهگاهی در میان جنگل‌های انبوه البرز در ارتفاع ۲۲۰۰ متر، اولین توقف در مسیر علم‌کوه.',
+        history: 'پناهگاه شیرپلا قدمتی بیش از ۶۰ سال دارد و طی دهه‌های مختلف بازسازی و توسعه یافته است.',
+        capacity: 60,
+        water: true,
+        electricity: true
     },
     {
-        name: 'زردکوه بختیاری',
-        region: 'مرکزی',
-        difficulty: 'سخت',
-        distance: '۱۸ کیلومتر',
-        duration: '۲ روز',
-        image: 'images/peaks/zardkooh.jpg',
-        description: 'بلندترین قله زاگرس با مناظر خیره‌کننده و دره‌های عمیق'
-    },
-    {
-        name: 'توچال',
-        region: 'شمالی',
-        difficulty: 'آسان',
-        distance: '۸ کیلومتر',
-        duration: '۱ روز',
+        name: 'پناهگاه صخره‌ای علم‌کوه',
+        province: 'مازندران',
         image: 'images/peaks/tochal.jpg',
-        description: 'نزدیک‌ترین قله به تهران با دسترسی آسان از طریق تله‌کابین'
+        description: 'پناهگاهی در قلب دیواره شمالی علم‌کوه در ارتفاع ۳۶۰۰ متر، مخصوص کوهنوردان حرفه‌ای.',
+        history: null,
+        capacity: 25,
+        water: false,
+        electricity: false
     },
     {
-        name: 'شاهوار',
-        region: 'مرکزی',
-        difficulty: 'متوسط',
-        distance: '۱۰ کیلومتر',
-        duration: '۱ روز',
-        image: 'images/peaks/shahvar.jpg',
-        description: 'قله دیدنی در استان سمنان با طبیعت بکر و مسیرهای متنوع'
+        name: 'پناهگاه سبلان',
+        province: 'اردبیل',
+        image: 'images/peaks/dena.jpg',
+        description: 'پناهگاه اصلی منطقه سبلان در ارتفاع ۳۵۰۰ متر با چشم‌اندازی بی‌نظیر به دریاچه آتشفشانی.',
+        history: 'این پناهگاه در دهه ۱۳۶۰ توسط هیئت کوهنوردی اردبیل احداث شد و از آن زمان بارها بازسازی شده است.',
+        capacity: 50,
+        water: true,
+        electricity: false
+    },
+    {
+        name: 'پناهگاه اشترانکوه',
+        province: 'لرستان',
+        image: 'images/peaks/zardkuh.jpg',
+        description: 'پناهگاه زیبای اشترانکوه در ارتفاع ۳۰۰۰ متر در دل زاگرس مرکزی با طبیعتی بکر.',
+        history: 'ساخته شده توسط فدراسیون کوهنوردی در دهه ۱۳۷۰ برای پشتیبانی از کوهنوردان منطقه لرستان.',
+        capacity: 35,
+        water: true,
+        electricity: true
+    },
+    {
+        name: 'پناهگاه توچال',
+        province: 'تهران',
+        image: 'images/peaks/tochal.jpg',
+        description: 'پناهگاه معروف توچال در ارتفاع ۳۵۵۰ متر، یکی از پرتردد‌ترین پناهگاه‌های ایران.',
+        history: 'پناهگاه توچال از دهه ۱۳۵۰ فعال است و طی سال‌ها توسعه یافته و امکانات آن ارتقاء پیدا کرده.',
+        capacity: 100,
+        water: true,
+        electricity: true
+    },
+    {
+        name: 'پناهگاه زردکوه',
+        province: 'اصفهان',
+        image: 'images/peaks/zardkooh.jpg',
+        description: 'پناهگاهی در دامنه زردکوه بختیاری در ارتفاع ۳۲۰۰ متر، دروازه ورود به بلندترین قله زاگرس.',
+        history: null,
+        capacity: 30,
+        water: true,
+        electricity: false
     }
 ];
 
 // =============================================
-//  Routes - نمایش کارت‌ها
+//  Shelters - نمایش کارت‌ها
 // =============================================
 const routesGrid = document.getElementById('routesGrid');
 
@@ -343,31 +372,36 @@ function loadRoutes(filter = 'all') {
 
     const filtered = filter === 'all'
         ? routes
-        : routes.filter(r => r.region === filter);
+        : routes.filter(r => r.province === filter);
 
     if (filtered.length === 0) {
-        routesGrid.innerHTML = `<p style="text-align:center; color:var(--text-light); grid-column:1/-1;">مسیری یافت نشد.</p>`;
+        routesGrid.innerHTML = `<p style="text-align:center; color:var(--text-light); grid-column:1/-1;">پناهگاهی یافت نشد.</p>`;
         return;
     }
 
-    routesGrid.innerHTML = filtered.map(route => `
-        <div class="route-card">
+    routesGrid.innerHTML = filtered.map(s => `
+        <div class="route-card shelter-card">
             <img
                 class="route-image"
-                src="${route.image}"
-                alt="${route.name}"
+                src="${s.image}"
+                alt="${s.name}"
                 loading="lazy"
             >
             <div class="route-content">
                 <div class="route-header">
-                    <h3 class="route-name">${route.name}</h3>
-                    <span class="difficulty-badge ${route.difficulty}">${route.difficulty}</span>
+                    <h3 class="route-name">${s.name}</h3>
+                    <span class="route-region">📍 ${s.province}</span>
                 </div>
-                <p class="route-description">${route.description}</p>
-                <div class="route-info">
-                    <span>📍 ${route.distance}</span>
-                    <span>⏱ ${route.duration}</span>
-                    <span class="route-region">${route.region}</span>
+                <p class="route-description">${s.description}</p>
+                ${s.history ? `
+                <div class="shelter-history">
+                    <span class="shelter-history-label">📜 تاریخچه</span>
+                    ${s.history}
+                </div>` : ''}
+                <div class="shelter-footer">
+                    <span class="shelter-capacity">🏕️ ظرفیت: ${s.capacity} نفر</span>
+                    <span class="shelter-amenity ${s.water ? 'has' : 'no'}">${s.water ? '💧 آب دارد' : '💧 بدون آب'}</span>
+                    <span class="shelter-amenity ${s.electricity ? 'has' : 'no'}">${s.electricity ? '⚡ برق دارد' : '⚡ بدون برق'}</span>
                 </div>
             </div>
         </div>

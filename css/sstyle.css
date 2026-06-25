@@ -34,6 +34,29 @@ body {
     transition: var(--transition);
 }
 
+/* ===== Particle Background Canvas ===== */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* همه سکشن‌ها باید روی canvas باشن */
+.header,
+.hero-map,
+.services,
+.peaks-section,
+.routes-section,
+.about-section,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -426,8 +449,8 @@ body.dark-mode .moon-icon { display: block; }
    Services Section
    ============================================= */
 .services {
-    padding: 3rem 0 5rem;
-    background: var(--light-bg);
+    padding: 5rem 0;
+    background: rgba(245, 241, 232, 0.82);
 }
 
 .section-title {
@@ -491,7 +514,7 @@ body.dark-mode .moon-icon { display: block; }
    ============================================= */
 .peaks-section {
     padding: 5rem 0;
-    background: var(--white);
+    background: rgba(253, 251, 247, 0.80);
 }
 
 .section-subtitle {
@@ -621,7 +644,7 @@ body.dark-mode .moon-icon { display: block; }
 }
 
 /* dark mode */
-body.dark-mode .peaks-section { background: #1a1a1a; }
+body.dark-mode .peaks-section { background: rgba(26, 26, 26, 0.82); }
 body.dark-mode .peak-card { background: #2a2a2a; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
 body.dark-mode .peak-name { color: #f0f0f0; }
 body.dark-mode .peak-desc,
@@ -633,7 +656,7 @@ body.dark-mode .peak-province { background: #333; }
    ============================================= */
 .routes-section {
     padding: 5rem 0;
-    background: var(--white);
+    background: rgba(253, 251, 247, 0.80);
 }
 
 .filters {
@@ -753,7 +776,7 @@ body.dark-mode .peak-province { background: #333; }
    ============================================= */
 .about-section {
     padding: 5rem 0;
-    background: var(--white);
+    background: rgba(245, 241, 232, 0.82);
 }
 
 .about-content {
@@ -1092,12 +1115,12 @@ body.dark-mode .header {
 
 body.dark-mode .services,
 body.dark-mode .map-section {
-    background: #222;
+    background: rgba(34, 34, 34, 0.82);
 }
 
 body.dark-mode .routes-section,
 body.dark-mode .about-section {
-    background: #1a1a1a;
+    background: rgba(26, 26, 26, 0.82);
 }
 
 body.dark-mode .service-card,
