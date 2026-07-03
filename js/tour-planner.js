@@ -14,7 +14,8 @@
         { id: 'level', title: 'تجربه', question: 'سطح تجربه کوهنوردی‌ات چقدره؟' },
         { id: 'days', title: 'مدت', question: 'چند روز وقت داری؟' },
         { id: 'group', title: 'گروه', question: 'چند نفر هستید؟' },
-        { id: 'season', title: 'فصل', question: 'چه فصلی برنامه‌ریزی می‌کنی؟' }
+        { id: 'season', title: 'فصل', question: 'چه فصلی برنامه‌ریزی می‌کنی؟' },
+        { id: 'departure', title: 'زمان حرکت', question: 'چه روز و ساعتی حرکت می‌کنی؟' }
     ];
 
     let stepIndex = 0;
@@ -201,6 +202,9 @@
                 ['fall', 'پاییز', 'مهر - آبان'],
                 ['winter', 'زمستان', 'آذر - اسفند']
             ]);
+        } else if (step.id === 'departure') {
+            renderDepartureStep();
+            return;
         }
 
         stepBody.querySelectorAll('.tour-opt').forEach(btn => {
@@ -214,6 +218,34 @@
                 answers[step.id] = btn.dataset.val;
             });
         });
+    }
+
+    function renderDepartureStep() {
+        const today = new Date();
+        const iso = today.toISOString().slice(0, 10);
+        const savedDate = answers.departureDate || iso;
+        const savedTime = answers.departureTime || '05:00';
+        stepBody.innerHTML = `
+            <div class="tour-departure-fields">
+                <label class="tour-field">
+                    <span class="tour-field-label">تاریخ حرکت</span>
+                    <input type="date" id="tourDepartureDate" class="tour-date-input" min="${iso}" value="${savedDate}">
+                </label>
+                <label class="tour-field">
+                    <span class="tour-field-label">ساعت حرکت (تقریبی)</span>
+                    <input type="time" id="tourDepartureTime" class="tour-date-input" value="${savedTime}">
+                </label>
+            </div>
+            <p class="tour-departure-hint">اگر حرکت بین ۱ تا ۱۰ روز آینده باشد، پیش‌بینی آب‌وهوا هم به برنامه اضافه می‌شود.</p>`;
+
+        document.getElementById('tourDepartureDate')?.addEventListener('change', function (e) {
+            answers.departureDate = e.target.value;
+        });
+        document.getElementById('tourDepartureTime')?.addEventListener('change', function (e) {
+            answers.departureTime = e.target.value;
+        });
+        answers.departureDate = savedDate;
+        answers.departureTime = savedTime;
     }
 
     function optionButtons(key, items) {
@@ -231,7 +263,16 @@
 
     function nextStep() {
         const step = STEPS[stepIndex];
-        if (!answers[step.id]) {
+        if (step.id === 'departure') {
+            const dateEl = document.getElementById('tourDepartureDate');
+            const timeEl = document.getElementById('tourDepartureTime');
+            answers.departureDate = dateEl?.value || answers.departureDate;
+            answers.departureTime = timeEl?.value || answers.departureTime;
+            if (!answers.departureDate) {
+                shake(stepBody);
+                return;
+            }
+        } else if (!answers[step.id]) {
             shake(stepBody);
             return;
         }
@@ -267,41 +308,129 @@
         return scored[0].p;
     }
 
+    function formatStartCities(peak) {
+        const cities = peak.startCities || [];
+        if (!cities.length) return 'نقطه شروع مسیر (جزئیات در صفحه قله)';
+        if (cities.length === 1) return cities[0];
+        return cities.join('، ');
+    }
+
+    function formatDepartureLabel() {
+        if (!answers.departureDate) return '—';
+        const parts = answers.departureDate.split('-').map(Number);
+        const d = new Date(parts[0], parts[1] - 1, parts[2]);
+        const dateFa = d.toLocaleDateString('fa-IR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        if (answers.departureTime) {
+            const [h, m] = answers.departureTime.split(':');
+            return dateFa + ' — ساعت ' + Number(h).toLocaleString('fa-IR') + ':' + (m || '00');
+        }
+        return dateFa;
+    }
+
+    function daysUntilDeparture(dateStr) {
+        const parts = dateStr.split('-').map(Number);
+        const dep = new Date(parts[0], parts[1] - 1, parts[2]);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        dep.setHours(0, 0, 0, 0);
+        return Math.round((dep - today) / 86400000);
+    }
+
+    function weatherLabel(code) {
+        const map = {
+            0: '☀️ آفتابی',
+            1: '🌤 عمدتاً آفتابی',
+            2: '⛅ نیمه‌ابری',
+            3: '☁️ ابری',
+            45: '🌫 مه',
+            48: '🌫 مه',
+            51: '🌦 نم‌نم باران',
+            53: '🌦 نم‌نم باران',
+            55: '🌦 نم‌نم باران',
+            61: '🌧 بارانی',
+            63: '🌧 بارانی',
+            65: '🌧 باران شدید',
+            71: '🌨 برف',
+            73: '🌨 برف',
+            75: '🌨 برف سنگین',
+            77: '🌨 دانه برف',
+            80: '🌦 رگبار',
+            81: '🌦 رگبار',
+            82: '⛈ رگبار شدید',
+            85: '🌨 برف',
+            86: '🌨 برف سنگین',
+            95: '⛈ رعد و برق',
+            96: '⛈ تگرگ',
+            99: '⛈ تگرگ شدید'
+        };
+        return map[code] || '🌡 نامشخص';
+    }
+
+    async function fetchWeatherForecast(peak, dateStr) {
+        if (!peak.lat || !peak.lng) return null;
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + peak.lat +
+            '&longitude=' + peak.lng +
+            '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max' +
+            '&timezone=Asia%2FTehran&forecast_days=16';
+        const res = await fetch(url);
+        if (!res.ok) return null;
+        const data = await res.json();
+        const daily = data.daily;
+        if (!daily || !daily.time) return null;
+        const idx = daily.time.indexOf(dateStr);
+        if (idx < 0) return null;
+        return {
+            date: dateStr,
+            label: weatherLabel(daily.weathercode[idx]),
+            tMax: Math.round(daily.temperature_2m_max[idx]),
+            tMin: Math.round(daily.temperature_2m_min[idx]),
+            rain: daily.precipitation_sum[idx],
+            wind: Math.round(daily.windspeed_10m_max[idx])
+        };
+    }
+
     function buildDayPlan(peak, days) {
         const n = days === '1' ? 1 : days === '2' ? 3 : 4;
+        const start = formatStartCities(peak);
+        const fromLine = peak.startCities && peak.startCities.length > 1
+            ? 'حرکت از یکی از شهرهای مبدا: ' + start
+            : 'حرکت از ' + start;
+        const returnLine = peak.startCities && peak.startCities.length > 1
+            ? 'بازگشت به ' + peak.startCities[0]
+            : 'بازگشت به ' + start;
         const daysArr = [];
         if (n === 1) {
             daysArr.push({ day: 1, title: 'صعود و بازگشت', items: [
-                'حرکت سحرگاه (۵:۰۰) از نقطه شروع',
-                `صعود تا قله ${peak.name} (${peak.elevation.toLocaleString('fa-IR')} م)`,
+                fromLine + ' (سحرگاه)',
+                'صعود تا قله ' + peak.name + ' (' + peak.elevation.toLocaleString('fa-IR') + ' م)',
                 'استراحت در قله و عکاسی (۳۰-۴۵ دقیقه)',
-                'فرود تا پایگاه و بازگشت'
+                returnLine
             ]});
         } else if (n <= 3) {
             daysArr.push({ day: 1, title: 'رسیدن به پایگاه', items: [
-                'حرکت از شهر مبدا به نقطه شروع مسیر',
+                fromLine + ' به نقطه شروع مسیر',
                 'پیاده‌روی تا پناهگاه / اردوگاه',
                 'استقرار، آماده‌سازی تجهیزات و استراحت',
                 'بررسی آب‌وهوا و هماهنگی با گروه'
             ]});
             daysArr.push({ day: 2, title: 'روز صعود', items: [
                 'شروع حرکت قبل از طلوع (۴:۰۰-۵:۰۰)',
-                `صعود به قله ${peak.name}`,
+                'صعود به قله ' + peak.name,
                 'بازگشت به پناهگاه یا فرود تا پایین (بسته به شرایط)',
                 'جشن کوه در صورت موفقیت!'
             ]});
             if (n === 3) {
                 daysArr.push({ day: 3, title: 'روز احتیاط / بازگشت', items: [
                     'روز رزرو برای تأخیر آب‌وهوایی',
-                    'یا فرود کامل و بازگشت به شهر',
+                    returnLine,
                     'استراحت و مرور مسیر'
                 ]});
             }
         } else {
-            daysArr.push({ day: 1, title: 'آمادگی و انتقال', items: ['سفر به منطقه', 'خرید نان و آب', 'استقرار در اردوگاه'] });
+            daysArr.push({ day: 1, title: 'آمادگی و انتقال', items: [fromLine, 'خرید نان و آب', 'استقرار در اردوگاه'] });
             daysArr.push({ day: 2, title: 'آکلیماتیزاسیون', items: ['پیاده‌روی سبک', 'آشنایی با مسیر', 'آماده‌سازی بار'] });
-            daysArr.push({ day: 3, title: 'صعود', items: [`تلاش برای قله ${peak.name}`, 'بازگشت به پناهگاه'] });
-            daysArr.push({ day: 4, title: 'بازگشت', items: ['فرود کامل', 'بازگشت به شهر'] });
+            daysArr.push({ day: 3, title: 'صعود', items: ['تلاش برای قله ' + peak.name, 'بازگشت به پناهگاه'] });
+            daysArr.push({ day: 4, title: 'بازگشت', items: ['فرود کامل', returnLine] });
         }
         return daysArr;
     }
@@ -318,12 +447,7 @@
         return base;
     }
 
-    function showPlan() {
-        const peak = pickPeak();
-        if (!peak) {
-            alert('لیست قله‌ها هنوز بارگذاری نشده. لطفاً چند ثانیه صبر کنید.');
-            return;
-        }
+    function renderPlanHtml(peak, weatherBlock) {
         const levelFa = LEVEL_LABEL[answers.level];
         const seasonFa = { spring: 'بهار', summer: 'تابستان', fall: 'پاییز', winter: 'زمستان' }[answers.season];
         const groupFa = { solo: 'تک‌نفره', '2-4': '۲ تا ۴ نفر', '5+': '۵+ نفر' }[answers.group];
@@ -331,9 +455,10 @@
         const dayPlan = buildDayPlan(peak, answers.days);
         const today = new Date().toLocaleDateString('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' });
         const levelOk = LEVEL_RANK[levelFa] >= LEVEL_RANK[peak.minLevel];
+        const startCities = formatStartCities(peak);
 
-        planContent.innerHTML = `
-            <div class="tour-watermarks" aria-hidden="true">${Array(12).fill(`<span>${SITE}</span>`).join('')}</div>
+        return `
+            <div class="tour-watermarks" aria-hidden="true">${Array(12).fill('<span>' + SITE + '</span>').join('')}</div>
             <div class="tour-plan-inner">
                 <header class="tour-plan-header">
                     <div class="tour-plan-brand">سه تیغ · ${SITE}</div>
@@ -344,6 +469,8 @@
                 <table class="tour-plan-meta">
                     <tr><th>قله</th><td>${peak.name} (${peak.elevation.toLocaleString('fa-IR')} م)</td></tr>
                     <tr><th>استان</th><td>${peak.province}</td></tr>
+                    <tr><th>شهر(های) مبدا</th><td>${startCities}</td></tr>
+                    <tr><th>تاریخ حرکت</th><td>${formatDepartureLabel()}</td></tr>
                     <tr><th>سختی</th><td>${peak.difficulty}</td></tr>
                     <tr><th>مسیر پیشنهادی</th><td>${peak.route}</td></tr>
                     <tr><th>بهترین فصل</th><td>${peak.bestSeason}</td></tr>
@@ -353,25 +480,25 @@
                     <tr><th>فصل برنامه‌ریزی</th><td>${seasonFa}</td></tr>
                 </table>
 
+                ${weatherBlock || ''}
+
                 ${peak.shelters.length ? `
                 <section class="tour-plan-section">
                     <h3>🏕 پناهگاه / توقف</h3>
-                    <ul>${peak.shelters.map(s => `<li>${s}</li>`).join('')}</ul>
+                    <ul>${peak.shelters.map(function (s) { return '<li>' + s + '</li>'; }).join('')}</ul>
                 </section>` : ''}
 
                 <section class="tour-plan-section">
                     <h3>📅 برنامه روزانه</h3>
-                    ${dayPlan.map(d => `
-                        <div class="tour-day">
-                            <h4>روز ${d.day.toLocaleString('fa-IR')} — ${d.title}</h4>
-                            <ol>${d.items.map(i => `<li>${i}</li>`).join('')}</ol>
-                        </div>
-                    `).join('')}
+                    ${dayPlan.map(function (d) {
+                        return '<div class="tour-day"><h4>روز ' + d.day.toLocaleString('fa-IR') + ' — ' + d.title + '</h4><ol>' +
+                            d.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ol></div>';
+                    }).join('')}
                 </section>
 
                 <section class="tour-plan-section">
                     <h3>🎒 چک‌لیست تجهیزات</h3>
-                    <ul class="tour-gear-list">${gearList(answers.season, answers.level).map(g => `<li>${g}</li>`).join('')}</ul>
+                    <ul class="tour-gear-list">${gearList(answers.season, answers.level).map(function (g) { return '<li>' + g + '</li>'; }).join('')}</ul>
                 </section>
 
                 <section class="tour-plan-section tour-plan-safety">
@@ -388,13 +515,55 @@
                 <footer class="tour-plan-footer">
                     <p>این برنامه پیشنهادی است و جایگزین مشورت با راهنمای حرفه‌ای نیست.</p>
                     <p><strong>${SITE}</strong> — راهنمای جامع کوهنوردی ایران</p>
-                    ${peak.link ? `<p>اطلاعات بیشتر: <a href="${peak.link}">${SITE}/${peak.link}</a></p>` : ''}
+                    ${peak.link ? '<p>اطلاعات بیشتر: <a href="' + peak.link + '">' + SITE + '/' + peak.link + '</a></p>' : ''}
                 </footer>
             </div>`;
+    }
+
+    function weatherSectionHtml(forecast) {
+        if (!forecast) return '';
+        const rainText = forecast.rain > 0
+            ? forecast.rain.toLocaleString('fa-IR') + ' میلی‌متر بارش'
+            : 'بدون بارش قابل‌توجه';
+        return `
+            <section class="tour-plan-section tour-plan-weather">
+                <h3>🌤 پیش‌بینی آب‌وهوا (روز حرکت)</h3>
+                <div class="tour-weather-card">
+                    <div class="tour-weather-main">${forecast.label}</div>
+                    <div class="tour-weather-stats">
+                        <span>🌡 ${forecast.tMin.toLocaleString('fa-IR')} تا ${forecast.tMax.toLocaleString('fa-IR')} °C</span>
+                        <span>💧 ${rainText}</span>
+                        <span>💨 باد تا ${forecast.wind.toLocaleString('fa-IR')} km/h</span>
+                    </div>
+                    <p class="tour-weather-note">منبع: Open-Meteo · پیش‌بینی تقریبی برای ارتفاع قله — قبل از حرکت وضعیت محلی را دوباره چک کنید.</p>
+                </div>
+            </section>`;
+    }
+
+    async function showPlan() {
+        const peak = pickPeak();
+        if (!peak) {
+            alert('لیست قله‌ها هنوز بارگذاری نشده. لطفاً چند ثانیه صبر کنید.');
+            return;
+        }
 
         wizardEl.hidden = true;
         resultEl.hidden = false;
+        planContent.innerHTML = '<p class="tour-loading-peaks" style="padding:2rem;text-align:center">در حال ساخت برنامه…</p>';
         resultEl.scrollTop = 0;
+
+        let weatherBlock = '';
+        const daysAhead = answers.departureDate ? daysUntilDeparture(answers.departureDate) : -1;
+        if (daysAhead >= 1 && daysAhead <= 10) {
+            try {
+                const forecast = await fetchWeatherForecast(peak, answers.departureDate);
+                weatherBlock = weatherSectionHtml(forecast);
+            } catch (err) {
+                console.warn('weather forecast', err);
+            }
+        }
+
+        planContent.innerHTML = renderPlanHtml(peak, weatherBlock);
     }
 
     async function downloadPdf() {

@@ -9,11 +9,20 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 2,
     "route": "مسیر جنوبی (رینه) — کلاسیک‌ترین مسیر صعود",
+    "startCities": [
+      "رینه",
+      "پلور",
+      "دشت لار",
+      "رینه شروع می‌شود",
+      "صعود"
+    ],
     "shelters": [
       "پناهگاه برگ جهان (۳۲۵۰m)",
       "پناهگاه بارگاه سوم (۴۲۵۰m)"
     ],
-    "link": "peaks/damavand.html"
+    "link": "peaks/damavand.html",
+    "lat": 35.9553,
+    "lng": 52.1094
   },
   {
     "slug": "alamkooh",
@@ -25,11 +34,17 @@
     "bestSeason": "مرداد - شهریور",
     "minDays": 2,
     "route": "مسیر هاسک‌چال — دیواره شمالی",
+    "startCities": [
+      "واریان",
+      "کلاردشت (هاسک‌چال)"
+    ],
     "shelters": [
       "پناهگاه شیرپلا (۲۲۰۰m)",
       "پناهگاه صخره‌ای (۳۶۰۰m)"
     ],
-    "link": "peaks/alamkooh.html"
+    "link": "peaks/alamkooh.html",
+    "lat": 36.46,
+    "lng": 51.02
   },
   {
     "slug": "sabalan",
@@ -41,10 +56,19 @@
     "bestSeason": "تیر - مرداد",
     "minDays": 1,
     "route": "مسیر شمالی (شهرستان مشگین)",
+    "startCities": [
+      "مشگین‌شهر",
+      "لاهرود",
+      "شهرستان مشگین",
+      "یال غربی",
+      "اصلی (یال غربی)"
+    ],
     "shelters": [
       "پناهگاه سبلان (۳۵۰۰m)"
     ],
-    "link": "peaks/sabalan.html"
+    "link": "peaks/sabalan.html",
+    "lat": 38.2547,
+    "lng": 47.8219
   },
   {
     "slug": "kolonbastak",
@@ -56,10 +80,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 2,
     "route": "مسیر علم‌کوه",
+    "startCities": [
+      "علم‌کوه"
+    ],
     "shelters": [
       "پناهگاه تخت سلیمان (3800m)"
     ],
-    "link": "peaks/kolonbastak.html"
+    "link": "peaks/kolonbastak.html",
+    "lat": 36.15,
+    "lng": 51.4
   },
   {
     "slug": "takht-soleiman",
@@ -71,10 +100,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان شمیرانات"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/takht-soleiman.html"
+    "link": "peaks/takht-soleiman.html",
+    "lat": 35.98,
+    "lng": 51.75
   },
   {
     "slug": "siah-sang",
@@ -86,10 +120,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان نور"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/siah-sang.html"
+    "link": "peaks/siah-sang.html",
+    "lat": 36.15,
+    "lng": 51.5
   },
   {
     "slug": "zardkooh",
@@ -101,10 +140,17 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر چل‌گردان — از منطقه کوهرنگ",
+    "startCities": [
+      "چلگرد",
+      "شهرکرد",
+      "منطقه کوهرنگ"
+    ],
     "shelters": [
       "پناهگاه زردکوه (۳۲۰۰m)"
     ],
-    "link": "peaks/zardkooh.html"
+    "link": "peaks/zardkooh.html",
+    "lat": 32.37,
+    "lng": 50.06
   },
   {
     "slug": "hezar",
@@ -116,10 +162,16 @@
     "bestSeason": "خرداد - شهریور",
     "minDays": 2,
     "route": "مسیر هزار — از بافت",
+    "startCities": [
+      "بافت",
+      "کرمان"
+    ],
     "shelters": [
       "کمپ میانی مسیر"
     ],
-    "link": "peaks/hezar.html"
+    "link": "peaks/hezar.html",
+    "lat": 29.55,
+    "lng": 56.91
   },
   {
     "slug": "dena",
@@ -131,10 +183,18 @@
     "bestSeason": "اردیبهشت - تیر",
     "minDays": 2,
     "route": "مسیر سی‌سخت — قله بیشتر",
+    "startCities": [
+      "سی‌سخت",
+      "یاسوج",
+      "سیاسرت",
+      "تل‌خسرو"
+    ],
     "shelters": [
       "کلبه کوهپیمایی سی‌سخت"
     ],
-    "link": "peaks/dena.html"
+    "link": "peaks/dena.html",
+    "lat": 31.58,
+    "lng": 51.08
   },
   {
     "slug": "lalehzar",
@@ -146,11 +206,16 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان بردسیر"
+    ],
     "shelters": [
       "جانپناه قله هزار (4200m)",
       "پناهگاه هزار (3800m)"
     ],
-    "link": "peaks/lalehzar.html"
+    "link": "peaks/lalehzar.html",
+    "lat": 29.47,
+    "lng": 56.77
   },
   {
     "slug": "dena-south",
@@ -162,10 +227,15 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "سی سخت (دنا)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/dena-south.html"
+    "link": "peaks/dena-south.html",
+    "lat": 30.95,
+    "lng": 51.43
   },
   {
     "slug": "azadkooh",
@@ -177,10 +247,15 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "ناحیه (نور)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/azadkooh.html"
+    "link": "peaks/azadkooh.html",
+    "lat": 36.2,
+    "lng": 51.6
   },
   {
     "slug": "sialan",
@@ -192,10 +267,18 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی (رودبار)",
+    "startCities": [
+      "رودبار",
+      "اصلی (رودبار)",
+      "قزوین",
+      "رودبار گیلان"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/sialan.html"
+    "link": "peaks/sialan.html",
+    "lat": 36.67,
+    "lng": 50.04
   },
   {
     "slug": "eshterankoh",
@@ -207,10 +290,19 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر دره‌گل — از شهر ازنا",
+    "startCities": [
+      "ازنا",
+      "الیگودرز",
+      "شهر ازنا",
+      "اصلی (ازنا)",
+      "ازنا شروع می‌شود"
+    ],
     "shelters": [
       "پناهگاه اشترانکوه (۳۰۰۰m)"
     ],
-    "link": "peaks/eshterankoh.html"
+    "link": "peaks/eshterankoh.html",
+    "lat": 33.45,
+    "lng": 49.55
   },
   {
     "slug": "joupar",
@@ -222,10 +314,15 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "فندقاع (کرمان)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/joupar.html"
+    "link": "peaks/joupar.html",
+    "lat": 30.05,
+    "lng": 57.65
   },
   {
     "slug": "dobarar",
@@ -237,10 +334,15 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان شمیرانات"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/dobarar.html"
+    "link": "peaks/dobarar.html",
+    "lat": 35.95,
+    "lng": 51.8
   },
   {
     "slug": "shirkoh",
@@ -252,10 +354,17 @@
     "bestSeason": "فروردین - خرداد",
     "minDays": 1,
     "route": "مسیر شیرکوه — از مهریز",
+    "startCities": [
+      "مهریز",
+      "یزد",
+      "اصلی (یزد)"
+    ],
     "shelters": [
       "بدون پناهگاه — صعود روزانه"
     ],
-    "link": "peaks/shirkoh.html"
+    "link": "peaks/shirkoh.html",
+    "lat": 31.96,
+    "lng": 54.36
   },
   {
     "slug": "kahar",
@@ -267,10 +376,16 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر اصلی (کرج)",
+    "startCities": [
+      "کرج",
+      "اصلی (کرج)"
+    ],
     "shelters": [
       "پناهگاه تخت سلیمان (3800m)"
     ],
-    "link": "peaks/kahar.html"
+    "link": "peaks/kahar.html",
+    "lat": 36.1,
+    "lng": 51.15
   },
   {
     "slug": "taftan",
@@ -282,10 +397,16 @@
     "bestSeason": "اسفند - اردیبهشت",
     "minDays": 2,
     "route": "مسیر جنوبی — از خاش",
+    "startCities": [
+      "خاش",
+      "اصلی (خاش)"
+    ],
     "shelters": [
       "کمپ پایگاه (بدون پناهگاه مجهز)"
     ],
-    "link": "peaks/taftan.html"
+    "link": "peaks/taftan.html",
+    "lat": 28.6,
+    "lng": 61.13
   },
   {
     "slug": "khashchal",
@@ -297,10 +418,15 @@
     "bestSeason": "خرداد - مرداد",
     "minDays": 2,
     "route": "مسیر جنوبی",
+    "startCities": [
+      "شهرستان رودسر"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/khashchal.html"
+    "link": "peaks/khashchal.html",
+    "lat": 36.72,
+    "lng": 50.12
   },
   {
     "slug": "shahmoallem",
@@ -312,10 +438,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر جنگلی",
+    "startCities": [
+      "ارکم (رودسر)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/shahmoallem.html"
+    "link": "peaks/shahmoallem.html",
+    "lat": 36.8,
+    "lng": 50.3
   },
   {
     "slug": "mehrchal",
@@ -327,10 +458,17 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر دارآباد",
+    "startCities": [
+      "دارآباد",
+      "لالان",
+      "دارآباد تهران"
+    ],
     "shelters": [
       "جانپناه قله توچال (3950m)"
     ],
-    "link": "peaks/mehrchal.html"
+    "link": "peaks/mehrchal.html",
+    "lat": 36.07,
+    "lng": 51.54
   },
   {
     "slug": "tochal",
@@ -342,10 +480,18 @@
     "bestSeason": "همه فصل",
     "minDays": 1,
     "route": "مسیر دربند یا تله‌کابین + پیاده‌روی",
+    "startCities": [
+      "تهران (دربند)",
+      "تهران (درکه)",
+      "تهران (تله‌کابین توچال)",
+      "درکه"
+    ],
     "shelters": [
       "پناهگاه توچال (۳۹۰۰m)"
     ],
-    "link": "peaks/tochal.html"
+    "link": "peaks/tochal.html",
+    "lat": 35.82,
+    "lng": 51.42
   },
   {
     "slug": "janeston",
@@ -357,10 +503,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان شمیرانات"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/janeston.html"
+    "link": "peaks/janeston.html",
+    "lat": 36,
+    "lng": 51.7
   },
   {
     "slug": "gelak",
@@ -372,10 +523,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "گل سفید دولت آباد (چادگان)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/gelak.html"
+    "link": "peaks/gelak.html",
+    "lat": 32.6,
+    "lng": 50.3
   },
   {
     "slug": "karkas",
@@ -387,10 +543,16 @@
     "bestSeason": "فروردین - خرداد",
     "minDays": 1,
     "route": "مسیر دشت‌کوه — از نطنز",
+    "startCities": [
+      "نطنز",
+      "نیاسر"
+    ],
     "shelters": [
       "بدون پناهگاه — صعود روزانه"
     ],
-    "link": "peaks/karkas.html"
+    "link": "peaks/karkas.html",
+    "lat": 33.43,
+    "lng": 51.58
   },
   {
     "slug": "kharsan",
@@ -402,13 +564,18 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "سرخدر (کرج)"
+    ],
     "shelters": [
       "پناهگاه تخت سلیمان (3800m)",
       "پناهگاه سرچال (3050m)",
       "پناهگاه پلنگچال (3350m)",
       "پناهگاه شیرپلا (2800m)"
     ],
-    "link": "peaks/kharsan.html"
+    "link": "peaks/kharsan.html",
+    "lat": 36.1,
+    "lng": 51.3
   },
   {
     "slug": "asmankooh",
@@ -420,10 +587,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر جنوبی",
+    "startCities": [
+      "شهرستان تنکابن"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/asmankooh.html"
+    "link": "peaks/asmankooh.html",
+    "lat": 36.75,
+    "lng": 50.6
   },
   {
     "slug": "shahvar",
@@ -435,10 +607,16 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی (شاهرود)",
+    "startCities": [
+      "شاهرود",
+      "اصلی (شاهرود)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/shahvar.html"
+    "link": "peaks/shahvar.html",
+    "lat": 36.47,
+    "lng": 55.13
   },
   {
     "slug": "poolvar",
@@ -450,10 +628,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان رفسنجان"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/poolvar.html"
+    "link": "peaks/poolvar.html",
+    "lat": 30.25,
+    "lng": 55.95
   },
   {
     "slug": "varjin",
@@ -465,10 +648,16 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر جنگلی",
+    "startCities": [
+      "تهران (فشم)",
+      "لواسان"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/varjin.html"
+    "link": "peaks/varjin.html",
+    "lat": 36.2,
+    "lng": 51.8
   },
   {
     "slug": "yakhchal",
@@ -480,10 +669,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "نشترود"
+    ],
     "shelters": [
       "پناهگاه تخت سلیمان (3800m)"
     ],
-    "link": "peaks/yakhchal.html"
+    "link": "peaks/yakhchal.html",
+    "lat": 36.05,
+    "lng": 51.1
   },
   {
     "slug": "chelcheragh",
@@ -495,10 +689,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "چشمه انجیر فیروزآباد (بویراحمد)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/chelcheragh.html"
+    "link": "peaks/chelcheragh.html",
+    "lat": 30.8,
+    "lng": 51.45
   },
   {
     "slug": "kolakchal",
@@ -510,6 +709,12 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر ولنجک",
+    "startCities": [
+      "تهران (دریاچه چیتگر)",
+      "فشم",
+      "ولنجک",
+      "ولنجک با دسترسی آسان از مترو"
+    ],
     "shelters": [
       "پناهگاه توچال (3900m)",
       "کلبه ونک (2200m)",
@@ -517,7 +722,9 @@
       "پناهگاه شیرپلا (2800m)",
       "پناهگاه کرکس (2700m)"
     ],
-    "link": "peaks/kolakchal.html"
+    "link": "peaks/kolakchal.html",
+    "lat": 35.86,
+    "lng": 51.4
   },
   {
     "slug": "sahand",
@@ -529,10 +736,17 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر پیاده‌روی از پیست اسکی",
+    "startCities": [
+      "تبریز",
+      "پیست اسکی سهند",
+      "دامنه‌های ییلاقی"
+    ],
     "shelters": [
       "کلبه‌های منطقه اسکی"
     ],
-    "link": "peaks/sahand.html"
+    "link": "peaks/sahand.html",
+    "lat": 37.75,
+    "lng": 46.43
   },
   {
     "slug": "palungarden",
@@ -544,6 +758,9 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر تهران",
+    "startCities": [
+      "تهران"
+    ],
     "shelters": [
       "پناهگاه سرچال (3050m)",
       "جانپناه قله توچال (3950m)",
@@ -551,7 +768,9 @@
       "پناهگاه شیرپلا (2800m)",
       "پناهگاه توچال (3900m)"
     ],
-    "link": "peaks/palungarden.html"
+    "link": "peaks/palungarden.html",
+    "lat": 36.05,
+    "lng": 51.45
   },
   {
     "slug": "palangchal",
@@ -563,6 +782,10 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "تهران (شمشک)",
+      "دماوند (گیلاوند)"
+    ],
     "shelters": [
       "پناهگاه کرکس (2700m)",
       "کلبه ونک (2200m)",
@@ -570,7 +793,9 @@
       "پناهگاه ولیجیا (3100m)",
       "پناهگاه شیرپلا (2800m)"
     ],
-    "link": "peaks/palangchal.html"
+    "link": "peaks/palangchal.html",
+    "lat": 35.84,
+    "lng": 51.36
   },
   {
     "slug": "nizva",
@@ -582,10 +807,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان شاهرود"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/nizva.html"
+    "link": "peaks/nizva.html",
+    "lat": 36.52,
+    "lng": 55.28
   },
   {
     "slug": "espidkamar",
@@ -597,10 +827,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "کمربن (نور)"
+    ],
     "shelters": [
       "پناهگاه آزادکوه (3150m)"
     ],
-    "link": "peaks/espidkamar.html"
+    "link": "peaks/espidkamar.html",
+    "lat": 36.28,
+    "lng": 51.4
   },
   {
     "slug": "barfanbar",
@@ -612,10 +847,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان نجف آباد"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/barfanbar.html"
+    "link": "peaks/barfanbar.html",
+    "lat": 33.1,
+    "lng": 51.2
   },
   {
     "slug": "khaleno",
@@ -627,10 +867,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر جنگلی",
+    "startCities": [
+      "زایگان (شمیرانات)"
+    ],
     "shelters": [
       "جانپناه قله توچال (3950m)"
     ],
-    "link": "peaks/khaleno.html"
+    "link": "peaks/khaleno.html",
+    "lat": 35.98,
+    "lng": 51.6
   },
   {
     "slug": "sarchal",
@@ -642,10 +887,16 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "تهران",
+      "سمت تهران"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/sarchal.html"
+    "link": "peaks/sarchal.html",
+    "lat": 36.08,
+    "lng": 51.55
   },
   {
     "slug": "louvarak",
@@ -657,13 +908,19 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر شمال تهران",
+    "startCities": [
+      "شمال تهران",
+      "محله‌های شمالی تهران"
+    ],
     "shelters": [
       "کلبه ونک (2200m)",
       "پناهگاه توچال (3900m)",
       "جانپناه قله توچال (3950m)",
       "پناهگاه ولیجیا (3100m)"
     ],
-    "link": "peaks/louvarak.html"
+    "link": "peaks/louvarak.html",
+    "lat": 35.84,
+    "lng": 51.52
   },
   {
     "slug": "alvand",
@@ -675,12 +932,20 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی (همدان)",
+    "startCities": [
+      "همدان",
+      "اصلی (همدان)",
+      "گنج‌نامه",
+      "منطقه گنج‌نامه"
+    ],
     "shelters": [
       "کلبه گل‌زرد (2500m)",
       "جانپناه قله الوند (3350m)",
       "پناهگاه الوند (2800m)"
     ],
-    "link": "peaks/alvand.html"
+    "link": "peaks/alvand.html",
+    "lat": 34.73,
+    "lng": 48.52
   },
   {
     "slug": "sakhvid",
@@ -692,10 +957,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر جنگلی",
+    "startCities": [
+      "خنگ (بویراحمد)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/sakhvid.html"
+    "link": "peaks/sakhvid.html",
+    "lat": 30.6,
+    "lng": 51.8
   },
   {
     "slug": "barm-firouz",
@@ -707,10 +977,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان آباده"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/barm-firouz.html"
+    "link": "peaks/barm-firouz.html",
+    "lat": 31.5,
+    "lng": 52.1
   },
   {
     "slug": "rizan",
@@ -722,10 +997,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر آبشاری",
+    "startCities": [
+      "آبشاری"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/rizan.html"
+    "link": "peaks/rizan.html",
+    "lat": 35.93,
+    "lng": 51.65
   },
   {
     "slug": "pahnehhassar",
@@ -737,6 +1017,9 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "کیگا (تهران)"
+    ],
     "shelters": [
       "پناهگاه کرکس (2700m)",
       "پناهگاه ولیجیا (3100m)",
@@ -744,7 +1027,9 @@
       "پناهگاه پلنگچال (3350m)",
       "پناهگاه توچال (3900m)"
     ],
-    "link": "peaks/pahnehhassar.html"
+    "link": "peaks/pahnehhassar.html",
+    "lat": 35.88,
+    "lng": 51.28
   },
   {
     "slug": "pirzan-kolum",
@@ -756,10 +1041,15 @@
     "bestSeason": "تیر - شهریور",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان نور"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/pirzan-kolum.html"
+    "link": "peaks/pirzan-kolum.html",
+    "lat": 36.17,
+    "lng": 51.5
   },
   {
     "slug": "bazman",
@@ -771,10 +1061,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "دشت بلوچستان"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/bazman.html"
+    "link": "peaks/bazman.html",
+    "lat": 27.98,
+    "lng": 60.08
   },
   {
     "slug": "boghroudagh",
@@ -786,10 +1081,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان قزوین"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/boghroudagh.html"
+    "link": "peaks/boghroudagh.html",
+    "lat": 36.6,
+    "lng": 50.4
   },
   {
     "slug": "chalchali",
@@ -801,10 +1101,16 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر جنگلی (گرگان)",
+    "startCities": [
+      "گرگان",
+      "جنگلی (گرگان)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/chalchali.html"
+    "link": "peaks/chalchali.html",
+    "lat": 36.75,
+    "lng": 55.4
   },
   {
     "slug": "atashkooh",
@@ -816,13 +1122,18 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "سنگان بالا (تهران)"
+    ],
     "shelters": [
       "پناهگاه کرکس (2700m)",
       "پناهگاه شیرپلا (2800m)",
       "پناهگاه ولیجیا (3100m)",
       "پناهگاه پلنگچال (3350m)"
     ],
-    "link": "peaks/atashkooh.html"
+    "link": "peaks/atashkooh.html",
+    "lat": 35.9,
+    "lng": 51.2
   },
   {
     "slug": "sarlet",
@@ -834,10 +1145,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر جنگلی",
+    "startCities": [
+      "شهرستان نور"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/sarlet.html"
+    "link": "peaks/sarlet.html",
+    "lat": 36.13,
+    "lng": 51.95
   },
   {
     "slug": "soutak",
@@ -849,10 +1165,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "نیچ کوه (نوشهر)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/soutak.html"
+    "link": "peaks/soutak.html",
+    "lat": 36.3,
+    "lng": 51.6
   },
   {
     "slug": "cheshme-shahi",
@@ -864,11 +1185,16 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "تهران (تهران)"
+    ],
     "shelters": [
       "کلبه ونک (2200m)",
       "پناهگاه توچال (3900m)"
     ],
-    "link": "peaks/cheshme-shahi.html"
+    "link": "peaks/cheshme-shahi.html",
+    "lat": 35.8,
+    "lng": 51.48
   },
   {
     "slug": "shaho",
@@ -880,10 +1206,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "دوکنان (کرمانشاه)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/shaho.html"
+    "link": "peaks/shaho.html",
+    "lat": 34.48,
+    "lng": 46.55
   },
   {
     "slug": "paraw",
@@ -895,10 +1226,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "دره دراز (کرمانشاه)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/paraw.html"
+    "link": "peaks/paraw.html",
+    "lat": 34.36,
+    "lng": 47
   },
   {
     "slug": "aghdagh-khalkhal",
@@ -910,10 +1246,17 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی (خلخال)",
+    "startCities": [
+      "خلخال",
+      "اصلی (خلخال)",
+      "سمت خلخال"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/aghdagh-khalkhal.html"
+    "link": "peaks/aghdagh-khalkhal.html",
+    "lat": 37.75,
+    "lng": 48.5
   },
   {
     "slug": "bozghush",
@@ -925,10 +1268,16 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اسب‌فروشان",
+    "startCities": [
+      "اسب‌فروشان",
+      "جاده اردبیل به بستان‌آباد"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/bozghush.html"
+    "link": "peaks/bozghush.html",
+    "lat": 37.95,
+    "lng": 47.25
   },
   {
     "slug": "naz",
@@ -940,10 +1289,16 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "نارنج‌بنه (لاریجان)",
+      "آمل"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/naz.html"
+    "link": "peaks/naz.html",
+    "lat": 36,
+    "lng": 51.85
   },
   {
     "slug": "beheshtabad",
@@ -955,10 +1310,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر آبشاری",
+    "startCities": [
+      "آبشاری"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/beheshtabad.html"
+    "link": "peaks/beheshtabad.html",
+    "lat": 31.2,
+    "lng": 50.65
   },
   {
     "slug": "mishodagh",
@@ -970,10 +1330,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر علمدار",
+    "startCities": [
+      "علمدار"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/mishodagh.html"
+    "link": "peaks/mishodagh.html",
+    "lat": 38.4,
+    "lng": 45.8
   },
   {
     "slug": "darfak",
@@ -985,10 +1350,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر پیست اسکی",
+    "startCities": [
+      "پیست اسکی"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/darfak.html"
+    "link": "peaks/darfak.html",
+    "lat": 36.92,
+    "lng": 50.55
   },
   {
     "slug": "safinkooh",
@@ -1000,10 +1370,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "قوطی دره بالا (هرسین)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/safinkooh.html"
+    "link": "peaks/safinkooh.html",
+    "lat": 34.2,
+    "lng": 47.5
   },
   {
     "slug": "qoshadagh",
@@ -1015,10 +1390,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر جنگلی ارسباران",
+    "startCities": [
+      "جنگلی ارسباران"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/qoshadagh.html"
+    "link": "peaks/qoshadagh.html",
+    "lat": 38.9,
+    "lng": 46.6
   },
   {
     "slug": "giroft-heights",
@@ -1030,10 +1410,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "تمگاوان (جیرفت)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/giroft-heights.html"
+    "link": "peaks/giroft-heights.html",
+    "lat": 28.7,
+    "lng": 57.8
   },
   {
     "slug": "kebirkuh",
@@ -1045,10 +1430,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "قیله (کوهدشت)"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/kebirkuh.html"
+    "link": "peaks/kebirkuh.html",
+    "lat": 33.6,
+    "lng": 47.1
   },
   {
     "slug": "samamos",
@@ -1060,10 +1450,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر رودبار",
+    "startCities": [
+      "رودبار"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/samamos.html"
+    "link": "peaks/samamos.html",
+    "lat": 36.85,
+    "lng": 49.95
   },
   {
     "slug": "pirgardkooh",
@@ -1075,10 +1470,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر جنوبی",
+    "startCities": [
+      "شهرستان شاهرود"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/pirgardkooh.html"
+    "link": "peaks/pirgardkooh.html",
+    "lat": 36.6,
+    "lng": 55.6
   },
   {
     "slug": "dalab",
@@ -1090,10 +1490,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر اصلی",
+    "startCities": [
+      "شهرستان ایلام"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/dalab.html"
+    "link": "peaks/dalab.html",
+    "lat": 33.48,
+    "lng": 46.62
   },
   {
     "slug": "qalat",
@@ -1105,10 +1510,15 @@
     "bestSeason": "همه فصل",
     "minDays": 1,
     "route": "مسیر ییلاقی",
+    "startCities": [
+      "ییلاقی"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/qalat.html"
+    "link": "peaks/qalat.html",
+    "lat": 29.85,
+    "lng": 52.65
   },
   {
     "slug": "gelidagh",
@@ -1120,10 +1530,19 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر گلستان",
+    "startCities": [
+      "گلستان",
+      "خراسان",
+      "گلستان از میان مراتع سبز",
+      "سمت گلستان از میان مراتع سبز",
+      "خراسان شمالی با مناظر متفاوت"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/gelidagh.html"
+    "link": "peaks/gelidagh.html",
+    "lat": 37.18,
+    "lng": 56.1
   },
   {
     "slug": "espinas",
@@ -1135,10 +1554,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر قزوین",
+    "startCities": [
+      "قزوین"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/espinas.html"
+    "link": "peaks/espinas.html",
+    "lat": 36.55,
+    "lng": 50.2
   },
   {
     "slug": "khoshyeilagh",
@@ -1150,10 +1574,15 @@
     "bestSeason": "بهار - تابستان",
     "minDays": 1,
     "route": "مسیر ییلاقی",
+    "startCities": [
+      "ییلاقی"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/khoshyeilagh.html"
+    "link": "peaks/khoshyeilagh.html",
+    "lat": 37.02,
+    "lng": 55.78
   },
   {
     "slug": "jahanama",
@@ -1165,9 +1594,15 @@
     "bestSeason": "همه فصل",
     "minDays": 1,
     "route": "مسیر پارک ملی",
+    "startCities": [
+      "پارک ملی",
+      "اردوگاه پارک ملی"
+    ],
     "shelters": [
       "اطلاعات پناهگاه در صفحه قله"
     ],
-    "link": "peaks/jahanama.html"
+    "link": "peaks/jahanama.html",
+    "lat": 37.4,
+    "lng": 55.95
   }
 ]
