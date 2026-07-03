@@ -9,12 +9,9 @@ if (localStorage.getItem('theme') === 'dark') {
 }
 
 if (themeToggle) {
-    themeToggle.setAttribute('aria-pressed', body.classList.contains('dark-mode') ? 'true' : 'false');
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
-        const isDark = body.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 }
 
@@ -30,12 +27,9 @@ function closeMenu() {
     mobileMenuToggle.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
-    if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
 }
 
 if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-    mobileMenuToggle.setAttribute('aria-controls', 'navMenu');
     mobileMenuToggle.addEventListener('click', () => {
         const isOpen = navMenu.classList.contains('active');
         if (isOpen) {
@@ -45,7 +39,6 @@ if (mobileMenuToggle && navMenu) {
             mobileMenuToggle.classList.add('active');
             navOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            mobileMenuToggle.setAttribute('aria-expanded', 'true');
         }
     });
 }
@@ -436,10 +429,8 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // =============================================
-//  Neshan Map - تمام صفحه (فقط صفحاتی که #map دارند)
+//  Neshan Map - تمام صفحه
 // =============================================
-const mapEl = document.getElementById('map');
-if (mapEl && typeof L !== 'undefined') {
 const map = new L.Map('map', {
     key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
     maptype: 'dreamy',
@@ -673,7 +664,6 @@ fetch('js/shelters.json')
         console.error('❌ خطا در بارگذاری shelters.json:', err);
         document.getElementById('shelter-count').textContent = 'خطا در بارگذاری داده';
     });
-}
 
 // =============================================
 //  About Gallery Slider
@@ -767,19 +757,17 @@ const galleryImages = [
 // =============================================
 const backToTop = document.getElementById('backToTop');
 
-if (backToTop) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
 
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // =============================================
 //  Active Nav Link on Scroll

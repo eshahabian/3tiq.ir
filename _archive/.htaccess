@@ -1,0 +1,2 @@
+# Deny web access to archived backup files if this folder is deployed.
+Require all denied
