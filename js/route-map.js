@@ -249,46 +249,90 @@
         return { w: 2800, h: 2800 };
     }
 
+    function tileGridForView(nw, se) {
+        var minTx = Math.floor(nw.x / 256);
+        var maxTx = Math.floor(se.x / 256);
+        var minTy = Math.floor(nw.y / 256);
+        var maxTy = Math.floor(se.y / 256);
+        return {
+            minTx: minTx,
+            maxTx: maxTx,
+            minTy: minTy,
+            maxTy: maxTy,
+            count: (maxTx - minTx + 1) * (maxTy - minTy + 1)
+        };
+    }
+
     function computeExportView(allLatLngs, mapX, mapY, mapW, mapH) {
-        var padded = boundsForAspect(allLatLngs, mapW, mapH, 1.22);
+        var padded = boundsForAspect(allLatLngs, mapW, mapH, 1.18);
+        var MAX_TILES = 96;
+        var best = null;
 
         for (var z = 16; z >= 9; z--) {
             var nw = latLngToWorldPx(padded.getNorth(), padded.getWest(), z);
             var se = latLngToWorldPx(padded.getSouth(), padded.getEast(), z);
             var bw = se.x - nw.x;
             var bh = se.y - nw.y;
-            if (bw >= mapW && bh >= mapH) {
+            if (bw > mapW || bh > mapH) continue;
+            var grid = tileGridForView(nw, se);
+            if (grid.count > MAX_TILES) continue;
+            best = {
+                zoom: z,
+                nw: nw,
+                se: se,
+                drawW: bw,
+                drawH: bh,
+                offsetX: mapX + (mapW - bw) / 2,
+                offsetY: mapY + (mapH - bh) / 2
+            };
+            break;
+        }
+
+        if (best) return best;
+
+        for (var z2 = 9; z2 <= 16; z2++) {
+            var nw2 = latLngToWorldPx(padded.getNorth(), padded.getWest(), z2);
+            var se2 = latLngToWorldPx(padded.getSouth(), padded.getEast(), z2);
+            var bw2 = se2.x - nw2.x;
+            var bh2 = se2.y - nw2.y;
+            var grid2 = tileGridForView(nw2, se2);
+            if (grid2.count <= MAX_TILES) {
+                var scale = Math.min(mapW / bw2, mapH / bh2, 1);
                 return {
-                    zoom: z,
-                    nw: nw,
-                    se: se,
-                    drawW: mapW,
-                    drawH: mapH,
-                    offsetX: mapX,
-                    offsetY: mapY
+                    zoom: z2,
+                    nw: nw2,
+                    se: se2,
+                    drawW: bw2 * scale,
+                    drawH: bh2 * scale,
+                    offsetX: mapX + (mapW - bw2 * scale) / 2,
+                    offsetY: mapY + (mapH - bh2 * scale) / 2
                 };
             }
         }
 
-        var z = 9;
-        var nw = latLngToWorldPx(padded.getNorth(), padded.getWest(), z);
-        var se = latLngToWorldPx(padded.getSouth(), padded.getEast(), z);
+        var z3 = 9;
+        var nw3 = latLngToWorldPx(padded.getNorth(), padded.getWest(), z3);
+        var se3 = latLngToWorldPx(padded.getSouth(), padded.getEast(), z3);
+        var bw3 = se3.x - nw3.x;
+        var bh3 = se3.y - nw3.y;
         return {
-            zoom: z,
-            nw: nw,
-            se: se,
-            drawW: mapW,
-            drawH: mapH,
-            offsetX: mapX,
-            offsetY: mapY
+            zoom: z3,
+            nw: nw3,
+            se: se3,
+            drawW: Math.min(bw3, mapW),
+            drawH: Math.min(bh3, mapH),
+            offsetX: mapX + (mapW - Math.min(bw3, mapW)) / 2,
+            offsetY: mapY + (mapH - Math.min(bh3, mapH)) / 2
         };
     }
 
     function projectLatLng(lat, lng, view) {
         var p = latLngToWorldPx(lat, lng, view.zoom);
+        var dx = view.se.x - view.nw.x || 1;
+        var dy = view.se.y - view.nw.y || 1;
         return {
-            x: view.offsetX + (p.x - view.nw.x) / (view.se.x - view.nw.x) * view.drawW,
-            y: view.offsetY + (p.y - view.nw.y) / (view.se.y - view.nw.y) * view.drawH
+            x: view.offsetX + (p.x - view.nw.x) / dx * view.drawW,
+            y: view.offsetY + (p.y - view.nw.y) / dy * view.drawH
         };
     }
 
@@ -328,25 +372,34 @@
         var minTy = Math.floor(view.nw.y / 256);
         var maxTy = Math.floor(view.se.y / 256);
         var subs = ['a', 'b', 'c'];
-        var drawn = false;
+        var jobs = [];
         var idx = 0;
 
         for (var tx = minTx; tx <= maxTx; tx++) {
             for (var ty = minTy; ty <= maxTy; ty++) {
-                var url = TILE.replace('{s}', subs[idx++ % 3]).replace('{z}', z).replace('{x}', tx).replace('{y}', ty);
-                var img = await loadTileImage(url);
-                if (!img) continue;
-                var wx1 = tx * 256;
-                var wy1 = ty * 256;
-                var wx2 = (tx + 1) * 256;
-                var wy2 = (ty + 1) * 256;
-                var tl = projectLatLng(tileToLat(ty, z), tileToLng(tx, z), view);
-                var br = projectLatLng(tileToLat(ty + 1, z), tileToLng(tx + 1, z), view);
+                jobs.push({
+                    tx: tx,
+                    ty: ty,
+                    url: TILE.replace('{s}', subs[idx++ % 3]).replace('{z}', z).replace('{x}', tx).replace('{y}', ty)
+                });
+            }
+        }
+
+        var drawn = false;
+        var BATCH = 16;
+        for (var i = 0; i < jobs.length; i += BATCH) {
+            var slice = jobs.slice(i, i + BATCH);
+            var imgs = await Promise.all(slice.map(function (j) { return loadTileImage(j.url); }));
+            slice.forEach(function (j, k) {
+                var img = imgs[k];
+                if (!img) return;
+                var tl = projectLatLng(tileToLat(j.ty, z), tileToLng(j.tx, z), view);
+                var br = projectLatLng(tileToLat(j.ty + 1, z), tileToLng(j.tx + 1, z), view);
                 try {
                     ctx.drawImage(img, tl.x, tl.y, br.x - tl.x, br.y - tl.y);
                     drawn = true;
                 } catch (e) { /* skip tainted tile */ }
-            }
+            });
         }
         return drawn;
     }
@@ -584,11 +637,39 @@
         return canvas;
     }
 
-    function downloadCanvas(canvas, title) {
-        var link = document.createElement('a');
-        link.download = title + '-3tiq.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
+    function downloadCanvas(canvas, slug) {
+        var name = String(slug || 'route-map').replace(/[^\w\-]+/g, '-').replace(/^-+|-+$/g, '') || 'route-map';
+        name = name + '-3tiq.png';
+
+        function saveBlob(blob) {
+            if (!blob) {
+                alert('ذخیره تصویر ممکن نشد. لطفاً دوباره تلاش کنید.');
+                return;
+            }
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.download = name;
+            link.href = url;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 8000);
+        }
+
+        if (canvas.toBlob) {
+            canvas.toBlob(saveBlob, 'image/png');
+            return;
+        }
+
+        try {
+            var link = document.createElement('a');
+            link.download = name;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        } catch (err) {
+            console.error(err);
+            alert('ذخیره تصویر ممکن نشد. لطفاً دوباره تلاش کنید.');
+        }
     }
 
     async function exportPng(frame, ctx) {
@@ -617,7 +698,7 @@
 
             var size = exportCanvasSize(allLatLngs);
             var canvas = await renderMapExportCanvas(data, allLatLngs, size.w, size.h);
-            downloadCanvas(canvas, title);
+            downloadCanvas(canvas, data.peakId || title);
         } catch (err) {
             console.error(err);
             alert('ذخیره تصویر ممکن نشد. دوباره تلاش کنید.');
