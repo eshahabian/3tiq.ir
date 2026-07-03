@@ -1,0 +1,75 @@
+{
+    "peakId":  "yakhchal",
+    "peakName":  "یخچال",
+    "peakElevation":  3800,
+    "center":  [
+                   36.05,
+                   51.1
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "yakhchal-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1216,
+                                               "lng":  51.1093,
+                                               "label":  "Start",
+                                               "lat":  36.0118
+                                           },
+                                           {
+                                               "elevation":  1824,
+                                               "lng":  51.1046,
+                                               "lat":  36.0229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "yakhchal-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2204,
+                                               "lng":  51.1051,
+                                               "lat":  36.029
+                                           },
+                                           {
+                                               "elevation":  3116,
+                                               "lng":  51.102,
+                                               "lat":  36.0416
+                                           },
+                                           {
+                                               "elevation":  3800,
+                                               "lng":  51.1,
+                                               "label":  "Summit",
+                                               "lat":  36.05
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3800,
+                         "lng":  51.22,
+                         "name":  "پناهگاه تخت سلیمان",
+                         "type":  "پناهگاه",
+                         "lat":  36.11
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3800,
+                   "lng":  51.1,
+                   "name":  "قله یخچال",
+                   "lat":  36.05
+               }
+}

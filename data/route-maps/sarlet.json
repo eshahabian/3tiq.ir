@@ -1,0 +1,69 @@
+{
+    "peakId":  "sarlet",
+    "peakName":  "سرلت",
+    "peakElevation":  3400,
+    "center":  [
+                   36.13,
+                   51.95
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "sarlet-access-0",
+                       "name":  "ورود — مسیر جنگلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1088,
+                                               "lng":  51.9593,
+                                               "label":  "Start",
+                                               "lat":  36.0918
+                                           },
+                                           {
+                                               "elevation":  1632,
+                                               "lng":  51.9546,
+                                               "lat":  36.1029
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sarlet-main-0",
+                       "name":  "مسیر جنگلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1972,
+                                               "lng":  51.9551,
+                                               "lat":  36.109
+                                           },
+                                           {
+                                               "elevation":  2788,
+                                               "lng":  51.952,
+                                               "lat":  36.1216
+                                           },
+                                           {
+                                               "elevation":  3400,
+                                               "lng":  51.95,
+                                               "label":  "Summit",
+                                               "lat":  36.13
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3400,
+                   "lng":  51.95,
+                   "name":  "قله سرلت",
+                   "lat":  36.13
+               }
+}

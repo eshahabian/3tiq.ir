@@ -1,0 +1,103 @@
+{
+    "peakId":  "palungarden",
+    "peakName":  "پالون‌گردن",
+    "peakElevation":  3700,
+    "center":  [
+                   36.05,
+                   51.45
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "palungarden-access-0",
+                       "name":  "ورود — مسیر تهران",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1184,
+                                               "lng":  51.4593,
+                                               "label":  "Start",
+                                               "lat":  36.0118
+                                           },
+                                           {
+                                               "elevation":  1776,
+                                               "lng":  51.4546,
+                                               "lat":  36.0229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "palungarden-main-0",
+                       "name":  "مسیر تهران",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2146,
+                                               "lng":  51.4551,
+                                               "lat":  36.029
+                                           },
+                                           {
+                                               "elevation":  3034,
+                                               "lng":  51.452,
+                                               "lat":  36.0416
+                                           },
+                                           {
+                                               "elevation":  3700,
+                                               "lng":  51.45,
+                                               "label":  "Summit",
+                                               "lat":  36.05
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3050,
+                         "lng":  51.3833,
+                         "name":  "پناهگاه سرچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9667
+                     },
+                     {
+                         "elevation":  3950,
+                         "lng":  51.4028,
+                         "name":  "جانپناه قله توچال",
+                         "type":  "جانپناه",
+                         "lat":  35.9556
+                     },
+                     {
+                         "elevation":  3350,
+                         "lng":  51.3694,
+                         "name":  "پناهگاه پلنگچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9556
+                     },
+                     {
+                         "elevation":  2800,
+                         "lng":  51.3667,
+                         "name":  "پناهگاه شیرپلا",
+                         "type":  "پناهگاه",
+                         "lat":  35.95
+                     },
+                     {
+                         "elevation":  3900,
+                         "lng":  51.4,
+                         "name":  "پناهگاه توچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9333
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3700,
+                   "lng":  51.45,
+                   "name":  "قله پالون‌گردن",
+                   "lat":  36.05
+               }
+}

@@ -1,0 +1,103 @@
+{
+    "peakId":  "kolakchal",
+    "peakName":  "کلکچال",
+    "peakElevation":  3750,
+    "center":  [
+                   35.86,
+                   51.4
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "kolakchal-access-0",
+                       "name":  "ورود — مسیر ولنجک",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1200,
+                                               "lng":  51.4092,
+                                               "label":  "Start",
+                                               "lat":  35.8218
+                                           },
+                                           {
+                                               "elevation":  1800,
+                                               "lng":  51.4046,
+                                               "lat":  35.8329
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "kolakchal-main-0",
+                       "name":  "مسیر ولنجک",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2175,
+                                               "lng":  51.4051,
+                                               "lat":  35.839
+                                           },
+                                           {
+                                               "elevation":  3075,
+                                               "lng":  51.402,
+                                               "lat":  35.8516
+                                           },
+                                           {
+                                               "elevation":  3750,
+                                               "lng":  51.4,
+                                               "label":  "Summit",
+                                               "lat":  35.86
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3900,
+                         "lng":  51.4,
+                         "name":  "پناهگاه توچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9333
+                     },
+                     {
+                         "elevation":  2200,
+                         "lng":  51.4,
+                         "name":  "کلبه ونک",
+                         "type":  "کلبه",
+                         "lat":  35.7833
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  51.375,
+                         "name":  "پناهگاه ولیجیا",
+                         "type":  "پناهگاه",
+                         "lat":  35.9417
+                     },
+                     {
+                         "elevation":  2800,
+                         "lng":  51.3667,
+                         "name":  "پناهگاه شیرپلا",
+                         "type":  "پناهگاه",
+                         "lat":  35.95
+                     },
+                     {
+                         "elevation":  2700,
+                         "lng":  51.2833,
+                         "name":  "پناهگاه کرکس",
+                         "type":  "پناهگاه",
+                         "lat":  35.85
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3750,
+                   "lng":  51.4,
+                   "name":  "قله کلکچال",
+                   "lat":  35.86
+               }
+}

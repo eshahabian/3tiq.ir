@@ -1,0 +1,75 @@
+{
+    "peakId":  "kolonbastak",
+    "peakName":  "کلون‌بستک",
+    "peakElevation":  4650,
+    "center":  [
+                   36.15,
+                   51.4
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "kolonbastak-access-0",
+                       "name":  "ورود — مسیر علم‌کوه",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1488,
+                                               "lng":  51.4092,
+                                               "label":  "Start",
+                                               "lat":  36.1118
+                                           },
+                                           {
+                                               "elevation":  2232,
+                                               "lng":  51.4046,
+                                               "lat":  36.1229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "kolonbastak-main-0",
+                       "name":  "مسیر علم‌کوه",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2697,
+                                               "lng":  51.4051,
+                                               "lat":  36.129
+                                           },
+                                           {
+                                               "elevation":  3813,
+                                               "lng":  51.402,
+                                               "lat":  36.1416
+                                           },
+                                           {
+                                               "elevation":  4650,
+                                               "lng":  51.4,
+                                               "label":  "Summit",
+                                               "lat":  36.15
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3800,
+                         "lng":  51.22,
+                         "name":  "پناهگاه تخت سلیمان",
+                         "type":  "پناهگاه",
+                         "lat":  36.11
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4650,
+                   "lng":  51.4,
+                   "name":  "قله کلون‌بستک",
+                   "lat":  36.15
+               }
+}

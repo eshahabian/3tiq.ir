@@ -1,0 +1,69 @@
+{
+    "peakId":  "chalchali",
+    "peakName":  "چلچلی",
+    "peakElevation":  3420,
+    "center":  [
+                   36.75,
+                   55.4
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "chalchali-access-0",
+                       "name":  "ورود — مسیر جنگلی (گرگان)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1094,
+                                               "lng":  55.4092,
+                                               "label":  "Start",
+                                               "lat":  36.7118
+                                           },
+                                           {
+                                               "elevation":  1642,
+                                               "lng":  55.4046,
+                                               "lat":  36.7229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "chalchali-main-0",
+                       "name":  "مسیر جنگلی (گرگان)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1984,
+                                               "lng":  55.4051,
+                                               "lat":  36.729
+                                           },
+                                           {
+                                               "elevation":  2804,
+                                               "lng":  55.402,
+                                               "lat":  36.7416
+                                           },
+                                           {
+                                               "elevation":  3420,
+                                               "lng":  55.4,
+                                               "label":  "Summit",
+                                               "lat":  36.75
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3420,
+                   "lng":  55.4,
+                   "name":  "قله چلچلی",
+                   "lat":  36.75
+               }
+}

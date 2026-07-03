@@ -1,0 +1,69 @@
+{
+    "peakId":  "bozghush",
+    "peakName":  "بزقوش",
+    "peakElevation":  3306,
+    "center":  [
+                   37.95,
+                   47.25
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "bozghush-access-0",
+                       "name":  "ورود — مسیر اسب‌فروشان",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1058,
+                                               "lng":  47.2592,
+                                               "label":  "Start",
+                                               "lat":  37.9118
+                                           },
+                                           {
+                                               "elevation":  1587,
+                                               "lng":  47.2546,
+                                               "lat":  37.9229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "bozghush-main-0",
+                       "name":  "مسیر اسب‌فروشان",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1917,
+                                               "lng":  47.2551,
+                                               "lat":  37.929
+                                           },
+                                           {
+                                               "elevation":  2711,
+                                               "lng":  47.252,
+                                               "lat":  37.9416
+                                           },
+                                           {
+                                               "elevation":  3306,
+                                               "lng":  47.25,
+                                               "label":  "Summit",
+                                               "lat":  37.95
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3306,
+                   "lng":  47.25,
+                   "name":  "قله بزقوش",
+                   "lat":  37.95
+               }
+}

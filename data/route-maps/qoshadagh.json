@@ -1,0 +1,69 @@
+{
+    "peakId":  "qoshadagh",
+    "peakName":  "قوشاداغ",
+    "peakElevation":  3120,
+    "center":  [
+                   38.9,
+                   46.6
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "qoshadagh-access-0",
+                       "name":  "ورود — مسیر جنگلی ارسباران",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  998,
+                                               "lng":  46.6093,
+                                               "label":  "Start",
+                                               "lat":  38.8618
+                                           },
+                                           {
+                                               "elevation":  1498,
+                                               "lng":  46.6046,
+                                               "lat":  38.8729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "qoshadagh-main-0",
+                       "name":  "مسیر جنگلی ارسباران",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1810,
+                                               "lng":  46.6051,
+                                               "lat":  38.879
+                                           },
+                                           {
+                                               "elevation":  2558,
+                                               "lng":  46.602,
+                                               "lat":  38.8916
+                                           },
+                                           {
+                                               "elevation":  3120,
+                                               "lng":  46.6,
+                                               "label":  "Summit",
+                                               "lat":  38.9
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3120,
+                   "lng":  46.6,
+                   "name":  "قله قوشاداغ",
+                   "lat":  38.9
+               }
+}

@@ -1,0 +1,69 @@
+{
+    "peakId":  "joupar",
+    "peakName":  "جوپار",
+    "peakElevation":  4135,
+    "center":  [
+                   30.05,
+                   57.65
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "joupar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1323,
+                                               "lng":  57.6592,
+                                               "label":  "Start",
+                                               "lat":  30.0118
+                                           },
+                                           {
+                                               "elevation":  1985,
+                                               "lng":  57.6546,
+                                               "lat":  30.0229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "joupar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2398,
+                                               "lng":  57.6551,
+                                               "lat":  30.029
+                                           },
+                                           {
+                                               "elevation":  3391,
+                                               "lng":  57.652,
+                                               "lat":  30.0416
+                                           },
+                                           {
+                                               "elevation":  4135,
+                                               "lng":  57.65,
+                                               "label":  "Summit",
+                                               "lat":  30.05
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4135,
+                   "lng":  57.65,
+                   "name":  "قله جوپار",
+                   "lat":  30.05
+               }
+}

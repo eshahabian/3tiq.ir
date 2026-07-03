@@ -1,0 +1,69 @@
+{
+    "peakId":  "safinkooh",
+    "peakName":  "سفین‌کوه",
+    "peakElevation":  3130,
+    "center":  [
+                   34.2,
+                   47.5
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "safinkooh-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1002,
+                                               "lng":  47.5092,
+                                               "label":  "Start",
+                                               "lat":  34.1618
+                                           },
+                                           {
+                                               "elevation":  1502,
+                                               "lng":  47.5046,
+                                               "lat":  34.1729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "safinkooh-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1815,
+                                               "lng":  47.5051,
+                                               "lat":  34.179
+                                           },
+                                           {
+                                               "elevation":  2567,
+                                               "lng":  47.502,
+                                               "lat":  34.1916
+                                           },
+                                           {
+                                               "elevation":  3130,
+                                               "lng":  47.5,
+                                               "label":  "Summit",
+                                               "lat":  34.2
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3130,
+                   "lng":  47.5,
+                   "name":  "قله سفین‌کوه",
+                   "lat":  34.2
+               }
+}

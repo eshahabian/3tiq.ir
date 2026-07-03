@@ -1,0 +1,69 @@
+{
+    "peakId":  "qalat",
+    "peakName":  "قلات",
+    "peakElevation":  2850,
+    "center":  [
+                   29.85,
+                   52.65
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "qalat-access-0",
+                       "name":  "ورود — مسیر ییلاقی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  912,
+                                               "lng":  52.6592,
+                                               "label":  "Start",
+                                               "lat":  29.8118
+                                           },
+                                           {
+                                               "elevation":  1368,
+                                               "lng":  52.6546,
+                                               "lat":  29.8229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "qalat-main-0",
+                       "name":  "مسیر ییلاقی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1653,
+                                               "lng":  52.6551,
+                                               "lat":  29.829
+                                           },
+                                           {
+                                               "elevation":  2337,
+                                               "lng":  52.652,
+                                               "lat":  29.8416
+                                           },
+                                           {
+                                               "elevation":  2850,
+                                               "lng":  52.65,
+                                               "label":  "Summit",
+                                               "lat":  29.85
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2850,
+                   "lng":  52.65,
+                   "name":  "قله قلات",
+                   "lat":  29.85
+               }
+}

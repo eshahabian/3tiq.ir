@@ -1,0 +1,116 @@
+{
+    "peakId":  "karkas",
+    "peakName":  "کرکس",
+    "peakElevation":  3899,
+    "center":  [
+                   33.43,
+                   51.58
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "karkas-access-0",
+                       "name":  "ورود — مسیر نطنز",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1248,
+                                               "lng":  51.5892,
+                                               "label":  "Start",
+                                               "lat":  33.3918
+                                           },
+                                           {
+                                               "elevation":  1872,
+                                               "lng":  51.5846,
+                                               "lat":  33.4029
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "karkas-main-0",
+                       "name":  "مسیر نطنز",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2261,
+                                               "lng":  51.5851,
+                                               "lat":  33.409
+                                           },
+                                           {
+                                               "elevation":  3197,
+                                               "lng":  51.582,
+                                               "lat":  33.4216
+                                           },
+                                           {
+                                               "elevation":  3899,
+                                               "lng":  51.58,
+                                               "label":  "Summit",
+                                               "lat":  33.43
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "karkas-access-1",
+                       "name":  "ورود — مسیر نیاسر",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1248,
+                                               "lng":  51.5418,
+                                               "label":  "Start",
+                                               "lat":  33.3918
+                                           },
+                                           {
+                                               "elevation":  1872,
+                                               "lng":  51.5609,
+                                               "lat":  33.4029
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "karkas-main-1",
+                       "name":  "مسیر نیاسر",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2261,
+                                               "lng":  51.559,
+                                               "lat":  33.409
+                                           },
+                                           {
+                                               "elevation":  3197,
+                                               "lng":  51.5716,
+                                               "lat":  33.4216
+                                           },
+                                           {
+                                               "elevation":  3899,
+                                               "lng":  51.58,
+                                               "label":  "Summit",
+                                               "lat":  33.43
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3899,
+                   "lng":  51.58,
+                   "name":  "قله کرکس",
+                   "lat":  33.43
+               }
+}

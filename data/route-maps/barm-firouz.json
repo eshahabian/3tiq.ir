@@ -1,0 +1,69 @@
+{
+    "peakId":  "barm-firouz",
+    "peakName":  "برم فیروز",
+    "peakElevation":  3500,
+    "center":  [
+                   31.5,
+                   52.1
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "barm-firouz-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1120,
+                                               "lng":  52.1093,
+                                               "label":  "Start",
+                                               "lat":  31.4618
+                                           },
+                                           {
+                                               "elevation":  1680,
+                                               "lng":  52.1046,
+                                               "lat":  31.4729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "barm-firouz-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2030,
+                                               "lng":  52.1051,
+                                               "lat":  31.479
+                                           },
+                                           {
+                                               "elevation":  2870,
+                                               "lng":  52.102,
+                                               "lat":  31.4916
+                                           },
+                                           {
+                                               "elevation":  3500,
+                                               "lng":  52.1,
+                                               "label":  "Summit",
+                                               "lat":  31.5
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3500,
+                   "lng":  52.1,
+                   "name":  "قله برم فیروز",
+                   "lat":  31.5
+               }
+}

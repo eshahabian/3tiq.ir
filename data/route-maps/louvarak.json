@@ -1,0 +1,96 @@
+{
+    "peakId":  "louvarak",
+    "peakName":  "لوارک",
+    "peakElevation":  3600,
+    "center":  [
+                   35.84,
+                   51.52
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "louvarak-access-0",
+                       "name":  "ورود — مسیر شمال تهران",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1152,
+                                               "lng":  51.5293,
+                                               "label":  "Start",
+                                               "lat":  35.8018
+                                           },
+                                           {
+                                               "elevation":  1728,
+                                               "lng":  51.5246,
+                                               "lat":  35.8129
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "louvarak-main-0",
+                       "name":  "مسیر شمال تهران",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2088,
+                                               "lng":  51.5251,
+                                               "lat":  35.819
+                                           },
+                                           {
+                                               "elevation":  2952,
+                                               "lng":  51.522,
+                                               "lat":  35.8316
+                                           },
+                                           {
+                                               "elevation":  3600,
+                                               "lng":  51.52,
+                                               "label":  "Summit",
+                                               "lat":  35.84
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  2200,
+                         "lng":  51.4,
+                         "name":  "کلبه ونک",
+                         "type":  "کلبه",
+                         "lat":  35.7833
+                     },
+                     {
+                         "elevation":  3900,
+                         "lng":  51.4,
+                         "name":  "پناهگاه توچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9333
+                     },
+                     {
+                         "elevation":  3950,
+                         "lng":  51.4028,
+                         "name":  "جانپناه قله توچال",
+                         "type":  "جانپناه",
+                         "lat":  35.9556
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  51.375,
+                         "name":  "پناهگاه ولیجیا",
+                         "type":  "پناهگاه",
+                         "lat":  35.9417
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3600,
+                   "lng":  51.52,
+                   "name":  "قله لوارک",
+                   "lat":  35.84
+               }
+}

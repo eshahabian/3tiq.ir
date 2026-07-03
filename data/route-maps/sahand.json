@@ -1,0 +1,82 @@
+{
+    "peakId":  "sahand",
+    "peakName":  "سهند",
+    "peakElevation":  3707,
+    "center":  [
+                   37.75,
+                   46.43
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "sahand-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1186,
+                                               "lng":  46.4392,
+                                               "label":  "Start",
+                                               "lat":  37.7118
+                                           },
+                                           {
+                                               "elevation":  1779,
+                                               "lng":  46.4346,
+                                               "lat":  37.7229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sahand-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2150,
+                                               "lng":  46.4351,
+                                               "lat":  37.729
+                                           },
+                                           {
+                                               "elevation":  3040,
+                                               "lng":  46.432,
+                                               "lat":  37.7416
+                                           },
+                                           {
+                                               "elevation":  3707,
+                                               "lng":  46.43,
+                                               "label":  "Summit",
+                                               "lat":  37.75
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3550,
+                         "lng":  46.30,
+                         "name":  "جانپناه سهند",
+                         "type":  "جانپناه",
+                         "lat":  37.75
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  46.28,
+                         "name":  "پناهگاه سهند",
+                         "type":  "پناهگاه",
+                         "lat":  37.73
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3707,
+                   "lng":  46.43,
+                   "name":  "قله سهند",
+                   "lat":  37.75
+               }
+}

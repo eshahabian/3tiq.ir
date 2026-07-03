@@ -1,0 +1,69 @@
+{
+    "peakId":  "dena-south",
+    "peakName":  "قله جنوبی دنا",
+    "peakElevation":  4320,
+    "center":  [
+                   30.95,
+                   51.43
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "dena-south-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1382,
+                                               "lng":  51.4392,
+                                               "label":  "Start",
+                                               "lat":  30.9118
+                                           },
+                                           {
+                                               "elevation":  2074,
+                                               "lng":  51.4346,
+                                               "lat":  30.9229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "dena-south-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2506,
+                                               "lng":  51.4351,
+                                               "lat":  30.929
+                                           },
+                                           {
+                                               "elevation":  3542,
+                                               "lng":  51.432,
+                                               "lat":  30.9416
+                                           },
+                                           {
+                                               "elevation":  4320,
+                                               "lng":  51.43,
+                                               "label":  "Summit",
+                                               "lat":  30.95
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4320,
+                   "lng":  51.43,
+                   "name":  "قله قله جنوبی دنا",
+                   "lat":  30.95
+               }
+}

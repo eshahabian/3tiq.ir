@@ -1,0 +1,69 @@
+{
+    "peakId":  "pirzan-kolum",
+    "peakName":  "پیرزن‌کلوم",
+    "peakElevation":  3500,
+    "center":  [
+                   36.17,
+                   51.5
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "pirzan-kolum-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1120,
+                                               "lng":  51.5092,
+                                               "label":  "Start",
+                                               "lat":  36.1318
+                                           },
+                                           {
+                                               "elevation":  1680,
+                                               "lng":  51.5046,
+                                               "lat":  36.1429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "pirzan-kolum-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2030,
+                                               "lng":  51.5051,
+                                               "lat":  36.149
+                                           },
+                                           {
+                                               "elevation":  2870,
+                                               "lng":  51.502,
+                                               "lat":  36.1616
+                                           },
+                                           {
+                                               "elevation":  3500,
+                                               "lng":  51.5,
+                                               "label":  "Summit",
+                                               "lat":  36.17
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3500,
+                   "lng":  51.5,
+                   "name":  "قله پیرزن‌کلوم",
+                   "lat":  36.17
+               }
+}

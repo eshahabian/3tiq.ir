@@ -1,0 +1,69 @@
+{
+    "peakId":  "barfanbar",
+    "peakName":  "برف‌انبار",
+    "peakElevation":  3600,
+    "center":  [
+                   33.1,
+                   51.2
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "barfanbar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1152,
+                                               "lng":  51.2093,
+                                               "label":  "Start",
+                                               "lat":  33.0618
+                                           },
+                                           {
+                                               "elevation":  1728,
+                                               "lng":  51.2046,
+                                               "lat":  33.0729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "barfanbar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2088,
+                                               "lng":  51.2051,
+                                               "lat":  33.079
+                                           },
+                                           {
+                                               "elevation":  2952,
+                                               "lng":  51.202,
+                                               "lat":  33.0916
+                                           },
+                                           {
+                                               "elevation":  3600,
+                                               "lng":  51.2,
+                                               "label":  "Summit",
+                                               "lat":  33.1
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3600,
+                   "lng":  51.2,
+                   "name":  "قله برف‌انبار",
+                   "lat":  33.1
+               }
+}

@@ -1,0 +1,69 @@
+{
+    "peakId":  "asmankooh",
+    "peakName":  "آسمان‌کوه",
+    "peakElevation":  3842,
+    "center":  [
+                   36.75,
+                   50.6
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "asmankooh-access-0",
+                       "name":  "ورود — مسیر جنوبی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1229,
+                                               "lng":  50.6093,
+                                               "label":  "Start",
+                                               "lat":  36.7118
+                                           },
+                                           {
+                                               "elevation":  1844,
+                                               "lng":  50.6046,
+                                               "lat":  36.7229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "asmankooh-main-0",
+                       "name":  "مسیر جنوبی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2228,
+                                               "lng":  50.6051,
+                                               "lat":  36.729
+                                           },
+                                           {
+                                               "elevation":  3150,
+                                               "lng":  50.602,
+                                               "lat":  36.7416
+                                           },
+                                           {
+                                               "elevation":  3842,
+                                               "lng":  50.6,
+                                               "label":  "Summit",
+                                               "lat":  36.75
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3842,
+                   "lng":  50.6,
+                   "name":  "قله آسمان‌کوه",
+                   "lat":  36.75
+               }
+}

@@ -1,0 +1,75 @@
+{
+    "peakId":  "khaleno",
+    "peakName":  "خلنو",
+    "peakElevation":  3600,
+    "center":  [
+                   35.98,
+                   51.6
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "khaleno-access-0",
+                       "name":  "ورود — مسیر جنگلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1152,
+                                               "lng":  51.6093,
+                                               "label":  "Start",
+                                               "lat":  35.9418
+                                           },
+                                           {
+                                               "elevation":  1728,
+                                               "lng":  51.6046,
+                                               "lat":  35.9529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "khaleno-main-0",
+                       "name":  "مسیر جنگلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2088,
+                                               "lng":  51.6051,
+                                               "lat":  35.959
+                                           },
+                                           {
+                                               "elevation":  2952,
+                                               "lng":  51.602,
+                                               "lat":  35.9716
+                                           },
+                                           {
+                                               "elevation":  3600,
+                                               "lng":  51.6,
+                                               "label":  "Summit",
+                                               "lat":  35.98
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3950,
+                         "lng":  51.4028,
+                         "name":  "جانپناه قله توچال",
+                         "type":  "جانپناه",
+                         "lat":  35.9556
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3600,
+                   "lng":  51.6,
+                   "name":  "قله خلنو",
+                   "lat":  35.98
+               }
+}

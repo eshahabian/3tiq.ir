@@ -1,0 +1,122 @@
+{
+    "peakId":  "alamkooh",
+    "peakName":  "علم‌کوه",
+    "peakElevation":  4850,
+    "center":  [
+                   36.46,
+                   51.02
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "alamkooh-access-0",
+                       "name":  "ورود — مسیر جنوبی (واریان)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1552,
+                                               "lng":  51.0293,
+                                               "label":  "Start",
+                                               "lat":  36.4218
+                                           },
+                                           {
+                                               "elevation":  2328,
+                                               "lng":  51.0246,
+                                               "lat":  36.4329
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "alamkooh-main-0",
+                       "name":  "مسیر جنوبی (واریان)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2813,
+                                               "lng":  51.0251,
+                                               "lat":  36.439
+                                           },
+                                           {
+                                               "elevation":  3977,
+                                               "lng":  51.022,
+                                               "lat":  36.4516
+                                           },
+                                           {
+                                               "elevation":  4850,
+                                               "lng":  51.02,
+                                               "label":  "Summit",
+                                               "lat":  36.46
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "alamkooh-access-1",
+                       "name":  "ورود — دیواره شمالی",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1552,
+                                               "lng":  50.9818,
+                                               "label":  "Start",
+                                               "lat":  36.4218
+                                           },
+                                           {
+                                               "elevation":  2328,
+                                               "lng":  51.0009,
+                                               "lat":  36.4329
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "alamkooh-main-1",
+                       "name":  "دیواره شمالی",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2813,
+                                               "lng":  50.999,
+                                               "lat":  36.439
+                                           },
+                                           {
+                                               "elevation":  3977,
+                                               "lng":  51.0116,
+                                               "lat":  36.4516
+                                           },
+                                           {
+                                               "elevation":  4850,
+                                               "lng":  51.02,
+                                               "label":  "Summit",
+                                               "lat":  36.46
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3100,
+                         "lng":  51.15,
+                         "name":  "پناهگاه هزارچال",
+                         "type":  "پناهگاه",
+                         "lat":  36.35
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4850,
+                   "lng":  51.02,
+                   "name":  "قله علم‌کوه",
+                   "lat":  36.46
+               }
+}

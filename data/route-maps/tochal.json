@@ -1,0 +1,150 @@
+{
+    "peakId":  "tochal",
+    "peakName":  "توچال",
+    "peakElevation":  3933,
+    "center":  [
+                   35.82,
+                   51.42
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "tochal-access-0",
+                       "name":  "ورود — مسیر تله‌کابین",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1259,
+                                               "lng":  51.4293,
+                                               "label":  "Start",
+                                               "lat":  35.7818
+                                           },
+                                           {
+                                               "elevation":  1888,
+                                               "lng":  51.4246,
+                                               "lat":  35.7929
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "tochal-main-0",
+                       "name":  "مسیر تله‌کابین",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2281,
+                                               "lng":  51.4251,
+                                               "lat":  35.799
+                                           },
+                                           {
+                                               "elevation":  3225,
+                                               "lng":  51.422,
+                                               "lat":  35.8116
+                                           },
+                                           {
+                                               "elevation":  3933,
+                                               "lng":  51.42,
+                                               "label":  "Summit",
+                                               "lat":  35.82
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "tochal-access-1",
+                       "name":  "ورود — مسیر درکه",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1259,
+                                               "lng":  51.3818,
+                                               "label":  "Start",
+                                               "lat":  35.7818
+                                           },
+                                           {
+                                               "elevation":  1888,
+                                               "lng":  51.4009,
+                                               "lat":  35.7929
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "tochal-main-1",
+                       "name":  "مسیر درکه",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2281,
+                                               "lng":  51.399,
+                                               "lat":  35.799
+                                           },
+                                           {
+                                               "elevation":  3225,
+                                               "lng":  51.4116,
+                                               "lat":  35.8116
+                                           },
+                                           {
+                                               "elevation":  3933,
+                                               "lng":  51.42,
+                                               "label":  "Summit",
+                                               "lat":  35.82
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  2200,
+                         "lng":  51.4,
+                         "name":  "کلبه ونک",
+                         "type":  "کلبه",
+                         "lat":  35.7833
+                     },
+                     {
+                         "elevation":  3900,
+                         "lng":  51.4,
+                         "name":  "پناهگاه توچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9333
+                     },
+                     {
+                         "elevation":  2700,
+                         "lng":  51.2833,
+                         "name":  "پناهگاه کرکس",
+                         "type":  "پناهگاه",
+                         "lat":  35.85
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  51.375,
+                         "name":  "پناهگاه ولیجیا",
+                         "type":  "پناهگاه",
+                         "lat":  35.9417
+                     },
+                     {
+                         "elevation":  3950,
+                         "lng":  51.4028,
+                         "name":  "جانپناه قله توچال",
+                         "type":  "جانپناه",
+                         "lat":  35.9556
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3933,
+                   "lng":  51.42,
+                   "name":  "قله توچال",
+                   "lat":  35.82
+               }
+}

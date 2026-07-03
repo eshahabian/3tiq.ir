@@ -1,0 +1,116 @@
+{
+    "peakId":  "gelidagh",
+    "peakName":  "گلیداغ",
+    "peakElevation":  2832,
+    "center":  [
+                   37.18,
+                   56.1
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "gelidagh-access-0",
+                       "name":  "ورود — مسیر گلستان",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  906,
+                                               "lng":  56.1092,
+                                               "label":  "Start",
+                                               "lat":  37.1418
+                                           },
+                                           {
+                                               "elevation":  1359,
+                                               "lng":  56.1046,
+                                               "lat":  37.1529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "gelidagh-main-0",
+                       "name":  "مسیر گلستان",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1643,
+                                               "lng":  56.1051,
+                                               "lat":  37.159
+                                           },
+                                           {
+                                               "elevation":  2322,
+                                               "lng":  56.102,
+                                               "lat":  37.1716
+                                           },
+                                           {
+                                               "elevation":  2832,
+                                               "lng":  56.1,
+                                               "label":  "Summit",
+                                               "lat":  37.18
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "gelidagh-access-1",
+                       "name":  "ورود — مسیر خراسان",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  906,
+                                               "lng":  56.0618,
+                                               "label":  "Start",
+                                               "lat":  37.1418
+                                           },
+                                           {
+                                               "elevation":  1359,
+                                               "lng":  56.0809,
+                                               "lat":  37.1529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "gelidagh-main-1",
+                       "name":  "مسیر خراسان",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1643,
+                                               "lng":  56.079,
+                                               "lat":  37.159
+                                           },
+                                           {
+                                               "elevation":  2322,
+                                               "lng":  56.0916,
+                                               "lat":  37.1716
+                                           },
+                                           {
+                                               "elevation":  2832,
+                                               "lng":  56.1,
+                                               "label":  "Summit",
+                                               "lat":  37.18
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2832,
+                   "lng":  56.1,
+                   "name":  "قله گلیداغ",
+                   "lat":  37.18
+               }
+}

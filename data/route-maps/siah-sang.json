@@ -1,0 +1,69 @@
+{
+    "peakId":  "siah-sang",
+    "peakName":  "سیاه‌سنگ",
+    "peakElevation":  4604,
+    "center":  [
+                   36.15,
+                   51.5
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "siah-sang-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1473,
+                                               "lng":  51.5092,
+                                               "label":  "Start",
+                                               "lat":  36.1118
+                                           },
+                                           {
+                                               "elevation":  2210,
+                                               "lng":  51.5046,
+                                               "lat":  36.1229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "siah-sang-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2670,
+                                               "lng":  51.5051,
+                                               "lat":  36.129
+                                           },
+                                           {
+                                               "elevation":  3775,
+                                               "lng":  51.502,
+                                               "lat":  36.1416
+                                           },
+                                           {
+                                               "elevation":  4604,
+                                               "lng":  51.5,
+                                               "label":  "Summit",
+                                               "lat":  36.15
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4604,
+                   "lng":  51.5,
+                   "name":  "قله سیاه‌سنگ",
+                   "lat":  36.15
+               }
+}

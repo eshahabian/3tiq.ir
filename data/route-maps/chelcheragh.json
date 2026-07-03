@@ -1,0 +1,69 @@
+{
+    "peakId":  "chelcheragh",
+    "peakName":  "چلچراغ",
+    "peakElevation":  3760,
+    "center":  [
+                   30.8,
+                   51.45
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "chelcheragh-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1203,
+                                               "lng":  51.4593,
+                                               "label":  "Start",
+                                               "lat":  30.7618
+                                           },
+                                           {
+                                               "elevation":  1805,
+                                               "lng":  51.4546,
+                                               "lat":  30.7729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "chelcheragh-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2181,
+                                               "lng":  51.4551,
+                                               "lat":  30.779
+                                           },
+                                           {
+                                               "elevation":  3083,
+                                               "lng":  51.452,
+                                               "lat":  30.7916
+                                           },
+                                           {
+                                               "elevation":  3760,
+                                               "lng":  51.45,
+                                               "label":  "Summit",
+                                               "lat":  30.8
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3760,
+                   "lng":  51.45,
+                   "name":  "قله چلچراغ",
+                   "lat":  30.8
+               }
+}

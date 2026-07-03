@@ -1,0 +1,69 @@
+{
+    "peakId":  "espinas",
+    "peakName":  "اسپیناس",
+    "peakElevation":  2800,
+    "center":  [
+                   36.55,
+                   50.2
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "espinas-access-0",
+                       "name":  "ورود — مسیر قزوین",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  896,
+                                               "lng":  50.2093,
+                                               "label":  "Start",
+                                               "lat":  36.5118
+                                           },
+                                           {
+                                               "elevation":  1344,
+                                               "lng":  50.2046,
+                                               "lat":  36.5229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "espinas-main-0",
+                       "name":  "مسیر قزوین",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1624,
+                                               "lng":  50.2051,
+                                               "lat":  36.529
+                                           },
+                                           {
+                                               "elevation":  2296,
+                                               "lng":  50.202,
+                                               "lat":  36.5416
+                                           },
+                                           {
+                                               "elevation":  2800,
+                                               "lng":  50.2,
+                                               "label":  "Summit",
+                                               "lat":  36.55
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2800,
+                   "lng":  50.2,
+                   "name":  "قله اسپیناس",
+                   "lat":  36.55
+               }
+}

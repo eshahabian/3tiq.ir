@@ -1,0 +1,69 @@
+{
+    "peakId":  "rizan",
+    "peakName":  "ریزان",
+    "peakElevation":  3500,
+    "center":  [
+                   35.93,
+                   51.65
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "rizan-access-0",
+                       "name":  "ورود — مسیر آبشاری",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1120,
+                                               "lng":  51.6592,
+                                               "label":  "Start",
+                                               "lat":  35.8918
+                                           },
+                                           {
+                                               "elevation":  1680,
+                                               "lng":  51.6546,
+                                               "lat":  35.9029
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "rizan-main-0",
+                       "name":  "مسیر آبشاری",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2030,
+                                               "lng":  51.6551,
+                                               "lat":  35.909
+                                           },
+                                           {
+                                               "elevation":  2870,
+                                               "lng":  51.652,
+                                               "lat":  35.9216
+                                           },
+                                           {
+                                               "elevation":  3500,
+                                               "lng":  51.65,
+                                               "label":  "Summit",
+                                               "lat":  35.93
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3500,
+                   "lng":  51.65,
+                   "name":  "قله ریزان",
+                   "lat":  35.93
+               }
+}

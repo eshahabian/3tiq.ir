@@ -1,0 +1,69 @@
+{
+    "peakId":  "bazman",
+    "peakName":  "بزمان",
+    "peakElevation":  3490,
+    "center":  [
+                   27.98,
+                   60.08
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "bazman-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1117,
+                                               "lng":  60.0892,
+                                               "label":  "Start",
+                                               "lat":  27.9418
+                                           },
+                                           {
+                                               "elevation":  1675,
+                                               "lng":  60.0846,
+                                               "lat":  27.9529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "bazman-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2024,
+                                               "lng":  60.0851,
+                                               "lat":  27.959
+                                           },
+                                           {
+                                               "elevation":  2862,
+                                               "lng":  60.082,
+                                               "lat":  27.9716
+                                           },
+                                           {
+                                               "elevation":  3490,
+                                               "lng":  60.08,
+                                               "label":  "Summit",
+                                               "lat":  27.98
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3490,
+                   "lng":  60.08,
+                   "name":  "قله بزمان",
+                   "lat":  27.98
+               }
+}

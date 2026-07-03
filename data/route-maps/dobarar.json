@@ -1,0 +1,69 @@
+{
+    "peakId":  "dobarar",
+    "peakName":  "دوبرار",
+    "peakElevation":  4100,
+    "center":  [
+                   35.95,
+                   51.8
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "dobarar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1312,
+                                               "lng":  51.8092,
+                                               "label":  "Start",
+                                               "lat":  35.9118
+                                           },
+                                           {
+                                               "elevation":  1968,
+                                               "lng":  51.8046,
+                                               "lat":  35.9229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "dobarar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2378,
+                                               "lng":  51.8051,
+                                               "lat":  35.929
+                                           },
+                                           {
+                                               "elevation":  3362,
+                                               "lng":  51.802,
+                                               "lat":  35.9416
+                                           },
+                                           {
+                                               "elevation":  4100,
+                                               "lng":  51.8,
+                                               "label":  "Summit",
+                                               "lat":  35.95
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4100,
+                   "lng":  51.8,
+                   "name":  "قله دوبرار",
+                   "lat":  35.95
+               }
+}

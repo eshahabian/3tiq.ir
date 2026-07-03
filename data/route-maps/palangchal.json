@@ -1,0 +1,103 @@
+{
+    "peakId":  "palangchal",
+    "peakName":  "پلنگ‌چال",
+    "peakElevation":  3700,
+    "center":  [
+                   35.84,
+                   51.36
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "palangchal-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1184,
+                                               "lng":  51.3692,
+                                               "label":  "Start",
+                                               "lat":  35.8018
+                                           },
+                                           {
+                                               "elevation":  1776,
+                                               "lng":  51.3646,
+                                               "lat":  35.8129
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "palangchal-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2146,
+                                               "lng":  51.3651,
+                                               "lat":  35.819
+                                           },
+                                           {
+                                               "elevation":  3034,
+                                               "lng":  51.362,
+                                               "lat":  35.8316
+                                           },
+                                           {
+                                               "elevation":  3700,
+                                               "lng":  51.36,
+                                               "label":  "Summit",
+                                               "lat":  35.84
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  2700,
+                         "lng":  51.2833,
+                         "name":  "پناهگاه کرکس",
+                         "type":  "پناهگاه",
+                         "lat":  35.85
+                     },
+                     {
+                         "elevation":  2200,
+                         "lng":  51.4,
+                         "name":  "کلبه ونک",
+                         "type":  "کلبه",
+                         "lat":  35.7833
+                     },
+                     {
+                         "elevation":  3900,
+                         "lng":  51.4,
+                         "name":  "پناهگاه توچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9333
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  51.375,
+                         "name":  "پناهگاه ولیجیا",
+                         "type":  "پناهگاه",
+                         "lat":  35.9417
+                     },
+                     {
+                         "elevation":  2800,
+                         "lng":  51.3667,
+                         "name":  "پناهگاه شیرپلا",
+                         "type":  "پناهگاه",
+                         "lat":  35.95
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3700,
+                   "lng":  51.36,
+                   "name":  "قله پلنگ‌چال",
+                   "lat":  35.84
+               }
+}

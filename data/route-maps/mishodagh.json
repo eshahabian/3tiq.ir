@@ -1,0 +1,69 @@
+{
+    "peakId":  "mishodagh",
+    "peakName":  "میشو داغ",
+    "peakElevation":  3155,
+    "center":  [
+                   38.4,
+                   45.8
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "mishodagh-access-0",
+                       "name":  "ورود — مسیر علمدار",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1010,
+                                               "lng":  45.8092,
+                                               "label":  "Start",
+                                               "lat":  38.3618
+                                           },
+                                           {
+                                               "elevation":  1514,
+                                               "lng":  45.8046,
+                                               "lat":  38.3729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "mishodagh-main-0",
+                       "name":  "مسیر علمدار",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1830,
+                                               "lng":  45.8051,
+                                               "lat":  38.379
+                                           },
+                                           {
+                                               "elevation":  2587,
+                                               "lng":  45.802,
+                                               "lat":  38.3916
+                                           },
+                                           {
+                                               "elevation":  3155,
+                                               "lng":  45.8,
+                                               "label":  "Summit",
+                                               "lat":  38.4
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3155,
+                   "lng":  45.8,
+                   "name":  "قله میشو داغ",
+                   "lat":  38.4
+               }
+}

@@ -43,6 +43,7 @@
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <!-- fallback: اگر CDN ایرانی هم لود نشد، از فونت سیستم استفاده می‌شه (تنظیم شده در CSS) -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/route-map.css">
     <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css"/>
 
     <!-- ===== Structured Data (Schema.org) — برای نمایش بهتر در نتایج گوگل ===== -->
@@ -198,15 +199,33 @@
             <h2 class="section-title">خدمات ما</h2>
             <div class="services-grid">
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
+                <div class="service-card service-card--route-preview" id="route-guide">
+                    <div class="service-route-preview-head">
+                        <div class="service-icon">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <div class="service-route-preview-copy">
+                            <h3 class="service-title">راهنمای مسیر</h3>
+                            <p class="service-description">نقشه تعاملی مسیرهای صعود با ارتفاع، پناهگاه و قله — نمونه زنده از راهنمای هر قله</p>
+                        </div>
+                        <div class="service-route-picker">
+                            <label for="homeRoutePeak">انتخاب قله</label>
+                            <select id="homeRoutePeak" aria-label="انتخاب قله برای نمایش نقشه مسیر">
+                                <option value="damavand" selected>دماوند</option>
+                                <option value="alamkooh">علم‌کوه</option>
+                                <option value="sabalan">سبلان</option>
+                                <option value="zardkooh">زردکوه</option>
+                                <option value="hezar">هزار</option>
+                                <option value="dena">دنا</option>
+                                <option value="tochal">توچال</option>
+                            </select>
+                        </div>
                     </div>
-                    <h3 class="service-title">راهنمای مسیر</h3>
-                    <p class="service-description">اطلاعات کامل و دقیق از مسیرهای کوهنوردی با نقشه و توضیحات جامع</p>
+                    <div class="service-route-preview-map" data-route-map="damavand" data-base-path="data/route-maps/" data-lazy="true"></div>
+                    <a href="peaks/damavand.html" class="service-cta service-route-full-link" id="homeRoutePeakLink">مشاهده راهنمای کامل قله ←</a>
                 </div>
 
                 <div class="service-card service-card--action" data-tour-planner tabindex="0" role="button" aria-label="شروع برنامه‌ریزی تور کوهنوردی">
@@ -424,6 +443,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="js/route-map.js" defer></script>
     <script src="js/tour-planner.js" defer></script>
 
     <!-- ===== Particle Background Effect ===== -->

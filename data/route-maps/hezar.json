@@ -1,0 +1,69 @@
+{
+    "peakId":  "hezar",
+    "peakName":  "هزار",
+    "peakElevation":  4465,
+    "center":  [
+                   29.55,
+                   56.91
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "hezar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1429,
+                                               "lng":  56.9192,
+                                               "label":  "Start",
+                                               "lat":  29.5118
+                                           },
+                                           {
+                                               "elevation":  2143,
+                                               "lng":  56.9146,
+                                               "lat":  29.5229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "hezar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2590,
+                                               "lng":  56.9151,
+                                               "lat":  29.529
+                                           },
+                                           {
+                                               "elevation":  3661,
+                                               "lng":  56.912,
+                                               "lat":  29.5416
+                                           },
+                                           {
+                                               "elevation":  4465,
+                                               "lng":  56.91,
+                                               "label":  "Summit",
+                                               "lat":  29.55
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4465,
+                   "lng":  56.91,
+                   "name":  "قله هزار",
+                   "lat":  29.55
+               }
+}

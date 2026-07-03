@@ -1,0 +1,103 @@
+{
+    "peakId":  "pahnehhassar",
+    "peakName":  "پهنه‌حصار",
+    "peakElevation":  3500,
+    "center":  [
+                   35.88,
+                   51.28
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "pahnehhassar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1120,
+                                               "lng":  51.2892,
+                                               "label":  "Start",
+                                               "lat":  35.8418
+                                           },
+                                           {
+                                               "elevation":  1680,
+                                               "lng":  51.2846,
+                                               "lat":  35.8529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "pahnehhassar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2030,
+                                               "lng":  51.2851,
+                                               "lat":  35.859
+                                           },
+                                           {
+                                               "elevation":  2870,
+                                               "lng":  51.282,
+                                               "lat":  35.8716
+                                           },
+                                           {
+                                               "elevation":  3500,
+                                               "lng":  51.28,
+                                               "label":  "Summit",
+                                               "lat":  35.88
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  2700,
+                         "lng":  51.2833,
+                         "name":  "پناهگاه کرکس",
+                         "type":  "پناهگاه",
+                         "lat":  35.85
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  51.375,
+                         "name":  "پناهگاه ولیجیا",
+                         "type":  "پناهگاه",
+                         "lat":  35.9417
+                     },
+                     {
+                         "elevation":  2800,
+                         "lng":  51.3667,
+                         "name":  "پناهگاه شیرپلا",
+                         "type":  "پناهگاه",
+                         "lat":  35.95
+                     },
+                     {
+                         "elevation":  3350,
+                         "lng":  51.3694,
+                         "name":  "پناهگاه پلنگچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9556
+                     },
+                     {
+                         "elevation":  3900,
+                         "lng":  51.4,
+                         "name":  "پناهگاه توچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9333
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3500,
+                   "lng":  51.28,
+                   "name":  "قله پهنه‌حصار",
+                   "lat":  35.88
+               }
+}

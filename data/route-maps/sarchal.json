@@ -1,0 +1,69 @@
+{
+    "peakId":  "sarchal",
+    "peakName":  "سرکچال",
+    "peakElevation":  3600,
+    "center":  [
+                   36.08,
+                   51.55
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "sarchal-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1152,
+                                               "lng":  51.5592,
+                                               "label":  "Start",
+                                               "lat":  36.0418
+                                           },
+                                           {
+                                               "elevation":  1728,
+                                               "lng":  51.5546,
+                                               "lat":  36.0529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sarchal-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2088,
+                                               "lng":  51.5551,
+                                               "lat":  36.059
+                                           },
+                                           {
+                                               "elevation":  2952,
+                                               "lng":  51.552,
+                                               "lat":  36.0716
+                                           },
+                                           {
+                                               "elevation":  3600,
+                                               "lng":  51.55,
+                                               "label":  "Summit",
+                                               "lat":  36.08
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3600,
+                   "lng":  51.55,
+                   "name":  "قله سرکچال",
+                   "lat":  36.08
+               }
+}

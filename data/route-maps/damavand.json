@@ -1,0 +1,97 @@
+{
+  "peakId": "damavand",
+  "peakName": "دماوند",
+  "peakElevation": 5610,
+  "source": "manual",
+  "center": [35.922, 52.106],
+  "zoom": 12,
+  "boundsPadding": 0.08,
+  "routes": [
+    {
+      "id": "south-access",
+      "name": "ورود از رینه",
+      "type": "access",
+      "color": "#3b82f6",
+      "weight": 4,
+      "dashArray": "10 8",
+      "coordinates": [
+        { "lat": 35.8865, "lng": 52.1078, "elevation": 2050, "label": "رینه" },
+        { "lat": 35.898, "lng": 52.105, "elevation": 2500 },
+        { "lat": 35.9045, "lng": 52.1035, "elevation": 3040, "label": "گوسفندسرا" }
+      ]
+    },
+    {
+      "id": "south-main",
+      "name": "مسیر جنوبی (صعود)",
+      "type": "main",
+      "color": "#22c55e",
+      "weight": 5,
+      "dashArray": null,
+      "coordinates": [
+        { "lat": 35.9045, "lng": 52.1035, "elevation": 3040 },
+        { "lat": 35.918, "lng": 52.099, "elevation": 3400 },
+        { "lat": 35.9389, "lng": 52.0972, "elevation": 3600, "label": "سیمرغ" },
+        { "lat": 35.944, "lng": 52.101, "elevation": 3900 },
+        { "lat": 35.9472, "lng": 52.1028, "elevation": 4220, "label": "بارگاه سوم" },
+        { "lat": 35.952, "lng": 52.106, "elevation": 5100 },
+        { "lat": 35.9553, "lng": 52.1094, "elevation": 5610, "label": "قله" }
+      ]
+    },
+    {
+      "id": "north-access",
+      "name": "ورود از پلور",
+      "type": "access",
+      "color": "#8b5cf6",
+      "weight": 4,
+      "dashArray": "10 8",
+      "coordinates": [
+        { "lat": 36.006, "lng": 52.156, "elevation": 2300, "label": "پلور" },
+        { "lat": 35.992, "lng": 52.142, "elevation": 2800 },
+        { "lat": 35.978, "lng": 52.128, "elevation": 3400, "label": "کمپ شمالی" }
+      ]
+    },
+    {
+      "id": "north-main",
+      "name": "مسیر شمالی (صعود)",
+      "type": "main",
+      "color": "#f59e0b",
+      "weight": 5,
+      "dashArray": null,
+      "coordinates": [
+        { "lat": 35.978, "lng": 52.128, "elevation": 3400 },
+        { "lat": 35.968, "lng": 52.118, "elevation": 4200 },
+        { "lat": 35.962, "lng": 52.112, "elevation": 4800 },
+        { "lat": 35.9553, "lng": 52.1094, "elevation": 5610, "label": "قله" }
+      ]
+    }
+  ],
+  "shelters": [
+    {
+      "name": "پناهگاه گوسفندسرا",
+      "lat": 35.9045,
+      "lng": 52.1035,
+      "elevation": 3040,
+      "type": "پناهگاه"
+    },
+    {
+      "name": "کلبه سیمرغ",
+      "lat": 35.9389,
+      "lng": 52.0972,
+      "elevation": 3600,
+      "type": "کلبه"
+    },
+    {
+      "name": "پناهگاه بارگاه سوم",
+      "lat": 35.9472,
+      "lng": 52.1028,
+      "elevation": 4220,
+      "type": "پناهگاه"
+    }
+  ],
+  "summit": {
+    "name": "قله دماوند",
+    "lat": 35.9553,
+    "lng": 52.1094,
+    "elevation": 5610
+  }
+}

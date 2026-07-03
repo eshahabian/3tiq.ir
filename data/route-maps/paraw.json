@@ -1,0 +1,69 @@
+{
+    "peakId":  "paraw",
+    "peakName":  "پراو",
+    "peakElevation":  3366,
+    "center":  [
+                   34.36,
+                   47
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "paraw-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1077,
+                                               "lng":  47.0092,
+                                               "label":  "Start",
+                                               "lat":  34.3218
+                                           },
+                                           {
+                                               "elevation":  1616,
+                                               "lng":  47.0046,
+                                               "lat":  34.3329
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "paraw-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1952,
+                                               "lng":  47.0051,
+                                               "lat":  34.339
+                                           },
+                                           {
+                                               "elevation":  2760,
+                                               "lng":  47.002,
+                                               "lat":  34.3516
+                                           },
+                                           {
+                                               "elevation":  3366,
+                                               "lng":  47,
+                                               "label":  "Summit",
+                                               "lat":  34.36
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3366,
+                   "lng":  47,
+                   "name":  "قله پراو",
+                   "lat":  34.36
+               }
+}

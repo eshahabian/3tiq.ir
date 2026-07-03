@@ -1,0 +1,307 @@
+/* ===== Route Map (راهنمای مسیر) ===== */
+.route-map-widget {
+    margin-bottom: 1.5rem;
+}
+
+.route-map-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.route-map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+}
+
+.route-map-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.route-map-legend-line {
+    width: 1.6rem;
+    height: 0.25rem;
+    border-radius: 2px;
+}
+
+.route-map-legend-line.dashed {
+    background: repeating-linear-gradient(
+        90deg,
+        currentColor 0 6px,
+        transparent 6px 10px
+    );
+    height: 0.2rem;
+}
+
+.route-map-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.route-map-btn {
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 100px;
+    border: 1px solid rgba(212, 165, 116, 0.45);
+    background: rgba(212, 165, 116, 0.12);
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.route-map-btn:hover {
+    background: rgba(212, 165, 116, 0.22);
+}
+
+.route-map-frame {
+    position: relative;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    border: 1px solid rgba(58, 50, 38, 0.1);
+    box-shadow: 0 4px 20px rgba(44, 36, 22, 0.08);
+    background: #e8e4dc;
+}
+
+.route-map-canvas {
+    width: 100%;
+    height: 26rem;
+    min-height: 320px;
+    z-index: 1;
+}
+
+.route-map-watermark {
+    position: absolute;
+    bottom: 0.65rem;
+    left: 0.75rem;
+    z-index: 500;
+    pointer-events: none;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: rgba(44, 36, 22, 0.55);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    background: rgba(253, 251, 247, 0.72);
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.35rem;
+    backdrop-filter: blur(4px);
+}
+
+.route-map-elev-badge {
+    background: rgba(20, 16, 10, 0.72);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    border: 1px solid rgba(212, 165, 116, 0.5);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.route-map-elev-badge .elev-name {
+    display: block;
+    font-size: 0.62rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.route-map-shelter-icon,
+.route-map-summit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.route-map-shelter-icon.refuge { background: #5c6b4a; }
+.route-map-shelter-icon.cabin { background: #8c6a3f; }
+.route-map-shelter-icon.bivouac { background: #b5562f; }
+
+.route-map-summit-icon {
+    width: 0;
+    height: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.route-map-summit-icon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid #dc2626;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.route-map-popup strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-dark);
+}
+
+.route-map-popup span {
+    font-size: 0.78rem;
+    color: var(--text-light);
+}
+
+.route-map-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+body.dark-mode .route-map-frame {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: #2a2a2a;
+}
+
+body.dark-mode .route-map-watermark {
+    color: rgba(255, 255, 255, 0.65);
+    background: rgba(30, 30, 30, 0.75);
+    text-shadow: none;
+}
+
+body.dark-mode .route-map-btn {
+    background: rgba(212, 165, 116, 0.15);
+    color: #eee;
+    border-color: rgba(212, 165, 116, 0.35);
+}
+
+@media (max-width: 600px) {
+    .route-map-canvas { height: 20rem; }
+}
+
+@media print {
+    .route-map-btn { display: none; }
+    .route-map-frame { break-inside: avoid; }
+}
+
+/* ===== Homepage route preview (کاشی راهنمای مسیر) ===== */
+.service-card--route-preview {
+    grid-column: 1 / -1;
+    text-align: right;
+    padding: 1.75rem;
+}
+
+.service-route-preview-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card--route-preview .service-icon {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.service-route-preview-copy {
+    flex: 1 1 14rem;
+    min-width: 0;
+}
+
+.service-card--route-preview .service-title {
+    margin-bottom: 0.35rem;
+    text-align: right;
+}
+
+.service-card--route-preview .service-description {
+    margin: 0;
+    text-align: right;
+}
+
+.service-route-picker {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    margin-right: auto;
+}
+
+.service-route-picker label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.service-route-picker select {
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid rgba(58, 50, 38, 0.15);
+    background: var(--light-bg);
+    color: var(--text-dark);
+    cursor: pointer;
+    min-width: 9rem;
+}
+
+.service-route-preview-map {
+    margin-top: 0.25rem;
+}
+
+.service-route-preview-map .route-map-canvas {
+    height: 20rem;
+}
+
+.service-card--route-preview .service-route-full-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.service-card--route-preview .service-route-full-link:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .service-route-picker select {
+    background: #2a2a2a;
+    color: #eee;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 600px) {
+    .service-route-preview-head {
+        flex-direction: column;
+    }
+
+    .service-route-picker {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .service-route-picker select {
+        width: 100%;
+    }
+
+    .service-route-preview-map .route-map-canvas {
+        height: 16rem;
+    }
+}

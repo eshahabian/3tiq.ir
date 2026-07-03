@@ -1,0 +1,69 @@
+{
+    "peakId":  "sakhvid",
+    "peakName":  "سخوید",
+    "peakElevation":  3520,
+    "center":  [
+                   30.6,
+                   51.8
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "sakhvid-access-0",
+                       "name":  "ورود — مسیر جنگلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1126,
+                                               "lng":  51.8092,
+                                               "label":  "Start",
+                                               "lat":  30.5618
+                                           },
+                                           {
+                                               "elevation":  1690,
+                                               "lng":  51.8046,
+                                               "lat":  30.5729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sakhvid-main-0",
+                       "name":  "مسیر جنگلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2042,
+                                               "lng":  51.8051,
+                                               "lat":  30.579
+                                           },
+                                           {
+                                               "elevation":  2886,
+                                               "lng":  51.802,
+                                               "lat":  30.5916
+                                           },
+                                           {
+                                               "elevation":  3520,
+                                               "lng":  51.8,
+                                               "label":  "Summit",
+                                               "lat":  30.6
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3520,
+                   "lng":  51.8,
+                   "name":  "قله سخوید",
+                   "lat":  30.6
+               }
+}

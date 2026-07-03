@@ -1,0 +1,69 @@
+{
+    "peakId":  "samamos",
+    "peakName":  "سماموس",
+    "peakElevation":  2987,
+    "center":  [
+                   36.85,
+                   49.95
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "samamos-access-0",
+                       "name":  "ورود — مسیر رودبار",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  956,
+                                               "lng":  49.9593,
+                                               "label":  "Start",
+                                               "lat":  36.8118
+                                           },
+                                           {
+                                               "elevation":  1434,
+                                               "lng":  49.9546,
+                                               "lat":  36.8229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "samamos-main-0",
+                       "name":  "مسیر رودبار",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1732,
+                                               "lng":  49.9551,
+                                               "lat":  36.829
+                                           },
+                                           {
+                                               "elevation":  2449,
+                                               "lng":  49.952,
+                                               "lat":  36.8416
+                                           },
+                                           {
+                                               "elevation":  2987,
+                                               "lng":  49.95,
+                                               "label":  "Summit",
+                                               "lat":  36.85
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2987,
+                   "lng":  49.95,
+                   "name":  "قله سماموس",
+                   "lat":  36.85
+               }
+}

@@ -1,0 +1,69 @@
+{
+    "peakId":  "dalab",
+    "peakName":  "دالاب",
+    "peakElevation":  2900,
+    "center":  [
+                   33.48,
+                   46.62
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "dalab-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  928,
+                                               "lng":  46.6292,
+                                               "label":  "Start",
+                                               "lat":  33.4418
+                                           },
+                                           {
+                                               "elevation":  1392,
+                                               "lng":  46.6246,
+                                               "lat":  33.4529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "dalab-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1682,
+                                               "lng":  46.6251,
+                                               "lat":  33.459
+                                           },
+                                           {
+                                               "elevation":  2378,
+                                               "lng":  46.622,
+                                               "lat":  33.4716
+                                           },
+                                           {
+                                               "elevation":  2900,
+                                               "lng":  46.62,
+                                               "label":  "Summit",
+                                               "lat":  33.48
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2900,
+                   "lng":  46.62,
+                   "name":  "قله دالاب",
+                   "lat":  33.48
+               }
+}

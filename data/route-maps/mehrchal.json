@@ -1,0 +1,122 @@
+{
+    "peakId":  "mehrchal",
+    "peakName":  "مهرچال",
+    "peakElevation":  3964,
+    "center":  [
+                   36.07,
+                   51.54
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "mehrchal-access-0",
+                       "name":  "ورود — مسیر دارآباد",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1268,
+                                               "lng":  51.5492,
+                                               "label":  "Start",
+                                               "lat":  36.0318
+                                           },
+                                           {
+                                               "elevation":  1903,
+                                               "lng":  51.5446,
+                                               "lat":  36.0429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "mehrchal-main-0",
+                       "name":  "مسیر دارآباد",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2299,
+                                               "lng":  51.5451,
+                                               "lat":  36.049
+                                           },
+                                           {
+                                               "elevation":  3250,
+                                               "lng":  51.542,
+                                               "lat":  36.0616
+                                           },
+                                           {
+                                               "elevation":  3964,
+                                               "lng":  51.54,
+                                               "label":  "Summit",
+                                               "lat":  36.07
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "mehrchal-access-1",
+                       "name":  "ورود — مسیر لالان",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1268,
+                                               "lng":  51.5018,
+                                               "label":  "Start",
+                                               "lat":  36.0318
+                                           },
+                                           {
+                                               "elevation":  1903,
+                                               "lng":  51.5209,
+                                               "lat":  36.0429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "mehrchal-main-1",
+                       "name":  "مسیر لالان",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2299,
+                                               "lng":  51.519,
+                                               "lat":  36.049
+                                           },
+                                           {
+                                               "elevation":  3250,
+                                               "lng":  51.5316,
+                                               "lat":  36.0616
+                                           },
+                                           {
+                                               "elevation":  3964,
+                                               "lng":  51.54,
+                                               "label":  "Summit",
+                                               "lat":  36.07
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3950,
+                         "lng":  51.4028,
+                         "name":  "جانپناه قله توچال",
+                         "type":  "جانپناه",
+                         "lat":  35.9556
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3964,
+                   "lng":  51.54,
+                   "name":  "قله مهرچال",
+                   "lat":  36.07
+               }
+}

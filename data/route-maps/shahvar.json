@@ -1,0 +1,116 @@
+{
+    "peakId":  "shahvar",
+    "peakName":  "شاهوار",
+    "peakElevation":  3834,
+    "center":  [
+                   36.47,
+                   55.13
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "shahvar-access-0",
+                       "name":  "ورود — مسیر اصلی (شاهرود)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1227,
+                                               "lng":  55.1392,
+                                               "label":  "Start",
+                                               "lat":  36.4318
+                                           },
+                                           {
+                                               "elevation":  1840,
+                                               "lng":  55.1346,
+                                               "lat":  36.4429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "shahvar-main-0",
+                       "name":  "مسیر اصلی (شاهرود)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2224,
+                                               "lng":  55.1351,
+                                               "lat":  36.449
+                                           },
+                                           {
+                                               "elevation":  3144,
+                                               "lng":  55.132,
+                                               "lat":  36.4616
+                                           },
+                                           {
+                                               "elevation":  3834,
+                                               "lng":  55.13,
+                                               "label":  "Summit",
+                                               "lat":  36.47
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "shahvar-access-1",
+                       "name":  "ورود — مسیر شمالی",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1227,
+                                               "lng":  55.0918,
+                                               "label":  "Start",
+                                               "lat":  36.4318
+                                           },
+                                           {
+                                               "elevation":  1840,
+                                               "lng":  55.1109,
+                                               "lat":  36.4429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "shahvar-main-1",
+                       "name":  "مسیر شمالی",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2224,
+                                               "lng":  55.109,
+                                               "lat":  36.449
+                                           },
+                                           {
+                                               "elevation":  3144,
+                                               "lng":  55.1216,
+                                               "lat":  36.4616
+                                           },
+                                           {
+                                               "elevation":  3834,
+                                               "lng":  55.13,
+                                               "label":  "Summit",
+                                               "lat":  36.47
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3834,
+                   "lng":  55.13,
+                   "name":  "قله شاهوار",
+                   "lat":  36.47
+               }
+}

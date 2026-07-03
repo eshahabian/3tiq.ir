@@ -1,0 +1,89 @@
+{
+    "peakId":  "sabalan",
+    "peakName":  "سبلان",
+    "peakElevation":  4811,
+    "center":  [
+                   38.2547,
+                   47.8219
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "sabalan-access-0",
+                       "name":  "ورود — مسیر اصلی (یال غربی)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1540,
+                                               "lng":  47.8312,
+                                               "label":  "Start",
+                                               "lat":  38.2164
+                                           },
+                                           {
+                                               "elevation":  2309,
+                                               "lng":  47.8265,
+                                               "lat":  38.2276
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sabalan-main-0",
+                       "name":  "مسیر اصلی (یال غربی)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2790,
+                                               "lng":  47.827,
+                                               "lat":  38.2337
+                                           },
+                                           {
+                                               "elevation":  3945,
+                                               "lng":  47.8239,
+                                               "lat":  38.2463
+                                           },
+                                           {
+                                               "elevation":  4811,
+                                               "lng":  47.8219,
+                                               "label":  "Summit",
+                                               "lat":  38.2547
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3600,
+                         "lng":  47.82,
+                         "name":  "پناهگاه سبلان",
+                         "type":  "پناهگاه",
+                         "lat":  38.28
+                     },
+                     {
+                         "elevation":  2900,
+                         "lng":  47.79,
+                         "name":  "کلبه شیخ صفی",
+                         "type":  "کلبه",
+                         "lat":  38.25
+                     },
+                     {
+                         "elevation":  4600,
+                         "lng":  47.84,
+                         "name":  "جانپناه قله سبلان",
+                         "type":  "جانپناه",
+                         "lat":  38.3
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4811,
+                   "lng":  47.8219,
+                   "name":  "قله سبلان",
+                   "lat":  38.2547
+               }
+}

@@ -1,0 +1,96 @@
+{
+    "peakId":  "kharsan",
+    "peakName":  "خرسان",
+    "peakElevation":  3850,
+    "center":  [
+                   36.1,
+                   51.3
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "kharsan-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1232,
+                                               "lng":  51.3092,
+                                               "label":  "Start",
+                                               "lat":  36.0618
+                                           },
+                                           {
+                                               "elevation":  1848,
+                                               "lng":  51.3046,
+                                               "lat":  36.0729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "kharsan-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2233,
+                                               "lng":  51.3051,
+                                               "lat":  36.079
+                                           },
+                                           {
+                                               "elevation":  3157,
+                                               "lng":  51.302,
+                                               "lat":  36.0916
+                                           },
+                                           {
+                                               "elevation":  3850,
+                                               "lng":  51.3,
+                                               "label":  "Summit",
+                                               "lat":  36.1
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3800,
+                         "lng":  51.22,
+                         "name":  "پناهگاه تخت سلیمان",
+                         "type":  "پناهگاه",
+                         "lat":  36.11
+                     },
+                     {
+                         "elevation":  3050,
+                         "lng":  51.3833,
+                         "name":  "پناهگاه سرچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9667
+                     },
+                     {
+                         "elevation":  3350,
+                         "lng":  51.3694,
+                         "name":  "پناهگاه پلنگچال",
+                         "type":  "پناهگاه",
+                         "lat":  35.9556
+                     },
+                     {
+                         "elevation":  2800,
+                         "lng":  51.3667,
+                         "name":  "پناهگاه شیرپلا",
+                         "type":  "پناهگاه",
+                         "lat":  35.95
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3850,
+                   "lng":  51.3,
+                   "name":  "قله خرسان",
+                   "lat":  36.1
+               }
+}

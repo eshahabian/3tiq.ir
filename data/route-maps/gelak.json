@@ -1,0 +1,69 @@
+{
+    "peakId":  "gelak",
+    "peakName":  "گلاک",
+    "peakElevation":  3900,
+    "center":  [
+                   32.6,
+                   50.3
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "gelak-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1248,
+                                               "lng":  50.3092,
+                                               "label":  "Start",
+                                               "lat":  32.5618
+                                           },
+                                           {
+                                               "elevation":  1872,
+                                               "lng":  50.3046,
+                                               "lat":  32.5729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "gelak-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2262,
+                                               "lng":  50.3051,
+                                               "lat":  32.579
+                                           },
+                                           {
+                                               "elevation":  3198,
+                                               "lng":  50.302,
+                                               "lat":  32.5916
+                                           },
+                                           {
+                                               "elevation":  3900,
+                                               "lng":  50.3,
+                                               "label":  "Summit",
+                                               "lat":  32.6
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3900,
+                   "lng":  50.3,
+                   "name":  "قله گلاک",
+                   "lat":  32.6
+               }
+}

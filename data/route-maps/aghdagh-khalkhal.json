@@ -1,0 +1,69 @@
+{
+    "peakId":  "aghdagh-khalkhal",
+    "peakName":  "آق‌داغ خلخال",
+    "peakElevation":  3309,
+    "center":  [
+                   37.75,
+                   48.5
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "aghdagh-khalkhal-access-0",
+                       "name":  "ورود — مسیر اصلی (خلخال)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1059,
+                                               "lng":  48.5092,
+                                               "label":  "Start",
+                                               "lat":  37.7118
+                                           },
+                                           {
+                                               "elevation":  1588,
+                                               "lng":  48.5046,
+                                               "lat":  37.7229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "aghdagh-khalkhal-main-0",
+                       "name":  "مسیر اصلی (خلخال)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1919,
+                                               "lng":  48.5051,
+                                               "lat":  37.729
+                                           },
+                                           {
+                                               "elevation":  2713,
+                                               "lng":  48.502,
+                                               "lat":  37.7416
+                                           },
+                                           {
+                                               "elevation":  3309,
+                                               "lng":  48.5,
+                                               "label":  "Summit",
+                                               "lat":  37.75
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3309,
+                   "lng":  48.5,
+                   "name":  "قله آق‌داغ خلخال",
+                   "lat":  37.75
+               }
+}

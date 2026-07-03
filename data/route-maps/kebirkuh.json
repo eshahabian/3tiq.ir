@@ -1,0 +1,69 @@
+{
+    "peakId":  "kebirkuh",
+    "peakName":  "کبیرکوه",
+    "peakElevation":  3050,
+    "center":  [
+                   33.6,
+                   47.1
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "kebirkuh-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  976,
+                                               "lng":  47.1093,
+                                               "label":  "Start",
+                                               "lat":  33.5618
+                                           },
+                                           {
+                                               "elevation":  1464,
+                                               "lng":  47.1046,
+                                               "lat":  33.5729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "kebirkuh-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1769,
+                                               "lng":  47.1051,
+                                               "lat":  33.579
+                                           },
+                                           {
+                                               "elevation":  2501,
+                                               "lng":  47.102,
+                                               "lat":  33.5916
+                                           },
+                                           {
+                                               "elevation":  3050,
+                                               "lng":  47.1,
+                                               "label":  "Summit",
+                                               "lat":  33.6
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3050,
+                   "lng":  47.1,
+                   "name":  "قله کبیرکوه",
+                   "lat":  33.6
+               }
+}

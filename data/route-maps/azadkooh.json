@@ -1,0 +1,69 @@
+{
+    "peakId":  "azadkooh",
+    "peakName":  "آزادکوه",
+    "peakElevation":  4200,
+    "center":  [
+                   36.2,
+                   51.6
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "azadkooh-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1344,
+                                               "lng":  51.6093,
+                                               "label":  "Start",
+                                               "lat":  36.1618
+                                           },
+                                           {
+                                               "elevation":  2016,
+                                               "lng":  51.6046,
+                                               "lat":  36.1729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "azadkooh-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2436,
+                                               "lng":  51.6051,
+                                               "lat":  36.179
+                                           },
+                                           {
+                                               "elevation":  3444,
+                                               "lng":  51.602,
+                                               "lat":  36.1916
+                                           },
+                                           {
+                                               "elevation":  4200,
+                                               "lng":  51.6,
+                                               "label":  "Summit",
+                                               "lat":  36.2
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4200,
+                   "lng":  51.6,
+                   "name":  "قله آزادکوه",
+                   "lat":  36.2
+               }
+}

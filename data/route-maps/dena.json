@@ -1,0 +1,116 @@
+{
+    "peakId":  "dena",
+    "peakName":  "دنا",
+    "peakElevation":  4409,
+    "center":  [
+                   31.58,
+                   51.08
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "dena-access-0",
+                       "name":  "ورود — مسیر سیاسرت",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1411,
+                                               "lng":  51.0892,
+                                               "label":  "Start",
+                                               "lat":  31.5417
+                                           },
+                                           {
+                                               "elevation":  2116,
+                                               "lng":  51.0846,
+                                               "lat":  31.5529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "dena-main-0",
+                       "name":  "مسیر سیاسرت",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2557,
+                                               "lng":  51.0851,
+                                               "lat":  31.559
+                                           },
+                                           {
+                                               "elevation":  3615,
+                                               "lng":  51.082,
+                                               "lat":  31.5716
+                                           },
+                                           {
+                                               "elevation":  4409,
+                                               "lng":  51.08,
+                                               "label":  "Summit",
+                                               "lat":  31.58
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "dena-access-1",
+                       "name":  "ورود — مسیر تل‌خسرو",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1411,
+                                               "lng":  51.0418,
+                                               "label":  "Start",
+                                               "lat":  31.5418
+                                           },
+                                           {
+                                               "elevation":  2116,
+                                               "lng":  51.0609,
+                                               "lat":  31.5529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "dena-main-1",
+                       "name":  "مسیر تل‌خسرو",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2557,
+                                               "lng":  51.059,
+                                               "lat":  31.559
+                                           },
+                                           {
+                                               "elevation":  3615,
+                                               "lng":  51.0716,
+                                               "lat":  31.5716
+                                           },
+                                           {
+                                               "elevation":  4409,
+                                               "lng":  51.08,
+                                               "label":  "Summit",
+                                               "lat":  31.58
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4409,
+                   "lng":  51.08,
+                   "name":  "قله دنا",
+                   "lat":  31.58
+               }
+}

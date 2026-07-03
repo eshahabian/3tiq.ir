@@ -1,0 +1,116 @@
+{
+    "peakId":  "sialan",
+    "peakName":  "سیالان",
+    "peakElevation":  4173,
+    "center":  [
+                   36.67,
+                   50.04
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "sialan-access-0",
+                       "name":  "ورود — مسیر اصلی (رودبار)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1335,
+                                               "lng":  50.0492,
+                                               "label":  "Start",
+                                               "lat":  36.6318
+                                           },
+                                           {
+                                               "elevation":  2003,
+                                               "lng":  50.0446,
+                                               "lat":  36.6429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sialan-main-0",
+                       "name":  "مسیر اصلی (رودبار)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2420,
+                                               "lng":  50.0451,
+                                               "lat":  36.649
+                                           },
+                                           {
+                                               "elevation":  3422,
+                                               "lng":  50.042,
+                                               "lat":  36.6616
+                                           },
+                                           {
+                                               "elevation":  4173,
+                                               "lng":  50.04,
+                                               "label":  "Summit",
+                                               "lat":  36.67
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "sialan-access-1",
+                       "name":  "ورود — مسیر شمالی (قزوین)",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1335,
+                                               "lng":  50.0018,
+                                               "label":  "Start",
+                                               "lat":  36.6318
+                                           },
+                                           {
+                                               "elevation":  2003,
+                                               "lng":  50.0209,
+                                               "lat":  36.6429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "sialan-main-1",
+                       "name":  "مسیر شمالی (قزوین)",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2420,
+                                               "lng":  50.019,
+                                               "lat":  36.649
+                                           },
+                                           {
+                                               "elevation":  3422,
+                                               "lng":  50.0316,
+                                               "lat":  36.6616
+                                           },
+                                           {
+                                               "elevation":  4173,
+                                               "lng":  50.04,
+                                               "label":  "Summit",
+                                               "lat":  36.67
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4173,
+                   "lng":  50.04,
+                   "name":  "قله سیالان",
+                   "lat":  36.67
+               }
+}

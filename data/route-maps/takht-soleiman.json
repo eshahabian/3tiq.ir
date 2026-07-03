@@ -1,0 +1,69 @@
+{
+    "peakId":  "takht-soleiman",
+    "peakName":  "تخت سلیمان",
+    "peakElevation":  4643,
+    "center":  [
+                   35.98,
+                   51.75
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "takht-soleiman-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1486,
+                                               "lng":  51.7592,
+                                               "label":  "Start",
+                                               "lat":  35.9418
+                                           },
+                                           {
+                                               "elevation":  2229,
+                                               "lng":  51.7546,
+                                               "lat":  35.9529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "takht-soleiman-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2693,
+                                               "lng":  51.7551,
+                                               "lat":  35.959
+                                           },
+                                           {
+                                               "elevation":  3807,
+                                               "lng":  51.752,
+                                               "lat":  35.9716
+                                           },
+                                           {
+                                               "elevation":  4643,
+                                               "lng":  51.75,
+                                               "label":  "Summit",
+                                               "lat":  35.98
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4643,
+                   "lng":  51.75,
+                   "name":  "قله تخت سلیمان",
+                   "lat":  35.98
+               }
+}

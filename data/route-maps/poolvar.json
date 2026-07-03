@@ -1,0 +1,69 @@
+{
+    "peakId":  "poolvar",
+    "peakName":  "پلوار",
+    "peakElevation":  3818,
+    "center":  [
+                   30.25,
+                   55.95
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "poolvar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1222,
+                                               "lng":  55.9592,
+                                               "label":  "Start",
+                                               "lat":  30.2118
+                                           },
+                                           {
+                                               "elevation":  1833,
+                                               "lng":  55.9546,
+                                               "lat":  30.2229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "poolvar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2214,
+                                               "lng":  55.9551,
+                                               "lat":  30.229
+                                           },
+                                           {
+                                               "elevation":  3131,
+                                               "lng":  55.952,
+                                               "lat":  30.2416
+                                           },
+                                           {
+                                               "elevation":  3818,
+                                               "lng":  55.95,
+                                               "label":  "Summit",
+                                               "lat":  30.25
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3818,
+                   "lng":  55.95,
+                   "name":  "قله پلوار",
+                   "lat":  30.25
+               }
+}

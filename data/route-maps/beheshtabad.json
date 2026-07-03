@@ -1,0 +1,69 @@
+{
+    "peakId":  "beheshtabad",
+    "peakName":  "بهشت‌آباد",
+    "peakElevation":  3200,
+    "center":  [
+                   31.2,
+                   50.65
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "beheshtabad-access-0",
+                       "name":  "ورود — مسیر آبشاری",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1024,
+                                               "lng":  50.6592,
+                                               "label":  "Start",
+                                               "lat":  31.1618
+                                           },
+                                           {
+                                               "elevation":  1536,
+                                               "lng":  50.6546,
+                                               "lat":  31.1729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "beheshtabad-main-0",
+                       "name":  "مسیر آبشاری",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1856,
+                                               "lng":  50.6551,
+                                               "lat":  31.179
+                                           },
+                                           {
+                                               "elevation":  2624,
+                                               "lng":  50.652,
+                                               "lat":  31.1916
+                                           },
+                                           {
+                                               "elevation":  3200,
+                                               "lng":  50.65,
+                                               "label":  "Summit",
+                                               "lat":  31.2
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3200,
+                   "lng":  50.65,
+                   "name":  "قله بهشت‌آباد",
+                   "lat":  31.2
+               }
+}

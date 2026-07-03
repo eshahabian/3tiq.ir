@@ -1,0 +1,69 @@
+{
+    "peakId":  "naz",
+    "peakName":  "ناز",
+    "peakElevation":  3300,
+    "center":  [
+                   36,
+                   51.85
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "naz-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1056,
+                                               "lng":  51.8593,
+                                               "label":  "Start",
+                                               "lat":  35.9618
+                                           },
+                                           {
+                                               "elevation":  1584,
+                                               "lng":  51.8546,
+                                               "lat":  35.9729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "naz-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1914,
+                                               "lng":  51.8551,
+                                               "lat":  35.979
+                                           },
+                                           {
+                                               "elevation":  2706,
+                                               "lng":  51.852,
+                                               "lat":  35.9916
+                                           },
+                                           {
+                                               "elevation":  3300,
+                                               "lng":  51.85,
+                                               "label":  "Summit",
+                                               "lat":  36
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3300,
+                   "lng":  51.85,
+                   "name":  "قله ناز",
+                   "lat":  36
+               }
+}

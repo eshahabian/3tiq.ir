@@ -1,0 +1,136 @@
+{
+    "peakId":  "alvand",
+    "peakName":  "الوند",
+    "peakElevation":  3580,
+    "center":  [
+                   34.73,
+                   48.52
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "alvand-access-0",
+                       "name":  "ورود — مسیر اصلی (همدان)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1146,
+                                               "lng":  48.5293,
+                                               "label":  "Start",
+                                               "lat":  34.6918
+                                           },
+                                           {
+                                               "elevation":  1718,
+                                               "lng":  48.5246,
+                                               "lat":  34.7029
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "alvand-main-0",
+                       "name":  "مسیر اصلی (همدان)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2076,
+                                               "lng":  48.5251,
+                                               "lat":  34.709
+                                           },
+                                           {
+                                               "elevation":  2936,
+                                               "lng":  48.522,
+                                               "lat":  34.7216
+                                           },
+                                           {
+                                               "elevation":  3580,
+                                               "lng":  48.52,
+                                               "label":  "Summit",
+                                               "lat":  34.73
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "alvand-access-1",
+                       "name":  "ورود — مسیر گنج‌نامه",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1146,
+                                               "lng":  48.4818,
+                                               "label":  "Start",
+                                               "lat":  34.6918
+                                           },
+                                           {
+                                               "elevation":  1718,
+                                               "lng":  48.5009,
+                                               "lat":  34.7029
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "alvand-main-1",
+                       "name":  "مسیر گنج‌نامه",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2076,
+                                               "lng":  48.499,
+                                               "lat":  34.709
+                                           },
+                                           {
+                                               "elevation":  2936,
+                                               "lng":  48.5116,
+                                               "lat":  34.7216
+                                           },
+                                           {
+                                               "elevation":  3580,
+                                               "lng":  48.52,
+                                               "label":  "Summit",
+                                               "lat":  34.73
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  2500,
+                         "lng":  48.52,
+                         "name":  "کلبه گل‌زرد",
+                         "type":  "کلبه",
+                         "lat":  34.70
+                     },
+                     {
+                         "elevation":  3350,
+                         "lng":  48.57,
+                         "name":  "جانپناه قله الوند",
+                         "type":  "جانپناه",
+                         "lat":  34.72
+                     },
+                     {
+                         "elevation":  2800,
+                         "lng":  48.55,
+                         "name":  "پناهگاه الوند",
+                         "type":  "پناهگاه",
+                         "lat":  34.67
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3580,
+                   "lng":  48.52,
+                   "name":  "قله الوند",
+                   "lat":  34.73
+               }
+}

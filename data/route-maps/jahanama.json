@@ -1,0 +1,69 @@
+{
+    "peakId":  "jahanama",
+    "peakName":  "جهان‌نما",
+    "peakElevation":  2146,
+    "center":  [
+                   37.4,
+                   55.95
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "jahanama-access-0",
+                       "name":  "ورود — مسیر پارک ملی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  800,
+                                               "lng":  55.9592,
+                                               "label":  "Start",
+                                               "lat":  37.3618
+                                           },
+                                           {
+                                               "elevation":  1030,
+                                               "lng":  55.9546,
+                                               "lat":  37.3729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "jahanama-main-0",
+                       "name":  "مسیر پارک ملی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1245,
+                                               "lng":  55.9551,
+                                               "lat":  37.379
+                                           },
+                                           {
+                                               "elevation":  1760,
+                                               "lng":  55.952,
+                                               "lat":  37.3916
+                                           },
+                                           {
+                                               "elevation":  2146,
+                                               "lng":  55.95,
+                                               "label":  "Summit",
+                                               "lat":  37.4
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2146,
+                   "lng":  55.95,
+                   "name":  "قله جهان‌نما",
+                   "lat":  37.4
+               }
+}

@@ -1,0 +1,136 @@
+{
+    "peakId":  "zardkooh",
+    "peakName":  "زردکوه بختیاری",
+    "peakElevation":  4548,
+    "center":  [
+                   32.37,
+                   50.06
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "zardkooh-access-0",
+                       "name":  "ورود — مسیر شمالی (چلگرد)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1455,
+                                               "lng":  50.0693,
+                                               "label":  "Start",
+                                               "lat":  32.3318
+                                           },
+                                           {
+                                               "elevation":  2183,
+                                               "lng":  50.0646,
+                                               "lat":  32.3429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "zardkooh-main-0",
+                       "name":  "مسیر شمالی (چلگرد)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2638,
+                                               "lng":  50.0651,
+                                               "lat":  32.349
+                                           },
+                                           {
+                                               "elevation":  3729,
+                                               "lng":  50.062,
+                                               "lat":  32.3616
+                                           },
+                                           {
+                                               "elevation":  4548,
+                                               "lng":  50.06,
+                                               "label":  "Summit",
+                                               "lat":  32.37
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "zardkooh-access-1",
+                       "name":  "ورود — مسیر غربی (شهرکرد)",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1455,
+                                               "lng":  50.0218,
+                                               "label":  "Start",
+                                               "lat":  32.3318
+                                           },
+                                           {
+                                               "elevation":  2183,
+                                               "lng":  50.0409,
+                                               "lat":  32.3429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "zardkooh-main-1",
+                       "name":  "مسیر غربی (شهرکرد)",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2638,
+                                               "lng":  50.039,
+                                               "lat":  32.349
+                                           },
+                                           {
+                                               "elevation":  3729,
+                                               "lng":  50.0516,
+                                               "lat":  32.3616
+                                           },
+                                           {
+                                               "elevation":  4548,
+                                               "lng":  50.06,
+                                               "label":  "Summit",
+                                               "lat":  32.37
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3200,
+                         "lng":  50.10,
+                         "name":  "پناهگاه کوه‌گل",
+                         "type":  "پناهگاه",
+                         "lat":  32.40
+                     },
+                     {
+                         "elevation":  3000,
+                         "lng":  50.18,
+                         "name":  "پناهگاه کوه‌رنگ",
+                         "type":  "پناهگاه",
+                         "lat":  32.45
+                     },
+                     {
+                         "elevation":  3100,
+                         "lng":  50.00,
+                         "name":  "پناهگاه کلون بستک",
+                         "type":  "پناهگاه",
+                         "lat":  32.52
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4548,
+                   "lng":  50.06,
+                   "name":  "قله زردکوه بختیاری",
+                   "lat":  32.37
+               }
+}

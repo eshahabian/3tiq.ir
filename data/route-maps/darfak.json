@@ -1,0 +1,116 @@
+{
+    "peakId":  "darfak",
+    "peakName":  "درفک",
+    "peakElevation":  3150,
+    "center":  [
+                   36.92,
+                   50.55
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "darfak-access-0",
+                       "name":  "ورود — مسیر پیست اسکی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1008,
+                                               "lng":  50.5592,
+                                               "label":  "Start",
+                                               "lat":  36.8818
+                                           },
+                                           {
+                                               "elevation":  1512,
+                                               "lng":  50.5546,
+                                               "lat":  36.8929
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "darfak-main-0",
+                       "name":  "مسیر پیست اسکی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1827,
+                                               "lng":  50.5551,
+                                               "lat":  36.899
+                                           },
+                                           {
+                                               "elevation":  2583,
+                                               "lng":  50.552,
+                                               "lat":  36.9116
+                                           },
+                                           {
+                                               "elevation":  3150,
+                                               "lng":  50.55,
+                                               "label":  "Summit",
+                                               "lat":  36.92
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   },
+                   {
+                       "id":  "darfak-access-1",
+                       "name":  "ورود — مسیر جنگلی",
+                       "color":  "#8b5cf6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1008,
+                                               "lng":  50.5118,
+                                               "label":  "Start",
+                                               "lat":  36.8818
+                                           },
+                                           {
+                                               "elevation":  1512,
+                                               "lng":  50.5309,
+                                               "lat":  36.8929
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "darfak-main-1",
+                       "name":  "مسیر جنگلی",
+                       "color":  "#f59e0b",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1827,
+                                               "lng":  50.529,
+                                               "lat":  36.899
+                                           },
+                                           {
+                                               "elevation":  2583,
+                                               "lng":  50.5416,
+                                               "lat":  36.9116
+                                           },
+                                           {
+                                               "elevation":  3150,
+                                               "lng":  50.55,
+                                               "label":  "Summit",
+                                               "lat":  36.92
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3150,
+                   "lng":  50.55,
+                   "name":  "قله درفک",
+                   "lat":  36.92
+               }
+}

@@ -1,0 +1,69 @@
+{
+    "peakId":  "boghroudagh",
+    "peakName":  "بغرو داغ",
+    "peakElevation":  3450,
+    "center":  [
+                   36.6,
+                   50.4
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "boghroudagh-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1104,
+                                               "lng":  50.4092,
+                                               "label":  "Start",
+                                               "lat":  36.5618
+                                           },
+                                           {
+                                               "elevation":  1656,
+                                               "lng":  50.4046,
+                                               "lat":  36.5729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "boghroudagh-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2001,
+                                               "lng":  50.4051,
+                                               "lat":  36.579
+                                           },
+                                           {
+                                               "elevation":  2829,
+                                               "lng":  50.402,
+                                               "lat":  36.5916
+                                           },
+                                           {
+                                               "elevation":  3450,
+                                               "lng":  50.4,
+                                               "label":  "Summit",
+                                               "lat":  36.6
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3450,
+                   "lng":  50.4,
+                   "name":  "قله بغرو داغ",
+                   "lat":  36.6
+               }
+}

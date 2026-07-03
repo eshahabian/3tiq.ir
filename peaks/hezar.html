@@ -15,6 +15,8 @@
     <link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/route-map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <style>
         :root {
             --primary-color: #D4A574;
@@ -302,6 +304,8 @@
             </div>
 
                 <div class="section-header"><div class="section-icon">🧭</div><h2 class="section-title">مسیرهای صعود</h2></div>
+                                <p class="route-map-hint" style="font-size:0.82rem;color:var(--text-light);margin:-0.5rem 0 1rem;line-height:1.7;">خطوط رنگی <strong>پررنگ</strong> مسیر صعود و خطوط <strong>چین‌دار</strong> مسیر ورود. 🏠 پناهگاه · 🔺 قله · واترمارک <strong>3tiq.ir</strong></p>
+                <div data-route-map="hezar" data-base-path="../data/route-maps/"></div>
                 <div class="routes-list"><div class="route-item"><div class="route-header" onclick="this.parentElement.classList.toggle('open')"><span class="route-name">مسیر اصلی</span><div class="route-badges"><span class="diff-pill diff-سخت">سخت</span></div><span class="route-chevron">▾</span></div><div class="route-body"><div class="route-meta-grid"><div class="route-meta-item">📏 <span>طول:</span> <strong>۱۶ کیلومتر</strong></div><div class="route-meta-item">📈 <span>اختلاف ارتفاع:</span> <strong>۲۸۰۰ متر</strong></div><div class="route-meta-item">⏱ <span>زمان:</span> <strong>۱۰–۱۲ ساعت</strong></div><div class="route-meta-item">🏕️ <span>کمپ:</span> <strong>کمپ هزار</strong></div></div><p class="route-desc">مسیر اصلی از جنوب. دره‌های عمیق و یخچال‌های طبیعی در مسیر.</p></div></div></div>
             </div>
             <div class="section-card">
@@ -358,5 +362,9 @@
 function openLightbox(src) { document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
 function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
 </script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="../js/route-map.js"></script>
 </body>
 </html>

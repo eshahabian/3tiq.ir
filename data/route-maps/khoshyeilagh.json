@@ -1,0 +1,69 @@
+{
+    "peakId":  "khoshyeilagh",
+    "peakName":  "خوش‌ییلاق",
+    "peakElevation":  2750,
+    "center":  [
+                   37.02,
+                   55.78
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "khoshyeilagh-access-0",
+                       "name":  "ورود — مسیر ییلاقی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  880,
+                                               "lng":  55.7892,
+                                               "label":  "Start",
+                                               "lat":  36.9818
+                                           },
+                                           {
+                                               "elevation":  1320,
+                                               "lng":  55.7846,
+                                               "lat":  36.9929
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "khoshyeilagh-main-0",
+                       "name":  "مسیر ییلاقی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1595,
+                                               "lng":  55.7851,
+                                               "lat":  36.999
+                                           },
+                                           {
+                                               "elevation":  2255,
+                                               "lng":  55.782,
+                                               "lat":  37.0116
+                                           },
+                                           {
+                                               "elevation":  2750,
+                                               "lng":  55.78,
+                                               "label":  "Summit",
+                                               "lat":  37.02
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2750,
+                   "lng":  55.78,
+                   "name":  "قله خوش‌ییلاق",
+                   "lat":  37.02
+               }
+}

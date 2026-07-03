@@ -1,0 +1,75 @@
+{
+    "peakId":  "eshterankoh",
+    "peakName":  "اشترانکوه",
+    "peakElevation":  4150,
+    "center":  [
+                   33.45,
+                   49.55
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "eshterankoh-access-0",
+                       "name":  "ورود — مسیر اصلی (ازنا)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1328,
+                                               "lng":  49.5592,
+                                               "label":  "Start",
+                                               "lat":  33.4118
+                                           },
+                                           {
+                                               "elevation":  1992,
+                                               "lng":  49.5546,
+                                               "lat":  33.4229
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "eshterankoh-main-0",
+                       "name":  "مسیر اصلی (ازنا)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2407,
+                                               "lng":  49.5551,
+                                               "lat":  33.429
+                                           },
+                                           {
+                                               "elevation":  3403,
+                                               "lng":  49.552,
+                                               "lat":  33.4416
+                                           },
+                                           {
+                                               "elevation":  4150,
+                                               "lng":  49.55,
+                                               "label":  "Summit",
+                                               "lat":  33.45
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3400,
+                         "lng":  49.58,
+                         "name":  "پناهگاه اشترانکوه",
+                         "type":  "پناهگاه",
+                         "lat":  33.42
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4150,
+                   "lng":  49.55,
+                   "name":  "قله اشترانکوه",
+                   "lat":  33.45
+               }
+}

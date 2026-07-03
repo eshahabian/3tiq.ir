@@ -1,0 +1,82 @@
+{
+    "peakId":  "lalehzar",
+    "peakName":  "لاله‌زار",
+    "peakElevation":  4374,
+    "center":  [
+                   29.47,
+                   56.77
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "lalehzar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1400,
+                                               "lng":  56.7792,
+                                               "label":  "Start",
+                                               "lat":  29.4318
+                                           },
+                                           {
+                                               "elevation":  2100,
+                                               "lng":  56.7746,
+                                               "lat":  29.4429
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "lalehzar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2537,
+                                               "lng":  56.7751,
+                                               "lat":  29.449
+                                           },
+                                           {
+                                               "elevation":  3587,
+                                               "lng":  56.772,
+                                               "lat":  29.4616
+                                           },
+                                           {
+                                               "elevation":  4374,
+                                               "lng":  56.77,
+                                               "label":  "Summit",
+                                               "lat":  29.47
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  4200,
+                         "lng":  56.65,
+                         "name":  "جانپناه قله هزار",
+                         "type":  "جانپناه",
+                         "lat":  29.58
+                     },
+                     {
+                         "elevation":  3800,
+                         "lng":  56.62,
+                         "name":  "پناهگاه هزار",
+                         "type":  "پناهگاه",
+                         "lat":  29.55
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4374,
+                   "lng":  56.77,
+                   "name":  "قله لاله‌زار",
+                   "lat":  29.47
+               }
+}

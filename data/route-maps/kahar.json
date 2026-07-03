@@ -1,0 +1,75 @@
+{
+    "peakId":  "kahar",
+    "peakName":  "کهار",
+    "peakElevation":  4050,
+    "center":  [
+                   36.1,
+                   51.15
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "kahar-access-0",
+                       "name":  "ورود — مسیر اصلی (کرج)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1296,
+                                               "lng":  51.1592,
+                                               "label":  "Start",
+                                               "lat":  36.0618
+                                           },
+                                           {
+                                               "elevation":  1944,
+                                               "lng":  51.1546,
+                                               "lat":  36.0729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "kahar-main-0",
+                       "name":  "مسیر اصلی (کرج)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2349,
+                                               "lng":  51.1551,
+                                               "lat":  36.079
+                                           },
+                                           {
+                                               "elevation":  3321,
+                                               "lng":  51.152,
+                                               "lat":  36.0916
+                                           },
+                                           {
+                                               "elevation":  4050,
+                                               "lng":  51.15,
+                                               "label":  "Summit",
+                                               "lat":  36.1
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3800,
+                         "lng":  51.22,
+                         "name":  "پناهگاه تخت سلیمان",
+                         "type":  "پناهگاه",
+                         "lat":  36.11
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  4050,
+                   "lng":  51.15,
+                   "name":  "قله کهار",
+                   "lat":  36.1
+               }
+}

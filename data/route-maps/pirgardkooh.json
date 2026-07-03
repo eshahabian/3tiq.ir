@@ -1,0 +1,69 @@
+{
+    "peakId":  "pirgardkooh",
+    "peakName":  "پیرگردکوه",
+    "peakElevation":  2986,
+    "center":  [
+                   36.6,
+                   55.6
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "pirgardkooh-access-0",
+                       "name":  "ورود — مسیر جنوبی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  956,
+                                               "lng":  55.6092,
+                                               "label":  "Start",
+                                               "lat":  36.5618
+                                           },
+                                           {
+                                               "elevation":  1433,
+                                               "lng":  55.6046,
+                                               "lat":  36.5729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "pirgardkooh-main-0",
+                       "name":  "مسیر جنوبی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1732,
+                                               "lng":  55.6051,
+                                               "lat":  36.579
+                                           },
+                                           {
+                                               "elevation":  2449,
+                                               "lng":  55.602,
+                                               "lat":  36.5916
+                                           },
+                                           {
+                                               "elevation":  2986,
+                                               "lng":  55.6,
+                                               "label":  "Summit",
+                                               "lat":  36.6
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  2986,
+                   "lng":  55.6,
+                   "name":  "قله پیرگردکوه",
+                   "lat":  36.6
+               }
+}

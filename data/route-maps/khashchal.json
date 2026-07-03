@@ -1,0 +1,69 @@
+{
+    "peakId":  "khashchal",
+    "peakName":  "خشچال",
+    "peakElevation":  4030,
+    "center":  [
+                   36.72,
+                   50.12
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "khashchal-access-0",
+                       "name":  "ورود — مسیر جنوبی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1290,
+                                               "lng":  50.1292,
+                                               "label":  "Start",
+                                               "lat":  36.6818
+                                           },
+                                           {
+                                               "elevation":  1934,
+                                               "lng":  50.1246,
+                                               "lat":  36.6929
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "khashchal-main-0",
+                       "name":  "مسیر جنوبی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2337,
+                                               "lng":  50.1251,
+                                               "lat":  36.699
+                                           },
+                                           {
+                                               "elevation":  3305,
+                                               "lng":  50.122,
+                                               "lat":  36.7116
+                                           },
+                                           {
+                                               "elevation":  4030,
+                                               "lng":  50.12,
+                                               "label":  "Summit",
+                                               "lat":  36.72
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4030,
+                   "lng":  50.12,
+                   "name":  "قله خشچال",
+                   "lat":  36.72
+               }
+}

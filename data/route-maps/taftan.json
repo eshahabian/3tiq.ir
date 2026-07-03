@@ -1,0 +1,69 @@
+{
+    "peakId":  "taftan",
+    "peakName":  "تفتان",
+    "peakElevation":  4042,
+    "center":  [
+                   28.6,
+                   61.13
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "taftan-access-0",
+                       "name":  "ورود — مسیر اصلی (خاش)",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1293,
+                                               "lng":  61.1392,
+                                               "label":  "Start",
+                                               "lat":  28.5618
+                                           },
+                                           {
+                                               "elevation":  1940,
+                                               "lng":  61.1346,
+                                               "lat":  28.5729
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "taftan-main-0",
+                       "name":  "مسیر اصلی (خاش)",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2344,
+                                               "lng":  61.1351,
+                                               "lat":  28.579
+                                           },
+                                           {
+                                               "elevation":  3314,
+                                               "lng":  61.132,
+                                               "lat":  28.5916
+                                           },
+                                           {
+                                               "elevation":  4042,
+                                               "lng":  61.13,
+                                               "label":  "Summit",
+                                               "lat":  28.6
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  4042,
+                   "lng":  61.13,
+                   "name":  "قله تفتان",
+                   "lat":  28.6
+               }
+}

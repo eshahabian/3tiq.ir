@@ -1,0 +1,69 @@
+{
+    "peakId":  "shaho",
+    "peakName":  "شاهو",
+    "peakElevation":  3380,
+    "center":  [
+                   34.48,
+                   46.55
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "shaho-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1082,
+                                               "lng":  46.5592,
+                                               "label":  "Start",
+                                               "lat":  34.4418
+                                           },
+                                           {
+                                               "elevation":  1622,
+                                               "lng":  46.5546,
+                                               "lat":  34.4529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "shaho-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1960,
+                                               "lng":  46.5551,
+                                               "lat":  34.459
+                                           },
+                                           {
+                                               "elevation":  2772,
+                                               "lng":  46.552,
+                                               "lat":  34.4716
+                                           },
+                                           {
+                                               "elevation":  3380,
+                                               "lng":  46.55,
+                                               "label":  "Summit",
+                                               "lat":  34.48
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+
+                 ],
+    "summit":  {
+                   "elevation":  3380,
+                   "lng":  46.55,
+                   "name":  "قله شاهو",
+                   "lat":  34.48
+               }
+}

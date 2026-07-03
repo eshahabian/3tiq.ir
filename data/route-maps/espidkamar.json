@@ -1,0 +1,75 @@
+{
+    "peakId":  "espidkamar",
+    "peakName":  "اسپیدکمر",
+    "peakElevation":  3600,
+    "center":  [
+                   36.28,
+                   51.4
+               ],
+    "zoom":  12,
+    "source":  "auto",
+    "routes":  [
+                   {
+                       "id":  "espidkamar-access-0",
+                       "name":  "ورود — مسیر اصلی",
+                       "color":  "#3b82f6",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  1152,
+                                               "lng":  51.4092,
+                                               "label":  "Start",
+                                               "lat":  36.2418
+                                           },
+                                           {
+                                               "elevation":  1728,
+                                               "lng":  51.4046,
+                                               "lat":  36.2529
+                                           }
+                                       ],
+                       "type":  "access",
+                       "weight":  4,
+                       "dashArray":  "10 8"
+                   },
+                   {
+                       "id":  "espidkamar-main-0",
+                       "name":  "مسیر اصلی",
+                       "color":  "#22c55e",
+                       "coordinates":  [
+                                           {
+                                               "elevation":  2088,
+                                               "lng":  51.4051,
+                                               "lat":  36.259
+                                           },
+                                           {
+                                               "elevation":  2952,
+                                               "lng":  51.402,
+                                               "lat":  36.2716
+                                           },
+                                           {
+                                               "elevation":  3600,
+                                               "lng":  51.4,
+                                               "label":  "Summit",
+                                               "lat":  36.28
+                                           }
+                                       ],
+                       "type":  "main",
+                       "weight":  5,
+                       "dashArray":  null
+                   }
+               ],
+    "shelters":  [
+                     {
+                         "elevation":  3150,
+                         "lng":  51.28,
+                         "name":  "پناهگاه آزادکوه",
+                         "type":  "پناهگاه",
+                         "lat":  36.32
+                     }
+                 ],
+    "summit":  {
+                   "elevation":  3600,
+                   "lng":  51.4,
+                   "name":  "قله اسپیدکمر",
+                   "lat":  36.28
+               }
+}
