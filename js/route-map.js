@@ -212,61 +212,80 @@
         return p.label;
     }
 
-    function computeExportView(allLatLngs, mapX, mapY, mapW, mapH) {
+    function boundsForAspect(allLatLngs, aspectW, aspectH, padFactor) {
         var bounds = L.latLngBounds(allLatLngs);
         var c = bounds.getCenter();
         var latSpan = Math.max(bounds.getNorth() - bounds.getSouth(), 0.012);
         var lngSpan = Math.max(bounds.getEast() - bounds.getWest(), 0.012);
-        var pad = 1.35;
-        var padded = L.latLngBounds(
-            [c.lat - latSpan * pad / 2, c.lng - lngSpan * pad / 2],
-            [c.lat + latSpan * pad / 2, c.lng + lngSpan * pad / 2]
-        );
+        latSpan *= padFactor;
+        lngSpan *= padFactor;
 
-        for (var z = 16; z >= 10; z--) {
+        var cosLat = Math.cos(c.lat * Math.PI / 180);
+        var mercW = lngSpan * cosLat;
+        var mercH = latSpan;
+        var targetAspect = aspectW / aspectH;
+
+        if (mercW / mercH < targetAspect) {
+            lngSpan = (mercH * targetAspect) / cosLat;
+        } else if (mercW / mercH > targetAspect) {
+            latSpan = mercW / targetAspect;
+        }
+
+        return L.latLngBounds(
+            [c.lat - latSpan / 2, c.lng - lngSpan / 2],
+            [c.lat + latSpan / 2, c.lng + lngSpan / 2]
+        );
+    }
+
+    function exportCanvasSize(allLatLngs) {
+        var bounds = L.latLngBounds(allLatLngs);
+        var latSpan = Math.max(bounds.getNorth() - bounds.getSouth(), 0.01);
+        var lngSpan = Math.max(bounds.getEast() - bounds.getWest(), 0.01);
+        var cosLat = Math.cos(bounds.getCenter().lat * Math.PI / 180);
+        var ratio = latSpan / (lngSpan * cosLat);
+
+        if (ratio > 1.25) return { w: 2400, h: 3400 };
+        if (ratio < 0.8) return { w: 3400, h: 2400 };
+        return { w: 2800, h: 2800 };
+    }
+
+    function computeExportView(allLatLngs, mapX, mapY, mapW, mapH) {
+        var padded = boundsForAspect(allLatLngs, mapW, mapH, 1.22);
+
+        for (var z = 16; z >= 9; z--) {
             var nw = latLngToWorldPx(padded.getNorth(), padded.getWest(), z);
             var se = latLngToWorldPx(padded.getSouth(), padded.getEast(), z);
             var bw = se.x - nw.x;
             var bh = se.y - nw.y;
-            if (bw <= mapW && bh <= mapH) {
+            if (bw >= mapW && bh >= mapH) {
                 return {
                     zoom: z,
                     nw: nw,
                     se: se,
-                    drawW: bw,
-                    drawH: bh,
-                    offsetX: mapX + (mapW - bw) / 2,
-                    offsetY: mapY + (mapH - bh) / 2
+                    drawW: mapW,
+                    drawH: mapH,
+                    offsetX: mapX,
+                    offsetY: mapY
                 };
             }
         }
 
-        var z = 10;
+        var z = 9;
         var nw = latLngToWorldPx(padded.getNorth(), padded.getWest(), z);
         var se = latLngToWorldPx(padded.getSouth(), padded.getEast(), z);
-        var bw = se.x - nw.x;
-        var bh = se.y - nw.y;
-        var scale = Math.min(mapW / bw, mapH / bh);
         return {
             zoom: z,
             nw: nw,
             se: se,
-            drawW: bw * scale,
-            drawH: bh * scale,
-            offsetX: mapX + (mapW - bw * scale) / 2,
-            offsetY: mapY + (mapH - bh * scale) / 2,
-            stretch: scale
+            drawW: mapW,
+            drawH: mapH,
+            offsetX: mapX,
+            offsetY: mapY
         };
     }
 
     function projectLatLng(lat, lng, view) {
         var p = latLngToWorldPx(lat, lng, view.zoom);
-        var bw = view.se.x - view.nw.x;
-        var bh = view.se.y - view.nw.y;
-        if (view.stretch) {
-            bw *= view.stretch;
-            bh *= view.stretch;
-        }
         return {
             x: view.offsetX + (p.x - view.nw.x) / (view.se.x - view.nw.x) * view.drawW,
             y: view.offsetY + (p.y - view.nw.y) / (view.se.y - view.nw.y) * view.drawH
@@ -464,16 +483,19 @@
         ctx.fillText('مختصات WGS84 · قبل از صعود وضعیت مسیر و آب‌وهوا را بررسی کنید · ' + SITE, w / 2, y + footerH / 2 + 6);
     }
 
-    function drawWatermark(ctx, w, h) {
+    function drawWatermark(ctx, x, y, w, h) {
         ctx.save();
-        ctx.translate(w / 2, h / 2);
+        ctx.beginPath();
+        ctx.rect(x, y, w, h);
+        ctx.clip();
+        ctx.translate(x + w / 2, y + h / 2);
         ctx.rotate(-32 * Math.PI / 180);
-        ctx.font = 'bold 34px Vazirmatn, Tahoma, sans-serif';
-        ctx.fillStyle = 'rgba(44, 36, 22, 0.06)';
+        ctx.font = 'bold 32px Vazirmatn, Tahoma, sans-serif';
+        ctx.fillStyle = 'rgba(44, 36, 22, 0.045)';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        var stepX = 240;
-        var stepY = 130;
+        var stepX = 220;
+        var stepY = 120;
         for (var yy = -h; yy <= h; yy += stepY) {
             for (var xx = -w; xx <= w; xx += stepX) {
                 ctx.fillText(SITE, xx, yy);
@@ -485,7 +507,7 @@
     async function renderMapExportCanvas(data, allLatLngs, w, h) {
         var headerH = 200;
         var footerH = 44;
-        var sidePad = 24;
+        var sidePad = 12;
         var mapY = headerH + 8;
         var mapH = h - headerH - footerH - 16;
         var mapX = sidePad;
@@ -550,7 +572,7 @@
             drawSummitMarker(ctx, spt.x, spt.y, data.summit);
         }
 
-        drawWatermark(ctx, w, h);
+        drawWatermark(ctx, mapX, mapY, mapW, mapH);
         ctx.restore();
 
         ctx.strokeStyle = 'rgba(58, 50, 38, 0.15)';
@@ -593,7 +615,8 @@
                 widget.appendChild(overlay);
             }
 
-            var canvas = await renderMapExportCanvas(data, allLatLngs, 3200, 2400);
+            var size = exportCanvasSize(allLatLngs);
+            var canvas = await renderMapExportCanvas(data, allLatLngs, size.w, size.h);
             downloadCanvas(canvas, title);
         } catch (err) {
             console.error(err);
