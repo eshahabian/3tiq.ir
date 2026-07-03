@@ -1816,6 +1816,46 @@ a:focus:not(:focus-visible) {
 .sh-stat.yes .sh-stat-value { color: #3a7d44; }
 .sh-stat.no  .sh-stat-value { color: #9a3a2a; }
 
+.sh-history {
+    padding: 0 1.1rem 0.55rem;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sh-history-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.68rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.sh-card-extra {
+    padding: 0 1.1rem 0.65rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.sh-card-extra b { color: var(--text-dark); font-weight: 700; }
+
+.sh-card-foot {
+    padding: 0 1.1rem 1.1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sh-map-btn {
+    cursor: pointer;
+    font-family: inherit;
+    background: none;
+}
+
 .btn-view-all {
     display: inline-block;
     padding: 0.85rem 2rem;
@@ -1842,6 +1882,8 @@ body.dark-mode .sh-stat-value { color: #e0e0e0; }
 body.dark-mode .sh-divider { background-image: repeating-linear-gradient(to left, rgba(255, 255, 255, 0.1) 0 5px, transparent 5px 10px); }
 body.dark-mode .sh-stat.yes .sh-stat-value { color: #6dbf7e; }
 body.dark-mode .sh-stat.no  .sh-stat-value { color: #e07a6a; }
+body.dark-mode .sh-history-label { color: #e0e0e0; }
+body.dark-mode .sh-card-extra b { color: #f0f0f0; }
 
 @media (max-width: 600px) {
     .shelter-tab { font-size: 0.76rem; padding: 0.45rem 0.9rem; }

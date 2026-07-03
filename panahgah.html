@@ -450,6 +450,9 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <input type="text" id="phSearch" placeholder="جستجوی نام پناهگاه...">
             </div>
+            <select class="ph-select" id="phRegion">
+                <option value="all">همهٔ رشته‌کوه‌ها</option>
+            </select>
             <select class="ph-select" id="phProvince">
                 <option value="all">همهٔ استان‌ها</option>
             </select>
@@ -465,7 +468,7 @@
 
     <!-- ===== Main grid ===== -->
     <main class="ph-main">
-        <div class="ph-grid" id="phGrid"></div>
+        <div class="ph-grid shelter-cards-grid" id="phGrid"></div>
     </main>
 
     <!-- ===== مودال نقشه ===== -->
@@ -612,7 +615,6 @@
     });
 
     // ===== داده‌ها =====
-    const typeIcon = { 'پناهگاه': '🏠', 'جانپناه': '⚡', 'کلبه': '🏕' };
 
     function toFa(n) {
         return n.toLocaleString('fa-IR');
@@ -631,7 +633,7 @@
     let mountains = [];
 
     Promise.all([
-        fetch('js/shelters.json').then(r => r.json()),
+        fetch('data/shelters-detail.json').then(r => r.json()),
         fetch('js/mountains.json').then(r => r.json())
     ]).then(([shelters, mtns]) => {
         allShelters = shelters;
@@ -655,7 +657,12 @@
         // آمار هدر
         const counts = { 'پناهگاه': 0, 'جانپناه': 0, 'کلبه': 0 };
         const provinces = new Set();
-        allShelters.forEach(s => { counts[s.type] = (counts[s.type]||0) + 1; provinces.add(s.province); });
+        const regions = new Set();
+        allShelters.forEach(s => {
+            counts[s.type] = (counts[s.type]||0) + 1;
+            provinces.add(s.province);
+            if (s.region) regions.add(s.region);
+        });
         document.getElementById('statTotal').textContent = toFa(allShelters.length);
         document.getElementById('statRefuge').textContent = toFa(counts['پناهگاه']||0);
         document.getElementById('statBivouac').textContent = toFa(counts['جانپناه']||0);
@@ -669,6 +676,13 @@
             provSelect.appendChild(opt);
         });
 
+        const regionSelect = document.getElementById('phRegion');
+        Array.from(regions).sort().forEach(r => {
+            const opt = document.createElement('option');
+            opt.value = r; opt.textContent = r;
+            regionSelect.appendChild(opt);
+        });
+
         // پیش‌محاسبه نزدیک‌ترین قله برای هر پناهگاه
         allShelters.forEach(s => {
             const { peak, dist } = nearestPeak(s);
@@ -680,6 +694,7 @@
 
         document.getElementById('phSearch').addEventListener('input', render);
         provSelect.addEventListener('change', render);
+        regionSelect.addEventListener('change', render);
         document.querySelectorAll('.ph-pill').forEach(pill => {
             pill.addEventListener('click', () => {
                 document.querySelectorAll('.ph-pill').forEach(p => p.classList.remove('active'));
@@ -689,14 +704,56 @@
         });
     }
 
+    function buildShelterCard(s, i) {
+        const regionLabel = s.region || '';
+        const imgHTML = '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + (regionLabel || s.province) + '</span></div>';
+        const cap = s.capacity ? toFa(s.capacity) + ' نفر' : '—';
+        const elec = s.electricity ? { v: 'دارد', c: 'yes', i: '⚡' } : { v: 'ندارد', c: 'no', i: '🔌' };
+        const water = s.water ? { v: 'دارد', c: 'yes', i: '💧' } : { v: 'ندارد', c: 'no', i: '🚫' };
+        const alt = s.altitude ? toFa(s.altitude) + ' م' : '';
+        const regionLine = [s.region, s.province].filter(Boolean).join(' · ');
+        const peakBlock = s._nearestPeak
+            ? '<div class="sh-card-extra"><span>⛰ نزدیک‌ترین قله:</span> <b>' + s._nearestPeak.name + '</b> · ' + toFa(s._nearestDist.toLocaleString('fa-IR', { maximumFractionDigits: 1 })) + ' کیلومتر</div>'
+            : '';
+        const historyBlock = s.history
+            ? '<div class="sh-history"><span class="sh-history-label">📜 تاریخچه</span>' + s.history + '</div>'
+            : '';
+        const safeName = s.name.replace(/"/g, '&quot;');
+
+        return '<article class="sh-card" style="animation-delay:' + (i * 0.04) + 's" data-type="' + s.type + '">' +
+            '<div class="sh-card-img">' + imgHTML +
+            '<span class="sh-type-badge ' + s.type + '">' + s.type + '</span>' +
+            (alt ? '<span class="sh-altitude">⛰ ' + alt + '</span>' : '') +
+            '</div><div class="sh-card-body">' +
+            '<div class="sh-card-region">' + regionLine + '</div>' +
+            '<div class="sh-card-name">' + s.name + '</div>' +
+            '<div class="sh-card-desc">' + (s.description || '') + '</div>' +
+            '</div>' +
+            historyBlock +
+            '<div class="sh-divider"></div><div class="sh-stats">' +
+            '<div class="sh-stat"><span class="sh-stat-icon">👥</span><span class="sh-stat-value">' + cap + '</span><span class="sh-stat-label">ظرفیت</span></div>' +
+            '<div class="sh-stat ' + elec.c + '"><span class="sh-stat-icon">' + elec.i + '</span><span class="sh-stat-value">' + elec.v + '</span><span class="sh-stat-label">برق</span></div>' +
+            '<div class="sh-stat ' + water.c + '"><span class="sh-stat-icon">' + water.i + '</span><span class="sh-stat-value">' + water.v + '</span><span class="sh-stat-label">آب</span></div>' +
+            '</div>' +
+            peakBlock +
+            '<div class="sh-card-foot">' +
+            '<button type="button" class="ph-map-link sh-map-btn" data-lat="' + s.lat + '" data-lng="' + s.lng + '" data-name="' + safeName + '">مشاهده روی نقشه ↗</button>' +
+            '</div></article>';
+    }
+
     function render() {
         const search = document.getElementById('phSearch').value.trim();
         const province = document.getElementById('phProvince').value;
+        const region = document.getElementById('phRegion').value;
         const activeType = document.querySelector('.ph-pill.active').dataset.type;
 
         const filtered = allShelters.filter(s => {
-            if (search && !s.name.includes(search)) return false;
+            if (search) {
+                const hay = s.name + ' ' + (s.description || '') + ' ' + (s.region || '');
+                if (!hay.includes(search)) return false;
+            }
             if (province !== 'all' && s.province !== province) return false;
+            if (region !== 'all' && s.region !== region) return false;
             if (activeType !== 'all' && s.type !== activeType) return false;
             return true;
         });
@@ -709,37 +766,7 @@
             return;
         }
 
-        grid.innerHTML = filtered.map(s => {
-            const icon = typeIcon[s.type] || '🏠';
-            const peakInfo = s._nearestPeak
-                ? `<b>${s._nearestPeak.name}</b> · ${s._nearestDist.toLocaleString('fa-IR', {maximumFractionDigits:1})} کیلومتر`
-                : '—';
-            const lat = s.lat.toFixed(4), lng = s.lng.toFixed(4);
-            return `
-            <article class="ph-card" data-type="${s.type}">
-                <div class="ph-card-strip"></div>
-                <div class="ph-card-head">
-                    <div class="ph-stamp">${icon}</div>
-                    <div class="ph-card-titles">
-                        <div class="ph-card-name">${s.name}</div>
-                        <div class="ph-card-meta">
-                            <span class="ph-type-tag">${s.type}</span>
-                            <span>📍 ${s.province}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="ph-perf"></div>
-                <div class="ph-card-body">
-                    <div class="ph-row"><span class="ph-ic">⛰</span><span>نزدیک‌ترین قله: ${peakInfo}</span></div>
-                    <div class="ph-row"><span class="ph-ic">🧭</span><span class="ph-coords">${lat}, ${lng}</span></div>
-                </div>
-                <div class="ph-card-foot">
-                    <button type="button" class="ph-map-link" data-lat="${s.lat}" data-lng="${s.lng}" data-name="${s.name}">
-                        مشاهده روی نقشه ↗
-                    </button>
-                </div>
-            </article>`;
-        }).join('');
+        grid.innerHTML = filtered.map((s, i) => buildShelterCard(s, i)).join('');
     }
     </script>
 </body>
