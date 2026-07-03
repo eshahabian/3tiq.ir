@@ -216,15 +216,6 @@ body.dark-mode .route-map-btn {
     border-radius: 0.85rem;
 }
 
-.route-map-frame.is-exporting {
-    position: fixed;
-    left: -10000px;
-    top: 0;
-    opacity: 0;
-    pointer-events: none;
-    z-index: -1;
-}
-
 @media (max-width: 600px) {
     .route-map-canvas { height: 20rem; }
 }
@@ -295,7 +286,8 @@ body.dark-mode .route-map-btn {
     background: var(--light-bg);
     color: var(--text-dark);
     cursor: pointer;
-    min-width: 9rem;
+    min-width: 11rem;
+    max-width: 100%;
 }
 
 .service-route-preview-map {
