@@ -2103,6 +2103,38 @@ body.dark-mode .sh-card-extra b { color: #f0f0f0; }
     gap: 0.55rem;
 }
 
+.tour-options--scroll {
+    max-height: min(48vh, 340px);
+    overflow-y: auto;
+    padding-left: 0.15rem;
+    margin-top: 0.25rem;
+}
+
+.tour-peak-search {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(58, 50, 38, 0.18);
+    border-radius: 0.65rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    direction: rtl;
+    box-sizing: border-box;
+}
+
+.tour-peak-search:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.25);
+}
+
+.tour-peak-count,
+.tour-loading-peaks {
+    margin: 0.5rem 0 0;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
 .tour-opt {
     position: relative;
     display: flex;

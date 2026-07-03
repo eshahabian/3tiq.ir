@@ -3,18 +3,8 @@
 
     const SITE = '3tiq.ir';
 
-    const PEAKS = [
-        { name: 'دماوند', elevation: 5610, province: 'مازندران / تهران', difficulty: 'سخت', minLevel: 'متوسط', bestSeason: 'تیر - شهریور', minDays: 2, route: 'مسیر جنوبی (رینه) — کلاسیک‌ترین مسیر صعود', shelters: ['پناهگاه برگ جهان (۳۲۵۰m)', 'پناهگاه بارگاه سوم (۴۲۵۰m)'], link: 'damavand.html' },
-        { name: 'علم‌کوه', elevation: 4850, province: 'مازندران', difficulty: 'خیلی‌سخت', minLevel: 'حرفه‌ای', bestSeason: 'مرداد - شهریور', minDays: 2, route: 'مسیر هاسک‌چال — دیواره شمالی', shelters: ['پناهگاه شیرپلا (۲۲۰۰m)', 'پناهگاه صخره‌ای (۳۶۰۰m)'], link: 'alamkooh.html' },
-        { name: 'سبلان', elevation: 4811, province: 'اردبیل', difficulty: 'متوسط', minLevel: 'مبتدی', bestSeason: 'تیر - مرداد', minDays: 1, route: 'مسیر شمالی (شهرستان مشگین)', shelters: ['پناهگاه سبلان (۳۵۰۰m)'], link: 'sabalan.html' },
-        { name: 'زردکوه بختیاری', elevation: 4548, province: 'چهارمحال و بختیاری', difficulty: 'سخت', minLevel: 'متوسط', bestSeason: 'خرداد - مرداد', minDays: 2, route: 'مسیر چل‌گردان — از منطقه کوهرنگ', shelters: ['پناهگاه زردکوه (۳۲۰۰m)'], link: 'zardkooh.html' },
-        { name: 'دنا', elevation: 4409, province: 'کهگیلویه و بویراحمد', difficulty: 'متوسط', minLevel: 'مبتدی', bestSeason: 'اردیبهشت - تیر', minDays: 2, route: 'مسیر سی‌سخت — قله بیشتر', shelters: ['کلبه کوهپیمایی سی‌سخت'], link: 'dena.html' },
-        { name: 'اشترانکوه', elevation: 4150, province: 'لرستان', difficulty: 'متوسط', minLevel: 'مبتدی', bestSeason: 'خرداد - مرداد', minDays: 2, route: 'مسیر دره‌گل — از شهر ازنا', shelters: ['پناهگاه اشترانکوه (۳۰۰۰m)'], link: 'eshterankoh.html' },
-        { name: 'توچال', elevation: 3933, province: 'تهران', difficulty: 'آسان', minLevel: 'مبتدی', bestSeason: 'همه فصل', minDays: 1, route: 'مسیر دربند یا تله‌کابین + پیاده‌روی', shelters: ['پناهگاه توچال (۳۹۰۰m)'], link: 'tochal.html' },
-        { name: 'سهند', elevation: 3707, province: 'آذربایجان شرقی', difficulty: 'متوسط', minLevel: 'مبتدی', bestSeason: 'تیر - شهریور', minDays: 1, route: 'مسیر پیاده‌روی از پیست اسکی', shelters: ['کلبه‌های منطقه اسکی'], link: 'sahand.html' },
-        { name: 'کرکس', elevation: 3899, province: 'اصفهان', difficulty: 'متوسط', minLevel: 'مبتدی', bestSeason: 'فروردین - خرداد', minDays: 1, route: 'مسیر دشت‌کوه — از نطنز', shelters: ['بدون پناهگاه — صعود روزانه'], link: 'karkas.html' },
-        { name: 'تفتان', elevation: 4042, province: 'سیستان و بلوچستان', difficulty: 'سخت', minLevel: 'متوسط', bestSeason: 'اسفند - اردیبهشت', minDays: 2, route: 'مسیر جنوبی — از خاش', shelters: ['کمپ پایگاه (بدون پناهگاه مجهز)'], link: 'taftan.html' }
-    ];
+    let PEAKS = [];
+    let peaksReady = false;
 
     const LEVEL_RANK = { 'مبتدی': 1, 'متوسط': 2, 'حرفه‌ای': 3 };
     const LEVEL_LABEL = { beginner: 'مبتدی', intermediate: 'متوسط', expert: 'حرفه‌ای' };
@@ -61,6 +51,95 @@
     btnBack?.addEventListener('click', prevStep);
     btnNext?.addEventListener('click', nextStep);
 
+    loadPeaks();
+
+    function loadPeaks() {
+        fetch('data/tour-planner-peaks.json')
+            .then(function (r) {
+                if (!r.ok) throw new Error('tour peaks not found');
+                return r.json();
+            })
+            .then(function (data) {
+                PEAKS = data;
+                peaksReady = true;
+            })
+            .catch(function (err) {
+                console.error('tour-planner peaks', err);
+            });
+    }
+
+    function peakButtonsHtml(filter) {
+        const q = (filter || '').trim();
+        const list = q
+            ? PEAKS.filter(function (p) { return p.name.includes(q); })
+            : PEAKS;
+        return list.map(function (p) {
+            return `
+                <button type="button" class="tour-opt${answers.peak === p.name ? ' selected' : ''}" data-val="${p.name}"${answers.peak === p.name ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
+                    <span class="tour-opt-label">${p.name}</span>
+                    <span class="tour-opt-sub">${p.elevation.toLocaleString('fa-IR')} م · ${p.difficulty}</span>
+                </button>`;
+        }).join('');
+    }
+
+    function bindPeakOptions() {
+        stepBody.querySelectorAll('.tour-opt').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                stepBody.querySelectorAll('.tour-opt').forEach(function (b) {
+                    b.classList.remove('selected');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('selected');
+                btn.setAttribute('aria-pressed', 'true');
+                answers.peak = btn.dataset.val;
+            });
+        });
+    }
+
+    function renderPeakStep() {
+        if (!peaksReady) {
+            stepBody.innerHTML = '<p class="tour-loading-peaks">در حال بارگذاری لیست قله‌ها…</p>';
+            const wait = setInterval(function () {
+                if (peaksReady) {
+                    clearInterval(wait);
+                    renderPeakStep();
+                }
+            }, 120);
+            return;
+        }
+
+        stepBody.innerHTML = `
+            <input type="search" id="tourPeakSearch" class="tour-peak-search" placeholder="جستجوی نام قله (${PEAKS.length} قله)…" autocomplete="off">
+            <div class="tour-options tour-options--grid tour-options--scroll" id="tourPeakList">
+                <button type="button" class="tour-opt${answers.peak === 'suggest' ? ' selected' : ''}" data-val="suggest"${answers.peak === 'suggest' ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
+                    <span class="tour-opt-icon">✨</span>
+                    <span class="tour-opt-label">پیشنهاد بدید</span>
+                </button>
+                ${peakButtonsHtml('')}
+            </div>
+            <p class="tour-peak-count" id="tourPeakCount">${PEAKS.length} قله</p>`;
+
+        const search = document.getElementById('tourPeakSearch');
+        const list = document.getElementById('tourPeakList');
+        const count = document.getElementById('tourPeakCount');
+
+        bindPeakOptions();
+
+        search?.addEventListener('input', function () {
+            const filtered = PEAKS.filter(function (p) { return p.name.includes(search.value.trim()); });
+            list.innerHTML = `
+                <button type="button" class="tour-opt${answers.peak === 'suggest' ? ' selected' : ''}" data-val="suggest"${answers.peak === 'suggest' ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
+                    <span class="tour-opt-icon">✨</span>
+                    <span class="tour-opt-label">پیشنهاد بدید</span>
+                </button>
+                ${peakButtonsHtml(search.value)}`;
+            if (count) {
+                count.textContent = filtered.length + ' قله' + (search.value.trim() ? ' یافت شد' : '');
+            }
+            bindPeakOptions();
+        });
+    }
+
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
@@ -95,19 +174,8 @@
         btnNext.textContent = stepIndex === STEPS.length - 1 ? 'ساخت برنامه' : 'بعدی';
 
         if (step.id === 'peak') {
-            stepBody.innerHTML = `
-                <div class="tour-options tour-options--grid">
-                    <button type="button" class="tour-opt${answers.peak === 'suggest' ? ' selected' : ''}" data-val="suggest"${answers.peak === 'suggest' ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
-                        <span class="tour-opt-icon">✨</span>
-                        <span class="tour-opt-label">پیشنهاد بدید</span>
-                    </button>
-                    ${PEAKS.map(p => `
-                        <button type="button" class="tour-opt${answers.peak === p.name ? ' selected' : ''}" data-val="${p.name}"${answers.peak === p.name ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
-                            <span class="tour-opt-label">${p.name}</span>
-                            <span class="tour-opt-sub">${p.elevation.toLocaleString('fa-IR')} م · ${p.difficulty}</span>
-                        </button>
-                    `).join('')}
-                </div>`;
+            renderPeakStep();
+            return;
         } else if (step.id === 'level') {
             stepBody.innerHTML = optionButtons('level', [
                 ['beginner', 'مبتدی', 'اولین یا دومین صعود'],
@@ -181,8 +249,9 @@
     }
 
     function pickPeak() {
+        if (!PEAKS.length) return null;
         if (answers.peak !== 'suggest') {
-            return PEAKS.find(p => p.name === answers.peak) || PEAKS[0];
+            return PEAKS.find(function (p) { return p.name === answers.peak; }) || PEAKS[0];
         }
         const level = LEVEL_RANK[LEVEL_LABEL[answers.level]] || 1;
         const days = parseInt(answers.days, 10) || 1;
@@ -251,6 +320,10 @@
 
     function showPlan() {
         const peak = pickPeak();
+        if (!peak) {
+            alert('لیست قله‌ها هنوز بارگذاری نشده. لطفاً چند ثانیه صبر کنید.');
+            return;
+        }
         const levelFa = LEVEL_LABEL[answers.level];
         const seasonFa = { spring: 'بهار', summer: 'تابستان', fall: 'پاییز', winter: 'زمستان' }[answers.season];
         const groupFa = { solo: 'تک‌نفره', '2-4': '۲ تا ۴ نفر', '5+': '۵+ نفر' }[answers.group];
@@ -315,7 +388,7 @@
                 <footer class="tour-plan-footer">
                     <p>این برنامه پیشنهادی است و جایگزین مشورت با راهنمای حرفه‌ای نیست.</p>
                     <p><strong>${SITE}</strong> — راهنمای جامع کوهنوردی ایران</p>
-                    ${peak.link ? `<p>اطلاعات بیشتر: ${SITE}/${peak.link}</p>` : ''}
+                    ${peak.link ? `<p>اطلاعات بیشتر: <a href="${peak.link}">${SITE}/${peak.link}</a></p>` : ''}
                 </footer>
             </div>`;
 

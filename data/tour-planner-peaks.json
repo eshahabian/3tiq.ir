@@ -1,0 +1,1173 @@
+[
+  {
+    "slug": "damavand",
+    "name": "دماوند",
+    "elevation": 5610,
+    "province": "مازندران/تهران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 2,
+    "route": "مسیر جنوبی (رینه) — کلاسیک‌ترین مسیر صعود",
+    "shelters": [
+      "پناهگاه برگ جهان (۳۲۵۰m)",
+      "پناهگاه بارگاه سوم (۴۲۵۰m)"
+    ],
+    "link": "peaks/damavand.html"
+  },
+  {
+    "slug": "alamkooh",
+    "name": "علم‌کوه",
+    "elevation": 4850,
+    "province": "مازندران",
+    "difficulty": "خیلی‌سخت",
+    "minLevel": "حرفه‌ای",
+    "bestSeason": "مرداد - شهریور",
+    "minDays": 2,
+    "route": "مسیر هاسک‌چال — دیواره شمالی",
+    "shelters": [
+      "پناهگاه شیرپلا (۲۲۰۰m)",
+      "پناهگاه صخره‌ای (۳۶۰۰m)"
+    ],
+    "link": "peaks/alamkooh.html"
+  },
+  {
+    "slug": "sabalan",
+    "name": "سبلان",
+    "elevation": 4811,
+    "province": "اردبیل",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - مرداد",
+    "minDays": 1,
+    "route": "مسیر شمالی (شهرستان مشگین)",
+    "shelters": [
+      "پناهگاه سبلان (۳۵۰۰m)"
+    ],
+    "link": "peaks/sabalan.html"
+  },
+  {
+    "slug": "kolonbastak",
+    "name": "کلون‌بستک",
+    "elevation": 4650,
+    "province": "مازندران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 2,
+    "route": "مسیر علم‌کوه",
+    "shelters": [
+      "پناهگاه تخت سلیمان (3800m)"
+    ],
+    "link": "peaks/kolonbastak.html"
+  },
+  {
+    "slug": "takht-soleiman",
+    "name": "تخت سلیمان",
+    "elevation": 4643,
+    "province": "آذربایجان غربی",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/takht-soleiman.html"
+  },
+  {
+    "slug": "siah-sang",
+    "name": "سیاه‌سنگ",
+    "elevation": 4604,
+    "province": "ایران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/siah-sang.html"
+  },
+  {
+    "slug": "zardkooh",
+    "name": "زردکوه بختیاری",
+    "elevation": 4548,
+    "province": "چهارمحال و بختیاری",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر چل‌گردان — از منطقه کوهرنگ",
+    "shelters": [
+      "پناهگاه زردکوه (۳۲۰۰m)"
+    ],
+    "link": "peaks/zardkooh.html"
+  },
+  {
+    "slug": "hezar",
+    "name": "هزار",
+    "elevation": 4465,
+    "province": "کرمان",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - شهریور",
+    "minDays": 2,
+    "route": "مسیر هزار — از بافت",
+    "shelters": [
+      "کمپ میانی مسیر"
+    ],
+    "link": "peaks/hezar.html"
+  },
+  {
+    "slug": "dena",
+    "name": "دنا",
+    "elevation": 4409,
+    "province": "کهگیلویه و بویراحمد",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "اردیبهشت - تیر",
+    "minDays": 2,
+    "route": "مسیر سی‌سخت — قله بیشتر",
+    "shelters": [
+      "کلبه کوهپیمایی سی‌سخت"
+    ],
+    "link": "peaks/dena.html"
+  },
+  {
+    "slug": "lalehzar",
+    "name": "لاله‌زار",
+    "elevation": 4374,
+    "province": "کرمان",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "جانپناه قله هزار (4200m)",
+      "پناهگاه هزار (3800m)"
+    ],
+    "link": "peaks/lalehzar.html"
+  },
+  {
+    "slug": "dena-south",
+    "name": "قله جنوبی دنا",
+    "elevation": 4320,
+    "province": "ایران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/dena-south.html"
+  },
+  {
+    "slug": "azadkooh",
+    "name": "آزادکوه",
+    "elevation": 4200,
+    "province": "مازندران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/azadkooh.html"
+  },
+  {
+    "slug": "sialan",
+    "name": "سیالان",
+    "elevation": 4173,
+    "province": "مازندران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی (رودبار)",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/sialan.html"
+  },
+  {
+    "slug": "eshterankoh",
+    "name": "اشترانکوه",
+    "elevation": 4150,
+    "province": "لرستان",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر دره‌گل — از شهر ازنا",
+    "shelters": [
+      "پناهگاه اشترانکوه (۳۰۰۰m)"
+    ],
+    "link": "peaks/eshterankoh.html"
+  },
+  {
+    "slug": "joupar",
+    "name": "جوپار",
+    "elevation": 4135,
+    "province": "ایران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/joupar.html"
+  },
+  {
+    "slug": "dobarar",
+    "name": "دوبرار",
+    "elevation": 4100,
+    "province": "مازندران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/dobarar.html"
+  },
+  {
+    "slug": "shirkoh",
+    "name": "شیرکوه",
+    "elevation": 4075,
+    "province": "یزد",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "فروردین - خرداد",
+    "minDays": 1,
+    "route": "مسیر شیرکوه — از مهریز",
+    "shelters": [
+      "بدون پناهگاه — صعود روزانه"
+    ],
+    "link": "peaks/shirkoh.html"
+  },
+  {
+    "slug": "kahar",
+    "name": "کهار",
+    "elevation": 4050,
+    "province": "قم/مرکزی",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر اصلی (کرج)",
+    "shelters": [
+      "پناهگاه تخت سلیمان (3800m)"
+    ],
+    "link": "peaks/kahar.html"
+  },
+  {
+    "slug": "taftan",
+    "name": "تفتان",
+    "elevation": 4042,
+    "province": "سیستان و بلوچستان",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "اسفند - اردیبهشت",
+    "minDays": 2,
+    "route": "مسیر جنوبی — از خاش",
+    "shelters": [
+      "کمپ پایگاه (بدون پناهگاه مجهز)"
+    ],
+    "link": "peaks/taftan.html"
+  },
+  {
+    "slug": "khashchal",
+    "name": "خشچال",
+    "elevation": 4030,
+    "province": "ایران",
+    "difficulty": "سخت",
+    "minLevel": "متوسط",
+    "bestSeason": "خرداد - مرداد",
+    "minDays": 2,
+    "route": "مسیر جنوبی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/khashchal.html"
+  },
+  {
+    "slug": "shahmoallem",
+    "name": "شاه‌معلم",
+    "elevation": 3968,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر جنگلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/shahmoallem.html"
+  },
+  {
+    "slug": "mehrchal",
+    "name": "مهرچال",
+    "elevation": 3964,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر دارآباد",
+    "shelters": [
+      "جانپناه قله توچال (3950m)"
+    ],
+    "link": "peaks/mehrchal.html"
+  },
+  {
+    "slug": "tochal",
+    "name": "توچال",
+    "elevation": 3933,
+    "province": "تهران",
+    "difficulty": "آسان",
+    "minLevel": "مبتدی",
+    "bestSeason": "همه فصل",
+    "minDays": 1,
+    "route": "مسیر دربند یا تله‌کابین + پیاده‌روی",
+    "shelters": [
+      "پناهگاه توچال (۳۹۰۰m)"
+    ],
+    "link": "peaks/tochal.html"
+  },
+  {
+    "slug": "janeston",
+    "name": "جانستون",
+    "elevation": 3900,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/janeston.html"
+  },
+  {
+    "slug": "gelak",
+    "name": "گلاک",
+    "elevation": 3900,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/gelak.html"
+  },
+  {
+    "slug": "karkas",
+    "name": "کرکس",
+    "elevation": 3899,
+    "province": "اصفهان",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "فروردین - خرداد",
+    "minDays": 1,
+    "route": "مسیر دشت‌کوه — از نطنز",
+    "shelters": [
+      "بدون پناهگاه — صعود روزانه"
+    ],
+    "link": "peaks/karkas.html"
+  },
+  {
+    "slug": "kharsan",
+    "name": "خرسان",
+    "elevation": 3850,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "پناهگاه تخت سلیمان (3800m)",
+      "پناهگاه سرچال (3050m)",
+      "پناهگاه پلنگچال (3350m)",
+      "پناهگاه شیرپلا (2800m)"
+    ],
+    "link": "peaks/kharsan.html"
+  },
+  {
+    "slug": "asmankooh",
+    "name": "آسمان‌کوه",
+    "elevation": 3842,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر جنوبی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/asmankooh.html"
+  },
+  {
+    "slug": "shahvar",
+    "name": "شاهوار",
+    "elevation": 3834,
+    "province": "سمنان",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی (شاهرود)",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/shahvar.html"
+  },
+  {
+    "slug": "poolvar",
+    "name": "پلوار",
+    "elevation": 3818,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/poolvar.html"
+  },
+  {
+    "slug": "varjin",
+    "name": "ورجین",
+    "elevation": 3800,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر جنگلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/varjin.html"
+  },
+  {
+    "slug": "yakhchal",
+    "name": "یخچال",
+    "elevation": 3800,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "پناهگاه تخت سلیمان (3800m)"
+    ],
+    "link": "peaks/yakhchal.html"
+  },
+  {
+    "slug": "chelcheragh",
+    "name": "چلچراغ",
+    "elevation": 3760,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/chelcheragh.html"
+  },
+  {
+    "slug": "kolakchal",
+    "name": "کلکچال",
+    "elevation": 3750,
+    "province": "تهران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر ولنجک",
+    "shelters": [
+      "پناهگاه توچال (3900m)",
+      "کلبه ونک (2200m)",
+      "پناهگاه ولیجیا (3100m)",
+      "پناهگاه شیرپلا (2800m)",
+      "پناهگاه کرکس (2700m)"
+    ],
+    "link": "peaks/kolakchal.html"
+  },
+  {
+    "slug": "sahand",
+    "name": "سهند",
+    "elevation": 3707,
+    "province": "آذربایجان شرقی",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر پیاده‌روی از پیست اسکی",
+    "shelters": [
+      "کلبه‌های منطقه اسکی"
+    ],
+    "link": "peaks/sahand.html"
+  },
+  {
+    "slug": "palungarden",
+    "name": "پالون‌گردن",
+    "elevation": 3700,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر تهران",
+    "shelters": [
+      "پناهگاه سرچال (3050m)",
+      "جانپناه قله توچال (3950m)",
+      "پناهگاه پلنگچال (3350m)",
+      "پناهگاه شیرپلا (2800m)",
+      "پناهگاه توچال (3900m)"
+    ],
+    "link": "peaks/palungarden.html"
+  },
+  {
+    "slug": "palangchal",
+    "name": "پلنگ‌چال",
+    "elevation": 3700,
+    "province": "تهران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "پناهگاه کرکس (2700m)",
+      "کلبه ونک (2200m)",
+      "پناهگاه توچال (3900m)",
+      "پناهگاه ولیجیا (3100m)",
+      "پناهگاه شیرپلا (2800m)"
+    ],
+    "link": "peaks/palangchal.html"
+  },
+  {
+    "slug": "nizva",
+    "name": "نیزوا",
+    "elevation": 3633,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/nizva.html"
+  },
+  {
+    "slug": "espidkamar",
+    "name": "اسپیدکمر",
+    "elevation": 3600,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "پناهگاه آزادکوه (3150m)"
+    ],
+    "link": "peaks/espidkamar.html"
+  },
+  {
+    "slug": "barfanbar",
+    "name": "برف‌انبار",
+    "elevation": 3600,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/barfanbar.html"
+  },
+  {
+    "slug": "khaleno",
+    "name": "خلنو",
+    "elevation": 3600,
+    "province": "مازندران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر جنگلی",
+    "shelters": [
+      "جانپناه قله توچال (3950m)"
+    ],
+    "link": "peaks/khaleno.html"
+  },
+  {
+    "slug": "sarchal",
+    "name": "سرکچال",
+    "elevation": 3600,
+    "province": "تهران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/sarchal.html"
+  },
+  {
+    "slug": "louvarak",
+    "name": "لوارک",
+    "elevation": 3600,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر شمال تهران",
+    "shelters": [
+      "کلبه ونک (2200m)",
+      "پناهگاه توچال (3900m)",
+      "جانپناه قله توچال (3950m)",
+      "پناهگاه ولیجیا (3100m)"
+    ],
+    "link": "peaks/louvarak.html"
+  },
+  {
+    "slug": "alvand",
+    "name": "الوند",
+    "elevation": 3580,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی (همدان)",
+    "shelters": [
+      "کلبه گل‌زرد (2500m)",
+      "جانپناه قله الوند (3350m)",
+      "پناهگاه الوند (2800m)"
+    ],
+    "link": "peaks/alvand.html"
+  },
+  {
+    "slug": "sakhvid",
+    "name": "سخوید",
+    "elevation": 3520,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر جنگلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/sakhvid.html"
+  },
+  {
+    "slug": "barm-firouz",
+    "name": "برم فیروز",
+    "elevation": 3500,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/barm-firouz.html"
+  },
+  {
+    "slug": "rizan",
+    "name": "ریزان",
+    "elevation": 3500,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر آبشاری",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/rizan.html"
+  },
+  {
+    "slug": "pahnehhassar",
+    "name": "پهنه‌حصار",
+    "elevation": 3500,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "پناهگاه کرکس (2700m)",
+      "پناهگاه ولیجیا (3100m)",
+      "پناهگاه شیرپلا (2800m)",
+      "پناهگاه پلنگچال (3350m)",
+      "پناهگاه توچال (3900m)"
+    ],
+    "link": "peaks/pahnehhassar.html"
+  },
+  {
+    "slug": "pirzan-kolum",
+    "name": "پیرزن‌کلوم",
+    "elevation": 3500,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "تیر - شهریور",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/pirzan-kolum.html"
+  },
+  {
+    "slug": "bazman",
+    "name": "بزمان",
+    "elevation": 3490,
+    "province": "سیستان و بلوچستان",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/bazman.html"
+  },
+  {
+    "slug": "boghroudagh",
+    "name": "بغرو داغ",
+    "elevation": 3450,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/boghroudagh.html"
+  },
+  {
+    "slug": "chalchali",
+    "name": "چلچلی",
+    "elevation": 3420,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر جنگلی (گرگان)",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/chalchali.html"
+  },
+  {
+    "slug": "atashkooh",
+    "name": "آتشکوه",
+    "elevation": 3400,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "پناهگاه کرکس (2700m)",
+      "پناهگاه شیرپلا (2800m)",
+      "پناهگاه ولیجیا (3100m)",
+      "پناهگاه پلنگچال (3350m)"
+    ],
+    "link": "peaks/atashkooh.html"
+  },
+  {
+    "slug": "sarlet",
+    "name": "سرلت",
+    "elevation": 3400,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر جنگلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/sarlet.html"
+  },
+  {
+    "slug": "soutak",
+    "name": "سوتک",
+    "elevation": 3400,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/soutak.html"
+  },
+  {
+    "slug": "cheshme-shahi",
+    "name": "چشمه‌شاهی",
+    "elevation": 3400,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "کلبه ونک (2200m)",
+      "پناهگاه توچال (3900m)"
+    ],
+    "link": "peaks/cheshme-shahi.html"
+  },
+  {
+    "slug": "shaho",
+    "name": "شاهو",
+    "elevation": 3380,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/shaho.html"
+  },
+  {
+    "slug": "paraw",
+    "name": "پراو",
+    "elevation": 3366,
+    "province": "کرمانشاه",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/paraw.html"
+  },
+  {
+    "slug": "aghdagh-khalkhal",
+    "name": "آق‌داغ خلخال",
+    "elevation": 3309,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی (خلخال)",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/aghdagh-khalkhal.html"
+  },
+  {
+    "slug": "bozghush",
+    "name": "بزقوش",
+    "elevation": 3306,
+    "province": "آذربایجان شرقی",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اسب‌فروشان",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/bozghush.html"
+  },
+  {
+    "slug": "naz",
+    "name": "ناز",
+    "elevation": 3300,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/naz.html"
+  },
+  {
+    "slug": "beheshtabad",
+    "name": "بهشت‌آباد",
+    "elevation": 3200,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر آبشاری",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/beheshtabad.html"
+  },
+  {
+    "slug": "mishodagh",
+    "name": "میشو داغ",
+    "elevation": 3155,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر علمدار",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/mishodagh.html"
+  },
+  {
+    "slug": "darfak",
+    "name": "درفک",
+    "elevation": 3150,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر پیست اسکی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/darfak.html"
+  },
+  {
+    "slug": "safinkooh",
+    "name": "سفین‌کوه",
+    "elevation": 3130,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/safinkooh.html"
+  },
+  {
+    "slug": "qoshadagh",
+    "name": "قوشاداغ",
+    "elevation": 3120,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر جنگلی ارسباران",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/qoshadagh.html"
+  },
+  {
+    "slug": "giroft-heights",
+    "name": "ارتفاعات جیرفت",
+    "elevation": 3100,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/giroft-heights.html"
+  },
+  {
+    "slug": "kebirkuh",
+    "name": "کبیرکوه",
+    "elevation": 3050,
+    "province": "ایلام/لرستان",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/kebirkuh.html"
+  },
+  {
+    "slug": "samamos",
+    "name": "سماموس",
+    "elevation": 2987,
+    "province": "گیلان/مازندران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر رودبار",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/samamos.html"
+  },
+  {
+    "slug": "pirgardkooh",
+    "name": "پیرگردکوه",
+    "elevation": 2986,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر جنوبی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/pirgardkooh.html"
+  },
+  {
+    "slug": "dalab",
+    "name": "دالاب",
+    "elevation": 2900,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر اصلی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/dalab.html"
+  },
+  {
+    "slug": "qalat",
+    "name": "قلات",
+    "elevation": 2850,
+    "province": "ایران",
+    "difficulty": "آسان",
+    "minLevel": "مبتدی",
+    "bestSeason": "همه فصل",
+    "minDays": 1,
+    "route": "مسیر ییلاقی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/qalat.html"
+  },
+  {
+    "slug": "gelidagh",
+    "name": "گلیداغ",
+    "elevation": 2832,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر گلستان",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/gelidagh.html"
+  },
+  {
+    "slug": "espinas",
+    "name": "اسپیناس",
+    "elevation": 2800,
+    "province": "گیلان",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر قزوین",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/espinas.html"
+  },
+  {
+    "slug": "khoshyeilagh",
+    "name": "خوش‌ییلاق",
+    "elevation": 2750,
+    "province": "ایران",
+    "difficulty": "متوسط",
+    "minLevel": "مبتدی",
+    "bestSeason": "بهار - تابستان",
+    "minDays": 1,
+    "route": "مسیر ییلاقی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/khoshyeilagh.html"
+  },
+  {
+    "slug": "jahanama",
+    "name": "جهان‌نما",
+    "elevation": 2146,
+    "province": "ایران",
+    "difficulty": "آسان",
+    "minLevel": "مبتدی",
+    "bestSeason": "همه فصل",
+    "minDays": 1,
+    "route": "مسیر پارک ملی",
+    "shelters": [
+      "اطلاعات پناهگاه در صفحه قله"
+    ],
+    "link": "peaks/jahanama.html"
+  }
+]
