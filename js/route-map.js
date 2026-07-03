@@ -53,8 +53,8 @@
             </span>`;
         }).join('');
         return routeItems + `
-            <span class="route-map-legend-item">🏠 پناهگاه</span>
-            <span class="route-map-legend-item">🔺 قله</span>`;
+            <span class="route-map-legend-item">${(global.I18n && I18n.t('route.legendShelter')) || '🏠 پناهگاه'}</span>
+            <span class="route-map-legend-item">${(global.I18n && I18n.t('route.legendSummit')) || '🔺 قله'}</span>`;
     }
 
     async function loadData(peakId, basePath) {
@@ -82,13 +82,13 @@
         destroyMap(container);
 
         const basePath = (options && options.basePath) || container.dataset.basePath || 'data/route-maps/';
-        container.innerHTML = '<div class="route-map-loading">در حال بارگذاری نقشه...</div>';
+        container.innerHTML = '<div class="route-map-loading">' + ((global.I18n && I18n.t('route.loading')) || 'در حال بارگذاری نقشه...') + '</div>';
 
         let data;
         try {
             data = await loadData(peakId, basePath);
         } catch (e) {
-            container.innerHTML = '<div class="route-map-loading">نقشه مسیر در دسترس نیست.</div>';
+            container.innerHTML = '<div class="route-map-loading">' + ((global.I18n && I18n.t('route.unavailable')) || 'نقشه مسیر در دسترس نیست.') + '</div>';
             return null;
         }
 
@@ -98,7 +98,7 @@
             <div class="route-map-toolbar">
                 <div class="route-map-legend">${buildLegend(data.routes)}</div>
                 <div class="route-map-actions">
-                    <button type="button" class="route-map-btn" data-action="export">📥 ذخیره نقشه (PNG)</button>
+                    <button type="button" class="route-map-btn" data-action="export">${(global.I18n && I18n.t('route.export')) || '📥 ذخیره نقشه (PNG)'}</button>
                 </div>
             </div>
             <div class="route-map-frame" id="routeMapFrame-${peakId}">

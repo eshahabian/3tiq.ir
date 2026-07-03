@@ -9,7 +9,7 @@
     const LEVEL_RANK = { 'مبتدی': 1, 'متوسط': 2, 'حرفه‌ای': 3 };
     const LEVEL_LABEL = { beginner: 'مبتدی', intermediate: 'متوسط', expert: 'حرفه‌ای' };
 
-    const STEPS = [
+    const STEPS_FA = [
         { id: 'peak', title: 'مقصد', question: 'کدوم قله یا منطقه مدنظرته؟' },
         { id: 'level', title: 'تجربه', question: 'سطح تجربه کوهنوردی‌ات چقدره؟' },
         { id: 'days', title: 'مدت', question: 'چند روز وقت داری؟' },
@@ -17,6 +17,20 @@
         { id: 'season', title: 'فصل', question: 'چه فصلی برنامه‌ریزی می‌کنی؟' },
         { id: 'departure', title: 'زمان حرکت', question: 'چه روز و ساعتی حرکت می‌کنی؟' }
     ];
+
+    function buildSteps() {
+        if (!window.I18n) return STEPS_FA.slice();
+        return [
+            { id: 'peak', title: I18n.t('tour.step.peak'), question: I18n.t('tour.q.peak') },
+            { id: 'level', title: I18n.t('tour.step.level'), question: I18n.t('tour.q.level') },
+            { id: 'days', title: I18n.t('tour.step.days'), question: I18n.t('tour.q.days') },
+            { id: 'group', title: I18n.t('tour.step.group'), question: I18n.t('tour.q.group') },
+            { id: 'season', title: I18n.t('tour.step.season'), question: I18n.t('tour.q.season') },
+            { id: 'departure', title: I18n.t('tour.step.departure'), question: I18n.t('tour.q.departure') }
+        ];
+    }
+
+    let STEPS = buildSteps();
 
     let stepIndex = 0;
     const answers = {};
@@ -51,6 +65,15 @@
     document.getElementById('tourBtnPdf')?.addEventListener('click', downloadPdf);
     btnBack?.addEventListener('click', prevStep);
     btnNext?.addEventListener('click', nextStep);
+
+    document.addEventListener('3tiq:languagechange', function () {
+        STEPS = buildSteps();
+        if (modal && modal.classList.contains('open') && wizardEl && !wizardEl.hidden) {
+            renderStep();
+        }
+        var pdfBtn = document.getElementById('tourBtnPdf');
+        if (pdfBtn && window.I18n) pdfBtn.textContent = I18n.t('tour.pdf');
+    });
 
     loadPeaks();
 
@@ -295,7 +318,9 @@
         stepQuestion.textContent = step.question;
         progressBar.style.width = ((stepIndex + 1) / STEPS.length * 100) + '%';
         btnBack.hidden = stepIndex === 0;
-        btnNext.textContent = stepIndex === STEPS.length - 1 ? 'ساخت برنامه' : 'بعدی';
+        btnNext.textContent = stepIndex === STEPS.length - 1
+            ? (window.I18n ? I18n.t('tour.build') : 'ساخت برنامه')
+            : (window.I18n ? I18n.t('tour.next') : 'بعدی');
 
         if (step.id === 'peak') {
             renderPeakStep();

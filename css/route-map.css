@@ -250,7 +250,7 @@ body.dark-mode .route-map-btn {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    min-height: 26rem;
+    min-height: 28rem;
 }
 
 .service-route-preview-head {

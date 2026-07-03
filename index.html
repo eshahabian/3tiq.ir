@@ -75,7 +75,7 @@
 </head>
 <body>
 
-    <a href="#main-content" class="skip-link">رفتن به محتوای اصلی</a>
+    <a href="#main-content" class="skip-link" data-i18n="nav.skip">رفتن به محتوای اصلی</a>
 
     <!-- ===== Particle Background ===== -->
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
@@ -91,10 +91,10 @@
 
                 <nav class="nav-menu" id="navMenu" aria-label="منوی اصلی">
                     <ul>
-                        <li><a href="#home" class="active" aria-current="page">صفحه اصلی</a></li>
+                        <li><a href="#home" class="active" aria-current="page" data-i18n="nav.home">صفحه اصلی</a></li>
 
                         <li class="has-dropdown">
-                            <a href="#peaks" aria-haspopup="true">رشته‌کوه‌های ایران</a>
+                            <a href="#peaks" aria-haspopup="true" data-i18n="nav.ranges">رشته‌کوه‌های ایران</a>
                             <ul class="dropdown">
 
                                 <li class="has-dropdown-sub">
@@ -121,15 +121,20 @@
                             </ul>
                         </li>
 
-                        <li><a href="panahgah.html">پناهگاه‌ها</a></li>
-                        <li><a href="blog.html">وبلاگ</a></li>
-                        <li><a href="#contact">تماس با ما</a></li>
+                        <li><a href="panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </nav>
 
                 <div class="nav-overlay" id="navOverlay"></div>
 
                 <div class="header-actions">
+                    <div class="lang-switch" id="langSwitch" role="group" aria-label="Language">
+                        <button type="button" class="lang-switch-btn active" data-lang="fa" aria-pressed="true">فا</button>
+                        <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>
+                    </div>
+
                     <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="5"></circle>
@@ -166,24 +171,24 @@
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title">سه تیغ</h1>
-            <p class="hero-subtitle">راهنمای جامع کوهنوردی ایران</p>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">راهنمای جامع کوهنوردی ایران</p>
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number" data-target="115" data-suffix="+">0</span>
-                    <span class="stat-label">قله ثبت شده</span>
+                    <span class="stat-label" data-i18n="hero.statPeaks">قله ثبت شده</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="50" data-suffix="+">0</span>
-                    <span class="stat-label">پناهگاه</span>
+                    <span class="stat-label" data-i18n="hero.statShelters">پناهگاه</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number" data-target="10" data-suffix="+">0</span>
-                    <span class="stat-label">سال تجربه</span>
+                    <span class="stat-label" data-i18n="hero.statYears">سال تجربه</span>
                 </div>
             </div>
             <div class="hero-actions">
-                <a href="#services" class="hero-btn hero-btn-primary">کشف بیشتر</a>
-                <a href="#routes" class="hero-btn hero-btn-secondary">مسیرها</a>
+                <a href="#services" class="hero-btn hero-btn-primary" data-i18n="hero.explore">کشف بیشتر</a>
+                <a href="#routes" class="hero-btn hero-btn-secondary" data-i18n="hero.routes">مسیرها</a>
             </div>
         </div>
         <a href="#services" class="hero-scroll-down" aria-label="پایین">
@@ -196,8 +201,8 @@
     <!-- ===== Services ===== -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">خدمات ما</h2>
-            <div class="services-grid">
+            <h2 class="section-title" data-i18n="services.title">خدمات ما</h2>
+            <div class="services-grid services-grid--duo">
 
                 <div class="service-card service-card--route-preview" id="route-guide">
                     <div class="service-route-preview-head">
@@ -208,11 +213,11 @@
                             </svg>
                         </div>
                         <div class="service-route-preview-copy">
-                            <h3 class="service-title">راهنمای مسیر</h3>
-                            <p class="service-description">نقشه تعاملی مسیرهای صعود با ارتفاع، پناهگاه و قله — نمونه زنده از راهنمای هر قله</p>
+                            <h3 class="service-title" data-i18n="services.route.title">راهنمای مسیر</h3>
+                            <p class="service-description" data-i18n="services.route.desc">نقشه تعاملی مسیرهای صعود با ارتفاع، پناهگاه و قله — نمونه زنده از راهنمای هر قله</p>
                         </div>
                         <div class="service-route-picker">
-                            <label for="homeRoutePeak">انتخاب قله</label>
+                            <label for="homeRoutePeak" data-i18n="services.route.pickPeak">انتخاب قله</label>
                             <select id="homeRoutePeak" aria-label="انتخاب قله برای نمایش نقشه مسیر">
                                 <option value="damavand" selected>دماوند</option>
                                 <option value="alamkooh">علم‌کوه</option>
@@ -225,47 +230,28 @@
                         </div>
                     </div>
                     <div class="service-route-preview-map" data-route-map="damavand" data-base-path="data/route-maps/">
-                        <div class="route-map-loading">در حال بارگذاری نقشه...</div>
+                        <div class="route-map-loading" data-i18n="common.loadingMap">در حال بارگذاری نقشه...</div>
                     </div>
-                    <a href="peaks/damavand.html" class="service-cta service-route-full-link" id="homeRoutePeakLink">مشاهده راهنمای کامل قله ←</a>
+                    <a href="peaks/damavand.html" class="service-cta service-route-full-link" id="homeRoutePeakLink" data-i18n="services.route.fullGuide">مشاهده راهنمای کامل قله ←</a>
                 </div>
 
-                <div class="services-side-stack">
-                <div class="service-card service-card--action" data-tour-planner tabindex="0" role="button" aria-label="شروع برنامه‌ریزی تور کوهنوردی">
-                    <div class="service-icon">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                <div class="service-card service-card--action service-card--tour" data-tour-planner tabindex="0" role="button" data-i18n-attr="aria-label:services.tour.aria">
+                    <div class="service-tour-body">
+                        <div class="service-icon">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-title" data-i18n="services.tour.title">برنامه‌ریزی تور</h3>
+                        <p class="service-description" data-i18n="services.tour.desc">برنامه شخصی‌سازی‌شده با شهر مبدا، تاریخ حرکت، تجهیزات و پیش‌بینی آب‌وهوا</p>
+                        <ul class="service-tour-features">
+                            <li data-i18n="services.tour.f1">انتخاب از ۷۶ قله</li>
+                            <li data-i18n="services.tour.f2">برنامه روزانه و چک‌لیست</li>
+                            <li data-i18n="services.tour.f3">خروجی PDF</li>
+                        </ul>
                     </div>
-                    <h3 class="service-title">برنامه‌ریزی تور</h3>
-                    <p class="service-description">برنامه‌ریزی حرفه‌ای برای تورهای کوهنوردی با تجربه‌ای به یاد ماندنی</p>
-                    <span class="service-cta">شروع برنامه‌ریزی ←</span>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">راهنمای حرفه‌ای</h3>
-                    <p class="service-description">همراهی راهنمایان مجرب و حرفه‌ای در تمام مسیرهای کوهنوردی</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">نقشه تعاملی</h3>
-                    <p class="service-description">دسترسی به نقشه‌های تعاملی و آفلاین برای تمام مسیرها</p>
-                </div>
+                    <span class="service-cta" data-i18n="services.tour.cta">شروع برنامه‌ریزی ←</span>
                 </div>
 
             </div>
@@ -275,8 +261,8 @@
     <!-- ===== Peaks ===== -->
     <section class="peaks-section" id="peaks">
         <div class="container">
-            <h2 class="section-title">۱۲ قله محبوب ایران</h2>
-            <p class="section-subtitle">معروف‌ترین و محبوب‌ترین قله‌های کوهنوردی ایران</p>
+            <h2 class="section-title" data-i18n="peaks.title">۱۲ قله محبوب ایران</h2>
+            <p class="section-subtitle" data-i18n="peaks.subtitle">معروف‌ترین و محبوب‌ترین قله‌های کوهنوردی ایران</p>
             <div class="peaks-grid" id="peaksGrid"></div>
         </div>
     </section>
@@ -284,10 +270,10 @@
     <!-- ===== Shelter Showcase ===== -->
     <section class="shelters-showcase" id="routes">
         <div class="container">
-            <h2 class="section-title">پناهگاه‌ها و جان‌پناه‌های ایران</h2>
-            <p class="section-subtitle">امکانات اقامت و پناه اضطراری در مسیرهای کوهنوردی ایران</p>
+            <h2 class="section-title" data-i18n="shelters.title">پناهگاه‌ها و جان‌پناه‌های ایران</h2>
+            <p class="section-subtitle" data-i18n="shelters.subtitle">امکانات اقامت و پناه اضطراری در مسیرهای کوهنوردی ایران</p>
             <div class="shelter-tabs" id="shelterTabs">
-                <button class="shelter-tab active" data-region="all">همه</button>
+                <button class="shelter-tab active" data-region="all" data-i18n="shelters.all">همه</button>
                 <button class="shelter-tab" data-region="البرز مرکزی">البرز مرکزی</button>
                 <button class="shelter-tab" data-region="البرز غربی">البرز غربی</button>
                 <button class="shelter-tab" data-region="زاگرس شمالی">زاگرس شمالی</button>
@@ -297,10 +283,10 @@
                 <button class="shelter-tab" data-region="شمال شرق">شمال شرق</button>
             </div>
             <div class="shelter-cards-grid" id="shelterCardsGrid">
-                <div class="shelter-loading">در حال بارگذاری...</div>
+                <div class="shelter-loading" data-i18n="common.loading">در حال بارگذاری...</div>
             </div>
             <div style="text-align:center;margin-top:2.5rem;">
-                <a href="panahgah.html" class="btn-view-all">مشاهده همه پناهگاه‌ها ←</a>
+                <a href="panahgah.html" class="btn-view-all" data-i18n="shelters.viewAll">مشاهده همه پناهگاه‌ها ←</a>
             </div>
         </div>
     </section>
@@ -310,9 +296,9 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">درباره ما</h2>
-                    <p>ما یک تیم حرفه‌ای از کوهنوردان با بیش از ۱۰ سال تجربه هستیم که هدفمان معرفی زیبایی‌های کوهستان‌های ایران و ایجاد تجربه‌ای امن و به یاد ماندنی برای علاقه‌مندان به کوهنوردی است.</p>
-                    <p>با ما می‌توانید به بهترین مسیرهای کوهنوردی دسترسی داشته باشید و از راهنمایی‌های حرفه‌ای بهره‌مند شوید.</p>
+                    <h2 class="section-title" data-i18n="about.title">درباره ما</h2>
+                    <p data-i18n="about.p1">ما یک تیم حرفه‌ای از کوهنوردان با بیش از ۱۰ سال تجربه هستیم که هدفمان معرفی زیبایی‌های کوهستان‌های ایران و ایجاد تجربه‌ای امن و به یاد ماندنی برای علاقه‌مندان به کوهنوردی است.</p>
+                    <p data-i18n="about.p2">با ما می‌توانید به بهترین مسیرهای کوهنوردی دسترسی داشته باشید و از راهنمایی‌های حرفه‌ای بهره‌مند شوید.</p>
                 </div>
 
                 <!-- ===== Gallery Slider ===== -->
@@ -417,7 +403,7 @@
         <div class="tour-modal-overlay" id="tourPlannerOverlay"></div>
         <div class="tour-modal-panel">
             <button type="button" class="tour-modal-close" id="tourPlannerClose" aria-label="بستن">×</button>
-            <h2 class="tour-modal-title" id="tourModalTitle">برنامه‌ریزی تور کوهنوردی</h2>
+            <h2 class="tour-modal-title" id="tourModalTitle" data-i18n="tour.title">برنامه‌ریزی تور کوهنوردی</h2>
             <div class="tour-progress"><div class="tour-progress-bar" id="tourProgressBar"></div></div>
 
             <div id="tourWizard">
@@ -425,8 +411,8 @@
                 <p class="tour-step-question" id="tourStepQuestion"></p>
                 <div class="tour-step-body" id="tourStepBody"></div>
                 <div class="tour-nav">
-                    <button type="button" class="tour-btn tour-btn--ghost" id="tourBtnBack">قبلی</button>
-                    <button type="button" class="tour-btn tour-btn--primary" id="tourBtnNext">بعدی</button>
+                    <button type="button" class="tour-btn tour-btn--ghost" id="tourBtnBack" data-i18n="tour.back">قبلی</button>
+                    <button type="button" class="tour-btn tour-btn--primary" id="tourBtnNext" data-i18n="tour.next">بعدی</button>
                 </div>
             </div>
 
@@ -435,9 +421,9 @@
                     <div class="tour-plan-pdf" id="tourPlanPdfContent"></div>
                 </div>
                 <div class="tour-result-actions">
-                    <button type="button" class="tour-btn tour-btn--primary" id="tourBtnPdf">دانلود PDF</button>
-                    <button type="button" class="tour-btn tour-btn--ghost" id="tourBtnRestart">برنامه جدید</button>
-                    <button type="button" class="tour-btn tour-btn--ghost" id="tourBtnClose">بستن</button>
+                    <button type="button" class="tour-btn tour-btn--primary" id="tourBtnPdf" data-i18n="tour.pdf">دانلود PDF</button>
+                    <button type="button" class="tour-btn tour-btn--ghost" id="tourBtnRestart" data-i18n="tour.restart">برنامه جدید</button>
+                    <button type="button" class="tour-btn tour-btn--ghost" id="tourBtnClose" data-i18n="tour.close">بستن</button>
                 </div>
             </div>
         </div>
@@ -446,6 +432,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
+    <script src="js/i18n.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/route-map.js" defer></script>
     <script src="js/tour-planner.js" defer></script>
