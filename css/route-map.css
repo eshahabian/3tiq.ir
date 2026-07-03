@@ -107,7 +107,7 @@
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 0.06em;
-    color: rgba(44, 36, 22, 0.22);
+    color: rgba(44, 36, 22, 0.09);
     white-space: nowrap;
     user-select: none;
 }
@@ -129,6 +129,16 @@
     font-size: 0.62rem;
     color: var(--primary-color);
     font-weight: 600;
+}
+
+.route-map-elev-badge .elev-coords {
+    display: block;
+    font-size: 0.58rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    margin-top: 0.1rem;
+    direction: ltr;
+    text-align: center;
 }
 
 .route-map-shelter-icon,
@@ -176,6 +186,15 @@
 .route-map-popup span {
     font-size: 0.78rem;
     color: var(--text-light);
+}
+
+.route-map-popup-coords {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.72rem !important;
+    direction: ltr;
+    color: var(--secondary-color) !important;
+    font-weight: 600;
 }
 
 .route-map-loading {

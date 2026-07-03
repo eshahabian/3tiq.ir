@@ -19,12 +19,15 @@
         return '🏕';
     }
 
-    function elevIcon(point) {
-        const label = point.label ? `<span class="elev-name">${point.label}</span>` : '';
-        const elev = point.elevation ? `${point.elevation} m` : '';
+    function elevIcon(point, summit) {
+        var labelText = localizePointLabel(point, summit) || (point.elevation ? point.elevation + ' m' : '');
+        var coordLine = point.label || point.elevation ? formatCoords(point.lat, point.lng) : '';
+        var label = labelText ? '<span class="elev-name">' + labelText + '</span>' : '';
+        var elev = point.elevation && labelText !== String(point.elevation) ? point.elevation + ' m' : '';
+        var coords = coordLine ? '<span class="elev-coords">' + coordLine + '</span>' : '';
         return L.divIcon({
             className: 'route-map-elev-wrap',
-            html: `<div class="route-map-elev-badge">${label}${elev}</div>`,
+            html: '<div class="route-map-elev-badge">' + label + elev + coords + '</div>',
             iconSize: [1, 1],
             iconAnchor: [0, 12]
         });
@@ -137,7 +140,7 @@
 
             route.coordinates.forEach(function (p) {
                 if (p.label || p.elevation) {
-                    L.marker([p.lat, p.lng], { icon: elevIcon(p), interactive: false }).addTo(map);
+                    L.marker([p.lat, p.lng], { icon: elevIcon(p, data.summit), interactive: false }).addTo(map);
                 }
             });
         });
@@ -165,7 +168,7 @@
                 iconAnchor: [10, 18]
             });
             L.marker([s.lat, s.lng], { icon: summitIcon }).addTo(map)
-                .bindPopup(`<div class="route-map-popup"><strong>${s.name}</strong><span>${s.elevation} m</span></div>`);
+                .bindPopup('<div class="route-map-popup"><strong>' + s.name + '</strong><span>' + s.elevation + ' m</span><span class="route-map-popup-coords">' + formatCoords(s.lat, s.lng) + '</span></div>');
         }
 
         if (allLatLngs.length) {
@@ -190,6 +193,86 @@
         return map;
     }
 
+    function latLngToWorldPx(lat, lng, zoom) {
+        var scale = Math.pow(2, zoom) * 256;
+        var x = (lng + 180) / 360 * scale;
+        var latRad = lat * Math.PI / 180;
+        var y = (1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * scale;
+        return { x: x, y: y };
+    }
+
+    function formatCoords(lat, lng) {
+        return lat.toFixed(4) + '°N · ' + lng.toFixed(4) + '°E';
+    }
+
+    function localizePointLabel(p, summit) {
+        if (!p.label) return '';
+        if (p.label === 'Summit' || p.label === 'قله') return summit ? summit.name : 'قله';
+        if (p.label === 'Start') return 'شروع مسیر';
+        return p.label;
+    }
+
+    function computeExportView(allLatLngs, mapX, mapY, mapW, mapH) {
+        var bounds = L.latLngBounds(allLatLngs);
+        var c = bounds.getCenter();
+        var latSpan = Math.max(bounds.getNorth() - bounds.getSouth(), 0.012);
+        var lngSpan = Math.max(bounds.getEast() - bounds.getWest(), 0.012);
+        var pad = 1.35;
+        var padded = L.latLngBounds(
+            [c.lat - latSpan * pad / 2, c.lng - lngSpan * pad / 2],
+            [c.lat + latSpan * pad / 2, c.lng + lngSpan * pad / 2]
+        );
+
+        for (var z = 16; z >= 10; z--) {
+            var nw = latLngToWorldPx(padded.getNorth(), padded.getWest(), z);
+            var se = latLngToWorldPx(padded.getSouth(), padded.getEast(), z);
+            var bw = se.x - nw.x;
+            var bh = se.y - nw.y;
+            if (bw <= mapW && bh <= mapH) {
+                return {
+                    zoom: z,
+                    nw: nw,
+                    se: se,
+                    drawW: bw,
+                    drawH: bh,
+                    offsetX: mapX + (mapW - bw) / 2,
+                    offsetY: mapY + (mapH - bh) / 2
+                };
+            }
+        }
+
+        var z = 10;
+        var nw = latLngToWorldPx(padded.getNorth(), padded.getWest(), z);
+        var se = latLngToWorldPx(padded.getSouth(), padded.getEast(), z);
+        var bw = se.x - nw.x;
+        var bh = se.y - nw.y;
+        var scale = Math.min(mapW / bw, mapH / bh);
+        return {
+            zoom: z,
+            nw: nw,
+            se: se,
+            drawW: bw * scale,
+            drawH: bh * scale,
+            offsetX: mapX + (mapW - bw * scale) / 2,
+            offsetY: mapY + (mapH - bh * scale) / 2,
+            stretch: scale
+        };
+    }
+
+    function projectLatLng(lat, lng, view) {
+        var p = latLngToWorldPx(lat, lng, view.zoom);
+        var bw = view.se.x - view.nw.x;
+        var bh = view.se.y - view.nw.y;
+        if (view.stretch) {
+            bw *= view.stretch;
+            bh *= view.stretch;
+        }
+        return {
+            x: view.offsetX + (p.x - view.nw.x) / (view.se.x - view.nw.x) * view.drawW,
+            y: view.offsetY + (p.y - view.nw.y) / (view.se.y - view.nw.y) * view.drawH
+        };
+    }
+
     function roundRect(ctx, x, y, w, h, r) {
         ctx.beginPath();
         ctx.moveTo(x + r, y);
@@ -198,50 +281,6 @@
         ctx.arcTo(x, y + h, x, y, r);
         ctx.arcTo(x, y, x + w, y, r);
         ctx.closePath();
-    }
-
-    function buildBoundsProjector(allLatLngs, w, h, pad) {
-        var bounds = L.latLngBounds(allLatLngs);
-        var ne = bounds.getNorthEast();
-        var sw = bounds.getSouthWest();
-        var lngSpan = Math.max(ne.lng - sw.lng, 0.002);
-        var latSpan = Math.max(ne.lat - sw.lat, 0.002);
-        return function project(lat, lng) {
-            return {
-                x: pad + ((lng - sw.lng) / lngSpan) * (w - 2 * pad),
-                y: pad + ((ne.lat - lat) / latSpan) * (h - 2 * pad)
-            };
-        };
-    }
-
-    function latLngToTile(lat, lng, zoom) {
-        var n = Math.pow(2, zoom);
-        var x = Math.floor((lng + 180) / 360 * n);
-        var latRad = lat * Math.PI / 180;
-        var y = Math.floor((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n);
-        return { x: x, y: y };
-    }
-
-    function tileToLng(x, z) {
-        return x / Math.pow(2, z) * 360 - 180;
-    }
-
-    function tileToLat(y, z) {
-        var n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
-        return 180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n)));
-    }
-
-    function pickExportZoom(bounds, w, h, pad) {
-        var ne = bounds.getNorthEast();
-        var sw = bounds.getSouthWest();
-        for (var z = 15; z >= 8; z--) {
-            var nwTile = latLngToTile(ne.lat, sw.lng, z);
-            var seTile = latLngToTile(sw.lat, ne.lng, z);
-            var tileW = (seTile.x - nwTile.x + 1) * 256;
-            var tileH = (seTile.y - nwTile.y + 1) * 256;
-            if (tileW <= w - pad * 2 && tileH <= h - pad * 2) return z;
-        }
-        return 10;
     }
 
     function loadTileImage(url) {
@@ -254,27 +293,38 @@
         });
     }
 
-    async function drawExportTiles(ctx, allLatLngs, w, h, pad, project) {
-        if (!allLatLngs.length) return false;
-        var bounds = L.latLngBounds(allLatLngs);
-        var ne = bounds.getNorthEast();
-        var sw = bounds.getSouthWest();
-        var zoom = pickExportZoom(bounds, w, h, pad);
-        var nwTile = latLngToTile(ne.lat, sw.lng, zoom);
-        var seTile = latLngToTile(sw.lat, ne.lng, zoom);
-        var drawn = false;
+    function tileToLng(x, z) {
+        return x / Math.pow(2, z) * 360 - 180;
+    }
 
-        for (var x = nwTile.x; x <= seTile.x; x++) {
-            for (var y = nwTile.y; y <= seTile.y; y++) {
-                var url = TILE.replace('{s}', 'a').replace('{z}', zoom).replace('{x}', x).replace('{y}', y);
+    function tileToLat(y, z) {
+        var n = Math.PI - 2 * Math.PI * y / Math.pow(2, z);
+        return 180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n)));
+    }
+
+    async function drawExportTilesMercator(ctx, view) {
+        var z = view.zoom;
+        var minTx = Math.floor(view.nw.x / 256);
+        var maxTx = Math.floor(view.se.x / 256);
+        var minTy = Math.floor(view.nw.y / 256);
+        var maxTy = Math.floor(view.se.y / 256);
+        var subs = ['a', 'b', 'c'];
+        var drawn = false;
+        var idx = 0;
+
+        for (var tx = minTx; tx <= maxTx; tx++) {
+            for (var ty = minTy; ty <= maxTy; ty++) {
+                var url = TILE.replace('{s}', subs[idx++ % 3]).replace('{z}', z).replace('{x}', tx).replace('{y}', ty);
                 var img = await loadTileImage(url);
                 if (!img) continue;
-                var tl = project(tileToLat(y, zoom), tileToLng(x, zoom));
-                var br = project(tileToLat(y + 1, zoom), tileToLng(x + 1, zoom));
-                var tw = br.x - tl.x;
-                var th = br.y - tl.y;
+                var wx1 = tx * 256;
+                var wy1 = ty * 256;
+                var wx2 = (tx + 1) * 256;
+                var wy2 = (ty + 1) * 256;
+                var tl = projectLatLng(tileToLat(ty, z), tileToLng(tx, z), view);
+                var br = projectLatLng(tileToLat(ty + 1, z), tileToLng(tx + 1, z), view);
                 try {
-                    ctx.drawImage(img, tl.x, tl.y, tw, th);
+                    ctx.drawImage(img, tl.x, tl.y, br.x - tl.x, br.y - tl.y);
                     drawn = true;
                 } catch (e) { /* skip tainted tile */ }
             }
@@ -282,53 +332,148 @@
         return drawn;
     }
 
-    function drawElevBadge(ctx, x, y, text) {
-        ctx.font = 'bold 20px Vazirmatn, Tahoma, sans-serif';
-        var pw = ctx.measureText(text).width + 22;
-        var ph = 30;
-        ctx.fillStyle = 'rgba(20, 16, 10, 0.85)';
-        roundRect(ctx, x - pw / 2, y - ph / 2, pw, ph, 14);
+    function drawElevBadge(ctx, x, y, title, subtitle) {
+        ctx.font = 'bold 22px Vazirmatn, Tahoma, sans-serif';
+        var titleW = ctx.measureText(title).width;
+        var subW = subtitle ? ctx.measureText(subtitle).width : 0;
+        var pw = Math.max(titleW, subW) + 28;
+        var ph = subtitle ? 52 : 34;
+        var bx = x - pw / 2;
+        var by = y - ph - 8;
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
+        ctx.strokeStyle = 'rgba(58, 50, 38, 0.2)';
+        ctx.lineWidth = 1.5;
+        roundRect(ctx, bx, by, pw, ph, 10);
         ctx.fill();
-        ctx.fillStyle = '#fff';
+        ctx.stroke();
+
+        ctx.fillStyle = '#1a1208';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(text, x, y);
+        ctx.fillText(title, x, by + (subtitle ? 18 : ph / 2));
+
+        if (subtitle) {
+            ctx.font = '16px Vazirmatn, Tahoma, sans-serif';
+            ctx.fillStyle = '#6b5c48';
+            ctx.fillText(subtitle, x, by + 38);
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(x - 7, by + ph);
+        ctx.lineTo(x + 7, by + ph);
+        ctx.lineTo(x, by + ph + 9);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
+        ctx.fill();
+        ctx.stroke();
     }
 
-    function drawShelterMarker(ctx, x, y, emoji) {
+    function drawShelterMarker(ctx, x, y, emoji, name) {
+        drawElevBadge(ctx, x, y - 18, emoji + ' ' + name, '');
         ctx.beginPath();
-        ctx.arc(x, y, 20, 0, Math.PI * 2);
+        ctx.arc(x, y, 18, 0, Math.PI * 2);
         ctx.fillStyle = '#5c6b4a';
         ctx.fill();
         ctx.strokeStyle = '#fff';
         ctx.lineWidth = 3;
         ctx.stroke();
-        ctx.font = '20px sans-serif';
+        ctx.font = '18px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(emoji, x, y + 1);
     }
 
-    function drawSummitMarker(ctx, x, y) {
-        ctx.fillStyle = '#dc2626';
+    function drawSummitMarker(ctx, x, y, summit) {
+        var name = summit.name || 'قله';
+        var elev = summit.elevation ? summit.elevation + ' m' : '';
+        var title = name + (elev ? ' (' + elev + ')' : '');
+        drawElevBadge(ctx, x, y - 24, title, formatCoords(summit.lat, summit.lng));
+
+        ctx.fillStyle = '#2563eb';
         ctx.beginPath();
-        ctx.moveTo(x, y - 22);
-        ctx.lineTo(x + 16, y + 10);
-        ctx.lineTo(x - 16, y + 10);
-        ctx.closePath();
+        ctx.arc(x, y, 10, 0, Math.PI * 2);
         ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+    }
+
+    function drawExportHeader(ctx, data, w, headerH) {
+        var peakName = data.peakName || data.peakId;
+        var elev = data.peakElevation || (data.summit && data.summit.elevation) || '';
+        var summit = data.summit;
+
+        ctx.fillStyle = '#faf8f4';
+        ctx.fillRect(0, 0, w, headerH);
+        ctx.strokeStyle = 'rgba(58, 50, 38, 0.12)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(0, headerH);
+        ctx.lineTo(w, headerH);
+        ctx.stroke();
+
+        ctx.fillStyle = '#1a1208';
+        ctx.font = 'bold 42px Vazirmatn, Tahoma, sans-serif';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'top';
+        ctx.fillText('🗺 راهنمای مسیر — ' + peakName + (elev ? ' (' + elev + ' m)' : ''), w - 36, 28);
+
+        ctx.font = '22px Vazirmatn, Tahoma, sans-serif';
+        ctx.fillStyle = '#4a4034';
+        if (summit) {
+            ctx.fillText('📍 مختصات قله: ' + formatCoords(summit.lat, summit.lng), w - 36, 82);
+        }
+
+        var xLeft = 36;
+        var yLegend = 34;
+        ctx.textAlign = 'left';
+        ctx.font = 'bold 20px Vazirmatn, Tahoma, sans-serif';
+        ctx.fillStyle = '#6b5c48';
+        ctx.fillText('مسیرها:', xLeft, yLegend);
+        yLegend += 30;
+
+        data.routes.forEach(function (route) {
+            ctx.fillStyle = route.color;
+            roundRect(ctx, xLeft, yLegend + 6, 36, 8, 4);
+            ctx.fill();
+            ctx.fillStyle = '#1a1208';
+            ctx.font = '18px Vazirmatn, Tahoma, sans-serif';
+            ctx.fillText(route.name, xLeft + 48, yLegend + 14);
+            yLegend += 28;
+        });
+
+        ctx.font = '16px Vazirmatn, Tahoma, sans-serif';
+        ctx.fillStyle = '#8a7a66';
+        ctx.fillText(SITE + ' — نقشه: © OpenStreetMap · CyclOSM', xLeft, headerH - 22);
+    }
+
+    function drawExportFooter(ctx, w, h, footerH) {
+        var y = h - footerH;
+        ctx.fillStyle = 'rgba(250, 248, 244, 0.95)';
+        ctx.fillRect(0, y, w, footerH);
+        ctx.strokeStyle = 'rgba(58, 50, 38, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+        ctx.font = '16px Vazirmatn, Tahoma, sans-serif';
+        ctx.fillStyle = '#8a7a66';
+        ctx.textAlign = 'center';
+        ctx.fillText('مختصات WGS84 · قبل از صعود وضعیت مسیر و آب‌وهوا را بررسی کنید · ' + SITE, w / 2, y + footerH / 2 + 6);
     }
 
     function drawWatermark(ctx, w, h) {
         ctx.save();
         ctx.translate(w / 2, h / 2);
         ctx.rotate(-32 * Math.PI / 180);
-        ctx.font = 'bold 36px Vazirmatn, Tahoma, sans-serif';
-        ctx.fillStyle = 'rgba(44, 36, 22, 0.16)';
+        ctx.font = 'bold 34px Vazirmatn, Tahoma, sans-serif';
+        ctx.fillStyle = 'rgba(44, 36, 22, 0.06)';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        var stepX = 210;
-        var stepY = 110;
+        var stepX = 240;
+        var stepY = 130;
         for (var yy = -h; yy <= h; yy += stepY) {
             for (var xx = -w; xx <= w; xx += stepX) {
                 ctx.fillText(SITE, xx, yy);
@@ -338,31 +483,48 @@
     }
 
     async function renderMapExportCanvas(data, allLatLngs, w, h) {
+        var headerH = 200;
+        var footerH = 44;
+        var sidePad = 24;
+        var mapY = headerH + 8;
+        var mapH = h - headerH - footerH - 16;
+        var mapX = sidePad;
+        var mapW = w - sidePad * 2;
+
         var canvas = document.createElement('canvas');
         canvas.width = w;
         canvas.height = h;
         var ctx = canvas.getContext('2d');
-        var pad = 140;
-        var project = buildBoundsProjector(allLatLngs, w, h, pad);
 
-        ctx.fillStyle = '#e8e4dc';
+        ctx.fillStyle = '#faf8f4';
         ctx.fillRect(0, 0, w, h);
 
-        await drawExportTiles(ctx, allLatLngs, w, h, pad, project);
+        drawExportHeader(ctx, data, w, headerH);
+
+        var view = computeExportView(allLatLngs, mapX, mapY, mapW, mapH);
+
+        ctx.fillStyle = '#e8e4dc';
+        roundRect(ctx, mapX, mapY, mapW, mapH, 12);
+        ctx.fill();
+        ctx.save();
+        roundRect(ctx, mapX, mapY, mapW, mapH, 12);
+        ctx.clip();
+
+        await drawExportTilesMercator(ctx, view);
 
         data.routes.forEach(function (route) {
             ctx.beginPath();
             route.coordinates.forEach(function (p, i) {
-                var pt = project(p.lat, p.lng);
+                var pt = projectLatLng(p.lat, p.lng, view);
                 if (i === 0) ctx.moveTo(pt.x, pt.y);
                 else ctx.lineTo(pt.x, pt.y);
             });
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
             ctx.strokeStyle = route.color;
-            ctx.lineWidth = (route.weight || 4) * 1.75;
-            ctx.setLineDash(route.dashArray ? [14, 10] : []);
-            ctx.globalAlpha = 0.92;
+            ctx.lineWidth = (route.weight || 4) * 2.2;
+            ctx.setLineDash(route.dashArray ? [16, 12] : []);
+            ctx.globalAlpha = 0.95;
             ctx.stroke();
             ctx.globalAlpha = 1;
         });
@@ -370,23 +532,33 @@
         data.routes.forEach(function (route) {
             route.coordinates.forEach(function (p) {
                 if (!p.label && !p.elevation) return;
-                var pt = project(p.lat, p.lng);
-                var text = (p.label ? p.label + ' ' : '') + (p.elevation ? p.elevation + ' m' : '');
-                drawElevBadge(ctx, pt.x, pt.y, text.trim());
+                var pt = projectLatLng(p.lat, p.lng, view);
+                var label = localizePointLabel(p, data.summit);
+                var title = label || (p.elevation ? p.elevation + ' m' : '');
+                var subtitle = (label && p.elevation) ? (p.elevation + ' m · ' + formatCoords(p.lat, p.lng)) : formatCoords(p.lat, p.lng);
+                if (title) drawElevBadge(ctx, pt.x, pt.y, title, subtitle);
             });
         });
 
         (data.shelters || []).forEach(function (s) {
-            var pt = project(s.lat, s.lng);
-            drawShelterMarker(ctx, pt.x, pt.y, shelterEmoji(s.type));
+            var pt = projectLatLng(s.lat, s.lng, view);
+            drawShelterMarker(ctx, pt.x, pt.y, shelterEmoji(s.type), s.name);
         });
 
         if (data.summit) {
-            var spt = project(data.summit.lat, data.summit.lng);
-            drawSummitMarker(ctx, spt.x, spt.y);
+            var spt = projectLatLng(data.summit.lat, data.summit.lng, view);
+            drawSummitMarker(ctx, spt.x, spt.y, data.summit);
         }
 
         drawWatermark(ctx, w, h);
+        ctx.restore();
+
+        ctx.strokeStyle = 'rgba(58, 50, 38, 0.15)';
+        ctx.lineWidth = 2;
+        roundRect(ctx, mapX, mapY, mapW, mapH, 12);
+        ctx.stroke();
+
+        drawExportFooter(ctx, w, h, footerH);
         return canvas;
     }
 
@@ -421,7 +593,7 @@
                 widget.appendChild(overlay);
             }
 
-            var canvas = await renderMapExportCanvas(data, allLatLngs, 2400, 1800);
+            var canvas = await renderMapExportCanvas(data, allLatLngs, 3200, 2400);
             downloadCanvas(canvas, title);
         } catch (err) {
             console.error(err);
