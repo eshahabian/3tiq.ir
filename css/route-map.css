@@ -107,7 +107,7 @@
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 0.06em;
-    color: rgba(44, 36, 22, 0.09);
+    color: rgba(44, 36, 22, 0.17);
     white-space: nowrap;
     user-select: none;
 }
@@ -212,7 +212,7 @@ body.dark-mode .route-map-frame {
 }
 
 body.dark-mode .route-map-watermark-pattern span {
-    color: rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.20);
 }
 
 body.dark-mode .route-map-btn {

@@ -544,7 +544,7 @@
         ctx.translate(x + w / 2, y + h / 2);
         ctx.rotate(-32 * Math.PI / 180);
         ctx.font = 'bold 32px Vazirmatn, Tahoma, sans-serif';
-        ctx.fillStyle = 'rgba(44, 36, 22, 0.045)';
+        ctx.fillStyle = 'rgba(44, 36, 22, 0.12)';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         var stepX = 220;
