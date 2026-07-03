@@ -1,0 +1,6 @@
+# ریدایرکت آدرس‌های قدیمی / اشتباه پناهگاه (حساس به حروف بزرگ/کوچ در لینوکس)
+RewriteEngine On
+RewriteRule ^Panahgah\.html$ /panahgah.html [R=301,L,NC]
+RewriteRule ^panahgah-ha\.html$ /panahgah.html [R=301,L,NC]
+RewriteRule ^Panahgahh\.html$ /panahgah.html [R=301,L,NC]
+RewriteRule ^panahgaah\.html$ /panahgah.html [R=301,L,NC]
