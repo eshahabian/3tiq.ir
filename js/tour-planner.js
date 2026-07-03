@@ -236,7 +236,7 @@
                     <input type="time" id="tourDepartureTime" class="tour-date-input" value="${savedTime}">
                 </label>
             </div>
-            <p class="tour-departure-hint">اگر حرکت بین ۱ تا ۱۰ روز آینده باشد، پیش‌بینی آب‌وهوا هم به برنامه اضافه می‌شود.</p>`;
+            <p class="tour-departure-hint">اگر حرکت بین ۱ تا ۱۰ روز آینده باشد، پیش‌بینی آب‌وهوا برای تمام روزهای برنامه (از روز حرکت) به گزارش اضافه می‌شود.</p>`;
 
         document.getElementById('tourDepartureDate')?.addEventListener('change', function (e) {
             answers.departureDate = e.target.value;
@@ -366,8 +366,15 @@
         return map[code] || '🌡 نامشخص';
     }
 
-    async function fetchWeatherForecast(peak, dateStr) {
-        if (!peak.lat || !peak.lng) return null;
+    function planDurationDays(daysKey) {
+        const d = daysKey || answers.days;
+        if (d === '1') return 1;
+        if (d === '2') return 3;
+        return 4;
+    }
+
+    async function fetchWeatherForecast(peak, dateStr, duration) {
+        if (!peak.lat || !peak.lng || !dateStr || duration < 1) return null;
         const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + peak.lat +
             '&longitude=' + peak.lng +
             '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max' +
@@ -377,20 +384,28 @@
         const data = await res.json();
         const daily = data.daily;
         if (!daily || !daily.time) return null;
-        const idx = daily.time.indexOf(dateStr);
-        if (idx < 0) return null;
-        return {
-            date: dateStr,
-            label: weatherLabel(daily.weathercode[idx]),
-            tMax: Math.round(daily.temperature_2m_max[idx]),
-            tMin: Math.round(daily.temperature_2m_min[idx]),
-            rain: daily.precipitation_sum[idx],
-            wind: Math.round(daily.windspeed_10m_max[idx])
-        };
+        const startIdx = daily.time.indexOf(dateStr);
+        if (startIdx < 0) return null;
+
+        const forecasts = [];
+        for (let i = 0; i < duration; i++) {
+            const idx = startIdx + i;
+            if (idx >= daily.time.length) break;
+            forecasts.push({
+                date: daily.time[idx],
+                dayNum: i + 1,
+                label: weatherLabel(daily.weathercode[idx]),
+                tMax: Math.round(daily.temperature_2m_max[idx]),
+                tMin: Math.round(daily.temperature_2m_min[idx]),
+                rain: daily.precipitation_sum[idx],
+                wind: Math.round(daily.windspeed_10m_max[idx])
+            });
+        }
+        return forecasts.length ? forecasts : null;
     }
 
     function buildDayPlan(peak, days) {
-        const n = days === '1' ? 1 : days === '2' ? 3 : 4;
+        const n = planDurationDays(days);
         const start = formatStartCities(peak);
         const fromLine = peak.startCities && peak.startCities.length > 1
             ? 'حرکت از یکی از شهرهای مبدا: ' + start
@@ -520,23 +535,43 @@
             </div>`;
     }
 
-    function weatherSectionHtml(forecast) {
-        if (!forecast) return '';
-        const rainText = forecast.rain > 0
-            ? forecast.rain.toLocaleString('fa-IR') + ' میلی‌متر بارش'
-            : 'بدون بارش قابل‌توجه';
+    function weatherSectionHtml(forecasts, totalDays) {
+        if (!forecasts || !forecasts.length) return '';
+        const title = forecasts.length === 1
+            ? '🌤 پیش‌بینی آب‌وهوا (روز حرکت)'
+            : '🌤 پیش‌بینی آب‌وهوا — ' + forecasts.length.toLocaleString('fa-IR') + ' روز (از شروع حرکت)';
+        const partialNote = totalDays && forecasts.length < totalDays
+            ? '<p class="tour-weather-note tour-weather-note--warn">فقط ' + forecasts.length.toLocaleString('fa-IR') + ' روز اول در بازه پیش‌بینی ۱۶ روزه موجود است.</p>'
+            : '';
+
+        const rows = forecasts.map(function (f) {
+            const parts = f.date.split('-').map(Number);
+            const d = new Date(parts[0], parts[1] - 1, parts[2]);
+            const dateFa = d.toLocaleDateString('fa-IR', { weekday: 'long', month: 'long', day: 'numeric' });
+            const rainText = f.rain > 0
+                ? f.rain.toLocaleString('fa-IR') + ' میلی‌متر'
+                : '—';
+            return `
+                <div class="tour-weather-row">
+                    <div class="tour-weather-row-head">
+                        <span class="tour-weather-day">روز ${f.dayNum.toLocaleString('fa-IR')}</span>
+                        <span class="tour-weather-date">${dateFa}</span>
+                    </div>
+                    <div class="tour-weather-main">${f.label}</div>
+                    <div class="tour-weather-stats">
+                        <span>🌡 ${f.tMin.toLocaleString('fa-IR')} تا ${f.tMax.toLocaleString('fa-IR')} °C</span>
+                        <span>💧 ${rainText}</span>
+                        <span>💨 ${f.wind.toLocaleString('fa-IR')} km/h</span>
+                    </div>
+                </div>`;
+        }).join('');
+
         return `
             <section class="tour-plan-section tour-plan-weather">
-                <h3>🌤 پیش‌بینی آب‌وهوا (روز حرکت)</h3>
-                <div class="tour-weather-card">
-                    <div class="tour-weather-main">${forecast.label}</div>
-                    <div class="tour-weather-stats">
-                        <span>🌡 ${forecast.tMin.toLocaleString('fa-IR')} تا ${forecast.tMax.toLocaleString('fa-IR')} °C</span>
-                        <span>💧 ${rainText}</span>
-                        <span>💨 باد تا ${forecast.wind.toLocaleString('fa-IR')} km/h</span>
-                    </div>
-                    <p class="tour-weather-note">منبع: Open-Meteo · پیش‌بینی تقریبی برای ارتفاع قله — قبل از حرکت وضعیت محلی را دوباره چک کنید.</p>
-                </div>
+                <h3>${title}</h3>
+                <div class="tour-weather-days">${rows}</div>
+                ${partialNote}
+                <p class="tour-weather-note">منبع: Open-Meteo · پیش‌بینی تقریبی برای ارتفاع قله — قبل از حرکت وضعیت محلی را دوباره چک کنید.</p>
             </section>`;
     }
 
@@ -554,10 +589,11 @@
 
         let weatherBlock = '';
         const daysAhead = answers.departureDate ? daysUntilDeparture(answers.departureDate) : -1;
+        const tripDays = planDurationDays();
         if (daysAhead >= 1 && daysAhead <= 10) {
             try {
-                const forecast = await fetchWeatherForecast(peak, answers.departureDate);
-                weatherBlock = weatherSectionHtml(forecast);
+                const forecasts = await fetchWeatherForecast(peak, answers.departureDate, tripDays);
+                weatherBlock = weatherSectionHtml(forecasts, tripDays);
             } catch (err) {
                 console.warn('weather forecast', err);
             }

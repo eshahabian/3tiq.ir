@@ -2490,6 +2490,38 @@ body.dark-mode .tour-result-scroll {
     padding: 1rem 1.15rem;
 }
 
+.tour-weather-days {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.tour-weather-row {
+    background: linear-gradient(135deg, #f0f7ff 0%, #fff8ef 100%);
+    border: 1px solid rgba(58, 50, 38, 0.12);
+    border-radius: 0.65rem;
+    padding: 0.85rem 1rem;
+}
+
+.tour-weather-row-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.35rem;
+}
+
+.tour-weather-day {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.tour-weather-date {
+    font-size: 0.82rem;
+    color: var(--text-light);
+}
+
 .tour-weather-main {
     font-size: 1.15rem;
     font-weight: 700;
@@ -2509,6 +2541,11 @@ body.dark-mode .tour-result-scroll {
     font-size: 0.75rem;
     color: var(--text-light);
     line-height: 1.6;
+}
+
+.tour-weather-note--warn {
+    color: #b45309;
+    font-weight: 600;
 }
 
 @media (max-width: 600px) {
