@@ -521,19 +521,40 @@ fetch('js/mountains.json')
             select.appendChild(opt);
         });
 
+        function buildMountainPopup(m) {
+            const link = m.slug
+                ? `<a href="peaks/${m.slug}.html" style="
+                    display:inline-block;margin-top:8px;padding:5px 12px;
+                    background:#2d6a4f;color:#fff;border-radius:100px;
+                    font-size:12px;font-weight:700;text-decoration:none;
+                ">مشاهده صفحه قله ←</a>`
+                : '';
+            return `
+                <div style="text-align:center;font-family:'Vazirmatn',Tahoma;direction:rtl;min-width:150px;padding:4px;">
+                    <b style="font-size:14px;color:#2d6a4f;">⛰️ ${m.name}</b><br>
+                    <span style="color:#555;font-size:12px;">ارتفاع: <b>${m.height.toLocaleString('fa-IR')}</b> متر</span><br>
+                    <span style="color:#888;font-size:11px;">📍 ${m.province}</span><br>
+                    ${link}
+                </div>`;
+        }
+
         function renderMountains(list) {
             allMountainMarkers.forEach(m => map.removeLayer(m));
             allMountainMarkers = [];
             list.forEach(m => {
-                const marker = L.marker([m.lat, m.lng], { icon: mountainIcon })
+                const marker = L.marker([m.lat, m.lng], {
+                    icon: mountainIcon,
+                    title: m.name
+                })
                     .addTo(map)
-                    .bindPopup(`
-                        <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:rtl; min-width:140px; padding:4px;">
-                            <b style="font-size:14px; color:#2d6a4f;">⛰️ ${m.name}</b><br>
-                            <span style="color:#555; font-size:12px;">ارتفاع: <b>${m.height.toLocaleString('fa-IR')}</b> متر</span><br>
-                            <span style="color:#888; font-size:11px;">📍 ${m.province}</span>
-                        </div>
-                    `);
+                    .bindPopup(buildMountainPopup(m));
+
+                if (m.slug) {
+                    marker.on('click', function () {
+                        marker.openPopup();
+                    });
+                }
+
                 allMountainMarkers.push(marker);
             });
             document.getElementById('mountain-count').textContent =

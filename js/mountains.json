@@ -1,117 +1,1212 @@
 [
-  { "name": "دماوند", "lat": 35.9553, "lng": 52.1094, "height": 5610, "province": "مازندران/تهران" },
-  { "name": "علم‌کوه", "lat": 36.4664, "lng": 51.0253, "height": 4850, "province": "مازندران" },
-  { "name": "سبلان", "lat": 38.2547, "lng": 47.8219, "height": 4811, "province": "اردبیل" },
-  { "name": "زردکوه بختیاری", "lat": 32.3744, "lng": 50.0639, "height": 4548, "province": "چهارمحال و بختیاری" },
-  { "name": "توچال", "lat": 35.8219, "lng": 51.4231, "height": 3933, "province": "تهران" },
-  { "name": "شاهوار", "lat": 36.3167, "lng": 55.1833, "height": 4015, "province": "سمنان" },
-  { "name": "اشترانکوه", "lat": 33.4500, "lng": 49.5500, "height": 4150, "province": "لرستان" },
-  { "name": "دنا", "lat": 31.5833, "lng": 51.0833, "height": 4409, "province": "کهگیلویه و بویراحمد" },
-  { "name": "بزمان", "lat": 27.5833, "lng": 60.0167, "height": 3490, "province": "سیستان و بلوچستان" },
-  { "name": "تفتان", "lat": 28.6000, "lng": 61.1333, "height": 4042, "province": "سیستان و بلوچستان" },
-  { "name": "کرکس", "lat": 33.5000, "lng": 51.5833, "height": 3899, "province": "اصفهان" },
-  { "name": "پاشوره", "lat": 36.5500, "lng": 51.2500, "height": 4200, "province": "مازندران" },
-  { "name": "دوبرار", "lat": 36.4000, "lng": 51.5000, "height": 4374, "province": "مازندران" },
-  { "name": "خل‌نو", "lat": 36.3500, "lng": 51.3000, "height": 4173, "province": "مازندران" },
-  { "name": "سیالان", "lat": 36.3833, "lng": 51.1167, "height": 4215, "province": "مازندران" },
-  { "name": "کلون‌بستک", "lat": 36.4500, "lng": 51.0500, "height": 4650, "province": "مازندران" },
-  { "name": "سیاه‌کمان", "lat": 36.5000, "lng": 50.9000, "height": 4100, "province": "گیلان" },
-  { "name": "آرارات", "lat": 39.7020, "lng": 44.2990, "height": 5137, "province": "مرز ایران/ترکیه" },
-  { "name": "سهند", "lat": 37.7333, "lng": 46.4667, "height": 3707, "province": "آذربایجان شرقی" },
-  { "name": "سیاه‌کوه", "lat": 35.0000, "lng": 53.5000, "height": 3200, "province": "اصفهان" },
-  { "name": "بینالود", "lat": 36.3333, "lng": 59.0000, "height": 2940, "province": "خراسان رضوی" },
-  { "name": "هزارمسجد", "lat": 37.5000, "lng": 58.5000, "height": 2794, "province": "خراسان رضوی" },
-  { "name": "شیرکوه یزد", "lat": 31.9667, "lng": 54.3667, "height": 4075, "province": "یزد" },
-  { "name": "لاجیم", "lat": 36.3000, "lng": 52.5000, "height": 3700, "province": "مازندران" },
-  { "name": "میشو", "lat": 38.3333, "lng": 45.8333, "height": 3722, "province": "آذربایجان غربی" },
-  { "name": "گرین", "lat": 33.8000, "lng": 47.5000, "height": 3428, "province": "کرمانشاه" },
-  { "name": "پراو", "lat": 34.3500, "lng": 46.9000, "height": 3366, "province": "کرمانشاه" },
-  { "name": "کوه‌گل", "lat": 30.5000, "lng": 51.5000, "height": 3100, "province": "فارس" },
-  { "name": "هفت‌تنان", "lat": 29.7000, "lng": 52.5000, "height": 2800, "province": "فارس" },
-  { "name": "قلارنگ", "lat": 33.2000, "lng": 46.8000, "height": 3200, "province": "ایلام" },
-  { "name": "کبیرکوه", "lat": 33.5000, "lng": 47.0000, "height": 3050, "province": "ایلام/لرستان" },
-  { "name": "ازنا", "lat": 33.4500, "lng": 49.4500, "height": 3800, "province": "لرستان" },
-  { "name": "نی‌انبار", "lat": 32.0000, "lng": 50.5000, "height": 3600, "province": "چهارمحال و بختیاری" },
-  { "name": "کوه‌صفه", "lat": 32.5500, "lng": 51.5500, "height": 2249, "province": "اصفهان" },
-  { "name": "تخت سلیمان", "lat": 36.6000, "lng": 47.2333, "height": 3707, "province": "آذربایجان غربی" },
-  { "name": "آلاداغ", "lat": 37.0000, "lng": 56.5000, "height": 3300, "province": "خراسان شمالی" },
-  { "name": "شاه‌جهان", "lat": 37.5500, "lng": 57.0000, "height": 3050, "province": "خراسان رضوی" },
-  { "name": "جهان‌بین", "lat": 36.8000, "lng": 54.5000, "height": 2700, "province": "گلستان" },
-  { "name": "شاه‌کوه", "lat": 37.0000, "lng": 55.5000, "height": 2800, "province": "گلستان" },
-  { "name": "کوه‌خواجه", "lat": 30.8833, "lng": 61.0667, "height": 609, "province": "سیستان و بلوچستان" },
-  { "name": "هزار", "lat": 29.5500, "lng": 56.9167, "height": 4465, "province": "کرمان" },
-  { "name": "لاله‌زار", "lat": 29.4667, "lng": 56.7667, "height": 4374, "province": "کرمان" },
-  { "name": "جبال‌بارز", "lat": 28.5000, "lng": 57.5000, "height": 3800, "province": "کرمان" },
-  { "name": "کوه‌مند", "lat": 28.0000, "lng": 55.0000, "height": 2400, "province": "هرمزگان" },
-  { "name": "قلعه‌گنج", "lat": 27.5000, "lng": 57.8000, "height": 2800, "province": "کرمان" },
-  { "name": "ارسباران", "lat": 38.8000, "lng": 47.0000, "height": 2896, "province": "آذربایجان شرقی" },
-  { "name": "بوزقوش", "lat": 37.8000, "lng": 47.5000, "height": 3100, "province": "آذربایجان شرقی" },
-  { "name": "کرانه", "lat": 37.5000, "lng": 49.5000, "height": 3100, "province": "گیلان" },
-  { "name": "خلخال", "lat": 37.6167, "lng": 48.5167, "height": 2800, "province": "اردبیل" },
-  { "name": "تالش", "lat": 37.8000, "lng": 48.9000, "height": 2477, "province": "گیلان/اردبیل" },
-  { "name": "گیلوا", "lat": 37.3000, "lng": 49.0000, "height": 3100, "province": "گیلان" },
-  { "name": "دیلمان", "lat": 36.9000, "lng": 49.8000, "height": 2800, "province": "گیلان" },
-  { "name": "سماموس", "lat": 36.8000, "lng": 50.5000, "height": 2900, "province": "گیلان/مازندران" },
-  { "name": "کوه‌نمک", "lat": 35.5000, "lng": 52.0000, "height": 2200, "province": "سمنان" },
-  { "name": "شاه‌البرز", "lat": 36.7000, "lng": 50.0000, "height": 4200, "province": "گیلان" },
-  { "name": "سرخ‌کوه", "lat": 35.8000, "lng": 57.0000, "height": 3300, "province": "خراسان رضوی" },
-  { "name": "باقران", "lat": 33.5000, "lng": 58.5000, "height": 3100, "province": "خراسان جنوبی" },
-  { "name": "قاین", "lat": 33.7333, "lng": 59.1667, "height": 2700, "province": "خراسان جنوبی" },
-  { "name": "طبس", "lat": 33.5833, "lng": 56.9167, "height": 2500, "province": "خراسان جنوبی" },
-  { "name": "کرمان", "lat": 30.2833, "lng": 57.0667, "height": 2200, "province": "کرمان" },
-  { "name": "آزادکوه", "lat": 36.2500, "lng": 52.8000, "height": 3800, "province": "مازندران" },
-  { "name": "تکین", "lat": 36.1500, "lng": 51.8000, "height": 3600, "province": "مازندران" },
-  { "name": "دلیر", "lat": 36.0500, "lng": 51.6000, "height": 3400, "province": "تهران" },
-  { "name": "کلکچال", "lat": 35.9000, "lng": 51.5500, "height": 3750, "province": "تهران" },
-  { "name": "شمشک", "lat": 35.9600, "lng": 51.3200, "height": 3050, "province": "تهران" },
-  { "name": "دیزین", "lat": 36.0700, "lng": 51.3900, "height": 3600, "province": "تهران" },
-  { "name": "سرکچال", "lat": 35.8800, "lng": 51.4000, "height": 3600, "province": "تهران" },
-  { "name": "پلنگ‌چال", "lat": 35.8500, "lng": 51.3800, "height": 3700, "province": "تهران" },
-  { "name": "شیرپلا", "lat": 36.4200, "lng": 51.1500, "height": 4200, "province": "مازندران" },
-  { "name": "تیرون", "lat": 36.3800, "lng": 51.2000, "height": 4000, "province": "مازندران" },
-  { "name": "هفت‌خوان", "lat": 36.3000, "lng": 51.4000, "height": 3850, "province": "مازندران" },
-  { "name": "سرآبدار", "lat": 36.2800, "lng": 51.5000, "height": 3700, "province": "مازندران" },
-  { "name": "کله‌قاضی", "lat": 36.5000, "lng": 51.0000, "height": 4200, "province": "مازندران" },
-  { "name": "دماوند شمالی", "lat": 36.0000, "lng": 52.1500, "height": 4800, "province": "مازندران" },
-  { "name": "سوباتان", "lat": 36.4800, "lng": 50.9500, "height": 4250, "province": "مازندران" },
-  { "name": "تخت‌سلیمان البرز", "lat": 36.5500, "lng": 50.8500, "height": 4200, "province": "مازندران" },
-  { "name": "شاه‌نشین", "lat": 36.6000, "lng": 50.7000, "height": 3900, "province": "گیلان" },
-  { "name": "رودبارک", "lat": 36.7500, "lng": 50.5000, "height": 3700, "province": "گیلان" },
-  { "name": "اسپیناس", "lat": 36.8500, "lng": 50.3000, "height": 3500, "province": "گیلان" },
-  { "name": "ماسوله", "lat": 37.1500, "lng": 48.9800, "height": 2800, "province": "گیلان" },
-  { "name": "فومن", "lat": 37.2200, "lng": 49.3100, "height": 2600, "province": "گیلان" },
-  { "name": "رشت", "lat": 37.2800, "lng": 49.5800, "height": 2400, "province": "گیلان" },
-  { "name": "لنگرود", "lat": 37.1900, "lng": 50.1500, "height": 2200, "province": "گیلان" },
-  { "name": "املش", "lat": 37.0900, "lng": 50.1900, "height": 2500, "province": "گیلان" },
-  { "name": "رضوانشهر", "lat": 37.5500, "lng": 48.7200, "height": 2700, "province": "گیلان" },
-  { "name": "اردبیل", "lat": 38.2500, "lng": 48.3000, "height": 2900, "province": "اردبیل" },
-  { "name": "سرعین", "lat": 38.1600, "lng": 48.0700, "height": 3200, "province": "اردبیل" },
-  { "name": "مشکین‌شهر", "lat": 38.4200, "lng": 47.6700, "height": 3400, "province": "اردبیل" },
-  { "name": "نمین", "lat": 38.4300, "lng": 48.4800, "height": 3100, "province": "اردبیل" },
-  { "name": "نیر", "lat": 38.0300, "lng": 47.9800, "height": 3300, "province": "اردبیل" },
-  { "name": "کوثر", "lat": 38.5000, "lng": 47.8000, "height": 3600, "province": "اردبیل" },
-  { "name": "بیله‌سوار", "lat": 39.3800, "lng": 48.4200, "height": 2800, "province": "اردبیل" },
-  { "name": "پارس‌آباد", "lat": 39.6500, "lng": 47.9200, "height": 2600, "province": "اردبیل" },
-  { "name": "گرمی", "lat": 39.0100, "lng": 48.0800, "height": 2900, "province": "اردبیل" },
-  { "name": "تبریز", "lat": 38.0800, "lng": 46.2900, "height": 2500, "province": "آذربایجان شرقی" },
-  { "name": "مراغه", "lat": 37.3900, "lng": 46.2400, "height": 2700, "province": "آذربایجان شرقی" },
-  { "name": "بناب", "lat": 37.3400, "lng": 46.0600, "height": 2600, "province": "آذربایجان شرقی" },
-  { "name": "ملکان", "lat": 37.1500, "lng": 46.1100, "height": 2800, "province": "آذربایجان شرقی" },
-  { "name": "هشترود", "lat": 37.4700, "lng": 47.0500, "height": 2900, "province": "آذربایجان شرقی" },
-  { "name": "میانه", "lat": 37.4200, "lng": 47.7100, "height": 2700, "province": "آذربایجان شرقی" },
-  { "name": "سراب", "lat": 37.9400, "lng": 47.5400, "height": 3000, "province": "آذربایجان شرقی" },
-  { "name": "اهر", "lat": 38.4700, "lng": 47.0700, "height": 3100, "province": "آذربایجان شرقی" },
-  { "name": "هریس", "lat": 38.2500, "lng": 47.1100, "height": 2900, "province": "آذربایجان شرقی" },
-  { "name": "ورزقان", "lat": 38.5100, "lng": 46.6600, "height": 3200, "province": "آذربایجان شرقی" },
-  { "name": "کلیبر", "lat": 38.8700, "lng": 47.0400, "height": 2800, "province": "آذربایجان شرقی" },
-  { "name": "جلفا", "lat": 38.9400, "lng": 45.6300, "height": 2600, "province": "آذربایجان شرقی" },
-  { "name": "ارومیه", "lat": 37.5500, "lng": 45.0800, "height": 2700, "province": "آذربایجان غربی" },
-  { "name": "خوی", "lat": 38.5500, "lng": 44.9500, "height": 2900, "province": "آذربایجان غربی" },
-  { "name": "ماکو", "lat": 39.2900, "lng": 44.5200, "height": 3100, "province": "آذربایجان غربی" },
-  { "name": "سلماس", "lat": 38.1900, "lng": 44.7700, "height": 2800, "province": "آذربایجان غربی" },
-  { "name": "نقده", "lat": 36.9600, "lng": 45.3900, "height": 2900, "province": "آذربایجان غربی" },
-  { "name": "مهاباد", "lat": 36.7600, "lng": 45.7200, "height": 3000, "province": "آذربایجان غربی" },
-  { "name": "بوکان", "lat": 36.5200, "lng": 46.2100, "height": 3100, "province": "آذربایجان غربی" },
-  { "name": "سردشت", "lat": 36.1500, "lng": 45.4800, "height": 3200, "province": "آذربایجان غربی" },
-  { "name": "پیرانشهر", "lat": 36.6900, "lng": 45.1400, "height": 3000, "province": "آذربایجان غربی" }
+  {
+    "name": "دماوند",
+    "lat": 35.9553,
+    "lng": 52.1094,
+    "height": 5610,
+    "province": "مازندران/تهران",
+    "slug": "damavand"
+  },
+  {
+    "name": "علم‌کوه",
+    "lat": 36.46,
+    "lng": 51.02,
+    "height": 4850,
+    "province": "مازندران",
+    "slug": "alamkooh"
+  },
+  {
+    "name": "سبلان",
+    "lat": 38.2547,
+    "lng": 47.8219,
+    "height": 4811,
+    "province": "اردبیل",
+    "slug": "sabalan"
+  },
+  {
+    "name": "زردکوه بختیاری",
+    "lat": 32.37,
+    "lng": 50.06,
+    "height": 4548,
+    "province": "چهارمحال و بختیاری",
+    "slug": "zardkooh"
+  },
+  {
+    "name": "توچال",
+    "lat": 35.82,
+    "lng": 51.42,
+    "height": 3933,
+    "province": "تهران",
+    "slug": "tochal"
+  },
+  {
+    "name": "شاهوار",
+    "lat": 36.47,
+    "lng": 55.13,
+    "height": 3834,
+    "province": "سمنان",
+    "slug": "shahvar"
+  },
+  {
+    "name": "اشترانکوه",
+    "lat": 33.45,
+    "lng": 49.55,
+    "height": 4150,
+    "province": "لرستان",
+    "slug": "eshterankoh"
+  },
+  {
+    "name": "دنا",
+    "lat": 31.58,
+    "lng": 51.08,
+    "height": 4409,
+    "province": "کهگیلویه و بویراحمد",
+    "slug": "dena"
+  },
+  {
+    "name": "بزمان",
+    "lat": 27.98,
+    "lng": 60.08,
+    "height": 3490,
+    "province": "سیستان و بلوچستان",
+    "slug": "bazman"
+  },
+  {
+    "name": "تفتان",
+    "lat": 28.6,
+    "lng": 61.13,
+    "height": 4042,
+    "province": "سیستان و بلوچستان",
+    "slug": "taftan"
+  },
+  {
+    "name": "کرکس",
+    "lat": 33.43,
+    "lng": 51.58,
+    "height": 3899,
+    "province": "اصفهان",
+    "slug": "karkas"
+  },
+  {
+    "name": "کلون‌بستک",
+    "lat": 36.15,
+    "lng": 51.4,
+    "height": 4650,
+    "province": "مازندران",
+    "slug": "kolonbastak"
+  },
+  {
+    "name": "دوبرار",
+    "lat": 35.95,
+    "lng": 51.8,
+    "height": 4100,
+    "province": "مازندران",
+    "slug": "dobarar"
+  },
+  {
+    "name": "خلنو",
+    "lat": 35.98,
+    "lng": 51.6,
+    "height": 3600,
+    "province": "مازندران",
+    "slug": "khaleno"
+  },
+  {
+    "name": "سیالان",
+    "lat": 36.67,
+    "lng": 50.04,
+    "height": 4173,
+    "province": "مازندران",
+    "slug": "sialan"
+  },
+  {
+    "name": "کلون‌بستک",
+    "lat": 36.15,
+    "lng": 51.4,
+    "height": 4650,
+    "province": "مازندران"
+  },
+  {
+    "name": "سیاه‌کمان",
+    "lat": 36.5,
+    "lng": 50.9,
+    "height": 4100,
+    "province": "گیلان"
+  },
+  {
+    "name": "آرارات",
+    "lat": 39.702,
+    "lng": 44.299,
+    "height": 5137,
+    "province": "مرز ایران/ترکیه"
+  },
+  {
+    "name": "سهند",
+    "lat": 37.75,
+    "lng": 46.43,
+    "height": 3707,
+    "province": "آذربایجان شرقی",
+    "slug": "sahand"
+  },
+  {
+    "name": "سیاه‌کوه",
+    "lat": 35.0,
+    "lng": 53.5,
+    "height": 3200,
+    "province": "اصفهان"
+  },
+  {
+    "name": "بینالود",
+    "lat": 36.3333,
+    "lng": 59.0,
+    "height": 2940,
+    "province": "خراسان رضوی"
+  },
+  {
+    "name": "هزارمسجد",
+    "lat": 37.5,
+    "lng": 58.5,
+    "height": 2794,
+    "province": "خراسان رضوی"
+  },
+  {
+    "name": "شیرکوه",
+    "lat": 31.96,
+    "lng": 54.36,
+    "height": 4075,
+    "province": "یزد",
+    "slug": "shirkoh"
+  },
+  {
+    "name": "لاجیم",
+    "lat": 36.3,
+    "lng": 52.5,
+    "height": 3700,
+    "province": "مازندران"
+  },
+  {
+    "name": "میشو",
+    "lat": 38.3333,
+    "lng": 45.8333,
+    "height": 3722,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "گرین",
+    "lat": 33.8,
+    "lng": 47.5,
+    "height": 3428,
+    "province": "کرمانشاه"
+  },
+  {
+    "name": "پراو",
+    "lat": 34.36,
+    "lng": 47.0,
+    "height": 3366,
+    "province": "کرمانشاه",
+    "slug": "paraw"
+  },
+  {
+    "name": "کوه‌گل",
+    "lat": 30.5,
+    "lng": 51.5,
+    "height": 3100,
+    "province": "فارس"
+  },
+  {
+    "name": "هفت‌تنان",
+    "lat": 29.7,
+    "lng": 52.5,
+    "height": 2800,
+    "province": "فارس"
+  },
+  {
+    "name": "قلارنگ",
+    "lat": 33.2,
+    "lng": 46.8,
+    "height": 3200,
+    "province": "ایلام"
+  },
+  {
+    "name": "کبیرکوه",
+    "lat": 33.6,
+    "lng": 47.1,
+    "height": 3050,
+    "province": "ایلام/لرستان",
+    "slug": "kebirkuh"
+  },
+  {
+    "name": "ازنا",
+    "lat": 33.45,
+    "lng": 49.45,
+    "height": 3800,
+    "province": "لرستان"
+  },
+  {
+    "name": "نی‌انبار",
+    "lat": 32.0,
+    "lng": 50.5,
+    "height": 3600,
+    "province": "چهارمحال و بختیاری"
+  },
+  {
+    "name": "کوه‌صفه",
+    "lat": 32.55,
+    "lng": 51.55,
+    "height": 2249,
+    "province": "اصفهان"
+  },
+  {
+    "name": "تخت سلیمان",
+    "lat": 35.98,
+    "lng": 51.75,
+    "height": 4643,
+    "province": "آذربایجان غربی",
+    "slug": "takht-soleiman"
+  },
+  {
+    "name": "آلاداغ",
+    "lat": 37.0,
+    "lng": 56.5,
+    "height": 3300,
+    "province": "خراسان شمالی"
+  },
+  {
+    "name": "شاه‌جهان",
+    "lat": 37.55,
+    "lng": 57.0,
+    "height": 3050,
+    "province": "خراسان رضوی"
+  },
+  {
+    "name": "جهان‌بین",
+    "lat": 36.8,
+    "lng": 54.5,
+    "height": 2700,
+    "province": "گلستان"
+  },
+  {
+    "name": "شاه‌کوه",
+    "lat": 37.0,
+    "lng": 55.5,
+    "height": 2800,
+    "province": "گلستان"
+  },
+  {
+    "name": "کوه‌خواجه",
+    "lat": 30.8833,
+    "lng": 61.0667,
+    "height": 609,
+    "province": "سیستان و بلوچستان"
+  },
+  {
+    "name": "هزار",
+    "lat": 29.55,
+    "lng": 56.91,
+    "height": 4465,
+    "province": "کرمان",
+    "slug": "hezar"
+  },
+  {
+    "name": "لاله‌زار",
+    "lat": 29.47,
+    "lng": 56.77,
+    "height": 4374,
+    "province": "کرمان",
+    "slug": "lalehzar"
+  },
+  {
+    "name": "جبال‌بارز",
+    "lat": 28.5,
+    "lng": 57.5,
+    "height": 3800,
+    "province": "کرمان"
+  },
+  {
+    "name": "کوه‌مند",
+    "lat": 28.0,
+    "lng": 55.0,
+    "height": 2400,
+    "province": "هرمزگان"
+  },
+  {
+    "name": "قلعه‌گنج",
+    "lat": 27.5,
+    "lng": 57.8,
+    "height": 2800,
+    "province": "کرمان"
+  },
+  {
+    "name": "ارسباران",
+    "lat": 38.8,
+    "lng": 47.0,
+    "height": 2896,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "بزقوش",
+    "lat": 37.95,
+    "lng": 47.25,
+    "height": 3306,
+    "province": "آذربایجان شرقی",
+    "slug": "bozghush"
+  },
+  {
+    "name": "کرانه",
+    "lat": 37.5,
+    "lng": 49.5,
+    "height": 3100,
+    "province": "گیلان"
+  },
+  {
+    "name": "خلخال",
+    "lat": 37.6167,
+    "lng": 48.5167,
+    "height": 2800,
+    "province": "اردبیل"
+  },
+  {
+    "name": "تالش",
+    "lat": 37.8,
+    "lng": 48.9,
+    "height": 2477,
+    "province": "گیلان/اردبیل"
+  },
+  {
+    "name": "گیلوا",
+    "lat": 37.3,
+    "lng": 49.0,
+    "height": 3100,
+    "province": "گیلان"
+  },
+  {
+    "name": "دیلمان",
+    "lat": 36.9,
+    "lng": 49.8,
+    "height": 2800,
+    "province": "گیلان"
+  },
+  {
+    "name": "سماموس",
+    "lat": 36.85,
+    "lng": 49.95,
+    "height": 2987,
+    "province": "گیلان/مازندران",
+    "slug": "samamos"
+  },
+  {
+    "name": "کوه‌نمک",
+    "lat": 35.5,
+    "lng": 52.0,
+    "height": 2200,
+    "province": "سمنان"
+  },
+  {
+    "name": "شاه‌البرز",
+    "lat": 36.7,
+    "lng": 50.0,
+    "height": 4200,
+    "province": "گیلان"
+  },
+  {
+    "name": "سرخ‌کوه",
+    "lat": 35.8,
+    "lng": 57.0,
+    "height": 3300,
+    "province": "خراسان رضوی"
+  },
+  {
+    "name": "باقران",
+    "lat": 33.5,
+    "lng": 58.5,
+    "height": 3100,
+    "province": "خراسان جنوبی"
+  },
+  {
+    "name": "قاین",
+    "lat": 33.7333,
+    "lng": 59.1667,
+    "height": 2700,
+    "province": "خراسان جنوبی"
+  },
+  {
+    "name": "طبس",
+    "lat": 33.5833,
+    "lng": 56.9167,
+    "height": 2500,
+    "province": "خراسان جنوبی"
+  },
+  {
+    "name": "کرمان",
+    "lat": 30.2833,
+    "lng": 57.0667,
+    "height": 2200,
+    "province": "کرمان"
+  },
+  {
+    "name": "آزادکوه",
+    "lat": 36.2,
+    "lng": 51.6,
+    "height": 4200,
+    "province": "مازندران",
+    "slug": "azadkooh"
+  },
+  {
+    "name": "تکین",
+    "lat": 36.15,
+    "lng": 51.8,
+    "height": 3600,
+    "province": "مازندران"
+  },
+  {
+    "name": "دلیر",
+    "lat": 36.05,
+    "lng": 51.6,
+    "height": 3400,
+    "province": "تهران"
+  },
+  {
+    "name": "کلکچال",
+    "lat": 35.86,
+    "lng": 51.4,
+    "height": 3750,
+    "province": "تهران",
+    "slug": "kolakchal"
+  },
+  {
+    "name": "شمشک",
+    "lat": 35.96,
+    "lng": 51.32,
+    "height": 3050,
+    "province": "تهران"
+  },
+  {
+    "name": "دیزین",
+    "lat": 36.07,
+    "lng": 51.39,
+    "height": 3600,
+    "province": "تهران"
+  },
+  {
+    "name": "سرکچال",
+    "lat": 36.08,
+    "lng": 51.55,
+    "height": 3600,
+    "province": "تهران",
+    "slug": "sarchal"
+  },
+  {
+    "name": "پلنگ‌چال",
+    "lat": 35.84,
+    "lng": 51.36,
+    "height": 3700,
+    "province": "تهران",
+    "slug": "palangchal"
+  },
+  {
+    "name": "شیرپلا",
+    "lat": 36.42,
+    "lng": 51.15,
+    "height": 4200,
+    "province": "مازندران"
+  },
+  {
+    "name": "تیرون",
+    "lat": 36.38,
+    "lng": 51.2,
+    "height": 4000,
+    "province": "مازندران"
+  },
+  {
+    "name": "هفت‌خوان",
+    "lat": 36.3,
+    "lng": 51.4,
+    "height": 3850,
+    "province": "مازندران"
+  },
+  {
+    "name": "سرآبدار",
+    "lat": 36.28,
+    "lng": 51.5,
+    "height": 3700,
+    "province": "مازندران"
+  },
+  {
+    "name": "کله‌قاضی",
+    "lat": 36.5,
+    "lng": 51.0,
+    "height": 4200,
+    "province": "مازندران"
+  },
+  {
+    "name": "دماوند شمالی",
+    "lat": 36.0,
+    "lng": 52.15,
+    "height": 4800,
+    "province": "مازندران"
+  },
+  {
+    "name": "سوباتان",
+    "lat": 36.48,
+    "lng": 50.95,
+    "height": 4250,
+    "province": "مازندران"
+  },
+  {
+    "name": "تخت‌سلیمان البرز",
+    "lat": 36.55,
+    "lng": 50.85,
+    "height": 4200,
+    "province": "مازندران"
+  },
+  {
+    "name": "شاه‌نشین",
+    "lat": 36.6,
+    "lng": 50.7,
+    "height": 3900,
+    "province": "گیلان"
+  },
+  {
+    "name": "رودبارک",
+    "lat": 36.75,
+    "lng": 50.5,
+    "height": 3700,
+    "province": "گیلان"
+  },
+  {
+    "name": "اسپیناس",
+    "lat": 36.55,
+    "lng": 50.2,
+    "height": 2800,
+    "province": "گیلان",
+    "slug": "espinas"
+  },
+  {
+    "name": "ماسوله",
+    "lat": 37.15,
+    "lng": 48.98,
+    "height": 2800,
+    "province": "گیلان"
+  },
+  {
+    "name": "فومن",
+    "lat": 37.22,
+    "lng": 49.31,
+    "height": 2600,
+    "province": "گیلان"
+  },
+  {
+    "name": "رشت",
+    "lat": 37.28,
+    "lng": 49.58,
+    "height": 2400,
+    "province": "گیلان"
+  },
+  {
+    "name": "لنگرود",
+    "lat": 37.19,
+    "lng": 50.15,
+    "height": 2200,
+    "province": "گیلان"
+  },
+  {
+    "name": "املش",
+    "lat": 37.09,
+    "lng": 50.19,
+    "height": 2500,
+    "province": "گیلان"
+  },
+  {
+    "name": "رضوانشهر",
+    "lat": 37.55,
+    "lng": 48.72,
+    "height": 2700,
+    "province": "گیلان"
+  },
+  {
+    "name": "اردبیل",
+    "lat": 38.25,
+    "lng": 48.3,
+    "height": 2900,
+    "province": "اردبیل"
+  },
+  {
+    "name": "سرعین",
+    "lat": 38.16,
+    "lng": 48.07,
+    "height": 3200,
+    "province": "اردبیل"
+  },
+  {
+    "name": "مشکین‌شهر",
+    "lat": 38.42,
+    "lng": 47.67,
+    "height": 3400,
+    "province": "اردبیل"
+  },
+  {
+    "name": "نمین",
+    "lat": 38.43,
+    "lng": 48.48,
+    "height": 3100,
+    "province": "اردبیل"
+  },
+  {
+    "name": "نیر",
+    "lat": 38.03,
+    "lng": 47.98,
+    "height": 3300,
+    "province": "اردبیل"
+  },
+  {
+    "name": "کوثر",
+    "lat": 38.5,
+    "lng": 47.8,
+    "height": 3600,
+    "province": "اردبیل"
+  },
+  {
+    "name": "بیله‌سوار",
+    "lat": 39.38,
+    "lng": 48.42,
+    "height": 2800,
+    "province": "اردبیل"
+  },
+  {
+    "name": "پارس‌آباد",
+    "lat": 39.65,
+    "lng": 47.92,
+    "height": 2600,
+    "province": "اردبیل"
+  },
+  {
+    "name": "گرمی",
+    "lat": 39.01,
+    "lng": 48.08,
+    "height": 2900,
+    "province": "اردبیل"
+  },
+  {
+    "name": "تبریز",
+    "lat": 38.08,
+    "lng": 46.29,
+    "height": 2500,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "مراغه",
+    "lat": 37.39,
+    "lng": 46.24,
+    "height": 2700,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "بناب",
+    "lat": 37.34,
+    "lng": 46.06,
+    "height": 2600,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "ملکان",
+    "lat": 37.15,
+    "lng": 46.11,
+    "height": 2800,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "هشترود",
+    "lat": 37.47,
+    "lng": 47.05,
+    "height": 2900,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "میانه",
+    "lat": 37.42,
+    "lng": 47.71,
+    "height": 2700,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "سراب",
+    "lat": 37.94,
+    "lng": 47.54,
+    "height": 3000,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "اهر",
+    "lat": 38.47,
+    "lng": 47.07,
+    "height": 3100,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "هریس",
+    "lat": 38.25,
+    "lng": 47.11,
+    "height": 2900,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "ورزقان",
+    "lat": 38.51,
+    "lng": 46.66,
+    "height": 3200,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "کلیبر",
+    "lat": 38.87,
+    "lng": 47.04,
+    "height": 2800,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "جلفا",
+    "lat": 38.94,
+    "lng": 45.63,
+    "height": 2600,
+    "province": "آذربایجان شرقی"
+  },
+  {
+    "name": "ارومیه",
+    "lat": 37.55,
+    "lng": 45.08,
+    "height": 2700,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "خوی",
+    "lat": 38.55,
+    "lng": 44.95,
+    "height": 2900,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "ماکو",
+    "lat": 39.29,
+    "lng": 44.52,
+    "height": 3100,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "سلماس",
+    "lat": 38.19,
+    "lng": 44.77,
+    "height": 2800,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "نقده",
+    "lat": 36.96,
+    "lng": 45.39,
+    "height": 2900,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "مهاباد",
+    "lat": 36.76,
+    "lng": 45.72,
+    "height": 3000,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "بوکان",
+    "lat": 36.52,
+    "lng": 46.21,
+    "height": 3100,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "سردشت",
+    "lat": 36.15,
+    "lng": 45.48,
+    "height": 3200,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "پیرانشهر",
+    "lat": 36.69,
+    "lng": 45.14,
+    "height": 3000,
+    "province": "آذربایجان غربی"
+  },
+  {
+    "name": "سیاه‌سنگ",
+    "lat": 36.15,
+    "lng": 51.5,
+    "height": 4604,
+    "province": "ایران",
+    "slug": "siah-sang"
+  },
+  {
+    "name": "قله جنوبی دنا",
+    "lat": 30.95,
+    "lng": 51.43,
+    "height": 4320,
+    "province": "ایران",
+    "slug": "dena-south"
+  },
+  {
+    "name": "جوپار",
+    "lat": 30.05,
+    "lng": 57.65,
+    "height": 4135,
+    "province": "ایران",
+    "slug": "joupar"
+  },
+  {
+    "name": "کهار",
+    "lat": 36.1,
+    "lng": 51.15,
+    "height": 4050,
+    "province": "قم/مرکزی",
+    "slug": "kahar"
+  },
+  {
+    "name": "خشچال",
+    "lat": 36.72,
+    "lng": 50.12,
+    "height": 4030,
+    "province": "ایران",
+    "slug": "khashchal"
+  },
+  {
+    "name": "شاه‌معلم",
+    "lat": 36.8,
+    "lng": 50.3,
+    "height": 3968,
+    "province": "ایران",
+    "slug": "shahmoallem"
+  },
+  {
+    "name": "مهرچال",
+    "lat": 36.07,
+    "lng": 51.54,
+    "height": 3964,
+    "province": "ایران",
+    "slug": "mehrchal"
+  },
+  {
+    "name": "گلاک",
+    "lat": 32.6,
+    "lng": 50.3,
+    "height": 3900,
+    "province": "ایران",
+    "slug": "gelak"
+  },
+  {
+    "name": "جانستون",
+    "lat": 36.0,
+    "lng": 51.7,
+    "height": 3900,
+    "province": "ایران",
+    "slug": "janeston"
+  },
+  {
+    "name": "خرسان",
+    "lat": 36.1,
+    "lng": 51.3,
+    "height": 3850,
+    "province": "ایران",
+    "slug": "kharsan"
+  },
+  {
+    "name": "آسمان‌کوه",
+    "lat": 36.75,
+    "lng": 50.6,
+    "height": 3842,
+    "province": "ایران",
+    "slug": "asmankooh"
+  },
+  {
+    "name": "پلوار",
+    "lat": 30.25,
+    "lng": 55.95,
+    "height": 3818,
+    "province": "ایران",
+    "slug": "poolvar"
+  },
+  {
+    "name": "ورجین",
+    "lat": 36.2,
+    "lng": 51.8,
+    "height": 3800,
+    "province": "ایران",
+    "slug": "varjin"
+  },
+  {
+    "name": "یخچال",
+    "lat": 36.05,
+    "lng": 51.1,
+    "height": 3800,
+    "province": "ایران",
+    "slug": "yakhchal"
+  },
+  {
+    "name": "چلچراغ",
+    "lat": 30.8,
+    "lng": 51.45,
+    "height": 3760,
+    "province": "ایران",
+    "slug": "chelcheragh"
+  },
+  {
+    "name": "پالون‌گردن",
+    "lat": 36.05,
+    "lng": 51.45,
+    "height": 3700,
+    "province": "ایران",
+    "slug": "palungarden"
+  },
+  {
+    "name": "نیزوا",
+    "lat": 36.52,
+    "lng": 55.28,
+    "height": 3633,
+    "province": "ایران",
+    "slug": "nizva"
+  },
+  {
+    "name": "برف‌انبار",
+    "lat": 33.1,
+    "lng": 51.2,
+    "height": 3600,
+    "province": "ایران",
+    "slug": "barfanbar"
+  },
+  {
+    "name": "اسپیدکمر",
+    "lat": 36.28,
+    "lng": 51.4,
+    "height": 3600,
+    "province": "ایران",
+    "slug": "espidkamar"
+  },
+  {
+    "name": "لوارک",
+    "lat": 35.84,
+    "lng": 51.52,
+    "height": 3600,
+    "province": "ایران",
+    "slug": "louvarak"
+  },
+  {
+    "name": "الوند",
+    "lat": 34.73,
+    "lng": 48.52,
+    "height": 3580,
+    "province": "ایران",
+    "slug": "alvand"
+  },
+  {
+    "name": "سخوید",
+    "lat": 30.6,
+    "lng": 51.8,
+    "height": 3520,
+    "province": "ایران",
+    "slug": "sakhvid"
+  },
+  {
+    "name": "برم فیروز",
+    "lat": 31.5,
+    "lng": 52.1,
+    "height": 3500,
+    "province": "ایران",
+    "slug": "barm-firouz"
+  },
+  {
+    "name": "پهنه‌حصار",
+    "lat": 35.88,
+    "lng": 51.28,
+    "height": 3500,
+    "province": "ایران",
+    "slug": "pahnehhassar"
+  },
+  {
+    "name": "پیرزن‌کلوم",
+    "lat": 36.17,
+    "lng": 51.5,
+    "height": 3500,
+    "province": "ایران",
+    "slug": "pirzan-kolum"
+  },
+  {
+    "name": "ریزان",
+    "lat": 35.93,
+    "lng": 51.65,
+    "height": 3500,
+    "province": "ایران",
+    "slug": "rizan"
+  },
+  {
+    "name": "بغرو داغ",
+    "lat": 36.6,
+    "lng": 50.4,
+    "height": 3450,
+    "province": "ایران",
+    "slug": "boghroudagh"
+  },
+  {
+    "name": "چلچلی",
+    "lat": 36.75,
+    "lng": 55.4,
+    "height": 3420,
+    "province": "ایران",
+    "slug": "chalchali"
+  },
+  {
+    "name": "آتشکوه",
+    "lat": 35.9,
+    "lng": 51.2,
+    "height": 3400,
+    "province": "ایران",
+    "slug": "atashkooh"
+  },
+  {
+    "name": "چشمه‌شاهی",
+    "lat": 35.8,
+    "lng": 51.48,
+    "height": 3400,
+    "province": "ایران",
+    "slug": "cheshme-shahi"
+  },
+  {
+    "name": "سرلت",
+    "lat": 36.13,
+    "lng": 51.95,
+    "height": 3400,
+    "province": "ایران",
+    "slug": "sarlet"
+  },
+  {
+    "name": "سوتک",
+    "lat": 36.3,
+    "lng": 51.6,
+    "height": 3400,
+    "province": "ایران",
+    "slug": "soutak"
+  },
+  {
+    "name": "شاهو",
+    "lat": 34.48,
+    "lng": 46.55,
+    "height": 3380,
+    "province": "ایران",
+    "slug": "shaho"
+  },
+  {
+    "name": "آق‌داغ خلخال",
+    "lat": 37.75,
+    "lng": 48.5,
+    "height": 3309,
+    "province": "ایران",
+    "slug": "aghdagh-khalkhal"
+  },
+  {
+    "name": "ناز",
+    "lat": 36.0,
+    "lng": 51.85,
+    "height": 3300,
+    "province": "ایران",
+    "slug": "naz"
+  },
+  {
+    "name": "بهشت‌آباد",
+    "lat": 31.2,
+    "lng": 50.65,
+    "height": 3200,
+    "province": "ایران",
+    "slug": "beheshtabad"
+  },
+  {
+    "name": "میشو داغ",
+    "lat": 38.4,
+    "lng": 45.8,
+    "height": 3155,
+    "province": "ایران",
+    "slug": "mishodagh"
+  },
+  {
+    "name": "درفک",
+    "lat": 36.92,
+    "lng": 50.55,
+    "height": 3150,
+    "province": "ایران",
+    "slug": "darfak"
+  },
+  {
+    "name": "سفین‌کوه",
+    "lat": 34.2,
+    "lng": 47.5,
+    "height": 3130,
+    "province": "ایران",
+    "slug": "safinkooh"
+  },
+  {
+    "name": "قوشاداغ",
+    "lat": 38.9,
+    "lng": 46.6,
+    "height": 3120,
+    "province": "ایران",
+    "slug": "qoshadagh"
+  },
+  {
+    "name": "ارتفاعات جیرفت",
+    "lat": 28.7,
+    "lng": 57.8,
+    "height": 3100,
+    "province": "ایران",
+    "slug": "giroft-heights"
+  },
+  {
+    "name": "پیرگردکوه",
+    "lat": 36.6,
+    "lng": 55.6,
+    "height": 2986,
+    "province": "ایران",
+    "slug": "pirgardkooh"
+  },
+  {
+    "name": "دالاب",
+    "lat": 33.48,
+    "lng": 46.62,
+    "height": 2900,
+    "province": "ایران",
+    "slug": "dalab"
+  },
+  {
+    "name": "قلات",
+    "lat": 29.85,
+    "lng": 52.65,
+    "height": 2850,
+    "province": "ایران",
+    "slug": "qalat"
+  },
+  {
+    "name": "گلیداغ",
+    "lat": 37.18,
+    "lng": 56.1,
+    "height": 2832,
+    "province": "ایران",
+    "slug": "gelidagh"
+  },
+  {
+    "name": "خوش‌ییلاق",
+    "lat": 37.02,
+    "lng": 55.78,
+    "height": 2750,
+    "province": "ایران",
+    "slug": "khoshyeilagh"
+  },
+  {
+    "name": "جهان‌نما",
+    "lat": 37.4,
+    "lng": 55.95,
+    "height": 2146,
+    "province": "ایران",
+    "slug": "jahanama"
+  }
 ]
