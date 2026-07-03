@@ -30,6 +30,14 @@
         });
     }
 
+    function buildWatermarkPattern() {
+        var cells = '';
+        for (var i = 0; i < 42; i++) {
+            cells += '<span>' + SITE + '</span>';
+        }
+        return '<div class="route-map-watermark" aria-hidden="true"><div class="route-map-watermark-pattern">' + cells + '</div></div>';
+    }
+
     function buildLegend(routes) {
         const routeItems = routes.map(function (r) {
             const dashed = r.dashArray ? ' dashed' : '';
@@ -92,7 +100,7 @@
             </div>
             <div class="route-map-frame" id="routeMapFrame-${peakId}">
                 <div class="route-map-canvas" id="routeMapCanvas-${peakId}"></div>
-                <div class="route-map-watermark">${SITE}</div>
+                ${buildWatermarkPattern()}
             </div>`;
         container.innerHTML = '';
         container.appendChild(widget);
@@ -105,7 +113,7 @@
             attributionControl: true
         });
 
-        L.tileLayer(TILE, {
+        const tileLayer = L.tileLayer(TILE, {
             attribution: '© OpenStreetMap · CyclOSM',
             maxZoom: 17
         }).addTo(map);
@@ -168,38 +176,119 @@
         setTimeout(function () { map.invalidateSize(); }, 200);
 
         widget.querySelector('[data-action="export"]').addEventListener('click', function () {
-            exportPng(frame, data.peakName || peakId);
+            exportPng(frame, {
+                map: map,
+                allLatLngs: allLatLngs.slice(),
+                tileLayer: tileLayer,
+                title: data.peakName || peakId
+            });
         });
 
         mapRegistry.set(mapEl, map);
         return map;
     }
 
-    async function exportPng(frame, title) {
+    function waitForTiles(tileLayer) {
+        return new Promise(function (resolve) {
+            if (!tileLayer || !tileLayer._loading) {
+                resolve();
+                return;
+            }
+            tileLayer.once('load', resolve);
+            setTimeout(resolve, 8000);
+        });
+    }
+
+    function delay(ms) {
+        return new Promise(function (resolve) {
+            setTimeout(resolve, ms);
+        });
+    }
+
+    async function exportPng(frame, ctx) {
         if (!global.html2canvas) {
             alert('برای ذخیره تصویر، صفحه را یک‌بار refresh کنید.');
             return;
         }
+
+        const map = ctx && ctx.map;
+        const allLatLngs = (ctx && ctx.allLatLngs) || [];
+        const tileLayer = ctx && ctx.tileLayer;
+        const title = (ctx && ctx.title) || 'route-map';
         const btn = frame.parentElement.querySelector('[data-action="export"]');
         if (btn) btn.disabled = true;
 
+        const mapEl = map ? map.getContainer() : null;
+        const exportW = 1920;
+        const exportH = 1440;
+        const saved = mapEl ? {
+            mapWidth: mapEl.style.width,
+            mapHeight: mapEl.style.height,
+            frameWidth: frame.style.width,
+            frameHeight: frame.style.height,
+            center: map.getCenter(),
+            zoom: map.getZoom()
+        } : null;
+
         try {
-            await new Promise(function (r) { setTimeout(r, 400); });
+            const widget = frame.closest('.route-map-widget');
+            let overlay = null;
+            if (widget) {
+                overlay = document.createElement('div');
+                overlay.className = 'route-map-export-overlay';
+                overlay.textContent = 'در حال آماده‌سازی نقشه با کیفیت بالا…';
+                widget.style.position = 'relative';
+                widget.appendChild(overlay);
+            }
+
+            if (mapEl) {
+                frame.classList.add('is-exporting');
+                mapEl.style.width = exportW + 'px';
+                mapEl.style.height = exportH + 'px';
+                frame.style.width = exportW + 'px';
+                frame.style.height = exportH + 'px';
+                map.invalidateSize();
+                if (allLatLngs.length) {
+                    map.fitBounds(L.latLngBounds(allLatLngs), { padding: [120, 120], maxZoom: 14 });
+                }
+                await waitForTiles(tileLayer);
+                await delay(700);
+            } else {
+                await delay(400);
+            }
+
             const canvas = await html2canvas(frame, {
                 useCORS: true,
                 allowTaint: true,
                 scale: 2,
                 backgroundColor: '#e8e4dc',
-                logging: false
+                logging: false,
+                width: mapEl ? exportW : frame.offsetWidth,
+                height: mapEl ? exportH : frame.offsetHeight
             });
+
             const link = document.createElement('a');
-            link.download = (title || 'route-map') + '-3tiq.png';
+            link.download = title + '-3tiq.png';
             link.href = canvas.toDataURL('image/png');
             link.click();
         } catch (err) {
             console.error(err);
             alert('ذخیره تصویر ممکن نشد. از اسکرین‌شات نقشه استفاده کنید.');
         } finally {
+            frame.classList.remove('is-exporting');
+            const widget = frame.closest('.route-map-widget');
+            if (widget) {
+                const overlay = widget.querySelector('.route-map-export-overlay');
+                if (overlay) overlay.remove();
+            }
+            if (mapEl && saved) {
+                mapEl.style.width = saved.mapWidth;
+                mapEl.style.height = saved.mapHeight;
+                frame.style.width = saved.frameWidth;
+                frame.style.height = saved.frameHeight;
+                map.invalidateSize();
+                map.setView(saved.center, saved.zoom);
+            }
             if (btn) btn.disabled = false;
         }
     }
@@ -226,16 +315,17 @@
 
     function mountAll() {
         document.querySelectorAll('[data-route-map]').forEach(function (el) {
+            var lazyRoot = el.closest('.service-card--route-preview') || el;
             if (el.dataset.lazy === 'true' && 'IntersectionObserver' in window) {
                 var observer = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             mountOne(el);
-                            observer.unobserve(el);
+                            observer.unobserve(lazyRoot);
                         }
                     });
-                }, { rootMargin: '100px' });
-                observer.observe(el);
+                }, { rootMargin: '120px', threshold: 0.01 });
+                observer.observe(lazyRoot);
             } else {
                 mountOne(el);
             }

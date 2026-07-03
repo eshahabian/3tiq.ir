@@ -1,5 +1,6 @@
 /* ===== Route Map (راهنمای مسیر) ===== */
 .route-map-widget {
+    position: relative;
     margin-bottom: 1.5rem;
 }
 
@@ -82,19 +83,33 @@
 
 .route-map-watermark {
     position: absolute;
-    bottom: 0.65rem;
-    left: 0.75rem;
+    inset: 0;
     z-index: 500;
     pointer-events: none;
-    font-size: 0.82rem;
+    overflow: hidden;
+}
+
+.route-map-watermark-pattern {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 220%;
+    height: 220%;
+    transform: translate(-50%, -50%) rotate(-32deg);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.75rem 2.25rem;
+    align-content: center;
+    justify-items: center;
+}
+
+.route-map-watermark-pattern span {
+    font-size: 1rem;
     font-weight: 800;
-    letter-spacing: 0.04em;
-    color: rgba(44, 36, 22, 0.55);
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-    background: rgba(253, 251, 247, 0.72);
-    padding: 0.2rem 0.55rem;
-    border-radius: 0.35rem;
-    backdrop-filter: blur(4px);
+    letter-spacing: 0.06em;
+    color: rgba(44, 36, 22, 0.22);
+    white-space: nowrap;
+    user-select: none;
 }
 
 .route-map-elev-badge {
@@ -177,16 +192,37 @@ body.dark-mode .route-map-frame {
     background: #2a2a2a;
 }
 
-body.dark-mode .route-map-watermark {
-    color: rgba(255, 255, 255, 0.65);
-    background: rgba(30, 30, 30, 0.75);
-    text-shadow: none;
+body.dark-mode .route-map-watermark-pattern span {
+    color: rgba(255, 255, 255, 0.14);
 }
 
 body.dark-mode .route-map-btn {
     background: rgba(212, 165, 116, 0.15);
     color: #eee;
     border-color: rgba(212, 165, 116, 0.35);
+}
+
+.route-map-export-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(245, 241, 232, 0.88);
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.85rem;
+}
+
+.route-map-frame.is-exporting {
+    position: fixed;
+    left: -10000px;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
 }
 
 @media (max-width: 600px) {
@@ -200,9 +236,11 @@ body.dark-mode .route-map-btn {
 
 /* ===== Homepage route preview (کاشی راهنمای مسیر) ===== */
 .service-card--route-preview {
-    grid-column: 1 / -1;
     text-align: right;
-    padding: 1.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 26rem;
 }
 
 .service-route-preview-head {
@@ -261,11 +299,31 @@ body.dark-mode .route-map-btn {
 }
 
 .service-route-preview-map {
+    flex: 1;
     margin-top: 0.25rem;
+    min-height: 14rem;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-route-preview-map .route-map-widget {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    min-height: 0;
+}
+
+.service-route-preview-map .route-map-frame {
+    flex: 1;
+    min-height: 14rem;
 }
 
 .service-route-preview-map .route-map-canvas {
-    height: 20rem;
+    height: 15rem;
+    min-height: 15rem;
 }
 
 .service-card--route-preview .service-route-full-link {
@@ -302,6 +360,6 @@ body.dark-mode .service-route-picker select {
     }
 
     .service-route-preview-map .route-map-canvas {
-        height: 16rem;
+        min-height: 12rem;
     }
 }
