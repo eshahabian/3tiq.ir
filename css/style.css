@@ -2475,6 +2475,20 @@ body.dark-mode .tour-result-scroll {
     gap: 0.5rem;
 }
 
+.tour-jalali-time {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.tour-time-sep {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-align: center;
+}
+
 .tour-date-select {
     cursor: pointer;
     appearance: auto;

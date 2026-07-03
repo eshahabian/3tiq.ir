@@ -166,6 +166,17 @@
         return j.jd.toLocaleString('fa-IR') + ' ' + JALALI_MONTHS[j.jm - 1] + ' ' + j.jy.toLocaleString('fa-IR');
     }
 
+    function formatTimeFa(timeStr) {
+        var parts = (timeStr || '05:00').split(':');
+        var h = Number(parts[0]);
+        var m = Number(parts[1] || 0);
+        return h.toLocaleString('fa-IR') + ':' + m.toLocaleString('fa-IR', { minimumIntegerDigits: 2 });
+    }
+
+    function buildTimeString(h, m) {
+        return pad2(h) + ':' + pad2(m);
+    }
+
     function loadPeaks() {
         fetch('data/tour-planner-peaks.json')
             .then(function (r) {
@@ -334,6 +345,11 @@
 
     function renderDepartureStep() {
         const savedTime = answers.departureTime || '05:00';
+        const savedParts = savedTime.split(':');
+        let savedH = Number(savedParts[0]);
+        let savedM = Math.round(Number(savedParts[1] || 0) / 5) * 5;
+        if (savedM === 60) savedM = 55;
+
         const todayJ = todayJalali();
         let jy, jm, jd;
         if (answers.departureDate) {
@@ -358,6 +374,16 @@
             dayOptions.push('<option value="' + d + '"' + (d === jd ? ' selected' : '') + '>' + d.toLocaleString('fa-IR') + '</option>');
         }
 
+        let hourOptions = '';
+        for (let h = 0; h < 24; h++) {
+            hourOptions += '<option value="' + h + '"' + (h === savedH ? ' selected' : '') + '>' + h.toLocaleString('fa-IR') + '</option>';
+        }
+
+        let minuteOptions = '';
+        for (let m = 0; m < 60; m += 5) {
+            minuteOptions += '<option value="' + m + '"' + (m === savedM ? ' selected' : '') + '>' + m.toLocaleString('fa-IR', { minimumIntegerDigits: 2 }) + '</option>';
+        }
+
         stepBody.innerHTML = `
             <div class="tour-departure-fields">
                 <label class="tour-field">
@@ -370,10 +396,20 @@
                 </label>
                 <label class="tour-field">
                     <span class="tour-field-label">ساعت حرکت (تقریبی)</span>
-                    <input type="time" id="tourDepartureTime" class="tour-date-input" value="${savedTime}">
+                    <div class="tour-jalali-time">
+                        <select id="tourHour" class="tour-date-input tour-date-select" aria-label="ساعت">${hourOptions}</select>
+                        <span class="tour-time-sep" aria-hidden="true">:</span>
+                        <select id="tourMinute" class="tour-date-input tour-date-select" aria-label="دقیقه">${minuteOptions}</select>
+                    </div>
                 </label>
             </div>
             <p class="tour-departure-hint">اگر حرکت بین ۱ تا ۱۰ روز آینده باشد، پیش‌بینی آب‌وهوا برای تمام روزهای برنامه (از روز حرکت) به گزارش اضافه می‌شود.</p>`;
+
+        function syncTime() {
+            const h = Number(document.getElementById('tourHour').value);
+            const m = Number(document.getElementById('tourMinute').value);
+            answers.departureTime = buildTimeString(h, m);
+        }
 
         function syncFromJalali() {
             const y = Number(document.getElementById('tourJy').value);
@@ -397,12 +433,11 @@
         document.getElementById('tourJy')?.addEventListener('change', syncFromJalali);
         document.getElementById('tourJm')?.addEventListener('change', syncFromJalali);
         document.getElementById('tourJd')?.addEventListener('change', syncFromJalali);
-        document.getElementById('tourDepartureTime')?.addEventListener('change', function (e) {
-            answers.departureTime = e.target.value;
-        });
+        document.getElementById('tourHour')?.addEventListener('change', syncTime);
+        document.getElementById('tourMinute')?.addEventListener('change', syncTime);
 
         syncFromJalali();
-        answers.departureTime = savedTime;
+        syncTime();
     }
 
     function optionButtons(key, items) {
@@ -421,8 +456,11 @@
     function nextStep() {
         const step = STEPS[stepIndex];
         if (step.id === 'departure') {
-            const timeEl = document.getElementById('tourDepartureTime');
-            answers.departureTime = timeEl?.value || answers.departureTime;
+            const hourEl = document.getElementById('tourHour');
+            const minuteEl = document.getElementById('tourMinute');
+            if (hourEl && minuteEl) {
+                answers.departureTime = buildTimeString(Number(hourEl.value), Number(minuteEl.value));
+            }
             const jyEl = document.getElementById('tourJy');
             const jmEl = document.getElementById('tourJm');
             const jdEl = document.getElementById('tourJd');
@@ -480,8 +518,7 @@
         if (!answers.departureDate) return '—';
         var dateFa = formatJalaliLong(answers.departureDate);
         if (answers.departureTime) {
-            const [h, m] = answers.departureTime.split(':');
-            return dateFa + ' — ساعت ' + Number(h).toLocaleString('fa-IR') + ':' + (m || '00');
+            return dateFa + ' — ساعت ' + formatTimeFa(answers.departureTime);
         }
         return dateFa;
     }
