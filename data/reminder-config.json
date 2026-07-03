@@ -1,0 +1,16 @@
+{
+  "notifyWindows": true,
+  "dailyHour": 9,
+  "notifyTitle": "سه تیغ — deploy وبلاگ",
+  "notifyBody": "مطلب جدید آماده است. الان آپلود کن.",
+  "notifyMessage": "مطلب جدید آماده deploy:\n{title}\n\nفایل‌ها: {file} + blog.html\n\nالان D:\\3tiq.ir را روی cPanel آپلود کن.",
+  "email": {
+    "enabled": true,
+    "to": "YOUR@EMAIL.com",
+    "from": "YOUR@EMAIL.com",
+    "smtpHost": "smtp.gmail.com",
+    "smtpPort": 587,
+    "smtpUser": "YOUR@EMAIL.com"
+  },
+  "ntfyTopic": ""
+}

@@ -1,6 +1,28 @@
-# ریدایرکت آدرس‌های قدیمی / اشتباه پناهگاه (حساس به حروف بزرگ/کوچ در لینوکس)
+# ریدایرکت SEO — آدرس‌های تکراری و قدیمی
 RewriteEngine On
+
+# پناهگاه (حساس به حروف بزرگ/کوچ)
 RewriteRule ^Panahgah\.html$ /panahgah.html [R=301,L,NC]
 RewriteRule ^panahgah-ha\.html$ /panahgah.html [R=301,L,NC]
 RewriteRule ^Panahgahh\.html$ /panahgah.html [R=301,L,NC]
 RewriteRule ^panahgaah\.html$ /panahgah.html [R=301,L,NC]
+
+# قله‌های تکراری در ریشه → peaks/ (canonical)
+RewriteRule ^damavand\.html$ /peaks/damavand.html [R=301,L,NC]
+RewriteRule ^alamkooh\.html$ /peaks/alamkooh.html [R=301,L,NC]
+RewriteRule ^sabalan\.html$ /peaks/sabalan.html [R=301,L,NC]
+RewriteRule ^zardkooh\.html$ /peaks/zardkooh.html [R=301,L,NC]
+RewriteRule ^hezar\.html$ /peaks/hezar.html [R=301,L,NC]
+RewriteRule ^dena\.html$ /peaks/dena.html [R=301,L,NC]
+RewriteRule ^eshterankoh\.html$ /peaks/eshterankoh.html [R=301,L,NC]
+RewriteRule ^shirkoh\.html$ /peaks/shirkoh.html [R=301,L,NC]
+RewriteRule ^tochal\.html$ /peaks/tochal.html [R=301,L,NC]
+RewriteRule ^sahand\.html$ /peaks/sahand.html [R=301,L,NC]
+RewriteRule ^taftan\.html$ /peaks/taftan.html [R=301,L,NC]
+RewriteRule ^karkas\.html$ /peaks/karkas.html [R=301,L,NC]
+
+# orphan duplicate
+RewriteRule ^mountain-profile\.html$ /peaks/damavand.html [R=301,L,NC]
+
+# canonical اشتباه وبلاگ دماوند
+RewriteRule ^blog/blog-damavand-guide\.html$ /blog-damavand-guide.html [R=301,L,NC]

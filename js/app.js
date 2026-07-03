@@ -124,7 +124,7 @@ const famousPeaks = [
         duration: '۲ تا ۳ روز',
         description: 'بلندترین قله ایران و خاورمیانه. آتشفشانی خاموش با قله‌ای پوشیده از برف و دهانه گوگردی که تجربه‌ای بی‌نظیر برای هر کوهنوردی است.',
         image: 'images/peaks/damavand.jpg',
-        link: 'damavand.html'
+        link: 'peaks/damavand.html'
     },
     {
         name: 'علم‌کوه',
@@ -135,7 +135,7 @@ const famousPeaks = [
         duration: '۲ روز',
         description: 'دومین قله بلند ایران با دیواره شمالی باشکوه و چالش‌برانگیز. مقصد اصلی کوهنوردان حرفه‌ای در رشته کوه البرز مرکزی.',
         image: 'images/peaks/alamkooh.jpg',
-	link: 'alamkooh.html'
+	link: 'peaks/alamkooh.html'
     },
     {
         name: 'سبلان',
@@ -146,7 +146,7 @@ const famousPeaks = [
         duration: '۱ تا ۲ روز',
         description: 'سومین قله بلند ایران با دریاچه یخ زیبا در قله. آتشفشانی خاموش با چشمه‌های آب گرم در دامنه و مناظر بکر چهارفصل.',
         image: 'images/peaks/sabalan.jpg',
-	link: 'sabalan.html'
+	link: 'peaks/sabalan.html'
     },
     {
         name: 'زردکوه بختیاری',
@@ -157,7 +157,7 @@ const famousPeaks = [
         duration: '۲ روز',
         description: 'بلندترین قله رشته کوه زاگرس در قلب سرزمین بختیاری. پوشش برفی طولانی، دره‌های عمیق و طبیعت وحشی از ویژگی‌های این قله است.',
         image: 'images/peaks/zardkooh.jpg',
-	link: 'zardkooh.html'
+	link: 'peaks/zardkooh.html'
     },
     {
         name: 'هزار',
@@ -168,7 +168,7 @@ const famousPeaks = [
         duration: '۲ روز',
         description: 'بلندترین قله جنوب ایران با چشم‌اندازهای خیره‌کننده به کویر. مسیر صعود طولانی اما دارای مناظر بی‌نظیر از دشت‌های کرمان.',
         image: 'images/peaks/hezar.jpg',
-	link: 'hezar.html'
+	link: 'peaks/hezar.html'
     },
     {
         name: 'دنا',
@@ -179,7 +179,7 @@ const famousPeaks = [
         duration: '۲ روز',
         description: 'بانوی کوه‌های ایران با قله‌های متعدد و دره‌های پوشیده از گل. رشته‌کوه دنا با تنوع زیستی استثنایی خود یکی از زیباترین مناطق کوهستانی ایران است.',
         image: 'images/peaks/dena.jpg',
-	link: 'dena.html'
+	link: 'peaks/dena.html'
     },
     {
         name: 'اشترانکوه',
@@ -190,7 +190,7 @@ const famousPeaks = [
         duration: '۲ روز',
         description: 'کوه شتر پشت لرستان با دشت‌های سبز و آبشارهای زیبا. یکی از مرتفع‌ترین قله‌های زاگرس با چشمه‌های آب زلال و پوشش گیاهی بکر.',
         image: 'images/peaks/eshterankoh.jpg',
-	link: 'eshterankoh.html'
+	link: 'peaks/eshterankoh.html'
     },
     {
         name: 'شیرکوه یزد',
@@ -201,7 +201,7 @@ const famousPeaks = [
         duration: '۱ روز',
         description: 'بلندترین قله استان یزد در میان کویر. کوهی منحصربه‌فرد که از دل کویر سر برافراشته و برف‌های قله‌اش با شن‌های کویر تضاد زیبایی می‌سازند.',
         image: 'images/peaks/shirkoh.jpg',
-	link: 'shirkoh.html'
+	link: 'peaks/shirkoh.html'
     },
     {
         name: 'توچال',
@@ -212,7 +212,7 @@ const famousPeaks = [
         duration: '۱ روز',
         description: 'نزدیک‌ترین قله بزرگ به پایتخت با دسترسی آسان از طریق تله‌کابین. محبوب‌ترین مقصد کوهنوردی تهرانی‌ها با چشم‌انداز زیبا به شهر.',
         image: 'images/peaks/tochal.jpg',
-	link: 'tochal.html'
+	link: 'peaks/tochal.html'
     },
     {
         name: 'سهند',
@@ -223,7 +223,7 @@ const famousPeaks = [
         duration: '۱ روز',
         description: 'آتشفشان خاموش آذربایجان با دره‌های رنگارنگ و چشمه‌های متعدد. بهشت گل‌های وحشی در بهار و پیست اسکی محبوب در زمستان.',
         image: 'images/peaks/sahand2.webp',
-	link: 'sahand.html'
+	link: 'peaks/sahand.html'
     },
     {
         name: 'تفتان',
@@ -234,7 +234,7 @@ const famousPeaks = [
         duration: '۲ روز',
         description: 'تنها آتشفشان نیمه‌فعال ایران در جنوب شرقی کشور. دود و بخار گوگرد از دهانه قله، این کوه را به یکی از عجیب‌ترین و جذاب‌ترین مقاصد کوهنوردی تبدیل کرده.',
         image: 'images/peaks/taftan.webp',
-	link: 'taftan.html'
+	link: 'peaks/taftan.html'
     },
     {
         name: 'کرکس',
@@ -245,7 +245,7 @@ const famousPeaks = [
         duration: '۱ روز',
         description: 'قله محبوب اصفهانی‌ها با دسترسی آسان و مناظر بی‌نظیر به کویر مرکزی ایران. در روزهای صاف می‌توان تا کویر نمک را از قله دید.',
         image: 'images/peaks/karkas.webp',
-	link: 'karkas.html'
+	link: 'peaks/karkas.html'
     }
 ];
 
