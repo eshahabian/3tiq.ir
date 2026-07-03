@@ -515,18 +515,21 @@ body.dark-mode .moon-icon { display: block; }
 
 .services-grid--duo {
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 920px;
+    margin-inline: auto;
 }
 
 .services-grid--duo > .service-card {
-    min-height: 28rem;
+    min-height: 0;
     display: flex;
     flex-direction: column;
 }
 
 .service-card--tour {
     text-align: center;
-    justify-content: space-between;
-    padding: 1.5rem;
+    justify-content: flex-start;
+    padding: 1.1rem 1.15rem;
 }
 
 .service-tour-body {
@@ -534,24 +537,52 @@ body.dark-mode .moon-icon { display: block; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.65rem;
+    justify-content: flex-start;
+    gap: 0.45rem;
+}
+
+.services-grid--duo .service-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.services-grid--duo .service-icon svg {
+    width: 1.65rem;
+    height: 1.65rem;
+}
+
+.services-grid--duo .service-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+.services-grid--duo .service-description {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    margin-bottom: 0;
 }
 
 .service-tour-features {
     list-style: none;
     padding: 0;
-    margin: 0.75rem 0 0;
+    margin: 0.5rem 0 0;
     width: 100%;
-    max-width: 19rem;
+    max-width: 100%;
     text-align: start;
 }
 
 .service-tour-features li {
-    padding: 0.3rem 0;
-    font-size: 0.88rem;
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
     color: var(--text-light);
-    line-height: 1.5;
+    line-height: 1.45;
+}
+
+.services-grid--duo .service-cta {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    font-size: 0.82rem;
 }
 
 .service-tour-features li::before {
