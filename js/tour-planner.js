@@ -54,6 +54,118 @@
 
     loadPeaks();
 
+    const JALALI_MONTHS = [
+        'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+        'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+    ];
+    const WEEKDAYS_FA = ['یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه', 'شنبه'];
+
+    function div(a, b) { return ~~(a / b); }
+
+    function gregorianToJalali(gy, gm, gd) {
+        var g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+        var gy2 = (gm > 2) ? (gy + 1) : gy;
+        var days = 355666 + (365 * gy) + div(gy2 + 3, 4) - div(gy2 + 99, 100) + div(gy2 + 399, 400) + gd + g_d_m[gm - 1];
+        var jy = -1595 + (33 * div(days, 12053));
+        days %= 12053;
+        jy += 4 * div(days, 1461);
+        days %= 1461;
+        if (days > 365) {
+            jy += div(days - 1, 365);
+            days = (days - 1) % 365;
+        }
+        var jm, jd;
+        if (days < 186) {
+            jm = 1 + div(days, 31);
+            jd = 1 + (days % 31);
+        } else {
+            jm = 7 + div(days - 186, 30);
+            jd = 1 + ((days - 186) % 30);
+        }
+        return [jy, jm, jd];
+    }
+
+    function jalaliToGregorian(jy, jm, jd) {
+        var jy2 = jy + 1595;
+        var days = -355668 + (365 * jy2) + div(jy2, 33) * 8 + div(((jy2 % 33) + 3), 4) + jd + ((jm < 7) ? (jm - 1) * 31 : ((jm - 7) * 30) + 186);
+        var gy = 400 * div(days, 146097);
+        days %= 146097;
+        if (days > 36524) {
+            gy += 100 * div(--days, 36524);
+            days %= 36524;
+            if (days >= 365) days++;
+        }
+        gy += 4 * div(days, 1461);
+        days %= 1461;
+        if (days > 365) {
+            gy += div(days - 1, 365);
+            days = (days - 1) % 365;
+        }
+        var gd = days + 1;
+        var sal_a = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || (gy % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var gm = 0;
+        while (gm < 13 && gd > sal_a[gm]) {
+            gd -= sal_a[gm++];
+        }
+        return [gy, gm, gd];
+    }
+
+    function jalaliMonthLength(jy, jm) {
+        if (jm <= 6) return 31;
+        if (jm <= 11) return 30;
+        var r = jy % 33;
+        if (r === 1 || r === 5 || r === 9 || r === 13 || r === 17 || r === 22 || r === 26 || r === 30) return 30;
+        return 29;
+    }
+
+    function pad2(n) { return String(n).padStart(2, '0'); }
+
+    function toIsoDate(gy, gm, gd) {
+        return gy + '-' + pad2(gm) + '-' + pad2(gd);
+    }
+
+    function todayIso() {
+        var n = new Date();
+        return toIsoDate(n.getFullYear(), n.getMonth() + 1, n.getDate());
+    }
+
+    function todayJalali() {
+        var n = new Date();
+        var p = gregorianToJalali(n.getFullYear(), n.getMonth() + 1, n.getDate());
+        return { jy: p[0], jm: p[1], jd: p[2] };
+    }
+
+    function isoToJalali(iso) {
+        var parts = iso.split('-').map(Number);
+        var p = gregorianToJalali(parts[0], parts[1], parts[2]);
+        return { jy: p[0], jm: p[1], jd: p[2] };
+    }
+
+    function jalaliToIso(jy, jm, jd) {
+        var p = jalaliToGregorian(jy, jm, jd);
+        return toIsoDate(p[0], p[1], p[2]);
+    }
+
+    function formatJalaliLong(isoOrJy, jm, jd) {
+        var jy, m, d;
+        if (typeof isoOrJy === 'string') {
+            var j = isoToJalali(isoOrJy);
+            jy = j.jy; m = j.jm; d = j.jd;
+        } else {
+            jy = isoOrJy; m = jm; d = jd;
+        }
+        var g = jalaliToGregorian(jy, m, d);
+        var dt = new Date(g[0], g[1] - 1, g[2]);
+        return WEEKDAYS_FA[dt.getDay()] + ' ' +
+            d.toLocaleString('fa-IR') + ' ' + JALALI_MONTHS[m - 1] + ' ' +
+            jy.toLocaleString('fa-IR');
+    }
+
+    function formatJalaliShort(iso) {
+        var j = isoToJalali(iso);
+        return j.jd.toLocaleString('fa-IR') + ' ' + JALALI_MONTHS[j.jm - 1] + ' ' + j.jy.toLocaleString('fa-IR');
+    }
+
     function loadPeaks() {
         fetch('data/tour-planner-peaks.json')
             .then(function (r) {
@@ -221,15 +333,40 @@
     }
 
     function renderDepartureStep() {
-        const today = new Date();
-        const iso = today.toISOString().slice(0, 10);
-        const savedDate = answers.departureDate || iso;
         const savedTime = answers.departureTime || '05:00';
+        const todayJ = todayJalali();
+        let jy, jm, jd;
+        if (answers.departureDate) {
+            const j = isoToJalali(answers.departureDate);
+            jy = j.jy; jm = j.jm; jd = j.jd;
+        } else {
+            jy = todayJ.jy; jm = todayJ.jm; jd = todayJ.jd;
+        }
+
+        const yearOptions = [todayJ.jy, todayJ.jy + 1].map(function (y) {
+            return '<option value="' + y + '"' + (y === jy ? ' selected' : '') + '>' + y.toLocaleString('fa-IR') + '</option>';
+        }).join('');
+
+        const monthOptions = JALALI_MONTHS.map(function (name, i) {
+            const m = i + 1;
+            return '<option value="' + m + '"' + (m === jm ? ' selected' : '') + '>' + name + '</option>';
+        }).join('');
+
+        const maxDay = jalaliMonthLength(jy, jm);
+        const dayOptions = [];
+        for (let d = 1; d <= maxDay; d++) {
+            dayOptions.push('<option value="' + d + '"' + (d === jd ? ' selected' : '') + '>' + d.toLocaleString('fa-IR') + '</option>');
+        }
+
         stepBody.innerHTML = `
             <div class="tour-departure-fields">
                 <label class="tour-field">
-                    <span class="tour-field-label">تاریخ حرکت</span>
-                    <input type="date" id="tourDepartureDate" class="tour-date-input" min="${iso}" value="${savedDate}">
+                    <span class="tour-field-label">تاریخ حرکت (شمسی)</span>
+                    <div class="tour-jalali-date">
+                        <select id="tourJy" class="tour-date-input tour-date-select" aria-label="سال">${yearOptions}</select>
+                        <select id="tourJm" class="tour-date-input tour-date-select" aria-label="ماه">${monthOptions}</select>
+                        <select id="tourJd" class="tour-date-input tour-date-select" aria-label="روز">${dayOptions.join('')}</select>
+                    </div>
                 </label>
                 <label class="tour-field">
                     <span class="tour-field-label">ساعت حرکت (تقریبی)</span>
@@ -238,13 +375,33 @@
             </div>
             <p class="tour-departure-hint">اگر حرکت بین ۱ تا ۱۰ روز آینده باشد، پیش‌بینی آب‌وهوا برای تمام روزهای برنامه (از روز حرکت) به گزارش اضافه می‌شود.</p>`;
 
-        document.getElementById('tourDepartureDate')?.addEventListener('change', function (e) {
-            answers.departureDate = e.target.value;
-        });
+        function syncFromJalali() {
+            const y = Number(document.getElementById('tourJy').value);
+            const m = Number(document.getElementById('tourJm').value);
+            const dayEl = document.getElementById('tourJd');
+            const prevDay = Number(dayEl.value) || 1;
+            const maxD = jalaliMonthLength(y, m);
+            dayEl.innerHTML = '';
+            for (let d = 1; d <= maxD; d++) {
+                const opt = document.createElement('option');
+                opt.value = d;
+                opt.textContent = d.toLocaleString('fa-IR');
+                if (d === Math.min(prevDay, maxD)) opt.selected = true;
+                dayEl.appendChild(opt);
+            }
+            const jd = Number(dayEl.value);
+            answers.departureDate = jalaliToIso(y, m, jd);
+            answers.departureJalali = { jy: y, jm: m, jd: jd };
+        }
+
+        document.getElementById('tourJy')?.addEventListener('change', syncFromJalali);
+        document.getElementById('tourJm')?.addEventListener('change', syncFromJalali);
+        document.getElementById('tourJd')?.addEventListener('change', syncFromJalali);
         document.getElementById('tourDepartureTime')?.addEventListener('change', function (e) {
             answers.departureTime = e.target.value;
         });
-        answers.departureDate = savedDate;
+
+        syncFromJalali();
         answers.departureTime = savedTime;
     }
 
@@ -264,11 +421,15 @@
     function nextStep() {
         const step = STEPS[stepIndex];
         if (step.id === 'departure') {
-            const dateEl = document.getElementById('tourDepartureDate');
             const timeEl = document.getElementById('tourDepartureTime');
-            answers.departureDate = dateEl?.value || answers.departureDate;
             answers.departureTime = timeEl?.value || answers.departureTime;
-            if (!answers.departureDate) {
+            const jyEl = document.getElementById('tourJy');
+            const jmEl = document.getElementById('tourJm');
+            const jdEl = document.getElementById('tourJd');
+            if (jyEl && jmEl && jdEl) {
+                answers.departureDate = jalaliToIso(Number(jyEl.value), Number(jmEl.value), Number(jdEl.value));
+            }
+            if (!answers.departureDate || answers.departureDate < todayIso()) {
                 shake(stepBody);
                 return;
             }
@@ -317,9 +478,7 @@
 
     function formatDepartureLabel() {
         if (!answers.departureDate) return '—';
-        const parts = answers.departureDate.split('-').map(Number);
-        const d = new Date(parts[0], parts[1] - 1, parts[2]);
-        const dateFa = d.toLocaleDateString('fa-IR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        var dateFa = formatJalaliLong(answers.departureDate);
         if (answers.departureTime) {
             const [h, m] = answers.departureTime.split(':');
             return dateFa + ' — ساعت ' + Number(h).toLocaleString('fa-IR') + ':' + (m || '00');
@@ -468,7 +627,7 @@
         const groupFa = { solo: 'تک‌نفره', '2-4': '۲ تا ۴ نفر', '5+': '۵+ نفر' }[answers.group];
         const daysFa = { '1': '۱ روز', '2': '۲ تا ۳ روز', '4': '۴+ روز' }[answers.days];
         const dayPlan = buildDayPlan(peak, answers.days);
-        const today = new Date().toLocaleDateString('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' });
+        const today = formatJalaliLong(todayIso());
         const levelOk = LEVEL_RANK[levelFa] >= LEVEL_RANK[peak.minLevel];
         const startCities = formatStartCities(peak);
 
@@ -545,9 +704,7 @@
             : '';
 
         const rows = forecasts.map(function (f) {
-            const parts = f.date.split('-').map(Number);
-            const d = new Date(parts[0], parts[1] - 1, parts[2]);
-            const dateFa = d.toLocaleDateString('fa-IR', { weekday: 'long', month: 'long', day: 'numeric' });
+            const dateFa = formatJalaliLong(f.date);
             const rainText = f.rain > 0
                 ? f.rain.toLocaleString('fa-IR') + ' میلی‌متر'
                 : '—';

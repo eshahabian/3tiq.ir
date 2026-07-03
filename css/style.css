@@ -2469,6 +2469,17 @@ body.dark-mode .tour-result-scroll {
     color: var(--text-dark);
 }
 
+.tour-jalali-date {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.85fr;
+    gap: 0.5rem;
+}
+
+.tour-date-select {
+    cursor: pointer;
+    appearance: auto;
+}
+
 .tour-date-input:focus {
     outline: none;
     border-color: var(--primary-color);
