@@ -1,0 +1,202 @@
+/* ===== Bilingual layout: RTL (fa) / LTR (en) ===== */
+
+.header-container--peak {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-actions--compact {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+html[dir="rtl"] .header-actions--compact {
+    flex-direction: row-reverse;
+}
+
+html[dir="ltr"] body {
+    font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Header & nav */
+html[dir="ltr"] .header-content {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .nav-menu ul {
+    text-align: left;
+}
+
+html[dir="ltr"] .has-dropdown > .dropdown {
+    left: 0;
+    right: auto;
+}
+
+html[dir="ltr"] .has-dropdown-sub > .dropdown-sub {
+    left: 100%;
+    right: auto;
+}
+
+html[dir="ltr"] .header-actions {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .header-actions--compact {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+html[dir="ltr"] .header-container--peak {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Dropdown chevrons flip in EN */
+html[dir="ltr"] .has-dropdown-sub > a::after,
+html[dir="ltr"] .nav-menu a[aria-haspopup="true"]:not(.has-dropdown-sub > a)::after {
+    transform: scaleX(-1);
+}
+
+/* Hero & sections */
+html[dir="ltr"] .hero-map-content,
+html[dir="ltr"] .hero-stats,
+html[dir="ltr"] .hero-actions,
+html[dir="ltr"] .section-title,
+html[dir="ltr"] .section-subtitle,
+html[dir="ltr"] .service-card,
+html[dir="ltr"] .about-text,
+html[dir="ltr"] .blog-hero,
+html[dir="ltr"] .ph-hero-inner {
+    text-align: left;
+}
+
+html[dir="ltr"] .hero-map-content .hero-title {
+    text-align: center;
+}
+
+html[dir="ltr"] .service-route-preview-head,
+html[dir="ltr"] .service-card--route-preview .service-title,
+html[dir="ltr"] .service-card--route-preview .service-description {
+    text-align: left;
+}
+
+html[dir="ltr"] .service-route-picker {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+html[dir="ltr"] .service-features li {
+    padding-left: 1.25rem;
+    padding-right: 0;
+}
+
+html[dir="ltr"] .service-features li::before {
+    left: 0;
+    right: auto;
+}
+
+/* Tour modal */
+html[dir="ltr"] .tour-modal-panel,
+html[dir="ltr"] .tour-step-question,
+html[dir="ltr"] .tour-option,
+html[dir="ltr"] .tour-plan-pdf,
+html[dir="ltr"] .tour-result-actions {
+    text-align: left;
+}
+
+html[dir="ltr"] .tour-modal-header {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .tour-wizard-actions {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .tour-progress-steps {
+    direction: ltr;
+}
+
+/* Peak pages */
+html[dir="ltr"] .hero-content,
+html[dir="ltr"] .hero-breadcrumb,
+html[dir="ltr"] .section-card,
+html[dir="ltr"] .route-header,
+html[dir="ltr"] .route-body,
+html[dir="ltr"] .tip-item,
+html[dir="ltr"] .sidebar-card {
+    text-align: left;
+}
+
+html[dir="ltr"] .stat-item {
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    border-right: none;
+}
+
+html[dir="ltr"] .stat-item:first-child {
+    border-left: none;
+}
+
+html[dir="ltr"] .route-desc {
+    border-right: none;
+    border-left: 3px solid var(--primary-color, #D4A574);
+}
+
+html[dir="ltr"] .nearby-card::before {
+    right: auto;
+    left: 0;
+}
+
+html[dir="ltr"] .section-header {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .lightbox-close {
+    left: auto;
+    right: 1.5rem;
+}
+
+/* Panahgah */
+html[dir="ltr"] .ph-legend-inner,
+html[dir="ltr"] .ph-filterbar-inner,
+html[dir="ltr"] .ph-card,
+html[dir="ltr"] .ph-card-body {
+    text-align: left;
+}
+
+html[dir="ltr"] .ph-hero-inner {
+    text-align: center;
+}
+
+/* Blog */
+html[dir="ltr"] .blog-card-body,
+html[dir="ltr"] .blog-card-footer {
+    text-align: left;
+}
+
+/* Footer */
+html[dir="ltr"] .footer-section {
+    text-align: left;
+}
+
+html[dir="ltr"] .social-links {
+    justify-content: flex-start;
+}
+
+/* Gallery arrows swap in LTR */
+html[dir="ltr"] .gallery-prev {
+    left: 0.75rem;
+    right: auto;
+}
+
+html[dir="ltr"] .gallery-next {
+    right: 0.75rem;
+    left: auto;
+}
+
+/* RTL arrow glyphs in EN links — use logical content via i18n strings */

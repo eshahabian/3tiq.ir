@@ -43,6 +43,7 @@
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <!-- fallback: اگر CDN ایرانی هم لود نشد، از فونت سیستم استفاده می‌شه (تنظیم شده در CSS) -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/i18n.css">
     <link rel="stylesheet" href="css/route-map.css">
     <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css"/>
 
@@ -135,7 +136,7 @@
                         <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>
                     </div>
 
-                    <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                    <button class="theme-toggle" id="themeToggle" data-i18n-attr="aria-label:nav.theme" aria-label="تغییر تم">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="5"></circle>
                             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -152,7 +153,7 @@
                         </svg>
                     </button>
 
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="منو">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" data-i18n-attr="aria-label:nav.menu" aria-label="منو">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -327,28 +328,28 @@
 
                 <div class="footer-section">
                     <h3>سه تیغ</h3>
-                    <p>بهترین راهنمای کوهنوردی ایران</p>
+                    <p data-i18n="footer.tagline">بهترین راهنمای کوهنوردی ایران</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4>لینک‌های مفید</h4>
+                    <h4 data-i18n="footer.links">لینک‌های مفید</h4>
                     <ul>
-                        <li><a href="#home">صفحه اصلی</a></li>
-                        <li><a href="#peaks">قله‌ها</a></li>
-                        <li><a href="#routes">مسیرها</a></li>
-                        <li><a href="#contact">تماس با ما</a></li>
+                        <li><a href="#home" data-i18n="nav.home">صفحه اصلی</a></li>
+                        <li><a href="#peaks" data-i18n="footer.peaks">قله‌ها</a></li>
+                        <li><a href="#routes" data-i18n="footer.routes">مسیرها</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>تماس با ما</h4>
-                    <p>تهران، خیابان ولیعصر</p>
-                    <p>تلفن: <a href="tel:+989302323969">۰۹۳۰۲۳۲۳۹۶۹</a>، <a href="tel:+989302323986">۰۹۳۰۲۳۲۳۹۸۶</a></p>
-                    <p>ایمیل: eshahabian[a]mail.ir</p>
+                    <h4 data-i18n="footer.contactTitle">تماس با ما</h4>
+                    <p data-i18n="footer.address">تهران، خیابان ولیعصر</p>
+                    <p><span data-i18n="footer.phone">تلفن:</span> <a href="tel:+989302323969">۰۹۳۰۲۳۲۳۹۶۹</a>، <a href="tel:+989302323986">۰۹۳۰۲۳۲۳۹۸۶</a></p>
+                    <p><span data-i18n="footer.email">ایمیل:</span> eshahabian[a]mail.ir</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4>ما را دنبال کنید</h4>
+                    <h4 data-i18n="footer.follow">ما را دنبال کنید</h4>
                     <div class="social-links">
 
                         <a href="https://instagram.com/se3tigh" target="_blank" rel="noopener" aria-label="اینستاگرام" class="social-link social-instagram">

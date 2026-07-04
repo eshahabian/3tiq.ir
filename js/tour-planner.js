@@ -32,6 +32,51 @@
 
     let STEPS = buildSteps();
 
+    function tr(key, fallback) {
+        return window.I18n ? I18n.t(key) : fallback;
+    }
+
+    function isEn() {
+        return window.I18n && I18n.isEn();
+    }
+
+    function localeNum(n) {
+        return isEn() ? String(n) : n.toLocaleString('fa-IR');
+    }
+
+    function levelOptions() {
+        return [
+            ['beginner', tr('tour.level.beginner', 'مبتدی'), tr('tour.level.beginnerDesc', 'اولین یا دومین صعود')],
+            ['intermediate', tr('tour.level.intermediate', 'متوسط'), tr('tour.level.intermediateDesc', 'چند صعود موفق داشتم')],
+            ['expert', tr('tour.level.expert', 'حرفه‌ای'), tr('tour.level.expertDesc', 'کوهنورد با تجربه')]
+        ];
+    }
+
+    function daysOptions() {
+        return [
+            ['1', tr('tour.days.1', '۱ روز'), tr('tour.days.1Desc', 'صعود روزانه')],
+            ['2', tr('tour.days.2', '۲ تا ۳ روز'), tr('tour.days.2Desc', 'یک شب در کوه')],
+            ['4', tr('tour.days.4', '۴ روز یا بیشتر'), tr('tour.days.4Desc', 'برنامه extended')]
+        ];
+    }
+
+    function groupOptions() {
+        return [
+            ['solo', tr('tour.group.solo', 'تک‌نفره'), ''],
+            ['2-4', tr('tour.group.2-4', '۲ تا ۴ نفر'), ''],
+            ['5+', tr('tour.group.5+', '۵ نفر یا بیشتر'), tr('tour.group.5+Desc', 'گروه بزرگ')]
+        ];
+    }
+
+    function seasonOptions() {
+        return [
+            ['spring', tr('tour.season.spring', 'بهار'), tr('tour.season.springDesc', 'فروردین - خرداد')],
+            ['summer', tr('tour.season.summer', 'تابستان'), tr('tour.season.summerDesc', 'تیر - شهریور')],
+            ['fall', tr('tour.season.fall', 'پاییز'), tr('tour.season.fallDesc', 'مهر - آبان')],
+            ['winter', tr('tour.season.winter', 'زمستان'), tr('tour.season.winterDesc', 'آذر - اسفند')]
+        ];
+    }
+
     let stepIndex = 0;
     const answers = {};
 
@@ -68,8 +113,10 @@
 
     document.addEventListener('3tiq:languagechange', function () {
         STEPS = buildSteps();
-        if (modal && modal.classList.contains('open') && wizardEl && !wizardEl.hidden) {
-            renderStep();
+        if (modal && modal.classList.contains('open')) {
+            if (wizardEl && !wizardEl.hidden) {
+                renderStep();
+            }
         }
         var pdfBtn = document.getElementById('tourBtnPdf');
         if (pdfBtn && window.I18n) pdfBtn.textContent = I18n.t('tour.pdf');
@@ -245,7 +292,7 @@
 
     function renderPeakStep() {
         if (!peaksReady) {
-            stepBody.innerHTML = '<p class="tour-loading-peaks">در حال بارگذاری لیست قله‌ها…</p>';
+            stepBody.innerHTML = '<p class="tour-loading-peaks">' + tr('tour.loadingPeaks', 'در حال بارگذاری لیست قله‌ها…') + '</p>';
             const wait = setInterval(function () {
                 if (peaksReady) {
                     clearInterval(wait);
@@ -256,15 +303,15 @@
         }
 
         stepBody.innerHTML = `
-            <input type="search" id="tourPeakSearch" class="tour-peak-search" placeholder="جستجوی نام قله (${PEAKS.length} قله)…" autocomplete="off">
+            <input type="search" id="tourPeakSearch" class="tour-peak-search" placeholder="${tr('tour.searchPeak', 'جستجوی قله…')} (${localeNum(PEAKS.length)})" autocomplete="off">
             <div class="tour-options tour-options--grid tour-options--scroll" id="tourPeakList">
                 <button type="button" class="tour-opt${answers.peak === 'suggest' ? ' selected' : ''}" data-val="suggest"${answers.peak === 'suggest' ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
                     <span class="tour-opt-icon">✨</span>
-                    <span class="tour-opt-label">پیشنهاد بدید</span>
+                    <span class="tour-opt-label">${tr('tour.suggest', 'پیشنهاد بدید')}</span>
                 </button>
                 ${peakButtonsHtml('')}
             </div>
-            <p class="tour-peak-count" id="tourPeakCount">${PEAKS.length} قله</p>`;
+            <p class="tour-peak-count" id="tourPeakCount">${tr('tour.peakCount', '{n} قله').replace('{n}', localeNum(PEAKS.length))}</p>`;
 
         const search = document.getElementById('tourPeakSearch');
         const list = document.getElementById('tourPeakList');
@@ -277,11 +324,14 @@
             list.innerHTML = `
                 <button type="button" class="tour-opt${answers.peak === 'suggest' ? ' selected' : ''}" data-val="suggest"${answers.peak === 'suggest' ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
                     <span class="tour-opt-icon">✨</span>
-                    <span class="tour-opt-label">پیشنهاد بدید</span>
+                    <span class="tour-opt-label">${tr('tour.suggest', 'پیشنهاد بدید')}</span>
                 </button>
                 ${peakButtonsHtml(search.value)}`;
             if (count) {
-                count.textContent = filtered.length + ' قله' + (search.value.trim() ? ' یافت شد' : '');
+                const n = localeNum(filtered.length);
+                count.textContent = search.value.trim()
+                    ? tr('tour.peakFound', '{n} قله یافت شد').replace('{n}', n)
+                    : tr('tour.peakCount', '{n} قله').replace('{n}', n);
             }
             bindPeakOptions();
         });
@@ -314,42 +364,28 @@
 
     function renderStep() {
         const step = STEPS[stepIndex];
-        stepTitle.textContent = `مرحله ${stepIndex + 1} از ${STEPS.length} — ${step.title}`;
+        stepTitle.textContent = tr('tour.stepOf', 'مرحله {n} از {total} — {title}')
+            .replace('{n}', localeNum(stepIndex + 1))
+            .replace('{total}', localeNum(STEPS.length))
+            .replace('{title}', step.title);
         stepQuestion.textContent = step.question;
         progressBar.style.width = ((stepIndex + 1) / STEPS.length * 100) + '%';
         btnBack.hidden = stepIndex === 0;
         btnNext.textContent = stepIndex === STEPS.length - 1
-            ? (window.I18n ? I18n.t('tour.build') : 'ساخت برنامه')
-            : (window.I18n ? I18n.t('tour.next') : 'بعدی');
+            ? tr('tour.build', 'ساخت برنامه')
+            : tr('tour.next', 'بعدی');
 
         if (step.id === 'peak') {
             renderPeakStep();
             return;
         } else if (step.id === 'level') {
-            stepBody.innerHTML = optionButtons('level', [
-                ['beginner', 'مبتدی', 'اولین یا دومین صعود'],
-                ['intermediate', 'متوسط', 'چند صعود موفق داشتم'],
-                ['expert', 'حرفه‌ای', 'کوهنورد با تجربه']
-            ]);
+            stepBody.innerHTML = optionButtons('level', levelOptions());
         } else if (step.id === 'days') {
-            stepBody.innerHTML = optionButtons('days', [
-                ['1', '۱ روز', 'صعود روزانه'],
-                ['2', '۲ تا ۳ روز', 'یک شب در کوه'],
-                ['4', '۴ روز یا بیشتر', 'برنامه extended']
-            ]);
+            stepBody.innerHTML = optionButtons('days', daysOptions());
         } else if (step.id === 'group') {
-            stepBody.innerHTML = optionButtons('group', [
-                ['solo', 'تک‌نفره', ''],
-                ['2-4', '۲ تا ۴ نفر', ''],
-                ['5+', '۵ نفر یا بیشتر', 'گروه بزرگ']
-            ]);
+            stepBody.innerHTML = optionButtons('group', groupOptions());
         } else if (step.id === 'season') {
-            stepBody.innerHTML = optionButtons('season', [
-                ['spring', 'بهار', 'فروردین - خرداد'],
-                ['summer', 'تابستان', 'تیر - شهریور'],
-                ['fall', 'پاییز', 'مهر - آبان'],
-                ['winter', 'زمستان', 'آذر - اسفند']
-            ]);
+            stepBody.innerHTML = optionButtons('season', seasonOptions());
         } else if (step.id === 'departure') {
             renderDepartureStep();
             return;
@@ -369,6 +405,11 @@
     }
 
     function renderDepartureStep() {
+        if (isEn()) {
+            renderDepartureStepEn();
+            return;
+        }
+
         const savedTime = answers.departureTime || '05:00';
         const savedParts = savedTime.split(':');
         let savedH = Number(savedParts[0]);
@@ -412,7 +453,7 @@
         stepBody.innerHTML = `
             <div class="tour-departure-fields">
                 <label class="tour-field">
-                    <span class="tour-field-label">تاریخ حرکت (شمسی)</span>
+                    <span class="tour-field-label">${tr('tour.departure.date', 'تاریخ حرکت (شمسی)')}</span>
                     <div class="tour-jalali-date">
                         <select id="tourJy" class="tour-date-input tour-date-select" aria-label="سال">${yearOptions}</select>
                         <select id="tourJm" class="tour-date-input tour-date-select" aria-label="ماه">${monthOptions}</select>
@@ -420,7 +461,7 @@
                     </div>
                 </label>
                 <label class="tour-field">
-                    <span class="tour-field-label">ساعت حرکت (تقریبی)</span>
+                    <span class="tour-field-label">${tr('tour.departure.time', 'ساعت حرکت')}</span>
                     <div class="tour-jalali-time">
                         <select id="tourHour" class="tour-date-input tour-date-select" aria-label="ساعت">${hourOptions}</select>
                         <span class="tour-time-sep" aria-hidden="true">:</span>
@@ -465,6 +506,58 @@
         syncTime();
     }
 
+    function renderDepartureStepEn() {
+        const savedTime = answers.departureTime || '05:00';
+        const savedParts = savedTime.split(':');
+        let savedH = Number(savedParts[0]);
+        let savedM = Math.round(Number(savedParts[1] || 0) / 5) * 5;
+        if (savedM === 60) savedM = 55;
+
+        const dateVal = answers.departureDate || todayIso();
+
+        let hourOptions = '';
+        for (let h = 0; h < 24; h++) {
+            hourOptions += '<option value="' + h + '"' + (h === savedH ? ' selected' : '') + '>' + h + '</option>';
+        }
+        let minuteOptions = '';
+        for (let m = 0; m < 60; m += 5) {
+            minuteOptions += '<option value="' + m + '"' + (m === savedM ? ' selected' : '') + '>' + String(m).padStart(2, '0') + '</option>';
+        }
+
+        stepBody.innerHTML = `
+            <div class="tour-departure-fields">
+                <label class="tour-field">
+                    <span class="tour-field-label">${tr('tour.departure.date', 'Departure date')}</span>
+                    <input type="date" id="tourGregDate" class="tour-date-input" value="${dateVal}">
+                </label>
+                <label class="tour-field">
+                    <span class="tour-field-label">${tr('tour.departure.time', 'Departure time')}</span>
+                    <div class="tour-jalali-time">
+                        <select id="tourHour" class="tour-date-input tour-date-select" aria-label="Hour">${hourOptions}</select>
+                        <span class="tour-time-sep" aria-hidden="true">:</span>
+                        <select id="tourMinute" class="tour-date-input tour-date-select" aria-label="Minute">${minuteOptions}</select>
+                    </div>
+                </label>
+            </div>
+            <p class="tour-departure-hint">Weather forecast is added when departure is within the next 1–10 days.</p>`;
+
+        function syncTime() {
+            answers.departureTime = buildTimeString(
+                Number(document.getElementById('tourHour').value),
+                Number(document.getElementById('tourMinute').value)
+            );
+        }
+
+        document.getElementById('tourGregDate')?.addEventListener('change', function () {
+            answers.departureDate = document.getElementById('tourGregDate').value;
+        });
+        document.getElementById('tourHour')?.addEventListener('change', syncTime);
+        document.getElementById('tourMinute')?.addEventListener('change', syncTime);
+
+        answers.departureDate = dateVal;
+        syncTime();
+    }
+
     function optionButtons(key, items) {
         return `<div class="tour-options">${items.map(([val, label, sub]) => `
             <button type="button" class="tour-opt${answers[key] === val ? ' selected' : ''}" data-val="${val}"${answers[key] === val ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
@@ -486,11 +579,16 @@
             if (hourEl && minuteEl) {
                 answers.departureTime = buildTimeString(Number(hourEl.value), Number(minuteEl.value));
             }
-            const jyEl = document.getElementById('tourJy');
-            const jmEl = document.getElementById('tourJm');
-            const jdEl = document.getElementById('tourJd');
-            if (jyEl && jmEl && jdEl) {
-                answers.departureDate = jalaliToIso(Number(jyEl.value), Number(jmEl.value), Number(jdEl.value));
+            const gregEl = document.getElementById('tourGregDate');
+            if (gregEl) {
+                answers.departureDate = gregEl.value;
+            } else {
+                const jyEl = document.getElementById('tourJy');
+                const jmEl = document.getElementById('tourJm');
+                const jdEl = document.getElementById('tourJd');
+                if (jyEl && jmEl && jdEl) {
+                    answers.departureDate = jalaliToIso(Number(jyEl.value), Number(jmEl.value), Number(jdEl.value));
+                }
             }
             if (!answers.departureDate || answers.departureDate < todayIso()) {
                 shake(stepBody);

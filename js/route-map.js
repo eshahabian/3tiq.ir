@@ -789,4 +789,33 @@
     } else {
         mountAll();
     }
+
+    /* Peak pages: load i18n + bilingual chrome */
+    if (document.querySelector('.mtn-hero') && document.querySelector('.header-back')) {
+        (function () {
+            var base = '../';
+            if (!document.querySelector('link[href*="i18n.css"]')) {
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = base + 'css/i18n.css';
+                document.head.appendChild(link);
+            }
+            function loadPeakChrome() {
+                if (document.querySelector('script[src*="peak-chrome.js"]')) return;
+                var s = document.createElement('script');
+                s.src = base + 'js/peak-chrome.js';
+                s.defer = true;
+                document.body.appendChild(s);
+            }
+            if (window.I18n) {
+                loadPeakChrome();
+            } else {
+                var i18n = document.createElement('script');
+                i18n.src = base + 'js/i18n.js';
+                i18n.defer = true;
+                i18n.onload = loadPeakChrome;
+                document.body.appendChild(i18n);
+            }
+        })();
+    }
 })(window);

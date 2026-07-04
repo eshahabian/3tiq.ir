@@ -15,6 +15,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/i18n.css">
     <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css">
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
     <style>
@@ -366,9 +367,9 @@
                 </div>
                 <nav class="nav-menu" id="navMenu">
                     <ul>
-                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">صفحه اصلی</a></li>
                         <li class="has-dropdown">
-                            <a href="#">رشته‌کوه‌های ایران</a>
+                            <a href="#" data-i18n="nav.ranges">رشته‌کوه‌های ایران</a>
                             <ul class="dropdown">
                                 <li class="has-dropdown-sub">
                                     <a href="#">البرز ◂</a>
@@ -390,14 +391,18 @@
                                 <li><a href="koohaye-atashfeshani.html">کوه‌های آتشفشانی و منفرد</a></li>
                             </ul>
                         </li>
-                        <li><a href="panahgah.html" class="active">پناهگاه‌ها</a></li>
-                        <li><a href="blog.html">وبلاگ</a></li>
-                        <li><a href="index.html#contact">تماس با ما</a></li>
+                        <li><a href="panahgah.html" class="active" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
+                        <li><a href="index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </nav>
                 <div class="nav-overlay" id="navOverlay"></div>
                 <div class="header-actions">
-                    <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                    <div class="lang-switch" id="langSwitch" role="group" aria-label="Language">
+                        <button type="button" class="lang-switch-btn active" data-lang="fa" aria-pressed="true">فا</button>
+                        <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" data-i18n-attr="aria-label:nav.theme" aria-label="تغییر تم">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                         <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                     </button>
@@ -413,14 +418,14 @@
     <section class="ph-reveal">
         <div class="ph-reveal-grid" id="revealGrid"></div>
         <div class="ph-hero-inner">
-            <span class="ph-eyebrow">🏔️ دفترچهٔ ثبت کوهستان</span>
-            <h1>پناهگاه‌ها، جان‌پناه‌ها و کلبه‌های کوهستانی</h1>
-            <p>فهرستی کامل از نقاط اقامت و اضطراری در مسیرهای کوهنوردی ایران — همراه با مختصات دقیق و نزدیک‌ترین قله به هر یک، برای برنامه‌ریزی بهتر صعود.</p>
+            <span class="ph-eyebrow" data-i18n="ph.eyebrow">🏔️ دفترچهٔ ثبت کوهستان</span>
+            <h1 data-i18n="ph.title">پناهگاه‌ها، جان‌پناه‌ها و کلبه‌های کوهستانی</h1>
+            <p data-i18n="ph.subtitle">فهرستی کامل از نقاط اقامت و اضطراری در مسیرهای کوهنوردی ایران — همراه با مختصات دقیق و نزدیک‌ترین قله به هر یک، برای برنامه‌ریزی بهتر صعود.</p>
             <div class="ph-stats">
-                <div class="ph-stat"><span class="ph-stat-num" id="statTotal">۵۰</span><span class="ph-stat-label">نقطهٔ ثبت‌شده</span></div>
-                <div class="ph-stat"><span class="ph-stat-num" id="statRefuge">۳۴</span><span class="ph-stat-label">پناهگاه</span></div>
-                <div class="ph-stat"><span class="ph-stat-num" id="statBivouac">۱۰</span><span class="ph-stat-label">جان‌پناه</span></div>
-                <div class="ph-stat"><span class="ph-stat-num" id="statProvince">۱۶</span><span class="ph-stat-label">استان</span></div>
+                <div class="ph-stat"><span class="ph-stat-num" id="statTotal">۵۰</span><span class="ph-stat-label" data-i18n="ph.statTotal">نقطهٔ ثبت‌شده</span></div>
+                <div class="ph-stat"><span class="ph-stat-num" id="statRefuge">۳۴</span><span class="ph-stat-label" data-i18n="ph.statRefuge">پناهگاه</span></div>
+                <div class="ph-stat"><span class="ph-stat-num" id="statBivouac">۱۰</span><span class="ph-stat-label" data-i18n="ph.statBivouac">جان‌پناه</span></div>
+                <div class="ph-stat"><span class="ph-stat-num" id="statProvince">۱۶</span><span class="ph-stat-label" data-i18n="ph.statProvince">استان</span></div>
             </div>
         </div>
     </section>
@@ -769,5 +774,6 @@
         grid.innerHTML = filtered.map((s, i) => buildShelterCard(s, i)).join('');
     }
     </script>
+    <script src="js/i18n.js" defer></script>
 </body>
 </html>
