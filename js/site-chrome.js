@@ -109,7 +109,9 @@
             backTop.setAttribute('data-i18n-attr', 'aria-label:common.backToTop');
         }
 
-        if (global.SiteConfig && global.SiteConfig.applyFooter) {
+        if (global.FooterSnippet) {
+            global.FooterSnippet.apply();
+        } else if (global.SiteConfig && global.SiteConfig.applyFooter) {
             global.SiteConfig.applyFooter();
         }
     }
@@ -240,7 +242,8 @@
             applyBrandLogo();
             if (window.ContentEn) ContentEn.loadSheltersEn();
             if (window.I18n) I18n.refreshDom();
-            if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
+            if (global.FooterSnippet) global.FooterSnippet.apply();
+            else if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
         });
     }
 
@@ -255,9 +258,11 @@
         updateDocumentTitle();
         applyShelterTabLabels();
         applyBrandLogo();
-        if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
+        if (global.FooterSnippet) global.FooterSnippet.apply();
+        else if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
         if (window.I18n) I18n.refreshDom();
-        if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
+        if (global.FooterSnippet) global.FooterSnippet.apply();
+        else if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
     });
 
     global.SiteChromePageFile = pageFile;

@@ -46,6 +46,7 @@
     loadJs(base + 'js/i18n.js', function () {
         loadJs(base + 'js/content-en.js', function () {
             loadJs(base + 'js/site-config.js', function () {
+            loadJs(base + 'js/footer-snippet.js', function () {
             loadJs(base + 'js/site-chrome.js', function () {
                 if (isRangePage()) {
                     loadJs(base + 'js/range-i18n.js', finish);
@@ -56,6 +57,7 @@
                 } else {
                     finish();
                 }
+            });
             });
             });
         });
