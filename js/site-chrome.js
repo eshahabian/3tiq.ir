@@ -108,6 +108,10 @@
         if (backTop && !backTop.hasAttribute('data-i18n-attr')) {
             backTop.setAttribute('data-i18n-attr', 'aria-label:common.backToTop');
         }
+
+        if (global.SiteConfig && global.SiteConfig.applyFooter) {
+            global.SiteConfig.applyFooter();
+        }
     }
 
     function applyHomeHero() {
@@ -236,6 +240,7 @@
             applyBrandLogo();
             if (window.ContentEn) ContentEn.loadSheltersEn();
             if (window.I18n) I18n.refreshDom();
+            if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
         });
     }
 
@@ -250,7 +255,9 @@
         updateDocumentTitle();
         applyShelterTabLabels();
         applyBrandLogo();
+        if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
         if (window.I18n) I18n.refreshDom();
+        if (global.SiteConfig && global.SiteConfig.applyFooter) global.SiteConfig.applyFooter();
     });
 
     global.SiteChromePageFile = pageFile;

@@ -99,8 +99,9 @@
             '<p><span data-i18n="footer.email">ایمیل:</span> eshahabian[a]mail.ir</p></div>' +
             '<div class="footer-section"><h4 data-i18n="footer.follow">ما را دنبال کنید</h4>' +
             '<div class="social-links">' +
-            '<a href="https://instagram.com/se3tigh" target="_blank" rel="noopener" class="social-link"><span data-i18n="footer.instagram">اینستاگرام</span></a>' +
-            '<a href="https://t.me/se3tigh" target="_blank" rel="noopener" class="social-link"><span data-i18n="footer.telegram">تلگرام</span></a>' +
+            '<a href="https://instagram.com/3tiq.ir" target="_blank" rel="noopener" aria-label="@3tiq.ir" class="social-link social-instagram"><span data-i18n="footer.instagram">@3tiq.ir</span></a>' +
+            '<a href="https://t.me/+989302323969" target="_blank" rel="noopener" class="social-link social-telegram"><span data-i18n="footer.telegram">تلگرام</span></a>' +
+            '<a href="https://wa.me/989302323969" target="_blank" rel="noopener" class="social-link social-whatsapp"><span data-i18n="footer.whatsapp">واتساپ</span></a>' +
             '</div></div></div>' +
             '<div class="footer-bottom"><p data-i18n="footer.copyright">&copy; ۱۴۰۵ سه تیغ. تمامی حقوق محفوظ است.</p></div></div>';
         document.body.appendChild(footer);

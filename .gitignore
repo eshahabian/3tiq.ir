@@ -1,1 +1,2 @@
-data/reminder-secrets.json
+.env
+node_modules/
