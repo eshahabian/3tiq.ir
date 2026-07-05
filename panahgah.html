@@ -453,7 +453,7 @@
         <div class="ph-filterbar-inner">
             <div class="ph-search-wrap">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" id="phSearch" placeholder="جستجوی نام پناهگاه...">
+                <input type="text" id="phSearch" data-i18n-placeholder="ph.search" placeholder="جستجوی نام پناهگاه...">
             </div>
             <select class="ph-select" id="phRegion">
                 <option value="all">همهٔ رشته‌کوه‌ها</option>
@@ -622,7 +622,15 @@
     // ===== داده‌ها =====
 
     function toFa(n) {
-        return n.toLocaleString('fa-IR');
+        return (window.I18n && I18n.isEn()) ? String(n) : n.toLocaleString('fa-IR');
+    }
+
+    function trPh(k, fb) {
+        return window.I18n ? I18n.t(k) : fb;
+    }
+
+    function isPhEn() {
+        return window.I18n && I18n.isEn();
     }
 
     // فاصلهٔ هاورساین (کیلومتر)
@@ -711,17 +719,23 @@
 
     function buildShelterCard(s, i) {
         const regionLabel = s.region || '';
-        const imgHTML = '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + (regionLabel || s.province) + '</span></div>';
-        const cap = s.capacity ? toFa(s.capacity) + ' نفر' : '—';
-        const elec = s.electricity ? { v: 'دارد', c: 'yes', i: '⚡' } : { v: 'ندارد', c: 'no', i: '🔌' };
-        const water = s.water ? { v: 'دارد', c: 'yes', i: '💧' } : { v: 'ندارد', c: 'no', i: '🚫' };
-        const alt = s.altitude ? toFa(s.altitude) + ' م' : '';
+        const regionDisplay = (isPhEn() && window.ContentEn && s.region)
+            ? ContentEn.regionLabel(s.region) : (regionLabel || s.province);
+        const imgHTML = '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + regionDisplay + '</span></div>';
+        const cap = s.capacity ? toFa(s.capacity) + ' ' + trPh('ph.card.capacity', 'نفر') : '—';
+        const elec = s.electricity
+            ? { v: trPh('ph.yes', 'دارد'), c: 'yes', i: '⚡' }
+            : { v: trPh('ph.no', 'ندارد'), c: 'no', i: '🔌' };
+        const water = s.water
+            ? { v: trPh('ph.yes', 'دارد'), c: 'yes', i: '💧' }
+            : { v: trPh('ph.no', 'ندارد'), c: 'no', i: '🚫' };
+        const alt = s.altitude ? toFa(s.altitude) + ' ' + trPh('peaks.meters', 'م') : '';
         const regionLine = [s.region, s.province].filter(Boolean).join(' · ');
         const peakBlock = s._nearestPeak
-            ? '<div class="sh-card-extra"><span>⛰ نزدیک‌ترین قله:</span> <b>' + s._nearestPeak.name + '</b> · ' + toFa(s._nearestDist.toLocaleString('fa-IR', { maximumFractionDigits: 1 })) + ' کیلومتر</div>'
+            ? '<div class="sh-card-extra"><span>⛰ ' + trPh('ph.card.nearestPeak', 'نزدیک‌ترین قله:') + '</span> <b>' + s._nearestPeak.name + '</b> · ' + toFa(s._nearestDist.toLocaleString(isPhEn() ? 'en-US' : 'fa-IR', { maximumFractionDigits: 1 })) + (isPhEn() ? ' km' : ' کیلومتر') + '</div>'
             : '';
         const historyBlock = s.history
-            ? '<div class="sh-history"><span class="sh-history-label">📜 تاریخچه</span>' + s.history + '</div>'
+            ? '<div class="sh-history"><span class="sh-history-label">📜 ' + trPh('ph.card.history', 'تاریخچه') + '</span>' + s.history + '</div>'
             : '';
         const safeName = s.name.replace(/"/g, '&quot;');
 
@@ -737,12 +751,12 @@
             historyBlock +
             '<div class="sh-divider"></div><div class="sh-stats">' +
             '<div class="sh-stat"><span class="sh-stat-icon">👥</span><span class="sh-stat-value">' + cap + '</span><span class="sh-stat-label">ظرفیت</span></div>' +
-            '<div class="sh-stat ' + elec.c + '"><span class="sh-stat-icon">' + elec.i + '</span><span class="sh-stat-value">' + elec.v + '</span><span class="sh-stat-label">برق</span></div>' +
-            '<div class="sh-stat ' + water.c + '"><span class="sh-stat-icon">' + water.i + '</span><span class="sh-stat-value">' + water.v + '</span><span class="sh-stat-label">آب</span></div>' +
+            '<div class="sh-stat ' + elec.c + '"><span class="sh-stat-icon">' + elec.i + '</span><span class="sh-stat-value">' + elec.v + '</span><span class="sh-stat-label">' + trPh('ph.card.electricity', 'برق') + '</span></div>' +
+            '<div class="sh-stat ' + water.c + '"><span class="sh-stat-icon">' + water.i + '</span><span class="sh-stat-value">' + water.v + '</span><span class="sh-stat-label">' + trPh('ph.card.water', 'آب') + '</span></div>' +
             '</div>' +
             peakBlock +
             '<div class="sh-card-foot">' +
-            '<button type="button" class="ph-map-link sh-map-btn" data-lat="' + s.lat + '" data-lng="' + s.lng + '" data-name="' + safeName + '">مشاهده روی نقشه ↗</button>' +
+            '<button type="button" class="ph-map-link sh-map-btn" data-lat="' + s.lat + '" data-lng="' + s.lng + '" data-name="' + safeName + '">' + trPh('ph.card.mapBtn', 'مشاهده روی نقشه ↗') + '</button>' +
             '</div></article>';
     }
 
@@ -763,19 +777,23 @@
             return true;
         });
 
-        document.getElementById('phCount').textContent = `نمایش ${toFa(filtered.length)} از ${toFa(allShelters.length)} مورد`;
+        document.getElementById('phCount').textContent = isPhEn()
+            ? trPh('ph.count', 'Showing {shown} of {total}')
+                .replace('{shown}', toFa(filtered.length))
+                .replace('{total}', toFa(allShelters.length))
+            : `نمایش ${toFa(filtered.length)} از ${toFa(allShelters.length)} مورد`;
 
         const grid = document.getElementById('phGrid');
         if (filtered.length === 0) {
-            grid.innerHTML = '<div class="ph-empty">موردی با این مشخصات یافت نشد.</div>';
+            grid.innerHTML = '<div class="ph-empty">' + trPh('ph.empty', 'موردی با این مشخصات یافت نشد.') + '</div>';
             return;
         }
 
         grid.innerHTML = filtered.map((s, i) => buildShelterCard(s, i)).join('');
     }
+
+    window.phShelterRender = render;
     </script>
-    <script src="js/i18n.js" defer></script>
-    <script src="js/content-en.js" defer></script>
-    <script src="js/site-chrome.js" defer></script>
+    <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

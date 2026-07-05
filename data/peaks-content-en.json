@@ -1,0 +1,111 @@
+{
+  "damavand": {
+    "subtitle": "Iran & the Middle East's highest peak — Mazandaran / Tehran",
+    "about": "Mount Damavand at 5,610 m is Iran's highest peak, the highest in the Middle East, and one of the world's highest volcanoes. This dormant stratovolcano in Mazandaran province is a national symbol of Iran. Its sulfur crater, permanent snowfields and extraordinary summit views make every ascent unforgettable.",
+    "elevation": "5610",
+    "difficulty": "Hard",
+    "duration": "2–3 days",
+    "bestSeason": "Jul – Sep",
+    "mountainType": "Volcanic",
+    "elevationBadge": "⛰ 5,610 m",
+    "difficultyBadge": "🎯 Hard",
+    "seasonBadge": "🗓 Jul – Sep",
+    "durationBadge": "⏱ 2–3 days",
+    "description": "Iran's highest peak and a dormant volcano with a legendary sulfur crater and year-round snow.",
+    "bestSeasonShort": "Jul – Sep"
+  },
+  "alamkooh": {
+    "subtitle": "Iran's 2nd highest peak — Mazandaran",
+    "about": "Alam Kuh (4,850 m) is Iran's second highest mountain, famous for its spectacular northern granite wall — a classic destination for technical alpine climbing in the Central Alborz.",
+    "elevation": "4850",
+    "difficulty": "Very Hard",
+    "duration": "2–4 days",
+    "bestSeason": "Aug – Sep",
+    "mountainType": "Granite",
+    "description": "Iran's second highest peak with the Middle East's most famous alpine wall.",
+    "bestSeasonShort": "Aug – Sep"
+  },
+  "tochal": {
+    "subtitle": "Tehran's nearest major summit",
+    "about": "Tochal (3,933 m) is the most accessible major peak near Tehran, popular with city climbers via hiking trails or the Tochal telecabin.",
+    "elevation": "3933",
+    "difficulty": "Easy",
+    "duration": "1 day",
+    "bestSeason": "All seasons",
+    "mountainType": "Limestone",
+    "description": "Tehran's favourite day-hike peak with telecabin access and city views.",
+    "bestSeasonShort": "All seasons"
+  },
+  "takht-soleiman": {
+    "description": "Iran's third highest peak (4,643 m) on the Mazandaran–Tehran border with multiple ascent routes.",
+    "bestSeasonShort": "Jul – Aug",
+    "duration": "2–3 days",
+    "difficulty": "Hard"
+  },
+  "siah-sang": {
+    "description": "A 4,604 m summit in Central Alborz named for its dark rock faces and snowy ridges.",
+    "bestSeasonShort": "Jul – Aug",
+    "duration": "2–3 days",
+    "difficulty": "Hard"
+  },
+  "azadkooh": {
+    "description": "A prominent 4,435 m peak in Central Alborz, popular for multi-day traverses.",
+    "bestSeasonShort": "Jun – Sep",
+    "duration": "2 days",
+    "difficulty": "Hard"
+  },
+  "sabalan": {
+    "description": "Northwest Iran's iconic volcano (4,811 m) with a crater lake at the summit.",
+    "bestSeasonShort": "Jul – Aug",
+    "duration": "1–2 days",
+    "difficulty": "Moderate"
+  },
+  "dena": {
+    "description": "The 'Lady of Iranian mountains' — a long ridge with multiple summits above 4,000 m.",
+    "bestSeasonShort": "May – Jul",
+    "duration": "2 days",
+    "difficulty": "Moderate"
+  },
+  "zardkooh": {
+    "description": "Highest peak of the Zagros range (4,548 m) in the heart of Bakhtiari country.",
+    "bestSeasonShort": "May – Aug",
+    "duration": "2 days",
+    "difficulty": "Hard"
+  },
+  "hezar": {
+    "description": "Southern Iran's highest peak (4,465 m) with views over the Lut desert.",
+    "bestSeasonShort": "May – Sep",
+    "duration": "2 days",
+    "difficulty": "Hard"
+  },
+  "eshterankoh": {
+    "description": "Lorestan's 'camel-back' mountain with green meadows and waterfalls.",
+    "bestSeasonShort": "May – Aug",
+    "duration": "2 days",
+    "difficulty": "Moderate"
+  },
+  "karkas": {
+    "description": "Popular Isfahan peak with desert views on clear days.",
+    "bestSeasonShort": "Mar – May",
+    "duration": "1 day",
+    "difficulty": "Moderate"
+  },
+  "sahand": {
+    "description": "Dormant volcano in East Azerbaijan with wildflower meadows in spring.",
+    "bestSeasonShort": "Jul – Sep",
+    "duration": "1 day",
+    "difficulty": "Moderate"
+  },
+  "taftan": {
+    "description": "Iran's only semi-active volcano with sulfur steam at the crater.",
+    "bestSeasonShort": "Mar – May",
+    "duration": "2 days",
+    "difficulty": "Hard"
+  },
+  "shirkoh": {
+    "description": "Yazd's highest peak rising dramatically from the desert.",
+    "bestSeasonShort": "Mar – May",
+    "duration": "1 day",
+    "difficulty": "Moderate"
+  }
+}

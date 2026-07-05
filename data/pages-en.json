@@ -1,0 +1,90 @@
+{
+  "alborz-gharbi.html": {
+    "title": "Western Alborz",
+    "subtitle": "Peaks of Gilan, Zanjan and Ardabil",
+    "sectionTitle": "Western Alborz Peaks",
+    "sectionSubtitle": "Gilan, Zanjan and Ardabil provinces",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "alborz-markazi.html": {
+    "title": "Central Alborz",
+    "subtitle": "Peaks of Tehran, Mazandaran and Alborz province",
+    "sectionTitle": "Central Alborz Peaks",
+    "sectionSubtitle": "Tehran, Mazandaran and Alborz",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "alborz-shargi.html": {
+    "title": "Eastern Alborz",
+    "subtitle": "Peaks of Semnan and Khorasan",
+    "sectionTitle": "Eastern Alborz Peaks",
+    "sectionSubtitle": "Semnan and Khorasan provinces",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "zagros-shomal.html": {
+    "title": "Northern Zagros",
+    "subtitle": "Peaks of Kurdistan, Kermanshah and Hamedan",
+    "sectionTitle": "Northern Zagros Peaks",
+    "sectionSubtitle": "Kurdistan, Kermanshah and Hamedan",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "zagros-markazi.html": {
+    "title": "Central Zagros",
+    "subtitle": "Peaks of Lorestan, Chaharmahal and Isfahan",
+    "sectionTitle": "Central Zagros Peaks",
+    "sectionSubtitle": "Lorestan, Chaharmahal and Kohgiluyeh",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "zagros-jonoob.html": {
+    "title": "Southern Zagros",
+    "subtitle": "Peaks of Kohgiluyeh, Fars and Bushehr",
+    "sectionTitle": "Southern Zagros Peaks",
+    "sectionSubtitle": "Kohgiluyeh, Fars and Bushehr",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "koohaye-markazi.html": {
+    "title": "Central Iran Mountains",
+    "subtitle": "Desert and central plateau peaks",
+    "sectionTitle": "Central Iran Peaks",
+    "sectionSubtitle": "Desert ranges and central plateau",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "koohaye-atashfeshani.html": {
+    "title": "Volcanic & Standalone Peaks",
+    "subtitle": "Taftan, Bazman and unique volcanoes",
+    "sectionTitle": "Volcanic & Standalone Peaks",
+    "sectionSubtitle": "Standalone volcanoes across Iran",
+    "statPeaks": "Peaks listed",
+    "statHighest": "Highest peak (m)",
+    "statProvinces": "Provinces",
+    "viewPeaks": "View peaks"
+  },
+  "panahgah.html": {
+    "title": "Mountain Shelters",
+    "subtitle": "Shelters, bivouacs and mountain cabins across Iran"
+  },
+  "blog.html": {
+    "title": "Mountaineering Blog",
+    "subtitle": "Guides, safety tips, gear and climbing stories from Iran"
+  }
+}

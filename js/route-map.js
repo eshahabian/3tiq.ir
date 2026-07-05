@@ -819,23 +819,29 @@
                 sc.onload = cb;
                 document.body.appendChild(sc);
             }
-            function loadPeakChrome() {
-                if (document.querySelector('script[src*="peak-chrome.js"]')) return;
+            function loadScript(src, cb) {
+                if (document.querySelector('script[src*="' + src.split('/').pop() + '"]')) {
+                    if (cb) cb();
+                    return;
+                }
                 var s = document.createElement('script');
-                s.src = base + 'js/peak-chrome.js';
+                s.src = base + src;
                 s.defer = true;
+                s.onload = function () { if (cb) cb(); };
                 document.body.appendChild(s);
             }
             function loadContentEn(cb) {
                 if (window.ContentEn) { cb(); return; }
-                var c = document.createElement('script');
-                c.src = base + 'js/content-en.js';
-                c.defer = true;
-                c.onload = cb;
-                document.body.appendChild(c);
+                loadScript('js/content-en.js', cb);
             }
             function bootPeakI18n() {
-                loadContentEn(function () { loadSiteChrome(loadPeakChrome); });
+                loadContentEn(function () {
+                    loadSiteChrome(function () {
+                        loadScript('js/peak-chrome.js', function () {
+                            loadScript('js/peak-content.js');
+                        });
+                    });
+                });
             }
             if (window.I18n) {
                 bootPeakI18n();
