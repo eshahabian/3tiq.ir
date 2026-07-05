@@ -1,0 +1,55 @@
+{
+  "labels": {
+    "Start": "Start",
+    "Summit": "Summit",
+    "قله": "Summit",
+    "شروع مسیر": "Route start",
+    "رینه": "Rineh",
+    "گوسفندسرا": "Gosfandsara",
+    "سیمرغ": "Simorgh",
+    "بارگاه سوم": "Bargah-e Sevom",
+    "پلور": "Polur",
+    "کمپ شمالی": "North camp",
+    "درکه": "Darband",
+    "واریان": "Varian"
+  },
+  "routeNames": {
+    "ورود از رینه": "Access from Rineh",
+    "مسیر جنوبی (صعود)": "Southern route (ascent)",
+    "ورود از پلور": "Access from Polur",
+    "مسیر شمالی (صعود)": "Northern route (ascent)",
+    "ورود — مسیر تله‌کابین": "Access — telecabin route",
+    "مسیر تله‌کابین": "Telecabin route",
+    "ورود — مسیر درکه": "Access — Darband route",
+    "مسیر درکه": "Darband route",
+    "ورود — مسیر جنوبی (واریان)": "Access — south (Varian)",
+    "مسیر جنوبی (واریان)": "South route (Varian)"
+  },
+  "peaks": {
+    "damavand": {
+      "peakName": "Mount Damavand",
+      "routes": {
+        "south-access": "Access from Rineh",
+        "south-main": "Southern route (ascent)",
+        "north-access": "Access from Polur",
+        "north-main": "Northern route (ascent)"
+      }
+    },
+    "tochal": {
+      "peakName": "Tochal",
+      "routes": {
+        "tochal-access-0": "Access — telecabin route",
+        "tochal-main-0": "Telecabin route",
+        "tochal-access-1": "Access — Darband route",
+        "tochal-main-1": "Darband route"
+      }
+    },
+    "alamkooh": {
+      "peakName": "Alam Kuh",
+      "routes": {
+        "alamkooh-access-0": "Access — south (Varian)",
+        "alamkooh-main-0": "South route (Varian)"
+      }
+    }
+  }
+}

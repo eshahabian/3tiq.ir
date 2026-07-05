@@ -110,17 +110,28 @@
         }
     }
 
+    function applyHomeHero() {
+        if (!window.I18n) return;
+        var pf = pageFile();
+        if (pf !== 'index.html' && pf !== '') return;
+        document.querySelectorAll('.hero-map-content [data-i18n]').forEach(function (el) {
+            el.textContent = I18n.t(el.getAttribute('data-i18n'));
+        });
+    }
+
     function applyRangePageContent() {
-        if (window.RangeI18n && document.querySelector('.peaks-section, #peaksGrid')) {
+        if (window.RangeI18n && document.querySelector('.peaks-section, #peaksGrid') &&
+            /(?:^|\/)(alborz-(?:gharbi|markazi|shargi)|zagros-(?:shomal|markazi|jonoob)|koohaye-(?:markazi|atashfeshani))\.html$/i.test(location.pathname)) {
             RangeI18n.apply();
             return;
         }
+        applyHomeHero();
         if (!window.I18n || !PAGES_EN) return;
         var info = PAGES_EN[pageFile()];
         if (!info) return;
 
-        var hero = document.querySelector('.hero-map-content .hero-title, .region-banner h1, .ph-hero-inner h1:not([data-i18n]), .blog-hero h1:not([data-i18n])');
-        var sub = document.querySelector('.hero-map-content .hero-subtitle, .region-banner p, .ph-hero-inner p:not([data-i18n]), .blog-hero p:not([data-i18n])');
+        var hero = document.querySelector('.hero-map-content .hero-title:not([data-i18n]), .region-banner h1, .ph-hero-inner h1:not([data-i18n]), .blog-hero h1:not([data-i18n])');
+        var sub = document.querySelector('.hero-map-content .hero-subtitle:not([data-i18n]), .region-banner p, .ph-hero-inner p:not([data-i18n]), .blog-hero p:not([data-i18n])');
 
         [hero, sub].forEach(captureFa);
 
@@ -139,7 +150,16 @@
 
         if (I18n.isEn()) {
             var brand = I18n.t('hero.brand');
+            var pf = pageFile();
+            if (pf === 'index.html' || pf === '') {
+                document.title = brand + ' | ' + I18n.t('hero.subtitle');
+                return;
+            }
             var info = PAGES_EN && PAGES_EN[pageFile()];
+            if ((pf === 'index.html' || pf === '') && info && info.subtitle) {
+                document.title = brand + ' | ' + info.subtitle;
+                return;
+            }
             if (info && info.title) {
                 document.title = info.title + ' | ' + brand;
                 return;
@@ -214,6 +234,7 @@
             updateDocumentTitle();
             applyShelterTabLabels();
             applyBrandLogo();
+            if (window.ContentEn) ContentEn.loadSheltersEn();
             if (window.I18n) I18n.refreshDom();
         });
     }
@@ -229,6 +250,7 @@
         updateDocumentTitle();
         applyShelterTabLabels();
         applyBrandLogo();
+        if (window.I18n) I18n.refreshDom();
     });
 
     global.SiteChromePageFile = pageFile;

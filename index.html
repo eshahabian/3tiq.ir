@@ -577,6 +577,9 @@
         function loc(n) { return window.I18n && I18n.isEn() ? String(n) : n.toLocaleString('fa-IR'); }
         function regionLabel(r) { return window.ContentEn ? ContentEn.regionLabel(r) : r; }
         function typeLabel(t) { return window.ContentEn ? ContentEn.shelterTypeLabel(t) : t; }
+        function shelterItem(s) {
+            return window.ContentEn && I18n.isEn() ? ContentEn.shelterDisplay(s) : s;
+        }
 
         function renderShelterCards(data, region) {
             var grid = document.getElementById('shelterCardsGrid');
@@ -588,19 +591,20 @@
                 return;
             }
             grid.innerHTML = filtered.map(function(s, i) {
-                var imgHTML = '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + regionLabel(s.region) + '</span></div>';
-                var cap = s.capacity ? loc(s.capacity) + ' ' + tr('shelter.persons', 'نفر') : '—';
-                var elec = s.electricity ? {v: tr('shelter.has', 'دارد'), c:'yes', i:'⚡'} : {v: tr('shelter.no', 'ندارد'), c:'no', i:'🔌'};
-                var water = s.water ? {v: tr('shelter.has', 'دارد'), c:'yes', i:'💧'} : {v: tr('shelter.no', 'ندارد'), c:'no', i:'🚫'};
-                var alt = s.altitude ? loc(s.altitude) + ' ' + tr('peaks.meters', 'م') : '';
+                var item = shelterItem(s);
+                var imgHTML = '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + regionLabel(item.region || s.region) + '</span></div>';
+                var cap = item.capacity ? loc(item.capacity) + ' ' + tr('shelter.persons', 'نفر') : '—';
+                var elec = item.electricity ? {v: tr('shelter.has', 'دارد'), c:'yes', i:'⚡'} : {v: tr('shelter.no', 'ندارد'), c:'no', i:'🔌'};
+                var water = item.water ? {v: tr('shelter.has', 'دارد'), c:'yes', i:'💧'} : {v: tr('shelter.no', 'ندارد'), c:'no', i:'🚫'};
+                var alt = item.altitude ? loc(item.altitude) + ' ' + tr('peaks.meters', 'م') : '';
                 return '<div class="sh-card" style="animation-delay:' + (i*0.06) + 's">' +
                     '<div class="sh-card-img">' + imgHTML +
                     '<span class="sh-type-badge ' + s.type + '">' + typeLabel(s.type) + '</span>' +
                     (alt ? '<span class="sh-altitude">⛰ ' + alt + '</span>' : '') +
                     '</div><div class="sh-card-body">' +
-                    '<div class="sh-card-region">' + regionLabel(s.region) + ' · ' + s.province + '</div>' +
-                    '<div class="sh-card-name">' + s.name + '</div>' +
-                    '<div class="sh-card-desc">' + s.description + '</div>' +
+                    '<div class="sh-card-region">' + regionLabel(item.region || s.region) + ' · ' + (item.province || s.province) + '</div>' +
+                    '<div class="sh-card-name">' + item.name + '</div>' +
+                    '<div class="sh-card-desc">' + item.description + '</div>' +
                     '</div><div class="sh-divider"></div><div class="sh-stats">' +
                     '<div class="sh-stat"><span class="sh-stat-icon">👥</span><span class="sh-stat-value">' + cap + '</span><span class="sh-stat-label">' + tr('shelter.capacity', 'ظرفیت') + '</span></div>' +
                     '<div class="sh-stat ' + elec.c + '"><span class="sh-stat-icon">' + elec.i + '</span><span class="sh-stat-value">' + elec.v + '</span><span class="sh-stat-label">' + tr('shelter.electricity', 'برق') + '</span></div>' +
@@ -620,10 +624,11 @@
             });
         }
 
-        fetch('data/shelters-detail.json')
-            .then(function (r) { return r.json(); })
-            .then(function (data) {
-                shelterData = data;
+        Promise.all([
+            fetch('data/shelters-detail.json').then(function (r) { return r.json(); }),
+            window.ContentEn ? ContentEn.loadSheltersEn() : Promise.resolve()
+        ]).then(function (results) {
+                shelterData = results[0];
                 applyShelterTabLabels();
                 renderShelterCards(shelterData, activeRegion());
             })
@@ -641,8 +646,10 @@
         });
 
         document.addEventListener('3tiq:languagechange', function () {
-            applyShelterTabLabels();
-            renderShelterCards(shelterData, activeRegion());
+            if (window.ContentEn) ContentEn.loadSheltersEn().then(function () {
+                applyShelterTabLabels();
+                renderShelterCards(shelterData, activeRegion());
+            });
         });
     })();
     </script>

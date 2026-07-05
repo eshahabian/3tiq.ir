@@ -1,0 +1,32 @@
+{
+  "پناهگاه سرچال": {
+    "name": "Sarchal Shelter",
+    "province": "Tehran",
+    "description": "One of the busiest shelters in Central Alborz and the main gateway to northern Tehran peaks.",
+    "history": "Built in the 1970s by the Mountaineering Federation and renovated several times since."
+  },
+  "پناهگاه توچال": {
+    "name": "Tochal Shelter",
+    "province": "Tehran",
+    "description": "At 3,900 m, the nearest fully equipped shelter to Tehran; reachable via the Tochal telecabin.",
+    "history": "Built in the 1980s; capacity 120 makes it the largest hut near the capital."
+  },
+  "پناهگاه شیرپلا": {
+    "name": "Shirpala Shelter",
+    "province": "Tehran",
+    "description": "On the popular northern Tehran valleys route; a rest stop on the Sarchal–Tochal traverse.",
+    "history": "One of the oldest Central Alborz shelters, built in the 1960s."
+  },
+  "پناهگاه دماوند (گوسفندسرا)": {
+    "name": "Damavand Goatfold Shelter",
+    "province": "Mazandaran",
+    "description": "Main southern Damavand base camp at Gosfandsara with meals and lodging.",
+    "history": "The oldest and best-known Damavand shelter since the 1960s."
+  },
+  "پناهگاه برگاه دماوند": {
+    "name": "Damavand Bargah-e Sevom",
+    "province": "Mazandaran",
+    "description": "Third camp at 4,220 m — last equipped shelter before the Damavand summit on the south route.",
+    "history": "Built in the 1980s; recently equipped with solar panels."
+  }
+}

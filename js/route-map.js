@@ -7,6 +7,71 @@
     const SITE = '3tiq.ir';
     const TILE = 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png';
 
+    var ROUTE_I18N = null;
+
+    function isRouteEn() {
+        return global.I18n && I18n.isEn();
+    }
+
+    function routeI18nBase() {
+        if (/\/peaks\//.test(location.pathname) || /\/blog\//.test(location.pathname)) return '../';
+        return '';
+    }
+
+    function loadRouteI18n() {
+        if (ROUTE_I18N) return Promise.resolve(ROUTE_I18N);
+        return fetch(routeI18nBase() + 'data/route-maps-en.json')
+            .then(function (r) { return r.ok ? r.json() : {}; })
+            .then(function (d) { ROUTE_I18N = d || {}; return ROUTE_I18N; })
+            .catch(function () { ROUTE_I18N = {}; return ROUTE_I18N; });
+    }
+
+    function trRouteLabel(label) {
+        if (!label || !isRouteEn()) return label;
+        if (label === 'Start') return 'Start';
+        if (label === 'Summit' || label === 'قله') return 'Summit';
+        if (ROUTE_I18N && ROUTE_I18N.labels && ROUTE_I18N.labels[label]) {
+            return ROUTE_I18N.labels[label];
+        }
+        return label;
+    }
+
+    function trRouteName(name, peakId, routeId) {
+        if (!isRouteEn()) return name;
+        if (ROUTE_I18N && ROUTE_I18N.peaks && ROUTE_I18N.peaks[peakId]) {
+            var peak = ROUTE_I18N.peaks[peakId];
+            if (peak.routes && (peak.routes[routeId] || peak.routes[name])) {
+                return peak.routes[routeId] || peak.routes[name];
+            }
+        }
+        if (ROUTE_I18N && ROUTE_I18N.routeNames && ROUTE_I18N.routeNames[name]) {
+            return ROUTE_I18N.routeNames[name];
+        }
+        return name;
+    }
+
+    function trPeakName(peakId, faName) {
+        if (!isRouteEn()) return faName;
+        if (global.ContentEn) {
+            var en = ContentEn.peakBySlug(peakId);
+            if (en && en.name) return en.name;
+        }
+        if (ROUTE_I18N && ROUTE_I18N.peaks && ROUTE_I18N.peaks[peakId] && ROUTE_I18N.peaks[peakId].peakName) {
+            return ROUTE_I18N.peaks[peakId].peakName;
+        }
+        return faName;
+    }
+
+    function trShelterName(name) {
+        if (!isRouteEn() || !global.ContentEn) return name;
+        return ContentEn.shelterNameEn(name);
+    }
+
+    function trShelterType(type) {
+        if (!isRouteEn() || !global.ContentEn) return type;
+        return ContentEn.shelterTypeLabel(type);
+    }
+
     function shelterClass(type) {
         if (type === 'پناهگاه') return 'refuge';
         if (type === 'جانپناه') return 'bivouac';
@@ -19,8 +84,8 @@
         return '🏕';
     }
 
-    function elevIcon(point, summit) {
-        var labelText = localizePointLabel(point, summit) || (point.elevation ? point.elevation + ' m' : '');
+    function elevIcon(point, summit, peakId) {
+        var labelText = localizePointLabel(point, summit, peakId) || (point.elevation ? point.elevation + ' m' : '');
         var coordLine = point.label || point.elevation ? formatCoords(point.lat, point.lng) : '';
         var label = labelText ? '<span class="elev-name">' + labelText + '</span>' : '';
         var elev = point.elevation && labelText !== String(point.elevation) ? point.elevation + ' m' : '';
@@ -41,15 +106,16 @@
         return '<div class="route-map-watermark" aria-hidden="true"><div class="route-map-watermark-pattern">' + cells + '</div></div>';
     }
 
-    function buildLegend(routes) {
+    function buildLegend(routes, peakId) {
         const routeItems = routes.map(function (r) {
             const dashed = r.dashArray ? ' dashed' : '';
             const style = r.dashArray
                 ? `color:${r.color}`
                 : `background:${r.color}`;
+            const rName = trRouteName(r.name, peakId, r.id);
             return `<span class="route-map-legend-item">
                 <span class="route-map-legend-line${dashed}" style="${style}"></span>
-                ${r.name}
+                ${rName}
             </span>`;
         }).join('');
         return routeItems + `
@@ -79,6 +145,9 @@
         if (typeof container === 'string') container = document.getElementById(container);
         if (!container) return null;
 
+        await loadRouteI18n();
+        if (global.ContentEn) await ContentEn.loadPeaksEn();
+
         destroyMap(container);
 
         const basePath = (options && options.basePath) || container.dataset.basePath || 'data/route-maps/';
@@ -96,7 +165,7 @@
         widget.className = 'route-map-widget';
         widget.innerHTML = `
             <div class="route-map-toolbar">
-                <div class="route-map-legend">${buildLegend(data.routes)}</div>
+                <div class="route-map-legend">${buildLegend(data.routes, peakId)}</div>
                 <div class="route-map-actions">
                     <button type="button" class="route-map-btn" data-action="export">${(global.I18n && I18n.t('route.export')) || '📥 ذخیره نقشه (PNG)'}</button>
                 </div>
@@ -136,11 +205,11 @@
                 dashArray: route.dashArray || null,
                 lineCap: 'round',
                 lineJoin: 'round'
-            }).addTo(map).bindPopup(`<div class="route-map-popup"><strong>${route.name}</strong></div>`);
+            }).addTo(map).bindPopup(`<div class="route-map-popup"><strong>${trRouteName(route.name, peakId, route.id)}</strong></div>`);
 
             route.coordinates.forEach(function (p) {
                 if (p.label || p.elevation) {
-                    L.marker([p.lat, p.lng], { icon: elevIcon(p, data.summit), interactive: false }).addTo(map);
+                    L.marker([p.lat, p.lng], { icon: elevIcon(p, data.summit, peakId), interactive: false }).addTo(map);
                 }
             });
         });
@@ -155,7 +224,7 @@
                 iconAnchor: [16, 16]
             });
             L.marker([s.lat, s.lng], { icon: icon }).addTo(map)
-                .bindPopup(`<div class="route-map-popup"><strong>${s.name}</strong><span>${s.type}${s.elevation ? ' · ' + s.elevation + ' m' : ''}</span></div>`);
+                .bindPopup(`<div class="route-map-popup"><strong>${trShelterName(s.name)}</strong><span>${trShelterType(s.type)}${s.elevation ? ' · ' + s.elevation + ' m' : ''}</span></div>`);
         });
 
         if (data.summit) {
@@ -168,7 +237,7 @@
                 iconAnchor: [10, 18]
             });
             L.marker([s.lat, s.lng], { icon: summitIcon }).addTo(map)
-                .bindPopup('<div class="route-map-popup"><strong>' + s.name + '</strong><span>' + s.elevation + ' m</span><span class="route-map-popup-coords">' + formatCoords(s.lat, s.lng) + '</span></div>');
+                .bindPopup('<div class="route-map-popup"><strong>' + trPeakName(peakId, s.name) + '</strong><span>' + s.elevation + ' m</span><span class="route-map-popup-coords">' + formatCoords(s.lat, s.lng) + '</span></div>');
         }
 
         if (allLatLngs.length) {
@@ -185,7 +254,7 @@
                 data: data,
                 allLatLngs: allLatLngs.slice(),
                 tileLayer: tileLayer,
-                title: data.peakName || peakId
+                title: trPeakName(peakId, data.peakName || peakId)
             });
         });
 
@@ -205,11 +274,13 @@
         return lat.toFixed(4) + '°N · ' + lng.toFixed(4) + '°E';
     }
 
-    function localizePointLabel(p, summit) {
+    function localizePointLabel(p, summit, peakId) {
         if (!p.label) return '';
-        if (p.label === 'Summit' || p.label === 'قله') return summit ? summit.name : 'قله';
-        if (p.label === 'Start') return 'شروع مسیر';
-        return p.label;
+        if (p.label === 'Summit' || p.label === 'قله') {
+            return summit ? trPeakName(peakId, summit.name) : trRouteLabel('Summit');
+        }
+        if (p.label === 'Start') return trRouteLabel('Start');
+        return trRouteLabel(p.label);
     }
 
     function boundsForAspect(allLatLngs, aspectW, aspectH, padFactor) {
@@ -472,9 +543,10 @@
     }
 
     function drawExportHeader(ctx, data, w, headerH) {
-        var peakName = data.peakName || data.peakId;
+        var peakName = trPeakName(data.peakId, data.peakName || data.peakId);
         var elev = data.peakElevation || (data.summit && data.summit.elevation) || '';
         var summit = data.summit;
+        var en = isRouteEn();
 
         ctx.fillStyle = '#faf8f4';
         ctx.fillRect(0, 0, w, headerH);
@@ -489,12 +561,12 @@
         ctx.font = 'bold 42px Vazirmatn, Tahoma, sans-serif';
         ctx.textAlign = 'right';
         ctx.textBaseline = 'top';
-        ctx.fillText('🗺 راهنمای مسیر — ' + peakName + (elev ? ' (' + elev + ' m)' : ''), w - 36, 28);
+        ctx.fillText((en ? 'Route guide — ' : '🗺 راهنمای مسیر — ') + peakName + (elev ? ' (' + elev + ' m)' : ''), w - 36, 28);
 
         ctx.font = '22px Vazirmatn, Tahoma, sans-serif';
         ctx.fillStyle = '#4a4034';
         if (summit) {
-            ctx.fillText('📍 مختصات قله: ' + formatCoords(summit.lat, summit.lng), w - 36, 82);
+            ctx.fillText((en ? 'Summit: ' : '📍 مختصات قله: ') + formatCoords(summit.lat, summit.lng), w - 36, 82);
         }
 
         var xLeft = 36;
@@ -502,7 +574,7 @@
         ctx.textAlign = 'left';
         ctx.font = 'bold 20px Vazirmatn, Tahoma, sans-serif';
         ctx.fillStyle = '#6b5c48';
-        ctx.fillText('مسیرها:', xLeft, yLegend);
+        ctx.fillText(en ? 'Routes:' : 'مسیرها:', xLeft, yLegend);
         yLegend += 30;
 
         data.routes.forEach(function (route) {
@@ -511,7 +583,7 @@
             ctx.fill();
             ctx.fillStyle = '#1a1208';
             ctx.font = '18px Vazirmatn, Tahoma, sans-serif';
-            ctx.fillText(route.name, xLeft + 48, yLegend + 14);
+            ctx.fillText(trRouteName(route.name, data.peakId, route.id), xLeft + 48, yLegend + 14);
             yLegend += 28;
         });
 
@@ -608,7 +680,7 @@
             route.coordinates.forEach(function (p) {
                 if (!p.label && !p.elevation) return;
                 var pt = projectLatLng(p.lat, p.lng, view);
-                var label = localizePointLabel(p, data.summit);
+                var label = localizePointLabel(p, data.summit, data.peakId);
                 var title = label || (p.elevation ? p.elevation + ' m' : '');
                 var subtitle = (label && p.elevation) ? (p.elevation + ' m · ' + formatCoords(p.lat, p.lng)) : formatCoords(p.lat, p.lng);
                 if (title) drawElevBadge(ctx, pt.x, pt.y, title, subtitle);
@@ -770,6 +842,7 @@
 
         document.addEventListener('3tiq:languagechange', function () {
             populateHomePeakSelect(container);
+            mountOne(container);
         });
     }
 

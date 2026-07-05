@@ -6,12 +6,42 @@
     var REGIONS_EN = {
         'البرز مرکزی': 'Central Alborz',
         'البرز غربی': 'Western Alborz',
+        'البرز شرقی': 'Eastern Alborz',
         'زاگرس شمالی': 'Northern Zagros',
         'زاگرس مرکزی': 'Central Zagros',
         'زاگرس جنوبی': 'Southern Zagros',
         'کوه‌های مرکزی': 'Central Iran Mountains',
+        'کوه‌های مرکزی ایران': 'Central Iran Mountains',
         'شمال شرق': 'Northeast'
     };
+
+    var PROVINCES_EN = {
+        'تهران': 'Tehran',
+        'مازندران': 'Mazandaran',
+        'البرز': 'Alborz',
+        'گیلان': 'Gilan',
+        'قزوین': 'Qazvin',
+        'اصفahan': 'Isfahan',
+        'اردبیل': 'Ardabil',
+        'آذربایجان شرقی': 'East Azerbaijan',
+        'چهارمحال و بختیاری': 'Chaharmahal & Bakhtiari',
+        'کهگیلویه و بویراحمد': 'Kohgiluyeh & Boyer-Ahmad',
+        'لرستان': 'Lorestan',
+        'همدان': 'Hamedan',
+        'کرمانشاه': 'Kermanshah',
+        'کردستان': 'Kurdistan',
+        'فارس': 'Fars',
+        'یزد': 'Yazd',
+        'خراسان رضوی': 'Khorasan Razavi',
+        'گلستان': 'Golestan',
+        'کرمان': 'Kerman',
+        'سیستان و بلوچستان': 'Sistan & Baluchestan',
+        'خوزستان': 'Khuzestan',
+        'بوشهر': 'Bushehr',
+        'اصفهان': 'Isfahan'
+    };
+
+    var SHELTERS_EN = null;
 
     var DIFFICULTY_EN = {
         'آسان': 'Easy',
@@ -74,6 +104,62 @@
         return isEn() ? (REGIONS_EN[fa] || fa) : fa;
     }
 
+    function provinceLabel(fa) {
+        if (!fa) return fa;
+        return isEn() ? (PROVINCES_EN[fa] || fa) : fa;
+    }
+
+    function shelterNameEn(faName, type) {
+        if (!faName || !isEn()) return faName;
+        if (SHELTERS_EN && SHELTERS_EN[faName] && SHELTERS_EN[faName].name) {
+            return SHELTERS_EN[faName].name;
+        }
+        if (faName.indexOf('پناهگاه ') === 0) return faName.slice(7) + ' Shelter';
+        if (faName.indexOf('جانپناه ') === 0) return faName.slice(7) + ' Bivouac';
+        if (faName.indexOf('کلبه ') === 0) return faName.slice(4) + ' Cabin';
+        return faName;
+    }
+
+    function shelterTextEn(faName, field, fallback) {
+        if (!isEn()) return fallback;
+        if (SHELTERS_EN && SHELTERS_EN[faName] && SHELTERS_EN[faName][field]) {
+            return SHELTERS_EN[faName][field];
+        }
+        if (field === 'description') {
+            var kind = fallback && fallback.indexOf('جان') >= 0 ? 'bivouac' : 'shelter';
+            return 'Mountain ' + kind + ' on Iranian climbing routes.';
+        }
+        return fallback;
+    }
+
+    function shelterDisplay(s) {
+        if (!s || !isEn()) return s;
+        return {
+            name: shelterNameEn(s.name, s.type),
+            province: provinceLabel(s.province),
+            region: regionLabel(s.region),
+            type: shelterTypeLabel(s.type),
+            description: shelterTextEn(s.name, 'description', s.description),
+            history: shelterTextEn(s.name, 'history', s.history),
+            capacity: s.capacity,
+            electricity: s.electricity,
+            water: s.water,
+            altitude: s.altitude,
+            lat: s.lat,
+            lng: s.lng,
+            image: s.image
+        };
+    }
+
+    function loadSheltersEn() {
+        if (SHELTERS_EN) return Promise.resolve(SHELTERS_EN);
+        var bp = /\/peaks\//.test(location.pathname) || /\/blog\//.test(location.pathname) ? '../' : '';
+        return fetch(bp + 'data/shelters-en.json')
+            .then(function (r) { return r.ok ? r.json() : {}; })
+            .then(function (d) { SHELTERS_EN = d || {}; return SHELTERS_EN; })
+            .catch(function () { SHELTERS_EN = {}; return SHELTERS_EN; });
+    }
+
     function shelterTypeLabel(fa) {
         if (!fa) return fa;
         return isEn() ? (SHELTER_TYPE_EN[fa] || fa) : fa;
@@ -125,7 +211,11 @@
         localeNum: localeNum,
         diffLabel: diffLabel,
         regionLabel: regionLabel,
+        provinceLabel: provinceLabel,
         shelterTypeLabel: shelterTypeLabel,
+        shelterDisplay: shelterDisplay,
+        shelterNameEn: shelterNameEn,
+        loadSheltersEn: loadSheltersEn,
         peakName: peakName,
         peakProvince: peakProvince,
         peakBySlug: peakBySlug,
