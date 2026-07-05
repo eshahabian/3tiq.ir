@@ -19,6 +19,25 @@ if (themeToggle) {
 }
 
 // =============================================
+//  i18n helpers
+// =============================================
+function tr(key, fallback) {
+    return window.I18n ? I18n.t(key) : fallback;
+}
+function isEn() {
+    return window.I18n && I18n.isEn();
+}
+function locNum(n) {
+    return isEn() ? String(n) : Number(n).toLocaleString('fa-IR');
+}
+function peakDisplayName(m) {
+    return window.ContentEn ? ContentEn.peakName(m) : m.name;
+}
+function peakDisplayProvince(m) {
+    return window.ContentEn ? ContentEn.peakProvince(m) : m.province;
+}
+
+// =============================================
 //  Mobile Menu Toggle
 // =============================================
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -253,16 +272,20 @@ function renderPeaks() {
     const grid = document.getElementById('peaksGrid');
     if (!grid) return;
 
-    grid.innerHTML = famousPeaks.map(peak => {
+    const list = isEn() && window.ContentEn ? ContentEn.famousPeaksEn : famousPeaks;
+
+    grid.innerHTML = list.map((peak, idx) => {
         const tag   = peak.link ? 'a' : 'div';
         const href  = peak.link ? `href="${peak.link}"` : '';
-        const badge = peak.link ? `<span class="peak-link-badge">مشاهده جزئیات ←</span>` : '';
+        const badge = peak.link ? `<span class="peak-link-badge">${tr('peaks.viewDetails', 'مشاهده جزئیات ←')}</span>` : '';
+        const diffClass = famousPeaks[idx] ? famousPeaks[idx].difficulty : '';
+        const diff  = isEn() ? peak.difficulty : (famousPeaks[idx] ? famousPeaks[idx].difficulty : peak.difficulty);
         return `
         <${tag} class="peak-card${peak.link ? ' peak-card--linked' : ''}" ${href}>
             <div class="peak-image-wrap">
                 <img src="${peak.image}" alt="${peak.name}" loading="lazy">
-                <span class="peak-elevation-badge">⛰ ${peak.elevation.toLocaleString('fa-IR')} متر</span>
-                <span class="peak-difficulty-badge ${peak.difficulty}">${peak.difficulty}</span>
+                <span class="peak-elevation-badge">⛰ ${locNum(peak.elevation)} ${tr('peaks.meters', 'متر')}</span>
+                <span class="peak-difficulty-badge ${diffClass}">${diff}</span>
             </div>
             <div class="peak-body">
                 <div class="peak-header">
@@ -271,8 +294,8 @@ function renderPeaks() {
                 </div>
                 <p class="peak-desc">${peak.description}</p>
                 <div class="peak-meta">
-                    <span>🗓 بهترین فصل: ${peak.bestSeason}</span>
-                    <span>⏱ مدت: ${peak.duration}</span>
+                    <span>🗓 ${tr('peaks.bestSeason', 'بهترین فصل')}: ${peak.bestSeason}</span>
+                    <span>⏱ ${tr('peaks.duration', 'مدت')}: ${peak.duration}</span>
                 </div>
                 ${badge}
             </div>
@@ -390,38 +413,38 @@ function loadRoutes(filter = 'all') {
         : routes.filter(r => r.range === filter);
 
     if (filtered.length === 0) {
-        routesGrid.innerHTML = `<p style="text-align:center; color:var(--text-light); grid-column:1/-1;">پناهگاهی یافت نشد.</p>`;
+        routesGrid.innerHTML = `<p style="text-align:center; color:var(--text-light); grid-column:1/-1;">${tr('shelter.notFound', 'پناهگاهی یافت نشد.')}</p>`;
         return;
     }
 
-    routesGrid.innerHTML = filtered.map(s => `
+    routesGrid.innerHTML = filtered.map(s => {
+        const idx = routes.indexOf(s);
+        const en = isEn() && window.ContentEn ? ContentEn.routesEn[idx] : null;
+        const item = en || s;
+        const rangeLabel = isEn() && window.ContentEn ? ContentEn.regionLabel(s.range) : s.range;
+        return `
         <div class="route-card shelter-card">
-            <img
-                class="route-image"
-                src="${s.image}"
-                alt="${s.name}"
-                loading="lazy"
-            >
+            <img class="route-image" src="${item.image}" alt="${item.name}" loading="lazy">
             <div class="route-content">
                 <div class="route-header">
-                    <h3 class="route-name">${s.name}</h3>
-                    <span class="route-region">📍 ${s.range}</span>
+                    <h3 class="route-name">${item.name}</h3>
+                    <span class="route-region">📍 ${rangeLabel}</span>
                 </div>
-                <p class="route-description">${s.description}</p>
-                ${s.history ? `
+                <p class="route-description">${item.description}</p>
+                ${item.history ? `
                 <div class="shelter-history">
-                    <span class="shelter-history-label">📜 تاریخچه</span>
-                    ${s.history}
+                    <span class="shelter-history-label">📜 ${tr('shelter.history', 'تاریخچه')}</span>
+                    ${item.history}
                 </div>` : ''}
                 <div class="shelter-footer">
-                    <span class="shelter-capacity">🏕️ ${s.capacity} نفر</span>
-                    <span class="shelter-amenity ${s.water ? 'has' : 'no'}">${s.water ? '💧 آب' : '💧 بی‌آب'}</span>
-                    <span class="shelter-amenity ${s.electricity ? 'has' : 'no'}">${s.electricity ? '⚡ برق' : '⚡ بی‌برق'}</span>
-                    <span class="shelter-province">📌 ${s.province}</span>
+                    <span class="shelter-capacity">🏕️ ${locNum(item.capacity)} ${tr('shelter.persons', 'نفر')}</span>
+                    <span class="shelter-amenity ${item.water ? 'has' : 'no'}">${item.water ? '💧 ' + tr('shelter.water', 'آب') : '💧 ' + tr('shelter.noWater', 'بی‌آب')}</span>
+                    <span class="shelter-amenity ${item.electricity ? 'has' : 'no'}">${item.electricity ? '⚡ ' + tr('shelter.electricity', 'برق') : '⚡ ' + tr('shelter.noElectricity', 'بی‌برق')}</span>
+                    <span class="shelter-province">📌 ${item.province}</span>
                 </div>
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 }
 
 loadRoutes();
@@ -475,45 +498,64 @@ mountainPanel.style.cssText = `
     position: absolute; top: 110px; right: 10px;
     z-index: 900; background: rgba(255,255,255,0.97); border-radius: 12px;
     padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    width: 220px; max-width: calc(50% - 16px); font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl;
+    width: 220px; max-width: calc(50% - 16px); font-family: 'Vazirmatn', Tahoma, sans-serif;
 `;
-mountainPanel.innerHTML = `
-    <h4 style="margin:0 0 8px; color:#2d6a4f; font-size:13px;">⛰️ جستجوی کوه</h4>
-    <input id="mountain-search" type="text" placeholder="نام کوه..." style="
+
+function layoutMapPanels() {
+    const rtl = !isEn();
+    mountainPanel.style.direction = rtl ? 'rtl' : 'ltr';
+    mountainPanel.style.right = rtl ? '10px' : 'auto';
+    mountainPanel.style.left = rtl ? 'auto' : '10px';
+    shelterPanel.style.direction = rtl ? 'rtl' : 'ltr';
+    shelterPanel.style.right = rtl ? '10px' : 'auto';
+    shelterPanel.style.left = rtl ? 'auto' : '10px';
+}
+
+function buildMountainPanelHtml() {
+    return `
+    <h4 style="margin:0 0 8px; color:#2d6a4f; font-size:13px;">${tr('map.searchMountain', '⛰️ جستجوی کوه')}</h4>
+    <input id="mountain-search" type="text" placeholder="${tr('map.searchMountainPh', 'نام کوه...')}" style="
         width:100%; padding:6px 8px; border:1px solid #ddd;
         border-radius:8px; font-size:13px; box-sizing:border-box;
-        font-family:inherit; direction:rtl; outline:none;
+        font-family:inherit; outline:none;
     ">
     <select id="mountain-filter" style="
         width:100%; margin-top:8px; padding:6px 8px;
         border:1px solid #ddd; border-radius:8px;
-        font-size:13px; font-family:inherit; direction:rtl; outline:none;
+        font-size:13px; font-family:inherit; outline:none;
     ">
-        <option value="all">همه استان‌ها</option>
+        <option value="all">${tr('map.allProvinces', 'همه استان‌ها')}</option>
     </select>
     <select id="mountain-height-filter" style="
         width:100%; margin-top:8px; padding:6px 8px;
         border:1px solid #ddd; border-radius:8px;
-        font-size:13px; font-family:inherit; direction:rtl; outline:none;
+        font-size:13px; font-family:inherit; outline:none;
     ">
-        <option value="all">همه ارتفاع‌ها</option>
-        <option value="3000-4000">۳۰۰۰ تا ۴۰۰۰ متر</option>
-        <option value="4000+">بالای ۴۰۰۰ متر</option>
+        <option value="all">${tr('map.allHeights', 'همه ارتفاع‌ها')}</option>
+        <option value="3000-4000">${tr('map.heightMid', '۳۰۰۰ تا ۴۰۰۰ متر')}</option>
+        <option value="4000+">${tr('map.heightHigh', 'بالای ۴۰۰۰ متر')}</option>
     </select>
-    <div id="mountain-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>
-`;
+    <div id="mountain-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>`;
+}
+
+mountainPanel.innerHTML = buildMountainPanelHtml();
+layoutMapPanels();
 document.getElementById('map').appendChild(mountainPanel);
 
 let allMountainMarkers = [];
 let mountainData = [];
+let mapMountainRender = null;
+let mapMountainFilter = null;
 
-// مسیر صحیح: فایل mountains.json داخل پوشه js باشد
-fetch('js/mountains.json')
-    .then(r => r.json())
-    .then(mountains => {
+Promise.all([
+    fetch('js/mountains.json').then(r => r.json()),
+    window.ContentEn ? ContentEn.loadPeaksEn() : Promise.resolve({})
+]).then(function (results) {
+        var mountains = results[0];
+        if (window.ContentEn) mountains = ContentEn.enrichMountains(mountains);
         mountainData = mountains;
 
-        const provinces = [...new Set(mountains.map(m => m.province))].sort();
+        const provinces = [...new Set(mountains.map(m => peakDisplayProvince(m)))].sort();
         const select = document.getElementById('mountain-filter');
         provinces.forEach(p => {
             const opt = document.createElement('option');
@@ -522,18 +564,21 @@ fetch('js/mountains.json')
         });
 
         function buildMountainPopup(m) {
+            const dir = isEn() ? 'ltr' : 'rtl';
+            const name = peakDisplayName(m);
+            const prov = peakDisplayProvince(m);
             const link = m.slug
                 ? `<a href="peaks/${m.slug}.html" style="
                     display:inline-block;margin-top:8px;padding:5px 12px;
                     background:#2d6a4f;color:#fff;border-radius:100px;
                     font-size:12px;font-weight:700;text-decoration:none;
-                ">مشاهده صفحه قله ←</a>`
+                ">${tr('map.viewPeak', 'مشاهده صفحه قله ←')}</a>`
                 : '';
             return `
-                <div style="text-align:center;font-family:'Vazirmatn',Tahoma;direction:rtl;min-width:150px;padding:4px;">
-                    <b style="font-size:14px;color:#2d6a4f;">⛰️ ${m.name}</b><br>
-                    <span style="color:#555;font-size:12px;">ارتفاع: <b>${m.height.toLocaleString('fa-IR')}</b> متر</span><br>
-                    <span style="color:#888;font-size:11px;">📍 ${m.province}</span><br>
+                <div style="text-align:center;font-family:'Vazirmatn',Tahoma;direction:${dir};min-width:150px;padding:4px;">
+                    <b style="font-size:14px;color:#2d6a4f;">⛰️ ${name}</b><br>
+                    <span style="color:#555;font-size:12px;">${tr('map.elevation', 'ارتفاع')}: <b>${locNum(m.height)}</b> ${tr('peaks.meters', 'متر')}</span><br>
+                    <span style="color:#888;font-size:11px;">📍 ${prov}</span><br>
                     ${link}
                 </div>`;
         }
@@ -544,7 +589,7 @@ fetch('js/mountains.json')
             list.forEach(m => {
                 const marker = L.marker([m.lat, m.lng], {
                     icon: mountainIcon,
-                    title: m.name
+                    title: peakDisplayName(m)
                 })
                     .addTo(map)
                     .bindPopup(buildMountainPopup(m));
@@ -558,19 +603,20 @@ fetch('js/mountains.json')
                 allMountainMarkers.push(marker);
             });
             document.getElementById('mountain-count').textContent =
-                list.length + ' کوه نمایش داده می‌شود';
+                tr('map.mountainCount', '{n} کوه نمایش داده می‌شود').replace('{n}', locNum(list.length));
         }
 
-        renderMountains(mountains);
+        mapMountainRender = renderMountains;
 
         function applyMountainFilter() {
-            const search   = document.getElementById('mountain-search').value.trim();
+            const search   = document.getElementById('mountain-search').value.trim().toLowerCase();
             const province = document.getElementById('mountain-filter').value;
             const height   = document.getElementById('mountain-height-filter').value;
 
             const filtered = mountainData.filter(m => {
-                const matchName  = !search || m.name.includes(search);
-                const matchProv  = province === 'all' || m.province === province;
+                const names = [m.name, m.nameEn || ''].join(' ').toLowerCase();
+                const matchName  = !search || names.includes(search);
+                const matchProv  = province === 'all' || peakDisplayProvince(m) === province;
                 const matchHeight =
                     height === 'all'      ? true :
                     height === '3000-4000' ? (m.height >= 3000 && m.height < 4000) :
@@ -580,15 +626,18 @@ fetch('js/mountains.json')
             renderMountains(filtered);
         }
 
+        mapMountainFilter = applyMountainFilter;
+
+        renderMountains(mountains);
+
         document.getElementById('mountain-search').addEventListener('input', applyMountainFilter);
         document.getElementById('mountain-filter').addEventListener('change', applyMountainFilter);
         document.getElementById('mountain-height-filter').addEventListener('change', applyMountainFilter);
-
-        console.log(`✅ ${mountains.length} کوه بارگذاری شد`);
     })
     .catch(err => {
         console.error('❌ خطا در بارگذاری mountains.json:', err);
-        document.getElementById('mountain-count').textContent = 'خطا در بارگذاری داده';
+        const el = document.getElementById('mountain-count');
+        if (el) el.textContent = tr('map.loadError', 'خطا در بارگذاری داده');
     });
 
 // =============================================
@@ -617,24 +666,29 @@ shelterPanel.style.cssText = `
     position: absolute; top: 310px; right: 10px;
     z-index: 900; background: rgba(255,255,255,0.97); border-radius: 12px;
     padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    width: 220px; max-width: calc(50% - 16px); font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl;
+    width: 220px; max-width: calc(50% - 16px); font-family: 'Vazirmatn', Tahoma, sans-serif;
 `;
-shelterPanel.innerHTML = `
-    <h4 style="margin:0 0 8px; color:#d97706; font-size:13px;">🏕️ جستجوی پناهگاه</h4>
-    <input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="
+
+function buildShelterPanelHtml() {
+    return `
+    <h4 style="margin:0 0 8px; color:#d97706; font-size:13px;">${tr('map.searchShelter', '🏕️ جستجوی پناهگاه')}</h4>
+    <input id="shelter-search" type="text" placeholder="${tr('map.searchShelterPh', 'نام پناهگاه...')}" style="
         width:100%; padding:6px 8px; border:1px solid #ddd;
         border-radius:8px; font-size:13px; box-sizing:border-box;
-        font-family:inherit; direction:rtl; outline:none;
+        font-family:inherit; outline:none;
     ">
     <select id="shelter-filter" style="
         width:100%; margin-top:8px; padding:6px 8px;
         border:1px solid #ddd; border-radius:8px;
-        font-size:13px; font-family:inherit; direction:rtl; outline:none;
+        font-size:13px; font-family:inherit; outline:none;
     ">
-        <option value="all">همه استان‌ها</option>
+        <option value="all">${tr('map.allProvinces', 'همه استان‌ها')}</option>
     </select>
-    <div id="shelter-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>
-`;
+    <div id="shelter-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>`;
+}
+
+shelterPanel.innerHTML = buildShelterPanelHtml();
+layoutMapPanels();
 document.getElementById('map').appendChild(shelterPanel);
 
 let allShelterMarkers = [];
@@ -657,20 +711,22 @@ fetch('js/shelters.json')
         function renderShelters(list) {
             allShelterMarkers.forEach(m => map.removeLayer(m));
             allShelterMarkers = [];
+            const dir = isEn() ? 'ltr' : 'rtl';
             list.forEach(s => {
+                const typeLabel = window.ContentEn ? ContentEn.shelterTypeLabel(s.type) : s.type;
                 const marker = L.marker([s.lat, s.lng], { icon: shelterIcon })
                     .addTo(map)
                     .bindPopup(`
-                        <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:rtl; min-width:140px; padding:4px;">
+                        <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:${dir}; min-width:140px; padding:4px;">
                             <b style="font-size:14px; color:#d97706;">🏕️ ${s.name}</b><br>
-                            <span style="color:#555; font-size:12px;">نوع: <b>${s.type}</b></span><br>
+                            <span style="color:#555; font-size:12px;">${tr('map.type', 'نوع')}: <b>${typeLabel}</b></span><br>
                             <span style="color:#888; font-size:11px;">📍 ${s.province}</span>
                         </div>
                     `);
                 allShelterMarkers.push(marker);
             });
             document.getElementById('shelter-count').textContent =
-                list.length + ' پناهگاه نمایش داده می‌شود';
+                tr('map.shelterCount', '{n} پناهگاه نمایش داده می‌شود').replace('{n}', locNum(list.length));
         }
 
         renderShelters(shelters);
@@ -692,23 +748,95 @@ fetch('js/shelters.json')
     })
     .catch(err => {
         console.error('❌ خطا در بارگذاری shelters.json:', err);
-        document.getElementById('shelter-count').textContent = 'خطا در بارگذاری داده';
+        document.getElementById('shelter-count').textContent = tr('map.loadError', 'خطا در بارگذاری داده');
     });
 }
+
+window.refreshMapPanels = function () {
+    if (!document.getElementById('map')) return;
+    const mSearch = document.getElementById('mountain-search');
+    const sSearch = document.getElementById('shelter-search');
+    const mVal = mSearch ? mSearch.value : '';
+    const sVal = sSearch ? sSearch.value : '';
+    const mProv = document.getElementById('mountain-filter') ? document.getElementById('mountain-filter').value : 'all';
+    const mHeight = document.getElementById('mountain-height-filter') ? document.getElementById('mountain-height-filter').value : 'all';
+    const sProv = document.getElementById('shelter-filter') ? document.getElementById('shelter-filter').value : 'all';
+
+    mountainPanel.innerHTML = buildMountainPanelHtml();
+    shelterPanel.innerHTML = buildShelterPanelHtml();
+    layoutMapPanels();
+
+    if (mountainData.length && mapMountainRender) {
+        const select = document.getElementById('mountain-filter');
+        [...new Set(mountainData.map(m => peakDisplayProvince(m)))].sort().forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            if (p === mProv) opt.selected = true;
+            select.appendChild(opt);
+        });
+        document.getElementById('mountain-search').value = mVal;
+        document.getElementById('mountain-height-filter').value = mHeight;
+        document.getElementById('mountain-search').addEventListener('input', mapMountainFilter);
+        document.getElementById('mountain-filter').addEventListener('change', mapMountainFilter);
+        document.getElementById('mountain-height-filter').addEventListener('change', mapMountainFilter);
+        mapMountainFilter();
+    }
+
+    if (shelterData.length) {
+        const select = document.getElementById('shelter-filter');
+        [...new Set(shelterData.map(s => s.province))].sort().forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            if (p === sProv) opt.selected = true;
+            select.appendChild(opt);
+        });
+        document.getElementById('shelter-search').value = sVal;
+        document.getElementById('shelter-search').addEventListener('input', function () {
+            const search = document.getElementById('shelter-search').value.trim();
+            const province = document.getElementById('shelter-filter').value;
+            const filtered = shelterData.filter(s =>
+                (!search || s.name.includes(search)) &&
+                (province === 'all' || s.province === province)
+            );
+            allShelterMarkers.forEach(m => map.removeLayer(m));
+            allShelterMarkers = [];
+            const dir = isEn() ? 'ltr' : 'rtl';
+            filtered.forEach(s => {
+                const typeLabel = window.ContentEn ? ContentEn.shelterTypeLabel(s.type) : s.type;
+                allShelterMarkers.push(L.marker([s.lat, s.lng], { icon: shelterIcon }).addTo(map).bindPopup(`
+                    <div style="text-align:center;font-family:'Vazirmatn',Tahoma;direction:${dir};min-width:140px;padding:4px;">
+                        <b style="font-size:14px;color:#d97706;">🏕️ ${s.name}</b><br>
+                        <span style="color:#555;font-size:12px;">${tr('map.type', 'نوع')}: <b>${typeLabel}</b></span><br>
+                        <span style="color:#888;font-size:11px;">📍 ${s.province}</span>
+                    </div>`));
+            });
+            document.getElementById('shelter-count').textContent =
+                tr('map.shelterCount', '{n} پناهگاه نمایش داده می‌شود').replace('{n}', locNum(filtered.length));
+        });
+        document.getElementById('shelter-filter').addEventListener('change', function () {
+            document.getElementById('shelter-search').dispatchEvent(new Event('input'));
+        });
+        document.getElementById('shelter-search').dispatchEvent(new Event('input'));
+    }
+};
 
 // =============================================
 //  About Gallery Slider
 // =============================================
 const galleryImages = [
-    { src: 'images/peaks/damavand.jpg',  caption: 'قله دماوند — ۵۶۱۰ متر' },
-    { src: 'images/peaks/alamkooh.jpg',  caption: 'قله علم‌کوه — ۴۸۵۰ متر' },
-    { src: 'images/peaks/sabalan.jpg',   caption: 'قله سبلان — ۴۸۱۱ متر' },
-    { src: 'images/peaks/dena.jpg',      caption: 'قله دنا — ۴۴۰۹ متر' },
-    { src: 'images/peaks/tochal.jpg',    caption: 'قله توچال — ۳۹۳۳ متر' },
-    { src: 'images/peaks/shahvar.jpg',     caption: 'قله شاهوار' },
-    { src: 'images/peaks/shirkoh.jpg',     caption: 'قله شیرکوه' },
-    { src: 'images/peaks/taftan.webp',     caption: 'قله تفتان' },
+    { src: 'images/peaks/damavand.jpg',  caption: 'قله دماوند — ۵۶۱۰ متر', captionEn: 'Mount Damavand — 5,610 m' },
+    { src: 'images/peaks/alamkooh.jpg',  caption: 'قله علم‌کوه — ۴۸۵۰ متر', captionEn: 'Alam Kuh — 4,850 m' },
+    { src: 'images/peaks/sabalan.jpg',   caption: 'قله سبلان — ۴۸۱۱ متر', captionEn: 'Mount Sabalan — 4,811 m' },
+    { src: 'images/peaks/dena.jpg',      caption: 'قله دنا — ۴۴۰۹ متر', captionEn: 'Dena — 4,409 m' },
+    { src: 'images/peaks/tochal.jpg',    caption: 'قله توچال — ۳۹۳۳ متر', captionEn: 'Tochal — 3,933 m' },
+    { src: 'images/peaks/shahvar.jpg',   caption: 'قله شاهوار', captionEn: 'Shahvar' },
+    { src: 'images/peaks/shirkoh.jpg',   caption: 'قله شیرکوه', captionEn: 'Shir Kuh' },
+    { src: 'images/peaks/taftan.webp',    caption: 'قله تفتان', captionEn: 'Taftan' },
 ];
+
+function galleryCaption(img) {
+    return isEn() && img.captionEn ? img.captionEn : img.caption;
+}
 
 (function initGallery() {
     const track    = document.getElementById('galleryTrack');
@@ -723,8 +851,8 @@ const galleryImages = [
     function buildSlides() {
         track.innerHTML = galleryImages.map((img, i) => `
             <div class="gallery-slide${i === 0 ? ' active' : ''}">
-                <img src="${img.src}" alt="${img.caption}" loading="lazy">
-                <div class="gallery-caption">${img.caption}</div>
+                <img src="${img.src}" alt="${galleryCaption(img)}" loading="lazy">
+                <div class="gallery-caption">${galleryCaption(img)}</div>
             </div>
         `).join('');
 
@@ -779,6 +907,7 @@ const galleryImages = [
     });
 
     buildSlides();
+    window.refreshGallery = buildSlides;
     updateUI();
     resetAuto();
 })();
@@ -831,3 +960,17 @@ if (backToTop) {
 
     sections.forEach(section => observer.observe(section));
 })();
+
+document.addEventListener('3tiq:languagechange', function () {
+    renderPeaks();
+    var activeTab = document.querySelector('.shelter-tab.active');
+    var activeFilter = document.querySelector('.filter-btn.active');
+    if (activeTab) {
+        /* shelter tabs use data-region — re-render handled by index inline script */
+    }
+    if (activeFilter) loadRoutes(activeFilter.dataset.filter);
+    else loadRoutes('all');
+    if (window.refreshMapPanels) window.refreshMapPanels();
+    if (window.refreshGallery) window.refreshGallery();
+    if (window.I18n) I18n.apply(I18n.lang());
+});

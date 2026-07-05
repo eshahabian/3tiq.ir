@@ -721,18 +721,25 @@
 
     async function populateHomePeakSelect(container) {
         var select = document.getElementById('homeRoutePeak');
-        if (!select || select.dataset.loaded === 'true') return;
+        if (!select) return;
 
         try {
+            if (window.ContentEn) await ContentEn.loadPeaksEn();
             var res = await fetch(peaksManifestUrl(container));
             if (!res.ok) return;
             var peaks = await res.json();
             if (!peaks.length) return;
 
             var current = select.value || container.dataset.routeMap || 'damavand';
+            var isEn = window.I18n && I18n.isEn();
             select.innerHTML = peaks.map(function (p) {
+                var label = p.name;
+                if (isEn && window.ContentEn) {
+                    var en = ContentEn.peakBySlug(p.id);
+                    if (en) label = en.name;
+                }
                 var elev = p.elevation ? ' — ' + p.elevation + ' m' : '';
-                return '<option value="' + p.id + '">' + p.name + elev + '</option>';
+                return '<option value="' + p.id + '">' + label + elev + '</option>';
             }).join('');
 
             var hasCurrent = peaks.some(function (p) { return p.id === current; });
@@ -759,6 +766,10 @@
             container.dataset.routeMap = slug;
             if (link) link.href = 'peaks/' + slug + '.html';
             mountOne(container);
+        });
+
+        document.addEventListener('3tiq:languagechange', function () {
+            populateHomePeakSelect(container);
         });
     }
 
@@ -800,6 +811,14 @@
                 link.href = base + 'css/i18n.css';
                 document.head.appendChild(link);
             }
+            function loadSiteChrome(cb) {
+                if (document.querySelector('script[src*="site-chrome.js"]')) { cb(); return; }
+                var sc = document.createElement('script');
+                sc.src = base + 'js/site-chrome.js';
+                sc.defer = true;
+                sc.onload = cb;
+                document.body.appendChild(sc);
+            }
             function loadPeakChrome() {
                 if (document.querySelector('script[src*="peak-chrome.js"]')) return;
                 var s = document.createElement('script');
@@ -807,13 +826,24 @@
                 s.defer = true;
                 document.body.appendChild(s);
             }
+            function loadContentEn(cb) {
+                if (window.ContentEn) { cb(); return; }
+                var c = document.createElement('script');
+                c.src = base + 'js/content-en.js';
+                c.defer = true;
+                c.onload = cb;
+                document.body.appendChild(c);
+            }
+            function bootPeakI18n() {
+                loadContentEn(function () { loadSiteChrome(loadPeakChrome); });
+            }
             if (window.I18n) {
-                loadPeakChrome();
+                bootPeakI18n();
             } else {
                 var i18n = document.createElement('script');
                 i18n.src = base + 'js/i18n.js';
                 i18n.defer = true;
-                i18n.onload = loadPeakChrome;
+                i18n.onload = bootPeakI18n;
                 document.body.appendChild(i18n);
             }
         })();

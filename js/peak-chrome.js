@@ -1,6 +1,5 @@
 /**
- * Peak page bilingual chrome — lang switcher + UI labels (RTL/LTR).
- * Loaded on peak pages via route-map.js bootstrap.
+ * Peak page bilingual chrome — lang switcher + UI labels + peak name (RTL/LTR).
  */
 (function () {
     'use strict';
@@ -26,6 +25,13 @@
     };
 
     var SEASON_KEYS = ['peak.season.spring', 'peak.season.summer', 'peak.season.fall', 'peak.season.winter'];
+    var peakSlug = null;
+    var peakFaName = null;
+
+    function pageSlug() {
+        var m = location.pathname.match(/\/peaks\/([^/.]+)\.html/i);
+        return m ? m[1] : null;
+    }
 
     function injectLangSwitch() {
         if (document.getElementById('langSwitch')) return;
@@ -38,11 +44,16 @@
         var back = header.querySelector('.header-back');
         var actions = document.createElement('div');
         actions.className = 'header-actions header-actions--compact';
-        actions.innerHTML =
-            '<div class="lang-switch" id="langSwitch" role="group" aria-label="Language">' +
+
+        var switcher = document.createElement('div');
+        switcher.className = 'lang-switch';
+        switcher.id = 'langSwitch';
+        switcher.setAttribute('role', 'group');
+        switcher.setAttribute('aria-label', 'Language');
+        switcher.innerHTML =
             '<button type="button" class="lang-switch-btn active" data-lang="fa" aria-pressed="true">فا</button>' +
-            '<button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>' +
-            '</div>';
+            '<button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>';
+        actions.appendChild(switcher);
 
         if (back) {
             back.setAttribute('data-i18n', 'peak.back');
@@ -51,14 +62,10 @@
 
         header.appendChild(actions);
 
-        var switcher = document.getElementById('langSwitch');
-        if (switcher && window.I18n) {
-            switcher.addEventListener('click', function (e) {
-                var btn = e.target.closest('[data-lang]');
-                if (!btn) return;
-                I18n.apply(btn.getAttribute('data-lang'));
-            });
-        }
+        switcher.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-lang]');
+            if (btn && window.I18n) I18n.apply(btn.getAttribute('data-lang'));
+        });
     }
 
     function tagElements() {
@@ -87,7 +94,6 @@
 
         document.querySelectorAll('.season-item').forEach(function (el, i) {
             if (SEASON_KEYS[i]) {
-                var emoji = el.querySelector('.season-emoji');
                 var textNode = el.childNodes[el.childNodes.length - 1];
                 if (textNode && textNode.nodeType === 3) {
                     var span = document.createElement('span');
@@ -104,9 +110,26 @@
         });
     }
 
+    function applyPeakName() {
+        var title = document.querySelector('.hero-title');
+        if (!title) return;
+        if (!peakFaName) peakFaName = title.textContent.trim();
+        peakSlug = peakSlug || pageSlug();
+
+        if (window.I18n && I18n.isEn() && window.ContentEn && peakSlug) {
+            ContentEn.loadPeaksEn().then(function () {
+                var en = ContentEn.peakBySlug(peakSlug);
+                if (en && en.name) title.textContent = en.name;
+            });
+        } else if (peakFaName) {
+            title.textContent = peakFaName;
+        }
+    }
+
     function apply() {
         injectLangSwitch();
         tagElements();
+        applyPeakName();
         if (window.I18n) I18n.apply(I18n.lang());
     }
 
@@ -116,5 +139,9 @@
         apply();
     }
 
-    document.addEventListener('3tiq:languagechange', tagElements);
+    document.addEventListener('3tiq:languagechange', function () {
+        tagElements();
+        applyPeakName();
+        if (window.I18n) I18n.apply(I18n.lang());
+    });
 })();

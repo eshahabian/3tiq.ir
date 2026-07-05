@@ -17,7 +17,19 @@ html[dir="rtl"] .header-actions--compact {
     flex-direction: row-reverse;
 }
 
-html[dir="ltr"] body {
+html[dir="ltr"] #mountain-search,
+html[dir="ltr"] #shelter-search,
+html[dir="ltr"] #mountain-filter,
+html[dir="ltr"] #mountain-height-filter,
+html[dir="ltr"] #shelter-filter {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="ltr"] .hero-title {
+    direction: ltr;
+}
+
     font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
