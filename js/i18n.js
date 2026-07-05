@@ -470,14 +470,7 @@
         return str;
     }
 
-    function applyLang(lang) {
-        currentLang = (lang === 'en') ? 'en' : 'fa';
-        localStorage.setItem(STORAGE_KEY, currentLang);
-
-        var html = document.documentElement;
-        html.lang = currentLang === 'en' ? 'en' : 'fa';
-        html.dir = currentLang === 'en' ? 'ltr' : 'rtl';
-
+    function refreshDom() {
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             if (key) el.textContent = t(key);
@@ -506,6 +499,17 @@
             btn.classList.toggle('active', active);
             btn.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
+    }
+
+    function applyLang(lang) {
+        currentLang = (lang === 'en') ? 'en' : 'fa';
+        localStorage.setItem(STORAGE_KEY, currentLang);
+
+        var html = document.documentElement;
+        html.lang = currentLang === 'en' ? 'en' : 'fa';
+        html.dir = currentLang === 'en' ? 'ltr' : 'rtl';
+
+        refreshDom();
 
         document.dispatchEvent(new CustomEvent('3tiq:languagechange', { detail: { lang: currentLang } }));
     }
@@ -528,6 +532,7 @@
         t: t,
         lang: function () { return currentLang; },
         apply: applyLang,
+        refreshDom: refreshDom,
         isEn: function () { return currentLang === 'en'; }
     };
 

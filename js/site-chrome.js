@@ -214,7 +214,7 @@
             updateDocumentTitle();
             applyShelterTabLabels();
             applyBrandLogo();
-            if (window.I18n) I18n.apply(I18n.lang());
+            if (window.I18n) I18n.refreshDom();
         });
     }
 
@@ -229,7 +229,6 @@
         updateDocumentTitle();
         applyShelterTabLabels();
         applyBrandLogo();
-        if (window.I18n) I18n.apply(I18n.lang());
     });
 
     global.SiteChromePageFile = pageFile;

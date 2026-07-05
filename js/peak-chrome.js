@@ -213,7 +213,7 @@
         applyBreadcrumb();
         applyPeakHero();
         applySidebarRange();
-        if (window.I18n) I18n.apply(I18n.lang());
+        if (window.I18n) I18n.refreshDom();
     }
 
     if (document.readyState === 'loading') {
@@ -227,6 +227,6 @@
         applyBreadcrumb();
         applyPeakHero();
         applySidebarRange();
-        if (window.I18n) I18n.apply(I18n.lang());
+        if (window.I18n) I18n.refreshDom();
     });
 })();

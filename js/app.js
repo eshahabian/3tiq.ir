@@ -972,5 +972,4 @@ document.addEventListener('3tiq:languagechange', function () {
     else loadRoutes('all');
     if (window.refreshMapPanels) window.refreshMapPanels();
     if (window.refreshGallery) window.refreshGallery();
-    if (window.I18n) I18n.apply(I18n.lang());
 });

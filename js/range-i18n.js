@@ -151,6 +151,7 @@
 
     function init() {
         if (!document.querySelector('.peaks-section, #peaksGrid')) return;
+        if (!/(?:^|\/)(alborz-(?:gharbi|markazi|shargi)|zagros-(?:shomal|markazi|jonoob)|koohaye-(?:markazi|atashfeshani))\.html$/i.test(location.pathname)) return;
 
         watchPeaksGrid();
 

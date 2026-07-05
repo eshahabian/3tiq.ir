@@ -13,6 +13,10 @@
 
     var base = script.src.replace(/js\/i18n-boot\.js(\?.*)?$/, '');
 
+    function isRangePage() {
+        return /(?:^|\/)(alborz-(?:gharbi|markazi|shargi)|zagros-(?:shomal|markazi|jonoob)|koohaye-(?:markazi|atashfeshani))\.html$/i.test(location.pathname);
+    }
+
     function loadCss(href) {
         if (document.querySelector('link[href*="i18n.css"]')) return;
         var l = document.createElement('link');
@@ -28,8 +32,8 @@
         }
         var s = document.createElement('script');
         s.src = src;
-        s.defer = true;
         s.onload = function () { if (cb) cb(); };
+        s.onerror = function () { if (cb) cb(); };
         document.body.appendChild(s);
     }
 
@@ -42,7 +46,7 @@
     loadJs(base + 'js/i18n.js', function () {
         loadJs(base + 'js/content-en.js', function () {
             loadJs(base + 'js/site-chrome.js', function () {
-                if (document.querySelector('.peaks-section, #peaksGrid')) {
+                if (isRangePage()) {
                     loadJs(base + 'js/range-i18n.js', finish);
                 } else if (/\/peaks\//.test(location.pathname)) {
                     loadJs(base + 'js/peak-content.js', finish);
