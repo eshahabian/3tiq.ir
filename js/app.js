@@ -503,12 +503,16 @@ mountainPanel.style.cssText = `
 
 function layoutMapPanels() {
     const rtl = !isEn();
-    mountainPanel.style.direction = rtl ? 'rtl' : 'ltr';
-    mountainPanel.style.right = rtl ? '10px' : 'auto';
-    mountainPanel.style.left = rtl ? 'auto' : '10px';
-    shelterPanel.style.direction = rtl ? 'rtl' : 'ltr';
-    shelterPanel.style.right = rtl ? '10px' : 'auto';
-    shelterPanel.style.left = rtl ? 'auto' : '10px';
+    if (mountainPanel) {
+        mountainPanel.style.direction = rtl ? 'rtl' : 'ltr';
+        mountainPanel.style.right = rtl ? '10px' : 'auto';
+        mountainPanel.style.left = rtl ? 'auto' : '10px';
+    }
+    if (shelterPanel) {
+        shelterPanel.style.direction = rtl ? 'rtl' : 'ltr';
+        shelterPanel.style.right = rtl ? '10px' : 'auto';
+        shelterPanel.style.left = rtl ? 'auto' : '10px';
+    }
 }
 
 function buildMountainPanelHtml() {
@@ -539,7 +543,6 @@ function buildMountainPanelHtml() {
 }
 
 mountainPanel.innerHTML = buildMountainPanelHtml();
-layoutMapPanels();
 document.getElementById('map').appendChild(mountainPanel);
 
 let allMountainMarkers = [];
@@ -750,7 +753,6 @@ fetch('js/shelters.json')
         console.error('❌ خطا در بارگذاری shelters.json:', err);
         document.getElementById('shelter-count').textContent = tr('map.loadError', 'خطا در بارگذاری داده');
     });
-}
 
 window.refreshMapPanels = function () {
     if (!document.getElementById('map')) return;
@@ -819,6 +821,8 @@ window.refreshMapPanels = function () {
         document.getElementById('shelter-search').dispatchEvent(new Event('input'));
     }
 };
+
+} // end map block
 
 // =============================================
 //  About Gallery Slider
