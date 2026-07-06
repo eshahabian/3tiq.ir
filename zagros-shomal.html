@@ -152,7 +152,8 @@
 
     <!-- ===== Hero Map ===== -->
     <section class="hero-map" id="home">
-        <div class="hero-map-bg" style="background-image:url('images/peaks/eshterankoh.jpg')" role="img" aria-label="نمای رشته کوه"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/eshterankoh.jpg')" aria-hidden="true"></div>
+        <div id="map" aria-label="نقشه قله‌ها و پناهگاه‌ها"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">زاگرس شمالی</h1>
@@ -338,10 +339,17 @@
       "lng": 47.1
     }
   ],
-  "heroImage": "images/peaks/eshterankoh.jpg"
+  "heroImage": "images/peaks/eshterankoh.jpg",
+  "mapCenter": [
+    34,
+    47.2
+  ],
+  "mapZoom": 8,
+  "shelters": []
 }
     </script>
     <script src="js/range-ui.js" defer></script>
+    <script src="js/range-map.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

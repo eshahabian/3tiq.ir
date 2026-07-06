@@ -146,7 +146,8 @@
     </header>
 
     <section class="hero-map" id="home">
-        <div class="hero-map-bg" style="background-image:url('images/peaks/karkas.webp')" role="img" aria-label="نمای رشته کوه"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/karkas.webp')" aria-hidden="true"></div>
+        <div id="map" aria-label="نقشه قله‌ها و پناهگاه‌ها"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation:fadeInUp 0.9s ease both;">کوه‌های مرکزی ایران</h1>
@@ -345,10 +346,53 @@
       "link": "peaks/barfanbar.html"
     }
   ],
-  "heroImage": "images/peaks/karkas.webp"
+  "heroImage": "images/peaks/karkas.webp",
+  "mapCenter": [
+    31.5,
+    54.5
+  ],
+  "mapZoom": 6,
+  "shelters": [
+    {
+      "name": "پناهگاه شیرکوه",
+      "type": "پناهگاه",
+      "province": "یزد",
+      "lat": 31.97,
+      "lng": 54.37
+    },
+    {
+      "name": "کمپ هزار",
+      "type": "کمپ",
+      "province": "کرمان",
+      "lat": 29.56,
+      "lng": 56.92
+    },
+    {
+      "name": "کمپ لاله‌زار",
+      "type": "کمپ",
+      "province": "کرمان",
+      "lat": 29.48,
+      "lng": 56.78
+    },
+    {
+      "name": "پناهگاه کرکس",
+      "type": "پناهگاه",
+      "province": "اصفهان",
+      "lat": 33.44,
+      "lng": 51.59
+    },
+    {
+      "name": "کمپ تفتان",
+      "type": "کمپ",
+      "province": "سیستان",
+      "lat": 28.61,
+      "lng": 61.14
+    }
+  ]
 }
     </script>
     <script src="js/range-ui.js" defer></script>
+    <script src="js/range-map.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

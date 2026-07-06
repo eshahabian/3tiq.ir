@@ -354,7 +354,8 @@
 
     <!-- ===== Hero Map ===== -->
     <section class="hero-map" id="home">
-        <div class="hero-map-bg" style="background-image:url('images/peaks/sialan.jpg')" role="img" aria-label="نمای رشته کوه"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/sialan.jpg')" aria-hidden="true"></div>
+        <div id="map" aria-label="نقشه قله‌ها و پناهگاه‌ها"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">البرز غربی</h1>
@@ -570,10 +571,53 @@
       "link": "peaks/asmankooh.html"
     }
   ],
-  "heroImage": "images/peaks/sialan.jpg"
+  "heroImage": "images/peaks/sialan.jpg",
+  "mapCenter": [
+    36.72,
+    50.25
+  ],
+  "mapZoom": 9,
+  "shelters": [
+    {
+      "name": "پناهگاه سیالان",
+      "type": "پناهگاه",
+      "province": "گیلان / قزوین",
+      "lat": 36.68,
+      "lng": 50.05
+    },
+    {
+      "name": "کمپ خشچال",
+      "type": "کمپ",
+      "province": "گیلان",
+      "lat": 36.73,
+      "lng": 50.13
+    },
+    {
+      "name": "پناهگاه درفک",
+      "type": "پناهگاه",
+      "province": "گیلان",
+      "lat": 36.91,
+      "lng": 50.54
+    },
+    {
+      "name": "پناهگاه شاه‌معلم",
+      "type": "پناهگاه",
+      "province": "گیلان",
+      "lat": 36.81,
+      "lng": 50.31
+    },
+    {
+      "name": "کمپ آسمان‌کوه",
+      "type": "کمپ",
+      "province": "گیلان",
+      "lat": 36.76,
+      "lng": 50.61
+    }
+  ]
 }
     </script>
     <script src="js/range-ui.js" defer></script>
+    <script src="js/range-map.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

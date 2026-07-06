@@ -349,7 +349,8 @@
 
     <!-- ===== Hero Map ===== -->
     <section class="hero-map" id="home">
-        <div class="hero-map-bg" style="background-image:url('images/peaks/tochal.jpg')" role="img" aria-label="نمای رشته کوه"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/tochal.jpg')" aria-hidden="true"></div>
+        <div id="map" aria-label="نقشه قله‌ها و پناهگاه‌ها"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">البرز شرقی</h1>
@@ -542,10 +543,17 @@
       "link": "peaks/gelidagh.html"
     }
   ],
-  "heroImage": "images/peaks/tochal.jpg"
+  "heroImage": "images/peaks/tochal.jpg",
+  "mapCenter": [
+    36.55,
+    52.5
+  ],
+  "mapZoom": 9,
+  "shelters": []
 }
     </script>
     <script src="js/range-ui.js" defer></script>
+    <script src="js/range-map.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

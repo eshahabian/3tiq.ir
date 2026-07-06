@@ -349,7 +349,8 @@
 
     <!-- ===== Hero Map ===== -->
     <section class="hero-map" id="home">
-        <div class="hero-map-bg" style="background-image:url('images/peaks/damavand.jpg')" role="img" aria-label="نمای رشته کوه"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/damavand.jpg')" aria-hidden="true"></div>
+        <div id="map" aria-label="نقشه قله‌ها و پناهگاه‌ها"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">البرز مرکزی</h1>
@@ -950,10 +951,88 @@
       "link": "peaks/cheshme-shahi.html"
     }
   ],
-  "heroImage": "images/peaks/damavand.jpg"
+  "heroImage": "images/peaks/damavand.jpg",
+  "mapCenter": [
+    36,
+    51.55
+  ],
+  "mapZoom": 9,
+  "shelters": [
+    {
+      "name": "پناهگاه تخت‌فریدون (دماوند)",
+      "type": "پناهگاه",
+      "province": "مازندران",
+      "lat": 35.94,
+      "lng": 52.1
+    },
+    {
+      "name": "پناهگاه بارگاه سوم دماوند",
+      "type": "پناهگاه",
+      "province": "مازندران",
+      "lat": 35.95,
+      "lng": 52.09
+    },
+    {
+      "name": "پناهگاه علم‌کوه",
+      "type": "پناهگاه",
+      "province": "مازندران",
+      "lat": 36.47,
+      "lng": 51
+    },
+    {
+      "name": "پناهگاه یخچال علم‌کوه",
+      "type": "پناهگاه",
+      "province": "مازندران",
+      "lat": 36.46,
+      "lng": 51.01
+    },
+    {
+      "name": "پناهگاه توچال (ایستگاه ۷)",
+      "type": "پناهگاه",
+      "province": "تهران",
+      "lat": 35.89,
+      "lng": 51.38
+    },
+    {
+      "name": "پناهگاه کهار",
+      "type": "کمپ",
+      "province": "تهران / البرز",
+      "lat": 35.96,
+      "lng": 51.22
+    },
+    {
+      "name": "پناهگاه آزادکوه",
+      "type": "پناهگاه",
+      "province": "مازندران",
+      "lat": 36.22,
+      "lng": 51.81
+    },
+    {
+      "name": "کمپ مهرچال",
+      "type": "کمپ",
+      "province": "تهران / مازندران",
+      "lat": 36.07,
+      "lng": 51.54
+    },
+    {
+      "name": "پناهگاه تخت سلیمان",
+      "type": "پناهگاه",
+      "province": "مازندران / تهران",
+      "lat": 36.1,
+      "lng": 51.75
+    },
+    {
+      "name": "پناهگاه دارآباد",
+      "type": "کمپ",
+      "province": "تهران",
+      "lat": 35.83,
+      "lng": 51.47
+    }
+  ]
 }
     </script>
     <script src="js/range-ui.js" defer></script>
+    <script src="js/range-map.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

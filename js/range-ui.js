@@ -1,5 +1,5 @@
 /**
- * Range pages (Alborz / Zagros): UI chrome + peak cards — no heavy map SDK.
+ * Range pages (Alborz / Zagros): UI chrome + peak cards. Map: js/range-map.js (lazy).
  */
 (function () {
     'use strict';

@@ -351,6 +351,67 @@ body.dark-mode .moon-icon { display: block; }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: opacity 0.5s ease;
+}
+
+.hero-map #map {
+    z-index: 1;
+    background: transparent;
+}
+
+/* پنل‌های جستجو روی نقشه صفحات رشته کوه */
+.range-map-panel {
+    position: absolute;
+    right: 10px;
+    z-index: 900;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 210px;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    direction: rtl;
+}
+
+.range-map-panel--peaks { top: 110px; }
+.range-map-panel--shelters { top: 280px; }
+
+.range-map-panel h4 {
+    margin: 0 0 8px;
+    font-size: 13px;
+}
+
+.range-map-panel--peaks h4 { color: #2d6a4f; }
+.range-map-panel--shelters h4 { color: #d97706; }
+
+.range-map-panel input,
+.range-map-panel select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 13px;
+    box-sizing: border-box;
+    font-family: inherit;
+    direction: rtl;
+    outline: none;
+    margin-top: 8px;
+}
+
+.range-map-panel input { margin-top: 0; }
+
+.range-map-panel #peak-count,
+.range-map-panel #shelter-count {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+}
+
+html[dir="ltr"] .range-map-panel {
+    direction: ltr;
+    right: auto;
+    left: 10px;
 }
 
 /* لایه گرادیان تیره - فقط پایین صفحه تا متن خوانا بشه */
