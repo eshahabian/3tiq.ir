@@ -7,11 +7,13 @@
     <meta name="description" content="قبل از هر صعود کوه، این ۱۰ مورد را چک کن: آب‌وهوا، تجهیزات، مسیر، تیم، اطلاع‌رسانی و موارد ایمنی که کوهنوردان حرفه‌ای هرگز فراموش نمی‌کنند.">
     <link rel="canonical" href="https://3tiq.ir/blog/blog-pre-ascent-checklist.html">
     <meta property="og:title" content="چک‌لیست قبل از صعود — ۱۰ مورد ضروری | سه تیغ">
-    <meta property="og:image" content="https://3tiq.ir/images/peaks/damavand.jpg">
+    <meta property="og:image" content="https://3tiq.ir/images/blog/pre-ascent-checklist.png">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
     <style>
+    .post-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .post-hero{height:55vh;min-height:360px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:3rem}
     .post-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,8,.85) 0%,rgba(20,14,8,.2) 60%,transparent 100%)}
     .post-hero-content{position:relative;z-index:1}
@@ -40,7 +42,7 @@
     .sidebar-toc a:hover{color:var(--primary-color);padding-right:.4rem}
     .related-post{display:flex;gap:.85rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(58,50,38,.06);text-decoration:none;color:inherit}
     .related-post:last-child{border:none}
-    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0}
+    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0;object-fit:cover}
     .related-post-title{font-size:.78rem;font-weight:700;color:var(--text-dark);line-height:1.45}
     .related-post-date{font-size:.68rem;color:var(--text-light);margin-top:.2rem}
     body.dark-mode .post-content,body.dark-mode .post-content h2{color:#e0e0e0}
@@ -49,7 +51,7 @@
     body.dark-mode .related-post-title{color:#e0e0e0}
     </style>
 </head>
-<body>
+<body data-blog-id="pre-ascent-checklist">
     <header class="header">
         <div class="container"><div class="header-content">
             <div class="logo"><a href="../index.html"><img src="../logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;"></a></div>
@@ -72,7 +74,7 @@
     </header>
 
     <section class="post-hero">
-        <img class="post-hero-img" src="../images/peaks/damavand.jpg" alt="چک‌لیست قبل از صعود کوه">
+        <img class="post-hero-img" src="../images/blog/pre-ascent-checklist.png" alt="چک‌لیست قبل از صعود کوه">
         <div class="container post-hero-content">
             <div class="post-breadcrumb"><a href="../index.html">سه تیغ</a> ← <a href="../blog.html">وبلاگ</a> ← ایمنی</div>
             <span class="post-cat-badge">⚠️ ایمنی</span>
@@ -179,9 +181,9 @@
                 </div>
                 <div class="sidebar-card">
                     <h3>مقالات مرتبط</h3>
-                    <a href="blog-altitude-sickness.html" class="related-post"><div class="related-thumb" style="background:linear-gradient(135deg,#7a5c4a,#4a3530);"></div><div><div class="related-post-title">ارتفاع‌زدگی و پیشگیری</div><div class="related-post-date">فروردین ۱۴۰۴</div></div></a>
-                    <a href="blog-beginner-peaks.html" class="related-post"><div class="related-thumb" style="background:linear-gradient(135deg,#5a7060,#3a5040);"></div><div><div class="related-post-title">۵ قله برای مبتدی</div><div class="related-post-date">تیر ۱۴۰۵</div></div></a>
-                    <a href="blog-navigation.html" class="related-post"><div class="related-thumb" style="background:linear-gradient(135deg,#4a6a40,#2a4a20);"></div><div><div class="related-post-title">مسیریابی بدون گوشی</div><div class="related-post-date">دی ۱۴۰۳</div></div></a>
+                    <a href="blog-altitude-sickness.html" class="related-post"><img class="related-thumb" src="../images/blog/altitude-sickness.png" alt="" loading="lazy"><div><div class="related-post-title">ارتفاع‌زدگی و پیشگیری</div><div class="related-post-date">فروردین ۱۴۰۴</div></div></a>
+                    <a href="blog-beginner-peaks.html" class="related-post"><img class="related-thumb" src="../images/blog/beginner-peaks.png" alt="" loading="lazy"><div><div class="related-post-title">۵ قله برای مبتدی</div><div class="related-post-date">تیر ۱۴۰۵</div></div></a>
+                    <a href="blog-navigation.html" class="related-post"><img class="related-thumb" src="../images/blog/navigation.png" alt="" loading="lazy"><div><div class="related-post-title">مسیریابی بدون گوشی</div><div class="related-post-date">دی ۱۴۰۳</div></div></a>
                 </div>
             </aside>
         </div>
@@ -189,6 +191,9 @@
 
     <script src="../js/site-config.js"></script>
     <script src="../js/footer-snippet.js"></script>
+    <script src="../js/site-config.js"></script>
+    <script src="../js/footer-snippet.js"></script>
+    <script src="../js/i18n-boot.js" defer></script>
     <script src="../js/blog-chrome.js"></script>
     <script src="../js/app.js"></script>
 </body>

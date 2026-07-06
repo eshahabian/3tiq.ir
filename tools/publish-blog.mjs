@@ -9,6 +9,7 @@
  */
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 import {
   loadEnv,
   publishToInstagram,
@@ -104,6 +105,15 @@ if (!registry.posts.find(p => p.id === postId)) {
 }
 
 console.log('Caption:', captionPath);
+
+const imageFile = path.join(root, image.replace(/^\//, ''));
+if (fs.existsSync(imageFile)) {
+  try {
+    execSync(`python "${path.join(root, 'tools', 'watermark-blog-images.py')}" "${imageFile}"`, { stdio: 'inherit' });
+  } catch {
+    console.log('⚠️ Watermark skipped — run: python tools/watermark-blog-images.py');
+  }
+}
 
 const env = loadEnv();
 if (!skipInstagram && isConfigured(env)) {

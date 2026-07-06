@@ -54,6 +54,8 @@
                     loadJs(base + 'js/peak-content.js', finish);
                 } else if (document.body.classList.contains('ph-page')) {
                     loadJs(base + 'js/panahgah-i18n.js', finish);
+                } else if (/\/blog\//.test(location.pathname) || /\/blog\.html$/i.test(location.pathname) || /\/blog-damavand-guide\.html$/i.test(location.pathname)) {
+                    loadJs(base + 'js/blog-i18n.js', finish);
                 } else {
                     finish();
                 }

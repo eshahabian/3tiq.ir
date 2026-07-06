@@ -5,7 +5,7 @@
       "slug": "blog/blog-pre-ascent-checklist.html",
       "title": "چک‌لیست قبل از صعود — ۱۰ مورد که نباید فراموش کنی",
       "excerpt": "آب‌وهوا، تجهیزات، مسیر، تیم و اطلاع‌رسانی — فهرستی عملی که قبل از هر صعود باید مرور کنی.",
-      "image": "images/peaks/damavand.jpg",
+      "image": "images/blog/pre-ascent-checklist.png",
       "cat": "safety",
       "dateFa": "۱۴ تیر ۱۴۰۵"
     },
@@ -14,7 +14,7 @@
       "slug": "blog-damavand-guide.html",
       "title": "راهنمای کامل صعود دماوند — از صفر تا قله ۵۶۱۰ متری",
       "excerpt": "مسیرهای صعود، پناهگاه‌ها، تجهیزات، بهترین فصل و نکات ایمنی برای آماده‌ترین صعود دماوند.",
-      "image": "images/peaks/damavand.jpg",
+      "image": "images/blog/damavand-guide.png",
       "cat": "route",
       "dateFa": "خرداد ۱۴۰۴"
     },
@@ -23,7 +23,7 @@
       "slug": "blog/blog-alamkooh-intro.html",
       "title": "علم‌کوه — دیواره‌ای که کوهنوردان حرفه‌ای را می‌خواند",
       "excerpt": "معرفی دومین قله ایران، مسیر هاسک‌چال و چالش‌های دیواره شمالی.",
-      "image": "images/peaks/alamkooh.jpg",
+      "image": "images/blog/alamkooh-intro.png",
       "cat": "route",
       "dateFa": "تیر ۱۴۰۵"
     },
@@ -32,7 +32,7 @@
       "slug": "blog/blog-layering-system.html",
       "title": "سیستم لباس سه‌لایه — راز راحتی در کوه",
       "excerpt": "چطور با لباس لایه‌ای در یک روز کوهنوردی هم از سرما و هم از گرما در امان بمانی.",
-      "image": "images/peaks/alamkooh.jpg",
+      "image": "images/blog/layering-system.png",
       "cat": "gear",
       "dateFa": "تیر ۱۴۰۵"
     },
@@ -41,7 +41,7 @@
       "slug": "blog/blog-beginner-peaks.html",
       "title": "۵ قله مناسب برای شروع کوهنوردی جدی",
       "excerpt": "توچال، کرکس، سهند، سبلان و دنا — پنج مقصد امن و انگیزه‌بخش برای اولین صعود جدی.",
-      "image": "images/peaks/tochal.jpg",
+      "image": "images/blog/beginner-peaks.png",
       "cat": "tips",
       "dateFa": "تیر ۱۴۰۵"
     },
@@ -50,7 +50,7 @@
       "slug": "blog/blog-winter-gear.html",
       "title": "چک‌لیست کامل تجهیزات کوهنوردی زمستانه",
       "excerpt": "از کفش کرامپون‌خور تا لباس چندلایه — همه چیز برای صعود ایمن در زمستان.",
-      "image": "images/peaks/alamkooh.jpg",
+      "image": "images/blog/winter-gear.png",
       "cat": "gear",
       "dateFa": "اردیبهشت ۱۴۰۴"
     },
@@ -59,7 +59,7 @@
       "slug": "blog/blog-altitude-sickness.html",
       "title": "ارتفاع‌زدگی چیست و چطور از آن جلوگیری کنیم؟",
       "excerpt": "علائم، پیشگیری و درمان اضطراری ارتفاع‌زدگی — یکی از خطرناک‌ترین مشکلات کوهنوردی.",
-      "image": "images/peaks/damavand.jpg",
+      "image": "images/blog/altitude-sickness.png",
       "cat": "safety",
       "dateFa": "فروردین ۱۴۰۴"
     },
@@ -68,7 +68,7 @@
       "slug": "blog/blog-sabalan.html",
       "title": "سبلان — آتشفشان خاموش با دریاچه‌ای در دهانه",
       "excerpt": "کوه ۴۸۱۱ متری اردبیل با دریاچه یخی در دهانه — یکی از دیدنی‌ترین قله‌های ایران.",
-      "image": "images/peaks/damavand.jpg",
+      "image": "images/blog/sabalan.png",
       "cat": "route",
       "dateFa": "اسفند ۱۴۰۳"
     },
@@ -77,7 +77,7 @@
       "slug": "blog/blog-flora.html",
       "title": "گیاهان دارویی کوهستان‌های ایران که باید بشناسی",
       "excerpt": "آشنایی با گیاهان کمیاب ارتفاعات ایران — علمی و کاربردی برای کوهنورد.",
-      "image": "images/peaks/damavand.jpg",
+      "image": "images/blog/flora.png",
       "cat": "nature",
       "dateFa": "بهمن ۱۴۰۳"
     },
@@ -86,7 +86,7 @@
       "slug": "blog/blog-navigation.html",
       "title": "مسیریابی بدون گوشی — اصول ناوبری در کوه",
       "excerpt": "وقتی GPS و اینترنت قطع شد، این مهارت‌ها تو را به مسیر درست برمی‌گردانند.",
-      "image": "images/peaks/damavand.jpg",
+      "image": "images/blog/navigation.png",
       "cat": "tips",
       "dateFa": "دی ۱۴۰۳"
     }

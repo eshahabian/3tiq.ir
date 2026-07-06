@@ -191,6 +191,42 @@ html[dir="ltr"] .blog-card-footer {
     text-align: left;
 }
 
+html[dir="ltr"] .post-content,
+html[dir="ltr"] .post-meta,
+html[dir="ltr"] .post-sidebar,
+html[dir="ltr"] .checklist-item {
+    text-align: left;
+}
+
+html[dir="ltr"] .post-content h2 {
+    padding-right: 0;
+    padding-left: 1rem;
+    border-right: none;
+    border-left: 4px solid var(--primary-color, #D4A574);
+}
+
+html[dir="ltr"] .post-content ul,
+html[dir="ltr"] .post-content ol {
+    padding-right: 0;
+    padding-left: 1.5rem;
+}
+
+html[dir="ltr"] .info-box,
+html[dir="ltr"] .checklist-item {
+    border-right: none;
+    border-left: 4px solid var(--primary-color, #D4A574);
+}
+
+html[dir="ltr"] .info-box.warning,
+html[dir="ltr"] .checklist-item.warning {
+    border-left-color: #c0392b;
+}
+
+html[dir="ltr"] .sidebar-toc a:hover {
+    padding-right: 0;
+    padding-left: 0.4rem;
+}
+
 /* Footer */
 html[dir="ltr"] .footer-section {
     text-align: left;

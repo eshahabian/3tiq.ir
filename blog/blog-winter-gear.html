@@ -7,10 +7,11 @@
     <meta name="description" content="همه چیزی که برای کوهنوردی ایمن در زمستان نیاز داری — از لباس سه لایه تا کرامپون و تبر یخ">
     <link rel="canonical" href="https://3tiq.ir/blog/blog-winter-gear.html">
     <meta property="og:title" content="چک‌لیست کامل تجهیزات کوهنوردی زمستانه | سه تیغ">
-    <meta property="og:image" content="https://3tiq.ir/images/peaks/damavand.jpg">
+    <meta property="og:image" content="https://3tiq.ir/images/blog/winter-gear.png">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
     <style>
     .post-hero{height:55vh;min-height:360px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:3rem}
     .post-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -50,7 +51,7 @@
     .sidebar-toc a:hover{color:var(--primary-color);padding-right:.4rem}
     .related-post{display:flex;gap:.85rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(58,50,38,.06);text-decoration:none;color:inherit}
     .related-post:last-child{border:none}
-    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0}
+    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0;object-fit:cover}
     .related-post-title{font-size:.78rem;font-weight:700;color:var(--text-dark);line-height:1.45}
     .related-post-date{font-size:.68rem;color:var(--text-light);margin-top:.2rem}
     body.dark-mode .post-content,body.dark-mode .post-content h2,body.dark-mode .post-content h3{color:#e0e0e0}
@@ -61,7 +62,7 @@
     body.dark-mode .checklist li{border-color:rgba(255,255,255,.06)}
     </style>
 </head>
-<body>
+<body data-blog-id="winter-gear">
     <header class="header">
         <div class="container"><div class="header-content">
             <div class="logo"><a href="../index.html"><img src="../logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;"></a></div>
@@ -114,7 +115,7 @@
     </header>
 
     <section class="post-hero">
-        <div class="post-hero-bg" style="position:absolute;inset:0;background:linear-gradient(135deg,#2a3a4a 0%,#1a2535 100%);"></div>
+        <img class="post-hero-img" src="../images/blog/winter-gear.png" alt="تجهیزات کوهنوردی زمستانه">
         <div class="container post-hero-content">
             <div class="post-breadcrumb"><a href="../index.html">سه تیغ</a> ← <a href="../blog.html">وبلاگ</a> ← تجهیزات</div>
             <span class="post-cat-badge">🎒 تجهیزات</span>
@@ -218,9 +219,9 @@
                 </div>
                 <div class="sidebar-card">
                     <h3>مقالات مرتبط</h3>
-<a href="blog-altitude-sickness.html" class="related-post"><div class="related-thumb" style="background:linear-gradient(135deg,#7a5c4a,#4a3530);"></div><div><div class="related-post-title">ارتفاع‌زدگی و پیشگیری</div><div class="related-post-date">فروردین ۱۴۰۴</div></div></a>
-<a href="blog-navigation.html" class="related-post"><div class="related-thumb" style="background:linear-gradient(135deg,#7b8fa0,#556070);"></div><div><div class="related-post-title">مسیریابی بدون گوشی</div><div class="related-post-date">دی ۱۴۰۳</div></div></a>
-<a href="../blog-damavand-guide.html" class="related-post"><div class="related-thumb" style="background:linear-gradient(135deg,#4a6a40,#2a4a20);"></div><div><div class="related-post-title">راهنمای صعود دماوند</div><div class="related-post-date">خرداد ۱۴۰۴</div></div></a>
+<a href="blog-altitude-sickness.html" class="related-post"><img class="related-thumb" src="../images/blog/altitude-sickness.png" alt="" loading="lazy"><div><div class="related-post-title">ارتفاع‌زدگی و پیشگیری</div><div class="related-post-date">فروردین ۱۴۰۴</div></div></a>
+<a href="blog-navigation.html" class="related-post"><img class="related-thumb" src="../images/blog/navigation.png" alt="" loading="lazy"><div><div class="related-post-title">مسیریابی بدون گوشی</div><div class="related-post-date">دی ۱۴۰۳</div></div></a>
+<a href="../blog-damavand-guide.html" class="related-post"><img class="related-thumb" src="../images/blog/damavand-guide.png" alt="" loading="lazy"><div><div class="related-post-title">راهنمای صعود دماوند</div><div class="related-post-date">خرداد ۱۴۰۴</div></div></a>
 
                 </div>
             </aside>
@@ -230,6 +231,9 @@
     <button class="back-to-top" id="backToTop">↑</button>
     <script src="../js/site-config.js"></script>
     <script src="../js/footer-snippet.js"></script>
+    <script src="../js/site-config.js"></script>
+    <script src="../js/footer-snippet.js"></script>
+    <script src="../js/i18n-boot.js" defer></script>
     <script src="../js/blog-chrome.js"></script>
     <script src="../js/app.js"></script>
     <script>const b=document.getElementById('backToTop');window.addEventListener('scroll',()=>b.classList.toggle('visible',scrollY>400));b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));</script>

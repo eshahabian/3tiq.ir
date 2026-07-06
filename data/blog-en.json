@@ -1,0 +1,195 @@
+{
+  "cards": {
+    "pre-ascent-checklist": {
+      "title": "Pre-Ascent Checklist — 10 Things You Must Not Forget",
+      "excerpt": "Weather, gear, route, team and communication — a practical list to review before every climb.",
+      "date": "4 Jul 2026"
+    },
+    "damavand-guide": {
+      "title": "Complete Damavand Guide — From Zero to the 5,610 m Summit",
+      "excerpt": "Routes, shelters, gear, best season and safety tips for your best Damavand ascent.",
+      "date": "Jun 2025"
+    },
+    "alamkooh-intro": {
+      "title": "Alam-Kuh — The Wall That Calls Expert Climbers",
+      "excerpt": "Iran's second highest peak, the Hesarchal route and the challenges of the north face.",
+      "date": "Jul 2026"
+    },
+    "layering-system": {
+      "title": "Three-Layer Clothing System — Comfort on the Mountain",
+      "excerpt": "How to stay warm and cool on the same hiking day with proper layering.",
+      "date": "Jul 2026"
+    },
+    "beginner-peaks": {
+      "title": "5 Peaks Perfect for Starting Serious Mountaineering",
+      "excerpt": "Tochal, Karkas, Sahand, Sabalan and Dena — five safe, motivating first serious summits.",
+      "date": "Jul 2026"
+    },
+    "winter-gear": {
+      "title": "Complete Winter Mountaineering Gear Checklist",
+      "excerpt": "From crampon-compatible boots to layered clothing — everything for a safe winter climb.",
+      "date": "May 2025"
+    },
+    "altitude-sickness": {
+      "title": "What Is Altitude Sickness and How to Prevent It?",
+      "excerpt": "Symptoms, prevention and emergency treatment of AMS — one of the deadliest mountain risks.",
+      "date": "Apr 2025"
+    },
+    "sabalan": {
+      "title": "Sabalan — Dormant Volcano with a Crater Lake",
+      "excerpt": "4,811 m peak in Ardabil with an iconic icy crater lake — one of Iran's finest summits.",
+      "date": "Mar 2025"
+    },
+    "flora": {
+      "title": "Medicinal Plants of Iran's Mountains You Should Know",
+      "excerpt": "Rare alpine flora — scientific knowledge and practical tips for mountaineers.",
+      "date": "Feb 2025"
+    },
+    "navigation": {
+      "title": "Mountain Navigation Without a Phone",
+      "excerpt": "When GPS and signal fail, these map and compass skills get you back on track.",
+      "date": "Jan 2025"
+    }
+  },
+  "posts": {
+    "pre-ascent-checklist": {
+      "title": "Pre-Ascent Checklist — 10 Essentials | 3Tiq",
+      "description": "Before every climb check these 10 items: weather, gear, route, team, communication and safety essentials.",
+      "heroTitle": "Pre-Ascent Checklist<br>10 Things You Must Not Forget",
+      "categoryBadge": "⚠️ Safety",
+      "breadcrumbCat": "Safety",
+      "date": "4 Jul 2026",
+      "readMin": "6",
+      "contentFile": "pre-ascent-checklist.html",
+      "toc": [
+        { "href": "#checklist", "label": "10 essentials" },
+        { "href": "#printable", "label": "Printable version" }
+      ]
+    },
+    "damavand-guide": {
+      "title": "Complete Damavand Guide | 3Tiq",
+      "description": "Full guide to climbing Mount Damavand — routes, shelters, gear, season and safety.",
+      "heroTitle": "Complete Damavand Guide<br>From Zero to 5,610 m",
+      "categoryBadge": "🗺 Routes",
+      "breadcrumbCat": "Routes",
+      "date": "Jun 2025",
+      "readMin": "12",
+      "contentFile": "damavand-guide.html",
+      "toc": [
+        { "href": "#routes", "label": "Ascent routes" },
+        { "href": "#shelters", "label": "Shelters" },
+        { "href": "#gear", "label": "Required gear" },
+        { "href": "#season", "label": "Best season" },
+        { "href": "#tips", "label": "Final tips" }
+      ]
+    },
+    "alamkooh-intro": {
+      "title": "Alam-Kuh Introduction | 3Tiq",
+      "description": "Introduction to Alam-Kuh, Iran's legendary north face and the Hesarchal route.",
+      "heroTitle": "Alam-Kuh — A Wall for Expert Climbers",
+      "categoryBadge": "🗺 Routes",
+      "breadcrumbCat": "Routes",
+      "date": "Jul 2026",
+      "readMin": "8",
+      "contentFile": "alamkooh-intro.html",
+      "toc": [
+        { "href": "#route", "label": "Hesarchal route" },
+        { "href": "#level", "label": "Difficulty" }
+      ]
+    },
+    "layering-system": {
+      "title": "Three-Layer Clothing System | 3Tiq",
+      "description": "Base, mid and shell layers explained for comfortable mountain days.",
+      "heroTitle": "Three-Layer System — Comfort on the Mountain",
+      "categoryBadge": "🎒 Gear",
+      "breadcrumbCat": "Gear",
+      "date": "Jul 2026",
+      "readMin": "7",
+      "contentFile": "layering-system.html",
+      "toc": [
+        { "href": "#layers", "label": "Three layers" },
+        { "href": "#pack", "label": "What to pack" }
+      ]
+    },
+    "beginner-peaks": {
+      "title": "5 Beginner-Friendly Serious Peaks | 3Tiq",
+      "description": "Five peaks in Iran ideal for your first serious mountaineering ascent.",
+      "heroTitle": "5 Peaks to Start<br>Serious Mountaineering in Iran",
+      "categoryBadge": "💡 Tips",
+      "breadcrumbCat": "Tips",
+      "date": "Jul 2026",
+      "readMin": "7",
+      "contentFile": "beginner-peaks.html",
+      "toc": [
+        { "href": "#criteria", "label": "Selection criteria" },
+        { "href": "#peaks", "label": "5 recommended peaks" },
+        { "href": "#prep", "label": "Before your first climb" }
+      ]
+    },
+    "winter-gear": {
+      "title": "Winter Mountaineering Gear Checklist | 3Tiq",
+      "description": "Complete winter climbing gear checklist for Iran's mountains.",
+      "heroTitle": "Winter Mountaineering<br>Gear Checklist",
+      "categoryBadge": "🎒 Gear",
+      "breadcrumbCat": "Gear",
+      "date": "May 2025",
+      "readMin": "8",
+      "contentFile": "winter-gear.html",
+      "toc": []
+    },
+    "altitude-sickness": {
+      "title": "Altitude Sickness Guide | 3Tiq",
+      "description": "AMS, HAPE, HACE — symptoms, prevention and field treatment.",
+      "heroTitle": "What Is Altitude Sickness<br>and How to Prevent It?",
+      "categoryBadge": "⚠️ Safety",
+      "breadcrumbCat": "Safety",
+      "date": "Apr 2025",
+      "readMin": "6",
+      "contentFile": "altitude-sickness.html",
+      "toc": [
+        { "href": "#types", "label": "Types of altitude illness" },
+        { "href": "#prevention", "label": "Prevention" },
+        { "href": "#medication", "label": "Medication" },
+        { "href": "#treatment", "label": "Field treatment" }
+      ]
+    },
+    "sabalan": {
+      "title": "Sabalan Peak Guide | 3Tiq",
+      "description": "Climbing Sabalan — routes, crater lake and practical tips.",
+      "heroTitle": "Sabalan — Volcano with a Crater Lake",
+      "categoryBadge": "🗺 Routes",
+      "breadcrumbCat": "Routes",
+      "date": "Mar 2025",
+      "readMin": "9",
+      "contentFile": "sabalan.html",
+      "toc": []
+    },
+    "flora": {
+      "title": "Mountain Medicinal Plants | 3Tiq",
+      "description": "Medicinal and notable plants of Iran's high mountains.",
+      "heroTitle": "Medicinal Plants of Iran's Mountains<br>You Should Know",
+      "categoryBadge": "🌿 Nature",
+      "breadcrumbCat": "Nature",
+      "date": "Feb 2025",
+      "readMin": "5",
+      "contentFile": "flora.html",
+      "toc": []
+    },
+    "navigation": {
+      "title": "Mountain Navigation Without a Phone | 3Tiq",
+      "description": "Map, compass and natural signs when GPS fails.",
+      "heroTitle": "Mountain Navigation<br>Without Phone or Internet",
+      "categoryBadge": "💡 Tips",
+      "breadcrumbCat": "Tips",
+      "date": "Jan 2025",
+      "readMin": "7",
+      "contentFile": "navigation.html",
+      "toc": [
+        { "href": "#map", "label": "Topographic maps" },
+        { "href": "#compass", "label": "Using a compass" },
+        { "href": "#nature", "label": "Natural signs" },
+        { "href": "#tools", "label": "Offline tools" }
+      ]
+    }
+  }
+}

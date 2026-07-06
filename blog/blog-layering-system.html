@@ -7,10 +7,11 @@
     <meta name="description" content="چطور با لباس لایه‌ای در یک روز کوهنوردی هم از سرما و هم از گرما در امان بمانی.">
     <link rel="canonical" href="https://3tiq.ir/blog/blog-layering-system.html">
     <meta property="og:title" content="سیستم لباس سه‌لایه — راز راحتی در کوه | سه تیغ">
-    <meta property="og:image" content="https://3tiq.ir/images/peaks/alamkooh.jpg">
+    <meta property="og:image" content="https://3tiq.ir/images/blog/layering-system.png">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
     <style>
     .post-hero{height:55vh;min-height:360px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:3rem}
     .post-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -36,7 +37,7 @@
     .sidebar-card{background:var(--white);border-radius:1rem;border:1px solid rgba(58,50,38,.08);padding:1.35rem;box-shadow:0 3px 16px rgba(44,36,22,.07)}
     .sidebar-card h3{font-size:.9rem;font-weight:800;margin-bottom:1rem;color:var(--text-dark);padding-bottom:.6rem;border-bottom:1px solid rgba(58,50,38,.08)}
     .related-post{display:flex;gap:.85rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(58,50,38,.06);text-decoration:none;color:inherit}
-    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0;background:var(--light-bg)}
+    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0;background:var(--light-bg);object-fit:cover}
     .related-post-title{font-size:.78rem;font-weight:700;color:var(--text-dark);line-height:1.45}
     .related-post-date{font-size:.68rem;color:var(--text-light);margin-top:.2rem}
     body.dark-mode .post-content,body.dark-mode .post-content h2,body.dark-mode .post-content h3{color:#e0e0e0}
@@ -44,7 +45,7 @@
     body.dark-mode .sidebar-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
     </style>
 </head>
-<body>
+<body data-blog-id="layering-system">
     <header class="header">
         <div class="container"><div class="header-content">
             <div class="logo"><a href="../index.html"><img src="../logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;"></a></div>
@@ -64,7 +65,7 @@
     </header>
 
     <section class="post-hero">
-        <img class="post-hero-img" src="../images/peaks/alamkooh.jpg" alt="سیستم لباس سه‌لایه — راز راحتی در کوه">
+        <img class="post-hero-img" src="../images/blog/layering-system.png" alt="سیستم لباس سه‌لایه در کوه">
         <div class="container post-hero-content">
             <div class="post-breadcrumb"><a href="../index.html">سه تیغ</a> &larr; <a href="../blog.html">وبلاگ</a></div>
             <span class="post-cat-badge">🎒 تجهیزات</span>
@@ -87,14 +88,17 @@
             <aside class="post-sidebar">
                 <div class="sidebar-card">
                     <h3>مقالات مرتبط</h3>
-                    <a href="blog-beginner-peaks.html" class="related-post"><div class="related-thumb"></div><div><div class="related-post-title">۵ قله برای شروع</div><div class="related-post-date">وبلاگ</div></div></a>
-                    <a href="../blog-damavand-guide.html" class="related-post"><div class="related-thumb"></div><div><div class="related-post-title">راهنمای دماوند</div><div class="related-post-date">وبلاگ</div></div></a>
+                    <a href="blog-beginner-peaks.html" class="related-post"><img class="related-thumb" src="../images/blog/beginner-peaks.png" alt="" loading="lazy"><div><div class="related-post-title">۵ قله برای شروع</div><div class="related-post-date">وبلاگ</div></div></a>
+                    <a href="../blog-damavand-guide.html" class="related-post"><img class="related-thumb" src="../images/blog/damavand-guide.png" alt="" loading="lazy"><div><div class="related-post-title">راهنمای دماوند</div><div class="related-post-date">وبلاگ</div></div></a>
                 </div>
             </aside>
         </div>
     </div>
     <script src="../js/site-config.js"></script>
     <script src="../js/footer-snippet.js"></script>
+    <script src="../js/site-config.js"></script>
+    <script src="../js/footer-snippet.js"></script>
+    <script src="../js/i18n-boot.js" defer></script>
     <script src="../js/blog-chrome.js"></script>
     <script src="../js/app.js"></script>
 </body>
