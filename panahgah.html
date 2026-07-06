@@ -646,7 +646,7 @@
     let mountains = [];
 
     Promise.all([
-        fetch('data/shelters-detail.json').then(r => r.json()),
+        fetch('data/shelters-detail.json', { cache: 'no-store' }).then(r => r.json()),
         fetch('js/mountains.json').then(r => r.json())
     ]).then(([shelters, mtns]) => {
         allShelters = shelters;
@@ -721,7 +721,9 @@
         const regionLabel = s.region || '';
         const regionDisplay = (isPhEn() && window.ContentEn && s.region)
             ? ContentEn.regionLabel(s.region) : (regionLabel || s.province);
-        const imgHTML = '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + regionDisplay + '</span></div>';
+        const imgHTML = (s.image && s.image.indexOf('placeholder') === -1)
+            ? '<img src="' + s.image + '" alt="' + s.name.replace(/"/g, '&quot;') + '" loading="lazy">'
+            : '<div class="sh-img-placeholder"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4"><path d="M3 17l4-8 4 6 3-4 4 6H3z"/><circle cx="18" cy="8" r="2"/></svg><span>' + regionDisplay + '</span></div>';
         const cap = s.capacity ? toFa(s.capacity) + ' ' + trPh('ph.card.capacity', 'نفر') : '—';
         const elec = s.electricity
             ? { v: trPh('ph.yes', 'دارد'), c: 'yes', i: '⚡' }

@@ -1845,7 +1845,9 @@ a:focus:not(:focus-visible) {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
-    animation: sh-fade 0.45s ease both;
+    opacity: 1;
+    transform: translateY(0);
+    animation: sh-fade 0.45s ease;
 }
 
 @keyframes sh-fade {
