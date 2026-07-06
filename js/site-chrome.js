@@ -47,7 +47,7 @@
             ['زاگرس ◂', 'nav.zagros']
         ];
         maps.forEach(function (pair) {
-            document.querySelectorAll('a').forEach(function (a) {
+            document.querySelectorAll('.nav-menu a, .footer a, .dropdown a, .dropdown-sub a').forEach(function (a) {
                 if (a.textContent.trim() === pair[0] && !a.hasAttribute('data-i18n')) {
                     a.setAttribute('data-i18n', pair[1]);
                 }

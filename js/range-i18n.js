@@ -4,6 +4,8 @@
 (function (global) {
     'use strict';
 
+    var _rangeI18nReady = false;
+
     function tr(k, fb) {
         return global.I18n ? I18n.t(k) : fb;
     }
@@ -150,6 +152,8 @@
     }
 
     function init() {
+        if (_rangeI18nReady) return;
+        _rangeI18nReady = true;
         if (!document.querySelector('.peaks-section, #peaksGrid')) return;
         if (!/(?:^|\/)(alborz-(?:gharbi|markazi|shargi)|zagros-(?:shomal|markazi|jonoob)|koohaye-(?:markazi|atashfeshani))\.html$/i.test(location.pathname)) return;
 
@@ -167,10 +171,4 @@
 
     document.addEventListener('3tiq:languagechange', applyAll);
     document.addEventListener('3tiq:i18nready', init);
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
 })(window);

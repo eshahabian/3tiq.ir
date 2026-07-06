@@ -20,9 +20,7 @@
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/i18n.css">
-    <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css"/>
-
-    <style>
+<style>
         /* ===== کارت‌های قله ===== */
         .peaks-section {
             padding: 5rem 0;
@@ -308,14 +306,14 @@
                                 <li class="has-dropdown-sub">
                                     <a href="#">زاگرس ◂</a>
                                     <ul class="dropdown-sub">
-                                        <li><a href="#">زاگرس شمالی</a></li>
-                                        <li><a href="#">زاگرس مرکزی</a></li>
-                                        <li><a href="#">زاگرس جنوبی</a></li>
+                                        <li><a href="zagros-shomal.html">زاگرس شمالی</a></li>
+                                        <li><a href="zagros-markazi.html">زاگرس مرکزی</a></li>
+                                        <li><a href="zagros-jonoob.html">زاگرس جنوبی</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="#">کوه‌های مرکزی ایران</a></li>
-                                <li><a href="#">کوه‌های آتشفشانی و منفرد</a></li>
+                                <li><a href="koohaye-markazi.html">کوه‌های مرکزی ایران</a></li>
+                                <li><a href="koohaye-atashfeshani.html">کوه‌های آتشفشانی و منفرد</a></li>
                             </ul>
                         </li>
 
@@ -351,7 +349,7 @@
 
     <!-- ===== Hero Map ===== -->
     <section class="hero-map" id="home">
-        <div id="map"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/damavand.jpg')" role="img" aria-label="نمای رشته کوه"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">البرز مرکزی</h1>
@@ -449,746 +447,513 @@
         </svg>
     </button>
 
-    <script src="js/i18n-boot.js" defer></script>
-    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
-<script>
-    // ===== Theme Toggle =====
-    const themeToggle = document.getElementById('themeToggle');
-    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-        });
+        <script type="application/json" id="range-data">
+{
+  "peaks": [
+    {
+      "name": "دماوند",
+      "elevation": 5610,
+      "province": "مازندران",
+      "difficulty": "خیلی‌سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۳ تا ۴ روز",
+      "description": "بلندترین قله ایران و آتشفشانی خاموش با ارتفاع ۵۶۱۰ متر. دماوند نه تنها بلندترین کوه خاورمیانه بلکه یکی از بلندترین آتشفشان‌های آسیاست. صعود از مسیر جنوبی محبوب‌ترین راه است.",
+      "lat": 35.9534,
+      "lng": 52.1096,
+      "emoji": "🌋",
+      "link": "peaks/damavand.html"
+    },
+    {
+      "name": "علم‌کوه",
+      "elevation": 4850,
+      "province": "مازندران",
+      "difficulty": "خیلی‌سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۳ تا ۴ روز",
+      "description": "دومین قله بلند ایران و بلندترین دیواره سنگی خاورمیانه با ارتفاع ۴۸۵۰ متر. علم‌کوه با دیواره شمالی خیره‌کننده‌اش، مقصد کوهنوردان فنی از سراسر دنیاست.",
+      "lat": 36.2044,
+      "lng": 51.0125,
+      "emoji": "🏔️",
+      "link": "peaks/alamkooh.html"
+    },
+    {
+      "name": "تخت سلیمان",
+      "elevation": 4643,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ تا ۳ روز",
+      "description": "سومین قله بلند ایران با ارتفاع ۴۶۴۳ متر در مرز مازندران و تهران. دسترسی از دره لاریجان و کوهستان‌های اطراف لواسان. مسیرهای متعدد صعود با درجه سختی متفاوت دارد.",
+      "lat": 35.98,
+      "lng": 51.75,
+      "emoji": "⛰️",
+      "link": "peaks/takht-soleiman.html"
+    },
+    {
+      "name": "سیاه‌سنگ",
+      "elevation": 4604,
+      "province": "مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ تا ۳ روز",
+      "description": "قله‌ای مرتفع با ارتفاع ۴۶۰۴ متر در ارتفاعات البرز مرکزی. صخره‌های تیره رنگ وجه تسمیه این قله هستند. یال‌های برفی و چشم‌اندازهای زیبا از ویژگی‌های این کوه است.",
+      "lat": 36.15,
+      "lng": 51.5,
+      "emoji": "🖤",
+      "link": "peaks/siah-sang.html"
+    },
+    {
+      "name": "خرسان",
+      "elevation": 3850,
+      "province": "مازندران / البرز",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای در ارتفاعات البرز مرکزی با مسیرهای صعود متنوع. طبیعت بکر و چشم‌اندازهای زیبا به جنگل‌های انبوه شمال این کوه را برای کوهنوردان جذاب کرده است.",
+      "lat": 36.1,
+      "lng": 51.3,
+      "emoji": "🐻",
+      "link": "peaks/kharsan.html"
+    },
+    {
+      "name": "پالون‌گردن",
+      "elevation": 3700,
+      "province": "تهران / مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "گردنه‌ای مشهور در البرز مرکزی که ارتفاعات تهران را به مازندران متصل می‌کند. مسیر صعود از جنگل‌های انبوه می‌گذرد و در فصول مختلف سال منظره‌های متفاوتی ارائه می‌دهد.",
+      "lat": 36.05,
+      "lng": 51.45,
+      "emoji": "🏕️",
+      "link": "peaks/palungarden.html"
+    },
+    {
+      "name": "خلنو",
+      "elevation": 3600,
+      "province": "تهران / مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - مرداد",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای در شمال تهران با طبیعت سرسبز و جذاب. مسیرهای صعود نسبتاً روشنی دارد و برای کوهنوردان با تجربه متوسط مناسب است. چشم‌اندازهای دشت و جنگل دیدنی است.",
+      "lat": 35.98,
+      "lng": 51.6,
+      "emoji": "🌲",
+      "link": "peaks/khaleno.html"
+    },
+    {
+      "name": "آزادکوه",
+      "elevation": 4200,
+      "province": "مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای مرتفع و چالش‌برانگیز در ارتفاعات مازندران. دیواره‌های صخره‌ای و یخچال‌های طبیعی آن را به مقصدی محبوب برای کوهنوردان فنی تبدیل کرده است.",
+      "lat": 36.2,
+      "lng": 51.6,
+      "emoji": "🗻",
+      "link": "peaks/azadkooh.html"
+    },
+    {
+      "name": "دوبرار",
+      "elevation": 4100,
+      "province": "تهران / مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای با دو قله دوقلو در البرز مرکزی. مسیر صعود از دره‌های سرسبز و ارتفاعات برفی می‌گذرد و چشم‌اندازهای فوق‌العاده‌ای به کوه‌های اطراف ارائه می‌دهد.",
+      "lat": 35.95,
+      "lng": 51.8,
+      "emoji": "⛰️",
+      "link": "peaks/dobarar.html"
+    },
+    {
+      "name": "سرکچال",
+      "elevation": 3600,
+      "province": "تهران / مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای با طبیعت بکر در ارتفاعات البرز. مسیر صعود از جنگل‌های انبوه و مراتع سرسبز می‌گذرد. مناسب برای کوهنوردانی که از طبیعت جنگلی لذت می‌برند.",
+      "lat": 36.08,
+      "lng": 51.55,
+      "emoji": "🌿",
+      "link": "peaks/sarchal.html"
+    },
+    {
+      "name": "کلون‌بستک",
+      "elevation": 4650,
+      "province": "مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در عمق کوهستان البرز مرکزی با مسیرهای دشوار. دسترسی به این قله نیازمند تجربه کافی و تجهیزات کامل است. چشم‌اندازهای کم‌نظیر پاداش سختی‌های مسیر را می‌دهد.",
+      "lat": 36.15,
+      "lng": 51.4,
+      "emoji": "🏔️",
+      "link": "peaks/kolonbastak.html"
+    },
+    {
+      "name": "جانستون",
+      "elevation": 3900,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای با نام منحصربه‌فرد در البرز مرکزی. یال‌های برفی و صخره‌ای این کوه آن را به مقصدی برای کوهنوردان با تجربه تبدیل کرده است.",
+      "lat": 36,
+      "lng": 51.7,
+      "emoji": "⛰️",
+      "link": "peaks/janeston.html"
+    },
+    {
+      "name": "مهرچال",
+      "elevation": 3964,
+      "province": "تهران / مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای مرتفع در البرز مرکزی با مسیرهای متنوع از جنوب و شمال. مسیر شمالی از دره‌های سرسبز مازندران و مسیر جنوبی از ارتفاعات خشک و صخره‌ای تهران است.",
+      "lat": 35.92,
+      "lng": 51.5,
+      "emoji": "🗻",
+      "link": "peaks/mehrchal.html"
+    },
+    {
+      "name": "توچال",
+      "elevation": 3964,
+      "province": "تهران",
+      "difficulty": "متوسط",
+      "bestSeason": "فروردین - آبان",
+      "duration": "۱ روز",
+      "description": "کوه محبوب تهرانی‌ها با ارتفاع ۳۹۶۴ متر و تله‌کابین معروف. نزدیک‌ترین کوه بلند به پایتخت که میزبان هزاران کوهنورد و طبیعت‌گرد در هر فصل است.",
+      "lat": 35.83,
+      "lng": 51.42,
+      "emoji": "🚡",
+      "link": "peaks/tochal.html"
+    },
+    {
+      "name": "کهار",
+      "elevation": 4050,
+      "province": "تهران / البرز",
+      "difficulty": "سخت",
+      "bestSeason": "خرداد - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای مرتفع با ارتفاع حدود ۴۰۵۰ متر در شمال غرب تهران. مسیر صعود از طریق کرج یا کندوان انجام می‌شود. از قله دید فوق‌العاده‌ای به دماوند و علم‌کوه دارید.",
+      "lat": 36.1,
+      "lng": 51.15,
+      "emoji": "🏔️",
+      "link": "peaks/kahar.html"
+    },
+    {
+      "name": "ناز",
+      "elevation": 3300,
+      "province": "تهران / مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای با نام دلنشین در البرز مرکزی. مسیرهای صعود متنوع دارد و در تمام فصول طبیعت زیبایی دارد. گزینه‌ای مناسب برای کوهنوردانی که دنبال صعودهای چند روزه هستند.",
+      "lat": 36.05,
+      "lng": 51.9,
+      "emoji": "🌸",
+      "link": "peaks/naz.html"
+    },
+    {
+      "name": "پرسون",
+      "elevation": null,
+      "province": "تهران / مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در ارتفاعات البرز مرکزی با طبیعت بکر. دسترسی نسبتاً دشوار دارد و برای کوهنوردانی که دنبال مکان‌های کمتر شناخته‌شده هستند مناسب است.",
+      "lat": 36.12,
+      "lng": 51.85,
+      "emoji": "⛰️",
+      "link": "peaks/espidkamar.html"
+    },
+    {
+      "name": "سی‌چال",
+      "elevation": null,
+      "province": "تهران / مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای مرتفع در البرز مرکزی. مسیر صعود از میان چشمه‌ها و آبشارهای زیبا عبور می‌کند. در تابستان چمنزارهای سبز و در زمستان پوشش برفی دیدنی دارد.",
+      "lat": 35.88,
+      "lng": 51.35,
+      "emoji": "💧"
+    },
+    {
+      "name": "وروشت",
+      "elevation": null,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در ارتفاعات البرز مرکزی با مسیرهای کوهنوردی چالش‌برانگیز. از قله منظره‌های زیبایی به سایر قله‌های البرز و دشت‌های شمالی ایران دارید.",
+      "lat": 36.18,
+      "lng": 51.65,
+      "emoji": "🗻"
+    },
+    {
+      "name": "کمانکوه",
+      "elevation": null,
+      "province": "تهران / مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای با شکل منحصربه‌فرد در البرز مرکزی. طبیعت بکر و مسیرهای متنوع آن را به گزینه‌ای محبوب برای کوهنوردان تبدیل کرده است.",
+      "lat": 36.02,
+      "lng": 51.25,
+      "emoji": "🏹"
+    },
+    {
+      "name": "نیزوا",
+      "elevation": null,
+      "province": "مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در عمق کوهستان‌های مازندران با مسیرهای دشوار. برای رسیدن به این قله نیاز به تجهیزات کامل و گاید مطمئن دارید.",
+      "lat": 36.22,
+      "lng": 51.7,
+      "emoji": "⛰️",
+      "link": "peaks/nizva.html"
+    },
+    {
+      "name": "خشچال",
+      "elevation": null,
+      "province": "تهران / مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در البرز مرکزی با دیواره‌های صخره‌ای چالش‌برانگیز. صعود از مسیرهای فنی نیازمند تجربه کافی در کوهنوردی فنی و تکنیکال است.",
+      "lat": 35.96,
+      "lng": 51.4,
+      "emoji": "🪨",
+      "link": "peaks/khashchal.html"
+    },
+    {
+      "name": "سیالان",
+      "elevation": null,
+      "province": "مازندران / البرز",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله سیالان در البرز مرکزی با مسیرهای پرماجرا. در هنگام صعود از چشم‌اندازهای بی‌نظیر به دریای خزر در شمال و ارتفاعات البرز لذت می‌برید.",
+      "lat": 36.25,
+      "lng": 51.55,
+      "emoji": "🏔️",
+      "link": "peaks/sialan.html"
+    },
+    {
+      "name": "شاه‌البرز",
+      "elevation": null,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای با نام شاهانه در البرز مرکزی. از این قله دید وسیعی به سایر قله‌های البرز دارید. مسیر صعود از دره‌های سرسبز و یال‌های صخره‌ای می‌گذرد.",
+      "lat": 36.08,
+      "lng": 51.8,
+      "emoji": "👑"
+    },
+    {
+      "name": "لشگرک",
+      "elevation": null,
+      "province": "تهران",
+      "difficulty": "متوسط",
+      "bestSeason": "اردیبهشت - مهر",
+      "duration": "۱ روز",
+      "description": "قله‌ای نزدیک به تهران با مسیرهای قابل دسترس. مناسب برای کوهنوردان مبتدی و متوسط که می‌خواهند تجربه کوهنوردی در نزدیکی پایتخت داشته باشند.",
+      "lat": 35.87,
+      "lng": 51.55,
+      "emoji": "🏕️"
+    },
+    {
+      "name": "دارآباد",
+      "elevation": null,
+      "province": "تهران",
+      "difficulty": "آسان",
+      "bestSeason": "فروردین - آبان",
+      "duration": "۱ روز",
+      "description": "یکی از محبوب‌ترین مناطق کوهنوردی شمال تهران. دسترسی آسان از طریق محله دارآباد و مسیرهای متنوع برای تمام سطوح کوهنوردی.",
+      "lat": 35.82,
+      "lng": 51.46,
+      "emoji": "🌳"
+    },
+    {
+      "name": "چین‌کلاغ",
+      "elevation": null,
+      "province": "تهران / مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای با نام جالب در البرز مرکزی. مسیر صعود از میان دره‌های عمیق و دیواره‌های صخره‌ای می‌گذرد و تجربه‌ای ناب از کوهستان ارائه می‌دهد.",
+      "lat": 36,
+      "lng": 51.85,
+      "emoji": "🐦"
+    },
+    {
+      "name": "اسپیدکمر",
+      "elevation": 3600,
+      "province": "مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در عمق ارتفاعات مازندران با طبیعت بکر. مسیر دشوار و دسترسی محدود این قله را به مقصدی برای کوهنوردان ماجراجو تبدیل کرده است.",
+      "lat": 36.28,
+      "lng": 51.4,
+      "emoji": "⛰️",
+      "link": "peaks/espidkamar.html"
+    },
+    {
+      "name": "پیرزن‌کلوم",
+      "elevation": 3500,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای با نام افسانه‌ای در البرز مرکزی. داستان‌های محلی جذابی درباره این کوه وجود دارد. مسیر صعود دشوار و تجربه یادماندنی از این کوه دارید.",
+      "lat": 36.17,
+      "lng": 51.5,
+      "emoji": "👵",
+      "link": "peaks/pirzan-kolum.html"
+    },
+    {
+      "name": "ورجین",
+      "elevation": 3800,
+      "province": "مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای در البرز مرکزی با چشم‌اندازهای زیبا. مسیر صعود از میان جنگل‌های انبوه و مراتع سرسبز می‌گذرد و تجربه طبیعت بکر شمال ایران را به شما می‌دهد.",
+      "lat": 36.2,
+      "lng": 51.8,
+      "emoji": "🌾",
+      "link": "peaks/varjin.html"
+    },
+    {
+      "name": "ریزان",
+      "elevation": 3500,
+      "province": "تهران / مازندران",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای در البرز مرکزی با مسیرهای روشن و طبیعت زیبا. گزینه مناسبی برای کوهنوردانی که می‌خواهند تجربه‌ای در ارتفاعات میانی البرز داشته باشند.",
+      "lat": 35.93,
+      "lng": 51.65,
+      "emoji": "🌊",
+      "link": "peaks/rizan.html"
+    },
+    {
+      "name": "آتشکوه",
+      "elevation": 3400,
+      "province": "تهران / البرز",
+      "difficulty": "متوسط",
+      "bestSeason": "اردیبهشت - مهر",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای با نام آتشین در البرز مرکزی. از این کوه دید خوبی به دشت تهران و ارتفاعات البرز دارید. مسیر صعود از جنوب نسبتاً مستقیم و قابل دسترس است.",
+      "lat": 35.9,
+      "lng": 51.2,
+      "emoji": "🔥",
+      "link": "peaks/atashkooh.html"
+    },
+    {
+      "name": "سوتک",
+      "elevation": 3400,
+      "province": "مازندران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در ارتفاعات مازندران با مسیرهای صعود دشوار. طبیعت بکر و دست‌نخورده این قله را به مقصدی محبوب برای کوهنوردان حرفه‌ای تبدیل کرده است.",
+      "lat": 36.3,
+      "lng": 51.6,
+      "emoji": "💨",
+      "link": "peaks/soutak.html"
+    },
+    {
+      "name": "سرلت",
+      "elevation": 3400,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای در البرز مرکزی با ارتفاع قابل توجه. صعود از مسیرهای مختلف امکان‌پذیر است و در هر فصل تجربه متفاوتی به کوهنورد ارائه می‌دهد.",
+      "lat": 36.13,
+      "lng": 51.95,
+      "emoji": "⛰️"
+    },
+    {
+      "name": "یخچال",
+      "elevation": 3800,
+      "province": "مازندران / تهران",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای با یخچال طبیعی در البرز مرکزی. حضور یخ و برف دائمی در بخش‌هایی از این کوه آن را به مقصدی جذاب برای کوهنوردان آلپی تبدیل کرده است.",
+      "lat": 36.05,
+      "lng": 51.1,
+      "emoji": "🧊",
+      "link": "peaks/yakhchal.html"
+    },
+    {
+      "name": "کلکچال",
+      "elevation": 3750,
+      "province": "تهران",
+      "difficulty": "متوسط",
+      "bestSeason": "اردیبهشت - مهر",
+      "duration": "۱ روز",
+      "description": "قله‌ای در شمال تهران با مسیرهای قابل دسترس. محبوب در بین کوهنوردان تهرانی. از قله منظره زیبایی به شهر تهران و ارتفاعات البرز دارید.",
+      "lat": 35.86,
+      "lng": 51.4,
+      "emoji": "🏙️",
+      "link": "peaks/kolakchal.html"
+    },
+    {
+      "name": "لوارک",
+      "elevation": 3600,
+      "province": "تهران",
+      "difficulty": "آسان",
+      "bestSeason": "فروردین - آبان",
+      "duration": "۱ روز",
+      "description": "ارتفاعات لوارک در شمال تهران از مناطق پرتردد کوهنوردی پایتخت است. مسیرهای متعدد با درجه سختی متفاوت برای همه سطوح کوهنوردی وجود دارد.",
+      "lat": 35.84,
+      "lng": 51.52,
+      "emoji": "🌄",
+      "link": "peaks/louvarak.html"
+    },
+    {
+      "name": "پهنه‌حصار",
+      "elevation": 3500,
+      "province": "تهران / البرز",
+      "difficulty": "متوسط",
+      "bestSeason": "اردیبهشت - مهر",
+      "duration": "۱ تا ۲ روز",
+      "description": "ارتفاعات پهنه‌حصار با دشت‌های باز و چشم‌اندازهای پانورامیک. مسیرهای صعود روشن و برای کوهنوردان متوسط مناسب است. در بهار با شکوفه‌های کوهی زیباتر می‌شود.",
+      "lat": 35.88,
+      "lng": 51.28,
+      "emoji": "🏞️",
+      "link": "peaks/pahnehhassar.html"
+    },
+    {
+      "name": "چشمه‌شاهی",
+      "elevation": 3400,
+      "province": "تهران",
+      "difficulty": "آسان",
+      "bestSeason": "فروردین - آبان",
+      "duration": "۱ روز",
+      "description": "منطقه‌ای محبوب در شمال تهران با چشمه‌های آب گوارا. گزینه‌ای ایده‌آل برای طبیعت‌گردان خانوادگی و کوهنوردان مبتدی که دنبال تجربه ارتفاعات البرز هستند.",
+      "lat": 35.8,
+      "lng": 51.48,
+      "emoji": "💦",
+      "link": "peaks/cheshme-shahi.html"
     }
-
-    // ===== Mobile Menu =====
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMenu           = document.getElementById('navMenu');
-    const navOverlay        = document.getElementById('navOverlay');
-
-    function closeMenu() {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = navMenu.classList.contains('active');
-            if (isOpen) { closeMenu(); }
-            else {
-                navMenu.classList.add('active');
-                mobileMenuToggle.classList.add('active');
-                navOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    }
-    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
-    document.querySelectorAll('.nav-menu a:not(.has-dropdown > a)').forEach(l => l.addEventListener('click', closeMenu));
-    document.querySelectorAll('.has-dropdown > a').forEach(link => {
-        link.addEventListener('click', e => {
-            if (window.innerWidth <= 768) { e.preventDefault(); link.parentElement.classList.toggle('open'); }
-        });
-    });
-
-    // ===== Back to Top =====
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    }
-
-    // ===== قله‌های البرز مرکزی =====
-    const peaks = [
-        {
-            name: 'دماوند',
-            elevation: 5610,
-            province: 'مازندران',
-            difficulty: 'خیلی‌سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۳ تا ۴ روز',
-            description: 'بلندترین قله ایران و آتشفشانی خاموش با ارتفاع ۵۶۱۰ متر. دماوند نه تنها بلندترین کوه خاورمیانه بلکه یکی از بلندترین آتشفشان‌های آسیاست. صعود از مسیر جنوبی محبوب‌ترین راه است.',
-            lat: 35.9534, lng: 52.1096,
-            emoji: '🌋',
-            link: 'peaks/damavand.html'
-        },
-        {
-            name: 'علم‌کوه',
-            elevation: 4850,
-            province: 'مازندران',
-            difficulty: 'خیلی‌سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۳ تا ۴ روز',
-            description: 'دومین قله بلند ایران و بلندترین دیواره سنگی خاورمیانه با ارتفاع ۴۸۵۰ متر. علم‌کوه با دیواره شمالی خیره‌کننده‌اش، مقصد کوهنوردان فنی از سراسر دنیاست.',
-            lat: 36.2044, lng: 51.0125,
-            emoji: '🏔️',
-            link: 'peaks/alamkooh.html'
-        },
-        {
-            name: 'تخت سلیمان',
-            elevation: 4643,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ تا ۳ روز',
-            description: 'سومین قله بلند ایران با ارتفاع ۴۶۴۳ متر در مرز مازندران و تهران. دسترسی از دره لاریجان و کوهستان‌های اطراف لواسان. مسیرهای متعدد صعود با درجه سختی متفاوت دارد.',
-            lat: 35.9800, lng: 51.7500,
-            emoji: '⛰️',
-            link: 'peaks/takht-soleiman.html'
-        },
-        {
-            name: 'سیاه‌سنگ',
-            elevation: 4604,
-            province: 'مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ تا ۳ روز',
-            description: 'قله‌ای مرتفع با ارتفاع ۴۶۰۴ متر در ارتفاعات البرز مرکزی. صخره‌های تیره رنگ وجه تسمیه این قله هستند. یال‌های برفی و چشم‌اندازهای زیبا از ویژگی‌های این کوه است.',
-            lat: 36.1500, lng: 51.5000,
-            emoji: '🖤',
-            link: 'peaks/siah-sang.html'
-        },
-        {
-            name: 'خرسان',
-            elevation: 3850,
-            province: 'مازندران / البرز',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای در ارتفاعات البرز مرکزی با مسیرهای صعود متنوع. طبیعت بکر و چشم‌اندازهای زیبا به جنگل‌های انبوه شمال این کوه را برای کوهنوردان جذاب کرده است.',
-            lat: 36.10, lng: 51.30,
-            emoji: '🐻',
-            link: 'peaks/kharsan.html'
-        },
-        {
-            name: 'پالون‌گردن',
-            elevation: 3700,
-            province: 'تهران / مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'گردنه‌ای مشهور در البرز مرکزی که ارتفاعات تهران را به مازندران متصل می‌کند. مسیر صعود از جنگل‌های انبوه می‌گذرد و در فصول مختلف سال منظره‌های متفاوتی ارائه می‌دهد.',
-            lat: 36.05, lng: 51.45,
-            emoji: '🏕️',
-            link: 'peaks/palungarden.html'
-        },
-        {
-            name: 'خلنو',
-            elevation: 3600,
-            province: 'تهران / مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - مرداد',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای در شمال تهران با طبیعت سرسبز و جذاب. مسیرهای صعود نسبتاً روشنی دارد و برای کوهنوردان با تجربه متوسط مناسب است. چشم‌اندازهای دشت و جنگل دیدنی است.',
-            lat: 35.98, lng: 51.60,
-            emoji: '🌲',
-            link: 'peaks/khaleno.html'
-        },
-        {
-            name: 'آزادکوه',
-            elevation: 4200,
-            province: 'مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای مرتفع و چالش‌برانگیز در ارتفاعات مازندران. دیواره‌های صخره‌ای و یخچال‌های طبیعی آن را به مقصدی محبوب برای کوهنوردان فنی تبدیل کرده است.',
-            lat: 36.20, lng: 51.60,
-            emoji: '🗻',
-            link: 'peaks/azadkooh.html'
-        },
-        {
-            name: 'دوبرار',
-            elevation: 4100,
-            province: 'تهران / مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای با دو قله دوقلو در البرز مرکزی. مسیر صعود از دره‌های سرسبز و ارتفاعات برفی می‌گذرد و چشم‌اندازهای فوق‌العاده‌ای به کوه‌های اطراف ارائه می‌دهد.',
-            lat: 35.95, lng: 51.80,
-            emoji: '⛰️',
-            link: 'peaks/dobarar.html'
-        },
-        {
-            name: 'سرکچال',
-            elevation: 3600,
-            province: 'تهران / مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای با طبیعت بکر در ارتفاعات البرز. مسیر صعود از جنگل‌های انبوه و مراتع سرسبز می‌گذرد. مناسب برای کوهنوردانی که از طبیعت جنگلی لذت می‌برند.',
-            lat: 36.08, lng: 51.55,
-            emoji: '🌿',
-            link: 'peaks/sarchal.html'
-        },
-        {
-            name: 'کلون‌بستک',
-            elevation: 4650,
-            province: 'مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در عمق کوهستان البرز مرکزی با مسیرهای دشوار. دسترسی به این قله نیازمند تجربه کافی و تجهیزات کامل است. چشم‌اندازهای کم‌نظیر پاداش سختی‌های مسیر را می‌دهد.',
-            lat: 36.15, lng: 51.40,
-            emoji: '🏔️',
-            link: 'peaks/kolonbastak.html'
-        },
-        {
-            name: 'جانستون',
-            elevation: 3900,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای با نام منحصربه‌فرد در البرز مرکزی. یال‌های برفی و صخره‌ای این کوه آن را به مقصدی برای کوهنوردان با تجربه تبدیل کرده است.',
-            lat: 36.00, lng: 51.70,
-            emoji: '⛰️',
-            link: 'peaks/janeston.html'
-        },
-        {
-            name: 'مهرچال',
-            elevation: 3964,
-            province: 'تهران / مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای مرتفع در البرز مرکزی با مسیرهای متنوع از جنوب و شمال. مسیر شمالی از دره‌های سرسبز مازندران و مسیر جنوبی از ارتفاعات خشک و صخره‌ای تهران است.',
-            lat: 35.92, lng: 51.50,
-            emoji: '🗻',
-            link: 'peaks/mehrchal.html'
-        },
-        {
-            name: 'توچال',
-            elevation: 3964,
-            province: 'تهران',
-            difficulty: 'متوسط',
-            bestSeason: 'فروردین - آبان',
-            duration: '۱ روز',
-            description: 'کوه محبوب تهرانی‌ها با ارتفاع ۳۹۶۴ متر و تله‌کابین معروف. نزدیک‌ترین کوه بلند به پایتخت که میزبان هزاران کوهنورد و طبیعت‌گرد در هر فصل است.',
-            lat: 35.8300, lng: 51.4200,
-            emoji: '🚡',
-            link: 'peaks/tochal.html'
-        },
-        {
-            name: 'کهار',
-            elevation: 4050,
-            province: 'تهران / البرز',
-            difficulty: 'سخت',
-            bestSeason: 'خرداد - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای مرتفع با ارتفاع حدود ۴۰۵۰ متر در شمال غرب تهران. مسیر صعود از طریق کرج یا کندوان انجام می‌شود. از قله دید فوق‌العاده‌ای به دماوند و علم‌کوه دارید.',
-            lat: 36.10, lng: 51.15,
-            emoji: '🏔️',
-            link: 'peaks/kahar.html'
-        },
-        {
-            name: 'ناز',
-            elevation: 3300,
-            province: 'تهران / مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای با نام دلنشین در البرز مرکزی. مسیرهای صعود متنوع دارد و در تمام فصول طبیعت زیبایی دارد. گزینه‌ای مناسب برای کوهنوردانی که دنبال صعودهای چند روزه هستند.',
-            lat: 36.05, lng: 51.90,
-            emoji: '🌸',
-            link: 'peaks/naz.html'
-        },
-        {
-            name: 'پرسون',
-            elevation: null,
-            province: 'تهران / مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در ارتفاعات البرز مرکزی با طبیعت بکر. دسترسی نسبتاً دشوار دارد و برای کوهنوردانی که دنبال مکان‌های کمتر شناخته‌شده هستند مناسب است.',
-            lat: 36.12, lng: 51.85,
-            emoji: '⛰️',
-            link: 'peaks/espidkamar.html'
-        },
-        {
-            name: 'سی‌چال',
-            elevation: null,
-            province: 'تهران / مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای مرتفع در البرز مرکزی. مسیر صعود از میان چشمه‌ها و آبشارهای زیبا عبور می‌کند. در تابستان چمنزارهای سبز و در زمستان پوشش برفی دیدنی دارد.',
-            lat: 35.88, lng: 51.35,
-            emoji: '💧'
-        },
-        {
-            name: 'وروشت',
-            elevation: null,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در ارتفاعات البرز مرکزی با مسیرهای کوهنوردی چالش‌برانگیز. از قله منظره‌های زیبایی به سایر قله‌های البرز و دشت‌های شمالی ایران دارید.',
-            lat: 36.18, lng: 51.65,
-            emoji: '🗻'
-        },
-        {
-            name: 'کمانکوه',
-            elevation: null,
-            province: 'تهران / مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای با شکل منحصربه‌فرد در البرز مرکزی. طبیعت بکر و مسیرهای متنوع آن را به گزینه‌ای محبوب برای کوهنوردان تبدیل کرده است.',
-            lat: 36.02, lng: 51.25,
-            emoji: '🏹'
-        },
-        {
-            name: 'نیزوا',
-            elevation: null,
-            province: 'مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در عمق کوهستان‌های مازندران با مسیرهای دشوار. برای رسیدن به این قله نیاز به تجهیزات کامل و گاید مطمئن دارید.',
-            lat: 36.22, lng: 51.70,
-            emoji: '⛰️',
-            link: 'peaks/nizva.html'
-        },
-        {
-            name: 'خشچال',
-            elevation: null,
-            province: 'تهران / مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در البرز مرکزی با دیواره‌های صخره‌ای چالش‌برانگیز. صعود از مسیرهای فنی نیازمند تجربه کافی در کوهنوردی فنی و تکنیکال است.',
-            lat: 35.96, lng: 51.40,
-            emoji: '🪨',
-            link: 'peaks/khashchal.html'
-        },
-        {
-            name: 'سیالان',
-            elevation: null,
-            province: 'مازندران / البرز',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله سیالان در البرز مرکزی با مسیرهای پرماجرا. در هنگام صعود از چشم‌اندازهای بی‌نظیر به دریای خزر در شمال و ارتفاعات البرز لذت می‌برید.',
-            lat: 36.25, lng: 51.55,
-            emoji: '🏔️',
-            link: 'peaks/sialan.html'
-        },
-        {
-            name: 'شاه‌البرز',
-            elevation: null,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای با نام شاهانه در البرز مرکزی. از این قله دید وسیعی به سایر قله‌های البرز دارید. مسیر صعود از دره‌های سرسبز و یال‌های صخره‌ای می‌گذرد.',
-            lat: 36.08, lng: 51.80,
-            emoji: '👑'
-        },
-        {
-            name: 'لشگرک',
-            elevation: null,
-            province: 'تهران',
-            difficulty: 'متوسط',
-            bestSeason: 'اردیبهشت - مهر',
-            duration: '۱ روز',
-            description: 'قله‌ای نزدیک به تهران با مسیرهای قابل دسترس. مناسب برای کوهنوردان مبتدی و متوسط که می‌خواهند تجربه کوهنوردی در نزدیکی پایتخت داشته باشند.',
-            lat: 35.87, lng: 51.55,
-            emoji: '🏕️'
-        },
-        {
-            name: 'دارآباد',
-            elevation: null,
-            province: 'تهران',
-            difficulty: 'آسان',
-            bestSeason: 'فروردین - آبان',
-            duration: '۱ روز',
-            description: 'یکی از محبوب‌ترین مناطق کوهنوردی شمال تهران. دسترسی آسان از طریق محله دارآباد و مسیرهای متنوع برای تمام سطوح کوهنوردی.',
-            lat: 35.82, lng: 51.46,
-            emoji: '🌳'
-        },
-        {
-            name: 'چین‌کلاغ',
-            elevation: null,
-            province: 'تهران / مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای با نام جالب در البرز مرکزی. مسیر صعود از میان دره‌های عمیق و دیواره‌های صخره‌ای می‌گذرد و تجربه‌ای ناب از کوهستان ارائه می‌دهد.',
-            lat: 36.00, lng: 51.85,
-            emoji: '🐦'
-        },
-        {
-            name: 'اسپیدکمر',
-            elevation: 3600,
-            province: 'مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در عمق ارتفاعات مازندران با طبیعت بکر. مسیر دشوار و دسترسی محدود این قله را به مقصدی برای کوهنوردان ماجراجو تبدیل کرده است.',
-            lat: 36.28, lng: 51.40,
-            emoji: '⛰️',
-            link: 'peaks/espidkamar.html'
-        },
-        {
-            name: 'پیرزن‌کلوم',
-            elevation: 3500,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای با نام افسانه‌ای در البرز مرکزی. داستان‌های محلی جذابی درباره این کوه وجود دارد. مسیر صعود دشوار و تجربه یادماندنی از این کوه دارید.',
-            lat: 36.17, lng: 51.50,
-            emoji: '👵',
-            link: 'peaks/pirzan-kolum.html'
-        },
-        {
-            name: 'ورجین',
-            elevation: 3800,
-            province: 'مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای در البرز مرکزی با چشم‌اندازهای زیبا. مسیر صعود از میان جنگل‌های انبوه و مراتع سرسبز می‌گذرد و تجربه طبیعت بکر شمال ایران را به شما می‌دهد.',
-            lat: 36.20, lng: 51.80,
-            emoji: '🌾',
-            link: 'peaks/varjin.html'
-        },
-        {
-            name: 'ریزان',
-            elevation: 3500,
-            province: 'تهران / مازندران',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای در البرز مرکزی با مسیرهای روشن و طبیعت زیبا. گزینه مناسبی برای کوهنوردانی که می‌خواهند تجربه‌ای در ارتفاعات میانی البرز داشته باشند.',
-            lat: 35.93, lng: 51.65,
-            emoji: '🌊',
-            link: 'peaks/rizan.html'
-        },
-        {
-            name: 'آتشکوه',
-            elevation: 3400,
-            province: 'تهران / البرز',
-            difficulty: 'متوسط',
-            bestSeason: 'اردیبهشت - مهر',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای با نام آتشین در البرز مرکزی. از این کوه دید خوبی به دشت تهران و ارتفاعات البرز دارید. مسیر صعود از جنوب نسبتاً مستقیم و قابل دسترس است.',
-            lat: 35.90, lng: 51.20,
-            emoji: '🔥',
-            link: 'peaks/atashkooh.html'
-        },
-        {
-            name: 'سوتک',
-            elevation: 3400,
-            province: 'مازندران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در ارتفاعات مازندران با مسیرهای صعود دشوار. طبیعت بکر و دست‌نخورده این قله را به مقصدی محبوب برای کوهنوردان حرفه‌ای تبدیل کرده است.',
-            lat: 36.30, lng: 51.60,
-            emoji: '💨',
-            link: 'peaks/soutak.html'
-        },
-        {
-            name: 'سرلت',
-            elevation: 3400,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای در البرز مرکزی با ارتفاع قابل توجه. صعود از مسیرهای مختلف امکان‌پذیر است و در هر فصل تجربه متفاوتی به کوهنورد ارائه می‌دهد.',
-            lat: 36.13, lng: 51.95,
-            emoji: '⛰️'
-        },
-        {
-            name: 'یخچال',
-            elevation: 3800,
-            province: 'مازندران / تهران',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای با یخچال طبیعی در البرز مرکزی. حضور یخ و برف دائمی در بخش‌هایی از این کوه آن را به مقصدی جذاب برای کوهنوردان آلپی تبدیل کرده است.',
-            lat: 36.05, lng: 51.10,
-            emoji: '🧊',
-            link: 'peaks/yakhchal.html'
-        },
-        {
-            name: 'کلکچال',
-            elevation: 3750,
-            province: 'تهران',
-            difficulty: 'متوسط',
-            bestSeason: 'اردیبهشت - مهر',
-            duration: '۱ روز',
-            description: 'قله‌ای در شمال تهران با مسیرهای قابل دسترس. محبوب در بین کوهنوردان تهرانی. از قله منظره زیبایی به شهر تهران و ارتفاعات البرز دارید.',
-            lat: 35.86, lng: 51.40,
-            emoji: '🏙️',
-            link: 'peaks/kolakchal.html'
-        },
-        {
-            name: 'لوارک',
-            elevation: 3600,
-            province: 'تهران',
-            difficulty: 'آسان',
-            bestSeason: 'فروردین - آبان',
-            duration: '۱ روز',
-            description: 'ارتفاعات لوارک در شمال تهران از مناطق پرتردد کوهنوردی پایتخت است. مسیرهای متعدد با درجه سختی متفاوت برای همه سطوح کوهنوردی وجود دارد.',
-            lat: 35.84, lng: 51.52,
-            emoji: '🌄',
-            link: 'peaks/louvarak.html'
-        },
-        {
-            name: 'پهنه‌حصار',
-            elevation: 3500,
-            province: 'تهران / البرز',
-            difficulty: 'متوسط',
-            bestSeason: 'اردیبهشت - مهر',
-            duration: '۱ تا ۲ روز',
-            description: 'ارتفاعات پهنه‌حصار با دشت‌های باز و چشم‌اندازهای پانورامیک. مسیرهای صعود روشن و برای کوهنوردان متوسط مناسب است. در بهار با شکوفه‌های کوهی زیباتر می‌شود.',
-            lat: 35.88, lng: 51.28,
-            emoji: '🏞️',
-            link: 'peaks/pahnehhassar.html'
-        },
-        {
-            name: 'چشمه‌شاهی',
-            elevation: 3400,
-            province: 'تهران',
-            difficulty: 'آسان',
-            bestSeason: 'فروردین - آبان',
-            duration: '۱ روز',
-            description: 'منطقه‌ای محبوب در شمال تهران با چشمه‌های آب گوارا. گزینه‌ای ایده‌آل برای طبیعت‌گردان خانوادگی و کوهنوردان مبتدی که دنبال تجربه ارتفاعات البرز هستند.',
-            lat: 35.80, lng: 51.48,
-            emoji: '💦',
-            link: 'peaks/cheshme-shahi.html'
-        }
-    ];
-
-    // ===== رندر کارت‌های قله =====
-    function renderPeaks() {
-        const grid = document.getElementById('peaksGrid');
-        if (!grid) return;
-        grid.innerHTML = peaks.map(p => {
-            const tag  = p.link ? 'a' : 'div';
-            const href = p.link ? `href="${p.link}"` : '';
-            const badge = p.link ? `<span class="peak-link-badge">مشاهده جزئیات ←</span>` : '';
-            return `
-            <${tag} class="peak-card${p.link ? ' peak-card--linked' : ''}" ${href} style="${p.link ? 'text-decoration:none;color:inherit;display:block;' : ''}">
-                <div class="peak-image-wrap">
-                    <span style="font-size:3.5rem;">${p.emoji}</span>
-                    <span class="peak-elevation-badge">⛰ ${p.elevation ? p.elevation.toLocaleString('fa-IR') : '—'} متر</span>
-                    <span class="peak-difficulty-badge ${p.difficulty}">${p.difficulty}</span>
-                </div>
-                <div class="peak-body">
-                    <div class="peak-header">
-                        <h3 class="peak-name">${p.name}</h3>
-                        <span class="peak-province">📍 ${p.province}</span>
-                    </div>
-                    <p class="peak-desc">${p.description}</p>
-                    <div class="peak-meta">
-                        <span>🗓 بهترین فصل: ${p.bestSeason}</span>
-                        <span>⏱ مدت: ${p.duration}</span>
-                    </div>
-                    ${badge}
-                </div>
-            </${tag}>`;
-        }).join('');
-    }
-
-    renderPeaks();
-
-    // ===== نقشه نشان — فقط یک بار
-    if (document.getElementById('map') && !document.getElementById('map')._leaflet_id) {
-    const map = new L.Map('map', {
-        key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
-        maptype: 'dreamy',
-        poi: true,
-        traffic: false,
-        center: [36.00, 51.55],
-        zoom: 8
-    });
-
-    const mountainIcon = L.divIcon({
-        html: `<div style="
-            background: linear-gradient(135deg, #2d6a4f, #40916c);
-            color: white;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            width: 32px; height: 32px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            border: 2px solid white;
-        "><span style="transform:rotate(45deg); font-size:14px;">⛰️</span></div>`,
-        className: '',
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -36]
-    });
-
-    // ===== پناهگاه‌های البرز مرکزی =====
-    const shelters = [
-        { name: 'پناهگاه تخت‌فریدون (دماوند)', type: 'پناهگاه', province: 'مازندران', lat: 35.94, lng: 52.10 },
-        { name: 'پناهگاه بارگاه سوم دماوند', type: 'پناهگاه', province: 'مازندران', lat: 35.95, lng: 52.09 },
-        { name: 'پناهگاه علم‌کوه', type: 'پناهگاه', province: 'مازندران', lat: 36.47, lng: 51.00 },
-        { name: 'پناهگاه یخچال علم‌کوه', type: 'پناهگاه', province: 'مازندران', lat: 36.46, lng: 51.01 },
-        { name: 'پناهگاه توچال (ایستگاه ۷)', type: 'پناهگاه', province: 'تهران', lat: 35.89, lng: 51.38 },
-        { name: 'پناهگاه کهار', type: 'کمپ', province: 'تهران / البرز', lat: 35.96, lng: 51.22 },
-        { name: 'پناهگاه آزادکوه', type: 'پناهگاه', province: 'مازندران', lat: 36.22, lng: 51.81 },
-        { name: 'کمپ مهرچال', type: 'کمپ', province: 'تهران / مازندران', lat: 36.07, lng: 51.54 },
-        { name: 'پناهگاه تخت سلیمان', type: 'پناهگاه', province: 'مازندران / تهران', lat: 36.10, lng: 51.75 },
-        { name: 'پناهگاه دارآباد', type: 'کمپ', province: 'تهران', lat: 35.83, lng: 51.47 },
-    ];
-
-    const shelterIcon = L.divIcon({
-        html: `<div style="
-            background: linear-gradient(135deg, #d97706, #f59e0b);
-            color: white;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            width: 28px; height: 28px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            border: 2px solid white;
-        "><span style="transform:rotate(45deg); font-size:13px;">🏕️</span></div>`,
-        className: '',
-        iconSize: [28, 28],
-        iconAnchor: [14, 28],
-        popupAnchor: [0, -32]
-    });
-
-    // ===== پنل جستجوی قله =====
-    const mountainPanel = document.createElement('div');
-    mountainPanel.style.cssText = `
-        position: absolute; top: 110px; right: 10px;
-        z-index: 900; background: white; border-radius: 12px;
-        padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        width: 210px; font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl;
-    `;
-    mountainPanel.innerHTML = `
-        <h4 style="margin:0 0 8px; color:#2d6a4f; font-size:13px;">⛰️ جستجوی قله</h4>
-        <input id="peak-search" type="text" placeholder="نام قله..." style="
-            width:100%; padding:6px 8px; border:1px solid #ddd;
-            border-radius:8px; font-size:13px; box-sizing:border-box;
-            font-family:inherit; direction:rtl; outline:none;
-        ">
-        <select id="peak-difficulty-filter" style="
-            width:100%; margin-top:8px; padding:6px 8px;
-            border:1px solid #ddd; border-radius:8px;
-            font-size:13px; font-family:inherit; direction:rtl; outline:none;
-        ">
-            <option value="all">همه سطوح</option>
-            <option value="آسان">آسان</option>
-            <option value="متوسط">متوسط</option>
-            <option value="سخت">سخت</option>
-            <option value="خیلی‌سخت">خیلی سخت</option>
-        </select>
-        <div id="peak-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>
-    `;
-    document.getElementById('map').appendChild(mountainPanel);
-
-    // ===== پنل جستجوی پناهگاه =====
-    const shelterPanel = document.createElement('div');
-    shelterPanel.style.cssText = `
-        position: absolute; top: 280px; right: 10px;
-        z-index: 900; background: white; border-radius: 12px;
-        padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        width: 210px; font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl;
-    `;
-    shelterPanel.innerHTML = `
-        <h4 style="margin:0 0 8px; color:#d97706; font-size:13px;">🏕️ جستجوی پناهگاه</h4>
-        <input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="
-            width:100%; padding:6px 8px; border:1px solid #ddd;
-            border-radius:8px; font-size:13px; box-sizing:border-box;
-            font-family:inherit; direction:rtl; outline:none;
-        ">
-        <select id="shelter-type-filter" style="
-            width:100%; margin-top:8px; padding:6px 8px;
-            border:1px solid #ddd; border-radius:8px;
-            font-size:13px; font-family:inherit; direction:rtl; outline:none;
-        ">
-            <option value="all">همه انواع</option>
-            <option value="پناهگاه">پناهگاه</option>
-            <option value="کمپ">کمپ</option>
-        </select>
-        <div id="shelter-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>
-    `;
-    document.getElementById('map').appendChild(shelterPanel);
-
-    // ===== مارکرهای قله با فیلتر =====
-    let peakMarkers = [];
-
-    function renderPeakMarkers(list) {
-        peakMarkers.forEach(m => map.removeLayer(m));
-        peakMarkers = [];
-        list.forEach(p => {
-            const marker = L.marker([p.lat, p.lng], { icon: mountainIcon })
-                .addTo(map)
-                .bindPopup(`
-                    <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:rtl; min-width:150px; padding:4px;">
-                        <b style="font-size:14px; color:#2d6a4f;">${p.emoji} ${p.name}</b><br>
-                        ${p.elevation ? `<span style="color:#555; font-size:12px;">ارتفاع: <b>${p.elevation.toLocaleString('fa-IR')}</b> متر</span><br>` : ''}
-                        <span style="color:#888; font-size:11px;">📍 ${p.province}</span><br>
-                        <span style="color:#888; font-size:11px;">سختی: ${p.difficulty}</span>
-                    </div>
-                `);
-            peakMarkers.push(marker);
-        });
-        document.getElementById('peak-count').textContent = list.length + ' قله نمایش داده می‌شود';
-    }
-
-    renderPeakMarkers(peaks);
-
-    function applyPeakFilter() {
-        const search = document.getElementById('peak-search').value.trim();
-        const diff = document.getElementById('peak-difficulty-filter').value;
-        const filtered = peaks.filter(p =>
-            (!search || p.name.includes(search)) &&
-            (diff === 'all' || p.difficulty === diff)
-        );
-        renderPeakMarkers(filtered);
-    }
-
-    document.getElementById('peak-search').addEventListener('input', applyPeakFilter);
-    document.getElementById('peak-difficulty-filter').addEventListener('change', applyPeakFilter);
-
-    // ===== مارکرهای پناهگاه با فیلتر =====
-    let shelterMarkers = [];
-
-    function renderShelterMarkers(list) {
-        shelterMarkers.forEach(m => map.removeLayer(m));
-        shelterMarkers = [];
-        list.forEach(s => {
-            const marker = L.marker([s.lat, s.lng], { icon: shelterIcon })
-                .addTo(map)
-                .bindPopup(`
-                    <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:rtl; min-width:150px; padding:4px;">
-                        <b style="font-size:14px; color:#d97706;">🏕️ ${s.name}</b><br>
-                        <span style="color:#555; font-size:12px;">نوع: <b>${s.type}</b></span><br>
-                        <span style="color:#888; font-size:11px;">📍 ${s.province}</span>
-                    </div>
-                `);
-            shelterMarkers.push(marker);
-        });
-        document.getElementById('shelter-count').textContent = list.length + ' پناهگاه نمایش داده می‌شود';
-    }
-
-    renderShelterMarkers(shelters);
-
-    function applyShelterFilter() {
-        const search = document.getElementById('shelter-search').value.trim();
-        const type = document.getElementById('shelter-type-filter').value;
-        const filtered = shelters.filter(s =>
-            (!search || s.name.includes(search)) &&
-            (type === 'all' || s.type === type)
-        );
-        renderShelterMarkers(filtered);
-    }
-
-    document.getElementById('shelter-search').addEventListener('input', applyShelterFilter);
-    document.getElementById('shelter-type-filter').addEventListener('change', applyShelterFilter);
-
-    }
+  ],
+  "heroImage": "images/peaks/damavand.jpg"
+}
     </script>
+    <script src="js/range-ui.js" defer></script>
+    <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

@@ -20,9 +20,7 @@
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/i18n.css">
-    <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css"/>
-
-    <style>
+<style>
         /* ===== کارت‌های قله ===== */
         .peaks-section {
             padding: 5rem 0;
@@ -308,14 +306,14 @@
                                 <li class="has-dropdown-sub">
                                     <a href="#">زاگرس ◂</a>
                                     <ul class="dropdown-sub">
-                                        <li><a href="#">زاگرس شمالی</a></li>
-                                        <li><a href="#">زاگرس مرکزی</a></li>
-                                        <li><a href="#">زاگرس جنوبی</a></li>
+                                        <li><a href="zagros-shomal.html">زاگرس شمالی</a></li>
+                                        <li><a href="zagros-markazi.html">زاگرس مرکزی</a></li>
+                                        <li><a href="zagros-jonoob.html">زاگرس جنوبی</a></li>
                                     </ul>
                                 </li>
 
-                                <li><a href="#">کوه‌های مرکزی ایران</a></li>
-                                <li><a href="#">کوه‌های آتشفشانی و منفرد</a></li>
+                                <li><a href="koohaye-markazi.html">کوه‌های مرکزی ایران</a></li>
+                                <li><a href="koohaye-atashfeshani.html">کوه‌های آتشفشانی و منفرد</a></li>
                             </ul>
                         </li>
 
@@ -351,7 +349,7 @@
 
     <!-- ===== Hero Map ===== -->
     <section class="hero-map" id="home">
-        <div id="map"></div>
+        <div class="hero-map-bg" style="background-image:url('images/peaks/tochal.jpg')" role="img" aria-label="نمای رشته کوه"></div>
         <div class="hero-map-overlay"></div>
         <div class="hero-map-content">
             <h1 class="hero-title" style="animation: fadeInUp 0.9s ease both;">البرز شرقی</h1>
@@ -449,365 +447,105 @@
         </svg>
     </button>
 
-    <script src="js/i18n-boot.js" defer></script>
-    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
-<script>
-    // ===== Theme Toggle =====
-    const themeToggle = document.getElementById('themeToggle');
-    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-        });
+        <script type="application/json" id="range-data">
+{
+  "peaks": [
+    {
+      "name": "شاهوار",
+      "elevation": 3834,
+      "province": "سمنان",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "بلندترین قله البرز شرقی و یکی از مرتفع‌ترین قله‌های شمال ایران. این کوه با دیواره‌های صخره‌ای و یال‌های پوشیده از برف، چالشی جدی برای کوهنوردان حرفه‌ای محسوب می‌شود. از قله دید بی‌نظیری به دشت‌های سمنان دارید.",
+      "lat": 36.47,
+      "lng": 55.13,
+      "emoji": "🏔️",
+      "link": "peaks/shahvar.html"
+    },
+    {
+      "name": "نیزوا",
+      "elevation": 3633,
+      "province": "سمنان",
+      "difficulty": "سخت",
+      "bestSeason": "تیر - مرداد",
+      "duration": "۲ روز",
+      "description": "قله‌ای مرتفع در ارتفاعات سمنان با مسیرهای دشوار و طبیعت بکر. یال‌های تیز و دره‌های عمیق این کوه تجربه‌ای ماندگار برای کوهنوردان حرفه‌ای رقم می‌زند.",
+      "lat": 36.52,
+      "lng": 55.28,
+      "emoji": "⛰️",
+      "link": "peaks/nizva.html"
+    },
+    {
+      "name": "چلچلی",
+      "elevation": 3420,
+      "province": "گلستان / سمنان",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - شهریور",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای در مرز گلستان و سمنان با جنگل‌های انبوه هیرکانی در دامنه‌هایش. مسیر صعود از میان بیشه‌های سبز و مراتع کوهستانی زیبا می‌گذرد و تجربه‌ای دل‌انگیز ارائه می‌دهد.",
+      "lat": 36.75,
+      "lng": 55.4,
+      "emoji": "🌿",
+      "link": "peaks/chalchali.html"
+    },
+    {
+      "name": "پیرگردکوه",
+      "elevation": 2986,
+      "province": "سمنان / گلستان",
+      "difficulty": "متوسط",
+      "bestSeason": "اردیبهشت - مهر",
+      "duration": "۱ تا ۲ روز",
+      "description": "کوهی با نام کهن و تاریخ غنی در ارتفاعات شرقی البرز. مسیرهای متنوع صعود و چشم‌اندازهای پانورامیک به دشت‌های اطراف این قله را به مقصدی محبوب تبدیل کرده است.",
+      "lat": 36.6,
+      "lng": 55.6,
+      "emoji": "🗻",
+      "link": "peaks/pirgardkooh.html"
+    },
+    {
+      "name": "خوش‌ییلاق",
+      "elevation": 2750,
+      "province": "گلستان",
+      "difficulty": "آسان",
+      "bestSeason": "اردیبهشت - آبان",
+      "duration": "۱ روز",
+      "description": "ییلاق سرسبز و دیدنی در استان گلستان که در دامنه‌های ارتفاعات البرز شرقی قرار گرفته. مراتع وسیع، چشمه‌های جوشان و هوای پاک این منطقه را به بهشتی برای طبیعت‌گردان تبدیل کرده.",
+      "lat": 37.02,
+      "lng": 55.78,
+      "emoji": "🌄",
+      "link": "peaks/khoshyeilagh.html"
+    },
+    {
+      "name": "جهان‌نما",
+      "elevation": 2146,
+      "province": "گلستان",
+      "difficulty": "آسان",
+      "bestSeason": "فروردین - آبان",
+      "duration": "۱ روز",
+      "description": "قله‌ای در قلب پارک ملی گلستان با جنگل‌های بلوط و راش. دید فوق‌العاده به دشت‌ها و ارتفاعات پیرامون و حضور حیوانات وحشی متعدد این کوه را به مقصدی ویژه برای طبیعت‌دوستان می‌کند.",
+      "lat": 37.4,
+      "lng": 55.95,
+      "emoji": "🌳",
+      "link": "peaks/jahanama.html"
+    },
+    {
+      "name": "گلیداغ",
+      "elevation": 2832,
+      "province": "گلستان / خراسان شمالی",
+      "difficulty": "متوسط",
+      "bestSeason": "خرداد - مهر",
+      "duration": "۱ تا ۲ روز",
+      "description": "قله‌ای در مرز گلستان و خراسان شمالی با چشم‌اندازهای بی‌نظیر به هر دو استان. مسیر صعود از میان مراتع کوهستانی زیبا می‌گذرد و در فصل بهار پوشیده از گل‌های کوهی می‌شود.",
+      "lat": 37.18,
+      "lng": 56.1,
+      "emoji": "🏕️",
+      "link": "peaks/gelidagh.html"
     }
-
-    // ===== Mobile Menu =====
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMenu           = document.getElementById('navMenu');
-    const navOverlay        = document.getElementById('navOverlay');
-
-    function closeMenu() {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', () => {
-            const isOpen = navMenu.classList.contains('active');
-            if (isOpen) { closeMenu(); }
-            else {
-                navMenu.classList.add('active');
-                mobileMenuToggle.classList.add('active');
-                navOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    }
-    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
-    document.querySelectorAll('.nav-menu a:not(.has-dropdown > a)').forEach(l => l.addEventListener('click', closeMenu));
-    document.querySelectorAll('.has-dropdown > a').forEach(link => {
-        link.addEventListener('click', e => {
-            if (window.innerWidth <= 768) { e.preventDefault(); link.parentElement.classList.toggle('open'); }
-        });
-    });
-
-    // ===== Back to Top =====
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    }
-
-    // ===== قله‌های البرز شرقی =====
-    const peaks = [
-        {
-            name: 'شاهوار',
-            elevation: 3834,
-            province: 'سمنان',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'بلندترین قله البرز شرقی و یکی از مرتفع‌ترین قله‌های شمال ایران. این کوه با دیواره‌های صخره‌ای و یال‌های پوشیده از برف، چالشی جدی برای کوهنوردان حرفه‌ای محسوب می‌شود. از قله دید بی‌نظیری به دشت‌های سمنان دارید.',
-            lat: 36.47, lng: 55.13,
-            emoji: '🏔️',
-            link: 'peaks/shahvar.html'
-        },
-        {
-            name: 'نیزوا',
-            elevation: 3633,
-            province: 'سمنان',
-            difficulty: 'سخت',
-            bestSeason: 'تیر - مرداد',
-            duration: '۲ روز',
-            description: 'قله‌ای مرتفع در ارتفاعات سمنان با مسیرهای دشوار و طبیعت بکر. یال‌های تیز و دره‌های عمیق این کوه تجربه‌ای ماندگار برای کوهنوردان حرفه‌ای رقم می‌زند.',
-            lat: 36.52, lng: 55.28,
-            emoji: '⛰️',
-            link: 'peaks/nizva.html'
-        },
-        {
-            name: 'چلچلی',
-            elevation: 3420,
-            province: 'گلستان / سمنان',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - شهریور',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای در مرز گلستان و سمنان با جنگل‌های انبوه هیرکانی در دامنه‌هایش. مسیر صعود از میان بیشه‌های سبز و مراتع کوهستانی زیبا می‌گذرد و تجربه‌ای دل‌انگیز ارائه می‌دهد.',
-            lat: 36.75, lng: 55.40,
-            emoji: '🌿',
-            link: 'peaks/chalchali.html'
-        },
-        {
-            name: 'پیرگردکوه',
-            elevation: 2986,
-            province: 'سمنان / گلستان',
-            difficulty: 'متوسط',
-            bestSeason: 'اردیبهشت - مهر',
-            duration: '۱ تا ۲ روز',
-            description: 'کوهی با نام کهن و تاریخ غنی در ارتفاعات شرقی البرز. مسیرهای متنوع صعود و چشم‌اندازهای پانورامیک به دشت‌های اطراف این قله را به مقصدی محبوب تبدیل کرده است.',
-            lat: 36.60, lng: 55.60,
-            emoji: '🗻',
-            link: 'peaks/pirgardkooh.html'
-        },
-        {
-            name: 'خوش‌ییلاق',
-            elevation: 2750,
-            province: 'گلستان',
-            difficulty: 'آسان',
-            bestSeason: 'اردیبهشت - آبان',
-            duration: '۱ روز',
-            description: 'ییلاق سرسبز و دیدنی در استان گلستان که در دامنه‌های ارتفاعات البرز شرقی قرار گرفته. مراتع وسیع، چشمه‌های جوشان و هوای پاک این منطقه را به بهشتی برای طبیعت‌گردان تبدیل کرده.',
-            lat: 37.02, lng: 55.78,
-            emoji: '🌄',
-            link: 'peaks/khoshyeilagh.html'
-        },
-        {
-            name: 'جهان‌نما',
-            elevation: 2146,
-            province: 'گلستان',
-            difficulty: 'آسان',
-            bestSeason: 'فروردین - آبان',
-            duration: '۱ روز',
-            description: 'قله‌ای در قلب پارک ملی گلستان با جنگل‌های بلوط و راش. دید فوق‌العاده به دشت‌ها و ارتفاعات پیرامون و حضور حیوانات وحشی متعدد این کوه را به مقصدی ویژه برای طبیعت‌دوستان می‌کند.',
-            lat: 37.40, lng: 55.95,
-            emoji: '🌳',
-            link: 'peaks/jahanama.html'
-        },
-        {
-            name: 'گلیداغ',
-            elevation: 2832,
-            province: 'گلستان / خراسان شمالی',
-            difficulty: 'متوسط',
-            bestSeason: 'خرداد - مهر',
-            duration: '۱ تا ۲ روز',
-            description: 'قله‌ای در مرز گلستان و خراسان شمالی با چشم‌اندازهای بی‌نظیر به هر دو استان. مسیر صعود از میان مراتع کوهستانی زیبا می‌گذرد و در فصل بهار پوشیده از گل‌های کوهی می‌شود.',
-            lat: 37.18, lng: 56.10,
-            emoji: '🏕️',
-            link: 'peaks/gelidagh.html'
-        }
-    ];
-
-    // ===== پناهگاه‌های البرز شرقی =====
-    const shelters = [
-        { name: 'پناهگاه شاهوار', type: 'پناهگاه', province: 'سمنان', lat: 36.46, lng: 55.12 },
-        { name: 'کمپ دره شاهوار', type: 'کمپ', province: 'سمنان', lat: 36.48, lng: 55.14 },
-        { name: 'پناهگاه نیزوا', type: 'پناهگاه', province: 'سمنان', lat: 36.51, lng: 55.27 },
-        { name: 'کمپ چلچلی', type: 'کمپ', province: 'گلستان', lat: 36.74, lng: 55.39 },
-        { name: 'پناهگاه خوش‌ییلاق', type: 'پناهگاه', province: 'گلستان', lat: 37.01, lng: 55.77 },
-        { name: 'اردوگاه جهان‌نما', type: 'کمپ', province: 'گلستان', lat: 37.39, lng: 55.94 },
-    ];
-
-    // ===== رندر کارت‌های قله =====
-    function renderPeaks() {
-        const grid = document.getElementById('peaksGrid');
-        if (!grid) return;
-        grid.innerHTML = peaks.map(p => {
-            const tag  = p.link ? 'a' : 'div';
-            const href = p.link ? `href="${p.link}"` : '';
-            const badge = p.link ? `<span class="peak-link-badge">مشاهده جزئیات ←</span>` : '';
-            return `
-            <${tag} class="peak-card${p.link ? ' peak-card--linked' : ''}" ${href} style="${p.link ? 'text-decoration:none;color:inherit;display:block;' : ''}">
-                <div class="peak-image-wrap">
-                    <span style="font-size:3.5rem;">${p.emoji}</span>
-                    <span class="peak-elevation-badge">⛰ ${p.elevation ? p.elevation.toLocaleString('fa-IR') : '—'} متر</span>
-                    <span class="peak-difficulty-badge ${p.difficulty}">${p.difficulty}</span>
-                </div>
-                <div class="peak-body">
-                    <div class="peak-header">
-                        <h3 class="peak-name">${p.name}</h3>
-                        <span class="peak-province">📍 ${p.province}</span>
-                    </div>
-                    <p class="peak-desc">${p.description}</p>
-                    <div class="peak-meta">
-                        <span>🗓 بهترین فصل: ${p.bestSeason}</span>
-                        <span>⏱ مدت: ${p.duration}</span>
-                    </div>
-                    ${badge}
-                </div>
-            </${tag}>`;
-        }).join('');
-    }
-
-    renderPeaks();
-
-    // ===== نقشه نشان — فقط یک بار
-    if (document.getElementById('map') && !document.getElementById('map')._leaflet_id) {
-    const map = new L.Map('map', {
-        key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
-        maptype: 'dreamy',
-        poi: true,
-        traffic: false,
-        center: [36.85, 55.60],
-        zoom: 8
-    });
-
-    const mountainIcon = L.divIcon({
-        html: `<div style="
-            background: linear-gradient(135deg, #2d6a4f, #40916c);
-            color: white;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            width: 32px; height: 32px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            border: 2px solid white;
-        "><span style="transform:rotate(45deg); font-size:14px;">⛰️</span></div>`,
-        className: '',
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-        popupAnchor: [0, -36]
-    });
-
-    const shelterIcon = L.divIcon({
-        html: `<div style="
-            background: linear-gradient(135deg, #d97706, #f59e0b);
-            color: white;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            width: 28px; height: 28px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            border: 2px solid white;
-        "><span style="transform:rotate(45deg); font-size:13px;">🏕️</span></div>`,
-        className: '',
-        iconSize: [28, 28],
-        iconAnchor: [14, 28],
-        popupAnchor: [0, -32]
-    });
-
-    // ===== پنل جستجوی قله =====
-    const mountainPanel = document.createElement('div');
-    mountainPanel.style.cssText = `
-        position: absolute; top: 110px; right: 10px;
-        z-index: 900; background: white; border-radius: 12px;
-        padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        width: 210px; font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl;
-    `;
-    mountainPanel.innerHTML = `
-        <h4 style="margin:0 0 8px; color:#2d6a4f; font-size:13px;">⛰️ جستجوی قله</h4>
-        <input id="peak-search" type="text" placeholder="نام قله..." style="
-            width:100%; padding:6px 8px; border:1px solid #ddd;
-            border-radius:8px; font-size:13px; box-sizing:border-box;
-            font-family:inherit; direction:rtl; outline:none;
-        ">
-        <select id="peak-difficulty-filter" style="
-            width:100%; margin-top:8px; padding:6px 8px;
-            border:1px solid #ddd; border-radius:8px;
-            font-size:13px; font-family:inherit; direction:rtl; outline:none;
-        ">
-            <option value="all">همه سطوح</option>
-            <option value="آسان">آسان</option>
-            <option value="متوسط">متوسط</option>
-            <option value="سخت">سخت</option>
-        </select>
-        <div id="peak-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>
-    `;
-    document.getElementById('map').appendChild(mountainPanel);
-
-    // ===== پنل جستجوی پناهگاه =====
-    const shelterPanel = document.createElement('div');
-    shelterPanel.style.cssText = `
-        position: absolute; top: 280px; right: 10px;
-        z-index: 900; background: white; border-radius: 12px;
-        padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        width: 210px; font-family: 'Vazirmatn', Tahoma, sans-serif; direction: rtl;
-    `;
-    shelterPanel.innerHTML = `
-        <h4 style="margin:0 0 8px; color:#d97706; font-size:13px;">🏕️ جستجوی پناهگاه</h4>
-        <input id="shelter-search" type="text" placeholder="نام پناهگاه..." style="
-            width:100%; padding:6px 8px; border:1px solid #ddd;
-            border-radius:8px; font-size:13px; box-sizing:border-box;
-            font-family:inherit; direction:rtl; outline:none;
-        ">
-        <select id="shelter-type-filter" style="
-            width:100%; margin-top:8px; padding:6px 8px;
-            border:1px solid #ddd; border-radius:8px;
-            font-size:13px; font-family:inherit; direction:rtl; outline:none;
-        ">
-            <option value="all">همه انواع</option>
-            <option value="پناهگاه">پناهگاه</option>
-            <option value="کمپ">کمپ</option>
-        </select>
-        <div id="shelter-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>
-    `;
-    document.getElementById('map').appendChild(shelterPanel);
-
-    // ===== مارکرهای قله با فیلتر =====
-    let peakMarkers = [];
-
-    function renderPeakMarkers(list) {
-        peakMarkers.forEach(m => map.removeLayer(m));
-        peakMarkers = [];
-        list.forEach(p => {
-            const marker = L.marker([p.lat, p.lng], { icon: mountainIcon })
-                .addTo(map)
-                .bindPopup(`
-                    <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:rtl; min-width:150px; padding:4px;">
-                        <b style="font-size:14px; color:#2d6a4f;">${p.emoji} ${p.name}</b><br>
-                        <span style="color:#555; font-size:12px;">ارتفاع: <b>${p.elevation.toLocaleString('fa-IR')}</b> متر</span><br>
-                        <span style="color:#888; font-size:11px;">📍 ${p.province}</span><br>
-                        <span style="color:#888; font-size:11px;">سختی: ${p.difficulty}</span>
-                    </div>
-                `);
-            peakMarkers.push(marker);
-        });
-        document.getElementById('peak-count').textContent = list.length + ' قله نمایش داده می‌شود';
-    }
-
-    renderPeakMarkers(peaks);
-
-    function applyPeakFilter() {
-        const search = document.getElementById('peak-search').value.trim();
-        const diff   = document.getElementById('peak-difficulty-filter').value;
-        const filtered = peaks.filter(p =>
-            (!search || p.name.includes(search)) &&
-            (diff === 'all' || p.difficulty === diff)
-        );
-        renderPeakMarkers(filtered);
-    }
-
-    document.getElementById('peak-search').addEventListener('input', applyPeakFilter);
-    document.getElementById('peak-difficulty-filter').addEventListener('change', applyPeakFilter);
-
-    // ===== مارکرهای پناهگاه با فیلتر =====
-    let shelterMarkers = [];
-
-    function renderShelterMarkers(list) {
-        shelterMarkers.forEach(m => map.removeLayer(m));
-        shelterMarkers = [];
-        list.forEach(s => {
-            const marker = L.marker([s.lat, s.lng], { icon: shelterIcon })
-                .addTo(map)
-                .bindPopup(`
-                    <div style="text-align:center; font-family:'Vazirmatn',Tahoma; direction:rtl; min-width:150px; padding:4px;">
-                        <b style="font-size:14px; color:#d97706;">🏕️ ${s.name}</b><br>
-                        <span style="color:#555; font-size:12px;">نوع: <b>${s.type}</b></span><br>
-                        <span style="color:#888; font-size:11px;">📍 ${s.province}</span>
-                    </div>
-                `);
-            shelterMarkers.push(marker);
-        });
-        document.getElementById('shelter-count').textContent = list.length + ' پناهگاه نمایش داده می‌شود';
-    }
-
-    renderShelterMarkers(shelters);
-
-    function applyShelterFilter() {
-        const search = document.getElementById('shelter-search').value.trim();
-        const type   = document.getElementById('shelter-type-filter').value;
-        const filtered = shelters.filter(s =>
-            (!search || s.name.includes(search)) &&
-            (type === 'all' || s.type === type)
-        );
-        renderShelterMarkers(filtered);
-    }
-
-    document.getElementById('shelter-search').addEventListener('input', applyShelterFilter);
-    document.getElementById('shelter-type-filter').addEventListener('change', applyShelterFilter);
-
-    }
+  ],
+  "heroImage": "images/peaks/tochal.jpg"
+}
     </script>
+    <script src="js/range-ui.js" defer></script>
+    <script src="js/i18n-boot.js" defer></script>
 </body>
 </html>

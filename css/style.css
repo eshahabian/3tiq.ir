@@ -336,7 +336,8 @@ body.dark-mode .moon-icon { display: block; }
 }
 
 /* نقشه زیر همه چیز */
-.hero-map #map {
+.hero-map #map,
+.hero-map-bg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -344,6 +345,12 @@ body.dark-mode .moon-icon { display: block; }
     border-radius: 0;
     box-shadow: none;
     z-index: 1;
+}
+
+.hero-map-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* لایه گرادیان تیره - فقط پایین صفحه تا متن خوانا بشه */

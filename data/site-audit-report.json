@@ -1,46 +1,5 @@
 {
-  "brokenLinks": [
-    {
-      "page": "alborz-gharbi.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "alborz-markazi.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "alborz-shargi.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "koohaye-atashfeshani.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "koohaye-markazi.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "zagros-jonoob.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "zagros-markazi.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    },
-    {
-      "page": "zagros-shomal.html",
-      "href": "${p.link}",
-      "resolved": "${p.link}"
-    }
-  ],
+  "brokenLinks": [],
   "missingCanonical": [],
   "missingDescription": [
     "alamkooh.html",
