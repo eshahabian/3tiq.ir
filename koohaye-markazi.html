@@ -218,7 +218,7 @@
 
     <script src="js/i18n-boot.js" defer></script>
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
-    <script>
+<script>
 
     const themeToggle = document.getElementById('themeToggle');
     if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
@@ -233,8 +233,10 @@
     document.querySelectorAll('.has-dropdown > a').forEach(link => { link.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); link.parentElement.classList.toggle('open'); } }); });
     document.querySelectorAll('.has-dropdown-sub > a').forEach(link => { link.addEventListener('click', e => { if (window.innerWidth <= 768) { e.preventDefault(); link.parentElement.classList.toggle('open'); } }); });
     const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    if (backToTop) {
+        window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
 
     const peaks = [
         {

@@ -451,7 +451,7 @@
 
     <script src="js/i18n-boot.js" defer></script>
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
-    <script>
+<script>
     // ===== Theme Toggle =====
     const themeToggle = document.getElementById('themeToggle');
     if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
@@ -496,8 +496,10 @@
 
     // ===== Back to Top =====
     const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    if (backToTop) {
+        window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
 
     // ===== قله‌های البرز شرقی =====
     const peaks = [
@@ -630,7 +632,8 @@
 
     renderPeaks();
 
-    // ===== نقشه نشان =====
+    // ===== نقشه نشان — فقط یک بار
+    if (document.getElementById('map') && !document.getElementById('map')._leaflet_id) {
     const map = new L.Map('map', {
         key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
         maptype: 'dreamy',
@@ -804,6 +807,7 @@
     document.getElementById('shelter-search').addEventListener('input', applyShelterFilter);
     document.getElementById('shelter-type-filter').addEventListener('change', applyShelterFilter);
 
+    }
     </script>
 </body>
 </html>

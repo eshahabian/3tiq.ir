@@ -30,8 +30,7 @@ function isEn() {
 function isRangePage() {
     return /(?:^|\/)(alborz-(?:gharbi|markazi|shargi)|zagros-(?:shomal|markazi|jonoob)|koohaye-(?:markazi|atashfeshani))\.html$/i.test(location.pathname);
 }
-
-// صفحات رشته کوه اسکریپت inline خودشان را دارند — app.js فقط برای index
+/** صفحات رشته کوه اسکریپت inline خودشان را دارند — app.js فقط index و blog */
 const isHomeApp = !isRangePage();
 function locNum(n) {
     return isEn() ? String(n) : Number(n).toLocaleString('fa-IR');
@@ -458,16 +457,18 @@ function loadRoutes(filter = 'all') {
 loadRoutes();
 
 // فیلتر دکمه‌ها
-if (isHomeApp) document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        loadRoutes(btn.dataset.filter);
+if (isHomeApp) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            loadRoutes(btn.dataset.filter);
+        });
     });
-});
+}
 
 // =============================================
-//  Neshan Map - تمام صفحه (فقط صفحاتی که #map دارند)
+//  Neshan Map - تمام صفحه (فقط index)
 // =============================================
 const mapEl = document.getElementById('map');
 if (isHomeApp && mapEl && typeof L !== 'undefined') {
