@@ -27,6 +27,12 @@ function tr(key, fallback) {
 function isEn() {
     return window.I18n && I18n.isEn();
 }
+function isRangePage() {
+    return /(?:^|\/)(alborz-(?:gharbi|markazi|shargi)|zagros-(?:shomal|markazi|jonoob)|koohaye-(?:markazi|atashfeshani))\.html$/i.test(location.pathname);
+}
+
+// صفحات رشته کوه اسکریپت inline خودشان را دارند — app.js فقط برای index
+const isHomeApp = !isRangePage();
 function locNum(n) {
     return isEn() ? String(n) : Number(n).toLocaleString('fa-IR');
 }
@@ -269,6 +275,7 @@ const famousPeaks = [
 ];
 
 function renderPeaks() {
+    if (!isHomeApp) return;
     const grid = document.getElementById('peaksGrid');
     if (!grid) return;
 
@@ -406,6 +413,7 @@ const routes = [
 const routesGrid = document.getElementById('routesGrid');
 
 function loadRoutes(filter = 'all') {
+    if (!isHomeApp) return;
     if (!routesGrid) return;
 
     const filtered = filter === 'all'
@@ -450,7 +458,7 @@ function loadRoutes(filter = 'all') {
 loadRoutes();
 
 // فیلتر دکمه‌ها
-document.querySelectorAll('.filter-btn').forEach(btn => {
+if (isHomeApp) document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -462,7 +470,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 //  Neshan Map - تمام صفحه (فقط صفحاتی که #map دارند)
 // =============================================
 const mapEl = document.getElementById('map');
-if (mapEl && typeof L !== 'undefined') {
+if (isHomeApp && mapEl && typeof L !== 'undefined') {
 const map = new L.Map('map', {
     key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
     maptype: 'dreamy',
