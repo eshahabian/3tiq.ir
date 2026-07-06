@@ -730,6 +730,17 @@ body.dark-mode .moon-icon { display: block; }
     margin-bottom: 3rem;
 }
 
+/* صفحات رشته کوه — فاصله تیتر و زیرتیتر */
+.peaks-section .section-title {
+    margin-bottom: 0.5rem;
+}
+
+.peaks-section .section-subtitle {
+    margin-top: 0.75rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
 .peaks-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

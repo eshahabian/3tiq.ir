@@ -33,7 +33,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2.5rem;
+            margin-top: 0;
+        }
+
+        .range-section-header {
+            text-align: center;
+            margin-bottom: 0.5rem;
         }
 
         .peak-card {
@@ -385,8 +390,10 @@
     <!-- ===== قله‌ها ===== -->
     <section class="peaks-section" id="peaks">
         <div class="container">
-            <h2 class="section-title" style="text-align:center;font-size:2rem;margin-bottom:0.5rem;">قله‌های البرز غربی</h2>
-            <p class="section-subtitle" style="text-align:center;color:var(--text-light);margin-bottom:0;">گیلان و قزوین</p>
+            <div class="range-section-header">
+                <h2 class="section-title">قله‌های البرز غربی</h2>
+                <p class="section-subtitle">گیلان و قزوین</p>
+            </div>
             <div class="peaks-grid" id="peaksGrid"></div>
         </div>
     </section>
@@ -450,7 +457,7 @@
     </button>
 
     <script src="js/i18n-boot.js" defer></script>
-    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js"></script>
+    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
 <script>
     // ===== Theme Toggle =====
     const themeToggle = document.getElementById('themeToggle');
@@ -468,9 +475,10 @@
     const navOverlay        = document.getElementById('navOverlay');
 
     function closeMenu() {
+        if (!navMenu || !mobileMenuToggle) return;
         navMenu.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
-        navOverlay.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
@@ -513,6 +521,7 @@
             description: 'بلندترین قله البرز غربی و یکی از چالش‌برانگیزترین صعودهای شمال ایران. دیواره‌های سنگی و یال‌های برفی این قله را به مقصدی خاص برای کوهنوردان حرفه‌ای تبدیل کرده.',
             lat: 36.67, lng: 50.04,
             emoji: '🏔️',
+            image: 'images/peaks/sialan.jpg',
             link: 'peaks/sialan.html'
         },
         {
@@ -525,6 +534,7 @@
             description: 'قله‌ای مرتفع در مرز گیلان و قزوین با مسیرهای متنوع صعود. چشم‌اندازهای بی‌نظیر به دریای خزر و ارتفاعات البرز غربی از ویژگی‌های برجسته این کوه است.',
             lat: 36.72, lng: 50.12,
             emoji: '⛰️',
+            image: 'images/peaks/khashchal.jpg',
             link: 'peaks/khashchal.html'
         },
         {
@@ -537,6 +547,7 @@
             description: 'کوهی با مسیرهای قابل دسترس و مناظر زیبا به جنگل‌های انبوه گیلان. گزینه مناسبی برای کوهنوردان با سطح متوسط که به دنبال تجربه البرز غربی هستند.',
             lat: 36.80, lng: 50.30,
             emoji: '🗻',
+            image: 'images/peaks/shahmoallem.jpg',
             link: 'peaks/shahmoallem.html'
         },
         {
@@ -549,6 +560,7 @@
             description: 'یکی از محبوب‌ترین قله‌های گیلان با پیست اسکی فعال. در فصل گرما سبزه‌زارهای دیدنی و در زمستان برف‌های سنگین این کوه را چهارفصل جذاب می‌کند.',
             lat: 36.92, lng: 50.55,
             emoji: '🏕️',
+            image: 'images/peaks/darfak.jpg',
             link: 'peaks/darfak.html'
         },
         {
@@ -561,6 +573,7 @@
             description: 'قله سبز و دیدنی در منطقه رودبار گیلان. مناظر فوق‌العاده به باغ‌های زیتون و دره‌های پوشیده از جنگل، این کوه را به گزینه‌ای ایده‌آل برای طبیعت‌گردان تبدیل کرده.',
             lat: 36.85, lng: 49.95,
             emoji: '🌿',
+            image: 'images/peaks/samamos.jpg',
             link: 'peaks/samamos.html'
         },
         {
@@ -573,6 +586,7 @@
             description: 'کوهی در ارتفاعات قزوین با دسترسی نسبتاً آسان. مناسب برای کسانی که می‌خواهند با کوهنوردی آشنا شوند و از هوای پاک و مناظر دل‌انگیز منطقه لذت ببرند.',
             lat: 36.55, lng: 50.20,
             emoji: '🌄',
+            image: 'images/peaks/espinas.jpg',
             link: 'peaks/espinas.html'
         },
         {
@@ -585,6 +599,7 @@
             description: 'قله‌ای در ارتفاعات قزوین با طبیعت بکر و دست‌نخورده. مسیر صعود از میان دره‌های سرسبز و چشمه‌های آب گوارا می‌گذرد و تجربه‌ای ناب از کوهستان ارائه می‌دهد.',
             lat: 36.60, lng: 50.40,
             emoji: '🏞️',
+            image: 'images/peaks/boghroudagh.jpg',
             link: 'peaks/boghroudagh.html'
         },
         {
@@ -597,6 +612,7 @@
             description: 'قله‌ای با نام به یاد ماندنی در ارتفاعات گیلان. یال‌های بلند و دیواره‌های صخره‌ای آن را به چالشی جذاب تبدیل کرده و از قله می‌توان دریای خزر را در افق دید.',
             lat: 36.75, lng: 50.60,
             emoji: '☁️',
+            image: 'images/peaks/asmankooh.jpg',
             link: 'peaks/asmankooh.html'
         }
     ];
@@ -612,7 +628,9 @@
             return `
             <${tag} class="peak-card${p.link ? ' peak-card--linked' : ''}" ${href} style="${p.link ? 'text-decoration:none;color:inherit;display:block;' : ''}">
                 <div class="peak-image-wrap">
-                    <span style="font-size:3.5rem;">${p.emoji}</span>
+                    ${p.image
+                        ? `<img src="${p.image}" alt="${p.name}" loading="lazy">`
+                        : `<span style="font-size:3.5rem;">${p.emoji}</span>`}
                     <span class="peak-elevation-badge">⛰ ${p.elevation ? p.elevation.toLocaleString('fa-IR') : '—'} متر</span>
                     <span class="peak-difficulty-badge ${p.difficulty}">${p.difficulty}</span>
                 </div>
@@ -634,12 +652,15 @@
 
     renderPeaks();
 
-    // ===== نقشه نشان — فقط یک بار
-    if (document.getElementById('map') && !document.getElementById('map')._leaflet_id) {
+    // ===== نقشه — بعد از load صفحه (جلوگیری از freeze مرورگر)
+    function initRangeMap() {
+        const mapEl = document.getElementById('map');
+        if (!mapEl || mapEl._leaflet_id || typeof L === 'undefined') return;
+
     const map = new L.Map('map', {
         key: 'web.6a240d5daf514aa6a2bdeac77b73f5e5',
         maptype: 'dreamy',
-        poi: true,
+        poi: false,
         traffic: false,
         center: [36.72, 50.25],
         zoom: 9
@@ -818,6 +839,12 @@
     document.getElementById('shelter-search').addEventListener('input', applyShelterFilter);
     document.getElementById('shelter-type-filter').addEventListener('change', applyShelterFilter);
 
+    }
+
+    if (document.readyState === 'complete') {
+        setTimeout(initRangeMap, 0);
+    } else {
+        window.addEventListener('load', initRangeMap, { once: true });
     }
     </script>
 </body>

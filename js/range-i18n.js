@@ -146,7 +146,7 @@
         grid.__i18nObserved = true;
         new MutationObserver(function () {
             applyPeakCards();
-        }).observe(grid, { childList: true, subtree: true });
+        }).observe(grid, { childList: true });
     }
 
     function init() {
