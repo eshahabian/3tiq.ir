@@ -230,8 +230,30 @@
         });
     }
 
+    function injectSeoAlternates() {
+        if (document.querySelector('link[rel="alternate"][hreflang]')) return;
+        var canonical = document.querySelector('link[rel="canonical"]');
+        var url = canonical
+            ? canonical.getAttribute('href')
+            : 'https://3tiq.ir' + (location.pathname === '/' ? '/' : location.pathname);
+        ['fa', 'en', 'x-default'].forEach(function (lang) {
+            var l = document.createElement('link');
+            l.rel = 'alternate';
+            l.hreflang = lang;
+            l.href = url;
+            document.head.appendChild(l);
+        });
+        if (!document.querySelector('meta[property="og:locale:alternate"]')) {
+            var m = document.createElement('meta');
+            m.setAttribute('property', 'og:locale:alternate');
+            m.content = 'en_US';
+            document.head.appendChild(m);
+        }
+    }
+
     function run() {
         injectLangIfMissing();
+        injectSeoAlternates();
         upgradeNav();
         upgradeFooter();
         upgradeShelterTabs();

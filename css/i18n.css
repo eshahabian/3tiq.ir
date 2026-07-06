@@ -30,6 +30,7 @@ html[dir="ltr"] .hero-title {
     direction: ltr;
 }
 
+html[dir="ltr"] body {
     font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 

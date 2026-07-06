@@ -21,7 +21,7 @@
         'البرز': 'Alborz',
         'گیلان': 'Gilan',
         'قزوین': 'Qazvin',
-        'اصفahan': 'Isfahan',
+        'اصفهان': 'Isfahan',
         'اردبیل': 'Ardabil',
         'آذربایجان شرقی': 'East Azerbaijan',
         'چهارمحال و بختیاری': 'Chaharmahal & Bakhtiari',

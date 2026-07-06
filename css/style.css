@@ -14,14 +14,25 @@ html {
 }
 
 :root {
-    --primary-color: #D4A574;
-    --secondary-color: #5C6B4A;
-    --dark-bg: #2C2416;
-    --light-bg: #F5F1E8;
-    --white: #FDFBF7;
-    --text-dark: #3A3226;
-    --text-light: #6B5D4F;
-    --transition: all 0.3s ease;
+    /* Alpine design system — earth, forest, stone (WCAG 2.2 AA) */
+    --primary-color: #7A5C18;
+    --primary-bright: #C9973B;
+    --primary-hover: #9A7234;
+    --secondary-color: #2F4F35;
+    --accent-soft: #D4A574;
+    --dark-bg: #1A1612;
+    --light-bg: #F0EBE3;
+    --white: #FAFAF8;
+    --surface: #FFFFFF;
+    --text-dark: #1A1612;
+    --text-light: #4A4540;
+    --text-muted: #6B6560;
+    --border-subtle: rgba(26, 22, 18, 0.1);
+    --focus-ring: 0 0 0 3px rgba(47, 79, 53, 0.35);
+    --success: #2F6B3A;
+    --warning: #9A6218;
+    --danger: #A32D2D;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     --header-height: 100px;
     color-scheme: light;
 }
@@ -73,7 +84,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(44, 36, 22, 0.97);
+    background: rgba(26, 22, 18, 0.97);
     backdrop-filter: blur(10px);
     z-index: 2000;
     padding: 0.85rem 0;
@@ -119,7 +130,7 @@ body {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: var(--primary-color);
+    color: var(--accent-soft);
 }
 
 .nav-menu a::after {
@@ -435,15 +446,15 @@ body.dark-mode .moon-icon { display: block; }
 }
 
 .hero-btn-primary {
-    background: var(--primary-color);
+    background: var(--primary-bright);
     color: var(--dark-bg);
-    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.45);
+    box-shadow: 0 4px 20px rgba(154, 114, 52, 0.35);
 }
 
 .hero-btn-primary:hover {
-    background: #e8bc87;
+    background: var(--accent-soft);
     transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(212, 165, 116, 0.55);
+    box-shadow: 0 8px 28px rgba(154, 114, 52, 0.45);
 }
 
 .hero-btn-secondary {
@@ -842,7 +853,7 @@ body.dark-mode .peaks-section { background: rgba(26, 26, 26, 0.82); }
 body.dark-mode .peak-card { background: #2a2a2a; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
 body.dark-mode .peak-name { color: #f0f0f0; }
 body.dark-mode .peak-desc,
-body.dark-mode .peak-meta { color: #aaa; }
+body.dark-mode .peak-meta { color: #c8c4bc; }
 body.dark-mode .peak-province { background: #333; }
 
 /* =============================================
@@ -1421,7 +1432,7 @@ body.dark-mode .route-description,
 body.dark-mode .service-description,
 body.dark-mode .route-info,
 body.dark-mode .about-text p {
-    color: #aaa;
+    color: #c8c4bc;
 }
 
 body.dark-mode .filter-btn {
@@ -1442,7 +1453,12 @@ body.dark-mode .route-region {
 }
 
 body.dark-mode .section-title {
-    color: var(--primary-color);
+    color: var(--accent-soft);
+}
+
+body.dark-mode .shelter-tab.active {
+    background: var(--primary-bright);
+    color: var(--dark-bg);
 }
 
 body.dark-mode .light-bg {
@@ -1756,10 +1772,11 @@ a.peak-card {
     top: 1rem;
 }
 
-/* حلقه فوکوس واضح برای کیبورد — استاندارد سایت‌های مدرن */
+/* حلقه فوکوس واضح — WCAG 2.2 Focus Appearance */
 :focus-visible {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--secondary-color);
     outline-offset: 3px;
+    box-shadow: var(--focus-ring);
 }
 
 button:focus:not(:focus-visible),
@@ -2047,8 +2064,8 @@ a:focus:not(:focus-visible) {
 .btn-view-all {
     display: inline-block;
     padding: 0.85rem 2rem;
-    background: var(--primary-color);
-    color: #1a1208;
+    background: var(--primary-bright);
+    color: var(--dark-bg);
     font-weight: 700;
     font-size: 0.95rem;
     border-radius: 100px;
@@ -2058,12 +2075,11 @@ a:focus:not(:focus-visible) {
 
 .btn-view-all:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+    box-shadow: 0 8px 24px rgba(154, 114, 52, 0.35);
 }
 
 body.dark-mode .shelters-showcase { background: #161616; }
 body.dark-mode .shelter-tab { background: #252525; border-color: rgba(255, 255, 255, 0.1); color: #bbb; }
-body.dark-mode .shelter-tab.active { background: var(--primary-color); color: #111; }
 body.dark-mode .sh-card { background: #232323; border-color: rgba(255, 255, 255, 0.06); }
 body.dark-mode .sh-card-name { color: #f0f0f0; }
 body.dark-mode .sh-stat-value { color: #e0e0e0; }

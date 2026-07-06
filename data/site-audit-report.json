@@ -1,0 +1,76 @@
+{
+  "brokenLinks": [
+    {
+      "page": "alborz-gharbi.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "alborz-markazi.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "alborz-shargi.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "koohaye-atashfeshani.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "koohaye-markazi.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "zagros-jonoob.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "zagros-markazi.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    },
+    {
+      "page": "zagros-shomal.html",
+      "href": "${p.link}",
+      "resolved": "${p.link}"
+    }
+  ],
+  "missingCanonical": [],
+  "missingDescription": [
+    "alamkooh.html",
+    "damavand.html",
+    "dena.html",
+    "eshterankoh.html",
+    "hezar.html",
+    "karkas.html",
+    "sabalan.html",
+    "sahand.html",
+    "shirkoh.html",
+    "taftan.html",
+    "tochal.html",
+    "zardkooh.html"
+  ],
+  "missingOgImage": [],
+  "noI18nBoot": [
+    "alamkooh.html",
+    "damavand.html",
+    "dena.html",
+    "eshterankoh.html",
+    "hezar.html",
+    "karkas.html",
+    "mountain-profile.html",
+    "sabalan.html",
+    "sahand.html",
+    "shirkoh.html",
+    "taftan.html",
+    "tochal.html",
+    "zardkooh.html"
+  ],
+  "legacyPaths": []
+}

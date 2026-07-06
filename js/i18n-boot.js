@@ -51,7 +51,9 @@
                 if (isRangePage()) {
                     loadJs(base + 'js/range-i18n.js', finish);
                 } else if (/\/peaks\//.test(location.pathname)) {
-                    loadJs(base + 'js/peak-content.js', finish);
+                    loadJs(base + 'js/peak-content.js', function () {
+                        loadJs(base + 'js/peak-chrome.js', finish);
+                    });
                 } else if (document.body.classList.contains('ph-page')) {
                     loadJs(base + 'js/panahgah-i18n.js', finish);
                 } else if (/\/blog\//.test(location.pathname) || /\/blog\.html$/i.test(location.pathname) || /\/blog-damavand-guide\.html$/i.test(location.pathname)) {

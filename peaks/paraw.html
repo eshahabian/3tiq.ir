@@ -15,6 +15,7 @@
     <link rel="icon" type="image/png" href="../favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
     <link rel="stylesheet" href="../css/route-map.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <style>
@@ -210,6 +211,32 @@
         }
 
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Mountain",
+      "name": "پراو",
+      "alternateName": "Paraw",
+      "description": "اطلاعات کامل قله پراو — مسیرهای صعود، پناهگاه‌ها، قله‌های اطراف و نکات مهم",
+      "url": "https://3tiq.ir/peaks/paraw.html",
+      "image": "https://3tiq.ir/images/peaks/damavand.jpg",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.36,
+        "longitude": 47
+      },
+      "elevation": {
+        "@type": "QuantitativeValue",
+        "value": 3366,
+        "unitCode": "MTR"
+      },
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "کرمانشاه"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -365,6 +392,7 @@ function closeLightbox() { document.getElementById('lightbox').classList.remove(
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="../js/i18n-boot.js"></script>
 <script src="../js/route-map.js"></script>
 </body>
 </html>
