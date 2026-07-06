@@ -2140,6 +2140,97 @@ a:focus:not(:focus-visible) {
     background: none;
 }
 
+.sh-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid rgba(122, 92, 24, 0.35);
+    border-radius: 100px;
+    transition: var(--transition);
+}
+
+.sh-map-link:hover {
+    background: rgba(201, 151, 59, 0.12);
+}
+
+/* مودال نقشه پناهگاه — صفحه اصلی و پناهگاه‌ها */
+.ph-map-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+}
+
+.ph-map-modal.open {
+    display: flex;
+}
+
+.ph-map-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 16, 10, 0.62);
+    backdrop-filter: blur(2px);
+}
+
+.ph-map-modal-box {
+    position: relative;
+    z-index: 1;
+    width: min(92vw, 38rem);
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
+}
+
+.ph-map-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid rgba(58, 50, 38, 0.08);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.ph-map-modal-close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0 0.3rem;
+}
+
+.ph-map-modal-close:hover {
+    color: var(--text-dark);
+}
+
+.ph-map-modal-map {
+    width: 100%;
+    height: 22rem;
+}
+
+body.dark-mode .ph-map-modal-box {
+    background: #232323;
+}
+
+body.dark-mode .ph-map-modal-head {
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #f0f0f0;
+}
+
 .btn-view-all {
     display: inline-block;
     padding: 0.85rem 2rem;

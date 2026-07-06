@@ -62,6 +62,10 @@
             var elec = item.electricity ? { v: tr('shelter.has', 'دارد'), c: 'yes', i: '⚡' } : { v: tr('shelter.no', 'ندارد'), c: 'no', i: '🔌' };
             var water = item.water ? { v: tr('shelter.has', 'دارد'), c: 'yes', i: '💧' } : { v: tr('shelter.no', 'ندارد'), c: 'no', i: '🚫' };
             var alt = item.altitude ? loc(item.altitude) + ' ' + tr('peaks.meters', 'م') : '';
+            var safeName = (item.name || s.name || '').replace(/"/g, '&quot;');
+            var mapFoot = (s.lat != null && s.lng != null)
+                ? '<div class="sh-card-foot"><button type="button" class="sh-map-link sh-map-btn" data-lat="' + s.lat + '" data-lng="' + s.lng + '" data-name="' + safeName + '">' + tr('ph.card.mapBtn', 'مشاهده روی نقشه ↗') + '</button></div>'
+                : '';
             return '<div class="sh-card" style="animation-delay:' + (i * 0.06) + 's">' +
                 '<div class="sh-card-img">' + cardImageHtml(s, item) +
                 '<span class="sh-type-badge ' + s.type + '">' + typeLabel(s.type) + '</span>' +
@@ -74,7 +78,7 @@
                 '<div class="sh-stat"><span class="sh-stat-icon">👥</span><span class="sh-stat-value">' + cap + '</span><span class="sh-stat-label">' + tr('shelter.capacity', 'ظرفیت') + '</span></div>' +
                 '<div class="sh-stat ' + elec.c + '"><span class="sh-stat-icon">' + elec.i + '</span><span class="sh-stat-value">' + elec.v + '</span><span class="sh-stat-label">' + tr('shelter.electricity', 'برق') + '</span></div>' +
                 '<div class="sh-stat ' + water.c + '"><span class="sh-stat-icon">' + water.i + '</span><span class="sh-stat-value">' + water.v + '</span><span class="sh-stat-label">' + tr('shelter.water', 'آب') + '</span></div>' +
-                '</div></div>';
+                '</div>' + mapFoot + '</div>';
         }).join('');
     }
 
