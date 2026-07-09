@@ -72,6 +72,13 @@
             border-radius: 1rem;
         }
         .assistant-offline.is-visible { display: block; }
+        .assistant-fallback {
+            text-align: center;
+            margin-top: .75rem;
+            font-size: .85rem;
+            color: var(--text-light);
+        }
+        .assistant-fallback a { color: var(--primary-color); }
     </style>
 </head>
 <body>
@@ -126,7 +133,7 @@
                 allow="clipboard-write"
                 loading="eager"
             ></iframe>
-            <div id="assistantOffline" class="assistant-offline" role="alert">
+            <div id="assistantOffline" class="assistant-offline" role="alert" hidden>
                 <h2>دستیار در دسترس نیست</h2>
                 <p>سرور چت (<code>npm run dev</code> در پوشه <code>coding-tutor</code>) اجرا نشده.</p>
                 <p style="margin-top:1rem">
@@ -134,6 +141,10 @@
                 </p>
                 <a href="index.html#services" class="btn btn-primary" style="margin-top:1rem;display:inline-block">← بازگشت</a>
             </div>
+            <p class="assistant-fallback">
+                اگر چت نمایش داده نشد:
+                <a id="assistantDirectLink" href="http://localhost:3000/embed" target="_blank" rel="noopener">باز کردن در پنجره جدا</a>
+            </p>
         </div>
     </main>
 
@@ -145,28 +156,23 @@
             : (window.ASSISTANT_CHAT_URL || 'https://assistant.3tiq.ir');
         var frame = document.getElementById('assistantFrame');
         var offline = document.getElementById('assistantOffline');
+        var directLink = document.getElementById('assistantDirectLink');
 
-        frame.src = chatBase + '/embed';
+        if (directLink) directLink.href = chatBase + '/embed';
+
+        frame.src = chatBase + '/embed?t=' + Date.now();
+        frame.style.display = 'block';
 
         frame.addEventListener('load', function () {
+            offline.hidden = true;
             offline.classList.remove('is-visible');
-            frame.style.display = 'block';
         });
 
-        // فقط اگر iframe واقعاً لود نشد (نه CORS — چک fetch قبلی iframe سالم را مخفی می‌کرد)
-        setTimeout(function () {
-            try {
-                var doc = frame.contentDocument || frame.contentWindow.document;
-                if (doc && doc.body && doc.body.innerHTML.length > 0) return;
-            } catch (e) {
-                // cross-origin = iframe loaded from another port — OK
-                return;
-            }
-            showOffline();
-        }, 12000);
+        frame.addEventListener('error', showOffline);
 
         function showOffline() {
             frame.style.display = 'none';
+            offline.hidden = false;
             offline.classList.add('is-visible');
         }
     })();

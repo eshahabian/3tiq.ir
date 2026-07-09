@@ -47,7 +47,7 @@ export function InputArea({
           value={input}
           onChange={(e) => onChange(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="سؤال برنامه‌نویسی خود را بپرسید..."
+          placeholder="سؤال کوهنوردی خود را بپرسید..."
           rows={1}
           disabled={isLoading}
           className="flex-1 resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500"
