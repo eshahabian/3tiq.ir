@@ -20,10 +20,11 @@ export async function GET(req: Request) {
 
 export async function PATCH(req: Request) {
   const body = await req.json();
-  const { sessionId, studentLevel, favoriteTechnologies } = body as {
+  const { sessionId, studentLevel, favoriteTechnologies, resetChat } = body as {
     sessionId: string;
     studentLevel?: StudentLevel;
     favoriteTechnologies?: string[];
+    resetChat?: boolean;
   };
 
   if (!sessionId) {
@@ -36,6 +37,14 @@ export async function PATCH(req: Request) {
 
   if (favoriteTechnologies) {
     updateContext(sessionId, { favoriteTechnologies });
+  }
+
+  if (resetChat) {
+    updateContext(sessionId, {
+      metisSessionId: null,
+      conversationSummary: null,
+      studiedTopics: [],
+    });
   }
 
   const ctx = getOrCreateContext(sessionId);

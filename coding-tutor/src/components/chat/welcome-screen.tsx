@@ -20,7 +20,7 @@ const suggestions = [
   {
     icon: Backpack,
     label: "چک‌لیست تجهیزات",
-    prompt: "چک‌لیست تجهیزات برای صعود یک‌روزه دماوند",
+    prompt: "چک‌لیست تجهیزات می‌خواهم",
     color: "text-emerald-600",
     bg: "bg-emerald-500/10",
   },
@@ -47,8 +47,8 @@ const suggestions = [
   },
   {
     icon: HelpCircle,
-    label: "سؤال درباره دماوند",
-    prompt: "دماوند برای اولین صعود مناسب است؟ چه تجهیزاتی لازم است؟",
+    label: "سؤال درباره یک قله",
+    prompt: "می‌خواهم درباره یک قله سؤال بپرسم",
     color: "text-blue-600",
     bg: "bg-blue-500/10",
   },

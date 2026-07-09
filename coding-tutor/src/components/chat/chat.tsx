@@ -3,7 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Menu, Plus, Sparkles } from "lucide-react";
+import { Menu, Plus, Sparkles, LayoutGrid } from "lucide-react";
 import { Message } from "./message";
 import { InputArea } from "./input-area";
 import { WelcomeScreen } from "./welcome-screen";
@@ -91,7 +91,17 @@ export function Chat({ embed = false }: { embed?: boolean }) {
     [sendMessage],
   );
 
-  const handleNewChat = () => {
+  const handleBackToMenu = useCallback(async () => {
+    setMessages([]);
+    setInput("");
+    await fetch("/api/context", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId, resetChat: true }),
+    }).catch(() => {});
+  }, [sessionId, setMessages]);
+
+  const handleNewChat = async () => {
     setMessages([]);
     const newId = crypto.randomUUID();
     localStorage.setItem("3tiq-assistant-session", newId);
@@ -156,12 +166,20 @@ export function Chat({ embed = false }: { embed?: boolean }) {
               </div>
             </div>
           </div>
-          {!embed && (
-            <Button variant="outline" size="sm" onClick={handleNewChat}>
-              <Plus className="ml-1 h-4 w-4" />
-              گفتگوی جدید
-            </Button>
-          )}
+          <div className="flex items-center gap-2">
+            {messages.length > 0 && (
+              <Button variant="outline" size="sm" onClick={handleBackToMenu}>
+                <LayoutGrid className="ml-1 h-4 w-4" />
+                بازگشت به منو
+              </Button>
+            )}
+            {!embed && (
+              <Button variant="outline" size="sm" onClick={handleNewChat}>
+                <Plus className="ml-1 h-4 w-4" />
+                گفتگوی جدید
+              </Button>
+            )}
+          </div>
         </header>
 
         <main className="flex flex-1 flex-col overflow-hidden">

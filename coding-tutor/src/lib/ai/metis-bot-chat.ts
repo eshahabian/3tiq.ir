@@ -8,6 +8,7 @@ import {
 } from "@/lib/ai/metis-bot";
 import { getOrCreateContext, updateContext } from "@/lib/context/store";
 import { buildStudentLevelPrompt } from "@/lib/middleware/student-level";
+import { ASSISTANT_BEHAVIOR_RULES } from "@/lib/ai/assistant-prompt";
 import type { StudentLevel } from "@/types";
 
 export async function handleMetisBotChat(params: {
@@ -26,9 +27,9 @@ export async function handleMetisBotChat(params: {
   }
 
   const prompt = [
-    buildStudentLevelPrompt(params.studentLevel),
+    ASSISTANT_BEHAVIOR_RULES,
     "",
-    "تو دستیار کوهنوردی سایت سه‌تیغ (3tiq.ir) هستی.",
+    buildStudentLevelPrompt(params.studentLevel),
     "",
     params.userMessage,
   ].join("\n");

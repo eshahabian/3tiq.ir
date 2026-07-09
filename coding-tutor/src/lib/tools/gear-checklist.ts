@@ -23,20 +23,10 @@ export const gearChecklistTool = tool({
       tripType,
       peakOrRegion: peakOrRegion ?? "general",
       season: season ?? "summer",
-      instruction: `Create a detailed gear checklist in Persian for: "${tripType}"${peakOrRegion ? ` at ${peakOrRegion}` : ""}.
-Format:
-# چک‌لیست تجهیزات
-
-## ضروری
-- [ ] item — brief note
-
-## توصیه‌شده
-...
-
-## ایمنی و اورژانس
-...
-
-Include layering advice if relevant. Mention 3tiq.ir blog articles on gear when helpful.`,
+      instruction: peakOrRegion
+        ? `Create a detailed gear checklist in Persian for: "${tripType}" at ${peakOrRegion}, season: ${season ?? "summer"}.
+Format with sections: ضروری، توصیه‌شده، ایمنی و اورژانس. Include layering advice if relevant.`
+        : `The user asked for a gear checklist but did NOT specify a peak. Do NOT default to Damavand. Ask which peak or region first, and mention trip type (day/multi-day) and season if unknown.`,
     };
   },
 });

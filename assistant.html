@@ -134,16 +134,16 @@
                 loading="eager"
             ></iframe>
             <div id="assistantOffline" class="assistant-offline" role="alert" hidden>
-                <h2>دستیار در دسترس نیست</h2>
-                <p>سرور چت (<code>npm run dev</code> در پوشه <code>coding-tutor</code>) اجرا نشده.</p>
+                <h2 id="offlineTitle">دستیار در دسترس نیست</h2>
+                <p id="offlineMessage">سرور چت اجرا نشده.</p>
                 <p style="margin-top:1rem">
-                    <a href="http://localhost:3000/embed" target="_blank" rel="noopener" class="btn btn-primary">باز کردن چت مستقیم ←</a>
+                    <a id="offlineDirectLink" href="#" target="_blank" rel="noopener" class="btn btn-primary">باز کردن چت ←</a>
                 </p>
                 <a href="index.html#services" class="btn btn-primary" style="margin-top:1rem;display:inline-block">← بازگشت</a>
             </div>
-            <p class="assistant-fallback">
+            <p class="assistant-fallback" id="assistantFallback">
                 اگر چت نمایش داده نشد:
-                <a id="assistantDirectLink" href="http://localhost:3000/embed" target="_blank" rel="noopener">باز کردن در پنجره جدا</a>
+                <a id="assistantDirectLink" href="#" target="_blank" rel="noopener">باز کردن در پنجره جدا</a>
             </p>
         </div>
     </main>
@@ -151,16 +151,38 @@
     <script>
     (function () {
         var host = location.hostname;
-        var chatBase = (host === 'localhost' || host === '127.0.0.1')
+        var isLocal = host === 'localhost' || host === '127.0.0.1';
+        var chatBase = isLocal
             ? 'http://localhost:3000'
             : (window.ASSISTANT_CHAT_URL || 'https://assistant.3tiq.ir');
+
         var frame = document.getElementById('assistantFrame');
         var offline = document.getElementById('assistantOffline');
+        var offlineTitle = document.getElementById('offlineTitle');
+        var offlineMessage = document.getElementById('offlineMessage');
+        var offlineDirectLink = document.getElementById('offlineDirectLink');
         var directLink = document.getElementById('assistantDirectLink');
+        var fallback = document.getElementById('assistantFallback');
+        var embedUrl = chatBase + '/embed';
 
-        if (directLink) directLink.href = chatBase + '/embed';
+        function showOffline(title, message, showLink) {
+            frame.style.display = 'none';
+            if (fallback) fallback.style.display = 'none';
+            offlineTitle.textContent = title;
+            offlineMessage.innerHTML = message;
+            offlineDirectLink.href = embedUrl;
+            offlineDirectLink.style.display = showLink ? 'inline-block' : 'none';
+            offline.hidden = false;
+            offline.classList.add('is-visible');
+        }
 
-        frame.src = chatBase + '/embed?t=' + Date.now();
+        if (directLink) {
+            directLink.href = embedUrl;
+            directLink.style.display = isLocal ? 'inline' : 'none';
+        }
+        if (fallback && !isLocal) fallback.style.display = 'none';
+
+        frame.src = embedUrl + '?t=' + Date.now();
         frame.style.display = 'block';
 
         frame.addEventListener('load', function () {
@@ -168,13 +190,21 @@
             offline.classList.remove('is-visible');
         });
 
-        frame.addEventListener('error', showOffline);
-
-        function showOffline() {
-            frame.style.display = 'none';
-            offline.hidden = false;
-            offline.classList.add('is-visible');
-        }
+        frame.addEventListener('error', function () {
+            if (isLocal) {
+                showOffline(
+                    'سرور چت خاموش است',
+                    'در ترمینال اجرا کن:<br><code>cd coding-tutor && npm run dev</code>',
+                    true
+                );
+            } else {
+                showOffline(
+                    'خطا در بارگذاری دستیار',
+                    'سرور چت در دسترس نیست. چند دقیقه بعد دوباره امتحان کن.',
+                    true
+                );
+            }
+        });
     })();
     </script>
 
