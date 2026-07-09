@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گره‌های ضروری کوهنوردی — آموزش تصویری | سه تیغ</title>
+    <meta name="description" content="آموزش تصویری ۸ گره ضروری کوهنوردی و صخره‌نوردی: هشت، گرگور، باریکوند، پروسیک، پروانه، ماهیگیر، آبکند و مونتر — با مراحل بستن و کاربرد هر کدام">
+    <link rel="canonical" href="https://3tiq.ir/blog/blog-knots-guide.html">
+    <meta property="og:title" content="گره‌های ضروری کوهنوردی — آموزش تصویری | سه تیغ">
+    <meta property="og:image" content="https://3tiq.ir/images/blog/knots-guide.png">
+    <meta property="og:description" content="۸ گره که هر کوهنورد باید بلد باشد — با عکس و مراحل گام‌به‌گام">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://3tiq.ir/blog/blog-knots-guide.html">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="سه تیغ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="گره‌های ضروری کوهنوردی — آموزش تصویری | سه تیغ">
+    <meta name="twitter:description" content="۸ گره که هر کوهنورد باید بلد باشد — با عکس و مراحل گام‌به‌گام">
+    <meta name="twitter:image" content="https://3tiq.ir/images/blog/knots-guide.png">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <style>
+    .post-hero{height:55vh;min-height:360px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:3rem}
+    .post-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .post-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,8,.85) 0%,rgba(20,14,8,.2) 60%,transparent 100%)}
+    .post-hero-content{position:relative;z-index:1}
+    .post-breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:.75rem}
+    .post-breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+    .post-breadcrumb a:hover{color:var(--primary-color)}
+    .post-cat-badge{display:inline-block;padding:.25rem .85rem;border-radius:100px;color:#fff;font-size:.7rem;font-weight:800;margin-bottom:.75rem;background:rgba(181,86,47,.85)}
+    .post-hero h1{color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.35;max-width:700px}
+    .post-layout{display:grid;grid-template-columns:1fr 300px;gap:3rem;padding:3.5rem 0 5rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}.post-sidebar{order:2}}
+    .post-meta{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;font-size:.8rem;color:var(--text-light);padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid rgba(58,50,38,.1)}
+    .post-content{font-size:1rem;line-height:2;color:var(--text-dark)}
+    .post-content h2{font-size:1.4rem;font-weight:800;color:var(--text-dark);margin:2.5rem 0 1rem;padding-right:1rem;border-right:4px solid var(--primary-color)}
+    .post-content h3{font-size:1.1rem;font-weight:700;margin:1.8rem 0 .7rem;color:var(--text-dark)}
+    .post-content p{margin-bottom:1.2rem}
+    .post-content ul,.post-content ol{margin:.8rem 0 1.2rem 0;padding-right:1.5rem}
+    .post-content li{margin-bottom:.5rem}
+    .post-content strong{color:var(--text-dark)}
+    .knot-figure{margin:1.5rem 0 1.75rem;border-radius:1rem;overflow:hidden;border:1px solid rgba(58,50,38,.1);box-shadow:0 6px 24px rgba(44,36,22,.08);background:var(--white)}
+    .knot-figure img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
+    .knot-figure figcaption{padding:.85rem 1.1rem;font-size:.82rem;color:var(--text-light);border-top:1px solid rgba(58,50,38,.08);line-height:1.7}
+    .knot-use{display:inline-block;margin-bottom:.75rem;padding:.3rem .75rem;border-radius:100px;background:rgba(194,65,12,.1);color:#c2410c;font-size:.78rem;font-weight:700}
+    .info-box{background:var(--light-bg);border-radius:.85rem;border-right:4px solid var(--primary-color);padding:1.25rem 1.4rem;margin:1.75rem 0}
+    .info-box.warning{border-color:#c0392b;background:rgba(192,57,43,.06)}
+    .info-box.success{border-color:#2ecc71;background:rgba(46,204,113,.06)}
+    .info-box-title{font-weight:800;font-size:.88rem;margin-bottom:.6rem;color:var(--text-dark)}
+    .post-sidebar{display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:110px}
+    .sidebar-card{background:var(--white);border-radius:1rem;border:1px solid rgba(58,50,38,.08);padding:1.35rem;box-shadow:0 3px 16px rgba(44,36,22,.07)}
+    .sidebar-card h3{font-size:.9rem;font-weight:800;margin-bottom:1rem;color:var(--text-dark);padding-bottom:.6rem;border-bottom:1px solid rgba(58,50,38,.08)}
+    .sidebar-toc a{display:block;font-size:.8rem;color:var(--text-light);text-decoration:none;padding:.35rem 0;border-bottom:1px solid rgba(58,50,38,.05);transition:var(--transition)}
+    .sidebar-toc a:hover{color:var(--primary-color);padding-right:.4rem}
+    .related-post{display:flex;gap:.85rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(58,50,38,.06);text-decoration:none;color:inherit}
+    .related-post:last-child{border:none}
+    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0;object-fit:cover}
+    .related-post-title{font-size:.78rem;font-weight:700;color:var(--text-dark);line-height:1.45}
+    .related-post-date{font-size:.68rem;color:var(--text-light);margin-top:.2rem}
+    body.dark-mode .post-content,body.dark-mode .post-content h2,body.dark-mode .post-content h3{color:#e0e0e0}
+    body.dark-mode .info-box{background:#252525}
+    body.dark-mode .knot-figure{background:#1e1e1e;border-color:rgba(255,255,255,.08)}
+    body.dark-mode .sidebar-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+    body.dark-mode .related-post-title{color:#e0e0e0}
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "گره‌های ضروری کوهنوردی — آموزش تصویری",
+      "description": "آموزش ۸ گره ضروری کوهنوردی با عکس و مراحل بستن",
+      "image": "https://3tiq.ir/images/blog/knots-guide.png",
+      "author": { "@type": "Organization", "name": "سه تیغ", "url": "https://3tiq.ir" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "سه تیغ",
+        "url": "https://3tiq.ir",
+        "logo": { "@type": "ImageObject", "url": "https://3tiq.ir/favicon.png" }
+      },
+      "mainEntityOfPage": "https://3tiq.ir/blog/blog-knots-guide.html",
+      "inLanguage": "fa"
+    }
+    </script>
+</head>
+<body data-blog-id="knots-guide">
+    <header class="header">
+        <div class="container"><div class="header-content">
+            <div class="logo"><a href="../index.html"><img src="../logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;"></a></div>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html">صفحه اصلی</a></li>
+                    <li><a href="../panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
+                    <li><a href="../sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
+                    <li><a href="../blog.html" class="active">وبلاگ</a></li>
+                    <li><a href="../assistant.html" data-i18n="nav.assistant">دستیار</a></li>
+                    <li><a href="../index.html#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم"><svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg><svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button>
+            </div>
+        </div></div>
+    </header>
+
+    <section class="post-hero">
+        <img class="post-hero-img" src="../images/blog/knots-guide.png" alt="آموزش گره‌های کوهنوردی">
+        <div class="container post-hero-content">
+            <div class="post-breadcrumb"><a href="../index.html">سه تیغ</a> ← <a href="../blog.html">وبلاگ</a> ← ایمنی</div>
+            <span class="post-cat-badge">⚠️ ایمنی</span>
+            <h1>گره‌های ضروری کوهنوردی<br>آموزش تصویری گام‌به‌گام</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="post-layout">
+            <article>
+                <div class="post-meta">
+                    <span>📅 ۱۵ تیر ۱۴۰۵</span>
+                    <span>⏱ ۱۲ دقیقه</span>
+                    <span>✍️ تیم سه تیغ</span>
+                </div>
+                <div class="post-content">
+
+<p>گره درست، تفاوت بین صعود امن و حادثه است. هر کوهنورد — از مبتدی تا حرفه‌ای — باید چند گره پایه را <strong>با چشم بسته هم بزند</strong>. در این مقاله ۸ گره ضروری را با عکس و مراحل دقیق یاد می‌گیری.</p>
+
+<div class="info-box warning">
+<div class="info-box-title">⚠️ قبل از شروع</div>
+گره‌ها را در خانه با یک طناب کهنه تمرین کن. بعد از هر بستن، گره را از دو طرف بکش و مطمئن شو سفت شده. در کوه، همیشه گره را دوباره چک کن.
+</div>
+
+<h2 id="figure-eight">۱. گره هشت (Figure-Eight Follow-Through)</h2>
+<span class="knot-use">کاربرد: اتصال به هارنس — مهم‌ترین گره صخره‌نوردی</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-figure-eight.png" alt="گره هشت بسته‌شونده روی طناب کوهنوردی" loading="lazy">
+<figcaption>گره هشت — استاندارد جهانی برای بند زدن طناب به حلقه هارنس</figcaption>
+</figure>
+
+<ol>
+<li>حدود ۱ متر از انتهای طناب بگیر و یک <strong>گره هشت ساده</strong> (شکل عدد ۸) بزن — فاصله حلقه‌ها یکنواخت باشد.</li>
+<li>انتهای آزاد طناب را از <strong>حلقه‌های هارنس</strong> (حلقه بند و حلقه کمر) رد کن.</li>
+<li>انتهای آزاد را <strong>موازی با قسمت اصلی طناب</strong> برگردان و داخل گره هشت دنبال کن — همان مسیر را برعکس طی کن.</li>
+<li>طناب را گره به گره بکش تا سفت شود. حداقل <strong>۱۰ سانتی‌متر</strong> انتهای آزاد (دم طناب) باقی بماند.</li>
+<li>گره را از پشت و جلو نگاه کن — باید شکل ۸ واضح و مرتب باشد، بدون پیچ یا لاپی.</li>
+</ol>
+
+<h2 id="bowline">۲. گره گرگور (Bowline)</h2>
+<span class="knot-use">کاربرد: حلقه ثابت و قابل اعتماد — اتصال به تخته سنگ یا نجات</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-bowline.png" alt="گره گرگور روی طناب نارنجی" loading="lazy">
+<figcaption>گره گرگور — حلقه‌ای که بعد از بارگذاری سفت می‌شود و باز نمی‌گردد</figcaption>
+</figure>
+
+<ol>
+<li>یک <strong>حلقه کوچک</strong> (به اندازه مشت) در طناب بساز — قسمت اصلی طناب روی حلقه باشد.</li>
+<li>انتهای آزاد طناب را از <strong>پشت حلقه</strong> بالا بیاور، دور قسمت اصلی طناب بپیچ و دوباره <strong>داخل حلقه</strong> پایین بفرست.</li>
+<li>هر دو قسمت را همزمان بکش تا گره سفت شود.</li>
+<li>برای امنیت بیشتر، یک <strong>گره یدآور</strong> (Overhand) روی دم طناب کنار گره گرگور بزن.</li>
+</ol>
+
+<div class="info-box">
+<div class="info-box-title">💡 نکته</div>
+گره گرگور تحت بار سفت می‌شود ولی بدون بار راحت باز می‌شود — برای نجات و اتصال سریع عالی است، ولی برای بند زدن به هارنس جای گره هشت را نمی‌گیرد.
+</div>
+
+<h2 id="clove">۳. گره باریکوند (Clove Hitch)</h2>
+<span class="knot-use">کاربرد: اتصال سریع طناب به کارابین در جان‌پناه</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-clove-hitch.png" alt="گره باریکوند روی کارابین" loading="lazy">
+<figcaption>گره باریکوند — سریع‌ترین راه اتصال طناب به کارابین در جان‌پناه</figcaption>
+</figure>
+
+<ol>
+<li>کارابین را به نقطه اتصال (اسلینگ یا میخ) وصل کن.</li>
+<li>طناب را از <strong>پشت به جلو</strong> از داخل کارابین رد کن (یک دور).</li>
+<li>طناب را دوباره از <strong>جلو به عقب</strong> از داخل کارابین رد کن — دو دور روی شاخه کارابین ایجاد می‌شود.</li>
+<li>انتهای آزاد را زیر آخرین دور بگذار و <strong>به سمت بار</strong> بکش تا قفل شود.</li>
+<li>طول هر دو دور تقریباً برابر باشد — اگر یک طرف شل باشد، گره ممکن است باز شود.</li>
+</ol>
+
+<h2 id="prusik">۴. گره پروسیک (Prusik)</h2>
+<span class="knot-use">کاربرد: صعود روی طناب، خودگریز و نجات</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-prusik.png" alt="گره پروسیک روی طناب ضخیم" loading="lazy">
+<figcaption>گره پروسیک — با طناب نازک‌تر روی طناب اصلی؛ زیر بار قفل، بدون بار سر می‌خورد</figcaption>
+</figure>
+
+<ol>
+<li>یک طناب کمکی (معمولاً ۶ میلی‌متر) را به شکل <strong>حلقه</strong> با گره دوون یا آبکند ببند.</li>
+<li>حلقه را دور طناب اصلی بگذار و <strong>گره پروسیک</strong> بزن: طناب کمکی را ۳ بار دور طناب اصلی بپیچ.</li>
+<li>هر دور باید مرتب و کنار هم باشد — نه روی هم.</li>
+<li>طرفین حلقه را بکش تا گره سفت شود.</li>
+<li>برای صعود: پروسیک را بالا ببر، وزن را روی آن بگذار (قفل می‌شود)، پا را بالا ببر، تکرار کن.</li>
+</ol>
+
+<h2 id="butterfly">۵. گره پروانه / میان‌بند (Alpine Butterfly)</h2>
+<span class="knot-use">کاربرد: حلقه میانی روی طناب — برای میان‌بند یا عبور نقطه‌ای</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-butterfly.png" alt="گره پروانه روی طناب" loading="lazy">
+<figcaption>گره پروانه — حلقه مستحکم در وسط طناب بدون نیاز به انتهای آزاد</figcaption>
+</figure>
+
+<ol>
+<li>طناب را سه‌بار دور دستت بپیچ تا <strong>سه حلقه</strong> موازی داشته باشی.</li>
+<li><strong>حلقه بالایی</strong> را بگیر، پایین بیاور، از زیر دو حلقه دیگر رد کن و از داخل حلقه میانی بالا بیاور.</li>
+<li>هر سه حلقه را همزمان بکش تا گره شکل پروانه بگیرد.</li>
+<li>حلقه خروجی باید در وسط طناب و عمود بر راستای طناب باشد.</li>
+<li>برای میان‌بند: کارابین را به حلقه وصل کن و نفر دوم را ببند.</li>
+</ol>
+
+<h2 id="fishermans">۶. گره ماهیگیر دوتایی (Double Fisherman's)</h2>
+<span class="knot-use">کاربرد: اتصال دو طناب — رپل و طناب‌های کمکی</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-fishermans.png" alt="گره ماهیگیر دوتایی برای اتصال دو طناب" loading="lazy">
+<figcaption>گره ماهیگیر دوتایی — مطمئن‌ترین روش اتصال دو انتهای طناب</figcaption>
+</figure>
+
+<ol>
+<li>دو انتهای طناب را <strong>موازی</strong> کنار هم بگذار (حدود ۳۰ سانتی‌متر هم‌پوشانی).</li>
+<li>انتهای طناب A را <strong>۳ دور</strong> دور طناب B بپیچ و از داخل حلقه رد کن (گره ماهیگیر).</li>
+<li>همین کار را با انتهای طناب B دور طناب A تکرار — در جهت مخالف.</li>
+<li>هر دو گره را جداگانه سفت کن، بعد هر دو طناب را بکش تا به هم نزدیک شوند.</li>
+<li>حداقل ۵ سانتی‌متر دم طناب بعد از گره باقی بماند.</li>
+</ol>
+
+<h2 id="water">۷. گره آبکند (Water Knot)</h2>
+<span class="knot-use">کاربرد: بستن حلقه اسلینگ وبینگ</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-water-knot.png" alt="گره آبکند روی وبینگ آبی" loading="lazy">
+<figcaption>گره آبکند — برای ساخت اسلینگ وبینگ؛ هر ۶ ماه یک‌بار چک کن</figcaption>
+</figure>
+
+<ol>
+<li>وبینگ را تا کن تا دو انتهای آن روی هم قرار بگیرند (حدود ۱۰ سانتی‌متر هم‌پوشانی).</li>
+<li>یک <strong>گره ساده (Overhand)</strong> روی هر دو لایه وبینگ بزن — طوری که هر دو لایه با هم داخل گره باشند.</li>
+<li>گره را آرام و یکنواخت سفت کن — وبینگ نباید چین بخورد.</li>
+<li>طول هم‌پوشانی حداقل <strong>۸ سانتی‌متر</strong> باشد.</li>
+<li>وبینگ‌های قدیمی را دور بینداز — گره آبکند با زمان شل می‌شود.</li>
+</ol>
+
+<div class="info-box warning">
+<div class="info-box-title">⚠️ هشدار وبینگ</div>
+گره آبکند روی وبینگ تحت بار ممکن است لغزش پیدا کند. اسلینگ‌های آماده را ترجیح بده و اگر خودت می‌بندی، هر فصل آن را تست کن.
+</div>
+
+<h2 id="munter">۸. گره مونتر (Munter Hitch)</h2>
+<span class="knot-use">کاربرد: بیلینگ اضطراری بدون دستگاه فرود</span>
+
+<figure class="knot-figure">
+<img src="../images/blog/knot-munter.png" alt="گره مونتر روی کارابین قفل‌دار" loading="lazy">
+<figcaption>گره مونتر — وقتی دستگاه فرود نداری، با کارابین قفل‌دار بیل کن</figcaption>
+</figure>
+
+<ol>
+<li>کارابین قفل‌دار را به نقطه اتصال وصل کن و قفل را ببند.</li>
+<li>طناب را از <strong>پشت به جلو</strong> از داخل کارابین رد کن.</li>
+<li>طناب را به شکل <strong>هشت وارونه</strong> دور شاخه کارابین بپیچ و دوباره از داخل کارابین رد کن.</li>
+<li>طرف <strong>بار (طناب صعودکننده)</strong> باید سمت پایین و طرف <strong>بیل (دست تو)</strong> سمت بالا باشد.</li>
+<li>برای فرود: دست روی شاخه بیل با زاویه کم یا زیاد، سرعت را کنترل کن.</li>
+</ol>
+
+<h2 id="practice">تمرین و چک نهایی</h2>
+
+<ul>
+<li>هر گره را <strong>حداقل ۲۰ بار</strong> در خانه تمرین کن تا عضلات دست یاد بگیرند.</li>
+<li>قبل از هر صعود، گره هارنس و اتصالات جان‌پناه را با شریکت <strong>چک دوگانه</strong> کن.</li>
+<li>طناب‌های کهنه را برای تمرین نگه دار — در کوه از طناب تازه استفاده کن.</li>
+<li>گره‌های مرطوب یا یخ‌زده سخت‌تر باز می‌شوند — در زمستان دقت بیشتری لازم است.</li>
+</ul>
+
+<div class="info-box success">
+<div class="info-box-title">✅ چک‌لیست قبل از صعود</div>
+<ul>
+<li>گره هارنس = هشت بسته‌شونده با ۱۰+ سانتی‌متر دم طناب</li>
+<li>کارابین‌ها قفل هستند</li>
+<li>اتصالات جان‌پناه با باریکوند یا اسلینگ سفت</li>
+<li>شریکت گره‌های تو را دید و تأیید کرد</li>
+</ul>
+</div>
+
+<p>سؤال درباره گره‌ها یا تجهیزات داری؟ از <a href="../assistant.html">دستیار کوهنوردی سه تیغ</a> بپرس — یا مقاله <a href="blog-pre-ascent-checklist.html">چک‌لیست قبل از صعود</a> را هم بخوان.</p>
+
+                </div>
+            </article>
+            <aside class="post-sidebar">
+                <div class="sidebar-card">
+                    <h3>فهرست گره‌ها</h3>
+                    <div class="sidebar-toc">
+                        <a href="#figure-eight">۱. گره هشت</a>
+                        <a href="#bowline">۲. گره گرگور</a>
+                        <a href="#clove">۳. گره باریکوند</a>
+                        <a href="#prusik">۴. گره پروسیک</a>
+                        <a href="#butterfly">۵. گره پروانه</a>
+                        <a href="#fishermans">۶. گره ماهیگیر</a>
+                        <a href="#water">۷. گره آبکند</a>
+                        <a href="#munter">۸. گره مونتر</a>
+                        <a href="#practice">تمرین و چک</a>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>مقالات مرتبط</h3>
+                    <a href="blog-pre-ascent-checklist.html" class="related-post"><img class="related-thumb" src="../images/blog/pre-ascent-checklist.png" alt="" loading="lazy"><div><div class="related-post-title">چک‌لیست قبل از صعود</div><div class="related-post-date">تیر ۱۴۰۵</div></div></a>
+                    <a href="blog-winter-gear.html" class="related-post"><img class="related-thumb" src="../images/blog/winter-gear.png" alt="" loading="lazy"><div><div class="related-post-title">تجهیزات زمستانه</div><div class="related-post-date">اردیبهشت ۱۴۰۴</div></div></a>
+                    <a href="../sakhre-nvardi.html" class="related-post"><img class="related-thumb" src="../images/blog/knots-guide.png" alt="" loading="lazy"><div><div class="related-post-title">راهنمای صخره‌نوردی</div><div class="related-post-date">سه تیغ</div></div></a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop">↑</button>
+    <script src="../js/site-config.js"></script>
+    <script src="../js/footer-snippet.js"></script>
+    <script src="../js/i18n-boot.js" defer></script>
+    <script src="../js/blog-chrome.js"></script>
+    <script src="../js/app.js"></script>
+    <script>const b=document.getElementById('backToTop');window.addEventListener('scroll',()=>b.classList.toggle('visible',scrollY>400));b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));</script>
+</body>
+</html>

@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "id": "knots-guide",
+      "slug": "blog/blog-knots-guide.html",
+      "title": "گره‌های ضروری کوهنوردی — آموزش تصویری",
+      "excerpt": "۸ گره که هر کوهنورد باید بلد باشد: هشت، گرگور، باریکوند، پروسیک، پروانه، ماهیگیر، آبکند و مونتر — با عکس و مراحل بستن.",
+      "image": "images/blog/knots-guide.png",
+      "cat": "safety",
+      "dateFa": "۱۵ تیر ۱۴۰۵"
+    },
+    {
       "id": "pre-ascent-checklist",
       "slug": "blog/blog-pre-ascent-checklist.html",
       "title": "چک‌لیست قبل از صعود — ۱۰ مورد که نباید فراموش کنی",
