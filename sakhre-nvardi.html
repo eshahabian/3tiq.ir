@@ -84,8 +84,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
             gap: clamp(1rem, 3vw, 1.5rem);
+            align-items: stretch;
         }
         .cl-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             background: var(--white);
             border-radius: 1rem;
             padding: 0;
@@ -96,6 +100,7 @@
             overflow: hidden;
         }
         .cl-card-img {
+            flex-shrink: 0;
             height: 160px;
             overflow: hidden;
         }
@@ -108,26 +113,31 @@
         .cl-card:hover .cl-card-img img {
             transform: scale(1.04);
         }
-        .cl-card-head,
-        .cl-card-name,
-        .cl-card-desc,
-        .cl-meta {
-            margin-left: 1.25rem;
-            margin-right: 1.25rem;
+        .cl-card-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 0 1.25rem 1.25rem;
         }
-        .cl-card-head { margin-top: 1rem; }
-        .cl-meta { margin-bottom: 1.25rem; }
         .cl-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(44,36,22,.12);
         }
         .cl-card-head {
             display: flex;
+            align-items: center;
             justify-content: space-between;
             gap: .5rem;
-            flex-wrap: wrap;
+            margin-top: 1rem;
             margin-bottom: .65rem;
             font-size: .72rem;
+        }
+        .cl-card-tags {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            flex-wrap: wrap;
+            min-width: 0;
         }
         .cl-type {
             background: rgba(47,79,53,.12);
@@ -135,25 +145,34 @@
             padding: .2rem .55rem;
             border-radius: 100px;
             font-weight: 700;
+            white-space: nowrap;
         }
-        .cl-region { color: var(--text-light); }
+        .cl-region {
+            color: var(--text-light);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
         .cl-card-name {
             font-size: 1.15rem;
             font-weight: 800;
-            margin-bottom: .5rem;
+            line-height: 1.4;
+            margin: 0 0 .5rem;
         }
         .cl-card-desc {
+            flex: 1;
             font-size: .88rem;
             color: var(--text-light);
             line-height: 1.75;
-            margin-bottom: 1rem;
+            margin: 0;
         }
         .cl-meta {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: .5rem;
-            padding-top: .75rem;
-            border-top: 1px solid rgba(58,50,38,.08);
+            margin-top: auto;
+            padding-top: .85rem;
+            border-top: 1px solid rgba(58,50,38,.1);
+            flex-shrink: 0;
         }
         .cl-meta-label {
             display: block;
@@ -252,7 +271,6 @@
             line-height: 1;
         }
         .cl-card--top { border-color: rgba(194,65,12,.2); }
-        .cl-card-head { align-items: center; }
         .cl-gear-list {
             max-width: 40rem;
             margin: 0 auto;

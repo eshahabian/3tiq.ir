@@ -46,9 +46,12 @@
     function buildCard(s, i) {
         return '<article class="cl-card' + (s.topRank ? ' cl-card--top' : '') + '" style="animation-delay:' + (Math.min(i, 12) * 0.04) + 's">' +
             cardImage(s) +
+            '<div class="cl-card-body">' +
             '<div class="cl-card-head">' +
+            '<div class="cl-card-tags">' +
             '<span class="cl-type">' + typeLabel(s.type) + '</span>' +
             rankBadge(s) +
+            '</div>' +
             '<span class="cl-region">' + s.province + '</span>' +
             '</div>' +
             '<h3 class="cl-card-name">' + displayName(s) + '</h3>' +
@@ -57,7 +60,7 @@
             '<div><span class="cl-meta-label">' + tr('climbing.grade', 'درجه') + '</span><span class="cl-meta-value">' + s.grades + '</span></div>' +
             '<div><span class="cl-meta-label">' + tr('climbing.routes', 'مسیر') + '</span><span class="cl-meta-value">' + s.routes + '</span></div>' +
             '<div><span class="cl-meta-label">' + tr('climbing.season', 'فصل') + '</span><span class="cl-meta-value">' + s.season + '</span></div>' +
-            '</div></article>';
+            '</div></div></article>';
     }
 
     function activeProvince() {
