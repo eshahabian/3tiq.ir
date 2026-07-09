@@ -2,6 +2,9 @@
   {
     "id": "veliran",
     "name": "ولیران",
+    "nameEn": "Veliran",
+    "lat": 35.9792,
+    "lng": 51.4867,
     "region": "البرز",
     "province": "تهران",
     "type": "سنگ‌نوردی",
@@ -13,6 +16,9 @@
   {
     "id": "heijan",
     "name": "هیجان",
+    "nameEn": "Heijan",
+    "lat": 36.0115,
+    "lng": 51.3208,
     "region": "البرز",
     "province": "البرز",
     "type": "سنگ‌نوردی",
@@ -24,6 +30,9 @@
   {
     "id": "palangchal",
     "name": "پلنگ‌چال",
+    "nameEn": "Palangchal",
+    "lat": 35.8861,
+    "lng": 51.4162,
     "region": "البرز",
     "province": "تهران",
     "type": "ترکیبی",
@@ -35,6 +44,9 @@
   {
     "id": "shiroud",
     "name": "شیرود",
+    "nameEn": "Shiroud",
+    "lat": 36.7594,
+    "lng": 50.6736,
     "region": "البرز",
     "province": "مازندران",
     "type": "سنگ‌نوردی",
@@ -46,6 +58,9 @@
   {
     "id": "bistoon",
     "name": "بیستون",
+    "nameEn": "Bisotun",
+    "lat": 34.3828,
+    "lng": 47.4354,
     "region": "زاگرس",
     "province": "کرمانشاه",
     "type": "سنگ‌نوردی",
@@ -57,6 +72,9 @@
   {
     "id": "siah-gach",
     "name": "سیاه‌گچ",
+    "nameEn": "Siah Gach",
+    "lat": 32.951,
+    "lng": 51.552,
     "region": "مرکزی",
     "province": "اصفهان",
     "type": "سنگ‌نوردی",
@@ -68,6 +86,9 @@
   {
     "id": "darband",
     "name": "دره توچال (دیواره‌های دربند)",
+    "nameEn": "Darband",
+    "lat": 35.8164,
+    "lng": 51.427,
     "region": "البرز",
     "province": "تهران",
     "type": "سنگ‌نوردی",
@@ -79,6 +100,9 @@
   {
     "id": "garmaab",
     "name": "گرمااب درق",
+    "nameEn": "Garmab Daraq",
+    "lat": 37.892,
+    "lng": 48.148,
     "region": "آذربایجان",
     "province": "اردبیل",
     "type": "سنگ‌نوردی",

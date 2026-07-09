@@ -503,25 +503,27 @@ const mountainIcon = L.divIcon({
 
 // پنل کوه
 const mountainPanel = document.createElement('div');
+mountainPanel.className = 'map-search-panel map-search-panel--mountains';
 mountainPanel.style.cssText = `
-    position: absolute; top: 110px; right: 10px;
     z-index: 900; background: rgba(255,255,255,0.97); border-radius: 12px;
     padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     width: 220px; max-width: calc(50% - 16px); font-family: 'Vazirmatn', Tahoma, sans-serif;
 `;
 
+let climbingPanel = null;
+
+function climbingDisplayName(c) {
+    return isEn() && c.nameEn ? c.nameEn : c.name;
+}
+
 function layoutMapPanels() {
     const rtl = !isEn();
-    if (mountainPanel) {
-        mountainPanel.style.direction = rtl ? 'rtl' : 'ltr';
-        mountainPanel.style.right = rtl ? '10px' : 'auto';
-        mountainPanel.style.left = rtl ? 'auto' : '10px';
-    }
-    if (shelterPanel) {
-        shelterPanel.style.direction = rtl ? 'rtl' : 'ltr';
-        shelterPanel.style.right = rtl ? '10px' : 'auto';
-        shelterPanel.style.left = rtl ? 'auto' : '10px';
-    }
+    [mountainPanel, shelterPanel, climbingPanel].forEach(function (panel) {
+        if (!panel) return;
+        panel.style.direction = rtl ? 'rtl' : 'ltr';
+        panel.style.right = rtl ? '10px' : 'auto';
+        panel.style.left = rtl ? 'auto' : '10px';
+    });
 }
 
 function buildMountainPanelHtml() {
@@ -553,6 +555,7 @@ function buildMountainPanelHtml() {
 
 mountainPanel.innerHTML = buildMountainPanelHtml();
 document.getElementById('map').appendChild(mountainPanel);
+layoutMapPanels();
 
 let allMountainMarkers = [];
 let mountainData = [];
@@ -674,8 +677,8 @@ const shelterIcon = L.divIcon({
 
 // پنل پناهگاه
 const shelterPanel = document.createElement('div');
+shelterPanel.className = 'map-search-panel map-search-panel--shelters';
 shelterPanel.style.cssText = `
-    position: absolute; top: 310px; right: 10px;
     z-index: 900; background: rgba(255,255,255,0.97); border-radius: 12px;
     padding: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     width: 220px; max-width: calc(50% - 16px); font-family: 'Vazirmatn', Tahoma, sans-serif;
@@ -700,7 +703,6 @@ function buildShelterPanelHtml() {
 }
 
 shelterPanel.innerHTML = buildShelterPanelHtml();
-layoutMapPanels();
 document.getElementById('map').appendChild(shelterPanel);
 
 let allShelterMarkers = [];
@@ -763,18 +765,143 @@ fetch('js/shelters.json')
         document.getElementById('shelter-count').textContent = tr('map.loadError', 'خطا در بارگذاری داده');
     });
 
+// =============================================
+//  Climbing Markers
+// =============================================
+const climbingIcon = L.divIcon({
+    html: `<div style="
+        background: linear-gradient(135deg, #c2410c, #ea580c);
+        color: white;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        width: 28px; height: 28px;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        border: 2px solid white;
+    "><span style="transform:rotate(45deg); font-size:12px;">🧗</span></div>`,
+    className: '',
+    iconSize: [28, 28],
+    iconAnchor: [14, 28],
+    popupAnchor: [0, -32]
+});
+
+climbingPanel = document.createElement('div');
+climbingPanel.className = 'map-search-panel map-search-panel--climbing';
+
+function buildClimbingPanelHtml() {
+    return `
+    <h4 style="margin:0 0 8px; color:#c2410c; font-size:13px;">${tr('map.searchClimbing', '🧗 جستجوی دیواره')}</h4>
+    <input id="climbing-search" type="text" placeholder="${tr('map.searchClimbingPh', 'نام دیواره...')}" style="
+        width:100%; padding:6px 8px; border:1px solid #ddd;
+        border-radius:8px; font-size:13px; box-sizing:border-box;
+        font-family:inherit; outline:none;
+    ">
+    <select id="climbing-filter" style="
+        width:100%; margin-top:8px; padding:6px 8px;
+        border:1px solid #ddd; border-radius:8px;
+        font-size:13px; font-family:inherit; outline:none;
+    ">
+        <option value="all">${tr('map.allProvinces', 'همه استان‌ها')}</option>
+    </select>
+    <div id="climbing-count" style="margin-top:8px; font-size:11px; color:#888; text-align:center;"></div>`;
+}
+
+climbingPanel.innerHTML = buildClimbingPanelHtml();
+document.getElementById('map').appendChild(climbingPanel);
+layoutMapPanels();
+
+let allClimbingMarkers = [];
+let climbingData = [];
+let mapClimbingRender = null;
+let mapClimbingFilter = null;
+
+fetch('data/climbing-spots.json')
+    .then(r => r.json())
+    .then(spots => {
+        climbingData = spots.filter(s => s.lat && s.lng);
+
+        const provinces = [...new Set(climbingData.map(s => s.province))].sort();
+        const select = document.getElementById('climbing-filter');
+        provinces.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            select.appendChild(opt);
+        });
+
+        function buildClimbingPopup(c) {
+            const dir = isEn() ? 'ltr' : 'rtl';
+            const name = climbingDisplayName(c);
+            return `
+                <div style="text-align:center;font-family:'Vazirmatn',Tahoma;direction:${dir};min-width:150px;padding:4px;">
+                    <b style="font-size:14px;color:#c2410c;">🧗 ${name}</b><br>
+                    <span style="color:#555;font-size:12px;">${tr('map.climbingGrade', 'درجه')}: <b>${c.grades}</b></span><br>
+                    <span style="color:#888;font-size:11px;">📍 ${c.province}</span><br>
+                    <a href="sakhre-nvardi.html" style="
+                        display:inline-block;margin-top:8px;padding:5px 12px;
+                        background:#c2410c;color:#fff;border-radius:100px;
+                        font-size:12px;font-weight:700;text-decoration:none;
+                    ">${tr('map.viewClimbing', 'مشاهده صخره‌نوردی ←')}</a>
+                </div>`;
+        }
+
+        function renderClimbing(list) {
+            allClimbingMarkers.forEach(m => map.removeLayer(m));
+            allClimbingMarkers = [];
+            list.forEach(c => {
+                allClimbingMarkers.push(L.marker([c.lat, c.lng], {
+                    icon: climbingIcon,
+                    title: climbingDisplayName(c)
+                }).addTo(map).bindPopup(buildClimbingPopup(c)));
+            });
+            document.getElementById('climbing-count').textContent =
+                tr('map.climbingCount', '{n} دیواره نمایش داده می‌شود').replace('{n}', locNum(list.length));
+        }
+
+        mapClimbingRender = renderClimbing;
+
+        function applyClimbingFilter() {
+            const search = document.getElementById('climbing-search').value.trim().toLowerCase();
+            const province = document.getElementById('climbing-filter').value;
+            const filtered = climbingData.filter(c => {
+                const names = [c.name, c.nameEn || ''].join(' ').toLowerCase();
+                const matchName = !search || names.includes(search);
+                const matchProv = province === 'all' || c.province === province;
+                return matchName && matchProv;
+            });
+            renderClimbing(filtered);
+        }
+
+        mapClimbingFilter = applyClimbingFilter;
+
+        renderClimbing(climbingData);
+
+        document.getElementById('climbing-search').addEventListener('input', applyClimbingFilter);
+        document.getElementById('climbing-filter').addEventListener('change', applyClimbingFilter);
+
+        console.log(`✅ ${climbingData.length} دیواره بارگذاری شد`);
+    })
+    .catch(err => {
+        console.error('❌ خطا در بارگذاری climbing-spots.json:', err);
+        const el = document.getElementById('climbing-count');
+        if (el) el.textContent = tr('map.loadError', 'خطا در بارگذاری داده');
+    });
+
 window.refreshMapPanels = function () {
     if (!document.getElementById('map')) return;
     const mSearch = document.getElementById('mountain-search');
     const sSearch = document.getElementById('shelter-search');
+    const cSearch = document.getElementById('climbing-search');
     const mVal = mSearch ? mSearch.value : '';
     const sVal = sSearch ? sSearch.value : '';
+    const cVal = cSearch ? cSearch.value : '';
     const mProv = document.getElementById('mountain-filter') ? document.getElementById('mountain-filter').value : 'all';
     const mHeight = document.getElementById('mountain-height-filter') ? document.getElementById('mountain-height-filter').value : 'all';
     const sProv = document.getElementById('shelter-filter') ? document.getElementById('shelter-filter').value : 'all';
+    const cProv = document.getElementById('climbing-filter') ? document.getElementById('climbing-filter').value : 'all';
 
     mountainPanel.innerHTML = buildMountainPanelHtml();
     shelterPanel.innerHTML = buildShelterPanelHtml();
+    climbingPanel.innerHTML = buildClimbingPanelHtml();
     layoutMapPanels();
 
     if (mountainData.length && mapMountainRender) {
@@ -828,6 +955,20 @@ window.refreshMapPanels = function () {
             document.getElementById('shelter-search').dispatchEvent(new Event('input'));
         });
         document.getElementById('shelter-search').dispatchEvent(new Event('input'));
+    }
+
+    if (climbingData.length) {
+        const select = document.getElementById('climbing-filter');
+        [...new Set(climbingData.map(c => c.province))].sort().forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            if (p === cProv) opt.selected = true;
+            select.appendChild(opt);
+        });
+        document.getElementById('climbing-search').value = cVal;
+        document.getElementById('climbing-search').addEventListener('input', mapClimbingFilter);
+        document.getElementById('climbing-filter').addEventListener('change', mapClimbingFilter);
+        mapClimbingFilter();
     }
 };
 

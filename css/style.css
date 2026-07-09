@@ -413,6 +413,23 @@ body.dark-mode .moon-icon { display: block; }
 
 .range-map-panel--peaks { top: 110px; }
 .range-map-panel--shelters { top: 280px; }
+.range-map-panel--climbing { top: 450px; }
+
+#map .map-search-panel {
+    position: absolute;
+    z-index: 900;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 220px;
+    max-width: calc(50% - 16px);
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+#map .map-search-panel--mountains { top: 110px; }
+#map .map-search-panel--shelters { top: 310px; }
+#map .map-search-panel--climbing { top: 470px; }
 
 .range-map-panel h4 {
     margin: 0 0 8px;
@@ -1740,6 +1757,27 @@ body.dark-mode .light-bg {
     }
 
     .range-map-panel--shelters {
+        top: auto;
+        bottom: 5.5rem;
+    }
+
+    #map .map-search-panel {
+        left: var(--page-gutter);
+        right: var(--page-gutter);
+        width: auto;
+        max-width: none;
+    }
+
+    #map .map-search-panel--mountains {
+        top: calc(var(--header-height) + 0.75rem);
+    }
+
+    #map .map-search-panel--shelters {
+        top: auto;
+        bottom: 5.5rem;
+    }
+
+    #map .map-search-panel--climbing {
         top: auto;
         bottom: 1rem;
     }
