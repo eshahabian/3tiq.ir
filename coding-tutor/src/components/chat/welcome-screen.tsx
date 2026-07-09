@@ -7,6 +7,8 @@ import {
   Backpack,
   Video,
   HelpCircle,
+  ArrowUpRight,
+  Shield,
 } from "lucide-react";
 
 const suggestions = [
@@ -25,11 +27,18 @@ const suggestions = [
     bg: "bg-emerald-500/10",
   },
   {
-    icon: BookOpen,
-    label: "کوییز ایمنی",
-    prompt: "یک کوییز درباره بیماری ارتفاع بساز",
-    color: "text-violet-600",
-    bg: "bg-violet-500/10",
+    icon: ArrowUpRight,
+    label: "دیواره مناسب مبتدی",
+    prompt: "یک دیواره صخره‌نوردی مناسب مبتدی در ایران پیشنهاد بده",
+    color: "text-orange-600",
+    bg: "bg-orange-500/10",
+  },
+  {
+    icon: Shield,
+    label: "تجهیزات صخره‌نوردی",
+    prompt: "چک‌لیست تجهیزات صخره‌نوردی می‌خواهم",
+    color: "text-rose-600",
+    bg: "bg-rose-500/10",
   },
   {
     icon: Map,
@@ -39,11 +48,11 @@ const suggestions = [
     bg: "bg-slate-500/10",
   },
   {
-    icon: Video,
-    label: "ویدئو آموزشی",
-    prompt: "ویدئو آموزشی برای سیستم لایه‌ای پوشش پیدا کن",
-    color: "text-red-600",
-    bg: "bg-red-500/10",
+    icon: BookOpen,
+    label: "کوییز ایمنی",
+    prompt: "یک کوییز درباره ایمنی صخره‌نوردی بساز",
+    color: "text-violet-600",
+    bg: "bg-violet-500/10",
   },
   {
     icon: HelpCircle,
@@ -51,6 +60,13 @@ const suggestions = [
     prompt: "می‌خواهم درباره یک قله سؤال بپرسم",
     color: "text-blue-600",
     bg: "bg-blue-500/10",
+  },
+  {
+    icon: Video,
+    label: "گره‌های ضروری",
+    prompt: "گره‌های ضروری صخره‌نوردی را آموزش بده",
+    color: "text-red-600",
+    bg: "bg-red-500/10",
   },
 ];
 
@@ -70,10 +86,10 @@ export function WelcomeScreen({ onSelect, compact }: WelcomeScreenProps) {
             <Mountain className="h-7 w-7 text-white" />
           </div>
           <h1 className="mb-2 text-xl font-bold text-slate-900 dark:text-white">
-            دستیار کوهنوردی سه‌تیغ
+            دستیار کوهنوردی و صخره‌نوردی سه‌تیغ
           </h1>
           <p className="max-w-md text-sm text-slate-500">
-            درباره قله، مسیر، تجهیزات و ایمنی بپرس
+            درباره قله، دیواره، تجهیزات و ایمنی بپرس
           </p>
         </div>
       )}

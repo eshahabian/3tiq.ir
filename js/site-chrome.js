@@ -58,6 +58,8 @@
             var t = a.textContent.trim();
             if (t === 'صفحه اصلی' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.home');
             if (t === 'پناهگاه‌ها' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.shelters');
+            if (t === 'صخره‌نوردی' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.climbing');
+            if (t === 'دستیار' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.assistant');
             if (t === 'وبلاگ' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.blog');
             if (t === 'تماس با ما' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.contact');
             if (t === 'رشته‌کوه‌های ایران' && !a.hasAttribute('data-i18n')) a.setAttribute('data-i18n', 'nav.ranges');

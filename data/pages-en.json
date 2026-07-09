@@ -89,5 +89,9 @@
   "blog.html": {
     "title": "Mountaineering Blog",
     "subtitle": "Guides, safety tips, gear and climbing stories from Iran"
+  },
+  "sakhre-nvardi.html": {
+    "title": "Rock Climbing in Iran",
+    "subtitle": "Crags, grades, gear and safety for sport and trad climbing"
   }
 }
