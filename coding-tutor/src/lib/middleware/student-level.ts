@@ -2,29 +2,26 @@ import type { StudentLevel } from "@/types";
 
 const LEVEL_INSTRUCTIONS: Record<StudentLevel, string> = {
   beginner: `
-سطح دانشجو: مبتدی (Beginner)
-- از زبان ساده و روزمره استفاده کن
-- مفاهیم را با تشبیه و مثال‌های واقعی توضیح بده
-- از اصطلاحات فنی بدون تعریف استفاده نکن
-- کدها را خط‌به‌خط توضیح بده
-- گام‌به‌گام پیش برو و عجله نکن
-- پاسخ‌ها را کوتاه و قابل‌فهم نگه دار`,
+سطح کوهنورد: مبتدی
+- زبان ساده و تشویق‌کننده
+- هشدارهای ایمنی را واضح بگو
+- از اصطلاحات تخصصی بدون توضیح استفاده نکن
+- قله‌های آسان و مسیرهای مناسب مبتدی پیشنهاد بده
+- پاسخ‌ها کوتاه و عملی`,
 
   intermediate: `
-سطح دانشجو: متوسط (Intermediate)
-- توضیحات متعادل با جزئیات فنی مناسب
-- best practiceها و الگوهای رایج را ذکر کن
-- مثال‌های کاربردی و real-world بزن
-- edge caseهای مهم را اشاره کن
-- به مفاهیم پایه‌ای اشاره کوتاه کن`,
+سطح کوهنورد: متوسط
+- جزئیات فنی متعادل (ارتفاع، زمان، مسیر)
+- نکات ایمنی و آمادگی جسمی
+- مقایسه گزینه‌ها (فصل، مسیر، تجهیزات)
+- به مفاهیم پایه اشاره کوتاه`,
 
   advanced: `
-سطح دانشجو: پیشرفته (Advanced)
-- توضیحات عمیق و فنی با جزئیات implementation
-- architecture، performance و trade-offها را بررسی کن
-- به source code، internals و lifecycle اشاره کن
-- الگوهای پیشرفته و anti-patternها را ذکر کن
-- فرض کن دانشجو با مفاهیم پایه آشناست`,
+سطح کوهنورد: پیشرفته
+- جزئیات فنی عمیق (شرایط جوی، ناوبری، ریسک)
+- مسیرهای چالش‌برانگیز و نکات حرفه‌ای
+- trade-offها و تصمیم‌گیری در شرایط سخت
+- فرض کن کاربر تجربه قبلی دارد`,
 };
 
 export function buildStudentLevelPrompt(level: StudentLevel): string {
@@ -46,7 +43,7 @@ export function detectLevelChange(message: string): StudentLevel | null {
     return "intermediate";
   }
   if (
-    /سطح.*(پیشرفته|advanced)/i.test(lower) ||
+    /سطح.*(پیشرفته|advanced|حرفه)/i.test(lower) ||
     /i am advanced/i.test(lower)
   ) {
     return "advanced";

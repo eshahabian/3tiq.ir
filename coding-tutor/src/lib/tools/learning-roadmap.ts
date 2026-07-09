@@ -3,12 +3,12 @@ import { z } from "zod";
 
 export const learningRoadmapTool = tool({
   description:
-    "Create a personalized learning roadmap for a programming career path or skill. Use when user asks for a roadmap, learning path, or how to become a developer.",
+    "Create a personalized mountaineering learning roadmap. Use when user asks how to start mountaineering, learning path, or مسیر یادگیری کوهنوردی.",
   inputSchema: z.object({
     goal: z
       .string()
       .describe(
-        "Learning goal, e.g. 'Backend Developer', 'Full Stack Developer', 'DevOps Engineer'",
+        "Goal e.g. 'شروع کوهنوردی', 'صعود قله‌های 4000 متری', 'کوهنوردی زمستانی'",
       ),
     timeframe: z
       .string()

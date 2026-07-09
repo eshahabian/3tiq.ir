@@ -3,11 +3,11 @@ import { z } from "zod";
 
 export const quizGeneratorTool = tool({
   description:
-    "Generate an educational quiz about a programming topic. Use when user asks for a quiz, test, or wants to practice knowledge on a topic.",
+    "Generate an educational quiz about mountaineering topics. Use when user asks for a quiz, test, or wants to practice knowledge on safety, peaks, navigation, gear.",
   inputSchema: z.object({
     topic: z
       .string()
-      .describe("The programming topic for the quiz, e.g. 'React Context API'"),
+      .describe("Topic e.g. 'altitude sickness', 'نقشه‌خوانی', 'Layering system'"),
     questionCount: z
       .number()
       .min(3)

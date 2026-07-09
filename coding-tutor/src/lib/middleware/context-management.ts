@@ -2,12 +2,12 @@ import type { UserContext } from "@/types";
 
 export function buildContextPrompt(ctx: UserContext): string {
   const parts: string[] = [
-    "## اطلاعات دانشجو (Context Management)",
+    "## اطلاعات کوهنورد (Context Management)",
     `- سطح: ${ctx.studentLevel}`,
   ];
 
   if (ctx.favoriteTechnologies.length > 0) {
-    parts.push(`- تکنولوژی‌های موردعلاقه: ${ctx.favoriteTechnologies.join(", ")}`);
+    parts.push(`- قله‌ها/مناطق موردعلاقه: ${ctx.favoriteTechnologies.join(", ")}`);
   }
 
   if (ctx.currentRoadmap) {
@@ -33,11 +33,11 @@ export function buildContextPrompt(ctx: UserContext): string {
 
 export function extractTopicsFromMessage(message: string): string[] {
   const topics: string[] = [];
-  const techPatterns = [
-    /\b(React|Vue|Angular|Next\.?js|Node\.?js|Python|FastAPI|Django|Flask|TypeScript|JavaScript|Go|Rust|Java|Spring|Docker|Kubernetes|PostgreSQL|MongoDB|Redis|GraphQL|REST|LangChain|AI|ML)\b/gi,
+  const peakPatterns = [
+    /دماوند|علم‌کوه|علمکوه|سبلان|توچال|دنا|هزار|زردکوه|آلوداغ|آلپ|سهند|تفتان|اشتران|کلاردشت|البرز|زاگرس|پناهگاه|قله/g,
   ];
 
-  for (const pattern of techPatterns) {
+  for (const pattern of peakPatterns) {
     const matches = message.match(pattern);
     if (matches) {
       topics.push(...matches.map((m) => m.trim()));

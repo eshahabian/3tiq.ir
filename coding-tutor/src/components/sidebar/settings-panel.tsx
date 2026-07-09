@@ -67,7 +67,7 @@ export function SettingsPanel({
         <div className="flex-1 overflow-y-auto p-4 space-y-6">
           <section>
             <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-              سطح دانشجو
+              سطح کوهنوردی
             </h3>
             <div className="space-y-2">
               {LEVELS.map((level) => (
@@ -95,7 +95,7 @@ export function SettingsPanel({
           {favoriteTechnologies.length > 0 && (
             <section>
               <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                تکنولوژی‌های موردعلاقه
+                قله‌ها / مناطق
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {favoriteTechnologies.map((tech) => (

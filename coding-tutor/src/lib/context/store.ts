@@ -24,6 +24,7 @@ export function getOrCreateContext(
     currentRoadmap: overrides?.currentRoadmap ?? null,
     studiedTopics: overrides?.studiedTopics ?? [],
     conversationSummary: overrides?.conversationSummary ?? null,
+    metisSessionId: overrides?.metisSessionId ?? null,
     updatedAt: new Date().toISOString(),
   };
   store.set(sessionId, ctx);

@@ -8,9 +8,9 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "Coding Tutor | دستیار آموزشی برنامه‌نویسی",
+  title: "دستیار کوهنوردی | سه تیغ",
   description:
-    "دستیار هوشمند برای یادگیری برنامه‌نویسی — کوییز، کد، مسیر یادگیری و بررسی GitHub",
+    "دستیار هوشمند کوهنوردی سه تیغ — قله، مسیر، تجهیزات و ایمنی",
 };
 
 export default function RootLayout({

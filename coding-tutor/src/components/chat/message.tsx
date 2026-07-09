@@ -80,12 +80,11 @@ export function Message({
 
 function formatToolName(name: string): string {
   const names: Record<string, string> = {
-    generateQuiz: "تولید کوییز",
-    generateCode: "تولید کد",
-    reviewGitHub: "بررسی GitHub",
+    generateQuiz: "کوییز",
     createRoadmap: "مسیر یادگیری",
-    searchYouTube: "جستجوی YouTube",
-    fetchDocs: "مستندات",
+    searchYouTube: "جستجوی ویدئو",
+    suggestPeak: "پیشنهاد قله",
+    gearChecklist: "چک‌لیست تجهیزات",
   };
   return names[name] ?? name;
 }

@@ -5,6 +5,10 @@ import {
   type UIMessage,
 } from "ai";
 import { getModel } from "@/lib/ai/model";
+import {
+  handleMetisBotChat,
+  useMetisBotMode,
+} from "@/lib/ai/metis-bot-chat";
 import { agentTools } from "@/lib/tools";
 import {
   getOrCreateContext,
@@ -26,19 +30,21 @@ import type { ChatRequestBody, StudentLevel } from "@/types";
 
 export const maxDuration = 60;
 
-const BASE_SYSTEM_PROMPT = `You are an intelligent coding education assistant (دستیار آموزشی برنامه‌نویسی).
-You help students learn programming through explanations, quizzes, code examples, roadmaps, and project reviews.
+const BASE_SYSTEM_PROMPT = `You are the intelligent mountaineering assistant for 3tiq.ir (سه تیغ) — Iran's comprehensive mountaineering guide.
+You help climbers with peaks, routes, gear, safety, learning paths, and trip planning.
 
 Available tools:
-- generateQuiz: Create quizzes on programming topics
-- generateCode: Generate educational code examples
-- reviewGitHub: Review GitHub repositories
-- createRoadmap: Create personalized learning roadmaps
-- searchYouTube: Find educational videos
-- fetchDocs: Get latest technology documentation
+- generateQuiz: Quiz on mountaineering topics (safety, navigation, gear)
+- createRoadmap: Personalized mountaineering learning roadmap
+- searchYouTube: Find educational mountaineering videos
+- suggestPeak: Recommend peaks based on level and region
+- gearChecklist: Equipment checklist for trips
+
+Site context: 3tiq.ir has 115+ peaks, shelters, route maps, and blog articles.
+When relevant, suggest visiting https://3tiq.ir for peak guides, panahgah.html for shelters, blog.html for articles.
 
 Always respond in Persian (Farsi) unless the user writes in English.
-Be encouraging, patient, and educational.
+Prioritize safety. Be encouraging and practical.
 When using tools, follow the instructions returned by the tool to format your response.`;
 
 function getLastUserMessage(messages: UIMessage[]): string {
@@ -115,6 +121,14 @@ export async function POST(req: Request) {
 
     const trimmedMessages = trimMessagesForContext(simpleMessages, summary);
 
+    if (useMetisBotMode()) {
+      return handleMetisBotChat({
+        sessionId,
+        userMessage: lastUserMsg,
+        studentLevel: ctx.studentLevel,
+      });
+    }
+
     const systemPrompt = [
       BASE_SYSTEM_PROMPT,
       buildStudentLevelPrompt(ctx.studentLevel),
@@ -133,6 +147,9 @@ export async function POST(req: Request) {
       ),
       tools: agentTools,
       stopWhen: stepCountIs(5),
+      onError: ({ error }) => {
+        console.error("[chat] stream error:", error);
+      },
     });
 
     return result.toUIMessageStreamResponse({
@@ -151,7 +168,7 @@ export async function POST(req: Request) {
 export async function GET() {
   return Response.json({
     status: "ok",
-    name: "Coding Tutor API",
+    name: "3tiq Mountaineering Assistant API",
     tools: Object.keys(agentTools),
   });
 }

@@ -50,47 +50,28 @@
         }
         .assistant-shell {
             flex: 1;
-            max-width: 48rem;
+            max-width: 52rem;
             width: 100%;
             margin: 0 auto 2rem;
             padding: 0 1rem;
+            min-height: 32rem;
         }
-        .assistant-placeholder {
-            background: var(--white);
+        .assistant-frame {
+            width: 100%;
+            height: min(70vh, 640px);
+            min-height: 480px;
+            border: 1px solid rgba(212,165,116,.35);
+            border-radius: 1rem;
+            background: #f8fafc;
+        }
+        .assistant-offline {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
             border: 2px dashed rgba(212,165,116,.45);
             border-radius: 1rem;
-            min-height: 22rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 2rem;
-            text-align: center;
         }
-        .assistant-placeholder-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 1rem;
-            background: rgba(212,165,116,.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-        }
-        .assistant-placeholder h2 {
-            font-size: 1.15rem;
-            font-weight: 800;
-        }
-        .assistant-placeholder p {
-            color: var(--text-light);
-            font-size: .9rem;
-            line-height: 1.7;
-            max-width: 24rem;
-        }
-        .assistant-back {
-            margin-top: .5rem;
-        }
+        .assistant-offline.is-visible { display: block; }
     </style>
 </head>
 <body>
@@ -138,18 +119,58 @@
         </section>
 
         <div class="assistant-shell">
-            <div class="assistant-placeholder" role="status">
-                <div class="assistant-placeholder-icon" aria-hidden="true">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                </div>
-                <h2>چت به‌زودی فعال می‌شود</h2>
-                <p>در مرحله بعد، اینجا رابط گفتگو با هوش مصنوعی (API متیس) اضافه می‌شود تا بتوانی درباره قله‌ها، مسیرها و تجهیزات سؤال بپرسی.</p>
-                <a href="index.html#services" class="btn btn-primary assistant-back">← بازگشت به صفحه اصلی</a>
+            <iframe
+                id="assistantFrame"
+                class="assistant-frame"
+                title="دستیار کوهنوردی سه‌تیغ"
+                allow="clipboard-write"
+                loading="eager"
+            ></iframe>
+            <div id="assistantOffline" class="assistant-offline" role="alert">
+                <h2>دستیار در دسترس نیست</h2>
+                <p>سرور چت (<code>npm run dev</code> در پوشه <code>coding-tutor</code>) اجرا نشده.</p>
+                <p style="margin-top:1rem">
+                    <a href="http://localhost:3000/embed" target="_blank" rel="noopener" class="btn btn-primary">باز کردن چت مستقیم ←</a>
+                </p>
+                <a href="index.html#services" class="btn btn-primary" style="margin-top:1rem;display:inline-block">← بازگشت</a>
             </div>
         </div>
     </main>
+
+    <script>
+    (function () {
+        var host = location.hostname;
+        var chatBase = (host === 'localhost' || host === '127.0.0.1')
+            ? 'http://localhost:3000'
+            : (window.ASSISTANT_CHAT_URL || 'https://assistant.3tiq.ir');
+        var frame = document.getElementById('assistantFrame');
+        var offline = document.getElementById('assistantOffline');
+
+        frame.src = chatBase + '/embed';
+
+        frame.addEventListener('load', function () {
+            offline.classList.remove('is-visible');
+            frame.style.display = 'block';
+        });
+
+        // فقط اگر iframe واقعاً لود نشد (نه CORS — چک fetch قبلی iframe سالم را مخفی می‌کرد)
+        setTimeout(function () {
+            try {
+                var doc = frame.contentDocument || frame.contentWindow.document;
+                if (doc && doc.body && doc.body.innerHTML.length > 0) return;
+            } catch (e) {
+                // cross-origin = iframe loaded from another port — OK
+                return;
+            }
+            showOffline();
+        }, 12000);
+
+        function showOffline() {
+            frame.style.display = 'none';
+            offline.classList.add('is-visible');
+        }
+    })();
+    </script>
 
     <script src="js/i18n-boot.js" defer></script>
     <script src="js/i18n.js" defer></script>

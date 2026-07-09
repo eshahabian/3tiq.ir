@@ -8,11 +8,9 @@ function getLangChainModel() {
   return new ChatOpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,
     configuration: {
-      baseURL:
-        process.env.OPENAI_API_BASE ??
-        "https://api.metisai.ir/api/v1/wrapper/openai_chat_completion",
+      baseURL: process.env.OPENAI_API_BASE ?? "https://api.metisai.ir/api/v1/wrapper",
     },
-    modelName: process.env.OPENAI_MODEL ?? "gpt-4o-mini",
+    modelName: process.env.OPENAI_MODEL ?? "GPT-4O-Mini-2024-07-18",
     temperature: 0.3,
   });
 }
@@ -30,9 +28,9 @@ export async function summarizeConversation(
     .join("\n\n");
 
   const prompt = PromptTemplate.fromTemplate(`
-You are a conversation summarizer for a coding education assistant.
+You are a conversation summarizer for 3tiq.ir mountaineering assistant.
 Summarize the following conversation in Persian (Farsi).
-Keep important details: topics discussed, student level, technologies mentioned, learning goals, and key questions.
+Keep important details: peaks discussed, climber level, regions, gear topics, learning goals, and key questions.
 
 {existingSummarySection}
 

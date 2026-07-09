@@ -13,15 +13,15 @@ import type { StudentLevel } from "@/types";
 
 function getSessionId(): string {
   if (typeof window === "undefined") return "";
-  let id = localStorage.getItem("coding-tutor-session");
+  let id = localStorage.getItem("3tiq-assistant-session");
   if (!id) {
     id = crypto.randomUUID();
-    localStorage.setItem("coding-tutor-session", id);
+    localStorage.setItem("3tiq-assistant-session", id);
   }
   return id;
 }
 
-export function Chat() {
+export function Chat({ embed = false }: { embed?: boolean }) {
   const [sessionId] = useState(getSessionId);
   const [studentLevel, setStudentLevel] = useState<StudentLevel>("beginner");
   const [favoriteTechnologies, setFavoriteTechnologies] = useState<string[]>(
@@ -43,7 +43,7 @@ export function Chat() {
     [sessionId, studentLevel],
   );
 
-  const { messages, sendMessage, status, setMessages } = useChat({
+  const { messages, sendMessage, status, error, setMessages } = useChat({
     transport,
   });
 
@@ -94,7 +94,7 @@ export function Chat() {
   const handleNewChat = () => {
     setMessages([]);
     const newId = crypto.randomUUID();
-    localStorage.setItem("coding-tutor-session", newId);
+    localStorage.setItem("3tiq-assistant-session", newId);
     window.location.reload();
   };
 
@@ -128,21 +128,22 @@ export function Chat() {
       />
 
       <div className="flex flex-1 flex-col min-w-0">
-        <header className="flex items-center justify-between border-b border-slate-200 bg-white/80 px-4 py-3 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80">
+        <header className="flex items-center justify-between border-b border-slate-200 bg-white/80 px-4 py-2 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/80">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 lg:hidden"
+              className="rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800"
+              aria-label="تنظیمات"
             >
               <Menu className="h-5 w-5" />
             </button>
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#D4A574] to-[#8B6914]">
                 <Sparkles className="h-4 w-4 text-white" />
               </div>
               <div>
                 <h1 className="text-sm font-semibold text-slate-900 dark:text-white">
-                  Coding Tutor
+                  دستیار کوهنوردی
                 </h1>
                 <p className="text-xs text-slate-500">
                   سطح:{" "}
@@ -155,16 +156,40 @@ export function Chat() {
               </div>
             </div>
           </div>
-          <Button variant="outline" size="sm" onClick={handleNewChat}>
-            <Plus className="ml-1 h-4 w-4" />
-            گفتگوی جدید
-          </Button>
+          {!embed && (
+            <Button variant="outline" size="sm" onClick={handleNewChat}>
+              <Plus className="ml-1 h-4 w-4" />
+              گفتگوی جدید
+            </Button>
+          )}
         </header>
 
         <main className="flex flex-1 flex-col overflow-hidden">
           <div className="flex-1 overflow-y-auto">
+            {error && (
+              <div className="mx-auto max-w-3xl px-4 py-3">
+                <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-300">
+                  خطا در دریافت پاسخ. احتمالاً باید در{" "}
+                  <a
+                    href="https://console.metisai.ir"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    console.metisai.ir
+                  </a>{" "}
+                  یک ربات بسازی و{" "}
+                  <code className="text-xs">METIS_BOT_ID</code> را در{" "}
+                  <code className="text-xs">coding-tutor/.env.local</code> بگذاری.
+                  وضعیت:{" "}
+                  <a href="/api/metis/status" className="underline" target="_blank">
+                    /api/metis/status
+                  </a>
+                </p>
+              </div>
+            )}
             {messages.length === 0 ? (
-              <WelcomeScreen onSelect={handleSuggestion} />
+              <WelcomeScreen onSelect={handleSuggestion} compact={embed} />
             ) : (
               <div className="mx-auto max-w-3xl py-4">
                 {messages.map((msg) => (

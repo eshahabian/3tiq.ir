@@ -7,6 +7,7 @@ export interface UserContext {
   currentRoadmap: string | null;
   studiedTopics: string[];
   conversationSummary: string | null;
+  metisSessionId: string | null;
   updatedAt: string;
 }
 
