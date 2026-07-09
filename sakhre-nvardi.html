@@ -200,6 +200,59 @@
             color: var(--text-light);
             padding: 2rem;
         }
+        .cl-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .cl-search {
+            flex: 1;
+            min-width: min(100%, 260px);
+            padding: 0.65rem 1rem;
+            border: 1px solid rgba(58,50,38,.15);
+            border-radius: 100px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .cl-search:focus { border-color: #c2410c; }
+        .cl-count {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        .climbing-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .climbing-tab {
+            padding: 0.45rem 0.95rem;
+            border: 1px solid rgba(58,50,38,.12);
+            border-radius: 100px;
+            background: var(--white);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+        .climbing-tab:hover { border-color: #c2410c; color: #c2410c; }
+        .climbing-tab.active {
+            background: #c2410c;
+            border-color: #c2410c;
+            color: #fff;
+        }
+        .cl-rank-badge {
+            font-size: 1rem;
+            line-height: 1;
+        }
+        .cl-card--top { border-color: rgba(194,65,12,.2); }
+        .cl-card-head { align-items: center; }
         .cl-gear-list {
             max-width: 40rem;
             margin: 0 auto;
@@ -222,6 +275,8 @@
         body.dark-mode .cl-card-name,
         body.dark-mode .cl-meta-value,
         body.dark-mode .cl-tip h3 { color: #e8e8e8; }
+        body.dark-mode .climbing-tab { background: #2a2a2a; border-color: rgba(255,255,255,.1); color: #ddd; }
+        body.dark-mode .cl-search { background: #2a2a2a; border-color: rgba(255,255,255,.12); color: #eee; }
     </style>
 </head>
 <body class="cl-page">
@@ -285,14 +340,29 @@
         <div class="cl-hero-inner">
             <span class="cl-eyebrow" data-i18n="climbing.badge">🧗 صخره‌نوردی</span>
             <h1 data-i18n="climbing.title">صخره‌نوردی ایران</h1>
-            <p data-i18n="climbing.heroDesc">دیواره‌ها، درجه سختی، تجهیزات و نکات ایمنی — از ولیران و هیجان تا بیستون و شیرود</p>
+            <p data-i18n="climbing.heroDesc">۸۰+ منطقه سنگ‌نوردی در ۲۴ استان — از بند یخچال و پل خواب تا بیستون و علم‌کوه</p>
+        </div>
+    </section>
+
+    <section class="cl-section alt">
+        <div class="container">
+            <h2 class="cl-section-title" data-i18n="climbing.top10Title">۱۰ منطقه برتر ایران</h2>
+            <p class="cl-section-sub" data-i18n="climbing.top10Sub">بیستون، علم‌کوه، پل خواب، بند یخچال و دیگر دیواره‌های حرفه‌ای</p>
+            <div class="cl-grid cl-grid--top" id="climbingTop10">
+                <p class="cl-loading" data-i18n="common.loading">در حال بارگذاری...</p>
+            </div>
         </div>
     </section>
 
     <section class="cl-section">
         <div class="container">
-            <h2 class="cl-section-title" data-i18n="climbing.spotsTitle">دیواره‌های معروف</h2>
-            <p class="cl-section-sub" data-i18n="climbing.spotsSub">محبوب‌ترین مناطق صخره‌نوردی ایران برای مبتدی تا پیشرفته</p>
+            <h2 class="cl-section-title" data-i18n="climbing.spotsTitle">همه مناطق سنگ‌نوردی</h2>
+            <p class="cl-section-sub" data-i18n="climbing.spotsSub">فهرست کامل دیواره‌ها و مناطق صخره‌نوردی ایران — فیلتر بر اساس استان</p>
+            <div class="cl-toolbar">
+                <input type="search" id="climbingSearch" class="cl-search" data-i18n-attr="placeholder:climbing.searchPh" placeholder="جستجوی نام دیواره یا استان...">
+                <span class="cl-count" id="climbingCount"></span>
+            </div>
+            <div class="climbing-tabs" id="climbingTabs"></div>
             <div class="cl-grid" id="climbingGrid">
                 <p class="cl-loading" data-i18n="common.loading">در حال بارگذاری...</p>
             </div>
