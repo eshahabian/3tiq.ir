@@ -88,12 +88,35 @@
         .cl-card {
             background: var(--white);
             border-radius: 1rem;
-            padding: 1.25rem;
+            padding: 0;
             border: 1px solid rgba(58,50,38,.08);
             box-shadow: 0 4px 16px rgba(44,36,22,.07);
             transition: var(--transition);
             animation: fadeInUp .5s ease both;
+            overflow: hidden;
         }
+        .cl-card-img {
+            height: 160px;
+            overflow: hidden;
+        }
+        .cl-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .35s ease;
+        }
+        .cl-card:hover .cl-card-img img {
+            transform: scale(1.04);
+        }
+        .cl-card-head,
+        .cl-card-name,
+        .cl-card-desc,
+        .cl-meta {
+            margin-left: 1.25rem;
+            margin-right: 1.25rem;
+        }
+        .cl-card-head { margin-top: 1rem; }
+        .cl-meta { margin-bottom: 1.25rem; }
         .cl-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(44,36,22,.12);

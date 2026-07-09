@@ -8,6 +8,10 @@
         return window.I18n ? I18n.t(k) : fb;
     }
 
+    function displayName(s) {
+        return window.I18n && I18n.isEn() && s.nameEn ? s.nameEn : s.name;
+    }
+
     function typeLabel(t) {
         if (window.I18n && I18n.isEn()) {
             if (t === 'سنگ‌نوردی') return 'Rock climbing';
@@ -16,17 +20,26 @@
         return t;
     }
 
+    function cardImage(s) {
+        var name = displayName(s);
+        if (s.image) {
+            return '<div class="cl-card-img"><img src="' + s.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy"></div>';
+        }
+        return '';
+    }
+
     function renderCards(spots) {
         var grid = document.getElementById('climbingGrid');
         if (!grid || !Array.isArray(spots)) return;
 
         grid.innerHTML = spots.map(function (s, i) {
             return '<article class="cl-card" style="animation-delay:' + (i * 0.05) + 's">' +
+                cardImage(s) +
                 '<div class="cl-card-head">' +
                 '<span class="cl-type">' + typeLabel(s.type) + '</span>' +
                 '<span class="cl-region">' + s.region + ' · ' + s.province + '</span>' +
                 '</div>' +
-                '<h3 class="cl-card-name">' + s.name + '</h3>' +
+                '<h3 class="cl-card-name">' + displayName(s) + '</h3>' +
                 '<p class="cl-card-desc">' + s.description + '</p>' +
                 '<div class="cl-meta">' +
                 '<div><span class="cl-meta-label">' + tr('climbing.grade', 'درجه') + '</span><span class="cl-meta-value">' + s.grades + '</span></div>' +

@@ -511,6 +511,7 @@ mountainPanel.style.cssText = `
 `;
 
 let climbingPanel = null;
+let shelterPanel = null;
 
 function climbingDisplayName(c) {
     return isEn() && c.nameEn ? c.nameEn : c.name;
@@ -555,7 +556,6 @@ function buildMountainPanelHtml() {
 
 mountainPanel.innerHTML = buildMountainPanelHtml();
 document.getElementById('map').appendChild(mountainPanel);
-layoutMapPanels();
 
 let allMountainMarkers = [];
 let mountainData = [];
@@ -676,7 +676,7 @@ const shelterIcon = L.divIcon({
 });
 
 // پنل پناهگاه
-const shelterPanel = document.createElement('div');
+shelterPanel = document.createElement('div');
 shelterPanel.className = 'map-search-panel map-search-panel--shelters';
 shelterPanel.style.cssText = `
     z-index: 900; background: rgba(255,255,255,0.97); border-radius: 12px;
@@ -704,6 +704,7 @@ function buildShelterPanelHtml() {
 
 shelterPanel.innerHTML = buildShelterPanelHtml();
 document.getElementById('map').appendChild(shelterPanel);
+layoutMapPanels();
 
 let allShelterMarkers = [];
 let shelterData = [];

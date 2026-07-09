@@ -284,10 +284,15 @@
 
     <!-- ===== Rock Climbing ===== -->
     <section class="climbing-showcase light-bg" id="climbing">
-        <div class="container" style="text-align:center;padding:clamp(2.5rem,7vw,4rem) 0">
+        <div class="container">
             <h2 class="section-title" data-i18n="climbing.homeTitle">صخره‌نوردی ایران</h2>
-            <p class="section-subtitle" data-i18n="climbing.homeSub" style="max-width:36rem;margin:0 auto 1.5rem;line-height:1.8">دیواره‌های ولیران، بیستون، شیرود و بیشتر — تجهیزات و ایمنی</p>
-            <a href="sakhre-nvardi.html" class="btn btn-primary" data-i18n="climbing.homeCta">مشاهده دیواره‌ها ←</a>
+            <p class="section-subtitle" data-i18n="climbing.homeSub">دیواره‌های ولیران، بیستون، شیرود و بیشتر — تجهیزات و ایمنی</p>
+            <div class="climbing-cards-grid" id="climbingCardsGrid">
+                <div class="climbing-loading" data-i18n="common.loading">در حال بارگذاری...</div>
+            </div>
+            <div style="text-align:center;margin-top:2rem;">
+                <a href="sakhre-nvardi.html" class="btn btn-primary" data-i18n="climbing.homeCta">مشاهده همه دیواره‌ها ←</a>
+            </div>
         </div>
     </section>
 
@@ -483,6 +488,7 @@
     <script src="js/tour-planner.js" defer></script>
     <script src="js/shelter-map-modal.js" defer></script>
     <script src="js/home-shelters.js" defer></script>
+    <script src="js/home-climbing.js" defer></script>
 
     <!-- ===== Particle Background Effect ===== -->
     <script>
