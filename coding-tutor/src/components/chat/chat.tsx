@@ -60,6 +60,12 @@ export function Chat({ embed = false }: { embed?: boolean }) {
         if (ctx.studiedTopics) setStudiedTopics(ctx.studiedTopics);
       })
       .catch(() => {});
+
+    fetch("/api/warmup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId }),
+    }).catch(() => {});
   }, [sessionId]);
 
   const handleLevelChange = useCallback(
@@ -98,6 +104,11 @@ export function Chat({ embed = false }: { embed?: boolean }) {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, resetChat: true }),
+    }).catch(() => {});
+    fetch("/api/warmup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId }),
     }).catch(() => {});
   }, [sessionId, setMessages]);
 

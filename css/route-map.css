@@ -236,7 +236,7 @@ body.dark-mode .route-map-btn {
 }
 
 @media (max-width: 600px) {
-    .route-map-canvas { height: 20rem; }
+    .route-map-canvas { height: min(20rem, 55dvh); }
 }
 
 @media print {

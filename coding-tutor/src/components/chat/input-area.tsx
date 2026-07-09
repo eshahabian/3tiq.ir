@@ -66,7 +66,7 @@ export function InputArea({
         </Button>
       </form>
       <p className="pb-2 text-center text-xs text-slate-400">
-        Shift+Enter برای خط جدید — Enter برای ارسال
+        {isLoading ? "در حال دریافت پاسخ از Metis..." : "Shift+Enter برای خط جدید — Enter برای ارسال"}
       </p>
     </div>
   );
