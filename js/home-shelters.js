@@ -4,7 +4,7 @@
 (function () {
     'use strict';
 
-    var SHOW = 6;
+    var SHOW = 8;
     var shelterData = [];
     var dataReady = false;
 
