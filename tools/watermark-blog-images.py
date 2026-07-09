@@ -12,11 +12,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 BLOG_IMG_DIR = ROOT / "images" / "blog"
-LOGO_PATH = ROOT / "logo.png"
 
 LINE1 = "@3tiq.ir"
 LINE2 = "3tiq.ir"
-TILE_TEXT = "سه تیغ  ·  3tiq.ir"
+TILE_TEXT = "3tiq.ir"
 
 
 def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -69,16 +68,6 @@ def watermark_image(src: Path, dst: Path | None = None) -> Path:
     box_w = max(w1, w2) + pad * 2
     box_h = h1 + h2 + pad * 2 + gap
 
-    logo_w = 0
-    logo_img = None
-    if LOGO_PATH.exists():
-        logo_img = Image.open(LOGO_PATH).convert("RGBA")
-        target_h = int(box_h * 0.85)
-        ratio = target_h / logo_img.height
-        logo_w = int(logo_img.width * ratio)
-        logo_img = logo_img.resize((logo_w, target_h), Image.Resampling.LANCZOS)
-        box_w += logo_w + pad
-
     x0 = w - box_w - pad * 2
     y0 = h - box_h - pad * 2
     x1 = w - pad * 2
@@ -92,16 +81,9 @@ def watermark_image(src: Path, dst: Path | None = None) -> Path:
 
     tx = x0 + pad
     ty = y0 + pad
-    if logo_img:
-        ly = y0 + (box_h - logo_img.height) // 2
-        overlay.paste(logo_img, (tx, ly), logo_img)
-        tx += logo_w + pad
 
     draw.text((tx, ty), LINE1, font=font_main, fill=(255, 255, 255, 245))
     draw.text((tx, ty + h1 + gap), LINE2, font=font_sub, fill=(210, 200, 185, 230))
-
-    mark_font = load_font(max(18, w // 55))
-    draw.text((pad * 2, pad * 2), "سه تیغ", font=mark_font, fill=(255, 255, 255, 120))
 
     merged = Image.alpha_composite(base, overlay).convert("RGB")
     merged.save(dst, format="PNG", optimize=True)
