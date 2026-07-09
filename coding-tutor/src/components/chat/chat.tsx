@@ -187,22 +187,22 @@ export function Chat({ embed = false }: { embed?: boolean }) {
             {error && (
               <div className="mx-auto max-w-3xl px-4 py-3">
                 <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-300">
-                  خطا در دریافت پاسخ. احتمالاً باید در{" "}
-                  <a
-                    href="https://console.metisai.ir"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                  >
-                    console.metisai.ir
-                  </a>{" "}
-                  یک ربات بسازی و{" "}
-                  <code className="text-xs">METIS_BOT_ID</code> را در{" "}
-                  <code className="text-xs">coding-tutor/.env.local</code> بگذاری.
-                  وضعیت:{" "}
-                  <a href="/api/metis/status" className="underline" target="_blank">
-                    /api/metis/status
-                  </a>
+                  خطا در دریافت پاسخ.
+                  {error.message ? (
+                    <> {error.message}</>
+                  ) : (
+                    <>
+                      {" "}
+                      ابتدا{" "}
+                      <a href="/api/metis/status" className="underline" target="_blank">
+                        وضعیت API
+                      </a>{" "}
+                      را چک کن. روی Vercel باید{" "}
+                      <code className="text-xs">OPENAI_API_KEY</code> و{" "}
+                      <code className="text-xs">METIS_BOT_ID</code> در Environment
+                      Variables تنظیم شده باشد.
+                    </>
+                  )}
                 </p>
               </div>
             )}

@@ -1,4 +1,5 @@
 const METIS_API = "https://api.metisai.ir/api/v1";
+const METIS_FETCH_TIMEOUT_MS = 25_000;
 
 function headers(apiKey: string) {
   return {
@@ -7,17 +8,39 @@ function headers(apiKey: string) {
   };
 }
 
+async function metisFetch(
+  url: string,
+  apiKey: string,
+  init?: RequestInit,
+): Promise<Response> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), METIS_FETCH_TIMEOUT_MS);
+
+  try {
+    return await fetch(url, {
+      ...init,
+      headers: { ...headers(apiKey), ...init?.headers },
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error instanceof Error && error.name === "AbortError") {
+      throw new Error(
+        "Metis API timeout — سرور Vercel به api.metisai.ir وصل نشد. احتمالاً باید backend روی هاست ایرانی (برتینا) اجرا شود.",
+      );
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 export async function testMetisConnection(apiKey: string) {
-  const res = await fetch(`${METIS_API}/bots/all`, {
-    headers: headers(apiKey),
-  });
+  const res = await metisFetch(`${METIS_API}/bots/all`, apiKey);
   return { ok: res.ok, status: res.status };
 }
 
 export async function listMetisBots(apiKey: string) {
-  const res = await fetch(`${METIS_API}/bots/all`, {
-    headers: headers(apiKey),
-  });
+  const res = await metisFetch(`${METIS_API}/bots/all`, apiKey);
   if (!res.ok) {
     throw new Error(`Metis bots API returned ${res.status}`);
   }
@@ -49,9 +72,8 @@ export async function createMetisSession(
   apiKey: string,
   botId: string,
 ): Promise<string> {
-  const res = await fetch(`${METIS_API}/chat/session`, {
+  const res = await metisFetch(`${METIS_API}/chat/session`, apiKey, {
     method: "POST",
-    headers: headers(apiKey),
     body: JSON.stringify({
       botId,
       user: null,
@@ -71,11 +93,11 @@ export async function sendMetisMessage(
   metisSessionId: string,
   content: string,
 ): Promise<string> {
-  const res = await fetch(
+  const res = await metisFetch(
     `${METIS_API}/chat/session/${metisSessionId}/message`,
+    apiKey,
     {
       method: "POST",
-      headers: headers(apiKey),
       body: JSON.stringify({
         message: { content, type: "USER" },
       }),

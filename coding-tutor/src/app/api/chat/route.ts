@@ -73,6 +73,14 @@ export async function POST(req: Request) {
       ctx.studentLevel = levelChange;
     }
 
+    if (useMetisBotMode()) {
+      return handleMetisBotChat({
+        sessionId,
+        userMessage: lastUserMsg,
+        studentLevel: ctx.studentLevel,
+      });
+    }
+
     const topics = extractTopicsFromMessage(lastUserMsg);
     for (const topic of topics) {
       addStudiedTopic(sessionId, topic);
@@ -104,14 +112,6 @@ export async function POST(req: Request) {
     }
 
     const trimmedMessages = trimMessagesForContext(simpleMessages, summary);
-
-    if (useMetisBotMode()) {
-      return handleMetisBotChat({
-        sessionId,
-        userMessage: lastUserMsg,
-        studentLevel: ctx.studentLevel,
-      });
-    }
 
     const systemPrompt = [
       BASE_SYSTEM_PROMPT,
