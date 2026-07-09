@@ -599,16 +599,32 @@ html[dir="ltr"] .range-map-panel {
     margin-inline: auto;
 }
 
-.services-grid--duo > .service-card {
+.services-grid--trio {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.services-grid--duo > .service-card,
+.services-grid--trio > .service-card {
     min-height: 0;
     display: flex;
     flex-direction: column;
 }
 
-.service-card--tour {
+.service-card--tour,
+.service-card--assistant {
     text-align: center;
     justify-content: flex-start;
     padding: 1.1rem 1.15rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+a.service-card--assistant:hover,
+a.service-card--assistant:focus-visible {
+    color: inherit;
 }
 
 .service-tour-body {
@@ -620,23 +636,27 @@ html[dir="ltr"] .range-map-panel {
     gap: 0.45rem;
 }
 
-.services-grid--duo .service-icon {
+.services-grid--duo .service-icon,
+.services-grid--trio .service-icon {
     width: 2.75rem;
     height: 2.75rem;
     margin-bottom: 0.35rem;
 }
 
-.services-grid--duo .service-icon svg {
+.services-grid--duo .service-icon svg,
+.services-grid--trio .service-icon svg {
     width: 1.65rem;
     height: 1.65rem;
 }
 
-.services-grid--duo .service-title {
+.services-grid--duo .service-title,
+.services-grid--trio .service-title {
     font-size: 1.05rem;
     margin-bottom: 0.25rem;
 }
 
-.services-grid--duo .service-description {
+.services-grid--duo .service-description,
+.services-grid--trio .service-description {
     font-size: 0.82rem;
     line-height: 1.55;
     margin-bottom: 0;
@@ -658,7 +678,8 @@ html[dir="ltr"] .range-map-panel {
     line-height: 1.45;
 }
 
-.services-grid--duo .service-cta {
+.services-grid--duo .service-cta,
+.services-grid--trio .service-cta {
     margin-top: auto;
     padding-top: 0.75rem;
     font-size: 0.82rem;
@@ -710,11 +731,13 @@ html[dir="ltr"] .range-map-panel {
 
 @media (max-width: 960px) {
     .services-grid,
-    .services-grid--duo {
+    .services-grid--duo,
+    .services-grid--trio {
         grid-template-columns: 1fr;
     }
 
-    .services-grid--duo > .service-card {
+    .services-grid--duo > .service-card,
+    .services-grid--trio > .service-card {
         min-height: auto;
     }
 
