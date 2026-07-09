@@ -1,4 +1,9 @@
-import { createUIMessageStream, createUIMessageStreamResponse } from "ai";
+import {
+  createUIMessageStream,
+  createUIMessageStreamResponse,
+  type UIMessage,
+  type UIMessageStreamWriter,
+} from "ai";
 import {
   getMetisApiKey,
   getMetisBotId,
@@ -27,14 +32,7 @@ function buildFirstMessagePrompt(
 }
 
 async function streamTextChunks(
-  writer: {
-    write: (chunk: {
-      type: string;
-      id?: string;
-      delta?: string;
-      finishReason?: string;
-    }) => void;
-  },
+  writer: UIMessageStreamWriter<UIMessage>,
   id: string,
   text: string,
 ) {
