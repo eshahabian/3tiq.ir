@@ -1,5 +1,5 @@
 /**
- * Rock climbing page — filter by province, search, top-10 section.
+ * Rock climbing page — filter by province, search.
  */
 (function () {
     'use strict';
@@ -81,14 +81,6 @@
         });
     }
 
-    function renderTop10() {
-        var grid = document.getElementById('climbingTop10');
-        if (!grid) return;
-        var top = allSpots.filter(function (s) { return s.topRank; })
-            .sort(function (a, b) { return a.topRank - b.topRank; });
-        grid.innerHTML = top.map(function (s, i) { return buildCard(s, i); }).join('');
-    }
-
     function renderGrid() {
         var grid = document.getElementById('climbingGrid');
         var countEl = document.getElementById('climbingCount');
@@ -131,7 +123,6 @@
     function renderAll(spots) {
         allSpots = spots;
         buildTabs(spots);
-        renderTop10();
         renderGrid();
     }
 
@@ -143,10 +134,8 @@
             })
             .then(renderAll)
             .catch(function () {
-                ['climbingGrid', 'climbingTop10'].forEach(function (id) {
-                    var el = document.getElementById(id);
+                var el = document.getElementById('climbingGrid');
                     if (el) el.innerHTML = '<p class="cl-loading">' + tr('climbing.loadFail', 'بارگذاری دیواره‌ها ممکن نشد.') + '</p>';
-                });
             });
     }
 
