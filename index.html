@@ -31,7 +31,8 @@
 
     <!-- ===== Favicon ===== -->
     <link rel="icon" type="image/png" href="/favicon.png">
-    <meta name="theme-color" content="#2C2416">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#7A5C18">
 
     <!-- ===== Preconnect برای سرعت لود فونت و نقشه ===== -->
     <link rel="preconnect" href="https://cdn.fontcdn.ir" crossorigin>
@@ -44,6 +45,7 @@
     <!-- fallback: اگر CDN ایرانی هم لود نشد، از فونت سیستم استفاده می‌شه (تنظیم شده در CSS) -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/i18n.css">
+    <link rel="stylesheet" href="css/site-enhancements.css">
     <link rel="stylesheet" href="css/route-map.css">
     <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css"/>
 
@@ -126,6 +128,7 @@
                         <li><a href="sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
                         <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
                         <li><a href="assistant.html" data-i18n="nav.assistant">دستیار</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">درباره ما</a></li>
                         <li><a href="#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </nav>
@@ -479,8 +482,6 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
     <script src="js/app.js" defer></script>
@@ -489,6 +490,7 @@
     <script src="js/shelter-map-modal.js" defer></script>
     <script src="js/home-shelters.js" defer></script>
     <script src="js/home-climbing.js" defer></script>
+    <script src="js/site-enhancements.js" defer></script>
 
     <!-- ===== Particle Background Effect ===== -->
     <script>
@@ -516,7 +518,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(191, 128, 255, 0.75)';
+                ctx.fillStyle = 'rgba(201, 151, 59, 0.65)';
                 ctx.fill();
             }
             update() {
@@ -554,8 +556,8 @@
                             if (Math.sqrt(mx * mx + my * my) < mouse.radius) near = true;
                         }
                         ctx.strokeStyle = near
-                            ? `rgba(230, 200, 255, ${op})`
-                            : `rgba(180, 120, 255, ${op})`;
+                            ? `rgba(201, 151, 59, ${op})`
+                            : `rgba(47, 79, 53, ${op * 0.6})`;
                         ctx.lineWidth = 0.7;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);

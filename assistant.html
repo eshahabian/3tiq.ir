@@ -14,7 +14,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/i18n.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/site-enhancements.css">
     <style>
         .assistant-page {
             min-height: calc(100vh - 5rem);
@@ -91,13 +92,31 @@
                         <img src="logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;">
                     </a>
                 </div>
-                <nav class="nav-menu" id="navMenu">
+                <nav class="nav-menu" id="navMenu" aria-label="منوی اصلی">
                     <ul>
                         <li><a href="index.html" data-i18n="nav.home">صفحه اصلی</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#peaks" data-i18n="nav.ranges">رشته‌کوه‌های ایران</a>
+                            <ul class="dropdown">
+                                <li class="has-dropdown-sub"><a href="#">البرز ◂</a><ul class="dropdown-sub">
+                                    <li><a href="alborz-gharbi.html" data-i18n="nav.alborzWest">البرز غربی</a></li>
+                                    <li><a href="alborz-markazi.html" data-i18n="nav.alborzCentral">البرز مرکزی</a></li>
+                                    <li><a href="alborz-shargi.html" data-i18n="nav.alborzEast">البرز شرقی</a></li>
+                                </ul></li>
+                                <li class="has-dropdown-sub"><a href="#">زاگرس ◂</a><ul class="dropdown-sub">
+                                    <li><a href="zagros-shomal.html" data-i18n="nav.zagrosNorth">زاگرس شمالی</a></li>
+                                    <li><a href="zagros-markazi.html" data-i18n="nav.zagrosCentral">زاگرس مرکزی</a></li>
+                                    <li><a href="zagros-jonoob.html" data-i18n="nav.zagrosSouth">زاگرس جنوبی</a></li>
+                                </ul></li>
+                                <li><a href="koohaye-markazi.html" data-i18n="nav.centralPeaks">کوه‌های مرکزی ایران</a></li>
+                                <li><a href="koohaye-atashfeshani.html" data-i18n="nav.volcanicPeaks">کوه‌های آتشفشانی و منفرد</a></li>
+                            </ul>
+                        </li>
                         <li><a href="panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
                         <li><a href="sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
                         <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
-                        <li><a href="assistant.html" class="active" data-i18n="nav.assistant">دستیار</a></li>
+                        <li><a href="assistant.html" class="active" aria-current="page" data-i18n="nav.assistant">دستیار</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">درباره ما</a></li>
                         <li><a href="index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </nav>
@@ -209,9 +228,12 @@
     })();
     </script>
 
+    <script src="js/site-config.js"></script>
+    <script src="js/footer-snippet.js"></script>
     <script src="js/i18n-boot.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <script src="js/site-chrome.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="js/site-enhancements.js" defer></script>
 </body>
 </html>

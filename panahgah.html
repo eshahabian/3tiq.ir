@@ -16,6 +16,8 @@
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/i18n.css">
+    <link rel="stylesheet" href="css/site-enhancements.css">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css">
     <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
     <style>
@@ -109,7 +111,7 @@
 
         /* ---------- نوار فیلتر (Sticky) ---------- */
         .ph-filterbar {
-            position: sticky; top: 0; z-index: 50;
+            position: sticky; top: var(--header-height, clamp(72px, 14vw, 100px)); z-index: 50;
             background: rgba(253,251,247,0.92);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(58,50,38,0.08);
@@ -439,6 +441,7 @@
                         <li><a href="sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
                         <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
                         <li><a href="assistant.html" data-i18n="nav.assistant">دستیار</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">درباره ما</a></li>
                         <li><a href="index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </nav>
@@ -579,6 +582,7 @@
     <script>
     // ===== الگوی شطرنجی با دنباله آبی روی عکس دماوند =====
     (function() {
+        if (window.matchMedia('(max-width: 768px)').matches) return;
         const grid = document.getElementById('revealGrid');
         const cols = 30, rows = 16;
         for (let r = 0; r < rows; r++) {
@@ -843,5 +847,6 @@
     window.phShelterRender = render;
     </script>
     <script src="js/i18n-boot.js" defer></script>
+    <script src="js/site-enhancements.js" defer></script>
 </body>
 </html>

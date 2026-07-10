@@ -52,6 +52,10 @@
 
     function injectLangSwitch() {
         if (document.getElementById('langSwitch')) return;
+        if (global.HeaderSnippet) {
+            HeaderSnippet.upgrade('');
+            return;
+        }
         var header = document.querySelector('.header .container');
         if (!header) return;
         header.classList.add('header-container--peak');
@@ -208,7 +212,11 @@
 
     function apply() {
         peakSlug = pageSlug();
-        injectLangSwitch();
+        if (global.HeaderSnippet) {
+            HeaderSnippet.upgrade('');
+        } else {
+            injectLangSwitch();
+        }
         injectFooter();
         tagElements();
         applyBreadcrumb();

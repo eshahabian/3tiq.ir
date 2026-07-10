@@ -167,6 +167,7 @@
             <div class="route-map-toolbar">
                 <div class="route-map-legend">${buildLegend(data.routes, peakId)}</div>
                 <div class="route-map-actions">
+                    <button type="button" class="route-map-btn" data-action="gpx">${(global.I18n && I18n.t('route.gpx')) || '📍 دانلود GPX'}</button>
                     <button type="button" class="route-map-btn" data-action="export">${(global.I18n && I18n.t('route.export')) || '📥 ذخیره نقشه (PNG)'}</button>
                 </div>
             </div>
@@ -257,6 +258,13 @@
                 title: trPeakName(peakId, data.peakName || peakId)
             });
         });
+
+        var gpxBtn = widget.querySelector('[data-action="gpx"]');
+        if (gpxBtn) {
+            gpxBtn.addEventListener('click', function () {
+                exportGpx(data, peakId);
+            });
+        }
 
         mapRegistry.set(mapEl, map);
         return map;
@@ -707,6 +715,41 @@
 
         drawExportFooter(ctx, w, h, footerH);
         return canvas;
+    }
+
+    function escapeXml(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function exportGpx(data, peakId) {
+        if (!data || !data.routes || !data.routes.length) {
+            alert((global.I18n && I18n.t('route.gpxUnavailable')) || 'مسیر برای GPX در دسترس نیست.');
+            return;
+        }
+        var peakName = trPeakName(peakId, data.peakName || peakId);
+        var segments = data.routes.map(function (route) {
+            var pts = route.coordinates.map(function (p) {
+                var ele = p.elevation ? '<ele>' + p.elevation + '</ele>' : '';
+                var name = p.label ? '<name>' + escapeXml(trRouteLabel(p.label)) + '</name>' : '';
+                return '<trkpt lat="' + p.lat + '" lon="' + p.lng + '">' + ele + name + '</trkpt>';
+            }).join('');
+            return '<trkseg><name>' + escapeXml(trRouteName(route.name, peakId, route.id)) + '</name>' + pts + '</trkseg>';
+        }).join('');
+
+        var gpx = '<?xml version="1.0" encoding="UTF-8"?>' +
+            '<gpx version="1.1" creator="3tiq.ir" xmlns="http://www.topografix.com/GPX/1/1">' +
+            '<metadata><name>' + escapeXml(peakName) + '</name><desc>Route from 3tiq.ir</desc></metadata>' +
+            '<trk><name>' + escapeXml(peakName) + '</name>' + segments + '</trk></gpx>';
+
+        var blob = new Blob([gpx], { type: 'application/gpx+xml' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.download = (peakId || 'route') + '-3tiq.gpx';
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
     }
 
     function downloadCanvas(canvas, slug) {

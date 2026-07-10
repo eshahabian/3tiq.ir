@@ -26,12 +26,14 @@
             '<li><a href="' + bp + 'index.html" data-i18n="nav.home">صفحه اصلی</a></li>' +
             '<li><a href="' + bp + 'index.html#peaks" data-i18n="footer.peaks">قله\u200cها</a></li>' +
             '<li><a href="' + bp + 'index.html#routes" data-i18n="footer.routes">مسیرها</a></li>' +
+            '<li><a href="' + bp + 'blog.html" data-i18n="nav.blog">وبلاگ</a></li>' +
+            '<li><a href="' + bp + 'about.html" data-i18n="nav.about">درباره ما</a></li>' +
             '<li><a href="' + bp + 'index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>' +
             '</ul></div>' +
             '<div class="footer-section"><h4 data-i18n="footer.contactTitle">تماس با ما</h4>' +
             '<p data-i18n="footer.address">تهران، خیابان ولیعصر</p>' +
             '<p><span data-i18n="footer.phone">تلفن:</span> <a href="tel:' + CFG.phoneIntl + '">۰۹۳۰۲۳۲۳۹۶۹</a></p>' +
-            '<p><span data-i18n="footer.email">ایمیل:</span> eshahabian[a]mail.ir</p></div>' +
+            '<p><span data-i18n="footer.email">ایمیل:</span> <a href="mailto:eshahabian@mail.ir">eshahabian@mail.ir</a></p></div>' +
             '<div class="footer-section"><h4 data-i18n="footer.follow">ما را دنبال کنید</h4>' +
             '<div class="social-links">' +
             '<a href="' + CFG.instagram.url + '" target="_blank" rel="noopener" aria-label="' + CFG.instagram.handle + '" class="social-link social-instagram">' +

@@ -15,6 +15,8 @@
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/i18n.css">
+    <link rel="stylesheet" href="css/site-enhancements.css">
+    <link rel="manifest" href="manifest.json">
     <style>
         .cl-page { padding-top: var(--header-height); }
         .cl-hero {
@@ -236,7 +238,7 @@
             font-size: 0.9rem;
             outline: none;
         }
-        .cl-search:focus { border-color: #c2410c; }
+        .cl-search:focus { border-color: var(--primary-color); }
         .cl-count {
             font-size: 0.85rem;
             color: var(--text-light);
@@ -260,10 +262,10 @@
             transition: var(--transition);
             color: var(--text-dark);
         }
-        .climbing-tab:hover { border-color: #c2410c; color: #c2410c; }
+        .climbing-tab:hover { border-color: var(--primary-color); color: var(--primary-color); }
         .climbing-tab.active {
-            background: #c2410c;
-            border-color: #c2410c;
+            background: var(--primary-color);
+            border-color: var(--primary-color);
             color: #fff;
         }
         .cl-rank-badge {
@@ -335,6 +337,7 @@
                         <li><a href="sakhre-nvardi.html" class="active" data-i18n="nav.climbing">صخره‌نوردی</a></li>
                         <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
                         <li><a href="assistant.html" data-i18n="nav.assistant">دستیار</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">درباره ما</a></li>
                         <li><a href="index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>
                     </ul>
                 </nav>
@@ -439,10 +442,13 @@
         </div>
     </footer>
 
+    <script src="js/site-config.js"></script>
+    <script src="js/footer-snippet.js"></script>
     <script src="js/i18n-boot.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <script src="js/site-chrome.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/climbing-page.js" defer></script>
+    <script src="js/site-enhancements.js" defer></script>
 </body>
 </html>

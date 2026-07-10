@@ -919,14 +919,40 @@
         planContent.innerHTML = renderPlanHtml(peak, weatherBlock);
     }
 
+    async function ensurePdfLibs() {
+        if (window.html2canvas && window.jspdf) return true;
+        return new Promise(function (resolve) {
+            var pending = 0;
+            function done() { if (--pending <= 0) resolve(!!(window.html2canvas && window.jspdf)); }
+            if (!window.html2canvas) {
+                pending++;
+                var s1 = document.createElement('script');
+                s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+                s1.onload = done; s1.onerror = done;
+                document.head.appendChild(s1);
+            }
+            if (!window.jspdf) {
+                pending++;
+                var s2 = document.createElement('script');
+                s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s2.onload = done; s2.onerror = done;
+                document.head.appendChild(s2);
+            }
+            if (pending === 0) resolve(true);
+        });
+    }
+
     async function downloadPdf() {
         const btn = document.getElementById('tourBtnPdf');
-        if (!window.html2canvas || !window.jspdf) {
-            alert('کتابخانه PDF در حال بارگذاری است. لطفاً چند ثانیه صبر کنید و دوباره تلاش کنید.');
+        btn.disabled = true;
+        btn.textContent = 'در حال بارگذاری…';
+        const ready = await ensurePdfLibs();
+        if (!ready) {
+            alert('کتابخانه PDF بارگذاری نشد. لطفاً دوباره تلاش کنید.');
+            btn.disabled = false;
+            btn.textContent = tr('tour.pdf', 'دانلود PDF');
             return;
         }
-        btn.disabled = true;
-        btn.textContent = 'در حال ساخت PDF…';
 
         try {
             const el = planContent;
@@ -971,7 +997,7 @@
             alert('ساخت PDF ممکن نشد. لطفاً دوباره تلاش کنید.');
         } finally {
             btn.disabled = false;
-            btn.textContent = 'دانلود PDF';
+            btn.textContent = tr('tour.pdf', 'دانلود PDF');
         }
     }
 
