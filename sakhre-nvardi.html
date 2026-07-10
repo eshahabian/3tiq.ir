@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/i18n.css">
     <link rel="stylesheet" href="css/site-enhancements.css">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css">
+    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" defer></script>
     <style>
         .cl-page { padding-top: var(--header-height); }
         .cl-hero {
@@ -95,7 +97,7 @@
         }
         .cl-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
             gap: clamp(1rem, 3vw, 1.5rem);
             align-items: stretch;
         }
@@ -144,13 +146,15 @@
             margin-top: 1rem;
             margin-bottom: .65rem;
             font-size: .72rem;
+            min-width: 0;
         }
         .cl-card-tags {
             display: flex;
             align-items: center;
             gap: .35rem;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             min-width: 0;
+            overflow: hidden;
         }
         .cl-type {
             background: rgba(47,79,53,.12);
@@ -159,17 +163,27 @@
             border-radius: 100px;
             font-weight: 700;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 9rem;
+            flex-shrink: 1;
         }
         .cl-region {
             color: var(--text-light);
             white-space: nowrap;
             flex-shrink: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 42%;
         }
         .cl-card-name {
-            font-size: 1.15rem;
+            font-size: clamp(.95rem, 2.6vw, 1.1rem);
             font-weight: 800;
-            line-height: 1.4;
+            line-height: 1.35;
             margin: 0 0 .5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .cl-card-desc {
             flex: 1;
@@ -180,23 +194,56 @@
         }
         .cl-meta {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: .5rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: .35rem .5rem;
             margin-top: auto;
             padding-top: .85rem;
             border-top: 1px solid rgba(58,50,38,.1);
             flex-shrink: 0;
+        }
+        .cl-meta > div {
+            min-width: 0;
         }
         .cl-meta-label {
             display: block;
             font-size: .65rem;
             color: var(--text-muted);
             margin-bottom: .15rem;
+            white-space: nowrap;
         }
         .cl-meta-value {
-            font-size: .78rem;
+            display: block;
+            font-size: clamp(.68rem, 1.8vw, .78rem);
             font-weight: 700;
             color: var(--text-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .cl-card-foot {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: .85rem;
+            margin-top: .25rem;
+        }
+        .cl-map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            font-size: .78rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: none;
+            cursor: pointer;
+            padding: .35rem .9rem;
+            border: 1px solid rgba(212,165,116,.4);
+            border-radius: 100px;
+            transition: var(--transition);
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .cl-map-btn:hover {
+            background: rgba(212,165,116,.12);
         }
         .cl-tips {
             display: grid;
@@ -272,6 +319,8 @@
             cursor: pointer;
             transition: var(--transition);
             color: var(--text-dark);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         .climbing-tab:hover { border-color: var(--primary-color); color: var(--primary-color); }
         .climbing-tab.active {
@@ -435,6 +484,17 @@
             </div>
         </div>
     </section>
+
+    <div class="ph-map-modal" id="clMapModal">
+        <div class="ph-map-modal-overlay" id="clMapModalOverlay"></div>
+        <div class="ph-map-modal-box">
+            <div class="ph-map-modal-head">
+                <span id="clMapModalTitle"></span>
+                <button type="button" class="ph-map-modal-close" id="clMapModalClose" data-i18n-attr="aria-label:common.close" aria-label="بستن">&times;</button>
+            </div>
+            <div id="clModalMap" class="ph-map-modal-map"></div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
