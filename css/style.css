@@ -395,6 +395,8 @@ body.dark-mode .moon-icon { display: block; }
 .hero-map #map {
     z-index: 1;
     background: transparent;
+    width: 100%;
+    height: 100%;
 }
 
 /* پنل‌های جستجو روی نقشه صفحات رشته کوه */
@@ -1718,10 +1720,35 @@ body.dark-mode .light-bg {
 
     .hero-map {
         min-height: min(520px, 100dvh);
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .hero-map #map,
+    .hero-map .leaflet-container {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+
+    .hero-map-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(20, 16, 8, 0.45) 0%,
+            rgba(20, 16, 8, 0.65) 45%,
+            rgba(20, 16, 8, 0.88) 100%
+        );
+    }
+
+    .hero-map .map-search-panel {
+        display: none !important;
     }
 
     .hero-map-content {
         bottom: 6%;
+        padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
     }
 
     .hero-stats {
@@ -1815,8 +1842,8 @@ body.dark-mode .light-bg {
         padding: 1.25rem 0.5rem;
     }
 
-    /* Map */
-    #map {
+    /* Map — فقط سکشن‌های جدا از هیرو */
+    section:not(.hero-map) #map {
         height: min(450px, 55dvh);
     }
 }
