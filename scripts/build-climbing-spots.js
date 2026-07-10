@@ -8,6 +8,7 @@ const IMG = {
   tehran: 'images/climbing/veliran.jpg',
   north: 'images/climbing/shiroud.jpg',
   bistoon: 'images/climbing/bistoon.jpg',
+  polKhab: 'images/climbing/pol-khab.jpg',
   alamkooh: 'images/shelters/alamkooh.jpg',
 };
 
@@ -26,7 +27,7 @@ const spots = [
   // ── تهران ──
   spot({ id: 'band-yakhchal', name: 'بند یخچال', nameEn: 'Band Yakhchal', featured: true, topRank: 4, type: 'آموزشی/اسپرت', grades: '۵.۷ تا ۵.۱۳', routes: '۱۰۰+ مسیر', image: IMG.tehran, lat: 35.839, lng: 51.008, region: 'البرز', province: 'تهران', description: 'قدیمی‌ترین و معروف‌ترین منطقه سنگ‌نوردی ایران — مهد آموزش و تمرین سنگ‌نوردی.' }),
   spot({ id: 'band-auson', name: 'بند اوسون (بند مگس)', nameEn: 'Band Auson', lat: 35.951, lng: 51.518, region: 'البرز', province: 'تهران', grades: '۵.۸ تا ۵.۱۲', routes: '۴۰+ مسیر', description: 'دیواره سنگ‌لوز نزدیک تهران با مسیرهای اسپرت و چندطنابه.' }),
-  spot({ id: 'pol-khab', name: 'پل خواب', nameEn: 'Pol Khab', featured: true, topRank: 3, type: 'اسپرت', grades: '۵.۹ تا ۵.۱۳', routes: '۸۰+ مسیر', lat: 36.184, lng: 51.218, region: 'البرز', province: 'تهران', description: 'جاده چالوس — مشهورترین منطقه اسپرت و مولتی‌پیچ ایران.' }),
+  spot({ id: 'pol-khab', name: 'پل خواب', nameEn: 'Pol Khab', featured: true, topRank: 3, type: 'اسپرت', grades: '۵.۹ تا ۵.۱۳', routes: '۸۰+ مسیر', image: IMG.polKhab, lat: 36.184, lng: 51.218, region: 'البرز', province: 'تهران', description: 'جاده چالوس — مشهورترین منطقه اسپرت و مولتی‌پیچ ایران.' }),
   spot({ id: 'kashar', name: 'کشار', nameEn: 'Kashar', lat: 35.828, lng: 50.942, region: 'البرز', province: 'تهران', description: 'منطقه سنگ‌نوردی در محدوده کرج با دسترسی نسبتاً آسان.' }),
   spot({ id: 'vardeh', name: 'ورده', nameEn: 'Vardeh', lat: 35.875, lng: 51.105, region: 'البرز', province: 'تهران', description: 'دیواره‌های کوچک‌تر برای تمرین در نزدیکی تهران.' }),
   spot({ id: 'emamzadeh-davood', name: 'امامزاده داوود', nameEn: 'Emamzadeh Davood', lat: 35.754, lng: 51.358, region: 'البرز', province: 'تهران', description: 'منطقه سنگ‌نوردی در مسیر امامزاده داوود با چشم‌انداز البرز.' }),

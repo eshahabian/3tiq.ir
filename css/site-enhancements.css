@@ -80,11 +80,12 @@ body.adventure-mode .ph-card {
     margin-top: 0.35rem;
 }
 
-/* Emergency FAB */
+/* Emergency FAB — سمت راست */
 .emergency-fab {
     position: fixed;
     bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
-    left: calc(1rem + env(safe-area-inset-left, 0px));
+    right: calc(1rem + env(safe-area-inset-right, 0px));
+    left: auto;
     z-index: 1200;
     width: 3.25rem;
     height: 3.25rem;
@@ -99,6 +100,14 @@ body.adventure-mode .ph-card {
 }
 
 .emergency-fab:hover { transform: scale(1.06); }
+
+/* SOS راست — برگشت به بالا چپ */
+.back-to-top {
+    left: calc(1rem + env(safe-area-inset-left, 0px));
+    right: auto;
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    z-index: 1100;
+}
 
 .emergency-panel {
     position: fixed;
