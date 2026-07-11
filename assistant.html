@@ -79,7 +79,25 @@
             font-size: .85rem;
             color: var(--text-light);
         }
-        .assistant-fallback a { color: var(--primary-color); }
+        .assistant-fallback a,
+        .assistant-open-btn {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .assistant-open-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            margin-top: .75rem;
+            padding: .5rem 1rem;
+            border: 1px solid rgba(212,165,116,.45);
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: .85rem;
+        }
+        .assistant-open-btn:hover {
+            background: rgba(212,165,116,.12);
+        }
     </style>
 </head>
 <body>
@@ -165,6 +183,7 @@
                 اگر چت نمایش داده نشد:
                 <a id="assistantDirectLink" href="#" target="_blank" rel="noopener">باز کردن در پنجره جدا</a>
             </p>
+            <a id="assistantOpenBtn" class="assistant-open-btn" href="#" target="_blank" rel="noopener">باز کردن دستیار در تب جدید ↗</a>
         </div>
     </main>
 
@@ -182,12 +201,18 @@
         var offlineMessage = document.getElementById('offlineMessage');
         var offlineDirectLink = document.getElementById('offlineDirectLink');
         var directLink = document.getElementById('assistantDirectLink');
+        var openBtn = document.getElementById('assistantOpenBtn');
         var fallback = document.getElementById('assistantFallback');
         var embedUrl = chatBase + '/embed';
+        var embedReady = false;
+        var loadTimer = null;
 
-        function showOffline(title, message, showLink) {
+        function showOffline(title, message, showLink, keepExternalLinks) {
             frame.style.display = 'none';
-            if (fallback) fallback.style.display = 'none';
+            if (!keepExternalLinks) {
+                if (fallback) fallback.style.display = 'none';
+                if (openBtn) openBtn.style.display = 'none';
+            }
             offlineTitle.textContent = title;
             offlineMessage.innerHTML = message;
             offlineDirectLink.href = embedUrl;
@@ -196,18 +221,55 @@
             offline.classList.add('is-visible');
         }
 
-        if (directLink) {
-            directLink.href = embedUrl;
-            directLink.style.display = isLocal ? 'inline' : 'none';
-        }
-        if (fallback && !isLocal) fallback.style.display = 'none';
-
-        frame.src = embedUrl + '?t=' + Date.now();
-        frame.style.display = 'block';
-
-        frame.addEventListener('load', function () {
+        function markReady() {
+            embedReady = true;
+            if (loadTimer) clearTimeout(loadTimer);
             offline.hidden = true;
             offline.classList.remove('is-visible');
+            frame.style.display = 'block';
+        }
+
+        function sameOrigin(base, origin) {
+            try {
+                return new URL(origin).origin === new URL(base).origin;
+            } catch (e) {
+                return origin === base.replace(/\/$/, '');
+            }
+        }
+
+        var isHttpProd = !isLocal && location.protocol === 'http:' && /(^|\.)3tiq\.ir$/i.test(host);
+
+        [directLink, openBtn, offlineDirectLink].forEach(function (el) {
+            if (el) el.href = embedUrl;
+        });
+        if (fallback) fallback.style.display = 'block';
+
+        window.addEventListener('message', function (event) {
+            if (!event.data || event.data.type !== '3tiq-assistant-ready') return;
+            if (!sameOrigin(chatBase, event.origin)) return;
+            markReady();
+        });
+
+        if (isHttpProd) {
+            showOffline(
+                'چت داخل صفحه بارگذاری نشد',
+                'سایت با HTTP باز شده و مرورگر اجازه نمایش دستیار در iframe را نمی‌دهد. از دکمه «باز کردن در تب جدید» استفاده کن.',
+                true,
+                true
+            );
+            return;
+        }
+
+        frame.addEventListener('load', function () {
+            loadTimer = setTimeout(function () {
+                if (!embedReady) {
+                    showOffline(
+                        'چت داخل صفحه بارگذاری نشد',
+                        'مرورگر اجازه نمایش دستیار در iframe را نداد. از دکمه زیر استفاده کن.',
+                        true
+                    );
+                }
+            }, 10000);
         });
 
         frame.addEventListener('error', function () {
@@ -220,11 +282,14 @@
             } else {
                 showOffline(
                     'خطا در بارگذاری دستیار',
-                    'سرور چت در دسترس نیست. چند دقیقه بعد دوباره امتحان کن.',
+                    'سرور چت در دسترس نیست. از دکمه «باز کردن در تب جدید» استفاده کن.',
                     true
                 );
             }
         });
+
+        frame.src = embedUrl + '?t=' + Date.now();
+        frame.style.display = 'block';
     })();
     </script>
 

@@ -10,15 +10,14 @@ import { WelcomeScreen } from "./welcome-screen";
 import { SettingsPanel } from "@/components/sidebar/settings-panel";
 import { Button } from "@/components/ui/button";
 import type { StudentLevel } from "@/types";
+import {
+  createSessionId,
+  readSessionId,
+  writeSessionId,
+} from "@/lib/utils/safe-storage";
 
 function getSessionId(): string {
-  if (typeof window === "undefined") return "";
-  let id = localStorage.getItem("3tiq-assistant-session");
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem("3tiq-assistant-session", id);
-  }
-  return id;
+  return readSessionId() ?? createSessionId();
 }
 
 export function Chat({ embed = false }: { embed?: boolean }) {
@@ -51,6 +50,9 @@ export function Chat({ embed = false }: { embed?: boolean }) {
 
   useEffect(() => {
     if (!sessionId) return;
+    if (embed && window.parent !== window) {
+      window.parent.postMessage({ type: "3tiq-assistant-ready" }, "*");
+    }
     fetch(`/api/context?sessionId=${sessionId}`)
       .then((r) => r.json())
       .then((ctx) => {
@@ -66,7 +68,7 @@ export function Chat({ embed = false }: { embed?: boolean }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId }),
     }).catch(() => {});
-  }, [sessionId]);
+  }, [sessionId, embed]);
 
   const handleLevelChange = useCallback(
     async (level: StudentLevel) => {
@@ -115,7 +117,7 @@ export function Chat({ embed = false }: { embed?: boolean }) {
   const handleNewChat = async () => {
     setMessages([]);
     const newId = crypto.randomUUID();
-    localStorage.setItem("3tiq-assistant-session", newId);
+    writeSessionId(newId);
     window.location.reload();
   };
 

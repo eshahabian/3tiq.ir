@@ -4,10 +4,18 @@ const frameAncestors = [
   "'self'",
   "https://3tiq.ir",
   "https://www.3tiq.ir",
+  "http://3tiq.ir",
+  "http://www.3tiq.ir",
   "http://localhost:3456",
   "http://127.0.0.1:3456",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
+  "http://localhost:8765",
+  "http://127.0.0.1:8765",
+  "http://localhost:5500",
+  "http://127.0.0.1:5500",
+  "http://localhost:8080",
+  "http://127.0.0.1:8080",
 ].join(" ");
 
 const nextConfig: NextConfig = {
