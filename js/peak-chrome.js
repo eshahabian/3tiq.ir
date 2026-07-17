@@ -210,6 +210,55 @@
         });
     }
 
+    var GUIDE_LINKS = {
+        damavand: { href: '../blog-damavand-guide.html', label: 'مطالعه راهنمای دماوند' },
+        tochal: { href: '../blog/blog-tochal-guide.html', label: 'مطالعه راهنمای توچال' },
+        sabalan: { href: '../blog/blog-sabalan.html', label: 'مطالعه راهنمای سبلان' },
+        alamkooh: { href: '../blog/blog-alamkooh-intro.html', label: 'مطالعه راهنمای علم‌کوه' }
+    };
+
+    function injectInternalLinks() {
+        peakSlug = peakSlug || pageSlug();
+        if (!peakSlug) return;
+
+        var sidebar = document.querySelector('.sidebar');
+        if (!sidebar) return;
+
+        var shelterCard = document.querySelector('.shelter-list');
+        if (shelterCard && !shelterCard.parentElement.querySelector('[data-panahgah-link]')) {
+            var phLink = document.createElement('a');
+            phLink.href = '../panahgah.html';
+            phLink.setAttribute('data-panahgah-link', '1');
+            phLink.style.cssText = 'display:block;margin-top:0.85rem;font-size:0.78rem;font-weight:700;color:var(--primary-color);text-decoration:none;';
+            phLink.textContent = 'مشاهده همه پناهگاه‌ها ←';
+            shelterCard.parentElement.appendChild(phLink);
+        }
+
+        var guide = GUIDE_LINKS[peakSlug];
+        var hasGuideCard = false;
+        sidebar.querySelectorAll('.sidebar-title').forEach(function (el) {
+            if (el.textContent.indexOf('راهنمای صعود') !== -1) hasGuideCard = true;
+        });
+        if (guide && !hasGuideCard) {
+            var actionsCard = null;
+            sidebar.querySelectorAll('.sidebar-card').forEach(function (card) {
+                if (card.querySelector('.sidebar-title') && card.textContent.indexOf('⚡') !== -1) {
+                    actionsCard = card;
+                }
+            });
+            var guideCard = document.createElement('div');
+            guideCard.className = 'sidebar-card';
+            guideCard.innerHTML =
+                '<div class="sidebar-title">📖 راهنمای صعود</div>' +
+                '<a href="' + guide.href + '" class="action-btn btn-primary" data-peak-guide-link="1" style="text-decoration:none;margin-bottom:0;">' + guide.label + '</a>';
+            if (actionsCard) {
+                sidebar.insertBefore(guideCard, actionsCard);
+            } else {
+                sidebar.appendChild(guideCard);
+            }
+        }
+    }
+
     function apply() {
         peakSlug = pageSlug();
         if (global.HeaderSnippet) {
@@ -218,6 +267,7 @@
             injectLangSwitch();
         }
         injectFooter();
+        injectInternalLinks();
         tagElements();
         applyBreadcrumb();
         applyPeakHero();

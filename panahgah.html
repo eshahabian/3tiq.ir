@@ -734,7 +734,7 @@
         const alt = s.altitude ? toFa(s.altitude) + ' ' + trPh('peaks.meters', 'م') : '';
         const regionLine = [s.region, s.province].filter(Boolean).join(' · ');
         const peakBlock = s._nearestPeak
-            ? '<div class="sh-card-extra"><span>⛰ ' + trPh('ph.card.nearestPeak', 'نزدیک‌ترین قله:') + '</span> <b>' + s._nearestPeak.name + '</b> · ' + toFa(s._nearestDist.toLocaleString(isPhEn() ? 'en-US' : 'fa-IR', { maximumFractionDigits: 1 })) + (isPhEn() ? ' km' : ' کیلومتر') + '</div>'
+            ? '<div class="sh-card-extra"><span>⛰ ' + trPh('ph.card.nearestPeak', 'نزدیک‌ترین قله:') + '</span> <a href="peaks/' + encodeURIComponent(s._nearestPeak.slug) + '.html" style="color:var(--primary-color);font-weight:700;text-decoration:none;"><b>' + s._nearestPeak.name + '</b></a> · ' + toFa(s._nearestDist.toLocaleString(isPhEn() ? 'en-US' : 'fa-IR', { maximumFractionDigits: 1 })) + (isPhEn() ? ' km' : ' کیلومتر') + '</div>'
             : '';
         const historyBlock = s.history
             ? '<div class="sh-history"><span class="sh-history-label">📜 ' + trPh('ph.card.history', 'تاریخچه') + '</span>' + s.history + '</div>'
