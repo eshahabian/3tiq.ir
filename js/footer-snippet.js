@@ -19,33 +19,19 @@
 
     function footerHtml(bp) {
         return (
-            '<footer class="footer" id="contact">' +
-            '<div class="container"><div class="footer-content">' +
-            '<div class="footer-section"><h3 data-i18n="hero.brand">سه تیغ</h3><p data-i18n="footer.tagline">بهترین راهنمای کوهنوردی ایران</p></div>' +
-            '<div class="footer-section"><h4 data-i18n="footer.links">لینک\u200cهای مفید</h4><ul>' +
-            '<li><a href="' + bp + 'index.html" data-i18n="nav.home">صفحه اصلی</a></li>' +
-            '<li><a href="' + bp + 'index.html#peaks" data-i18n="footer.peaks">قله\u200cها</a></li>' +
-            '<li><a href="' + bp + 'index.html#routes" data-i18n="footer.routes">مسیرها</a></li>' +
-            '<li><a href="' + bp + 'blog.html" data-i18n="nav.blog">وبلاگ</a></li>' +
-            '<li><a href="' + bp + 'about.html" data-i18n="nav.about">درباره ما</a></li>' +
-            '<li><a href="' + bp + 'index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>' +
-            '</ul></div>' +
-            '<div class="footer-section"><h4 data-i18n="footer.contactTitle">تماس با ما</h4>' +
-            '<p data-i18n="footer.address">تهران، خیابان ولیعصر</p>' +
-            '<p><span data-i18n="footer.phone">تلفن:</span> <a href="tel:' + CFG.phoneIntl + '">۰۹۳۰۲۳۲۳۹۶۹</a></p>' +
-            '<p><span data-i18n="footer.email">ایمیل:</span> <a href="mailto:eshahabian@mail.ir">eshahabian@mail.ir</a></p></div>' +
-            '<div class="footer-section"><h4 data-i18n="footer.follow">ما را دنبال کنید</h4>' +
-            '<div class="social-links">' +
-            '<a href="' + CFG.instagram.url + '" target="_blank" rel="noopener" aria-label="' + CFG.instagram.handle + '" class="social-link social-instagram">' +
-            '<span data-i18n="footer.instagram">' + CFG.instagram.handle + '</span></a>' +
-            '<a href="' + CFG.telegram.url + '" target="_blank" rel="noopener" aria-label="تلگرام" class="social-link social-telegram">' +
-            '<span data-i18n="footer.telegram">تلگرام</span></a>' +
-            '<a href="' + CFG.whatsapp.url + '" target="_blank" rel="noopener" aria-label="واتساپ" class="social-link social-whatsapp">' +
-            '<span data-i18n="footer.whatsapp">واتساپ</span></a>' +
-            '<a href="' + CFG.aparat.url + '" target="_blank" rel="noopener" aria-label="آپارات" class="social-link social-aparat">' +
-            '<span data-i18n="footer.aparat">آپارات</span></a>' +
-            '</div></div></div>' +
-            '<div class="footer-bottom"><p data-i18n="footer.copyright">&copy; ۱۴۰۵ سه تیغ. تمامی حقوق محفوظ است.</p></div>' +
+            '<footer class="footer footer--compact">' +
+            '<div class="container footer-compact-inner">' +
+            '<p class="footer-compact-brand"><strong data-i18n="hero.brand">سه تیغ</strong> · <span data-i18n="footer.tagline">بهترین راهنمای کوهنوردی ایران</span></p>' +
+            '<nav class="footer-compact-nav" aria-label="لینک\u200cهای پایین صفحه">' +
+            '<a href="' + bp + 'index.html#peaks" data-i18n="footer.peaks">قله\u200cها</a>' +
+            '<a href="' + bp + 'blog.html" data-i18n="nav.blog">وبلاگ</a>' +
+            '<a href="' + bp + 'about.html" data-i18n="nav.about">درباره من</a>' +
+            '</nav>' +
+            '<div class="footer-compact-social">' +
+            '<a href="' + CFG.instagram.url + '" target="_blank" rel="noopener" aria-label="' + CFG.instagram.handle + '">' + CFG.instagram.handle + '</a>' +
+            '<a href="tel:' + CFG.phoneIntl + '">۰۹۳۰۲۳۲۳۹۶۹</a>' +
+            '</div>' +
+            '<p data-i18n="footer.copyright">&copy; ۱۴۰۵ سه تیغ. تمامی حقوق محفوظ است.</p>' +
             '</div></footer>'
         );
     }

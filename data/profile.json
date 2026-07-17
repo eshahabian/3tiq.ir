@@ -1,0 +1,76 @@
+{
+  "name": "عماد شهابیان",
+  "nameEn": "Emad Eshahabian",
+  "title": "کوهنورد · توسعه‌دهنده وب · سازنده سه تیغ",
+  "titleEn": "Mountaineer · Web Developer · Creator of 3Tiq",
+  "location": "تهران، ایران",
+  "locationEn": "Tehran, Iran",
+  "bio": "علاقه‌مند جدی به کوهنوردی و طبیعت ایران. سه تیغ را از دل تجربه صعود و نیاز به یک راهنمای دقیق فارسی ساختم — جایی که مسیر، پناهگاه، نقشه و ایمنی کنار هم باشند. علاوه بر کوه، به توسعه وب، تولید محتوا و ساخت ابزارهای کاربردی (مثل دستیار کوهنوردی) علاقه دارم.",
+  "bioEn": "Passionate about mountaineering and Iran's mountains. I built 3Tiq from field experience and the need for accurate Persian guides — routes, shelters, maps, and safety in one place. I also enjoy web development, content creation, and practical tools like the mountaineering assistant.",
+  "education": [
+    {
+      "degree": "کارشناسی — (رشته خود را اینجا بنویس)",
+      "degreeEn": "Bachelor's — (your field here)",
+      "school": "نام دانشگاه",
+      "schoolEn": "University name",
+      "years": "۱۳۹۸ — ۱۴۰۲",
+      "detail": "توضیح کوتاه: گرایش، پروژه‌های مرتبط یا معدل — در صورت تمایل."
+    }
+  ],
+  "skills": [
+    {
+      "category": "کوهنوردی",
+      "categoryEn": "Mountaineering",
+      "items": ["صعود قله‌های البرز و زاگرس", "نقشه‌خوانی و GPS", "برنامه‌ریزی سفر کوهستانی", "ایمنی و تجهیزات", "تولید محتوای راهنما"]
+    },
+    {
+      "category": "فنی و وب",
+      "categoryEn": "Tech & Web",
+      "items": ["HTML / CSS / JavaScript", "طراحی رابط کاربری", "Leaflet و نقشه تعاملی", "Git و دیپلوی", "PWA و بهینه‌سازی موبایل"]
+    },
+    {
+      "category": "محتوا و زبان",
+      "categoryEn": "Content",
+      "items": ["نویسندگی فارسی تخصصی", "SEO و ساختار مقاله", "عکاسی کوهستان", "ویرایش و بازبینی محتوا"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "سازنده و مدیر محتوا",
+      "roleEn": "Founder & Content Lead",
+      "org": "سه تیغ — 3tiq.ir",
+      "period": "۱۴۰۳ — اکنون",
+      "periodEn": "2024 — Present",
+      "bullets": [
+        "طراحی و توسعه راهنمای جامع ۷۶+ قله با نقشه مسیر و پناهگاه",
+        "نویسندگی مقالات ایمنی، راهنمای صعود و وبلاگ کوهنوردی",
+        "ساخت برنامه‌ریز تور، دستیار هوشمند و نقشه‌های تعاملی"
+      ],
+      "bulletsEn": [
+        "Built a guide covering 76+ peaks with route maps and shelters",
+        "Authored safety articles, ascent guides, and mountaineering blog posts",
+        "Developed trip planner, AI assistant, and interactive maps"
+      ]
+    },
+    {
+      "role": "(عنوان شغل قبلی)",
+      "roleEn": "(Previous job title)",
+      "org": "(نام شرکت یا سازمان)",
+      "period": "(سال شروع — پایان)",
+      "periodEn": "(years)",
+      "bullets": [
+        "شرح مسئولیت یا دستاورد اول",
+        "شرح مسئولیت یا دستاورد دوم"
+      ],
+      "bulletsEn": [
+        "First responsibility or achievement",
+        "Second responsibility or achievement"
+      ]
+    }
+  ],
+  "highlights": [
+    { "value": "۱۰+", "label": "سال کوهنوردی", "labelEn": "Years mountaineering" },
+    { "value": "۷۶+", "label": "پروفایل قله در سه تیغ", "labelEn": "Peak profiles on 3Tiq" },
+    { "value": "۱۵+", "label": "مقاله و راهنما", "labelEn": "Articles & guides" }
+  ]
+}

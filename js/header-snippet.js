@@ -43,8 +43,7 @@
             '<li><a href="' + bp + 'blog-guides.html" data-i18n="nav.ascentGuides">راهنمای صعود</a></li>' +
             '</ul></li>' +
             '<li><a href="' + bp + 'assistant.html"' + cls('assistant') + ' data-i18n="nav.assistant">دستیار</a></li>' +
-            '<li><a href="' + bp + 'about.html"' + cls('about') + ' data-i18n="nav.about">درباره ما</a></li>' +
-            '<li><a href="' + bp + 'index.html#contact"' + cls('contact') + ' data-i18n="nav.contact">تماس با ما</a></li>' +
+            '<li><a href="' + bp + 'about.html"' + cls('about') + ' data-i18n="nav.about">درباره من</a></li>' +
             '</ul></nav>' +
             '<div class="nav-overlay" id="navOverlay"></div>' +
             '<div class="header-actions">' +
