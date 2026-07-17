@@ -52,20 +52,41 @@
         return '<div class="sv-avatar' + (sizeClass ? ' ' + sizeClass : '') + '" aria-hidden="true">' + esc(initials(name)) + '</div>';
     }
 
+    function getPhones() {
+        if (profile && profile.phones && profile.phones.length) return profile.phones;
+        return [{ number: '09302323986', display: '09302323986', intl: '+989302323986' }];
+    }
+
+    function emailAddress() {
+        return (profile && profile.email) ? profile.email : 'eshahabian@gmail.com';
+    }
+
+    function emailLabel() {
+        return (profile && profile.emailDisplay) ? profile.emailDisplay : emailAddress();
+    }
+
+    function phonesLinksHtml(separator) {
+        return getPhones().map(function (p) {
+            return '<a href="tel:' + esc(p.intl) + '">' + esc(p.display) + '</a>';
+        }).join(separator || ' · ');
+    }
+
     function contactHtml(compact) {
-        var email = profile && profile.email ? profile.email : 'eshahabian@gmail.com';
-        var phoneIntl = profile && profile.phoneIntl ? profile.phoneIntl : '+989302323986';
-        var phoneDisplay = profile && profile.phoneDisplay ? profile.phoneDisplay : '۰۹۳۰۲۳۲۳۹۸۶';
+        var email = emailAddress();
+        var label = emailLabel();
+        var phones = getPhones().map(function (p) {
+            return '<a href="tel:' + esc(p.intl) + '" class="resume-contact-chip">📞 ' + esc(p.display) + '</a>';
+        }).join('');
         if (compact) {
             return (
-                '<a href="mailto:' + esc(email) + '" class="resume-contact-chip">✉️ ' + esc(email) + '</a>' +
-                '<a href="tel:' + esc(phoneIntl) + '" class="resume-contact-chip">📞 ' + esc(phoneDisplay) + '</a>'
+                '<a href="mailto:' + esc(email) + '" class="resume-contact-chip">✉️ ' + esc(label) + '</a>' +
+                phones
             );
         }
         return (
             '<div class="resume-contact-row">' +
-            '<a href="tel:' + esc(phoneIntl) + '" class="resume-contact-chip">📞 ' + esc(phoneDisplay) + '</a>' +
-            '<a href="mailto:' + esc(email) + '" class="resume-contact-chip">✉️ ' + esc(email) + '</a>' +
+            phones +
+            '<a href="mailto:' + esc(email) + '" class="resume-contact-chip">✉️ ' + esc(label) + '</a>' +
             '</div>'
         );
     }
@@ -113,9 +134,8 @@
         var location = t(profile.location, profile.locationEn);
         var summary = t(profile.summary, profile.summaryEn);
         var homeTagline = t(profile.homeTagline, profile.homeTaglineEn);
-        var email = profile.email || 'eshahabian@gmail.com';
-        var phoneIntl = profile.phoneIntl || '+989302323986';
-        var phoneDisplay = profile.phoneDisplay || '۰۹۳۰۲۳۲۳۹۸۶';
+        var email = emailAddress();
+        var emailShow = emailLabel();
         var insta = (global.SiteConfig && SiteConfig.instagram) ? SiteConfig.instagram.url : 'https://instagram.com/3tiq.ir';
 
         var skillBars = (profile.skillBars || []).map(function (s) {
@@ -256,8 +276,8 @@
             '<p class="sv-text">' + esc(i18n('resume.contactText', 'پیشنهاد همکاری، فرصت شغلی یا سؤال فنی — از طریق ایمیل یا تلفن در تماس باشید.')) + '</p>' +
             '<ul class="sv-contact-list">' +
             '<li><span class="sv-contact-icon">📍</span><div><strong>' + esc(i18n('resume.location', 'موقعیت')) + '</strong><p>' + esc(location) + '</p></div></li>' +
-            '<li><span class="sv-contact-icon">✉️</span><div><strong>Email</strong><p><a href="mailto:' + esc(email) + '">' + esc(email) + '</a></p></div></li>' +
-            '<li><span class="sv-contact-icon">📞</span><div><strong>' + esc(i18n('resume.phone', 'تلفن')) + '</strong><p><a href="tel:' + esc(phoneIntl) + '">' + esc(phoneDisplay) + '</a></p></div></li>' +
+            '<li><span class="sv-contact-icon">✉️</span><div><strong>Email</strong><p><a href="mailto:' + esc(email) + '">' + esc(emailShow) + '</a></p></div></li>' +
+            '<li><span class="sv-contact-icon">📞</span><div><strong>' + esc(i18n('resume.phone', 'تلفن')) + '</strong><p class="sv-phone-list">' + phonesLinksHtml('<br>') + '</p></div></li>' +
             '</ul>' +
             '<div class="sv-home-actions">' +
             '<a href="mailto:' + esc(email) + '" class="sv-btn sv-btn--primary">' + esc(i18n('resume.sendEmail', 'ارسال ایمیل')) + '</a>' +

@@ -7,8 +7,12 @@
     var SiteConfig = {
         phone: '09302323969',
         phoneIntl: '+989302323969',
-        email: 'eshahabian@mail.ir',
-        emailDisplay: 'eshahabian[a]mail.ir',
+        phones: [
+            { phone: '09302323969', phoneIntl: '+989302323969', phoneDisplay: '09302323969' },
+            { phone: '09302323986', phoneIntl: '+989302323986', phoneDisplay: '09302323986' }
+        ],
+        email: 'eshahabian@gmail.com',
+        emailDisplay: 'eshahabian[a]gmail.com',
         instagram: {
             url: 'https://instagram.com/3tiq.ir',
             handle: '@3tiq.ir'

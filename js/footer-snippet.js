@@ -29,7 +29,8 @@
             '</nav>' +
             '<div class="footer-compact-social">' +
             '<a href="' + CFG.instagram.url + '" target="_blank" rel="noopener" aria-label="' + CFG.instagram.handle + '">' + CFG.instagram.handle + '</a>' +
-            '<a href="tel:' + CFG.phoneIntl + '">۰۹۳۰۲۳۲۳۹۶۹</a>' +
+            '<a href="tel:+989302323969">09302323969</a>' +
+            '<a href="tel:+989302323986">09302323986</a>' +
             '</div>' +
             '<p data-i18n="footer.copyright">&copy; ۱۴۰۵ سه تیغ. تمامی حقوق محفوظ است.</p>' +
             '</div></footer>'

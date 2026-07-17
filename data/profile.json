@@ -6,9 +6,11 @@
   "location": "تهران، ایران",
   "locationEn": "Tehran, Iran",
   "email": "eshahabian@gmail.com",
-  "phone": "09302323986",
-  "phoneDisplay": "۰۹۳۰۲۳۲۳۹۸۶",
-  "phoneIntl": "+989302323986",
+  "emailDisplay": "eshahabian[a]gmail.com",
+  "phones": [
+    { "number": "09302323969", "display": "09302323969", "intl": "+989302323969" },
+    { "number": "09302323986", "display": "09302323986", "intl": "+989302323986" }
+  ],
   "avatar": "images/profile-emad.png",
   "avatarAlt": "عماد شهابیان",
   "homeTagline": "زیرساخت، مجازی‌سازی و DevOps — از دیتاسنتر تا Kubernetes",

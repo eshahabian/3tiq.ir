@@ -689,6 +689,11 @@
 
 .sv-contact-list a:hover { text-decoration: underline; }
 
+.sv-phone-list {
+    margin: 0;
+    line-height: 1.9;
+}
+
 /* ===== Overlay mobile ===== */
 .sv-overlay {
     position: fixed;
