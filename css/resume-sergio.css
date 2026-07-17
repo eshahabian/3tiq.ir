@@ -320,35 +320,93 @@
     color: var(--sv-text);
 }
 
-.sv-typed-line {
-    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-    margin: 0 0 1.25rem;
-    color: var(--sv-muted);
-    min-height: 2rem;
-}
-
-.sv-typed {
+.sv-home-role {
+    font-size: 1.2rem;
     color: var(--sv-accent);
     font-weight: 700;
-    border-left: 2px solid var(--sv-accent);
-    padding-left: 0.35rem;
-    display: inline-block;
-    min-width: 2ch;
+    margin: 0 0 0.75rem;
 }
 
-[dir="rtl"] .sv-typed {
-    border-left: none;
-    border-right: 2px solid var(--sv-accent);
-    padding-left: 0;
-    padding-right: 0.35rem;
-}
-
-.sv-lead {
+.sv-home-tagline {
     font-size: 1.05rem;
-    line-height: 1.9;
+    line-height: 1.85;
     color: var(--sv-muted);
-    max-width: 36rem;
+    max-width: 32rem;
     margin: 0 0 2rem;
+}
+
+.sv-focus-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 28rem;
+    margin-bottom: 2rem;
+}
+
+.sv-focus-card {
+    padding: 1.25rem 1rem;
+    background: var(--sv-card);
+    border-radius: var(--sv-radius);
+    box-shadow: var(--sv-shadow);
+    border: 1px solid rgba(255, 107, 53, 0.12);
+    text-align: center;
+}
+
+.sv-focus-icon {
+    display: block;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.sv-focus-card strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--sv-accent);
+    margin-bottom: 0.35rem;
+}
+
+.sv-focus-card p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--sv-muted);
+    line-height: 1.6;
+}
+
+.sv-scroll-hint {
+    font-size: 0.85rem;
+    color: var(--sv-muted);
+    margin: 0 0 1.5rem;
+    opacity: 0.7;
+    animation: sv-bounce 2s ease-in-out infinite;
+}
+
+@keyframes sv-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+.sv-stats--about {
+    margin-bottom: 2rem;
+}
+
+.sv-summary {
+    padding: 1.5rem;
+    background: var(--sv-card);
+    border-radius: var(--sv-radius);
+    box-shadow: var(--sv-shadow);
+    border-right: 4px solid var(--sv-accent);
+}
+
+.sv-summary .sv-text {
+    margin: 0;
+}
+
+@media (max-width: 520px) {
+    .sv-focus-row { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sv-scroll-hint { animation: none; }
 }
 
 .sv-stats {

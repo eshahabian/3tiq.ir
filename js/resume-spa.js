@@ -5,11 +5,24 @@
     'use strict';
 
     var activePanel = 'home';
-    var typingTimer = null;
+    var wheelLocked = false;
+    var panelOrder = ['home', 'about', 'resume', 'skills', 'contact'];
     var reduced = false;
 
     function prefersReduced() {
         return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    function panelIndex(id) {
+        return panelOrder.indexOf(id);
+    }
+
+    function nextPanelId(delta) {
+        var idx = panelIndex(activePanel);
+        if (idx < 0) return null;
+        var next = idx + delta;
+        if (next < 0 || next >= panelOrder.length) return null;
+        return panelOrder[next];
     }
 
     function qs(sel, root) {
@@ -59,7 +72,6 @@
             next.classList.add('is-active');
             activePanel = id;
             if (id === 'skills') animateSkillBars(next);
-            if (id === 'home') startTypewriter();
             return;
         }
 
@@ -79,8 +91,35 @@
             current.classList.remove('is-leaving');
             activePanel = id;
             if (id === 'skills') animateSkillBars(next);
-            if (id === 'home') startTypewriter();
         }, 420);
+    }
+
+    function bindWheelNav() {
+        var main = qs('.sv-main');
+        if (!main || main.dataset.wheelBound === '1') return;
+        main.dataset.wheelBound = '1';
+
+        main.addEventListener('wheel', function (e) {
+            if (reduced) return;
+
+            var panel = qs('.sv-panel.is-active');
+            if (!panel) return;
+
+            var canScroll = panel.scrollHeight > panel.clientHeight + 4;
+            var atTop = panel.scrollTop <= 0;
+            var atBottom = panel.scrollTop + panel.clientHeight >= panel.scrollHeight - 4;
+
+            if (e.deltaY > 0 && canScroll && !atBottom) return;
+            if (e.deltaY < 0 && canScroll && !atTop) return;
+
+            var target = nextPanelId(e.deltaY > 0 ? 1 : -1);
+            if (!target || wheelLocked) return;
+
+            e.preventDefault();
+            wheelLocked = true;
+            switchPanel(target);
+            setTimeout(function () { wheelLocked = false; }, 850);
+        }, { passive: false });
     }
 
     function panelFromHash() {
@@ -129,51 +168,7 @@
         if (overlay) overlay.hidden = true;
     }
 
-    function startTypewriter() {
-        var el = qs('#svTyped');
-        if (!el) return;
-        var roles = [];
-        try {
-            roles = JSON.parse(el.getAttribute('data-roles') || '[]');
-        } catch (e) { roles = []; }
-        if (!roles.length) return;
-
-        if (typingTimer) clearTimeout(typingTimer);
-
-        var roleIdx = 0;
-        var charIdx = 0;
-        var deleting = false;
-
-        function tick() {
-            var word = roles[roleIdx];
-            if (!deleting) {
-                charIdx += 1;
-                el.textContent = word.slice(0, charIdx);
-                if (charIdx >= word.length) {
-                    deleting = true;
-                    typingTimer = setTimeout(tick, 1800);
-                    return;
-                }
-                typingTimer = setTimeout(tick, 70);
-            } else {
-                charIdx -= 1;
-                el.textContent = word.slice(0, charIdx);
-                if (charIdx <= 0) {
-                    deleting = false;
-                    roleIdx = (roleIdx + 1) % roles.length;
-                    typingTimer = setTimeout(tick, 400);
-                    return;
-                }
-                typingTimer = setTimeout(tick, 35);
-            }
-        }
-
-        if (reduced) {
-            el.textContent = roles[0];
-            return;
-        }
-        tick();
-    }
+    function startTypewriter() { /* disabled — home uses static tagline */ }
 
     function init() {
         var app = qs('#resumeApp');
@@ -182,6 +177,7 @@
         reduced = prefersReduced();
         bindNav();
         bindMobile();
+        bindWheelNav();
 
         var start = panelFromHash();
         qsa('.sv-panel').forEach(function (p) {
@@ -191,7 +187,6 @@
         setActiveNav(start);
 
         if (start === 'skills') animateSkillBars(qs('.sv-panel.is-active'));
-        if (start === 'home') startTypewriter();
     }
 
     if (document.readyState === 'loading') {

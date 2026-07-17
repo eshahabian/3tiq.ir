@@ -11,23 +11,25 @@
   "phoneIntl": "+989302323986",
   "avatar": "images/profile-emad.png",
   "avatarAlt": "عماد شهابیان",
-  "bio": "مهندس DevOps با تجربه در اتوماسیون، CI/CD، Kubernetes و معماری میکروسرویس. در محیط‌های عملیاتی با چالش‌های زیرساختی واقعی کار کرده‌ام — از مدیریت کلاستر و مانیتورینگ تا پلتفرم‌های بک‌آپ، Help Desk و Active Directory. به ساخت زیرساخت پایدار، خودکارسازی فرایندها و یادگیری مستمر در اکوسیستم DevOps علاقه‌مندم.",
-  "bioEn": "DevOps Engineer experienced in automation, CI/CD, Kubernetes, and microservices architecture. I have worked in production environments with real infrastructure challenges — from cluster management and monitoring to backup platforms, help desk, and Active Directory. Passionate about building reliable infrastructure, automating workflows, and continuous learning in the DevOps ecosystem.",
+  "homeTagline": "زیرساخت، مجازی‌سازی و DevOps — از دیتاسنتر تا Kubernetes",
+  "homeTaglineEn": "Infrastructure, virtualization & DevOps — from data center to Kubernetes",
+  "summary": "بیش از ۱۴ سال در IT و زیرساخت فناوری اطلاعات فعالیت دارم. تمرکز اصلی‌ام VMware و مجازی‌سازی، Linux، شبکه و در سال‌های اخیر DevOps، Kubernetes و CI/CD است. به‌صورت ریموت در بخش مجازی‌سازی VMware در شرکت Arena Vision در دبی (امارات متحده عربی) مشغول به کار بوده‌ام. تجربه عملی در مدیریت کلاستر، مانیتورینگ، بک‌آپ، Active Directory و اتوماسیون محیط‌های عملیاتی دارم.",
+  "summaryEn": "Over 14 years in IT infrastructure — focused on VMware virtualization, Linux, networking, and recently DevOps, Kubernetes, and CI/CD. Worked remotely on VMware virtualization at Arena Vision in Dubai, UAE. Hands-on experience with clusters, monitoring, backup, Active Directory, and production automation.",
   "education": [
     {
-      "degree": "کارشناسی مهندسی مکاترونیک",
-      "degreeEn": "B.Sc. Mechatronics Engineering",
-      "school": "مؤسسه Macromedia — تهران",
-      "schoolEn": "Macromedia Institute — Tehran",
-      "years": "۱۳۸۹ — ۱۳۹۳",
+      "degree": "کارشناسی مهندسی کامپیوتر",
+      "degreeEn": "B.Sc. Computer Engineering",
+      "school": "تهران",
+      "schoolEn": "Tehran",
+      "years": "",
       "detail": ""
     },
     {
-      "degree": "دوره زبان انگلیسی",
-      "degreeEn": "English Language Course",
-      "school": "تهران",
-      "schoolEn": "Tehran",
-      "years": "۱۳۸۳ — ۱۳۸۵",
+      "degree": "مهندسی پرواز",
+      "degreeEn": "Flight Engineering",
+      "school": "",
+      "schoolEn": "",
+      "years": "",
       "detail": ""
     }
   ],
@@ -45,45 +47,33 @@
     {
       "category": "سیستم و سرویس‌ها",
       "categoryEn": "Systems & Services",
-      "items": ["Linux (LPIC1)", "Microsoft Active Directory", "Microsoft DFS", "Veeam Backup", "NextCloud", "IceWarp", "Webmin", "OPManager", "ServiceDesk Plus", "EndPoint Central", "ICDL"]
+      "items": ["Linux (LPIC1)", "Microsoft Active Directory", "Microsoft DFS", "Veeam Backup", "NextCloud", "IceWarp", "Webmin", "OPManager", "EndPoint Central", "ICDL"]
     }
   ],
   "experience": [
     {
-      "role": "سرپرست DevOps",
-      "roleEn": "DevOps Supervisor",
-      "org": "Arena Vision — تهران",
+      "role": "سرپرست DevOps / مجازی‌سازی VMware",
+      "roleEn": "DevOps & VMware Virtualization Lead",
+      "org": "Arena Vision — دبی، امارات متحده عربی (ریموت)",
       "period": "اسفند ۱۴۰۱ — اکنون",
       "periodEn": "Feb 2023 — Present",
       "bullets": [
-        "استقرار و مدیریت کلاستر Kubernetes در محیط‌های عملیاتی",
-        "مدیریت و بهینه‌سازی سرورهای لینوکس برای Kubernetes",
-        "استقرار NetBox برای مدیریت IP و مستندسازی زیرساخت شبکه",
-        "استقرار و مدیریت JumpServer برای بیش از ۷۰ سرور",
+        "همکاری ریموت در بخش مجازی‌سازی VMware از دبی",
         "مدیریت بیش از ۷۰ ماشین مجازی با VMware Horizon",
-        "راه‌اندازی سیستم Help Desk با ServiceDesk Plus",
-        "استقرار Microsoft DFS برای پوشه‌های اشتراکی و مدیریت داده",
-        "مانیتورینگ شبکه با OPManager",
-        "مدیریت Patch از راه دور با EndPoint Central",
-        "پیکربندی روترهای MikroTik برای ارتباط بین شعب",
-        "مدیریت سرورهای لینوکس با Webmin",
-        "استقرار NextCloud برای همگام‌سازی فایل و مدیریت داده",
-        "مدیریت Active Directory"
+        "استقرار و مدیریت کلاستر Kubernetes در محیط‌های عملیاتی",
+        "استقرار NetBox برای مدیریت IP و مستندسازی زیرساخت",
+        "استقرار و مدیریت JumpServer برای بیش از ۷۰ سرور",
+        "مانیتورینگ شبکه با OPManager و مدیریت Patch با EndPoint Central",
+        "پیکربندی MikroTik، NextCloud و Microsoft DFS"
       ],
       "bulletsEn": [
-        "Deployed and managed Kubernetes clusters in production environments",
-        "Managed and optimized Linux servers for Kubernetes workloads",
-        "Deployed NetBox for IP management and network documentation",
-        "Deployed and managed JumpServer for 70+ servers",
+        "Remote VMware virtualization work from Dubai, UAE",
         "Managed 70+ VMs with VMware Horizon",
-        "Implemented Help Desk with ServiceDesk Plus",
-        "Deployed Microsoft DFS for shared folders and data management",
-        "Network monitoring with OPManager",
-        "Remote patch management with EndPoint Central",
-        "Configured MikroTik routers for inter-branch connectivity",
-        "Linux server management with Webmin",
-        "Deployed NextCloud for file sync and data management",
-        "Active Directory administration"
+        "Kubernetes cluster deployment and operations",
+        "NetBox for IP and infrastructure documentation",
+        "JumpServer for 70+ servers",
+        "Network monitoring and remote patch management",
+        "MikroTik, NextCloud, and Microsoft DFS"
       ]
     },
     {
@@ -96,17 +86,17 @@
         "نگهداری سخت‌افزار و نرم‌افزار و مدیریت ارتباط شبکه بین ایستگاه‌ها",
         "استقرار Microsoft DFS برای مدیریت پوشه‌های اشتراکی و داده",
         "مدیریت Active Directory",
-        "استقرار EndPoint Central برای مدیریت یکپارچه Endpoint، Patch و دسترسی از راه دور",
+        "استقرار EndPoint Central برای مدیریت Endpoint و Patch از راه دور",
         "پیکربندی MikroTik برای ارتباط بین تهران، کرج و هشتگرد",
-        "مانیتورینگ و نگهداری دستگاه‌های GPS و گزارش‌دهی دقت داده"
+        "مانیتورینگ و نگهداری دستگاه‌های GPS"
       ],
       "bulletsEn": [
-        "Hardware and software maintenance; network connectivity between stations",
-        "Microsoft DFS deployment for shared folders and data administration",
+        "Hardware/software maintenance and inter-station networking",
+        "Microsoft DFS for shared folders and data",
         "Active Directory management",
-        "EndPoint Central for unified endpoint management, patching, and remote admin",
-        "MikroTik configuration for Tehran, Karaj, and Hashtgerd connectivity",
-        "GPS device monitoring, reporting, and data accuracy"
+        "EndPoint Central for remote endpoint and patch management",
+        "MikroTik for Tehran, Karaj, and Hashtgerd connectivity",
+        "GPS device monitoring and maintenance"
       ]
     },
     {
@@ -118,22 +108,19 @@
       "bullets": [
         "راه‌اندازی و نگهداری Domain Controller",
         "راه‌اندازی دیتاسنتر داخلی با دسترس‌پذیری بالا",
-        "پیکربندی و مدیریت شبکه دامنه با Active Directory",
-        "راه‌اندازی Print Server",
-        "راه‌اندازی Microsoft Exchange Server"
+        "پیکربندی شبکه دامنه با Active Directory",
+        "راه‌اندازی Print Server و Microsoft Exchange Server"
       ],
       "bulletsEn": [
         "Domain Controller setup and maintenance",
         "Internal data center with high availability",
-        "Domain network with Active Directory — user management and access control",
-        "Print Server deployment",
-        "Microsoft Exchange Server deployment"
+        "Active Directory domain network",
+        "Print Server and Microsoft Exchange Server"
       ]
     }
   ],
   "certificates": [
     { "name": "DevOps", "year": "۱۴۰۳" },
-    { "name": "Microsoft Active Directory", "year": "" },
     { "name": "MCSA", "year": "" },
     { "name": "IceWarp Mail Server", "year": "" },
     { "name": "Network+", "year": "" },
@@ -164,22 +151,24 @@
     "Nature of Kurdistan"
   ],
   "highlights": [
-    { "value": "۱۵+", "label": "سال تجربه IT", "labelEn": "Years in IT" },
-    { "value": "K8s", "label": "Kubernetes و DevOps", "labelEn": "Kubernetes & DevOps" },
-    { "value": "LPIC1", "label": "Linux Certified", "labelEn": "Linux Certified" }
+    { "value": "۱۴", "label": "سال سابقه کار", "labelEn": "Years of experience" },
+    { "value": "VMware", "label": "مجازی‌سازی", "labelEn": "Virtualization" },
+    { "value": "DevOps", "label": "اتوماسیون و CI/CD", "labelEn": "Automation & CI/CD" }
   ],
-  "typedRoles": [
-    "مهندس DevOps",
-    "DevOps Engineer",
-    "متخصص Kubernetes",
-    "مهندس زیرساخت"
+  "focusAreas": [
+    { "icon": "🖥", "title": "VMware", "desc": "مجازی‌سازی، Horizon و مدیریت VM" },
+    { "icon": "⚙️", "title": "DevOps", "desc": "Kubernetes، CI/CD و اتوماسیون" }
+  ],
+  "focusAreasEn": [
+    { "icon": "🖥", "title": "VMware", "desc": "Virtualization, Horizon & VM ops" },
+    { "icon": "⚙️", "title": "DevOps", "desc": "Kubernetes, CI/CD & automation" }
   ],
   "skillBars": [
-    { "name": "Kubernetes", "percent": 90 },
-    { "name": "Docker", "percent": 92 },
+    { "name": "VMware", "percent": 92 },
+    { "name": "DevOps / Kubernetes", "percent": 88 },
+    { "name": "Docker", "percent": 90 },
     { "name": "CI/CD", "percent": 88 },
     { "name": "Linux", "percent": 90 },
-    { "name": "VMware", "percent": 85 },
-    { "name": "Active Directory", "percent": 88 }
+    { "name": "Networking", "percent": 85 }
   ]
 }

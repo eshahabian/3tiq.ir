@@ -111,8 +111,8 @@
         var name = t(profile.name, profile.nameEn);
         var title = t(profile.title, profile.titleEn);
         var location = t(profile.location, profile.locationEn);
-        var bio = t(profile.bio, profile.bioEn);
-        var rolesJson = JSON.stringify(profile.typedRoles || [title]).replace(/'/g, '&#39;');
+        var summary = t(profile.summary, profile.summaryEn);
+        var homeTagline = t(profile.homeTagline, profile.homeTaglineEn);
         var email = profile.email || 'eshahabian@gmail.com';
         var phoneIntl = profile.phoneIntl || '+989302323986';
         var phoneDisplay = profile.phoneDisplay || '۰۹۳۰۲۳۲۳۹۸۶';
@@ -153,6 +153,16 @@
             );
         }).join('');
 
+        var focusAreas = t(profile.focusAreas, profile.focusAreasEn) || [];
+        var focusHtml = focusAreas.map(function (f) {
+            return (
+                '<div class="sv-focus-card">' +
+                '<span class="sv-focus-icon" aria-hidden="true">' + esc(f.icon || '') + '</span>' +
+                '<strong>' + esc(f.title) + '</strong>' +
+                '<p>' + esc(f.desc) + '</p></div>'
+            );
+        }).join('');
+
         var langs = (profile.languages || []).map(function (lang) {
             return '<li><strong>' + esc(t(lang.name, lang.nameEn)) + '</strong> — ' + esc(t(lang.level, lang.levelEn)) + '</li>';
         }).join('');
@@ -188,14 +198,13 @@
             '<div class="sv-panel-inner sv-home">' +
             '<p class="sv-eyebrow">' + esc(i18n('resume.welcome', 'سلام، خوش آمدید')) + '</p>' +
             '<h1 class="sv-home-name">' + esc(name) + '</h1>' +
-            '<p class="sv-typed-line">' + esc(i18n('resume.iam', 'من یک')) +
-            ' <span class="sv-typed" id="svTyped" data-roles=\'' + rolesJson + '\'></span> ' +
-            esc(i18n('resume.am', 'هستم')) + '</p>' +
-            '<p class="sv-lead">' + esc(bio.slice(0, 200)) + '…</p>' +
-            '<div class="sv-stats">' + highlights + '</div>' +
+            '<p class="sv-home-role">' + esc(title) + '</p>' +
+            '<p class="sv-home-tagline">' + esc(homeTagline) + '</p>' +
+            '<div class="sv-focus-row">' + focusHtml + '</div>' +
+            '<p class="sv-scroll-hint" aria-hidden="true">' + esc(i18n('resume.scrollHint', 'اسکرول کنید برای بخش بعد ↓')) + '</p>' +
             '<div class="sv-home-actions">' +
-            '<button type="button" class="sv-btn sv-btn--primary" data-goto="contact">' + esc(i18n('resume.contactBtn', 'تماس با من')) + '</button>' +
-            '<button type="button" class="sv-btn sv-btn--ghost" data-goto="resume">' + esc(i18n('resume.viewResume', 'مشاهده رزومه')) + '</button>' +
+            '<button type="button" class="sv-btn sv-btn--primary" data-goto="about">' + esc(i18n('resume.viewAbout', 'درباره من')) + '</button>' +
+            '<button type="button" class="sv-btn sv-btn--ghost" data-goto="contact">' + esc(i18n('resume.contactBtn', 'تماس با من')) + '</button>' +
             '</div></div></section>' +
 
             /* ABOUT */
@@ -203,7 +212,10 @@
             '<div class="sv-panel-inner">' +
             '<h2 class="sv-section-title">' + esc(i18n('resume.nav.about', 'درباره من')) + '</h2>' +
             '<p class="sv-section-lead">' + esc(title) + ' · ' + esc(location) + '</p>' +
-            '<p class="sv-text">' + esc(bio) + '</p>' +
+            '<div class="sv-stats sv-stats--about">' + highlights + '</div>' +
+            '<div class="sv-summary">' +
+            '<h3 class="sv-block-title">' + esc(i18n('resume.summaryTitle', 'خلاصه رزومه')) + '</h3>' +
+            '<p class="sv-text">' + esc(summary) + '</p></div>' +
             (interestTags ? (
                 '<div class="sv-block">' +
                 '<h3 class="sv-block-title">' + esc(i18n('resume.interests', 'علایق')) + '</h3>' +
@@ -266,7 +278,7 @@
             '<span class="resume-teaser-badge">' + esc(i18n('resume.badge', 'درباره من')) + '</span>' +
             '<h2 class="section-title" id="resumeTeaserTitle">' + esc(t(profile.name, profile.nameEn)) + '</h2>' +
             '<p class="resume-teaser-title">' + esc(t(profile.title, profile.titleEn)) + '</p>' +
-            '<p class="resume-teaser-bio">' + esc(t(profile.bio, profile.bioEn)).slice(0, 240) + '…</p>' +
+            '<p class="resume-teaser-bio">' + esc(t(profile.summary || profile.bio, profile.summaryEn || profile.bioEn)).slice(0, 240) + '…</p>' +
             contactHtml(true) +
             '<a href="' + bp() + 'about.html" class="btn btn-primary resume-teaser-btn">' + esc(i18n('resume.fullLink', 'مشاهده رزومه تعاملی ←')) + '</a>' +
             '</div>' +
