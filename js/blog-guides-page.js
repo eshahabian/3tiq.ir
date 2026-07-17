@@ -29,9 +29,15 @@
     function cardHtml(g) {
         var href = g.slug;
         var featured = g.featured ? ' featured' : '';
-        var metaExtra = g.peakName
-            ? '<span>⛰ ' + escapeHtml(g.peakName) + '</span>'
+        var peakLinkHtml = g.peakPage
+            ? '<a href="' + escapeHtml(g.peakPage) + '" class="blog-card-peak-link">⛰ صفحه ' + escapeHtml(g.peakName) + '</a>'
             : '';
+
+        var imgBlock =
+            '<div class="blog-card-img">' +
+            '<img src="' + escapeHtml(g.image) + '" alt="' + escapeHtml(g.peakName || g.title) + '" loading="lazy">' +
+            '<span class="blog-card-cat cat-route">🗺 ' + escapeHtml(g.regionLabel) + '</span>' +
+            '</div>';
 
         var bodyBlock =
             '<div class="blog-card-body">' +
@@ -39,31 +45,51 @@
             '<span>📅 ' + escapeHtml(g.dateFa) + '</span>' +
             '<span>⏱ ' + g.readMinutes + ' دقیقه</span>' +
             '<span>↕ ' + formatElev(g.elevation) + '</span>' +
-            metaExtra +
+            (g.peakName ? '<span>⛰ ' + escapeHtml(g.peakName) + '</span>' : '') +
             '</div>' +
             '<div class="blog-card-title">' + escapeHtml(g.title) + '</div>' +
             '<div class="blog-card-excerpt">' + escapeHtml(g.excerpt) + '</div>' +
-            '</div>' +
+            '</div>';
+
+        var footerBlock =
             '<div class="blog-card-footer">' +
             '<div class="blog-card-author">' +
             '<div class="blog-card-author-avatar">سه</div>' +
             '<span class="blog-card-author-name">' + escapeHtml(g.difficultyLabel) + ' · ' + escapeHtml(g.days) + '</span>' +
             '</div>' +
-            '<span class="blog-read-more">مطالعه راهنما ←</span>' +
+            '<div class="blog-card-actions">' +
+            peakLinkHtml +
+            '<a href="' + escapeHtml(href) + '" class="blog-read-more">مطالعه راهنما ←</a>' +
+            '</div>' +
             '</div>';
 
+        var stretchLink =
+            '<a href="' + escapeHtml(href) + '" class="blog-card-stretched-link" aria-label="' + escapeHtml(g.title) + '"></a>';
+
         if (g.featured) {
-            bodyBlock = '<div style="display:flex;flex-direction:column;flex:1;">' + bodyBlock + '</div>';
+            return (
+                '<article class="blog-card' + featured + '" data-region="' + escapeHtml(g.region) + '" data-difficulty="' + escapeHtml(g.difficulty) + '">' +
+                imgBlock +
+                '<div class="blog-card-main-col">' +
+                '<div class="blog-card-top">' +
+                stretchLink +
+                bodyBlock +
+                '</div>' +
+                footerBlock +
+                '</div>' +
+                '</article>'
+            );
         }
 
         return (
-            '<a href="' + escapeHtml(href) + '" class="blog-card' + featured + '" data-region="' + escapeHtml(g.region) + '" data-difficulty="' + escapeHtml(g.difficulty) + '">' +
-            '<div class="blog-card-img">' +
-            '<img src="' + escapeHtml(g.image) + '" alt="' + escapeHtml(g.peakName || g.title) + '" loading="lazy">' +
-            '<span class="blog-card-cat cat-route">🗺 ' + escapeHtml(g.regionLabel) + '</span>' +
-            '</div>' +
+            '<article class="blog-card' + featured + '" data-region="' + escapeHtml(g.region) + '" data-difficulty="' + escapeHtml(g.difficulty) + '">' +
+            '<div class="blog-card-top">' +
+            stretchLink +
+            imgBlock +
             bodyBlock +
-            '</a>'
+            '</div>' +
+            footerBlock +
+            '</article>'
         );
     }
 

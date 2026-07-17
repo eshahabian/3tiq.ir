@@ -61,6 +61,26 @@
       "readMinutes": 7
     },
     {
+      "id": "tochal",
+      "slug": "blog/blog-tochal-guide.html",
+      "peakPage": "peaks/tochal.html",
+      "title": "راهنمای صعود توچال — نزدیک‌ترین قله بزرگ به تهران",
+      "peakName": "توچال",
+      "elevation": 3933,
+      "region": "alborz",
+      "regionLabel": "البرز مرکزی",
+      "province": "تهران",
+      "difficulty": "beginner",
+      "difficultyLabel": "مبتدی",
+      "days": "۱ روز",
+      "season": "همه فصل",
+      "excerpt": "مسیر تله‌کابین و درکه، پناهگاه ایستگاه ۷، تجهیزات و نکات عملی برای صعود ۳۹۳۳ متری.",
+      "image": "images/shelters/tochal.jpg",
+      "featured": false,
+      "dateFa": "تیر ۱۴۰۵",
+      "readMinutes": 8
+    },
+    {
       "id": "beginner-peaks",
       "slug": "blog/blog-beginner-peaks.html",
       "peakPage": null,
