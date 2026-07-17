@@ -23,7 +23,10 @@
     background: var(--sv-bg);
     color: var(--sv-text);
     min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .sv-skip {
@@ -218,7 +221,11 @@
     flex: 1;
     margin-right: var(--sv-sidebar-w);
     min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
     position: relative;
+    overflow: hidden;
 }
 
 .sv-menu-toggle {
@@ -241,6 +248,7 @@
 .sv-panels {
     position: relative;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 .sv-panel {
@@ -248,7 +256,10 @@
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
+    height: 100%;
     min-height: 100vh;
+    max-height: 100vh;
     opacity: 0;
     visibility: hidden;
     transform: translate3d(0, 48px, 0);
@@ -256,9 +267,12 @@
         opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
         visibility 0.42s;
+    overflow-x: hidden;
     overflow-y: auto;
+    overscroll-behavior: contain;
     pointer-events: none;
     z-index: 1;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sv-panel.is-active {
@@ -293,15 +307,18 @@
 .sv-panel-inner {
     max-width: 820px;
     margin: 0 auto;
-    padding: 3.5rem 2.5rem 4rem;
+    padding: clamp(2rem, 5vh, 3.5rem) 2.5rem 4rem;
+    padding-top: max(clamp(2rem, 5vh, 3.5rem), env(safe-area-inset-top, 0px));
 }
 
 /* ===== Home panel ===== */
 .sv-home {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: calc(100vh - 4rem);
+    justify-content: flex-start;
+    min-height: auto;
+    padding-top: clamp(1rem, 4vh, 2.5rem);
+    padding-bottom: 2rem;
 }
 
 .sv-eyebrow {
@@ -700,7 +717,14 @@
 
     .sv-menu-toggle { display: flex; align-items: center; justify-content: center; }
 
-    .sv-panel-inner { padding: 4.5rem 1.25rem 3rem; }
+    .sv-panel-inner {
+        padding: 1.25rem 1.25rem 3rem;
+        padding-top: max(4.75rem, calc(env(safe-area-inset-top, 0px) + 3.75rem));
+    }
+
+    .sv-home {
+        padding-top: 0.5rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

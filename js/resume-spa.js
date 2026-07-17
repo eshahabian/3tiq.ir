@@ -67,6 +67,8 @@
         setActiveNav(id);
         closeSidebar();
 
+        if (next) next.scrollTop = 0;
+
         if (reduced || !current) {
             if (current) current.classList.remove('is-active');
             next.classList.add('is-active');
