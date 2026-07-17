@@ -103,7 +103,7 @@
         filtered.sort(function (a, b) {
             if (a.featured && !b.featured) return -1;
             if (!a.featured && b.featured) return 1;
-            return b.elevation - a.elevation;
+            return (b._recency || 0) - (a._recency || 0);
         });
 
         grid.innerHTML = filtered.map(cardHtml).join('');
@@ -150,7 +150,10 @@
     }
 
     function init(data) {
-        guides = data || [];
+        guides = (data || []).map(function (g, i) {
+            g._recency = i;
+            return g;
+        });
         render();
         bindFilters();
     }
