@@ -130,29 +130,37 @@
     }
 
     function bindNav() {
-        qsa('.sv-nav-link').forEach(function (link) {
-            link.addEventListener('click', function (e) {
+        var app = qs('#resumeApp');
+        if (!app || app.dataset.navBound === '1') return;
+        app.dataset.navBound = '1';
+
+        app.addEventListener('click', function (e) {
+            var link = e.target.closest('.sv-nav-link');
+            if (link) {
                 e.preventDefault();
                 switchPanel(link.getAttribute('data-panel'));
-            });
-        });
-
-        qsa('[data-goto]').forEach(function (btn) {
-            btn.addEventListener('click', function (e) {
+                return;
+            }
+            var btn = e.target.closest('[data-goto]');
+            if (btn) {
                 e.preventDefault();
                 switchPanel(btn.getAttribute('data-goto'));
-            });
+            }
         });
 
-        window.addEventListener('hashchange', function () {
-            switchPanel(panelFromHash(), false);
-        });
+        if (!window.__svHashBound) {
+            window.__svHashBound = true;
+            window.addEventListener('hashchange', function () {
+                switchPanel(panelFromHash(), false);
+            });
+        }
     }
 
     function bindMobile() {
         var toggle = qs('#svMenuToggle');
         var overlay = qs('#svOverlay');
-        if (!toggle) return;
+        if (!toggle || toggle.dataset.bound === '1') return;
+        toggle.dataset.bound = '1';
 
         toggle.addEventListener('click', function () {
             document.body.classList.toggle('sv-sidebar-open');

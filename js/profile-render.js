@@ -129,6 +129,7 @@
     function renderSergio(container) {
         if (!profile || !container) return;
 
+        try {
         var name = t(profile.name, profile.nameEn);
         var title = t(profile.title, profile.titleEn);
         var location = t(profile.location, profile.locationEn);
@@ -202,8 +203,10 @@
             navItem('contact', i18n('resume.nav.contact', 'تماس')) +
             '</ul></nav>' +
             '<div class="sv-sidebar-social">' +
-            '<a href="mailto:' + esc(email) + '" aria-label="ایمیل" title="ایمیل">✉</a>' +
-            '<a href="tel:' + esc(phoneIntl) + '" aria-label="تلفن" title="تلفن">📞</a>' +
+            '<a href="mailto:' + esc(email) + '" aria-label="' + esc(emailShow) + '" title="' + esc(emailShow) + '">✉</a>' +
+            getPhones().map(function (p, i) {
+                return '<a href="tel:' + esc(p.intl) + '" aria-label="تلفن ' + (i + 1) + '" title="' + esc(p.display) + '">📞</a>';
+            }).join('') +
             '<a href="' + esc(insta) + '" target="_blank" rel="noopener" aria-label="اینستاگرام">📷</a>' +
             '</div>' +
             '<a href="index.html" class="sv-back-link">← بازگشت به سه تیغ</a>' +
@@ -286,6 +289,10 @@
             '</div></main>';
 
         document.dispatchEvent(new CustomEvent('profile:rendered'));
+        } catch (err) {
+            container.innerHTML = '<p class="sv-loading">خطا در بارگذاری رزومه. صفحه را رفرش کنید.</p>';
+            if (typeof console !== 'undefined') console.error('ProfileRender:', err);
+        }
     }
 
     function renderTeaser(container) {
