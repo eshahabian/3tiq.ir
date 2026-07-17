@@ -213,6 +213,15 @@
     body.dark-mode .blog-card-footer{ border-color:rgba(255,255,255,.06); }
     body.dark-mode .blog-card-author-name { color:#e0e0e0; }
 
+    .blog-section-nav { background:var(--white);border-bottom:1px solid rgba(58,50,38,.08);padding:.85rem 0; }
+    .blog-section-nav-inner { display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap; }
+    .blog-section-nav a { padding:.45rem 1.15rem;border-radius:100px;text-decoration:none;font-size:.85rem;font-weight:700;color:var(--text-light);border:1.5px solid rgba(58,50,38,.12);transition:var(--transition); }
+    .blog-section-nav a:hover { border-color:var(--primary-color);color:var(--primary-color); }
+    .blog-section-nav a.active { background:var(--dark-bg);color:#fff;border-color:transparent; }
+    body.dark-mode .blog-section-nav { background:#1a1a1a;border-color:rgba(255,255,255,.06); }
+    body.dark-mode .blog-section-nav a { border-color:rgba(255,255,255,.1);color:#aaa; }
+    body.dark-mode .blog-section-nav a.active { background:var(--primary-color);color:#111; }
+
     /* ===== Responsive ===== */
     @media(max-width:768px){
         .blog-card.featured { flex-direction:column; }
@@ -348,6 +357,7 @@
                         <li><a href="panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
                         <li><a href="sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
                         <li><a href="blog.html" class="active" data-i18n="nav.blog">وبلاگ</a></li>
+                        <li><a href="blog-guides.html" data-i18n="nav.ascentGuides">راهنمای صعود</a></li>
                         <li><a href="assistant.html" data-i18n="nav.assistant">دستیار</a></li>
                         <li><a href="about.html" data-i18n="nav.about">درباره ما</a></li>
                         <li><a href="index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>
@@ -380,6 +390,15 @@
             <p data-i18n="blog.subtitle">راهنماها، نکات ایمنی، معرفی تجهیزات و تجربیات کوهنوردی در ایران</p>
         </div>
     </section>
+
+    <div class="blog-section-nav">
+        <div class="container">
+            <div class="blog-section-nav-inner">
+                <a href="blog.html" class="active" data-i18n="guides.nav.articles">مقالات وبلاگ</a>
+                <a href="blog-guides.html" data-i18n="guides.nav.guides">راهنمای صعود کوه‌ها</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== Filter ===== -->
     <div class="blog-filters">
