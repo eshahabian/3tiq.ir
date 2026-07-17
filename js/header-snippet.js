@@ -36,8 +36,12 @@
             '</ul></li>' +
             '<li><a href="' + bp + 'panahgah.html"' + cls('shelters') + ' data-i18n="nav.shelters">پناهگاه\u200cها</a></li>' +
             '<li><a href="' + bp + 'sakhre-nvardi.html"' + cls('climbing') + ' data-i18n="nav.climbing">صخره\u200cنوردی</a></li>' +
-            '<li><a href="' + bp + 'blog.html"' + cls('blog') + ' data-i18n="nav.blog">وبلاگ</a></li>' +
-            '<li><a href="' + bp + 'blog-guides.html"' + cls('guides') + ' data-i18n="nav.ascentGuides">راهنمای صعود</a></li>' +
+            '<li class="has-dropdown">' +
+            '<a href="' + bp + 'blog.html"' + cls('blog') + ' data-i18n="nav.blog">وبلاگ</a>' +
+            '<ul class="dropdown">' +
+            '<li><a href="' + bp + 'blog.html" data-i18n="guides.nav.articles">مقالات</a></li>' +
+            '<li><a href="' + bp + 'blog-guides.html" data-i18n="nav.ascentGuides">راهنمای صعود</a></li>' +
+            '</ul></li>' +
             '<li><a href="' + bp + 'assistant.html"' + cls('assistant') + ' data-i18n="nav.assistant">دستیار</a></li>' +
             '<li><a href="' + bp + 'about.html"' + cls('about') + ' data-i18n="nav.about">درباره ما</a></li>' +
             '<li><a href="' + bp + 'index.html#contact"' + cls('contact') + ' data-i18n="nav.contact">تماس با ما</a></li>' +

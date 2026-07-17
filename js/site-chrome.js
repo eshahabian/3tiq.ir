@@ -33,41 +33,6 @@
         if (el && !el.dataset.faText) el.dataset.faText = el.textContent.trim();
     }
 
-    function injectAscentGuidesNav() {
-        if (document.querySelector('a[href*="blog-guides.html"]')) return;
-        var bp = basePath();
-        var onGuides = /blog-guides\.html/i.test(location.pathname);
-
-        document.querySelectorAll('.nav-menu > ul').forEach(function (ul) {
-            var items = ul.querySelectorAll(':scope > li');
-            var blogLi = null;
-            items.forEach(function (li) {
-                var a = li.querySelector(':scope > a');
-                if (!a) return;
-                var href = a.getAttribute('href') || '';
-                if (/blog\.html/i.test(href) && href.indexOf('blog-guides') < 0) blogLi = li;
-            });
-            if (!blogLi) return;
-
-            var li = document.createElement('li');
-            var a = document.createElement('a');
-            a.href = bp + 'blog-guides.html';
-            a.setAttribute('data-i18n', 'nav.ascentGuides');
-            a.textContent = 'راهنمای صعود';
-            if (onGuides) {
-                a.className = 'active';
-                a.setAttribute('aria-current', 'page');
-                var blogA = blogLi.querySelector(':scope > a');
-                if (blogA) {
-                    blogA.classList.remove('active');
-                    blogA.removeAttribute('aria-current');
-                }
-            }
-            li.appendChild(a);
-            blogLi.insertAdjacentElement('afterend', li);
-        });
-    }
-
     function upgradeNav() {
         var maps = [
             ['البرز غربی', 'nav.alborzWest'],
@@ -292,7 +257,6 @@
     function run() {
         injectLangIfMissing();
         injectSeoAlternates();
-        injectAscentGuidesNav();
         upgradeNav();
         upgradeFooter();
         upgradeShelterTabs();

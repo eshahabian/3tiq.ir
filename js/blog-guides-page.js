@@ -10,20 +10,6 @@
     var activeRegion = 'all';
     var activeDifficulty = 'all';
 
-    var regionLabels = {
-        all: 'همه',
-        alborz: 'البرز',
-        zagros: 'زاگرس',
-        central: 'مرکزی',
-        volcanic: 'آتشفشانی'
-    };
-
-    var diffClass = {
-        beginner: 'guide-diff--beginner',
-        intermediate: 'guide-diff--mid',
-        advanced: 'guide-diff--advanced'
-    };
-
     function escapeHtml(s) {
         return String(s)
             .replace(/&/g, '&amp;')
@@ -32,38 +18,51 @@
             .replace(/"/g, '&quot;');
     }
 
+    function formatElev(n) {
+        try {
+            return Number(n).toLocaleString('fa-IR') + 'm';
+        } catch (e) {
+            return String(n) + 'm';
+        }
+    }
+
     function cardHtml(g) {
         var href = g.slug;
-        var diffCls = diffClass[g.difficulty] || 'guide-diff--mid';
-        var featured = g.featured ? ' guide-card--featured' : '';
-        var peakLink = g.peakPage
-            ? '<a class="guide-peak-link" href="' + escapeHtml(g.peakPage) + '">صفحه ' + escapeHtml(g.peakName) + ' ←</a>'
+        var featured = g.featured ? ' featured' : '';
+        var metaExtra = g.peakName
+            ? '<span>⛰ ' + escapeHtml(g.peakName) + '</span>'
             : '';
 
-        return (
-            '<a href="' + escapeHtml(href) + '" class="guide-card' + featured + '" data-region="' + escapeHtml(g.region) + '" data-difficulty="' + escapeHtml(g.difficulty) + '">' +
-            '<div class="guide-card-img">' +
-            '<img src="' + escapeHtml(g.image) + '" alt="' + escapeHtml(g.peakName) + '" loading="lazy">' +
-            '<span class="guide-elev-badge">' + g.elevation.toLocaleString('fa-IR') + 'm</span>' +
-            '<span class="guide-region-badge">' + escapeHtml(g.regionLabel) + '</span>' +
-            '</div>' +
-            '<div class="guide-card-body">' +
-            '<div class="guide-card-meta">' +
+        var bodyBlock =
+            '<div class="blog-card-body">' +
+            '<div class="blog-card-meta">' +
             '<span>📅 ' + escapeHtml(g.dateFa) + '</span>' +
             '<span>⏱ ' + g.readMinutes + ' دقیقه</span>' +
+            '<span>↕ ' + formatElev(g.elevation) + '</span>' +
+            metaExtra +
             '</div>' +
-            '<h2 class="guide-card-title">' + escapeHtml(g.title) + '</h2>' +
-            '<p class="guide-card-excerpt">' + escapeHtml(g.excerpt) + '</p>' +
-            '<div class="guide-card-tags">' +
-            '<span class="guide-diff ' + diffCls + '">' + escapeHtml(g.difficultyLabel) + '</span>' +
-            '<span class="guide-tag">🗓 ' + escapeHtml(g.days) + '</span>' +
-            '<span class="guide-tag">☀ ' + escapeHtml(g.season) + '</span>' +
+            '<div class="blog-card-title">' + escapeHtml(g.title) + '</div>' +
+            '<div class="blog-card-excerpt">' + escapeHtml(g.excerpt) + '</div>' +
             '</div>' +
-            peakLink +
+            '<div class="blog-card-footer">' +
+            '<div class="blog-card-author">' +
+            '<div class="blog-card-author-avatar">سه</div>' +
+            '<span class="blog-card-author-name">' + escapeHtml(g.difficultyLabel) + ' · ' + escapeHtml(g.days) + '</span>' +
             '</div>' +
-            '<div class="guide-card-footer">' +
-            '<span class="guide-read-more">مطالعه راهنما ←</span>' +
+            '<span class="blog-read-more">مطالعه راهنما ←</span>' +
+            '</div>';
+
+        if (g.featured) {
+            bodyBlock = '<div style="display:flex;flex-direction:column;flex:1;">' + bodyBlock + '</div>';
+        }
+
+        return (
+            '<a href="' + escapeHtml(href) + '" class="blog-card' + featured + '" data-region="' + escapeHtml(g.region) + '" data-difficulty="' + escapeHtml(g.difficulty) + '">' +
+            '<div class="blog-card-img">' +
+            '<img src="' + escapeHtml(g.image) + '" alt="' + escapeHtml(g.peakName || g.title) + '" loading="lazy">' +
+            '<span class="blog-card-cat cat-route">🗺 ' + escapeHtml(g.regionLabel) + '</span>' +
             '</div>' +
+            bodyBlock +
             '</a>'
         );
     }
@@ -82,10 +81,12 @@
         });
 
         grid.innerHTML = filtered.map(cardHtml).join('');
+
+        var featured = grid.querySelector('.blog-card.featured');
+        if (featured) featured.style.gridColumn = '1 / -1';
+
         if (empty) empty.hidden = filtered.length > 0;
-        if (countEl) {
-            countEl.textContent = filtered.length + ' راهنما';
-        }
+        if (countEl) countEl.textContent = filtered.length + ' راهنما';
     }
 
     function bindFilters() {
@@ -112,14 +113,35 @@
         });
     }
 
+    function loadFromInline() {
+        var el = document.getElementById('guidesData');
+        if (!el) return null;
+        try {
+            return JSON.parse(el.textContent).guides || [];
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function init(data) {
+        guides = data || [];
+        render();
+        bindFilters();
+    }
+
+    var inline = loadFromInline();
+    if (inline && inline.length) {
+        init(inline);
+        return;
+    }
+
     fetch('data/ascent-guides.json')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-            guides = data.guides || [];
-            render();
-            bindFilters();
+        .then(function (r) {
+            if (!r.ok) throw new Error('fetch failed');
+            return r.json();
         })
+        .then(function (data) { init(data.guides || []); })
         .catch(function () {
-            grid.innerHTML = '<p class="guides-error">خطا در بارگذاری راهنماها.</p>';
+            grid.innerHTML = '<p class="guides-error">خطا در بارگذاری راهنماها. صفحه را رفرش کن.</p>';
         });
 })();

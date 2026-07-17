@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>راهنمای صعود کوه‌ها | سه تیغ</title>
-    <meta name="description" content="راهنمای جامع صعود قله‌های ایران — مسیر، پناهگاه، تجهیزات، فصل مناسب و نکات ایمنی برای دماوند، علم‌کوه، سبلان و بیشتر.">
+    <title>راهنمای صعود | سه تیغ</title>
+    <meta name="description" content="راهنمای جامع صعود قله‌های ایران — مسیر، پناهگاه، تجهیزات، فصل مناسب و نکات ایمنی">
     <link rel="canonical" href="https://3tiq.ir/blog-guides.html">
-    <meta property="og:title" content="راهنمای صعود کوه‌ها | سه تیغ">
+    <meta property="og:title" content="راهنمای صعود | سه تیغ">
     <meta property="og:description" content="راهنمای صعود قله‌های ایران — مسیر، تجهیزات و نکات ایمنی">
     <meta property="og:url" content="https://3tiq.ir/blog-guides.html">
     <meta property="og:type" content="website">
@@ -30,54 +30,45 @@
     .blog-section-nav a:hover { border-color:var(--primary-color);color:var(--primary-color); }
     .blog-section-nav a.active { background:var(--dark-bg);color:#fff;border-color:transparent; }
 
-    .guides-toolbar { background:var(--light-bg);border-bottom:1px solid rgba(58,50,38,.08);padding:1.25rem 0;position:sticky;top:var(--header-height,clamp(72px,14vw,100px));z-index:100; }
-    .guides-toolbar-row { display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;margin-bottom:.75rem; }
-    .guides-count { font-size:.82rem;color:var(--text-light);font-weight:600; }
-    .guides-filter-group { display:flex;gap:.4rem;flex-wrap:wrap;align-items:center; }
-    .guides-filter-label { font-size:.75rem;font-weight:700;color:var(--text-light);margin-left:.35rem; }
-    .guide-filter-btn { padding:.4rem 1rem;border-radius:100px;border:1.5px solid rgba(58,50,38,.15);background:var(--white);color:var(--text-light);font-family:inherit;font-size:.78rem;font-weight:600;cursor:pointer;transition:var(--transition);white-space:nowrap; }
-    .guide-filter-btn:hover { border-color:var(--primary-color);color:var(--primary-color); }
-    .guide-filter-btn.active { background:var(--dark-bg);color:#fff;border-color:transparent; }
+    .blog-filters { background:var(--white);border-bottom:1px solid rgba(58,50,38,.08);padding:1.25rem 0;position:sticky;top:var(--header-height,clamp(72px,14vw,100px));z-index:100; }
+    .blog-filter-list { display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center; }
+    .blog-filter-btn { padding:.45rem 1.1rem;border-radius:100px;border:1.5px solid rgba(58,50,38,.15);background:transparent;color:var(--text-light);font-family:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:var(--transition);white-space:nowrap; }
+    .blog-filter-btn:hover { border-color:var(--primary-color);color:var(--primary-color); }
+    .blog-filter-btn.active { background:var(--dark-bg);color:#fff;border-color:transparent; }
+    .guides-count { display:block;text-align:center;font-size:.82rem;color:var(--text-light);font-weight:600;margin-bottom:.75rem; }
 
-    .guides-section { padding:3rem 0 6rem;background:var(--light-bg); }
-    .guides-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.75rem; }
-    .guide-card { background:var(--white);border-radius:1.1rem;overflow:hidden;box-shadow:0 3px 18px rgba(44,36,22,.07);border:1px solid rgba(58,50,38,.06);transition:var(--transition);display:flex;flex-direction:column;text-decoration:none;color:inherit; }
-    .guide-card:hover { transform:translateY(-6px);box-shadow:0 18px 40px rgba(44,36,22,.13); }
-    .guide-card--featured { grid-column:1/-1;flex-direction:row; }
-    @media(max-width:768px){ .guide-card--featured { flex-direction:column; } }
-    .guide-card-img { width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:linear-gradient(135deg,#8a9a8a,#5a6a5a);flex-shrink:0; }
-    .guide-card--featured .guide-card-img { width:42%;aspect-ratio:unset;min-height:16rem; }
-    @media(max-width:768px){ .guide-card--featured .guide-card-img { width:100%;aspect-ratio:16/9;min-height:0; } }
-    .guide-card-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease; }
-    .guide-card:hover .guide-card-img img { transform:scale(1.06); }
-    .guide-elev-badge { position:absolute;bottom:.75rem;right:.75rem;background:rgba(20,14,8,.82);color:#fff;padding:.3rem .75rem;border-radius:100px;font-size:.72rem;font-weight:800;backdrop-filter:blur(6px); }
-    .guide-region-badge { position:absolute;top:.75rem;right:.75rem;background:rgba(58,104,140,.88);color:#fff;padding:.25rem .7rem;border-radius:100px;font-size:.68rem;font-weight:800; }
-    .guide-card-body { padding:1.2rem 1.25rem .5rem;flex:1;display:flex;flex-direction:column; }
-    .guide-card-meta { display:flex;gap:.85rem;font-size:.72rem;color:var(--text-light);margin-bottom:.55rem; }
-    .guide-card-title { font-size:1.05rem;font-weight:800;color:var(--text-dark);line-height:1.55;margin-bottom:.55rem; }
-    .guide-card--featured .guide-card-title { font-size:1.25rem; }
-    .guide-card-excerpt { font-size:.82rem;color:var(--text-light);line-height:1.85;flex:1;margin-bottom:.85rem; }
-    .guide-card-tags { display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem; }
-    .guide-diff, .guide-tag { font-size:.68rem;font-weight:700;padding:.22rem .65rem;border-radius:100px;background:var(--light-bg);color:var(--text-light); }
-    .guide-diff--beginner { background:rgba(46,204,113,.15);color:#1e7a45; }
-    .guide-diff--mid { background:rgba(58,104,140,.12);color:#2a5070; }
-    .guide-diff--advanced { background:rgba(181,86,47,.12);color:#8a4020; }
-    .guide-peak-link { font-size:.78rem;font-weight:700;color:var(--primary-color);text-decoration:none;margin-bottom:.5rem;display:inline-block; }
-    .guide-peak-link:hover { text-decoration:underline; }
-    .guide-card-footer { padding:.85rem 1.25rem 1rem;border-top:1px solid rgba(58,50,38,.07); }
-    .guide-read-more { font-size:.8rem;font-weight:800;color:var(--primary-color); }
-    .guides-empty { text-align:center;padding:3rem 1rem;color:var(--text-light); }
-    .guides-error { text-align:center;padding:2rem;color:#c0392b; }
+    .blog-section { padding:4rem 0 6rem;background:var(--light-bg); }
+    .blog-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));gap:2rem; }
+    .blog-card { background:var(--white);border-radius:1.1rem;overflow:hidden;box-shadow:0 3px 18px rgba(44,36,22,.07);border:1px solid rgba(58,50,38,.06);transition:var(--transition);display:flex;flex-direction:column;text-decoration:none;color:inherit; }
+    .blog-card:hover { transform:translateY(-6px);box-shadow:0 18px 40px rgba(44,36,22,.13); }
+    .blog-card-img { width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:linear-gradient(135deg,#c8c4be,#a8a49e);flex-shrink:0; }
+    .blog-card-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease; }
+    .blog-card:hover .blog-card-img img { transform:scale(1.07); }
+    .blog-card-cat { position:absolute;top:.75rem;right:.75rem;padding:.25rem .75rem;border-radius:100px;font-size:.68rem;font-weight:800;backdrop-filter:blur(8px); }
+    .cat-route { background:rgba(58,104,140,.85);color:#fff; }
+    .blog-card-body { padding:1.25rem 1.25rem .75rem;flex:1;display:flex;flex-direction:column; }
+    .blog-card-meta { display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;font-size:.72rem;color:var(--text-light);margin-bottom:.65rem; }
+    .blog-card-meta span { display:flex;align-items:center;gap:.25rem; }
+    .blog-card-title { font-size:1.05rem;font-weight:800;color:var(--text-dark);line-height:1.5;margin-bottom:.6rem; }
+    .blog-card-excerpt { font-size:.82rem;color:var(--text-light);line-height:1.8;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden; }
+    .blog-card-footer { padding:.85rem 1.25rem 1.1rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(58,50,38,.07);margin-top:.85rem; }
+    .blog-card-author { display:flex;align-items:center;gap:.5rem; }
+    .blog-card-author-avatar { width:28px;height:28px;border-radius:50%;background:var(--primary-color);color:var(--dark-bg);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0; }
+    .blog-card-author-name { font-size:.75rem;font-weight:700;color:var(--text-dark); }
+    .blog-read-more { font-size:.78rem;font-weight:700;color:var(--primary-color); }
+    .blog-card.featured { grid-column:1/-1;flex-direction:row; }
+    .blog-card.featured .blog-card-img { width:45%;aspect-ratio:unset;flex-shrink:0; }
+    .blog-card.featured .blog-card-title { font-size:1.35rem; }
+    .blog-card.featured .blog-card-excerpt { -webkit-line-clamp:4; }
+    .guides-empty, .guides-error { text-align:center;padding:2rem;color:var(--text-light); }
 
-    body.dark-mode .blog-section-nav { background:#1a1a1a;border-color:rgba(255,255,255,.06); }
-    body.dark-mode .blog-section-nav a { border-color:rgba(255,255,255,.1);color:#aaa; }
-    body.dark-mode .blog-section-nav a.active { background:var(--primary-color);color:#111; }
-    body.dark-mode .guides-toolbar { background:#111;border-color:rgba(255,255,255,.06); }
-    body.dark-mode .guides-section { background:#111; }
-    body.dark-mode .guide-card { background:#1e1e1e;border-color:rgba(255,255,255,.06); }
-    body.dark-mode .guide-card-title { color:#f0f0f0; }
-    body.dark-mode .guide-filter-btn { background:#252525;border-color:rgba(255,255,255,.1);color:#aaa; }
-    body.dark-mode .guide-filter-btn.active { background:var(--primary-color);color:#111; }
+    body.dark-mode .blog-section-nav, body.dark-mode .blog-filters { background:#1a1a1a;border-color:rgba(255,255,255,.06); }
+    body.dark-mode .blog-section-nav a, body.dark-mode .blog-filter-btn { border-color:rgba(255,255,255,.1);color:#aaa; }
+    body.dark-mode .blog-section-nav a.active, body.dark-mode .blog-filter-btn.active { background:var(--primary-color);color:#111; }
+    body.dark-mode .blog-section { background:#111; }
+    body.dark-mode .blog-card { background:#1e1e1e;border-color:rgba(255,255,255,.06); }
+    body.dark-mode .blog-card-title, body.dark-mode .blog-card-author-name { color:#f0f0f0; }
+    @media(max-width:768px){ .blog-card.featured { flex-direction:column; } .blog-card.featured .blog-card-img { width:100%;aspect-ratio:16/9; } .blog-grid { grid-template-columns:1fr; } }
     </style>
 </head>
 <body>
@@ -110,8 +101,13 @@
                         </li>
                         <li><a href="panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
                         <li><a href="sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
-                        <li><a href="blog.html" data-i18n="nav.blog">وبلاگ</a></li>
-                        <li><a href="blog-guides.html" class="active" aria-current="page" data-i18n="nav.ascentGuides">راهنمای صعود</a></li>
+                        <li class="has-dropdown">
+                            <a href="blog.html" class="active" data-i18n="nav.blog">وبلاگ</a>
+                            <ul class="dropdown">
+                                <li><a href="blog.html" data-i18n="guides.nav.articles">مقالات</a></li>
+                                <li><a href="blog-guides.html" class="active" aria-current="page" data-i18n="nav.ascentGuides">راهنمای صعود</a></li>
+                            </ul>
+                        </li>
                         <li><a href="assistant.html" data-i18n="nav.assistant">دستیار</a></li>
                         <li><a href="about.html" data-i18n="nav.about">درباره ما</a></li>
                         <li><a href="index.html#contact" data-i18n="nav.contact">تماس با ما</a></li>
@@ -137,7 +133,7 @@
         <img class="blog-hero-bg" src="images/blog/damavand-guide.png" alt="" loading="eager" fetchpriority="high">
         <div class="blog-hero-inner">
             <span class="blog-hero-badge" data-i18n="guides.badge">⛰ راهنمای صعود</span>
-            <h1 data-i18n="guides.title">راهنمای صعود کوه‌ها</h1>
+            <h1 data-i18n="guides.title">راهنمای صعود</h1>
             <p data-i18n="guides.subtitle">مسیر، پناهگاه، تجهیزات، فصل مناسب و نکات ایمنی — برای هر قله برنامه‌ریزی درست داشته باش</p>
         </div>
     </section>
@@ -146,46 +142,46 @@
         <div class="container">
             <div class="blog-section-nav-inner">
                 <a href="blog.html" data-i18n="guides.nav.articles">مقالات وبلاگ</a>
-                <a href="blog-guides.html" class="active" data-i18n="guides.nav.guides">راهنمای صعود کوه‌ها</a>
+                <a href="blog-guides.html" class="active" data-i18n="guides.nav.guides">راهنمای صعود</a>
             </div>
         </div>
     </div>
 
-    <div class="guides-toolbar">
+    <div class="blog-filters">
         <div class="container">
-            <div class="guides-toolbar-row">
-                <span class="guides-count" id="guidesCount">—</span>
-                <div class="guides-filter-group">
-                    <span class="guides-filter-label" data-i18n="guides.filter.region">رشته:</span>
-                    <button type="button" class="guide-filter-btn active" data-guide-region="all" data-i18n="guides.filter.all">همه</button>
-                    <button type="button" class="guide-filter-btn" data-guide-region="alborz" data-i18n="guides.filter.alborz">البرز</button>
-                    <button type="button" class="guide-filter-btn" data-guide-region="zagros" data-i18n="guides.filter.zagros">زاگرس</button>
-                    <button type="button" class="guide-filter-btn" data-guide-region="central" data-i18n="guides.filter.central">مرکزی</button>
-                    <button type="button" class="guide-filter-btn" data-guide-region="volcanic" data-i18n="guides.filter.volcanic">آتشفشانی</button>
-                </div>
+            <span class="guides-count" id="guidesCount">—</span>
+            <div class="blog-filter-list">
+                <span class="guides-filter-label" data-i18n="guides.filter.region">رشته:</span>
+                <button type="button" class="blog-filter-btn active" data-guide-region="all" data-i18n="guides.filter.all">همه</button>
+                <button type="button" class="blog-filter-btn" data-guide-region="alborz" data-i18n="guides.filter.alborz">البرز</button>
+                <button type="button" class="blog-filter-btn" data-guide-region="zagros" data-i18n="guides.filter.zagros">زاگرس</button>
+                <button type="button" class="blog-filter-btn" data-guide-region="central" data-i18n="guides.filter.central">مرکزی</button>
+                <button type="button" class="blog-filter-btn" data-guide-region="volcanic" data-i18n="guides.filter.volcanic">آتشفشانی</button>
             </div>
-            <div class="guides-filter-group">
+            <div class="blog-filter-list" style="margin-top:.65rem">
                 <span class="guides-filter-label" data-i18n="guides.filter.level">سطح:</span>
-                <button type="button" class="guide-filter-btn active" data-guide-difficulty="all" data-i18n="guides.filter.all">همه</button>
-                <button type="button" class="guide-filter-btn" data-guide-difficulty="beginner" data-i18n="guides.filter.beginner">مبتدی</button>
-                <button type="button" class="guide-filter-btn" data-guide-difficulty="intermediate" data-i18n="guides.filter.intermediate">متوسط</button>
-                <button type="button" class="guide-filter-btn" data-guide-difficulty="advanced" data-i18n="guides.filter.advanced">پیشرفته</button>
+                <button type="button" class="blog-filter-btn active" data-guide-difficulty="all" data-i18n="guides.filter.all">همه</button>
+                <button type="button" class="blog-filter-btn" data-guide-difficulty="beginner" data-i18n="guides.filter.beginner">مبتدی</button>
+                <button type="button" class="blog-filter-btn" data-guide-difficulty="intermediate" data-i18n="guides.filter.intermediate">متوسط</button>
+                <button type="button" class="blog-filter-btn" data-guide-difficulty="advanced" data-i18n="guides.filter.advanced">پیشرفته</button>
             </div>
         </div>
     </div>
 
-    <section class="guides-section">
+    <section class="blog-section">
         <div class="container">
-            <div class="guides-grid" id="guidesGrid"></div>
+            <div class="blog-grid" id="guidesGrid"></div>
             <p class="guides-empty" id="guidesEmpty" hidden data-i18n="guides.empty">راهنمایی با این فیلتر پیدا نشد.</p>
         </div>
     </section>
 
+    <script type="application/json" id="guidesData">{"guides":[{"id":"damavand","slug":"blog-damavand-guide.html","peakPage":"peaks/damavand.html","title":"راهنمای کامل صعود دماوند — از صفر تا قله ۵۶۱۰ متری","peakName":"دماوند","elevation":5610,"region":"alborz","regionLabel":"البرز مرکزی","difficulty":"advanced","difficultyLabel":"پیشرفته","days":"۲–۳ روز","season":"تابستان","excerpt":"مسیرهای صعود، پناهگاه‌ها، تجهیزات، بهترین فصل و نکات ایمنی برای آماده‌ترین صعود دماوند.","image":"images/blog/damavand-guide.png","featured":true,"dateFa":"خرداد ۱۴۰۴","readMinutes":12},{"id":"alamkooh","slug":"blog/blog-alamkooh-intro.html","peakPage":"peaks/alamkooh.html","title":"علم‌کوه — دیواره‌ای که کوهنوردان حرفه‌ای را می‌خواند","peakName":"علم‌کوه","elevation":4850,"region":"alborz","regionLabel":"البرز مرکزی","difficulty":"advanced","difficultyLabel":"پیشرفته","days":"۲ روز","season":"تابستان","excerpt":"معرفی دومین قله ایران، مسیر هاسک‌چال و چالش‌های دیواره شمالی.","image":"images/blog/alamkooh-intro.png","featured":false,"dateFa":"تیر ۱۴۰۵","readMinutes":8},{"id":"sabalan","slug":"blog/blog-sabalan.html","peakPage":"peaks/sabalan.html","title":"سبلان — آتشفشان خاموش با دریاچه‌ای در دهانه","peakName":"سبلان","elevation":4811,"region":"volcanic","regionLabel":"آتشفشانی","difficulty":"intermediate","difficultyLabel":"متوسط","days":"۱–۲ روز","season":"تابستان","excerpt":"کوه ۴۸۱۱ متری اردبیل با دریاچه یخی در دهانه — یکی از دیدنی‌ترین قله‌های ایران.","image":"images/blog/sabalan.png","featured":false,"dateFa":"اسفند ۱۴۰۳","readMinutes":7},{"id":"beginner-peaks","slug":"blog/blog-beginner-peaks.html","peakPage":null,"title":"۵ قله مناسب برای شروع کوهنوردی جدی","peakName":"چند قله","elevation":3500,"region":"all","regionLabel":"سراسر ایران","difficulty":"beginner","difficultyLabel":"مبتدی","days":"۱ روز","season":"بهار تا پاییز","excerpt":"توچال، کرکس، سهند، سبلان و دنا — پنج مقصد امن و انگیزه‌بخش برای اولین صعود جدی.","image":"images/blog/beginner-peaks.png","featured":false,"dateFa":"تیر ۱۴۰۵","readMinutes":7}]}</script>
+
     <script src="js/site-config.js"></script>
     <script src="js/footer-snippet.js"></script>
     <script src="js/i18n-boot.js" defer></script>
-    <script src="js/site-chrome.js" defer></script>
-    <script src="js/app.js" defer></script>
-    <script src="js/blog-guides-page.js" defer></script>
+    <script src="js/site-enhancements.js" defer></script>
+    <script src="js/app.js"></script>
+    <script src="js/blog-guides-page.js"></script>
 </body>
 </html>
