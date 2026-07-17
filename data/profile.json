@@ -9,6 +9,8 @@
   "phone": "09302323986",
   "phoneDisplay": "۰۹۳۰۲۳۲۳۹۸۶",
   "phoneIntl": "+989302323986",
+  "avatar": "images/profile-emad.png",
+  "avatarAlt": "عماد شهابیان",
   "bio": "مهندس DevOps با تجربه در اتوماسیون، CI/CD، Kubernetes و معماری میکروسرویس. در محیط‌های عملیاتی با چالش‌های زیرساختی واقعی کار کرده‌ام — از مدیریت کلاستر و مانیتورینگ تا پلتفرم‌های بک‌آپ، Help Desk و Active Directory. به ساخت زیرساخت پایدار، خودکارسازی فرایندها و یادگیری مستمر در اکوسیستم DevOps علاقه‌مندم.",
   "bioEn": "DevOps Engineer experienced in automation, CI/CD, Kubernetes, and microservices architecture. I have worked in production environments with real infrastructure challenges — from cluster management and monitoring to backup platforms, help desk, and Active Directory. Passionate about building reliable infrastructure, automating workflows, and continuous learning in the DevOps ecosystem.",
   "education": [
@@ -165,5 +167,19 @@
     { "value": "۱۵+", "label": "سال تجربه IT", "labelEn": "Years in IT" },
     { "value": "K8s", "label": "Kubernetes و DevOps", "labelEn": "Kubernetes & DevOps" },
     { "value": "LPIC1", "label": "Linux Certified", "labelEn": "Linux Certified" }
+  ],
+  "typedRoles": [
+    "مهندس DevOps",
+    "DevOps Engineer",
+    "متخصص Kubernetes",
+    "مهندس زیرساخت"
+  ],
+  "skillBars": [
+    { "name": "Kubernetes", "percent": 90 },
+    { "name": "Docker", "percent": 92 },
+    { "name": "CI/CD", "percent": 88 },
+    { "name": "Linux", "percent": 90 },
+    { "name": "VMware", "percent": 85 },
+    { "name": "Active Directory", "percent": 88 }
   ]
 }

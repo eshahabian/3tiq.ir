@@ -6,100 +6,27 @@
     <title>درباره من | عماد شهابیان — DevOps Engineer</title>
     <meta name="description" content="رزومه آنلاین عماد شهابیان — مهندس DevOps، Kubernetes، CI/CD، VMware و Active Directory.">
     <link rel="canonical" href="https://3tiq.ir/about.html">
-    <meta property="og:title" content="درباره من | سه تیغ">
+    <meta property="og:title" content="درباره من | عماد شهابیان">
     <meta property="og:url" content="https://3tiq.ir/about.html">
     <meta property="og:type" content="profile">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#7A5C18">
+    <meta name="theme-color" content="#141421">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/i18n.css">
-    <link rel="stylesheet" href="css/site-enhancements.css">
+    <link rel="stylesheet" href="css/resume-sergio.css">
 </head>
-<body>
+<body class="sv-body">
 
-    <a href="#main-content" class="skip-link" data-i18n="nav.skip">رفتن به محتوای اصلی</a>
+    <a href="#svMain" class="sv-skip">رفتن به محتوا</a>
 
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo"><a href="index.html"><img src="logo.png" alt="سه تیغ" class="logo-img" width="140" height="70"></a></div>
-                <nav class="nav-menu" id="navMenu" aria-label="منوی اصلی">
-                    <ul>
-                        <li><a href="index.html" data-i18n="nav.home">صفحه اصلی</a></li>
-                        <li class="has-dropdown">
-                            <a href="index.html#peaks" data-i18n="nav.ranges">رشته‌کوه‌های ایران</a>
-                            <ul class="dropdown">
-                                <li class="has-dropdown-sub"><a href="#">البرز ◂</a><ul class="dropdown-sub">
-                                    <li><a href="alborz-gharbi.html" data-i18n="nav.alborzWest">البرز غربی</a></li>
-                                    <li><a href="alborz-markazi.html" data-i18n="nav.alborzCentral">البرز مرکزی</a></li>
-                                    <li><a href="alborz-shargi.html" data-i18n="nav.alborzEast">البرز شرقی</a></li>
-                                </ul></li>
-                                <li class="has-dropdown-sub"><a href="#">زاگرس ◂</a><ul class="dropdown-sub">
-                                    <li><a href="zagros-shomal.html" data-i18n="nav.zagrosNorth">زاگرس شمالی</a></li>
-                                    <li><a href="zagros-markazi.html" data-i18n="nav.zagrosCentral">زاگرس مرکزی</a></li>
-                                    <li><a href="zagros-jonoob.html" data-i18n="nav.zagrosSouth">زاگرس جنوبی</a></li>
-                                </ul></li>
-                                <li><a href="koohaye-markazi.html" data-i18n="nav.centralPeaks">کوه‌های مرکزی ایران</a></li>
-                                <li><a href="koohaye-atashfeshani.html" data-i18n="nav.volcanicPeaks">کوه‌های آتشفشانی و منفرد</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
-                        <li><a href="sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
-                        <li class="has-dropdown">
-                            <a href="blog.html" data-i18n="nav.blog">وبلاگ</a>
-                            <ul class="dropdown">
-                                <li><a href="blog.html" data-i18n="guides.nav.articles">مقالات</a></li>
-                                <li><a href="blog-guides.html" data-i18n="nav.ascentGuides">راهنمای صعود</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="assistant.html" data-i18n="nav.assistant">دستیار</a></li>
-                        <li><a href="about.html" class="active" aria-current="page" data-i18n="nav.about">درباره من</a></li>
-                    </ul>
-                </nav>
-                <div class="nav-overlay" id="navOverlay"></div>
-                <div class="header-actions">
-                    <div class="lang-switch" id="langSwitch" role="group" aria-label="Language">
-                        <button type="button" class="lang-switch-btn active" data-lang="fa" aria-pressed="true">فا</button>
-                        <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false">EN</button>
-                    </div>
-                    <button class="theme-toggle" id="themeToggle" data-i18n-attr="aria-label:nav.theme" aria-label="تغییر تم">
-                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
-                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    </button>
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" data-i18n-attr="aria-label:nav.menu" aria-label="منو"><span></span><span></span><span></span></button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="resumeApp" class="sv-app" aria-live="polite">
+        <p class="sv-loading">در حال بارگذاری…</p>
+    </div>
 
-    <main id="main-content" class="resume-page">
-        <div class="container">
-            <div id="resumeFull" class="resume-full" aria-live="polite">
-                <p class="resume-loading">در حال بارگذاری…</p>
-            </div>
-
-            <aside class="resume-site-note reveal">
-                <h2 data-i18n="about.site.title">درباره سه تیغ</h2>
-                <p data-i18n="about.site.text">سه تیغ راهنمای جامع کوهنوردی ایران است — ۷۶+ قله با نقشه مسیر، پناهگاه، مقالات ایمنی و برنامه‌ریز سفر. محتوا از تجربه میدانی و منابع معتبر تهیه و به‌روزرسانی می‌شود.</p>
-                <div class="about-stats about-stats--compact">
-                    <div class="about-stat"><div class="about-stat-num">۷۶+</div><div class="about-stat-label" data-i18n="about.stat.peaks">پروفایل قله</div></div>
-                    <div class="about-stat"><div class="about-stat-num">۵۰+</div><div class="about-stat-label" data-i18n="about.stat.shelters">پناهگاه</div></div>
-                    <div class="about-stat"><div class="about-stat-num">۱۵+</div><div class="about-stat-label" data-i18n="about.stat.guides">راهنما و مقاله</div></div>
-                </div>
-            </aside>
-        </div>
-    </main>
-
-    <button class="back-to-top" id="backToTop" data-i18n-attr="aria-label:common.backToTop" aria-label="برگشت به بالا">↑</button>
+    <div class="sv-overlay" id="svOverlay" hidden></div>
 
     <script src="js/site-config.js"></script>
-    <script src="js/footer-snippet.js"></script>
     <script src="js/i18n-boot.js" defer></script>
-    <script src="js/site-chrome.js" defer></script>
-    <script src="js/site-enhancements.js" defer></script>
     <script src="js/profile-render.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <script src="js/resume-spa.js" defer></script>
 </body>
 </html>
