@@ -2244,19 +2244,20 @@ a:focus:not(:focus-visible) {
 }
 
 .sh-card-desc {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-light);
-    line-height: 1.75;
+    line-height: 1.7;
     flex: 1;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-height: 5.5em;
 }
 
 .sh-divider {
     height: 1px;
-    margin: 0.85rem 1.1rem;
+    margin: 0.65rem 1.1rem 0.85rem;
     background-image: repeating-linear-gradient(to left, rgba(58, 50, 38, 0.15) 0 5px, transparent 5px 10px);
 }
 
@@ -2297,12 +2298,12 @@ a:focus:not(:focus-visible) {
 .sh-stat.no  .sh-stat-value { color: #9a3a2a; }
 
 .sh-history {
-    padding: 0 1.1rem 0.55rem;
-    font-size: 0.75rem;
+    padding: 0 1.1rem 0.75rem;
+    font-size: 0.78rem;
     color: var(--text-light);
     line-height: 1.65;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
