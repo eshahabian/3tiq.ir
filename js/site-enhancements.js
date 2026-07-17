@@ -124,10 +124,25 @@
         });
     }
 
+    function loadScrollAnimations() {
+        if (prefersReducedMotion()) return;
+        var bp = basePath();
+        if (global.ScrollAnimations) return;
+        var s = document.createElement('script');
+        s.src = bp + 'js/scroll-animations.js';
+        s.defer = true;
+        document.body.appendChild(s);
+    }
+
+    function prefersReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
     function init() {
         registerServiceWorker();
         injectEmergencyUi();
         initAdventureMode();
+        loadScrollAnimations();
         if (peakSlug()) {
             document.body.classList.add('peak-page');
             injectPeakTrust();
