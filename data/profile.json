@@ -1,76 +1,169 @@
 {
   "name": "عماد شهابیان",
   "nameEn": "Emad Eshahabian",
-  "title": "کوهنورد · توسعه‌دهنده وب · سازنده سه تیغ",
-  "titleEn": "Mountaineer · Web Developer · Creator of 3Tiq",
+  "title": "مهندس DevOps",
+  "titleEn": "DevOps Engineer",
   "location": "تهران، ایران",
   "locationEn": "Tehran, Iran",
-  "bio": "علاقه‌مند جدی به کوهنوردی و طبیعت ایران. سه تیغ را از دل تجربه صعود و نیاز به یک راهنمای دقیق فارسی ساختم — جایی که مسیر، پناهگاه، نقشه و ایمنی کنار هم باشند. علاوه بر کوه، به توسعه وب، تولید محتوا و ساخت ابزارهای کاربردی (مثل دستیار کوهنوردی) علاقه دارم.",
-  "bioEn": "Passionate about mountaineering and Iran's mountains. I built 3Tiq from field experience and the need for accurate Persian guides — routes, shelters, maps, and safety in one place. I also enjoy web development, content creation, and practical tools like the mountaineering assistant.",
+  "email": "eshahabian@gmail.com",
+  "phone": "09302323986",
+  "phoneDisplay": "۰۹۳۰۲۳۲۳۹۸۶",
+  "phoneIntl": "+989302323986",
+  "bio": "مهندس DevOps با تجربه در اتوماسیون، CI/CD، Kubernetes و معماری میکروسرویس. در محیط‌های عملیاتی با چالش‌های زیرساختی واقعی کار کرده‌ام — از مدیریت کلاستر و مانیتورینگ تا پلتفرم‌های بک‌آپ، Help Desk و Active Directory. به ساخت زیرساخت پایدار، خودکارسازی فرایندها و یادگیری مستمر در اکوسیستم DevOps علاقه‌مندم.",
+  "bioEn": "DevOps Engineer experienced in automation, CI/CD, Kubernetes, and microservices architecture. I have worked in production environments with real infrastructure challenges — from cluster management and monitoring to backup platforms, help desk, and Active Directory. Passionate about building reliable infrastructure, automating workflows, and continuous learning in the DevOps ecosystem.",
   "education": [
     {
-      "degree": "کارشناسی — (رشته خود را اینجا بنویس)",
-      "degreeEn": "Bachelor's — (your field here)",
-      "school": "نام دانشگاه",
-      "schoolEn": "University name",
-      "years": "۱۳۹۸ — ۱۴۰۲",
-      "detail": "توضیح کوتاه: گرایش، پروژه‌های مرتبط یا معدل — در صورت تمایل."
+      "degree": "کارشناسی مهندسی مکاترونیک",
+      "degreeEn": "B.Sc. Mechatronics Engineering",
+      "school": "مؤسسه Macromedia — تهران",
+      "schoolEn": "Macromedia Institute — Tehran",
+      "years": "۱۳۸۹ — ۱۳۹۳",
+      "detail": ""
+    },
+    {
+      "degree": "دوره زبان انگلیسی",
+      "degreeEn": "English Language Course",
+      "school": "تهران",
+      "schoolEn": "Tehran",
+      "years": "۱۳۸۳ — ۱۳۸۵",
+      "detail": ""
     }
   ],
   "skills": [
     {
-      "category": "کوهنوردی",
-      "categoryEn": "Mountaineering",
-      "items": ["صعود قله‌های البرز و زاگرس", "نقشه‌خوانی و GPS", "برنامه‌ریزی سفر کوهستانی", "ایمنی و تجهیزات", "تولید محتوای راهنما"]
+      "category": "DevOps و اتوماسیون",
+      "categoryEn": "DevOps & Automation",
+      "items": ["Kubernetes", "Docker", "CI/CD", "Jenkins", "GitLab", "Rancher", "Portainer", "Python", "Bash"]
     },
     {
-      "category": "فنی و وب",
-      "categoryEn": "Tech & Web",
-      "items": ["HTML / CSS / JavaScript", "طراحی رابط کاربری", "Leaflet و نقشه تعاملی", "Git و دیپلوی", "PWA و بهینه‌سازی موبایل"]
+      "category": "زیرساخت و شبکه",
+      "categoryEn": "Infrastructure & Networking",
+      "items": ["VMware", "VMware Horizon", "Nginx", "HAProxy", "Load Balancing", "MikroTik", "Network+", "Passive & Active", "NetBox", "JumpServer"]
     },
     {
-      "category": "محتوا و زبان",
-      "categoryEn": "Content",
-      "items": ["نویسندگی فارسی تخصصی", "SEO و ساختار مقاله", "عکاسی کوهستان", "ویرایش و بازبینی محتوا"]
+      "category": "سیستم و سرویس‌ها",
+      "categoryEn": "Systems & Services",
+      "items": ["Linux (LPIC1)", "Microsoft Active Directory", "Microsoft DFS", "Veeam Backup", "NextCloud", "IceWarp", "Webmin", "OPManager", "ServiceDesk Plus", "EndPoint Central", "ICDL"]
     }
   ],
   "experience": [
     {
-      "role": "سازنده و مدیر محتوا",
-      "roleEn": "Founder & Content Lead",
-      "org": "سه تیغ — 3tiq.ir",
-      "period": "۱۴۰۳ — اکنون",
-      "periodEn": "2024 — Present",
+      "role": "سرپرست DevOps",
+      "roleEn": "DevOps Supervisor",
+      "org": "Arena Vision — تهران",
+      "period": "اسفند ۱۴۰۱ — اکنون",
+      "periodEn": "Feb 2023 — Present",
       "bullets": [
-        "طراحی و توسعه راهنمای جامع ۷۶+ قله با نقشه مسیر و پناهگاه",
-        "نویسندگی مقالات ایمنی، راهنمای صعود و وبلاگ کوهنوردی",
-        "ساخت برنامه‌ریز تور، دستیار هوشمند و نقشه‌های تعاملی"
+        "استقرار و مدیریت کلاستر Kubernetes در محیط‌های عملیاتی",
+        "مدیریت و بهینه‌سازی سرورهای لینوکس برای Kubernetes",
+        "استقرار NetBox برای مدیریت IP و مستندسازی زیرساخت شبکه",
+        "استقرار و مدیریت JumpServer برای بیش از ۷۰ سرور",
+        "مدیریت بیش از ۷۰ ماشین مجازی با VMware Horizon",
+        "راه‌اندازی سیستم Help Desk با ServiceDesk Plus",
+        "استقرار Microsoft DFS برای پوشه‌های اشتراکی و مدیریت داده",
+        "مانیتورینگ شبکه با OPManager",
+        "مدیریت Patch از راه دور با EndPoint Central",
+        "پیکربندی روترهای MikroTik برای ارتباط بین شعب",
+        "مدیریت سرورهای لینوکس با Webmin",
+        "استقرار NextCloud برای همگام‌سازی فایل و مدیریت داده",
+        "مدیریت Active Directory"
       ],
       "bulletsEn": [
-        "Built a guide covering 76+ peaks with route maps and shelters",
-        "Authored safety articles, ascent guides, and mountaineering blog posts",
-        "Developed trip planner, AI assistant, and interactive maps"
+        "Deployed and managed Kubernetes clusters in production environments",
+        "Managed and optimized Linux servers for Kubernetes workloads",
+        "Deployed NetBox for IP management and network documentation",
+        "Deployed and managed JumpServer for 70+ servers",
+        "Managed 70+ VMs with VMware Horizon",
+        "Implemented Help Desk with ServiceDesk Plus",
+        "Deployed Microsoft DFS for shared folders and data management",
+        "Network monitoring with OPManager",
+        "Remote patch management with EndPoint Central",
+        "Configured MikroTik routers for inter-branch connectivity",
+        "Linux server management with Webmin",
+        "Deployed NextCloud for file sync and data management",
+        "Active Directory administration"
       ]
     },
     {
-      "role": "(عنوان شغل قبلی)",
-      "roleEn": "(Previous job title)",
-      "org": "(نام شرکت یا سازمان)",
-      "period": "(سال شروع — پایان)",
-      "periodEn": "(years)",
+      "role": "سرپرست IT",
+      "roleEn": "IT Supervisor",
+      "org": "Passive & Active — تهران",
+      "period": "۱۳۹۷ — ۱۴۰۱",
+      "periodEn": "2018 — 2023",
       "bullets": [
-        "شرح مسئولیت یا دستاورد اول",
-        "شرح مسئولیت یا دستاورد دوم"
+        "نگهداری سخت‌افزار و نرم‌افزار و مدیریت ارتباط شبکه بین ایستگاه‌ها",
+        "استقرار Microsoft DFS برای مدیریت پوشه‌های اشتراکی و داده",
+        "مدیریت Active Directory",
+        "استقرار EndPoint Central برای مدیریت یکپارچه Endpoint، Patch و دسترسی از راه دور",
+        "پیکربندی MikroTik برای ارتباط بین تهران، کرج و هشتگرد",
+        "مانیتورینگ و نگهداری دستگاه‌های GPS و گزارش‌دهی دقت داده"
       ],
       "bulletsEn": [
-        "First responsibility or achievement",
-        "Second responsibility or achievement"
+        "Hardware and software maintenance; network connectivity between stations",
+        "Microsoft DFS deployment for shared folders and data administration",
+        "Active Directory management",
+        "EndPoint Central for unified endpoint management, patching, and remote admin",
+        "MikroTik configuration for Tehran, Karaj, and Hashtgerd connectivity",
+        "GPS device monitoring, reporting, and data accuracy"
+      ]
+    },
+    {
+      "role": "مسئول شبکه",
+      "roleEn": "Network Administrator",
+      "org": "شرکت فنی تعمیرات — تهران",
+      "period": "۱۳۸۶ — ۱۳۸۹",
+      "periodEn": "2007 — 2010",
+      "bullets": [
+        "راه‌اندازی و نگهداری Domain Controller",
+        "راه‌اندازی دیتاسنتر داخلی با دسترس‌پذیری بالا",
+        "پیکربندی و مدیریت شبکه دامنه با Active Directory",
+        "راه‌اندازی Print Server",
+        "راه‌اندازی Microsoft Exchange Server"
+      ],
+      "bulletsEn": [
+        "Domain Controller setup and maintenance",
+        "Internal data center with high availability",
+        "Domain network with Active Directory — user management and access control",
+        "Print Server deployment",
+        "Microsoft Exchange Server deployment"
       ]
     }
   ],
+  "certificates": [
+    { "name": "DevOps", "year": "۱۴۰۳" },
+    { "name": "Microsoft Active Directory", "year": "" },
+    { "name": "MCSA", "year": "" },
+    { "name": "IceWarp Mail Server", "year": "" },
+    { "name": "Network+", "year": "" },
+    { "name": "MTCNA (MikroTik)", "year": "" },
+    { "name": "LPIC1", "year": "" },
+    { "name": "ICDL", "year": "" }
+  ],
+  "languages": [
+    {
+      "name": "فارسی",
+      "nameEn": "Persian",
+      "level": "زبان مادری",
+      "levelEn": "Native"
+    },
+    {
+      "name": "انگلیسی",
+      "nameEn": "English",
+      "level": "خواندن · نوشتن · شنیداری · مکالمه",
+      "levelEn": "Reading · Writing · Listening · Speaking"
+    }
+  ],
+  "interests": [
+    "کوهنوردی",
+    "طبیعت کردستان"
+  ],
+  "interestsEn": [
+    "Mountaineering",
+    "Nature of Kurdistan"
+  ],
   "highlights": [
-    { "value": "۱۰+", "label": "سال کوهنوردی", "labelEn": "Years mountaineering" },
-    { "value": "۷۶+", "label": "پروفایل قله در سه تیغ", "labelEn": "Peak profiles on 3Tiq" },
-    { "value": "۱۵+", "label": "مقاله و راهنما", "labelEn": "Articles & guides" }
+    { "value": "۱۵+", "label": "سال تجربه IT", "labelEn": "Years in IT" },
+    { "value": "K8s", "label": "Kubernetes و DevOps", "labelEn": "Kubernetes & DevOps" },
+    { "value": "LPIC1", "label": "Linux Certified", "labelEn": "Linux Certified" }
   ]
 }
