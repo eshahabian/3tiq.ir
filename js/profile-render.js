@@ -271,7 +271,9 @@
             '<a href="' + bp() + 'about.html" class="btn btn-primary resume-teaser-btn">' + esc(i18n('resume.fullLink', 'مشاهده رزومه تعاملی ←')) + '</a>' +
             '</div>' +
             '<div class="resume-teaser-card">' +
-            '<div class="resume-avatar resume-avatar--lg resume-avatar--initials" aria-hidden="true">' + esc(initials(t(profile.name, profile.nameEn))) + '</div>' +
+            (profile.avatar
+                ? '<div class="resume-avatar resume-avatar--lg resume-avatar--photo"><img src="' + bp() + esc(profile.avatar) + '" alt="' + esc(t(profile.name, profile.nameEn)) + '" width="104" height="104" loading="lazy"></div>'
+                : '<div class="resume-avatar resume-avatar--lg resume-avatar--initials" aria-hidden="true">' + esc(initials(t(profile.name, profile.nameEn))) + '</div>') +
             '<ul class="resume-teaser-stats">' +
             (profile.highlights || []).map(function (h) {
                 return '<li><strong>' + esc(h.value) + '</strong><span>' + esc(t(h.label, h.labelEn)) + '</span></li>';
