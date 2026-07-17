@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "id": "hydration-high-altitude",
+      "slug": "blog/blog-hydration-high-altitude.html",
+      "title": "آبرسانی در ارتفاع — چقدر آب باید بنوشی؟",
+      "excerpt": "در کوهستان، به‌خصوص بالای ۳۰۰۰ متر، بدن آب بیشتری از دست می‌دهد. راهنمای عملی برای نوشیدن کافی، تشخیص کم‌آبی و انتخاب منبع آب.",
+      "image": "images/blog/hydration-high-altitude.png",
+      "cat": "safety",
+      "dateFa": "۲۶ تیر ۱۴۰۵"
+    },
+    {
       "id": "thunderstorm-safety",
       "slug": "blog/blog-thunderstorm-safety.html",
       "title": "طوفان و رعد و برق در کوه — راهنمای امنیت تابستانی",
@@ -9,6 +18,8 @@
       "cat": "safety",
       "dateFa": "۲۱ تیر ۱۴۰۵"
     },
+    {
+      "id": "knots-guide",
       "slug": "blog/blog-knots-guide.html",
       "title": "گره‌های ضروری کوهنوردی — آموزش تصویری",
       "excerpt": "۸ گره که هر کوهنورد باید بلد باشد: هشت، گرگور، باریکوند، پروسیک، پروانه، ماهیگیر، آبکند و مونتر — با عکس و مراحل بستن.",
