@@ -1,7 +1,7 @@
 /* Blog post hero banner + image framing */
 .post-hero {
-    height: 60vh;
-    min-height: 400px;
+    height: 65vh;
+    min-height: 440px;
 }
 
 .post-hero-img,
