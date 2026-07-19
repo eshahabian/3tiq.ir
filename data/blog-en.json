@@ -1,5 +1,10 @@
 {
   "cards": {
+    "weather-check": {
+      "title": "How to Check Mountain Weather Before Your Climb",
+      "excerpt": "Trusted forecast sources for Iran's mountains, danger signs and when to cancel — a 15-minute pre-trip guide.",
+      "date": "20 Jul 2026"
+    },
     "pre-ascent-checklist": {
       "title": "Pre-Ascent Checklist — 10 Things You Must Not Forget",
       "excerpt": "Weather, gear, route, team and communication — a practical list to review before every climb.",
@@ -52,6 +57,25 @@
     }
   },
   "posts": {
+    "weather-check": {
+      "title": "How to Check Mountain Weather Before Your Climb | 3Tiq",
+      "description": "Forecast sources, summit vs valley conditions, red flags and when to turn back.",
+      "heroTitle": "How to Check Weather<br>Before Your Climb",
+      "categoryBadge": "💡 Tips",
+      "breadcrumbCat": "Tips",
+      "date": "20 Jul 2026",
+      "readMin": "7",
+      "contentFile": "weather-check.html",
+      "toc": [
+        { "href": "#why", "label": "Valley vs summit" },
+        { "href": "#sources", "label": "Forecast sources" },
+        { "href": "#checklist", "label": "What to check" },
+        { "href": "#cancel", "label": "When to cancel" },
+        { "href": "#ontrail", "label": "Signs on the trail" },
+        { "href": "#plan", "label": "Planning workflow" },
+        { "href": "#mistakes", "label": "Common mistakes" }
+      ]
+    },
     "pre-ascent-checklist": {
       "title": "Pre-Ascent Checklist — 10 Essentials | 3Tiq",
       "description": "Before every climb check these 10 items: weather, gear, route, team, communication and safety essentials.",

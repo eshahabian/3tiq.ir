@@ -1,7 +1,14 @@
 {
   "posts": [
     {
-      "id": "hydration-high-altitude",
+      "id": "weather-check",
+      "slug": "blog/blog-weather-check.html",
+      "title": "چطور قبل از صعود آب‌وهوا را چک کنیم؟",
+      "excerpt": "منابع معتبر پیش‌بینی برای کوهستان ایران، علائم خطر و زمان لغو صعود — راهنمای ۱۵ دقیقه‌ای قبل از هر برنامه.",
+      "image": "images/peaks/asmankooh.jpg",
+      "cat": "tips",
+      "dateFa": "۳۰ تیر ۱۴۰۵"
+    },
       "slug": "blog/blog-hydration-high-altitude.html",
       "title": "آبرسانی در ارتفاع — چقدر آب باید بنوشی؟",
       "excerpt": "در کوهستان، به‌خصوص بالای ۳۰۰۰ متر، بدن آب بیشتری از دست می‌دهد. راهنمای عملی برای نوشیدن کافی، تشخیص کم‌آبی و انتخاب منبع آب.",
