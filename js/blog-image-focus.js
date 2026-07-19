@@ -30,7 +30,7 @@
     }
 
     function apply(el, pos) {
-        if (el && pos) el.style.objectPosition = pos;
+        if (el && pos) el.style.setProperty('object-position', pos, 'important');
     }
 
     function applyAll() {

@@ -1,18 +1,7 @@
-/* Shared blog hero/card image framing — show climber heads, not crop tops */
+/* Blog hero/card framing — anchor from top so climber heads stay visible in wide crops */
 .post-hero-img,
 .blog-card-img img,
 .related-thumb {
-    object-position: center 22%;
-}
-
-.post-hero-img {
     object-fit: cover;
-}
-
-.blog-card-img img {
-    object-fit: cover;
-}
-
-.related-thumb {
-    object-fit: cover;
+    object-position: center top;
 }
