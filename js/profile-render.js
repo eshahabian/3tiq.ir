@@ -45,7 +45,7 @@
         if (profile.avatar) {
             return (
                 '<div class="sv-avatar sv-avatar--photo' + (sizeClass ? ' ' + sizeClass : '') + '">' +
-                '<img src="' + bp() + esc(profile.avatar) + '" alt="' + esc(alt) + '" width="110" height="110" loading="eager" decoding="async">' +
+                '<img src="' + bp() + esc(profile.avatar) + '" alt="' + esc(alt) + '" width="' + (sizeClass === 'sv-avatar--hero' ? '148' : '110') + '" height="' + (sizeClass === 'sv-avatar--hero' ? '148' : '110') + '" loading="eager" decoding="async">' +
                 '</div>'
             );
         }
@@ -127,6 +127,96 @@
         }).join('');
     }
 
+    function firstName(full) {
+        var parts = String(full || '').trim().split(/\s+/);
+        return parts[0] || full;
+    }
+
+    function homeKeywords(tagline) {
+        return String(tagline || '').split(/\s*[·•|]\s*/).filter(Boolean);
+    }
+
+    function heroTitleHtml(name) {
+        var fname = firstName(name);
+        if (isEn()) {
+            return 'Hi, I\'m <span class="sv-hero-highlight">' + esc(fname) + '</span>';
+        }
+        return (
+            esc(i18n('resume.home.greet', 'سلام،')) + '<br>' +
+            esc(i18n('resume.home.im', 'من')) + ' <span class="sv-hero-highlight">' + esc(fname) + '</span> ' +
+            esc(i18n('resume.home.am', 'هستم'))
+        );
+    }
+
+    function renderHomePanel(opts) {
+        var currentJob = opts.currentJob;
+        var keywords = homeKeywords(opts.homeTagline);
+        var keywordHtml = keywords.map(function (k) {
+            return '<span class="sv-hero-keyword">' + esc(k.trim()) + '</span>';
+        }).join('');
+
+        var statusLabel = currentJob
+            ? esc(t(currentJob.role, currentJob.roleEn)) + ' · ' + esc(String(currentJob.org).split('—')[0].trim())
+            : esc(opts.location);
+
+        var quickLinks = [
+            { id: 'about', label: i18n('resume.nav.about', 'درباره من'), desc: i18n('resume.home.aboutDesc', 'معرفی و خلاصه') },
+            { id: 'resume', label: i18n('resume.nav.resume', 'رزومه'), desc: i18n('resume.home.resumeDesc', 'تحصیلات و سوابق') },
+            { id: 'skills', label: i18n('resume.nav.skills', 'مهارت‌ها'), desc: i18n('resume.home.skillsDesc', 'فنی و تخصصی') },
+            { id: 'contact', label: i18n('resume.nav.contact', 'تماس'), desc: i18n('resume.home.contactDesc', 'ایمیل و تلفن') }
+        ];
+
+        var linksHtml = quickLinks.map(function (link) {
+            return (
+                '<button type="button" class="sv-bento-link" data-goto="' + link.id + '">' +
+                '<span class="sv-bento-link-top">' +
+                '<span class="sv-bento-link-label">' + esc(link.label) + '</span>' +
+                '<span class="sv-bento-link-arrow" aria-hidden="true">←</span>' +
+                '</span>' +
+                '<span class="sv-bento-link-desc">' + esc(link.desc) + '</span>' +
+                '</button>'
+            );
+        }).join('');
+
+        return (
+            '<section class="sv-panel is-active" data-panel="home">' +
+            '<div class="sv-panel-inner sv-home">' +
+
+            '<div class="sv-hero-card">' +
+            '<div class="sv-hero-card-bg" aria-hidden="true"></div>' +
+            '<div class="sv-hero-grid">' +
+
+            '<div class="sv-hero-content">' +
+            '<p class="sv-hero-badge"><span class="sv-hero-pulse" aria-hidden="true"></span>' + statusLabel + '</p>' +
+            '<h1 class="sv-hero-title">' + heroTitleHtml(opts.name) + '</h1>' +
+            '<p class="sv-hero-subtitle">' + esc(opts.title) + '</p>' +
+            '<p class="sv-hero-lead">' + esc(opts.homeIntro) + '</p>' +
+            (keywordHtml ? '<div class="sv-hero-keywords">' + keywordHtml + '</div>' : '') +
+            '<div class="sv-hero-actions">' +
+            '<button type="button" class="sv-btn sv-btn--primary" data-goto="resume">' + esc(i18n('resume.viewResume', 'مشاهده رزومه')) + '</button>' +
+            '<button type="button" class="sv-btn sv-btn--ghost" data-goto="contact">' + esc(i18n('resume.contactBtn', 'تماس با من')) + '</button>' +
+            '</div>' +
+            '</div>' +
+
+            '<div class="sv-hero-aside">' +
+            avatarHtml('sv-avatar--hero') +
+            '<p class="sv-hero-location">' +
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>' +
+            esc(opts.location) +
+            '</p>' +
+            '</div>' +
+
+            '</div></div>' +
+
+            '<div class="sv-bento">' +
+            '<div class="sv-bento-stats">' + opts.highlightsHtml + '</div>' +
+            '<div class="sv-bento-nav">' + linksHtml + '</div>' +
+            '</div>' +
+
+            '</div></section>'
+        );
+    }
+
     function summaryHtml(text) {
         return String(text).split(/\n\n+/).map(function (p) {
             return '<p class="sv-text">' + esc(p.trim()) + '</p>';
@@ -185,15 +275,7 @@
             );
         }).join('');
 
-        var focusAreas = t(profile.focusAreas, profile.focusAreasEn) || [];
-        var focusHtml = focusAreas.map(function (f) {
-            return (
-                '<div class="sv-focus-card">' +
-                '<span class="sv-focus-icon" aria-hidden="true">' + esc(f.icon || '') + '</span>' +
-                '<strong>' + esc(f.title) + '</strong>' +
-                '<p>' + esc(f.desc) + '</p></div>'
-            );
-        }).join('');
+        var currentJob = (profile.experience || [])[0] || null;
 
         var langs = (profile.languages || []).map(function (lang) {
             return '<li><strong>' + esc(t(lang.name, lang.nameEn)) + '</strong> — ' + esc(t(lang.level, lang.levelEn)) + '</li>';
@@ -228,18 +310,15 @@
             '<div class="sv-panels">' +
 
             /* HOME */
-            '<section class="sv-panel is-active" data-panel="home">' +
-            '<div class="sv-panel-inner sv-home">' +
-            '<p class="sv-eyebrow">' + esc(i18n('resume.welcome', 'سلام، خوش آمدید')) + '</p>' +
-            '<h1 class="sv-home-name">' + esc(name) + '</h1>' +
-            '<p class="sv-home-role">' + esc(title) + '</p>' +
-            '<p class="sv-home-tagline">' + esc(homeTagline) + '</p>' +
-            '<p class="sv-home-intro">' + esc(homeIntro) + '</p>' +
-            '<div class="sv-focus-row">' + focusHtml + '</div>' +
-            '<div class="sv-home-actions">' +
-            '<button type="button" class="sv-btn sv-btn--primary" data-goto="about">' + esc(i18n('resume.viewAbout', 'درباره من')) + '</button>' +
-            '<button type="button" class="sv-btn sv-btn--ghost" data-goto="contact">' + esc(i18n('resume.contactBtn', 'تماس با من')) + '</button>' +
-            '</div></div></section>' +
+            renderHomePanel({
+                name: name,
+                title: title,
+                location: location,
+                homeIntro: homeIntro,
+                homeTagline: homeTagline,
+                currentJob: currentJob,
+                highlightsHtml: highlights
+            }) +
 
             /* ABOUT */
             '<section class="sv-panel" data-panel="about">' +
