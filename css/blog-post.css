@@ -1,4 +1,9 @@
-/* Blog hero/card framing — anchor from top so climber heads stay visible in wide crops */
+/* Blog post hero banner + image framing */
+.post-hero {
+    height: 60vh;
+    min-height: 400px;
+}
+
 .post-hero-img,
 .blog-card-img img,
 .related-thumb {
