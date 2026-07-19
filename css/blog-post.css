@@ -1,0 +1,18 @@
+/* Shared blog hero/card image framing — show climber heads, not crop tops */
+.post-hero-img,
+.blog-card-img img,
+.related-thumb {
+    object-position: center 22%;
+}
+
+.post-hero-img {
+    object-fit: cover;
+}
+
+.blog-card-img img {
+    object-fit: cover;
+}
+
+.related-thumb {
+    object-fit: cover;
+}

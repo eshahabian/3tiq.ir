@@ -85,8 +85,14 @@ def watermark_image(src: Path, dst: Path | None = None) -> Path:
     draw.text((tx, ty), LINE1, font=font_main, fill=(255, 255, 255, 245))
     draw.text((tx, ty + h1 + gap), LINE2, font=font_sub, fill=(210, 200, 185, 230))
 
-    merged = Image.alpha_composite(base, overlay).convert("RGB")
-    merged.save(dst, format="PNG", optimize=True)
+    merged = Image.alpha_composite(base, overlay)
+    ext = dst.suffix.lower()
+    if ext in (".jpg", ".jpeg"):
+        merged.convert("RGB").save(dst, format="JPEG", quality=92, optimize=True)
+    elif ext == ".webp":
+        merged.convert("RGB").save(dst, format="WEBP", quality=92)
+    else:
+        merged.convert("RGB").save(dst, format="PNG", optimize=True)
     return dst
 
 
@@ -98,7 +104,10 @@ def main() -> int:
     if args.paths:
         files = [Path(p) for p in args.paths]
     else:
-        files = sorted(BLOG_IMG_DIR.glob("*.png"))
+        files = sorted(
+            p for p in BLOG_IMG_DIR.iterdir()
+            if p.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp")
+        )
 
     if not files:
         print("No images found.", file=sys.stderr)
@@ -108,8 +117,13 @@ def main() -> int:
         if not fp.exists():
             print(f"Skip missing: {fp}", file=sys.stderr)
             continue
-        watermark_image(fp)
-        print(f"Watermarked: {fp.relative_to(ROOT)}")
+        target = fp.resolve()
+        watermark_image(target)
+        try:
+            rel = target.relative_to(ROOT)
+        except ValueError:
+            rel = target
+        print(f"Watermarked: {rel}")
 
     return 0
 

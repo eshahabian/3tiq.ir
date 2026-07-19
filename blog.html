@@ -21,6 +21,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog-post.css">
     <link rel="stylesheet" href="css/i18n.css">
     <link rel="stylesheet" href="css/site-enhancements.css">
     <link rel="manifest" href="manifest.json">
@@ -112,7 +113,7 @@
         background: linear-gradient(135deg, #c8c4be, #a8a49e);
         flex-shrink: 0;
     }
-    .blog-card-img img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease; }
+    .blog-card-img img { width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;transition:transform .5s ease; }
     .blog-card:hover .blog-card-img img { transform: scale(1.07); }
     .blog-card-cat {
         position: absolute; top: .75rem; right: .75rem;
@@ -244,7 +245,7 @@
                 "@type": "BlogPosting",
                 "headline": "راهنمای صعود توچال — نزدیک‌ترین قله بزرگ به تهران",
                 "url": "https://3tiq.ir/blog/blog-tochal-guide.html",
-                "image": "https://3tiq.ir/images/shelters/tochal.jpg"
+                "image": "https://3tiq.ir/images/blog/tochal-guide.png"
         },
         {
                 "@type": "BlogPosting",
@@ -469,7 +470,7 @@
                 <!-- BLOG-GENERATOR-INSERT -->
                 <a href="blog/blog-weather-check.html" data-blog-id="weather-check" class="blog-card" data-cat="tips">
                     <div class="blog-card-img">
-                        <img src="images/peaks/asmankooh.jpg" alt="چطور قبل از صعود آب‌وهوا را چک کنیم؟" loading="lazy">
+                        <img src="images/blog/weather-check.png" alt="چطور قبل از صعود آب‌وهوا را چک کنیم؟" loading="lazy">
                         <span class="blog-card-cat cat-tips">💡 نکات</span>
                     </div>
                     <div class="blog-card-body">
@@ -490,7 +491,7 @@
                 </a>
                 <a href="blog/blog-tochal-guide.html" data-blog-id="tochal-guide" class="blog-card" data-cat="route">
                     <div class="blog-card-img">
-                        <img src="images/shelters/tochal.jpg" alt="راهنمای صعود توچال" loading="lazy">
+                        <img src="images/blog/tochal-guide.png" alt="راهنمای صعود توچال" loading="lazy">
                         <span class="blog-card-cat cat-route">🗺 مسیرها</span>
                     </div>
                     <div class="blog-card-body">
@@ -788,6 +789,7 @@
     <script src="js/site-config.js"></script>
     <script src="js/footer-snippet.js"></script>
     <script src="js/blog-chrome.js"></script>
+    <script src="js/blog-image-focus.js" defer></script>
     <script src="js/i18n-boot.js" defer></script>
     <script src="js/site-enhancements.js" defer></script>
     <script src="js/app.js"></script>

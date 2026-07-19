@@ -1,0 +1,17 @@
+{
+  "altitude-sickness": { "hero": "28% 18%", "card": "28% 20%", "thumb": "28% 20%" },
+  "hydration-high-altitude": { "hero": "26% 20%", "card": "26% 22%", "thumb": "26% 22%" },
+  "thunderstorm-safety": { "hero": "24% 42%", "card": "24% 45%", "thumb": "24% 45%" },
+  "pre-ascent-checklist": { "hero": "30% 22%", "card": "30% 24%", "thumb": "30% 24%" },
+  "knots-guide": { "hero": "50% 25%", "card": "50% 28%", "thumb": "50% 28%" },
+  "beginner-peaks": { "hero": "50% 22%", "card": "50% 25%", "thumb": "50% 25%" },
+  "winter-gear": { "hero": "32% 20%", "card": "32% 22%", "thumb": "32% 22%" },
+  "navigation": { "hero": "50% 40%", "card": "50% 42%", "thumb": "50% 42%" },
+  "flora": { "hero": "50% 35%", "card": "50% 38%", "thumb": "50% 38%" },
+  "sabalan": { "hero": "50% 30%", "card": "50% 32%", "thumb": "50% 32%" },
+  "alamkooh-intro": { "hero": "50% 28%", "card": "50% 30%", "thumb": "50% 30%" },
+  "layering-system": { "hero": "35% 22%", "card": "35% 24%", "thumb": "35% 24%" },
+  "damavand-guide": { "hero": "50% 25%", "card": "50% 28%", "thumb": "50% 28%" },
+  "tochal-guide": { "hero": "50% 28%", "card": "50% 30%", "thumb": "50% 30%" },
+  "weather-check": { "hero": "50% 35%", "card": "50% 38%", "thumb": "50% 38%" }
+}
