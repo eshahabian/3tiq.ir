@@ -97,12 +97,13 @@
 
     function timelineEdu(items) {
         return items.map(function (edu) {
+            var school = t(edu.school, edu.schoolEn);
             return (
                 '<li class="sv-timeline-item">' +
-                '<span class="sv-timeline-date">' + esc(edu.years || '') + '</span>' +
+                (edu.years ? '<span class="sv-timeline-date">' + esc(edu.years) + '</span>' : '') +
                 '<div class="sv-timeline-body">' +
                 '<h4>' + esc(t(edu.degree, edu.degreeEn)) + '</h4>' +
-                '<p class="sv-timeline-org">' + esc(t(edu.school, edu.schoolEn)) + '</p>' +
+                (school ? '<p class="sv-timeline-org">' + esc(school) + '</p>' : '') +
                 (edu.detail ? '<p>' + esc(edu.detail) + '</p>' : '') +
                 '</div></li>'
             );
@@ -118,11 +119,17 @@
                 '<h4>' + esc(t(job.role, job.roleEn)) + '</h4>' +
                 '<p class="sv-timeline-org">' + esc(job.org) + '</p>' +
                 '<ul class="sv-bullets">' +
-                (t(job.bullets, job.bulletsEn) || []).slice(0, 4).map(function (b) {
+                (t(job.bullets, job.bulletsEn) || []).map(function (b) {
                     return '<li>' + esc(b) + '</li>';
                 }).join('') +
                 '</ul></div></li>'
             );
+        }).join('');
+    }
+
+    function summaryHtml(text) {
+        return String(text).split(/\n\n+/).map(function (p) {
+            return '<p class="sv-text">' + esc(p.trim()) + '</p>';
         }).join('');
     }
 
@@ -135,15 +142,19 @@
         var location = t(profile.location, profile.locationEn);
         var summary = t(profile.summary, profile.summaryEn);
         var homeTagline = t(profile.homeTagline, profile.homeTaglineEn);
+        var homeIntro = t(profile.homeIntro, profile.homeIntroEn);
         var email = emailAddress();
         var emailShow = emailLabel();
         var insta = (global.SiteConfig && SiteConfig.instagram) ? SiteConfig.instagram.url : 'https://instagram.com/3tiq.ir';
 
         var skillBars = (profile.skillBars || []).map(function (s) {
+            var levelLabel = t(s.level, s.levelEn) || '';
             return (
                 '<div class="sv-skill-row">' +
-                '<div class="sv-skill-head"><span>' + esc(s.name) + '</span><span>' + esc(s.percent) + '%</span></div>' +
-                '<div class="sv-skill-track"><div class="sv-skill-fill" data-width="' + esc(s.percent) + '" style="width:0"></div></div>' +
+                '<div class="sv-skill-head"><span>' + esc(s.name) + '</span>' +
+                (levelLabel ? '<span class="sv-skill-level">' + esc(levelLabel) + '</span>' : '') +
+                '</div>' +
+                '<div class="sv-skill-track"><div class="sv-skill-fill" data-width="' + esc(s.width || s.percent || 0) + '" style="width:0"></div></div>' +
                 '</div>'
             );
         }).join('');
@@ -223,8 +234,8 @@
             '<h1 class="sv-home-name">' + esc(name) + '</h1>' +
             '<p class="sv-home-role">' + esc(title) + '</p>' +
             '<p class="sv-home-tagline">' + esc(homeTagline) + '</p>' +
+            '<p class="sv-home-intro">' + esc(homeIntro) + '</p>' +
             '<div class="sv-focus-row">' + focusHtml + '</div>' +
-            '<p class="sv-scroll-hint" aria-hidden="true">' + esc(i18n('resume.scrollHint', 'اسکرول کنید برای بخش بعد ↓')) + '</p>' +
             '<div class="sv-home-actions">' +
             '<button type="button" class="sv-btn sv-btn--primary" data-goto="about">' + esc(i18n('resume.viewAbout', 'درباره من')) + '</button>' +
             '<button type="button" class="sv-btn sv-btn--ghost" data-goto="contact">' + esc(i18n('resume.contactBtn', 'تماس با من')) + '</button>' +
@@ -238,7 +249,8 @@
             '<div class="sv-stats sv-stats--about">' + highlights + '</div>' +
             '<div class="sv-summary">' +
             '<h3 class="sv-block-title">' + esc(i18n('resume.summaryTitle', 'خلاصه رزومه')) + '</h3>' +
-            '<p class="sv-text">' + esc(summary) + '</p></div>' +
+            summaryHtml(summary) +
+            '</div>' +
             (interestTags ? (
                 '<div class="sv-block">' +
                 '<h3 class="sv-block-title">' + esc(i18n('resume.interests', 'علایق')) + '</h3>' +

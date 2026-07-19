@@ -1,8 +1,8 @@
 {
   "name": "عماد شهابیان",
   "nameEn": "Emad Eshahabian",
-  "title": "مهندس DevOps",
-  "titleEn": "DevOps Engineer",
+  "title": "مهندس DevOps و زیرساخت",
+  "titleEn": "DevOps & Infrastructure Engineer",
   "location": "تهران، ایران",
   "locationEn": "Tehran, Iran",
   "email": "eshahabian@gmail.com",
@@ -13,22 +13,24 @@
   ],
   "avatar": "images/profile-emad.png",
   "avatarAlt": "عماد شهابیان",
-  "homeTagline": "زیرساخت، مجازی‌سازی و DevOps — از دیتاسنتر تا Kubernetes",
-  "homeTaglineEn": "Infrastructure, virtualization & DevOps — from data center to Kubernetes",
-  "summary": "بیش از ۱۴ سال در IT و زیرساخت فناوری اطلاعات فعالیت دارم. تمرکز اصلی‌ام VMware و مجازی‌سازی، Linux، شبکه و در سال‌های اخیر DevOps، Kubernetes و CI/CD است. به‌صورت ریموت در بخش مجازی‌سازی VMware در شرکت Arena Vision در دبی (امارات متحده عربی) مشغول به کار بوده‌ام. تجربه عملی در مدیریت کلاستر، مانیتورینگ، بک‌آپ، Active Directory و اتوماسیون محیط‌های عملیاتی دارم.",
-  "summaryEn": "Over 14 years in IT infrastructure — focused on VMware virtualization, Linux, networking, and recently DevOps, Kubernetes, and CI/CD. Worked remotely on VMware virtualization at Arena Vision in Dubai, UAE. Hands-on experience with clusters, monitoring, backup, Active Directory, and production automation.",
+  "homeTagline": "مجازی‌سازی VMware · DevOps · Kubernetes",
+  "homeTaglineEn": "VMware Virtualization · DevOps · Kubernetes",
+  "homeIntro": "۱۴ سال تجربه در IT — از شبکه و دیتاسنتر تا مجازی‌سازی و اتوماسیون.",
+  "homeIntroEn": "14 years in IT — from networking and data centers to virtualization and automation.",
+  "summary": "حدود ۱۴ سال در IT و زیرساخت فعالیت دارم. مسیر شغلی‌ام از مسئولیت شبکه و راه‌اندازی دیتاسنتر (از ۱۳۸۶) شروع شد؛ سپس سرپرستی IT در شرکت Passive & Active (۱۳۹۷–۱۴۰۱) و در نقش فعلی تمرکز اصلی‌ام VMware و DevOps است.\n\nاکنون به‌صورت ریموت در بخش مجازی‌سازی VMware در شرکت Arena Vision (دبی، امارات) کار می‌کنم — مدیریت VM، Horizon، مانیتورینگ و زیرساخت. در کنار آن با Kubernetes، CI/CD، Linux، Active Directory و ابزارهایی مثل NetBox و JumpServer در محیط عملیاتی کار کرده‌ام.",
+  "summaryEn": "About 14 years in IT infrastructure. Started as network administrator (2007), then IT supervisor at Passive & Active (2018–2023). Currently focused on VMware virtualization and DevOps.\n\nWorking remotely on VMware infrastructure at Arena Vision (Dubai, UAE) — VMs, Horizon, monitoring. Also experienced with Kubernetes, CI/CD, Linux, Active Directory, NetBox, and JumpServer in production.",
   "education": [
     {
       "degree": "کارشناسی مهندسی کامپیوتر",
       "degreeEn": "B.Sc. Computer Engineering",
-      "school": "تهران",
-      "schoolEn": "Tehran",
+      "school": "",
+      "schoolEn": "",
       "years": "",
       "detail": ""
     },
     {
-      "degree": "مهندسی پرواز",
-      "degreeEn": "Flight Engineering",
+      "degree": "کارشناسی مهندسی پرواز",
+      "degreeEn": "B.Sc. Flight Engineering",
       "school": "",
       "schoolEn": "",
       "years": "",
@@ -39,43 +41,41 @@
     {
       "category": "DevOps و اتوماسیون",
       "categoryEn": "DevOps & Automation",
-      "items": ["Kubernetes", "Docker", "CI/CD", "Jenkins", "GitLab", "Rancher", "Portainer", "Python", "Bash"]
+      "items": ["Kubernetes", "Docker", "CI/CD", "Jenkins", "GitLab", "Rancher", "Python", "Bash"]
     },
     {
-      "category": "زیرساخت و شبکه",
-      "categoryEn": "Infrastructure & Networking",
-      "items": ["VMware", "VMware Horizon", "Nginx", "HAProxy", "Load Balancing", "MikroTik", "Network+", "Passive & Active", "NetBox", "JumpServer"]
+      "category": "مجازی‌سازی و شبکه",
+      "categoryEn": "Virtualization & Networking",
+      "items": ["VMware vSphere", "VMware Horizon", "Nginx", "HAProxy", "MikroTik", "Network+", "NetBox", "JumpServer"]
     },
     {
       "category": "سیستم و سرویس‌ها",
       "categoryEn": "Systems & Services",
-      "items": ["Linux (LPIC1)", "Microsoft Active Directory", "Microsoft DFS", "Veeam Backup", "NextCloud", "IceWarp", "Webmin", "OPManager", "EndPoint Central", "ICDL"]
+      "items": ["Linux (LPIC1)", "Active Directory", "Microsoft DFS", "Veeam Backup", "NextCloud", "EndPoint Central", "OPManager"]
     }
   ],
   "experience": [
     {
-      "role": "سرپرست DevOps / مجازی‌سازی VMware",
-      "roleEn": "DevOps & VMware Virtualization Lead",
-      "org": "Arena Vision — دبی، امارات متحده عربی (ریموت)",
+      "role": "مهندس VMware / DevOps",
+      "roleEn": "VMware / DevOps Engineer",
+      "org": "Arena Vision — دبی، امارات (همکاری ریموت)",
       "period": "اسفند ۱۴۰۱ — اکنون",
       "periodEn": "Feb 2023 — Present",
       "bullets": [
-        "همکاری ریموت در بخش مجازی‌سازی VMware از دبی",
+        "همکاری ریموت از ایران روی زیرساخت مجازی‌سازی VMware",
         "مدیریت بیش از ۷۰ ماشین مجازی با VMware Horizon",
-        "استقرار و مدیریت کلاستر Kubernetes در محیط‌های عملیاتی",
-        "استقرار NetBox برای مدیریت IP و مستندسازی زیرساخت",
-        "استقرار و مدیریت JumpServer برای بیش از ۷۰ سرور",
-        "مانیتورینگ شبکه با OPManager و مدیریت Patch با EndPoint Central",
-        "پیکربندی MikroTik، NextCloud و Microsoft DFS"
+        "استقرار و نگهداری کلاستر Kubernetes",
+        "مستندسازی IP و شبکه با NetBox",
+        "دسترسی امن به سرورها با JumpServer (۷۰+ سرور)",
+        "مانیتورینگ OPManager و مدیریت Patch با EndPoint Central"
       ],
       "bulletsEn": [
-        "Remote VMware virtualization work from Dubai, UAE",
+        "Remote VMware infrastructure work from Iran",
         "Managed 70+ VMs with VMware Horizon",
-        "Kubernetes cluster deployment and operations",
-        "NetBox for IP and infrastructure documentation",
-        "JumpServer for 70+ servers",
-        "Network monitoring and remote patch management",
-        "MikroTik, NextCloud, and Microsoft DFS"
+        "Kubernetes cluster deployment and maintenance",
+        "IP/network documentation with NetBox",
+        "Secure server access via JumpServer (70+ servers)",
+        "Monitoring with OPManager and patching with EndPoint Central"
       ]
     },
     {
@@ -85,19 +85,17 @@
       "period": "۱۳۹۷ — ۱۴۰۱",
       "periodEn": "2018 — 2023",
       "bullets": [
-        "نگهداری سخت‌افزار و نرم‌افزار و مدیریت ارتباط شبکه بین ایستگاه‌ها",
-        "استقرار Microsoft DFS برای مدیریت پوشه‌های اشتراکی و داده",
-        "مدیریت Active Directory",
-        "استقرار EndPoint Central برای مدیریت Endpoint و Patch از راه دور",
-        "پیکربندی MikroTik برای ارتباط بین تهران، کرج و هشتگرد",
-        "مانیتورینگ و نگهداری دستگاه‌های GPS"
+        "نگهداری سخت‌افزار، نرم‌افزار و شبکه بین ایستگاه‌ها",
+        "استقرار Microsoft DFS و مدیریت Active Directory",
+        "EndPoint Central برای Patch و مدیریت از راه دور",
+        "پیکربندی MikroTik بین تهران، کرج و هشتگرد",
+        "نگهداری و مانیتورینگ دستگاه‌های GPS"
       ],
       "bulletsEn": [
-        "Hardware/software maintenance and inter-station networking",
-        "Microsoft DFS for shared folders and data",
-        "Active Directory management",
-        "EndPoint Central for remote endpoint and patch management",
-        "MikroTik for Tehran, Karaj, and Hashtgerd connectivity",
+        "Hardware, software, and inter-station network maintenance",
+        "Microsoft DFS and Active Directory",
+        "EndPoint Central for remote patch management",
+        "MikroTik routing between Tehran, Karaj, and Hashtgerd",
         "GPS device monitoring and maintenance"
       ]
     },
@@ -108,15 +106,13 @@
       "period": "۱۳۸۶ — ۱۳۸۹",
       "periodEn": "2007 — 2010",
       "bullets": [
-        "راه‌اندازی و نگهداری Domain Controller",
-        "راه‌اندازی دیتاسنتر داخلی با دسترس‌پذیری بالا",
-        "پیکربندی شبکه دامنه با Active Directory",
-        "راه‌اندازی Print Server و Microsoft Exchange Server"
+        "راه‌اندازی Domain Controller و Active Directory",
+        "راه‌اندازی دیتاسنتر داخلی",
+        "Print Server و Microsoft Exchange Server"
       ],
       "bulletsEn": [
-        "Domain Controller setup and maintenance",
-        "Internal data center with high availability",
-        "Active Directory domain network",
+        "Domain Controller and Active Directory setup",
+        "Internal data center deployment",
         "Print Server and Microsoft Exchange Server"
       ]
     }
@@ -124,53 +120,35 @@
   "certificates": [
     { "name": "DevOps", "year": "۱۴۰۳" },
     { "name": "MCSA", "year": "" },
-    { "name": "IceWarp Mail Server", "year": "" },
     { "name": "Network+", "year": "" },
-    { "name": "MTCNA (MikroTik)", "year": "" },
     { "name": "LPIC1", "year": "" },
+    { "name": "MTCNA (MikroTik)", "year": "" },
     { "name": "ICDL", "year": "" }
   ],
   "languages": [
-    {
-      "name": "فارسی",
-      "nameEn": "Persian",
-      "level": "زبان مادری",
-      "levelEn": "Native"
-    },
-    {
-      "name": "انگلیسی",
-      "nameEn": "English",
-      "level": "خواندن · نوشتن · شنیداری · مکالمه",
-      "levelEn": "Reading · Writing · Listening · Speaking"
-    }
+    { "name": "فارسی", "nameEn": "Persian", "level": "زبان مادری", "levelEn": "Native" },
+    { "name": "انگلیسی", "nameEn": "English", "level": "خواندن · نوشتن · شنیداری · مکالمه", "levelEn": "Reading · Writing · Listening · Speaking" }
   ],
-  "interests": [
-    "کوهنوردی",
-    "طبیعت کردستان"
-  ],
-  "interestsEn": [
-    "Mountaineering",
-    "Nature of Kurdistan"
-  ],
+  "interests": ["کوهنوردی", "طبیعت کردستان"],
+  "interestsEn": ["Mountaineering", "Nature of Kurdistan"],
   "highlights": [
-    { "value": "۱۴", "label": "سال سابقه کار", "labelEn": "Years of experience" },
-    { "value": "VMware", "label": "مجازی‌سازی", "labelEn": "Virtualization" },
-    { "value": "DevOps", "label": "اتوماسیون و CI/CD", "labelEn": "Automation & CI/CD" }
+    { "value": "۱۴", "label": "سال تجربه IT", "labelEn": "Years in IT" },
+    { "value": "VMware", "label": "تخصص اصلی", "labelEn": "Core focus" },
+    { "value": "DevOps", "label": "در حال توسعه", "labelEn": "Growing area" }
   ],
   "focusAreas": [
-    { "icon": "🖥", "title": "VMware", "desc": "مجازی‌سازی، Horizon و مدیریت VM" },
-    { "icon": "⚙️", "title": "DevOps", "desc": "Kubernetes، CI/CD و اتوماسیون" }
+    { "icon": "🖥", "title": "VMware", "desc": "vSphere، Horizon، مدیریت VM" },
+    { "icon": "⚙️", "title": "DevOps", "desc": "Kubernetes، CI/CD، اتوماسیون" }
   ],
   "focusAreasEn": [
-    { "icon": "🖥", "title": "VMware", "desc": "Virtualization, Horizon & VM ops" },
-    { "icon": "⚙️", "title": "DevOps", "desc": "Kubernetes, CI/CD & automation" }
+    { "icon": "🖥", "title": "VMware", "desc": "vSphere, Horizon, VM management" },
+    { "icon": "⚙️", "title": "DevOps", "desc": "Kubernetes, CI/CD, automation" }
   ],
   "skillBars": [
-    { "name": "VMware", "percent": 92 },
-    { "name": "DevOps / Kubernetes", "percent": 88 },
-    { "name": "Docker", "percent": 90 },
-    { "name": "CI/CD", "percent": 88 },
-    { "name": "Linux", "percent": 90 },
-    { "name": "Networking", "percent": 85 }
+    { "name": "VMware", "level": "پیشرفته", "levelEn": "Advanced", "width": 92 },
+    { "name": "Linux", "level": "پیشرفته", "levelEn": "Advanced", "width": 88 },
+    { "name": "DevOps / Kubernetes", "level": "متوسط به بالا", "levelEn": "Upper intermediate", "width": 80 },
+    { "name": "شبکه", "level": "پیشرفته", "levelEn": "Advanced", "width": 85 },
+    { "name": "Active Directory", "level": "پیشرفته", "levelEn": "Advanced", "width": 82 }
   ]
 }
