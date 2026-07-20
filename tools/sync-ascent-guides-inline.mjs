@@ -19,7 +19,7 @@ if (html.includes('id="guidesData"')) {
     );
 } else {
     html = html.replace(
-        /(\s*<\/section>\n\n)(    <script src="js\/site-config\.js">)/,
+        /(\r?\n    <\/section>\r?\n\r?\n)(    <script src="js\/site-config\.js">)/,
         `$1${block}$2`
     );
 }
