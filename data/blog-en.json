@@ -1,8 +1,8 @@
 {
   "cards": {
-    "popular-peaks-ascent-guide": {
-      "title": "Ascent Guide — 12 Popular Peaks of Iran",
-      "excerpt": "Summary routes, seasons and links for all 12 famous peaks on the 3Tiq homepage.",
+    "zardkooh-guide": {
+      "title": "Zardkooh Ascent Guide — Highest Peak of Zagros",
+      "excerpt": "Chelgerd route, Kolun Bastak shelter, snow gear and safety tips for the 4,548 m summit.",
       "date": "21 Jul 2026"
     },
     "weather-check": {
@@ -62,20 +62,22 @@
     }
   },
   "posts": {
-    "popular-peaks-ascent-guide": {
-      "title": "Ascent Guide — 12 Popular Peaks of Iran | 3Tiq",
-      "description": "Route summary, season and duration for Iran's 12 homepage peaks with internal links.",
-      "heroTitle": "Ascent Guide<br>12 Popular Peaks of Iran",
-      "categoryBadge": "🗺 Routes",
-      "breadcrumbCat": "Routes",
+    "zardkooh-guide": {
+      "title": "Zardkooh Ascent Guide — Highest Peak of Zagros | 3Tiq",
+      "description": "Chelgerd route, Kolun Bastak shelter, snow gear and safety for the 4,548 m summit.",
+      "heroTitle": "Zardkooh Ascent Guide<br>Highest Peak of Zagros",
+      "categoryBadge": "🗺 Zagros",
+      "breadcrumbCat": "Ascent guides",
       "date": "21 Jul 2026",
-      "readMin": "14",
-      "contentFile": "popular-peaks-ascent-guide.html",
+      "readMin": "9",
+      "contentFile": "zardkooh-guide.html",
       "toc": [
-        { "href": "#overview", "label": "Overview" },
-        { "href": "#damavand", "label": "Damavand" },
-        { "href": "#choose", "label": "Which peak?" },
-        { "href": "#prep", "label": "Preparation" }
+        { "href": "#about", "label": "About Zardkooh" },
+        { "href": "#routes", "label": "Routes" },
+        { "href": "#shelter", "label": "Shelters" },
+        { "href": "#season", "label": "Best season" },
+        { "href": "#gear", "label": "Gear" },
+        { "href": "#tips", "label": "Safety tips" }
       ]
     },
     "weather-check": {

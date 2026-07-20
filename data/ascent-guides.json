@@ -1,26 +1,6 @@
 {
   "guides": [
     {
-      "id": "popular-peaks-12",
-      "slug": "blog/blog-popular-peaks-ascent-guide.html",
-      "peakPage": null,
-      "title": "راهنمای صعود ۱۲ قله محبوب ایران",
-      "peakName": "۱۲ قله",
-      "elevation": 5610,
-      "region": "all",
-      "regionLabel": "سراسر ایران",
-      "province": "—",
-      "difficulty": "intermediate",
-      "difficultyLabel": "متنوع",
-      "days": "۱–۳ روز",
-      "season": "فصل‌به‌فصل",
-      "excerpt": "خلاصه مسیر، فصل و مدت صعود ۱۲ قله محبوب صفحه اصلی — با لینک صفحه هر قله.",
-      "image": "images/blog/damavand-guide.png",
-      "featured": true,
-      "dateFa": "۳۱ تیر ۱۴۰۵",
-      "readMinutes": 14
-    },
-    {
       "id": "damavand",
       "slug": "blog-damavand-guide.html",
       "peakPage": "peaks/damavand.html",
@@ -119,6 +99,26 @@
       "featured": false,
       "dateFa": "تیر ۱۴۰۵",
       "readMinutes": 8
+    },
+    {
+      "id": "zardkooh",
+      "slug": "blog/blog-zardkooh-guide.html",
+      "peakPage": "peaks/zardkooh.html",
+      "title": "راهنمای صعود زردکوه بختیاری — بلندترین قله زاگرس",
+      "peakName": "زردکوه",
+      "elevation": 4548,
+      "region": "zagros",
+      "regionLabel": "زاگرس",
+      "province": "چهارمحال و بختیاری",
+      "difficulty": "advanced",
+      "difficultyLabel": "سخت",
+      "days": "۲ روز",
+      "season": "خرداد – مرداد",
+      "excerpt": "مسیر چلگرد، پناهگاه کلون بستک، تجهیزات برف و نکات ایمنی برای صعود ۴۵۴۸ متری.",
+      "image": "images/peaks/zardkooh.jpg",
+      "featured": false,
+      "dateFa": "۳۱ تیر ۱۴۰۵",
+      "readMinutes": 9
     }
   ]
 }

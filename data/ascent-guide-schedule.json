@@ -1,0 +1,23 @@
+{
+  "series": "۱۲ قله محبوب — راهنمای صعود روزانه",
+  "source": "index.html#peaks",
+  "note": "هر روز یک قله؛ فقط قله‌هایی که هنوز راهنمای اختصاصی ندارند.",
+  "published": [
+    { "peak": "zardkooh", "title": "زردکوه بختیاری", "slug": "blog/blog-zardkooh-guide.html", "dateFa": "۳۱ تیر ۱۴۰۵" }
+  ],
+  "upcoming": [
+    { "peak": "hezar", "title": "هزار", "dateFa": "۱ مرداد ۱۴۰۵", "peakPage": "peaks/hezar.html" },
+    { "peak": "dena", "title": "دنا", "dateFa": "۲ مرداد ۱۴۰۵", "peakPage": "peaks/dena.html" },
+    { "peak": "eshterankoh", "title": "اشترانکوه", "dateFa": "۳ مرداد ۱۴۰۵", "peakPage": "peaks/eshterankoh.html" },
+    { "peak": "shirkooh", "title": "شیرکوه یزد", "dateFa": "۴ مرداد ۱۴۰۵", "peakPage": "peaks/shirkoh.html" },
+    { "peak": "sahand", "title": "سهند", "dateFa": "۵ مرداد ۱۴۰۵", "peakPage": "peaks/sahand.html" },
+    { "peak": "taftan", "title": "تفتان", "dateFa": "۶ مرداد ۱۴۰۵", "peakPage": "peaks/taftan.html" },
+    { "peak": "karkas", "title": "کرکس", "dateFa": "۷ مرداد ۱۴۰۵", "peakPage": "peaks/karkas.html" }
+  ],
+  "alreadyPublished": [
+    { "peak": "damavand", "slug": "blog-damavand-guide.html" },
+    { "peak": "alamkooh", "slug": "blog/blog-alamkooh-intro.html" },
+    { "peak": "sabalan", "slug": "blog/blog-sabalan.html" },
+    { "peak": "tochal", "slug": "blog/blog-tochal-guide.html" }
+  ]
+}
