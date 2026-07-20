@@ -1,6 +1,26 @@
 {
   "guides": [
     {
+      "id": "popular-peaks-12",
+      "slug": "blog/blog-popular-peaks-ascent-guide.html",
+      "peakPage": null,
+      "title": "راهنمای صعود ۱۲ قله محبوب ایران",
+      "peakName": "۱۲ قله",
+      "elevation": 5610,
+      "region": "all",
+      "regionLabel": "سراسر ایران",
+      "province": "—",
+      "difficulty": "intermediate",
+      "difficultyLabel": "متنوع",
+      "days": "۱–۳ روز",
+      "season": "فصل‌به‌فصل",
+      "excerpt": "خلاصه مسیر، فصل و مدت صعود ۱۲ قله محبوب صفحه اصلی — با لینک صفحه هر قله.",
+      "image": "images/blog/damavand-guide.png",
+      "featured": true,
+      "dateFa": "۳۱ تیر ۱۴۰۵",
+      "readMinutes": 14
+    },
+    {
       "id": "damavand",
       "slug": "blog-damavand-guide.html",
       "peakPage": "peaks/damavand.html",

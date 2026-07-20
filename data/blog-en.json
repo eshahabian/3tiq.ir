@@ -1,5 +1,10 @@
 {
   "cards": {
+    "popular-peaks-ascent-guide": {
+      "title": "Ascent Guide — 12 Popular Peaks of Iran",
+      "excerpt": "Summary routes, seasons and links for all 12 famous peaks on the 3Tiq homepage.",
+      "date": "21 Jul 2026"
+    },
     "weather-check": {
       "title": "How to Check Mountain Weather Before Your Climb",
       "excerpt": "Trusted forecast sources for Iran's mountains, danger signs and when to cancel — a 15-minute pre-trip guide.",
@@ -57,6 +62,22 @@
     }
   },
   "posts": {
+    "popular-peaks-ascent-guide": {
+      "title": "Ascent Guide — 12 Popular Peaks of Iran | 3Tiq",
+      "description": "Route summary, season and duration for Iran's 12 homepage peaks with internal links.",
+      "heroTitle": "Ascent Guide<br>12 Popular Peaks of Iran",
+      "categoryBadge": "🗺 Routes",
+      "breadcrumbCat": "Routes",
+      "date": "21 Jul 2026",
+      "readMin": "14",
+      "contentFile": "popular-peaks-ascent-guide.html",
+      "toc": [
+        { "href": "#overview", "label": "Overview" },
+        { "href": "#damavand", "label": "Damavand" },
+        { "href": "#choose", "label": "Which peak?" },
+        { "href": "#prep", "label": "Preparation" }
+      ]
+    },
     "weather-check": {
       "title": "How to Check Mountain Weather Before Your Climb | 3Tiq",
       "description": "Forecast sources, summit vs valley conditions, red flags and when to turn back.",

@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "id": "popular-peaks-ascent-guide",
+      "slug": "blog/blog-popular-peaks-ascent-guide.html",
+      "title": "راهنمای صعود ۱۲ قله محبوب ایران",
+      "excerpt": "خلاصه مسیر، فصل و مدت صعود ۱۲ قله محبوب صفحه اصلی — دماوند تا کرکس — با لینک صفحه قله و راهنماهای تخصصی.",
+      "image": "images/blog/damavand-guide.png",
+      "cat": "route",
+      "dateFa": "۳۱ تیر ۱۴۰۵"
+    },
+    {
       "id": "weather-check",
       "slug": "blog/blog-weather-check.html",
       "title": "چطور قبل از صعود آب‌وهوا را چک کنیم؟",
