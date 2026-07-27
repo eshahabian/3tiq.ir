@@ -1,12 +1,12 @@
 {
   "posts": [
     {
-      "id": "mountain-camping",
-      "slug": "blog/blog-mountain-camping.html",
-      "title": "کمپ زدن در کوهستان — راهنمای شب‌مانی ایمن",
-      "excerpt": "انتخاب محل کمپ، چادر و کیسه خواب، آب و غذا، ایمنی شب و اشتباهات رایج شب‌مانی در ارتفاع.",
-      "image": "images/blog/mountain-camping.jpg",
-      "cat": "tips",
+      "id": "sun-uv-altitude",
+      "slug": "blog/blog-sun-uv-altitude.html",
+      "title": "آفتاب و UV در ارتفاع — چرا در کوه سریع‌تر می‌سوزی؟",
+      "excerpt": "شدت UV در ارتفاع، بازتاب برف، ضدآفتاب، عینک کوهستان و اشتباهات رایج — راهنمای عملی محافظت از آفتاب برای کوهنورد.",
+      "image": "images/blog/sun-uv-altitude.jpg",
+      "cat": "safety",
       "dateFa": "۵ مرداد ۱۴۰۵"
     },
     {

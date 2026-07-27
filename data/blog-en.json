@@ -65,9 +65,9 @@
       "excerpt": "Southern main route, Hezar camp, glacier crossing and safety tips for the 4,465 m summit in Kerman.",
       "date": "27 Jul 2026"
     },
-    "mountain-camping": {
-      "title": "Mountain Camping — A Safe Overnight Guide",
-      "excerpt": "Campsite selection, tent and sleeping bag, water and food, night safety and common overnight mistakes.",
+    "sun-uv-altitude": {
+      "title": "Sun & UV at Altitude — Why You Burn Faster in the Mountains",
+      "excerpt": "Stronger UV with elevation, snow reflection, sunscreen, mountain sunglasses and common mistakes — a practical protection guide.",
       "date": "27 Jul 2026"
     }
   },
@@ -360,12 +360,12 @@
       "readMinutes": 9,
       "cat": "route"
     },
-    "mountain-camping": {
-      "title": "Mountain Camping — A Safe Overnight Guide",
-      "excerpt": "Campsite selection, tent and sleeping bag, water and food, night safety and common overnight mistakes.",
+    "sun-uv-altitude": {
+      "title": "Sun & UV at Altitude — Why You Burn Faster in the Mountains",
+      "excerpt": "Stronger UV with elevation, snow reflection, sunscreen, mountain sunglasses and common mistakes.",
       "date": "27 Jul 2026",
-      "readMinutes": 8,
-      "cat": "tips"
+      "readMinutes": 7,
+      "cat": "safety"
     }
   }
 }
