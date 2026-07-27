@@ -109,7 +109,7 @@ console.log('Caption:', captionPath);
 const imageFile = path.join(root, image.replace(/^\//, ''));
 if (fs.existsSync(imageFile)) {
   try {
-    execSync(`python "${path.join(root, 'tools', 'watermark-blog-images.py')}" "${imageFile}"`, { stdio: 'inherit' });
+    execSync(`python3 "${path.join(root, 'tools', 'watermark-blog-images.py')}" "${imageFile}"`, { stdio: 'inherit' });
   } catch {
     console.log('⚠️ Watermark skipped — run: python tools/watermark-blog-images.py');
   }

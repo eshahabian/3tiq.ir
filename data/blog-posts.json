@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "id": "mountain-camping",
+      "slug": "blog/blog-mountain-camping.html",
+      "title": "کمپ زدن در کوهستان — راهنمای شب‌مانی ایمن",
+      "excerpt": "انتخاب محل کمپ، چادر و کیسه خواب، آب و غذا، ایمنی شب و اشتباهات رایج شب‌مانی در ارتفاع.",
+      "image": "images/blog/mountain-camping.jpg",
+      "cat": "tips",
+      "dateFa": "۵ مرداد ۱۴۰۵"
+    },
+    {
+      "id": "hezar-guide",
+      "slug": "blog/blog-hezar-guide.html",
+      "title": "راهنمای صعود هزار — پنجمین قله بلند ایران",
+      "excerpt": "مسیر اصلی جنوب، کمپ هزار، عبور از یخچال و نکات ایمنی برای صعود ۴۴۶۵ متری کرمان.",
+      "image": "images/blog/hezar-guide.jpg",
+      "cat": "route",
+      "dateFa": "۵ مرداد ۱۴۰۵"
+    },
+    {
       "id": "zardkooh-guide",
       "slug": "blog/blog-zardkooh-guide.html",
       "title": "راهنمای صعود زردکوه بختیاری — بلندترین قله زاگرس",

@@ -21,6 +21,26 @@
       "readMinutes": 12
     },
     {
+      "id": "hezar",
+      "slug": "blog/blog-hezar-guide.html",
+      "peakPage": "peaks/hezar.html",
+      "title": "راهنمای صعود هزار — پنجمین قله بلند ایران",
+      "peakName": "هزار",
+      "elevation": 4465,
+      "region": "central",
+      "regionLabel": "کوه‌های مرکزی",
+      "province": "کرمان",
+      "difficulty": "advanced",
+      "difficultyLabel": "سخت",
+      "days": "۲ روز",
+      "season": "بهار",
+      "excerpt": "مسیر اصلی جنوب، کمپ هزار، عبور از یخچال و نکات ایمنی برای صعود ۴۴۶۵ متری کرمان.",
+      "image": "images/blog/hezar-guide.jpg",
+      "featured": false,
+      "dateFa": "۵ مرداد ۱۴۰۵",
+      "readMinutes": 9
+    },
+    {
       "id": "sabalan",
       "slug": "blog/blog-sabalan.html",
       "peakPage": "peaks/sabalan.html",

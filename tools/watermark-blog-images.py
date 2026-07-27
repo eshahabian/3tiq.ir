@@ -19,8 +19,18 @@ TILE_TEXT = "3tiq.ir"
 
 
 def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
-    for name in ("arialbd.ttf", "arial.ttf", "segoeuib.ttf", "segoeui.ttf"):
-        path = Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts" / name
+    windir = Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts"
+    candidates = [
+        windir / "arialbd.ttf",
+        windir / "arial.ttf",
+        windir / "segoeuib.ttf",
+        windir / "segoeui.ttf",
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+        Path("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"),
+        Path("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf"),
+    ]
+    for path in candidates:
         if path.exists():
             return ImageFont.truetype(str(path), size)
     return ImageFont.load_default()
