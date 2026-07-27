@@ -10,3 +10,55 @@
     object-fit: cover;
     object-position: center top;
 }
+
+/* Watermarked content photos — 3tiq.ir */
+.wm-figure {
+    margin: 1.5rem 0 1.75rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(58, 50, 38, 0.1);
+    box-shadow: 0 6px 24px rgba(44, 36, 22, 0.08);
+    background: var(--white);
+}
+
+.wm-figure-media {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.wm-figure-media img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.wm-figure-media::after {
+    content: "3tiq.ir";
+    position: absolute;
+    left: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.28rem 0.65rem;
+    border-radius: 0.45rem;
+    background: rgba(20, 16, 12, 0.72);
+    color: rgba(232, 200, 150, 0.95);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.wm-figure figcaption {
+    padding: 0.85rem 1.1rem;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    border-top: 1px solid rgba(58, 50, 38, 0.08);
+    line-height: 1.7;
+}
+
+body.dark-mode .wm-figure {
+    background: #1e1e1e;
+    border-color: rgba(255, 255, 255, 0.08);
+}

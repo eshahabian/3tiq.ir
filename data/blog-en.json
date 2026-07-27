@@ -59,6 +59,16 @@
       "title": "Mountain Navigation Without a Phone",
       "excerpt": "When GPS and signal fail, these map and compass skills get you back on track.",
       "date": "Jan 2025"
+    },
+    "hezar-guide": {
+      "title": "Hezar Ascent Guide — Iran's Fifth Highest Peak",
+      "excerpt": "Southern main route, Hezar camp, glacier crossing and safety tips for the 4,465 m summit in Kerman.",
+      "date": "27 Jul 2026"
+    },
+    "sun-uv-altitude": {
+      "title": "Sun & UV at Altitude — Why You Burn Faster in the Mountains",
+      "excerpt": "Stronger UV with elevation, snow reflection, sunscreen, mountain sunglasses and common mistakes — a practical protection guide.",
+      "date": "27 Jul 2026"
     }
   },
   "posts": {
@@ -72,12 +82,30 @@
       "readMin": "9",
       "contentFile": "zardkooh-guide.html",
       "toc": [
-        { "href": "#about", "label": "About Zardkooh" },
-        { "href": "#routes", "label": "Routes" },
-        { "href": "#shelter", "label": "Shelters" },
-        { "href": "#season", "label": "Best season" },
-        { "href": "#gear", "label": "Gear" },
-        { "href": "#tips", "label": "Safety tips" }
+        {
+          "href": "#about",
+          "label": "About Zardkooh"
+        },
+        {
+          "href": "#routes",
+          "label": "Routes"
+        },
+        {
+          "href": "#shelter",
+          "label": "Shelters"
+        },
+        {
+          "href": "#season",
+          "label": "Best season"
+        },
+        {
+          "href": "#gear",
+          "label": "Gear"
+        },
+        {
+          "href": "#tips",
+          "label": "Safety tips"
+        }
       ]
     },
     "weather-check": {
@@ -90,13 +118,34 @@
       "readMin": "7",
       "contentFile": "weather-check.html",
       "toc": [
-        { "href": "#why", "label": "Valley vs summit" },
-        { "href": "#sources", "label": "Forecast sources" },
-        { "href": "#checklist", "label": "What to check" },
-        { "href": "#cancel", "label": "When to cancel" },
-        { "href": "#ontrail", "label": "Signs on the trail" },
-        { "href": "#plan", "label": "Planning workflow" },
-        { "href": "#mistakes", "label": "Common mistakes" }
+        {
+          "href": "#why",
+          "label": "Valley vs summit"
+        },
+        {
+          "href": "#sources",
+          "label": "Forecast sources"
+        },
+        {
+          "href": "#checklist",
+          "label": "What to check"
+        },
+        {
+          "href": "#cancel",
+          "label": "When to cancel"
+        },
+        {
+          "href": "#ontrail",
+          "label": "Signs on the trail"
+        },
+        {
+          "href": "#plan",
+          "label": "Planning workflow"
+        },
+        {
+          "href": "#mistakes",
+          "label": "Common mistakes"
+        }
       ]
     },
     "pre-ascent-checklist": {
@@ -109,8 +158,14 @@
       "readMin": "6",
       "contentFile": "pre-ascent-checklist.html",
       "toc": [
-        { "href": "#checklist", "label": "10 essentials" },
-        { "href": "#printable", "label": "Printable version" }
+        {
+          "href": "#checklist",
+          "label": "10 essentials"
+        },
+        {
+          "href": "#printable",
+          "label": "Printable version"
+        }
       ]
     },
     "damavand-guide": {
@@ -123,11 +178,26 @@
       "readMin": "12",
       "contentFile": "damavand-guide.html",
       "toc": [
-        { "href": "#routes", "label": "Ascent routes" },
-        { "href": "#shelters", "label": "Shelters" },
-        { "href": "#gear", "label": "Required gear" },
-        { "href": "#season", "label": "Best season" },
-        { "href": "#tips", "label": "Final tips" }
+        {
+          "href": "#routes",
+          "label": "Ascent routes"
+        },
+        {
+          "href": "#shelters",
+          "label": "Shelters"
+        },
+        {
+          "href": "#gear",
+          "label": "Required gear"
+        },
+        {
+          "href": "#season",
+          "label": "Best season"
+        },
+        {
+          "href": "#tips",
+          "label": "Final tips"
+        }
       ]
     },
     "alamkooh-intro": {
@@ -140,8 +210,14 @@
       "readMin": "8",
       "contentFile": "alamkooh-intro.html",
       "toc": [
-        { "href": "#route", "label": "Hesarchal route" },
-        { "href": "#level", "label": "Difficulty" }
+        {
+          "href": "#route",
+          "label": "Hesarchal route"
+        },
+        {
+          "href": "#level",
+          "label": "Difficulty"
+        }
       ]
     },
     "layering-system": {
@@ -154,8 +230,14 @@
       "readMin": "7",
       "contentFile": "layering-system.html",
       "toc": [
-        { "href": "#layers", "label": "Three layers" },
-        { "href": "#pack", "label": "What to pack" }
+        {
+          "href": "#layers",
+          "label": "Three layers"
+        },
+        {
+          "href": "#pack",
+          "label": "What to pack"
+        }
       ]
     },
     "beginner-peaks": {
@@ -168,9 +250,18 @@
       "readMin": "7",
       "contentFile": "beginner-peaks.html",
       "toc": [
-        { "href": "#criteria", "label": "Selection criteria" },
-        { "href": "#peaks", "label": "5 recommended peaks" },
-        { "href": "#prep", "label": "Before your first climb" }
+        {
+          "href": "#criteria",
+          "label": "Selection criteria"
+        },
+        {
+          "href": "#peaks",
+          "label": "5 recommended peaks"
+        },
+        {
+          "href": "#prep",
+          "label": "Before your first climb"
+        }
       ]
     },
     "winter-gear": {
@@ -194,10 +285,22 @@
       "readMin": "6",
       "contentFile": "altitude-sickness.html",
       "toc": [
-        { "href": "#types", "label": "Types of altitude illness" },
-        { "href": "#prevention", "label": "Prevention" },
-        { "href": "#medication", "label": "Medication" },
-        { "href": "#treatment", "label": "Field treatment" }
+        {
+          "href": "#types",
+          "label": "Types of altitude illness"
+        },
+        {
+          "href": "#prevention",
+          "label": "Prevention"
+        },
+        {
+          "href": "#medication",
+          "label": "Medication"
+        },
+        {
+          "href": "#treatment",
+          "label": "Field treatment"
+        }
       ]
     },
     "sabalan": {
@@ -232,11 +335,37 @@
       "readMin": "7",
       "contentFile": "navigation.html",
       "toc": [
-        { "href": "#map", "label": "Topographic maps" },
-        { "href": "#compass", "label": "Using a compass" },
-        { "href": "#nature", "label": "Natural signs" },
-        { "href": "#tools", "label": "Offline tools" }
+        {
+          "href": "#map",
+          "label": "Topographic maps"
+        },
+        {
+          "href": "#compass",
+          "label": "Using a compass"
+        },
+        {
+          "href": "#nature",
+          "label": "Natural signs"
+        },
+        {
+          "href": "#tools",
+          "label": "Offline tools"
+        }
       ]
+    },
+    "hezar-guide": {
+      "title": "Hezar Ascent Guide — Iran's Fifth Highest Peak",
+      "excerpt": "Southern main route, Hezar camp, glacier crossing and safety tips for the 4,465 m summit in Kerman.",
+      "date": "27 Jul 2026",
+      "readMinutes": 9,
+      "cat": "route"
+    },
+    "sun-uv-altitude": {
+      "title": "Sun & UV at Altitude — Why You Burn Faster in the Mountains",
+      "excerpt": "Stronger UV with elevation, snow reflection, sunscreen, mountain sunglasses and common mistakes.",
+      "date": "27 Jul 2026",
+      "readMinutes": 7,
+      "cat": "safety"
     }
   }
 }

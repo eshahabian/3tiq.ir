@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "id": "sun-uv-altitude",
+      "slug": "blog/blog-sun-uv-altitude.html",
+      "title": "آفتاب و UV در ارتفاع — چرا در کوه سریع‌تر می‌سوزی؟",
+      "excerpt": "شدت UV در ارتفاع، بازتاب برف، ضدآفتاب، عینک کوهستان و اشتباهات رایج — راهنمای عملی محافظت از آفتاب برای کوهنورد.",
+      "image": "images/blog/sun-uv-altitude.jpg",
+      "cat": "safety",
+      "dateFa": "۵ مرداد ۱۴۰۵"
+    },
+    {
+      "id": "hezar-guide",
+      "slug": "blog/blog-hezar-guide.html",
+      "title": "راهنمای صعود هزار — پنجمین قله بلند ایران",
+      "excerpt": "مسیر اصلی جنوب، کمپ هزار، عبور از یخچال و نکات ایمنی برای صعود ۴۴۶۵ متری کرمان.",
+      "image": "images/blog/hezar-guide.jpg",
+      "cat": "route",
+      "dateFa": "۵ مرداد ۱۴۰۵"
+    },
+    {
       "id": "zardkooh-guide",
       "slug": "blog/blog-zardkooh-guide.html",
       "title": "راهنمای صعود زردکوه بختیاری — بلندترین قله زاگرس",
