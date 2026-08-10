@@ -14,43 +14,43 @@
       "title": "هزار",
       "slug": "blog/blog-hezar-guide.html",
       "dateFa": "۵ مرداد ۱۴۰۵"
+    },
+    {
+      "peak": "dena",
+      "title": "دنا",
+      "slug": "blog/blog-dena-guide.html",
+      "dateFa": "۱۰ مرداد ۱۴۰۵"
     }
   ],
   "upcoming": [
     {
-      "peak": "dena",
-      "title": "دنا",
-      "dateFa": "۲ مرداد ۱۴۰۵",
-      "peakPage": "peaks/dena.html"
-    },
-    {
       "peak": "eshterankoh",
       "title": "اشترانکوه",
-      "dateFa": "۳ مرداد ۱۴۰۵",
+      "dateFa": "۱۱ مرداد ۱۴۰۵",
       "peakPage": "peaks/eshterankoh.html"
     },
     {
       "peak": "shirkooh",
       "title": "شیرکوه یزد",
-      "dateFa": "۴ مرداد ۱۴۰۵",
+      "dateFa": "۱۲ مرداد ۱۴۰۵",
       "peakPage": "peaks/shirkoh.html"
     },
     {
       "peak": "sahand",
       "title": "سهند",
-      "dateFa": "۵ مرداد ۱۴۰۵",
+      "dateFa": "۱۳ مرداد ۱۴۰۵",
       "peakPage": "peaks/sahand.html"
     },
     {
       "peak": "taftan",
       "title": "تفتان",
-      "dateFa": "۶ مرداد ۱۴۰۵",
+      "dateFa": "۱۴ مرداد ۱۴۰۵",
       "peakPage": "peaks/taftan.html"
     },
     {
       "peak": "karkas",
       "title": "کرکس",
-      "dateFa": "۷ مرداد ۱۴۰۵",
+      "dateFa": "۱۵ مرداد ۱۴۰۵",
       "peakPage": "peaks/karkas.html"
     }
   ],

@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "id": "two-day-ascent-plan",
+      "slug": "blog/blog-two-day-ascent-plan.html",
+      "title": "برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله",
+      "excerpt": "زمان‌بندی روز اول و دوم، turnaround، پناهگاه یا چادر و اشتباهات رایج — با مثال دنا، هزار و زاگرس.",
+      "image": "images/blog/two-day-ascent-plan.jpg",
+      "cat": "tips",
+      "dateFa": "۱۰ مرداد ۱۴۰۵"
+    },
+    {
+      "id": "dena-guide",
+      "slug": "blog/blog-dena-guide.html",
+      "title": "راهنمای صعود دنا — بانوی کوه‌های ایران",
+      "excerpt": "مسیر سیاسرت، پناهگاه ۳۲۰۰ متری، تل‌خسرو و نکات ایمنی برای صعود ۴۴۰۹ متری زاگرس.",
+      "image": "images/blog/dena-guide.jpg",
+      "cat": "route",
+      "dateFa": "۱۰ مرداد ۱۴۰۵"
+    },
+    {
       "id": "sun-uv-altitude",
       "slug": "blog/blog-sun-uv-altitude.html",
       "title": "آفتاب و UV در ارتفاع — چرا در کوه سریع‌تر می‌سوزی؟",

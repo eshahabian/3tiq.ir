@@ -69,6 +69,16 @@
       "title": "Sun & UV at Altitude — Why You Burn Faster in the Mountains",
       "excerpt": "Stronger UV with elevation, snow reflection, sunscreen, mountain sunglasses and common mistakes — a practical protection guide.",
       "date": "27 Jul 2026"
+    },
+    "dena-guide": {
+      "title": "Dena Ascent Guide — Queen of Iran's Mountains",
+      "excerpt": "Siāserat route, Dena shelter at 3,200 m, Talkhesro and safety tips for the 4,409 m Zagros summit.",
+      "date": "31 Jul 2026"
+    },
+    "two-day-ascent-plan": {
+      "title": "Planning a Two-Day Ascent — Approach, Camp & Summit Day",
+      "excerpt": "Day-one pacing, summit-day turnaround time, hut vs tent, and common mistakes — with Dena and Hezar examples.",
+      "date": "31 Jul 2026"
     }
   },
   "posts": {
@@ -366,6 +376,20 @@
       "date": "27 Jul 2026",
       "readMinutes": 7,
       "cat": "safety"
+    },
+    "dena-guide": {
+      "title": "Dena Ascent Guide — Queen of Iran's Mountains",
+      "excerpt": "Siāserat route, shelter, seasons and safety for the 4,409 m summit in Kohgiluyeh.",
+      "date": "31 Jul 2026",
+      "readMinutes": 10,
+      "cat": "route"
+    },
+    "two-day-ascent-plan": {
+      "title": "Planning a Two-Day Ascent — Approach, Camp & Summit Day",
+      "excerpt": "Timing day one and summit day, TAT, packing light for the top, and weather for both days.",
+      "date": "31 Jul 2026",
+      "readMinutes": 8,
+      "cat": "tips"
     }
   }
 }

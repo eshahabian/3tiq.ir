@@ -14,5 +14,9 @@
   "alamkooh-intro": { "hero": "center top", "card": "center top", "thumb": "center top" },
   "damavand-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
   "tochal-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
-  "weather-check": { "hero": "center top", "card": "center top", "thumb": "center top" }
+  "weather-check": { "hero": "center top", "card": "center top", "thumb": "center top" },
+  "dena-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
+  "two-day-ascent-plan": { "hero": "center top", "card": "center top", "thumb": "center top" },
+  "hezar-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
+  "sun-uv-altitude": { "hero": "center top", "card": "center top", "thumb": "center top" }
 }

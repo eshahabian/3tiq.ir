@@ -21,6 +21,26 @@
       "readMinutes": 12
     },
     {
+      "id": "dena",
+      "slug": "blog/blog-dena-guide.html",
+      "peakPage": "peaks/dena.html",
+      "title": "راهنمای صعود دنا — بانوی کوه‌های ایران",
+      "peakName": "دنا",
+      "elevation": 4409,
+      "region": "zagros",
+      "regionLabel": "زاگرس",
+      "province": "کهگیلویه و بویراحمد",
+      "difficulty": "intermediate",
+      "difficultyLabel": "متوسط",
+      "days": "۲ روز",
+      "season": "بهار",
+      "excerpt": "مسیر سیاسرت، پناهگاه ۳۲۰۰ متری، تل‌خسرو و نکات ایمنی برای صعود ۴۴۰۹ متری زاگرس.",
+      "image": "images/blog/dena-guide.jpg",
+      "featured": false,
+      "dateFa": "۱۰ مرداد ۱۴۰۵",
+      "readMinutes": 10
+    },
+    {
       "id": "hezar",
       "slug": "blog/blog-hezar-guide.html",
       "peakPage": "peaks/hezar.html",

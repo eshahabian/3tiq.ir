@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله | سه تیغ</title>
+    <meta name="description" content="زمان‌بندی روز اول و دوم، نقطهٔ turnaround، شب‌مانی در پناهگاه یا چادر، و اشتباهات رایج در صعود دو روزه کوهستان ایران — با مثال دنا و هزار">
+    <link rel="canonical" href="https://3tiq.ir/blog/blog-two-day-ascent-plan.html">
+    <meta property="og:title" content="برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله | سه تیغ">
+    <meta property="og:image" content="https://3tiq.ir/images/blog/two-day-ascent-plan.jpg">
+    <meta property="og:description" content="چطور روز ورود، شب در پناهگاه و روز قله را برنامه بریزی — بدون خستگی اضافه و با زمان بازگشت مشخص.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://3tiq.ir/blog/blog-two-day-ascent-plan.html">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="سه تیغ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://3tiq.ir/images/blog/two-day-ascent-plan.jpg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/i18n.css">
+    <link rel="stylesheet" href="../css/blog-post.css">
+    <style>
+    .post-hero{height:65vh;min-height:440px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:3rem}
+    .post-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .post-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,8,.85) 0%,rgba(20,14,8,.2) 60%,transparent 100%)}
+    .post-hero-content{position:relative;z-index:1}
+    .post-breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:.75rem}
+    .post-breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+    .post-breadcrumb a:hover{color:var(--primary-color)}
+    .post-cat-badge{display:inline-block;padding:.25rem .85rem;border-radius:100px;color:#fff;font-size:.7rem;font-weight:800;margin-bottom:.75rem;background:rgba(70,110,140,.88)}
+    .post-hero h1{color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.35;max-width:700px}
+    .post-layout{display:grid;grid-template-columns:1fr 300px;gap:3rem;padding:3.5rem 0 5rem;align-items:start}
+    @media(max-width:860px){.post-layout{grid-template-columns:1fr}.post-sidebar{order:2}}
+    .post-meta{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;font-size:.8rem;color:var(--text-light);padding-bottom:1.5rem;margin-bottom:2rem;border-bottom:1px solid rgba(58,50,38,.1)}
+    .post-content{font-size:1rem;line-height:2;color:var(--text-dark)}
+    .post-content h2{font-size:1.4rem;font-weight:800;color:var(--text-dark);margin:2.5rem 0 1rem;padding-right:1rem;border-right:4px solid var(--primary-color)}
+    .post-content h3{font-size:1.1rem;font-weight:700;margin:1.8rem 0 .7rem;color:var(--text-dark)}
+    .post-content p{margin-bottom:1.2rem}
+    .post-content ul,.post-content ol{margin:.8rem 0 1.2rem 0;padding-right:1.5rem}
+    .post-content li{margin-bottom:.5rem}
+    .post-content strong{color:var(--text-dark)}
+    .post-content a{color:var(--primary-color);font-weight:600;text-decoration:none}
+    .post-content a:hover{text-decoration:underline}
+    .info-box{background:var(--light-bg);border-radius:.85rem;border-right:4px solid var(--primary-color);padding:1.25rem 1.4rem;margin:1.75rem 0}
+    .info-box.warning{border-color:#c0392b;background:rgba(192,57,43,.06)}
+    .info-box.success{border-color:#2ecc71;background:rgba(46,204,113,.06)}
+    .info-box-title{font-weight:800;font-size:.88rem;margin-bottom:.6rem;color:var(--text-dark)}
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:1rem;margin:1.75rem 0}
+    .stat-box{background:var(--light-bg);border-radius:.75rem;padding:1rem;text-align:center}
+    .stat-box .val{font-size:1.35rem;font-weight:900;color:var(--primary-color)}
+    .stat-box .lbl{font-size:.72rem;color:var(--text-light);margin-top:.2rem}
+    .post-sidebar{display:flex;flex-direction:column;gap:1.5rem;position:sticky;top:110px}
+    .sidebar-card{background:var(--white);border-radius:1rem;border:1px solid rgba(58,50,38,.08);padding:1.35rem;box-shadow:0 3px 16px rgba(44,36,22,.07)}
+    .sidebar-card h3{font-size:.9rem;font-weight:800;margin-bottom:1rem;color:var(--text-dark);padding-bottom:.6rem;border-bottom:1px solid rgba(58,50,38,.08)}
+    .sidebar-toc a{display:block;font-size:.8rem;color:var(--text-light);text-decoration:none;padding:.35rem 0;border-bottom:1px solid rgba(58,50,38,.05);transition:var(--transition)}
+    .sidebar-toc a:hover{color:var(--primary-color);padding-right:.4rem}
+    .related-post{display:flex;gap:.85rem;align-items:flex-start;padding:.6rem 0;border-bottom:1px solid rgba(58,50,38,.06);text-decoration:none;color:inherit}
+    .related-post:last-child{border:none}
+    .related-thumb{width:56px;height:42px;border-radius:.4rem;flex-shrink:0;object-fit:cover}
+    .related-post-title{font-size:.78rem;font-weight:700;color:var(--text-dark);line-height:1.45}
+    .related-post-date{font-size:.68rem;color:var(--text-light);margin-top:.2rem}
+    body.dark-mode .post-content,body.dark-mode .post-content h2,body.dark-mode .post-content h3{color:#e0e0e0}
+    body.dark-mode .info-box{background:#252525}
+    body.dark-mode .stat-box{background:#252525}
+    body.dark-mode .sidebar-card{background:#1e1e1e;border-color:rgba(255,255,255,.06)}
+    body.dark-mode .related-post-title{color:#e0e0e0}
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله",
+      "description": "زمان‌بندی روز اول و دوم، turnaround و شب‌مانی برای صعود دو روزه در کوهستان ایران.",
+      "image": "https://3tiq.ir/images/blog/two-day-ascent-plan.jpg",
+      "author": { "@type": "Organization", "name": "سه تیغ", "url": "https://3tiq.ir" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "سه تیغ",
+        "url": "https://3tiq.ir",
+        "logo": { "@type": "ImageObject", "url": "https://3tiq.ir/favicon.png" }
+      },
+      "mainEntityOfPage": "https://3tiq.ir/blog/blog-two-day-ascent-plan.html",
+      "inLanguage": "fa"
+    }
+    </script>
+</head>
+<body data-blog-id="two-day-ascent-plan">
+    <header class="header">
+        <div class="container"><div class="header-content">
+            <div class="logo"><a href="../index.html"><img src="../logo.png" alt="سه تیغ" class="logo-img" style="height:70px;width:auto;"></a></div>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../index.html">صفحه اصلی</a></li>
+                    <li><a href="../panahgah.html" data-i18n="nav.shelters">پناهگاه‌ها</a></li>
+                    <li><a href="../sakhre-nvardi.html" data-i18n="nav.climbing">صخره‌نوردی</a></li>
+                    <li class="has-dropdown">
+                        <a href="../blog.html" class="active">وبلاگ</a>
+                        <ul class="dropdown">
+                            <li><a href="../blog.html">مقالات</a></li>
+                            <li><a href="../blog-guides.html">راهنمای صعود</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../assistant.html" data-i18n="nav.assistant">دستیار</a></li>
+                </ul>
+            </nav>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button>
+            </div>
+        </div></div>
+    </header>
+
+    <section class="post-hero">
+        <img class="post-hero-img" src="../images/blog/two-day-ascent-plan.jpg" alt="کوهنورد در مسیر دو روزه زاگرس — واترمارک 3tiq.ir" style="object-position:center top !important">
+        <div class="container post-hero-content">
+            <div class="post-breadcrumb"><a href="../index.html">خانه</a> / <a href="../blog.html">وبلاگ</a> / صعود دو روزه</div>
+            <span class="post-cat-badge">💡 نکات عملی</span>
+            <h1>برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="post-layout">
+            <article>
+                <div class="post-meta">
+                    <span>📅 ۱۰ مرداد ۱۴۰۵</span>
+                    <span>⏱ ۸ دقیقه مطالعه</span>
+                    <span>✍️ تیم سه تیغ</span>
+                </div>
+                <div class="post-content">
+                    <p>بسیاری از قله‌های محبوب ایران — از <a href="../peaks/dena.html">دنا</a> و <a href="../peaks/hezar.html">هزار</a> تا <a href="../peaks/zardkooh.html">زردکوه</a> — به‌صورت <strong>دو روزه</strong> صعود می‌شوند: روز اول رسیدن به پناهگاه یا کمپ، روز دوم قله و بازگشت. اگر زمان‌بندی اشتباه باشد، یا روز قله با خواب کم شروع می‌شود یا شب اول با خستگی بیش از حد تمام می‌شود.</p>
+
+                    <p>این <strong>مقالهٔ آموزشی</strong> است (نه راهنمای یک قله). برای جزئیات مسیر دنا، <a href="blog-dena-guide.html">راهنمای صعود دنا</a> را بخوان.</p>
+
+                    <div class="stats-row">
+                        <div class="stat-box"><div class="val">روز ۱</div><div class="lbl">ورود + استراحت</div></div>
+                        <div class="stat-box"><div class="val">روز ۲</div><div class="lbl">قله + فرود</div></div>
+                        <div class="stat-box"><div class="val">۱۴–۱۶h</div><div class="lbl">روز قله (نمونه)</div></div>
+                        <div class="stat-box"><div class="val">TAT</div><div class="lbl">ساعت برگشت اجباری</div></div>
+                    </div>
+
+                    <figure class="wm-figure">
+                        <div class="wm-figure-media">
+                            <img src="../images/blog/two-day-camp.jpg" alt="شب‌مانی در ارتفاع — پناهگاه یا چادر — واترمارک 3tiq.ir" loading="lazy">
+                        </div>
+                        <figcaption>شب خوب در پناهگاه یا چادر، شرط شروع ایمن روز قله است — واترمارک 3tiq.ir</figcaption>
+                    </figure>
+
+                    <h2 id="why-two">چرا دو روز؟</h2>
+                    <ul>
+                        <li>اختلاف ارتفاع زیاد (۱۸۰۰ تا ۲۸۰۰ متر) در یک روز برای اکثر افراد پرریسک است</li>
+                        <li>شب در ارتفاع به <strong>آکلیماتاسیون</strong> کمک می‌کند — دربارهٔ علائم ببین <a href="blog-altitude-sickness.html">ارتفاع‌زدگی</a></li>
+                        <li>شروع روز قله قبل از طلوع = هوای خنک‌تر و کمتر در معرض UV و طوفان بعدازظهر</li>
+                        <li>تجهیزات سنگین‌تر (چادر، غذای دو روز) با تقسیم بار بین دو روز منطقی‌تر حمل می‌شود</li>
+                    </ul>
+
+                    <h2 id="day1">روز اول: ورود به کمپ</h2>
+                    <h3>اهداف روز اول</h3>
+                    <ol>
+                        <li>رسیدن به پناهگاه/کمپ با <strong>ذخیره انرژی</strong> برای فردا</li>
+                        <li>آب، غذا و تجهیزات فردا آماده باشد</li>
+                        <li>ساعت خواب مشخص — نه مهمانی تا نیمه‌شب</li>
+                    </ol>
+                    <h3>زمان‌بندی نمونه (دنا — مسیر سیاسرت)</h3>
+                    <ul>
+                        <li><strong>۰۶:۰۰–۰۷:۰۰:</strong> شروع از پایین‌دست</li>
+                        <li><strong>۱۲:۰۰–۱۴:۰۰:</strong> رسیدن به پناهگاه دنا — ناهار و استراحت</li>
+                        <li><strong>عصر:</strong> آماده‌سازی کوله روز قله (آب، لایه گرم، چراغ، غذای سبک)</li>
+                        <li><strong>۲۱:۰۰–۲۲:۰۰:</strong> خواب — بیداری فردا حدود ۰۳:۰۰–۰۴:۰۰</li>
+                    </ul>
+                    <p>در کوه‌های سخت‌تر مثل <a href="blog-hezar-guide.html">هزار</a>، روز اول ممکن است طولانی‌تر و کمپ چادری باشد — اصل همان است: فردا را سبک شروع کن.</p>
+
+                    <div class="info-box">
+                        <div class="info-box-title">📋 قبل از حرکت از خانه</div>
+                        <a href="blog-pre-ascent-checklist.html">چک‌لیست قبل از صعود</a> و
+                        <a href="blog-weather-check.html">بررسی آب‌وهوا</a> برای <strong>هر دو روز</strong> — بارش شب در کمپ خطرناک است.
+                    </div>
+
+                    <h2 id="day2">روز دوم: قله و بازگشت</h2>
+                    <ul>
+                        <li><strong>شروع زود:</strong> هدف این است بیشتر مسیر سخت قبل از ظهر طی شود</li>
+                        <li><strong>Turnaround time (TAT):</strong> ساعتی که حتی اگر به قله نرسیدی، برگردی — مثلاً ۱۲:۰۰ برای بازگشت ایمن به پناهگاه</li>
+                        <li><strong>ناهار:</strong> تنقلات انرژی‌زا در مسیر؛ توقف طولانی سرد می‌کند</li>
+                        <li><strong>بازگشت:</strong> همان روز تا پایین‌دست یا شب دوم در پناهگاه — از قبل تصمیم بگیر و به خانواده اطلاع بده</li>
+                    </ul>
+
+                    <h2 id="camp">پناهگاه در برابر چادر</h2>
+                    <ul>
+                        <li><strong>پناهگاه:</strong> سبک‌تر سفر می‌کنی؛ ولی ظرفیت و رزرو محدود — مثال: <a href="../panahgah.html">پناهگاه دنا</a></li>
+                        <li><strong>چادر:</strong> انعطاف بیشتر؛ مسئولیت کامل گرما، باد و زباله با خودت است</li>
+                        <li>در هر دو حالت: <a href="blog-hydration-high-altitude.html">آبرسانی</a> و لباس خشک برای شب</li>
+                    </ul>
+
+                    <h2 id="pack">تقسیم بار کوله</h2>
+                    <ul>
+                        <li><strong>روز ۱:</strong> غذای مشترک، چادر (اگر لازم)، لایه خواب</li>
+                        <li><strong>روز ۲ (سبک):</strong> آب کافی، لایه بادگیر/گرم، چراغ، کمک‌های اولیه، GPS</li>
+                        <li>وسایل خواب در پناهگاه بماند؛ فقط essentials برای قله</li>
+                    </ul>
+
+                    <h2 id="mistakes">اشتباهات رایج</h2>
+                    <ul>
+                        <li>روز اول خیلی تند رفتن و شب قبل از قله بدخواب شدن</li>
+                        <li>نداشتن TAT و «فقط ۲۰۰ متر مانده» تا تاریکی</li>
+                        <li>فراموش کردن چراغ و باتری برای شروع تاریک</li>
+                        <li>آب ناکافی روز قله — <a href="blog-sun-uv-altitude.html">آفتاب</a> تعریق را بالا می‌برد</li>
+                        <li>برنامهٔ بازگشت مبهم برای خانواده — زمان تقریبی پایین‌دست را اعلام کن</li>
+                    </ul>
+
+                    <div class="info-box warning">
+                        <div class="info-box-title">⚠️ طوفان تابستانی</div>
+                        در روز قله، اگر رعد دیدی، بلافاصله از ridge و قله پایین بیا — جزئیات در <a href="blog-thunderstorm-safety.html">راهنمای طوفان</a>.
+                    </div>
+
+                    <div class="info-box success">
+                        <div class="info-box-title">✅ جمع‌بندی</div>
+                        روز اول برای «رسیدن و استراحت» است، روز دوم برای «قله با حاشیه امن». TAT، چراغ، آب و آب‌وهمای دو روزه را مثل نقشه جدی بگیر.
+                    </div>
+
+                    <p>برای اولین برنامهٔ دو روزه، <a href="blog-beginner-peaks.html">۵ قله مناسب برای شروع</a> و سپس <a href="blog-dena-guide.html">راهنمای دنا</a> ترکیب خوبی است.</p>
+                </div>
+            </article>
+
+            <aside class="post-sidebar">
+                <div class="sidebar-card">
+                    <h3>فهرست مطالب</h3>
+                    <div class="sidebar-toc">
+                        <a href="#why-two">چرا دو روز؟</a>
+                        <a href="#day1">روز اول</a>
+                        <a href="#day2">روز قله</a>
+                        <a href="#camp">پناهگاه یا چادر</a>
+                        <a href="#pack">تقسیم بار</a>
+                        <a href="#mistakes">اشتباهات رایج</a>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>راهنمای صعود دنا</h3>
+                    <a href="blog-dena-guide.html" class="related-post">
+                        <img class="related-thumb" src="../images/blog/dena-guide.jpg" alt="" loading="lazy">
+                        <div><div class="related-post-title">راهنمای صعود دنا</div><div class="related-post-date">۱۰ مرداد ۱۴۰۵</div></div>
+                    </a>
+                </div>
+                <div class="sidebar-card">
+                    <h3>مقالات مرتبط</h3>
+                    <a href="blog-pre-ascent-checklist.html" class="related-post">
+                        <img class="related-thumb" src="../images/blog/pre-ascent-checklist.png" alt="" loading="lazy">
+                        <div><div class="related-post-title">چک‌لیست قبل از صعود</div><div class="related-post-date">۱۴ تیر ۱۴۰۵</div></div>
+                    </a>
+                    <a href="blog-weather-check.html" class="related-post">
+                        <img class="related-thumb" src="../images/blog/weather-check.png" alt="" loading="lazy">
+                        <div><div class="related-post-title">چک آب‌وهوا</div><div class="related-post-date">۳۰ تیر ۱۴۰۵</div></div>
+                    </a>
+                    <a href="blog-hezar-guide.html" class="related-post">
+                        <img class="related-thumb" src="../images/blog/hezar-guide.jpg" alt="" loading="lazy">
+                        <div><div class="related-post-title">راهنمای هزار (۲ روز)</div><div class="related-post-date">۵ مرداد ۱۴۰۵</div></div>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="../js/site-config.js"></script>
+    <script src="../js/footer-snippet.js"></script>
+    <script src="../js/i18n-boot.js" defer></script>
+    <script src="../js/blog-chrome.js"></script>
+    <script src="../js/blog-image-focus.js" defer></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
