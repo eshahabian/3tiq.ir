@@ -17,6 +17,8 @@
   "weather-check": { "hero": "center top", "card": "center top", "thumb": "center top" },
   "dena-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
   "two-day-ascent-plan": { "hero": "center top", "card": "center top", "thumb": "center top" },
+  "acclimatization": { "hero": "22% top", "card": "22% top", "thumb": "22% top" },
+  "eshterankoh-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
   "hezar-guide": { "hero": "center top", "card": "center top", "thumb": "center top" },
   "sun-uv-altitude": { "hero": "center top", "card": "center top", "thumb": "center top" }
 }

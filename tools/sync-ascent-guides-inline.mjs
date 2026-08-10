@@ -10,22 +10,20 @@ const guides = JSON.parse(fs.readFileSync(path.join(root, 'data/ascent-guides.js
 const htmlPath = path.join(root, 'blog-guides.html');
 let html = fs.readFileSync(htmlPath, 'utf8');
 
-const block =
+const newInner =
     '    <script type="application/json" id="guidesData">' +
     JSON.stringify(guides) +
-    '</script>\n\n';
+    '</script>';
 
-if (html.includes('id="guidesData"')) {
-    html = html.replace(
-        /<script type="application\/json" id="guidesData">[\s\S]*?<\/script>\n\n?/,
-        block
-    );
-} else {
-    html = html.replace(
-        /(\r?\n    <\/section>\r?\n\r?\n)(    <script src="js\/site-config\.js">)/,
-        `$1${block}$2`
-    );
+const re = /<script type="application\/json" id="guidesData">[\s\S]*?<\/script>/;
+if (!re.test(html)) {
+    console.error('guidesData block not found in blog-guides.html');
+    process.exit(1);
 }
-
-fs.writeFileSync(htmlPath, html);
+const next = html.replace(re, newInner);
+if (next === html) {
+    console.error('Replace did not change blog-guides.html');
+    process.exit(1);
+}
+fs.writeFileSync(htmlPath, next);
 console.log('Synced', guides.guides.length, 'guides into blog-guides.html');

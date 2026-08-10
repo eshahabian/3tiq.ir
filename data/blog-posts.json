@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "id": "acclimatization",
+      "slug": "blog/blog-acclimatization.html",
+      "title": "آکلیماتاسیون — قانون «برو بالا، پایین بخواب»",
+      "excerpt": "سرعت صعود، climb high sleep low و پیشگیری از AMS — مقاله علمی وبلاگ.",
+      "image": "images/blog/altitude-sickness.png",
+      "cat": "safety",
+      "dateFa": "۱۹ مرداد ۱۴۰۵"
+    },
+    {
       "id": "two-day-ascent-plan",
       "slug": "blog/blog-two-day-ascent-plan.html",
       "title": "برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله",

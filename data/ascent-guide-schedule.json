@@ -20,19 +20,19 @@
       "title": "دنا",
       "slug": "blog/blog-dena-guide.html",
       "dateFa": "۱۹ مرداد ۱۴۰۵"
+    },
+    {
+      "peak": "eshterankoh",
+      "title": "اشترانکوه",
+      "slug": "blog/blog-eshterankoh-guide.html",
+      "dateFa": "۱۹ مرداد ۱۴۰۵"
     }
   ],
   "upcoming": [
     {
-      "peak": "eshterankoh",
-      "title": "اشترانکوه",
-      "dateFa": "۲۰ مرداد ۱۴۰۵",
-      "peakPage": "peaks/eshterankoh.html"
-    },
-    {
       "peak": "shirkooh",
       "title": "شیرکوه یزد",
-      "dateFa": "۱۲ مرداد ۱۴۰۵",
+      "dateFa": "۲۰ مرداد ۱۴۰۵",
       "peakPage": "peaks/shirkoh.html"
     },
     {
