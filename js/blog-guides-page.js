@@ -26,6 +26,49 @@
         }
     }
 
+    function toEnDigits(s) {
+        return String(s).replace(/[۰-۹]/g, function (c) {
+            return String('۰۱۲۳۴۵۶۷۸۹'.indexOf(c));
+        });
+    }
+
+    var PERSIAN_MONTHS = {
+        فروردین: 1,
+        اردیبهشت: 2,
+        خرداد: 3,
+        تیر: 4,
+        مرداد: 5,
+        شهریور: 6,
+        مهر: 7,
+        آبان: 8,
+        آذر: 9,
+        دی: 10,
+        بهمن: 11,
+        اسفند: 12
+    };
+
+    /** Higher = newer (for sort descending). */
+    function dateFaSortKey(dateFa) {
+        if (!dateFa) return 0;
+        var t = toEnDigits(dateFa).replace(/\s+/g, ' ').trim();
+        var day = 1;
+        var monthName;
+        var year;
+        var m = t.match(/^(\d{1,2})\s+(\S+)\s+(\d{4})$/);
+        if (m) {
+            day = parseInt(m[1], 10) || 1;
+            monthName = m[2];
+            year = parseInt(m[3], 10) || 0;
+        } else {
+            m = t.match(/^(\S+)\s+(\d{4})$/);
+            if (!m) return 0;
+            monthName = m[1];
+            year = parseInt(m[2], 10) || 0;
+        }
+        var month = PERSIAN_MONTHS[monthName] || 0;
+        return year * 10000 + month * 100 + day;
+    }
+
     function cardHtml(g) {
         var href = g.slug;
         var featured = g.featured ? ' featured' : '';
@@ -103,7 +146,10 @@
         filtered.sort(function (a, b) {
             if (a.featured && !b.featured) return -1;
             if (!a.featured && b.featured) return 1;
-            return (b._recency || 0) - (a._recency || 0);
+            var db = dateFaSortKey(b.dateFa);
+            var da = dateFaSortKey(a.dateFa);
+            if (db !== da) return db - da;
+            return String(a.title || '').localeCompare(String(b.title || ''), 'fa');
         });
 
         grid.innerHTML = filtered.map(cardHtml).join('');
@@ -150,10 +196,7 @@
     }
 
     function init(data) {
-        guides = (data || []).map(function (g, i) {
-            g._recency = i;
-            return g;
-        });
+        guides = data || [];
         render();
         bindFilters();
     }
