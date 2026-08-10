@@ -4,19 +4,10 @@
       "id": "two-day-ascent-plan",
       "slug": "blog/blog-two-day-ascent-plan.html",
       "title": "برنامه‌ریزی صعود دو روزه — روز ورود، کمپ و روز قله",
-      "excerpt": "زمان‌بندی روز اول و دوم، turnaround، پناهگاه یا چادر و اشتباهات رایج — با مثال دنا، هزار و زاگرس.",
+      "excerpt": "زمان‌بندی روز اول و دوم، turnaround، پناهگاه یا چادر و اشتباهات رایج — مقاله آموزشی (نه راهنمای یک قله).",
       "image": "images/blog/two-day-ascent-plan.jpg",
       "cat": "tips",
-      "dateFa": "۱۰ مرداد ۱۴۰۵"
-    },
-    {
-      "id": "dena-guide",
-      "slug": "blog/blog-dena-guide.html",
-      "title": "راهنمای صعود دنا — بانوی کوه‌های ایران",
-      "excerpt": "مسیر سیاسرت، پناهگاه ۳۲۰۰ متری، تل‌خسرو و نکات ایمنی برای صعود ۴۴۰۹ متری زاگرس.",
-      "image": "images/blog/dena-guide.jpg",
-      "cat": "route",
-      "dateFa": "۱۰ مرداد ۱۴۰۵"
+      "dateFa": "۱۹ مرداد ۱۴۰۵"
     },
     {
       "id": "sun-uv-altitude",
@@ -26,24 +17,6 @@
       "image": "images/blog/sun-uv-altitude.jpg",
       "cat": "safety",
       "dateFa": "۵ مرداد ۱۴۰۵"
-    },
-    {
-      "id": "hezar-guide",
-      "slug": "blog/blog-hezar-guide.html",
-      "title": "راهنمای صعود هزار — پنجمین قله بلند ایران",
-      "excerpt": "مسیر اصلی جنوب، کمپ هزار، عبور از یخچال و نکات ایمنی برای صعود ۴۴۶۵ متری کرمان.",
-      "image": "images/blog/hezar-guide.jpg",
-      "cat": "route",
-      "dateFa": "۵ مرداد ۱۴۰۵"
-    },
-    {
-      "id": "zardkooh-guide",
-      "slug": "blog/blog-zardkooh-guide.html",
-      "title": "راهنمای صعود زردکوه بختیاری — بلندترین قله زاگرس",
-      "excerpt": "مسیر چلگرد، پناهگاه کلون بستک، تجهیزات برف و نکات ایمنی برای صعود ۴۵۴۸ متری.",
-      "image": "images/peaks/zardkooh.jpg",
-      "cat": "route",
-      "dateFa": "۳۱ تیر ۱۴۰۵"
     },
     {
       "id": "weather-check",
@@ -91,24 +64,6 @@
       "dateFa": "۱۴ تیر ۱۴۰۵"
     },
     {
-      "id": "damavand-guide",
-      "slug": "blog-damavand-guide.html",
-      "title": "راهنمای کامل صعود دماوند — از صفر تا قله ۵۶۱۰ متری",
-      "excerpt": "مسیرهای صعود، پناهگاه‌ها، تجهیزات، بهترین فصل و نکات ایمنی برای آماده‌ترین صعود دماوند.",
-      "image": "images/blog/damavand-guide.png",
-      "cat": "route",
-      "dateFa": "خرداد ۱۴۰۴"
-    },
-    {
-      "id": "alamkooh-intro",
-      "slug": "blog/blog-alamkooh-intro.html",
-      "title": "علم‌کوه — دیواره‌ای که کوهنوردان حرفه‌ای را می‌خواند",
-      "excerpt": "معرفی دومین قله ایران، مسیر هاسک‌چال و چالش‌های دیواره شمالی.",
-      "image": "images/blog/alamkooh-intro.png",
-      "cat": "route",
-      "dateFa": "تیر ۱۴۰۵"
-    },
-    {
       "id": "layering-system",
       "slug": "blog/blog-layering-system.html",
       "title": "سیستم لباس سه‌لایه — راز راحتی در کوه",
@@ -121,7 +76,7 @@
       "id": "beginner-peaks",
       "slug": "blog/blog-beginner-peaks.html",
       "title": "۵ قله مناسب برای شروع کوهنوردی جدی",
-      "excerpt": "توچال، کرکس، سهند، سبلان و دنا — پنج مقصد امن و انگیزه‌بخش برای اولین صعود جدی.",
+      "excerpt": "توچال، کرکس، سهند، سبلان و دنا — پنج مقصد امن و انگیزه‌بخش برای اولین صعود جدی (معرفی کلی؛ جزئیات مسیر در راهنمای صعود).",
       "image": "images/blog/beginner-peaks.png",
       "cat": "tips",
       "dateFa": "تیر ۱۴۰۵"
@@ -143,15 +98,6 @@
       "image": "images/blog/altitude-sickness.png",
       "cat": "safety",
       "dateFa": "فروردین ۱۴۰۴"
-    },
-    {
-      "id": "sabalan",
-      "slug": "blog/blog-sabalan.html",
-      "title": "سبلان — آتشفشان خاموش با دریاچه‌ای در دهانه",
-      "excerpt": "کوه ۴۸۱۱ متری اردبیل با دریاچه یخی در دهانه — یکی از دیدنی‌ترین قله‌های ایران.",
-      "image": "images/blog/sabalan.png",
-      "cat": "route",
-      "dateFa": "اسفند ۱۴۰۳"
     },
     {
       "id": "flora",

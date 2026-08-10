@@ -2,6 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+/** Peak ascent guides → data/ascent-guides.json + blog-guides.html only.
+ *  Educational articles → data/blog-posts.json + blog.html only. Do not mix. */
+
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guides = JSON.parse(fs.readFileSync(path.join(root, 'data/ascent-guides.json'), 'utf8'));
 const htmlPath = path.join(root, 'blog-guides.html');
