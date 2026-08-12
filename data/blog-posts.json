@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "id": "leave-no-trace-global",
+      "slug": "blog/blog-leave-no-trace-global.html",
+      "title": "اصول Leave No Trace — استاندارد جهانی و کاربرد در ایران",
+      "excerpt": "هفت اصل LNT برای کوهستان: برنامه‌ریزی، کمین کردن اثر، دفع صحیح — مقاله آموزشی جهانی، نه راهنمای یک قله.",
+      "image": "images/blog/leave-no-trace-global.png",
+      "cat": "nature",
+      "dateFa": "۲۱ مرداد ۱۴۰۵"
+    },
+    {
       "id": "acclimatization",
       "slug": "blog/blog-acclimatization.html",
       "title": "آکلیماتاسیون — قانون «برو بالا، پایین بخواب»",

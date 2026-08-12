@@ -26,15 +26,15 @@
       "title": "اشترانکوه",
       "slug": "blog/blog-eshterankoh-guide.html",
       "dateFa": "۱۹ مرداد ۱۴۰۵"
-    }
-  ],
-  "upcoming": [
+    },
     {
       "peak": "shirkooh",
       "title": "شیرکوه یزد",
-      "dateFa": "۲۰ مرداد ۱۴۰۵",
-      "peakPage": "peaks/shirkoh.html"
-    },
+      "slug": "blog/blog-shirkooh-guide.html",
+      "dateFa": "۲۱ مرداد ۱۴۰۵"
+    }
+  ],
+  "upcoming": [
     {
       "peak": "sahand",
       "title": "سهند",

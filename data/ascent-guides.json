@@ -21,6 +21,26 @@
       "readMinutes": 12
     },
     {
+      "id": "shirkooh",
+      "slug": "blog/blog-shirkooh-guide.html",
+      "peakPage": "peaks/shirkoh.html",
+      "title": "راهنمای صعود شیرکوه — برف در دل کویر",
+      "peakName": "شیرکوه",
+      "elevation": 4075,
+      "region": "central",
+      "regionLabel": "کوه‌های مرکزی",
+      "province": "یزد",
+      "difficulty": "advanced",
+      "difficultyLabel": "سخت",
+      "days": "۲ روز",
+      "season": "بهار",
+      "excerpt": "مسیر یزد، پناهگاه ۳۲۰۰ متری، تضاد کویر و برف و تجهیزات برای صعود ۴۰۷۵ متری.",
+      "image": "images/blog/shirkooh-guide.jpg",
+      "featured": false,
+      "dateFa": "۲۱ مرداد ۱۴۰۵",
+      "readMinutes": 10
+    },
+    {
       "id": "eshterankoh",
       "slug": "blog/blog-eshterankoh-guide.html",
       "peakPage": "peaks/eshterankoh.html",
